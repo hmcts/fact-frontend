@@ -1,6 +1,0 @@
-nodejs:
-  applicationPort: 3100
-  aadIdentityName: ctf
-  ingressHost: ctf-finder-frontend.{{ .Values.global.environment }}.platform.hmcts.net
-  image: 'hmctspublic.azurecr.io/ctf/finder-frontend:latest'
-  environment:
