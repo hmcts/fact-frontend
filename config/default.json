@@ -2,5 +2,6 @@
   "useCSRFProtection": true,
   "security": {
     "referrerPolicy": "origin"
-  }
+  },
+  "serviceName": "Find a court or tribunal"
 }
