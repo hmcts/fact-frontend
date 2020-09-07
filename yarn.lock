@@ -1214,6 +1214,11 @@
     "@types/express" "*"
     "@types/express-serve-static-core" "*"
 
+"@types/cucumber@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@types/cucumber/-/cucumber-6.0.1.tgz#0fe9673d34568d35ff21957af049883635472fcd"
+  integrity sha512-+GZV6xfN0MeN9shDCdny8GbC8N0+U6uca8cjyaJndcwmrUhwS6qOU2vmYn0d71EOwJF568/v3SxJ8VKxuZNYRw==
+
 "@types/es6-promisify@^6.0.0":
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/@types/es6-promisify/-/es6-promisify-6.0.0.tgz#a554e8c9c28466720a96b20c9f6b139249b7d375"
@@ -1368,6 +1373,11 @@
   integrity sha512-4TTBpntB/k5BzK43/FcfU1BoTUkbXyC2Xt3cujMf0vV28d9lLO8AlxamICfHQ7XtdHt5SWdnUotDzoXvn4tRBA==
   dependencies:
     "@types/node" "*"
+
+"@types/selenium-webdriver@^4.0.9":
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/@types/selenium-webdriver/-/selenium-webdriver-4.0.9.tgz#12621e55b2ef8f6c98bd17fe23fa720c6cba16bd"
+  integrity sha512-HopIwBE7GUXsscmt/J0DhnFXLSmO04AfxT6b8HAprknwka7pqEWquWDMXxCjd+NUHK9MkCe1SDKKsMiNmCItbQ==
 
 "@types/serve-favicon@^2.5.0":
   version "2.5.0"

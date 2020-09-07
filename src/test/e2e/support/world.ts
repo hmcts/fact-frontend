@@ -3,7 +3,7 @@ import { setWorldConstructor } from 'cucumber';
 
 function CustomWorld() {
   this.driver = new seleniumWebdriver.Builder()
-    .forBrowser('firefox')
+    .forBrowser('chrome')
     .build();
 }
 
