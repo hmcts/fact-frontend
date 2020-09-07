@@ -1,4 +1,4 @@
-# Court and Tribunal Finder Frontend
+# Find a Court of Tribunal Frontend
 
 ## Getting Started
 
