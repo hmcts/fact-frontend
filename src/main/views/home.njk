@@ -1,5 +1,52 @@
 {% extends "template.njk" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+Find a court or tribunal - GOV.UK
+{% endblock %}
 
 {% block content %}
-  <h1 class="govuk-heading-xl">Default page template</h1>
-{% endblock %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      {% if serviceName %} {{ serviceName }} {% endif %}
+    </h1>
+
+    <p class="govuk-body-m">Use this service to find a court or tribunal in England and Wales</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+
+      <li>address</li>
+      <li>contact details</li>
+      <li>opening times</li>
+      <li>building information e.g. disabled access or parking</li>
+      <li>to help me get an update</li>
+
+    </ul>
+
+    {{ govukButton({
+    text: "Start now",
+    href: "#",
+    classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8",
+    isStartButton: true
+    }) }}
+
+    <h2 class="govuk-heading-m">Before you search</h2>
+
+    <p class="govuk-inset-text">The online service is also available in <a class="govuk-link" href="#">Welsh (Cymraeg)</a>.</p>
+
+
+    <p class="govuk-body-m">You cannot use this service if you live in Northern Ireland. Contact the <a href="https://www.justice-ni.gov.uk/topics/courts-and-tribunals" class="govuk-link">Northern Ireland Courts and Tribunals</a> for help.</p>
+
+    <p class="govuk-body-m">This service is limited in Scotland to:</p>
+    <ul>
+      <li class="govuk-body-m">Immigration appeals</li>
+      <li class="govuk-body-m">Benefit appeals</li>
+      <li class="govuk-body-m">Employment claims appeals</li>
+    </ul>
+
+    <p class="govuk-body-m">Contact the <a href="https://www.scotcourts.gov.uk/the-courts/the-tribunals" class="govuk-link">Scottish Courts and Tribunals</a> for other services.</p>
+
+  </div>
+</div>{% endblock %}

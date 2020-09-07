@@ -18,6 +18,7 @@ const developmentMode = env === 'development';
 
 export const app = express();
 app.locals.ENV = env;
+app.locals.serviceName = config.get('serviceName');
 
 // setup logging of HTTP requests
 app.use(Express.accessLogger());

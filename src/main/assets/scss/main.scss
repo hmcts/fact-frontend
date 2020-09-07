@@ -1,1 +1,10 @@
 @import '~govuk-frontend';
+
+// sass-lint:disable class-name-format
+.govuk-phase-banner__text {
+  width: 100%;
+
+  .fact-language {
+    float: right;
+  }
+}
