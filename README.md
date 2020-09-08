@@ -86,13 +86,14 @@ $ yarn test:a11y
 
 Make sure all the paths in your application are covered by accessibility tests (see [a11y.ts](src/test/a11y/a11y.ts)).
 
-Running e2e tests:
+Running functional tests:
 
 ```bash
-$ yarn test:e2e
+$ yarn test:functional
 ```
 
-Make sure you run the server before running the e2e tests.
+Make sure you run the server before running the functional tests.
+
 ### Security
 
 #### CSRF prevention
