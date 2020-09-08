@@ -1,19 +1,14 @@
-import { Builder, Capabilities } from 'selenium-webdriver';
-import chrome from 'selenium-webdriver/chrome';
-import { path } from 'chromedriver';
+import webdriver from 'selenium-webdriver';
+import firefox from 'selenium-webdriver/firefox';
 import { setWorldConstructor } from 'cucumber';
 
-const service = new chrome.ServiceBuilder(path).build();
-chrome.setDefaultService(service);
-
-const options = new chrome.Options();
+const options = new firefox.Options();
 options.addArguments('-headless');
 
 function CustomWorld() {
-  this.driver = new Builder()
-    .forBrowser('chrome')
-    .withCapabilities(Capabilities.chrome())
-    .setChromeOptions(options)
+  this.driver = new webdriver.Builder()
+    .forBrowser('firefox')
+    .setFirefoxOptions(options)
     .build();
 }
 
