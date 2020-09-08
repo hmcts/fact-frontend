@@ -1,11 +1,11 @@
 import seleniumWebdriver from 'selenium-webdriver';
-import firefox from 'selenium-webdriver/firefox';
+import chrome from 'selenium-webdriver/chrome';
 import { setWorldConstructor } from 'cucumber';
 
 function CustomWorld() {
   this.driver = new seleniumWebdriver.Builder()
-    .forBrowser('firefox')
-    .setFirefoxOptions(new firefox.Options().headless())
+    .forBrowser('chrome')
+    .setChromeOptions(new chrome.Options().headless())
     .build();
 }
 
