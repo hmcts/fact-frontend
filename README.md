@@ -92,6 +92,7 @@ Running e2e tests:
 $ yarn test:e2e
 ```
 
+Make sure you run the server before running the test.
 ### Security
 
 #### CSRF prevention
