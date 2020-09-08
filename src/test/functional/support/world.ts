@@ -1,14 +1,14 @@
 import { Builder } from 'selenium-webdriver';
-import firefox from 'selenium-webdriver/firefox';
+import chrome from 'selenium-webdriver/chrome';
 import { setWorldConstructor } from 'cucumber';
 
-const options = new firefox.Options();
+const options = new chrome.Options();
 options.addArguments('-headless');
 
 function CustomWorld() {
   this.driver = new Builder()
-    .forBrowser('firefox')
-    .setFirefoxOptions(options)
+    .forBrowser('chrome')
+    .setChromeOptions(options)
     .build();
 }
 
