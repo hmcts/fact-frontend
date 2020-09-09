@@ -1,9 +1,11 @@
 import { BeforeAll, AfterAll, After } from 'cucumber';
-const scope = require('./scope');
 import puppeteer from 'puppeteer';
+import { puppeteerConfig } from '../puppeteer.config';
+
+const scope = require('./scope');
 
 BeforeAll(async () => {
-  scope.browser = await puppeteer.launch();
+  scope.browser = await puppeteer.launch(puppeteerConfig);
 });
 
 After(async () => {
