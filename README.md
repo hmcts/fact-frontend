@@ -1,5 +1,7 @@
 # Find a Court or Tribunal Frontend
 
+Website to find a court or tribunal.
+
 ## Getting Started
 
 ### Prerequisites
