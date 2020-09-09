@@ -6,13 +6,14 @@ import { setWorldConstructor } from 'cucumber';
 const options = new chrome.Options();
 options.addArguments('--headless');
 
-chrome.setDefaultService(new chrome.ServiceBuilder(chromedriver.path).build());
 
 function CustomWorld() {
+  chrome.setDefaultService(new chrome.ServiceBuilder(chromedriver.path).build());
+
   this.driver = new webdriver.Builder()
     .forBrowser('chrome')
     .withCapabilities(webdriver.Capabilities.chrome())
-    .setChromeOptions(options)
+    .setChromeOptions(new chrome.Options().addArguments('--headless'))
     .build();
 }
 
