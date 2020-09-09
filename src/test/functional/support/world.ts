@@ -3,7 +3,7 @@ import firefox from 'selenium-webdriver/firefox';
 import { setWorldConstructor } from 'cucumber';
 
 const options = new firefox.Options();
-options.addArguments('-headless');
+options.addArguments('--headless');
 
 function CustomWorld() {
   this.driver = new webdriver.Builder()
