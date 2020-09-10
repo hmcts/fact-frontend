@@ -11,6 +11,7 @@ import * as path from 'path';
 import favicon from 'serve-favicon';
 import { HTTPError } from 'HttpError';
 import { Nunjucks } from './modules/nunjucks';
+import { I18next } from './modules/i18next';
 const { setupDev } = require('./development');
 
 const env = process.env.NODE_ENV || 'development';
@@ -18,7 +19,6 @@ const developmentMode = env === 'development';
 
 export const app = express();
 app.locals.ENV = env;
-app.locals.serviceName = config.get('serviceName');
 
 // setup logging of HTTP requests
 app.use(Express.accessLogger());
@@ -28,6 +28,8 @@ const logger = Logger.getLogger('app');
 new Nunjucks(developmentMode).enableFor(app);
 // secure the application by adding various HTTP headers to its responses
 new Helmet(config.get('security')).enableFor(app);
+
+new I18next().enableFor(app);
 
 app.use(favicon(path.join(__dirname, '/public/assets/images/favicon.ico')));
 app.use(bodyParser.json());
@@ -48,18 +50,20 @@ glob.sync(__dirname + '/routes/**/*.+(ts|js)')
 
 setupDev(app,developmentMode);
 // returning "not found" page for requests with paths not resolved by the router
-app.use((req, res) => {
+app.use((req: any, res: any) => {
   res.status(404);
-  res.render('not-found');
+  const data = req.i18n.getDataByLanguage(req.lng).notFound;
+  res.render('not-found', data);
 });
 
 // error handler
-app.use((err: HTTPError, req: express.Request, res: express.Response) => {
+app.use((err: HTTPError, req: any, res: express.Response) => {
   logger.error(`${err.stack || err}`);
 
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = env === 'development' ? err : {};
   res.status(err.status || 500);
-  res.render('error');
+  const data = req.i18n.getDataByLanguage(req.lng).error;
+  res.render('error', data);
 });
