@@ -1,0 +1,17 @@
+app:
+  serviceName: 'Find a court or tribunal'
+  useCSRFProtection: 'true'
+  security:
+    referrerPolicy: 'origin'
+services:
+  frontend:
+    name: 'FACT Frontend'
+    url: 'http://localhost:3100'
+    port: 3100
+  api:
+    name: 'FACT API'
+    url: 'http://localhost:8080'
+    port: 8080
+health:
+  timeout: 5000
+  deadline: 15000
