@@ -1,12 +1,25 @@
-import { Application } from 'express';
+import { Application, Request } from 'express';
+import config from 'config';
 
 const healthcheck = require('@hmcts/nodejs-healthcheck');
 
 export default function(app: Application): void {
+  const healthOptions = (): {} => {
+    return {
+      callback: (err: Error, res: Request): Promise<void> => {
+        if (err) {
+          console.log('Health check failed on fact-api:');
+        }
+        return res.body.status == 'good' ? healthcheck.up() : healthcheck.down();
+      },
+      timeout: config.get('health.timeout'),
+      deadline: config.get('health.deadline'),
+    };
+  };
+
   const healthCheckConfig = {
     checks: {
-      // TODO: replace this sample check with proper checks for your application
-      sampleCheck: healthcheck.raw(() => healthcheck.up()),
+      'fact-api': healthcheck.web(`${config.get('services.api.url')}/health`, healthOptions),
     },
   };
 
