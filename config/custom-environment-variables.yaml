@@ -1,4 +1,3 @@
 services:
   api:
-    name: 'FACT API'
     url: FACT-API-URL
