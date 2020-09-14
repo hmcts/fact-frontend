@@ -1,0 +1,19 @@
+{
+  "title": "WELSH Find a court or tribunal - GOV.UK",
+  "serviceName": "WELSH Find a court or tribunal",
+  "p1": "WELSH Use this service to find a court or tribunal in England and Wales",
+  "bullets": ["WELSH address", "WELSH contact details", "WELSH opening times", "WELSH building information e.g. disabled access or parking", "WELSH to help me get an update"],
+  "button": "WELSH Start now",
+  "h2": "WELSH Before you search",
+  "p1_text": "WELSH The online service is also available in ",
+  "p1_link": "/?lng=en",
+  "p1_link_text": "English (English)",
+  "p2_text":"WELSH You cannot use this service if you live in Northern Ireland. Contact the ",
+  "p2_link_text": "WELSH Northern Ireland Courts and Tribunals",
+  "p2_text2":" WELSH for help",
+  "p3_text": "WELSH This service is limited in Scotland to:",
+  "bullets2": ["WELSH Immigration appeals", "WELSH Benefit appeals", "WELSH Employment claims appeals"],
+  "p4_text": "WELSH Contact the ",
+  "p4_link_text": "WELSH Scottish Courts and Tribunals",
+  "p4_text2":" WELSH for other services"
+}
