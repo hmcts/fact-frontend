@@ -1,7 +1,4 @@
 services:
-  frontend:
-    name: 'FACT Frontend'
-    url: FACT-FRONTEND-URL
   api:
     name: 'FACT API'
     url: FACT-API-URL
