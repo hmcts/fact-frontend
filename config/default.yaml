@@ -1,5 +1,4 @@
 app:
-  serviceName: 'Find a court or tribunal'
   useCSRFProtection: 'true'
   security:
     referrerPolicy: 'origin'
