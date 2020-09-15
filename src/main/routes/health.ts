@@ -20,7 +20,7 @@ export default function(app: Application): void {
 
   const healthCheckConfig = {
     checks: {
-      'fact-api': healthcheck.web('http://fact-api-aat.service.core-compute-aat.internal/health', healthOptions),
+      'fact-api': healthcheck.web(`${config.get('service.api.url')}/health`, healthOptions),
     },
   };
 
