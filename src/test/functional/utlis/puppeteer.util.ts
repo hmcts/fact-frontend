@@ -12,15 +12,15 @@ export const getPageTitle = async () => {
   return await scope.page.title();
 };
 
-export const clickEl = async (selector: string) => {
+export const click = async (selector: string) => {
   await Promise.all([
-    scope.page.waitForNavigation({waitUntil: ['domcontentloaded', 'networkidle0']}),
+    scope.page.waitForNavigation({ waitUntil: 'domcontentloaded' }),
     scope.page.click(selector),
   ]);
 };
 
 export const fillField = async (selector: string, value: string) => {
-  await scope.page.$eval(selector, (el: any) => el.value = value);
+  await scope.page.type(selector, value);
 };
 
 export const checkElement = async (selector: string) => {
