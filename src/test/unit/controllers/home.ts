@@ -1,4 +1,4 @@
-import { getHomePage } from "../../../main/controllers/home";
+import { getHomePage } from '../../../main/controllers/home';
 
 const i18n = {
   home: '',
