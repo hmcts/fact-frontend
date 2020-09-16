@@ -4,6 +4,7 @@ export const puppeteerConfig = {
   headless: config.TestHeadlessBrowser,
   ignoreHTTPSErrors: true,
   'ignore-certificate-errors': true,
+  defaultTimeout: 60 * 1000,
   args: [
     '--no-sandbox',
     '--proxy-server=proxyout.reform.hmcts.net:8080',
