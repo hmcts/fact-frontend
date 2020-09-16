@@ -1,5 +1,5 @@
 import { Application, Request } from 'express';
-import config from 'config';
+const config = require('config');
 
 const healthcheck = require('@hmcts/nodejs-healthcheck');
 
@@ -19,7 +19,7 @@ export default function(app: Application): void {
 
   const healthCheckConfig = {
     checks: {
-      'fact-api': healthcheck.web(`${config.get('services.api.url')}/health`, healthOptions),
+      'fact-api': healthcheck.web(`${config.services.api.url}/health`, healthOptions),
     },
   };
 
