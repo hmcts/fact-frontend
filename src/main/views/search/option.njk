@@ -8,12 +8,13 @@
 {% endblock %}
 
 {% block beforeContent %}
+  {{ super() }}
+
   {{ govukBackLink({
     text: "Back",
-    href: "#"
+    href: "/"
   }) }}
 {% endblock %}
-
 
 {% block content %}
 <div class="govuk-grid-row">

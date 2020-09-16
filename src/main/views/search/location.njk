@@ -4,16 +4,17 @@
 {% extends "template.njk" %}
 
 {% block pageTitle %}
-{{ title }}
+  {{ title }}
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukBackLink({
-text: "Back",
-href: "#"
-}) }}
-{% endblock %}
+  {{ super() }}
 
+  {{ govukBackLink({
+    text: "Back",
+    href: '/search-option'
+  }) }}
+{% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
