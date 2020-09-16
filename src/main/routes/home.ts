@@ -1,9 +1,8 @@
 import { Application } from 'express';
+import { getHomePage } from '../controllers/home';
 
 export default function(app: Application): void {
 
-  app.get('/', (req: any, res: any) => {
-    res.render('home', req.i18n.getDataByLanguage(req.lng).home);
-  });
+  app.get('/', getHomePage);
 
 }
