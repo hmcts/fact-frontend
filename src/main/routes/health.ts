@@ -10,7 +10,6 @@ export default function(app: Application): void {
         if (err) {
           console.log('Health check failed on fact-api:');
         }
-        console.log(`backend url -> ${config.get('services.api.url')}/health`);
         return res.body.status == 'good' ? healthcheck.up() : healthcheck.down();
       },
       timeout: config.get('health.timeout'),
