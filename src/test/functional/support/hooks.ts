@@ -1,8 +1,10 @@
-import { BeforeAll, AfterAll, After } from 'cucumber';
+import { BeforeAll, AfterAll, After, setDefaultTimeout } from 'cucumber';
 import puppeteer from 'puppeteer';
 import { puppeteerConfig } from '../puppeteer.config';
 
 const scope = require('./scope');
+
+setDefaultTimeout(puppeteerConfig.defaultTimeout);
 
 BeforeAll(async () => {
   scope.browser = await puppeteer.launch(puppeteerConfig);
