@@ -1,5 +1,6 @@
 import { Application, Request } from 'express';
 import config from 'config';
+const os = require('os');
 
 const healthcheck = require('@hmcts/nodejs-healthcheck');
 
@@ -20,6 +21,11 @@ export default function(app: Application): void {
   const healthCheckConfig = {
     checks: {
       'fact-api': healthcheck.web(`${config.get('services.api.url')}/health`, healthOptions),
+    },
+    buildInfo: {
+      name: config.get('service.frontend.name'),
+      host: os.hostname(),
+      uptime: process.uptime(),
     },
   };
 
