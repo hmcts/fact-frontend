@@ -23,7 +23,7 @@ export default function(app: Application): void {
       'fact-api': healthcheck.web(`${config.get('services.api.url')}/health`, healthOptions),
     },
     buildInfo: {
-      name: config.get('service.frontend.name'),
+      name: config.get('services.frontend.name'),
       host: os.hostname(),
       uptime: process.uptime(),
     },
