@@ -3,7 +3,7 @@ import { glob } from 'glob';
 const { Express, Logger } = require('@hmcts/nodejs-logging');
 
 import * as bodyParser from 'body-parser';
-import config = require('config');
+import config from 'config';
 import cookieParser from 'cookie-parser';
 import express from 'express';
 import { Helmet } from './modules/helmet';
@@ -27,7 +27,7 @@ const logger = Logger.getLogger('app');
 
 new Nunjucks(developmentMode).enableFor(app);
 // secure the application by adding various HTTP headers to its responses
-new Helmet(config.get('security')).enableFor(app);
+new Helmet(config.get('app.security')).enableFor(app);
 
 new I18next().enableFor(app);
 
