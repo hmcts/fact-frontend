@@ -32,3 +32,25 @@ export const checkElement = async (selector: string) => {
     return false;
   }
 };
+
+export const checkElementIsAnchor = async (selector: string) => {
+  try {
+    await scope.page.waitForSelector(selector);
+    const el = scope.page.$(selector);
+    return el.tagName === 'a';
+  } catch (error) {
+    console.log("The element didn't appear.");
+    return false;
+  }
+};
+
+export const checkElementLength = async (selector: string) => {
+  try {
+    await scope.page.waitForSelector(selector);
+    const el = scope.page.$(selector);
+    return el.length;
+  } catch (error) {
+    console.log("The element didn't appear.");
+    return false;
+  }
+};
