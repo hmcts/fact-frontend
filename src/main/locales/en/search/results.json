@@ -1,0 +1,17 @@
+{
+  "title": "Search for the court or tribunal - GOV.UK",
+  "question": "What is the name or address of the court or tribunal?",
+  "hint": "If you have a letter, email or text from HM Courts and Tribunal Services (HMCTS), it will tell you the name or address of the court or tribunal.",
+  "text": "Enter a court name, address, town or city",
+  "button": "Continue",
+  "noResults": {
+    "p1": "There are no matching results.",
+    "p2": "Improve your search results by:",
+    "list": {
+      "li1": "double-checking your spelling",
+      "li2": "using fewer keywords",
+      "li3": "searching for something less specific"
+    }
+  },
+  "foundResults": "We found {total} courts or tribunals matching your search for '{search}'"
+}

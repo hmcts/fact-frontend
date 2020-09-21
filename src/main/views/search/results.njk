@@ -1,0 +1,43 @@
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "macros/search-field.njk" import searchField %}
+
+{% extends "template.njk" %}
+
+{% block pageTitle %}
+  {{ data.title }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: '/location-search'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {{ searchField(question, hint, text, button) }}
+    {% if results.length > 0 %}
+      <p class="govuk-body">{{ foundResults | safe }}</p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      {% for item in results %}
+        <h2 class="govuk-heading-m">
+          <a class="govuk-link" href="{{ item.title }}">{{ item.title }}</a>
+        </h2>
+      {% endfor %}
+    {% else %}
+      <p class="govuk-body-m govuk-!-font-weight-bold">{{ noResults.p1 }}</p>
+      <p class="govuk-body">{{ noResults.p2 }}</p>
+      <ul class="govuk-list govuk-list--bullet">
+        {% for item, text in noResults.list %}
+          <li>{{ text | safe }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
