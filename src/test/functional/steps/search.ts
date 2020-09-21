@@ -94,7 +94,7 @@ Given('I can re-enter search content', async () => {
   expect(elementExist).equal(true);
 });
 
-Given('I can enter {string}', async (search: string) => {
+Given('I can enter empty search', async (search: string) => {
   const elementExist = await I.checkElement('#search');
   expect(elementExist).equal(true);
   await I.fillField('#search', search);
