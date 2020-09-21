@@ -7,7 +7,7 @@ export const getSearchOption = (req: FactRequest, res: Response): void => {
 };
 
 export const postSearchOption = (req: Request, res: Response): void => {
-  const { knowLocation } = req.body;
+  const knowLocation = req.body.knowLocation as string;
   if (knowLocation === 'yes') {
     return res.redirect('/location-search');
   }
@@ -23,17 +23,12 @@ export const getLocationSearch = (req: FactRequest, res: Response): void => {
   res.render('search/location', data);
 };
 
-export const postLocationSearch = (req: Request, res: Response): void => {
-  const { search } = req.body;
-  console.log(search);
-  return res.redirect('/search-for-location');
-};
-
 export const getSearchResults = (req: FactRequest, res: Response): void => {
+  const query: string = req.query.search as string;
   const data: SearchResultsData = {
     ...req.i18n.getDataByLanguage(req.lng).search.results,
     path: '/search-for-location',
-    search: 'london',
+    search: query,
     results: [],
   };
   if (data.results.length > 0) {
