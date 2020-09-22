@@ -1,6 +1,7 @@
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "macros/error-summary.njk" import errorSummary %}
 
 {% extends "template.njk" %}
 
@@ -18,6 +19,10 @@
 {% endblock %}
 
 {% block content %}
+{% if errors %}
+  {{ errorSummary(error.title, error.text, "#search") }}
+{% endif %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">{{ question }}
@@ -34,7 +39,8 @@
         },
         classes: "govuk-input govuk-!-width-three-quarters",
         id: "search",
-        name: "search"
+        name: "search",
+        errorMessage: { text: error.text | safe } if errors
         }) }}
         {{ govukButton({
           text: button,
@@ -50,7 +56,7 @@
           <a class="govuk-link" href="{{ item.name }}">{{ item.name }}</a>
         </h2>
       {% endfor %}
-    {% else %}
+    {% elif (path !== '/location-search') %}
       <p class="govuk-body-m govuk-!-font-weight-bold">{{ noResults.p1 }}</p>
       <p class="govuk-body">{{ noResults.p2 }}</p>
       <ul class="govuk-list govuk-list--bullet">

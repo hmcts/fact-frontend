@@ -6,5 +6,9 @@
     "a1": "I have the name",
     "a2": "I do not have the name"
   },
-  "button": "Continue"
+  "button": "Continue",
+  "error":{
+    "title": "There is a problem",
+    "text": "Field is blank - Select if you have the name or not"
+  }
 }

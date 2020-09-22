@@ -11,6 +11,7 @@ export class FactApi {
       })
       .catch((err: AxiosError) => {
         console.log(err);
+        return [];
       });
   }
 }
