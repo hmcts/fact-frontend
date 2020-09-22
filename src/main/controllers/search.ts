@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
-import { FactRequest } from '../utils/interfaces/express';
-import { PageData, SearchResultsData } from '../utils/interfaces/pageData';
+import { FactRequest } from '../interfaces/express';
+import { PageData, SearchResultsData } from '../interfaces/pageData';
+import { FactApi } from '../utils/fact-api';
 
 export const getSearchOption = (req: FactRequest, res: Response): void => {
   res.render('search/option', req.i18n.getDataByLanguage(req.lng).search.option);
@@ -23,13 +24,14 @@ export const getLocationSearch = (req: FactRequest, res: Response): void => {
   res.render('search/location', data);
 };
 
-export const getSearchResults = (req: FactRequest, res: Response): void => {
+export const getSearchResults = async (req: FactRequest, res: Response): Promise<void> => {
   const query: string = req.query.search as string;
+  const courts = await FactApi.search(query);
   const data: SearchResultsData = {
     ...req.i18n.getDataByLanguage(req.lng).search.results,
     path: '/search-for-location',
     search: query,
-    results: [],
+    results: courts,
   };
   if (data.results.length > 0) {
     data.foundResults = data.foundResults.replace('{total}', data.results.length.toString());

@@ -5,6 +5,6 @@ export interface PageData {
 
 export interface SearchResultsData extends PageData {
   search: string;
-  results: {}[];
+  results: [];
   foundResults?: string;
 }
