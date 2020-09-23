@@ -65,11 +65,15 @@ Feature: Search
       | search_content |
       | Ply            |
 
-  Scenario: Search when no criteria entered
+  Scenario Outline: Search when no criteria entered
     And I have not entered search content
     When I have selected to search for that content
     Then I am presented with a "Field is blank" error display
     And there are no matching results
     And I am presented with a no matching results display
-    And I can enter empty search
+    And I can enter "<search_content>"
     And I can select to search for that content
+
+    Examples:
+      | search_content |
+      | London Road    |

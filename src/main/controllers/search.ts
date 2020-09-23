@@ -38,7 +38,8 @@ export const getSearchResults = async (req: FactRequest, res: Response): Promise
   if (isEmpty(query)) {
     const data: PageData = {
       ...req.i18n.getDataByLanguage(req.lng).search.location,
-      path: '/location-search',
+      path: '/search-for-location',
+      results: [],
       errors: true,
     };
     return res.render('search/location', data);

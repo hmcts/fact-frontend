@@ -9,13 +9,13 @@ const port = 8080;
 app.use(bodyParser.json());
 
 app.get('/courts', (req: Request, res: Response) => {
-  const query: string = req.query.search as string;
+  const query: string = (req.query.search as string).toUpperCase();
   const documents = [...data];
   const filteredDocs = documents.filter(doc => {
-    if (doc['postcode'].toUpperCase() === query.toUpperCase() ||
-        doc['address'].toUpperCase().includes(query.toUpperCase()) ||
-        doc['town_name'].toUpperCase().includes(query.toUpperCase()) ||
-        doc['name'].toUpperCase().includes(query.toUpperCase())) {
+    if (doc['postcode'].toUpperCase().split(' ').indexOf(query) >= 0 ||
+        doc['address'].toUpperCase().split(' ').indexOf(query) >= 0 ||
+        doc['town_name'].toUpperCase().split(' ').indexOf(query) >= 0 ||
+        doc['name'].toUpperCase().split(' ').indexOf(query) >= 0) {
       return true;
     }
   });

@@ -13,10 +13,7 @@ export const getPageTitle = async () => {
 };
 
 export const click = async (selector: string) => {
-  await Promise.all([
-    scope.page.waitForNavigation({ waitUntil: 'domcontentloaded' }),
-    scope.page.click(selector),
-  ]);
+  await scope.page.click(selector);
 };
 
 export const fillField = async (selector: string, value: string) => {
@@ -33,13 +30,31 @@ export const checkElement = async (selector: string) => {
   }
 };
 
-export const checkElementIsAnchor = async (selector: string) => {
+export const getElement = async (selector: string) => {
   try {
     await scope.page.waitForSelector(selector);
-    const el = scope.page.$(selector);
-    return el.tagName === 'a';
+    return await scope.page.$(selector);
+  } catch (error) {
+    console.log('Could not get element.');
+    return null;
+  }
+};
+
+export const getElementText = async (el: any) => {
+  try {
+    return await scope.page.evaluate((element: HTMLElement) => element.innerText, el);
   } catch (error) {
     console.log("The element didn't appear.");
+    return false;
+  }
+};
+
+export const checkElementIsAnchor = async (el: any) => {
+  try {
+    const tagName = await scope.page.evaluate((element: HTMLElement) => element.tagName, el);
+    return tagName === 'A';
+  } catch (error) {
+    console.log("The anchor element didn't appear.");
     return false;
   }
 };
