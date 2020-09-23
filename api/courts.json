@@ -6,7 +6,7 @@
     "lon": "-2.106341544",
     "number": "NULL",
     "address": "AB1!48 Huntly Street",
-    "town_name": "Aberdeen",
+    "townName": "Aberdeen",
     "postcode": "AB10 1SH"
   },
   {
@@ -16,7 +16,7 @@
     "lon": "-4.086091",
     "number": "0",
     "address": "Aberystwyth Justice Centre !Y Lanfa!Trefechan",
-    "town_name": "Aberystwyth",
+    "townName": "Aberystwyth",
     "postcode": "SY23 1AS"
   },
   {
@@ -26,7 +26,7 @@
     "lon": "-0.113546081",
     "number": "NULL",
     "address": "Administrative Court Office!The Royal Courts of Justice!Strand!",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "WC2A 2LL"
   },
   {
@@ -36,7 +36,7 @@
     "lon": "-0.109676441",
     "number": "NULL",
     "address": "Rolls Building!7 Rolls Buildings!Fetter Lane!",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "EC4A 1NL"
   },
   {
@@ -46,7 +46,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "1st Floor!Piccadilly Exchange!Piccadilly Plaza!",
-    "town_name": "Manchester",
+    "townName": "Manchester",
     "postcode": "M1 4AH"
   },
   {
@@ -56,7 +56,7 @@
     "lon": "-0.768949207",
     "number": "1305",
     "address": "The Court House!Civic Centre!Wellington Avenue!",
-    "town_name": "Aldershot",
+    "townName": "Aldershot",
     "postcode": "GU11 1NY"
   },
   {
@@ -66,7 +66,7 @@
     "lon": "-0.602852619",
     "number": "401",
     "address": "King George V Road",
-    "town_name": "Amersham",
+    "townName": "Amersham",
     "postcode": "HP6 5AJ"
   },
   {
@@ -76,7 +76,7 @@
     "lon": "0.870099688",
     "number": "NULL",
     "address": "1st Floor, Ashford House!County Square Shopping Centre",
-    "town_name": "Ashford",
+    "townName": "Ashford",
     "postcode": "TN23 1YB"
   },
   {
@@ -86,7 +86,7 @@
     "lon": "-2.957008546",
     "number": "NULL",
     "address": "HMCTS!Central Accounts Dept!P.O. Box 480!",
-    "town_name": "Weston-Super-Mare",
+    "townName": "Weston-Super-Mare",
     "postcode": "BS23 9BE"
   },
   {
@@ -96,7 +96,7 @@
     "lon": "NULL",
     "number": "401",
     "address": "Walton Street",
-    "town_name": "Aylesbury",
+    "townName": "Aylesbury",
     "postcode": "HP21 7FT"
   },
   {
@@ -106,7 +106,7 @@
     "lon": "-4.624924954",
     "number": "NULL",
     "address": "Russell House!King Street",
-    "town_name": "Ayr",
+    "townName": "Ayr",
     "postcode": "KA8 0BD"
   },
   {
@@ -116,7 +116,7 @@
     "lon": "-0.113546081",
     "number": "NULL",
     "address": "Thomas More Building!Royal Courts of Justice!Strand!",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "WC2A 2LL"
   },
   {
@@ -126,7 +126,7 @@
     "lon": "-0.110316308",
     "number": "NULL",
     "address": " Rolls Building! 7 Rolls Buildings! Fetter Lane!",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "EC4A 1NL"
   },
   {
@@ -136,7 +136,7 @@
     "lon": "0.08141615",
     "number": "NULL",
     "address": "Cranbrook Road",
-    "town_name": "Ilford",
+    "townName": "Ilford",
     "postcode": "IG6 1HW"
   },
   {
@@ -146,7 +146,7 @@
     "lon": "-0.195491447",
     "number": "NULL",
     "address": "St Marys Court!Regents Park Road!Finchley Central",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "N3 1BQ"
   },
   {
@@ -156,7 +156,7 @@
     "lon": "-1.484375288",
     "number": "NULL",
     "address": "The Court House!Westgate",
-    "town_name": "Barnsley",
+    "townName": "Barnsley",
     "postcode": "S70 2DW"
   },
   {
@@ -166,7 +166,7 @@
     "lon": "-4.06467121",
     "number": "NULL",
     "address": "Barnstaple Law Courts !North Walk",
-    "town_name": "Barnstaple",
+    "townName": "Barnstaple",
     "postcode": "EX31 1DU"
   },
   {
@@ -176,7 +176,7 @@
     "lon": "-3.227592349",
     "number": "NULL",
     "address": "Barrow Law Courts!Abbey Road",
-    "town_name": "Barrow in Furness",
+    "townName": "Barrow in Furness",
     "postcode": "LA14 5QX"
   },
   {
@@ -186,7 +186,7 @@
     "lon": "-3.227592349",
     "number": "NULL",
     "address": "Abbey Road",
-    "town_name": "Barrow-in-Furness",
+    "townName": "Barrow-in-Furness",
     "postcode": "LA14 5QX"
   },
   {
@@ -196,7 +196,7 @@
     "lon": "0.454792773",
     "number": "461",
     "address": "The Gore",
-    "town_name": "Basildon",
+    "townName": "Basildon",
     "postcode": "SS14 2EW"
   },
   {
@@ -206,7 +206,7 @@
     "lon": "0.458227715",
     "number": "NULL",
     "address": "The Court House!Great Oaks",
-    "town_name": "Basildon",
+    "townName": "Basildon",
     "postcode": "SS14 1EH"
   },
   {
@@ -216,7 +216,7 @@
     "lon": "-1.083209132",
     "number": "NULL",
     "address": "The Court House!London Road",
-    "town_name": "Basingstoke",
+    "townName": "Basingstoke",
     "postcode": "RG21 4AB"
   },
   {
@@ -226,7 +226,7 @@
     "lon": "-1.083178505",
     "number": "NULL",
     "address": "The Court House!London Road",
-    "town_name": "Basingstoke",
+    "townName": "Basingstoke",
     "postcode": "RG21 4AB"
   },
   {
@@ -236,7 +236,7 @@
     "lon": "-2.352317918",
     "number": "NULL",
     "address": "The Law Courts!North Parade Road",
-    "town_name": "Bath",
+    "townName": "Bath",
     "postcode": "BA1 5AF"
   },
   {
@@ -246,7 +246,7 @@
     "lon": "-0.466958364",
     "number": "NULL",
     "address": "Shire Hall!3 St Paul's Square",
-    "town_name": "Bedford",
+    "townName": "Bedford",
     "postcode": "MK40 1SQ"
   },
   {
@@ -256,7 +256,7 @@
     "lon": "0.01122",
     "number": "NULL",
     "address": "1 London Road!Bromley",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "BR1 1RA"
   },
   {
@@ -266,7 +266,7 @@
     "lon": "-2.001918783",
     "number": "NULL",
     "address": "40 Church Street",
-    "town_name": "Berwick upon Tweed",
+    "townName": "Berwick upon Tweed",
     "postcode": "TD15 1DX"
   },
   {
@@ -276,7 +276,7 @@
     "lon": "-0.428668997",
     "number": "NULL",
     "address": "The Court House!Champney Road",
-    "town_name": "Beverley",
+    "townName": "Beverley",
     "postcode": "HU17 9EJ"
   },
   {
@@ -286,7 +286,7 @@
     "lon": "0.147899622",
     "number": "NULL",
     "address": "Norwich Place",
-    "town_name": "Bexleyheath",
+    "townName": "Bexleyheath",
     "postcode": "DA6 7ND"
   },
   {
@@ -296,7 +296,7 @@
     "lon": "0.132552033",
     "number": "NULL",
     "address": "40-46 Avenue Road",
-    "town_name": "Bexleyheath",
+    "townName": "Bexleyheath",
     "postcode": "DA7 4EG"
   },
   {
@@ -306,7 +306,7 @@
     "lon": "-3.016696178",
     "number": "NULL",
     "address": "76 Hamilton Street",
-    "town_name": "Birkenhead",
+    "townName": "Birkenhead",
     "postcode": "CH41 5EN"
   },
   {
@@ -316,7 +316,7 @@
     "lon": "-1.895661512",
     "number": "NULL",
     "address": "Priory Courts!33 Bull Street",
-    "town_name": "Birmingham",
+    "townName": "Birmingham",
     "postcode": "B4 6DS"
   },
   {
@@ -326,7 +326,7 @@
     "lon": "-1.8925",
     "number": "404",
     "address": "Queen Elizabeth II Law Courts!1 Newton Street",
-    "town_name": "Birmingham",
+    "townName": "Birmingham",
     "postcode": "B4 7NA"
   },
   {
@@ -336,7 +336,7 @@
     "lon": "-1.895661512",
     "number": "NULL",
     "address": "Priory Courts!33 Bull Street",
-    "town_name": "Birmingham",
+    "townName": "Birmingham",
     "postcode": "B4 6DS"
   },
   {
@@ -346,7 +346,7 @@
     "lon": "-1.893860338",
     "number": "NULL",
     "address": "Victoria Law Courts!Corporation Street",
-    "town_name": "Birmingham",
+    "townName": "Birmingham",
     "postcode": "B4 6QA"
   },
   {
@@ -356,7 +356,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "Administrative Support Centre  !PO Box 14620",
-    "town_name": "Birmingham",
+    "townName": "Birmingham",
     "postcode": "B16 6FR"
   },
   {
@@ -366,7 +366,7 @@
     "lon": "-1.893860338",
     "number": "NULL",
     "address": "Victoria Law Courts!Corporation Street!West Midlands!",
-    "town_name": "Birmingham",
+    "townName": "Birmingham",
     "postcode": "B4 6QA"
   },
   {
@@ -376,7 +376,7 @@
     "lon": "-2.482481613",
     "number": "NULL",
     "address": "64 Victoria Street",
-    "town_name": "Blackburn",
+    "townName": "Blackburn",
     "postcode": "BB1 6DJ"
   },
   {
@@ -386,7 +386,7 @@
     "lon": "-2.486135488",
     "number": "NULL",
     "address": "The Court House!Northgate",
-    "town_name": "Blackburn",
+    "townName": "Blackburn",
     "postcode": "BB2 1AA"
   },
   {
@@ -396,7 +396,7 @@
     "lon": "-3.053836329",
     "number": "NULL",
     "address": "The Law Courts!Chapel Street",
-    "town_name": "Blackpool",
+    "townName": "Blackpool",
     "postcode": "FY1 5RJ"
   },
   {
@@ -406,7 +406,7 @@
     "lon": "-3.053836873",
     "number": "NULL",
     "address": "Civic Centre!Chapel Street",
-    "town_name": "Blackpool",
+    "townName": "Blackpool",
     "postcode": "FY1 5DQ"
   },
   {
@@ -416,7 +416,7 @@
     "lon": "-3.192904445",
     "number": "NULL",
     "address": "8 Hall Street",
-    "town_name": "Blackwood",
+    "townName": "Blackwood",
     "postcode": "NP12 1NY"
   },
   {
@@ -426,7 +426,7 @@
     "lon": "-4.70886473",
     "number": "NULL",
     "address": "The Law Courts!Launceston Road",
-    "town_name": "Bodmin",
+    "townName": "Bodmin",
     "postcode": "PL31 2AL"
   },
   {
@@ -436,7 +436,7 @@
     "lon": "-4.70886473",
     "number": "NULL",
     "address": "Launceston Road",
-    "town_name": "Bodmin",
+    "townName": "Bodmin",
     "postcode": "PL31 2AL"
   },
   {
@@ -446,7 +446,7 @@
     "lon": "-2.433688848",
     "number": "470",
     "address": "The Law Courts!Blackhorse Street",
-    "town_name": "Bolton",
+    "townName": "Bolton",
     "postcode": "BL1 1SU"
   },
   {
@@ -456,7 +456,7 @@
     "lon": "-2.433688848",
     "number": "NULL",
     "address": "The Law Courts!Blackhorse Street",
-    "town_name": "Bolton",
+    "townName": "Bolton",
     "postcode": "BL1 1SU"
   },
   {
@@ -466,7 +466,7 @@
     "lon": "-2.427529668",
     "number": "NULL",
     "address": "Ground Floor!Bayley House!St Georges Square",
-    "town_name": "Bolton",
+    "townName": "Bolton",
     "postcode": "BL1 2HB"
   },
   {
@@ -476,7 +476,7 @@
     "lon": "-0.024938423",
     "number": "NULL",
     "address": "55 Norfolk Street",
-    "town_name": "Boston",
+    "townName": "Boston",
     "postcode": "PE21 6PE"
   },
   {
@@ -486,7 +486,7 @@
     "lon": "-0.024938423",
     "number": "NULL",
     "address": "Boston Court House!55 Norfolk Street",
-    "town_name": "Boston",
+    "townName": "Boston",
     "postcode": "PE21 6PE"
   },
   {
@@ -496,7 +496,7 @@
     "lon": "-1.816265581",
     "number": "NULL",
     "address": "Courts of Justice!Deansleigh Road",
-    "town_name": "Bournemouth",
+    "townName": "Bournemouth",
     "postcode": "BH7 7DS"
   },
   {
@@ -506,7 +506,7 @@
     "lon": "-1.816265581",
     "number": "406",
     "address": "Courts of Justice!Deansleigh Road",
-    "town_name": "Bournemouth",
+    "townName": "Bournemouth",
     "postcode": "BH7 7DS"
   },
   {
@@ -516,7 +516,7 @@
     "lon": "-1.754175757",
     "number": "NULL",
     "address": "The Tyrls",
-    "town_name": "Bradford",
+    "townName": "Bradford",
     "postcode": "BD1 1LA"
   },
   {
@@ -526,7 +526,7 @@
     "lon": "-1.749359096",
     "number": "402",
     "address": "Exchange Square!Drake Street",
-    "town_name": "Bradford",
+    "townName": "Bradford",
     "postcode": "BD1 1JA"
   },
   {
@@ -536,7 +536,7 @@
     "lon": "-1.711305944",
     "number": "NULL",
     "address": "Phoenix House!Rushton Avenue!Thornbury!",
-    "town_name": "Bradford",
+    "townName": "Bradford",
     "postcode": "BD3 7BH"
   },
   {
@@ -546,7 +546,7 @@
     "lon": "-0.304356146",
     "number": "NULL",
     "address": "Alexandra Road!High Street",
-    "town_name": "Brentford",
+    "townName": "Brentford",
     "postcode": "TW8 0JJ"
   },
   {
@@ -556,7 +556,7 @@
     "lon": "-0.20018786",
     "number": "NULL",
     "address": "The Court House!Quay Road",
-    "town_name": "Bridlington",
+    "townName": "Bridlington",
     "postcode": "YO16 4EJ"
   },
   {
@@ -566,7 +566,7 @@
     "lon": "-0.135228266",
     "number": "NULL",
     "address": "William Street",
-    "town_name": "Brighton",
+    "townName": "Brighton",
     "postcode": "BN2 0RF"
   },
   {
@@ -576,7 +576,7 @@
     "lon": "-0.135227739",
     "number": "NULL",
     "address": "William Street",
-    "town_name": "Brighton",
+    "townName": "Brighton",
     "postcode": "BN2 0RF"
   },
   {
@@ -586,7 +586,7 @@
     "lon": "-0.134297005",
     "number": "NULL",
     "address": "The Law Courts!Edward Street",
-    "town_name": "Brighton",
+    "townName": "Brighton",
     "postcode": "BN2 0LG"
   },
   {
@@ -596,7 +596,7 @@
     "lon": "-0.149259",
     "number": "NULL",
     "address": "City Gate House!185 Dyke Road",
-    "town_name": "Brighton",
+    "townName": "Brighton",
     "postcode": "BN3 1TL"
   },
   {
@@ -606,7 +606,7 @@
     "lon": "-0.135442538",
     "number": "NULL",
     "address": "1 Edward Street",
-    "town_name": "Brighton",
+    "townName": "Brighton",
     "postcode": "BN2 0JD"
   },
   {
@@ -616,7 +616,7 @@
     "lon": "-2.590509819",
     "number": "NULL",
     "address": "2 Redcliff Street",
-    "town_name": "Bristol",
+    "townName": "Bristol",
     "postcode": "BS1 6GR"
   },
   {
@@ -626,7 +626,7 @@
     "lon": "-2.595001948",
     "number": "408",
     "address": "The Law Courts!Small Street",
-    "town_name": "Bristol",
+    "townName": "Bristol",
     "postcode": "BS1 1DA"
   },
   {
@@ -636,7 +636,7 @@
     "lon": "1",
     "number": "NULL",
     "address": "The Probate Registry of Wales!3rd Floor!Cardiff Magistrates' Court!Fitzalan Place",
-    "town_name": "Cardiff",
+    "townName": "Cardiff",
     "postcode": "CF24 0RZ"
   },
   {
@@ -646,7 +646,7 @@
     "lon": "-2.593019014",
     "number": "NULL",
     "address": "Marlborough Street",
-    "town_name": "Bristol",
+    "townName": "Bristol",
     "postcode": "BS1 3NU"
   },
   {
@@ -656,7 +656,7 @@
     "lon": "0.013418685",
     "number": "NULL",
     "address": "Court House!College Road",
-    "town_name": "Bromley",
+    "townName": "Bromley",
     "postcode": "BR1 3PX"
   },
   {
@@ -666,7 +666,7 @@
     "lon": "0.010969842",
     "number": "NULL",
     "address": "The Court House!1 London Road",
-    "town_name": "Bromley",
+    "townName": "Bromley",
     "postcode": "BR1 1RA"
   },
   {
@@ -676,7 +676,7 @@
     "lon": "-2.247153293",
     "number": "409",
     "address": "The Law Courts!Hammerton Street",
-    "town_name": "Burnley",
+    "townName": "Burnley",
     "postcode": "BB11 1XD"
   },
   {
@@ -686,7 +686,7 @@
     "lon": "-2.242125636",
     "number": "NULL",
     "address": "The Court House!Parker Lane",
-    "town_name": "Burnley",
+    "townName": "Burnley",
     "postcode": "BB11 2BS"
   },
   {
@@ -696,7 +696,7 @@
     "lon": "0.711012457",
     "number": "NULL",
     "address": "Triton House!St Andrew's Street North",
-    "town_name": "Bury St. Edmunds",
+    "townName": "Bury St. Edmunds",
     "postcode": "IP33 1TR"
   },
   {
@@ -706,7 +706,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "2nd Floor!Triton House!St Andrews Street North",
-    "town_name": "Bury St Edmunds",
+    "townName": "Bury St Edmunds",
     "postcode": "IP33 1TR"
   },
   {
@@ -716,7 +716,7 @@
     "lon": "-4.264066258",
     "number": "0",
     "address": "Llanberis Road",
-    "town_name": "Caernarfon",
+    "townName": "Caernarfon",
     "postcode": "LL55 2DF"
   },
   {
@@ -726,7 +726,7 @@
     "lon": "0.131994857",
     "number": "NULL",
     "address": "197 East Road",
-    "town_name": "Cambridge",
+    "townName": "Cambridge",
     "postcode": "CB1 1BA"
   },
   {
@@ -736,7 +736,7 @@
     "lon": "0.136809434",
     "number": "410",
     "address": "The Court House!83 East Road",
-    "town_name": "Cambridge",
+    "townName": "Cambridge",
     "postcode": "CB1 1BT"
   },
   {
@@ -746,7 +746,7 @@
     "lon": "0.122453108",
     "number": "NULL",
     "address": "12 St Andrews Street",
-    "town_name": "Cambridge",
+    "townName": "Cambridge",
     "postcode": "CB2 3AX"
   },
   {
@@ -756,7 +756,7 @@
     "lon": "-2.035489729",
     "number": "NULL",
     "address": "The Court House!Wolverhampton Road",
-    "town_name": "Cannock",
+    "townName": "Cannock",
     "postcode": "WS11 1AT"
   },
   {
@@ -766,7 +766,7 @@
     "lon": "1.094980073",
     "number": "479",
     "address": "Canterbury Combined Court and Family Court Hearing Centre!The Law Courts!Chaucer Road!",
-    "town_name": "Canterbury",
+    "townName": "Canterbury",
     "postcode": "CT1 1ZA"
   },
   {
@@ -776,7 +776,7 @@
     "lon": "1.085773306",
     "number": "NULL",
     "address": "Broad Street",
-    "town_name": "Canterbury",
+    "townName": "Canterbury",
     "postcode": "CT1 2UE"
   },
   {
@@ -786,7 +786,7 @@
     "lon": "-3.166483122",
     "number": "NULL",
     "address": "Fitzalan Place",
-    "town_name": "Cardiff",
+    "townName": "Cardiff",
     "postcode": "CF24 0RZ"
   },
   {
@@ -796,7 +796,7 @@
     "lon": "-3.179875164",
     "number": "NULL",
     "address": "2 Park Street",
-    "town_name": "Cardiff",
+    "townName": "Cardiff",
     "postcode": "CF10 1ET"
   },
   {
@@ -806,7 +806,7 @@
     "lon": "-3.180270534",
     "number": "411",
     "address": "The Law Courts!Cathays Park",
-    "town_name": "Cardiff",
+    "townName": "Cardiff",
     "postcode": "CF10 3PG"
   },
   {
@@ -816,7 +816,7 @@
     "lon": "-3.166483122",
     "number": "NULL",
     "address": "3rd Floor, Cardiff Magistrates Court!Fitzalan Place",
-    "town_name": "Cardiff",
+    "townName": "Cardiff",
     "postcode": "CF24 0RZ"
   },
   {
@@ -826,7 +826,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "Eastgate House!35-43 Newport Road",
-    "town_name": "Cardiff",
+    "townName": "Cardiff",
     "postcode": "CF24 0AB"
   },
   {
@@ -836,7 +836,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "1st Floor!Darlington Magistrates' Court!Parkgate!",
-    "town_name": "Darlington",
+    "townName": "Darlington",
     "postcode": "DL1 1RU"
   },
   {
@@ -846,7 +846,7 @@
     "lon": "-2.931525242",
     "number": "412",
     "address": "Courts of Justice!Earl Street",
-    "town_name": "Carlisle",
+    "townName": "Carlisle",
     "postcode": "CA1 1DJ"
   },
   {
@@ -856,7 +856,7 @@
     "lon": "-2.935533451",
     "number": "NULL",
     "address": "The Court House!Rickergate",
-    "town_name": "Carlisle",
+    "townName": "Carlisle",
     "postcode": "CA3 8QH"
   },
   {
@@ -866,7 +866,7 @@
     "lon": "-4.317908506",
     "number": "NULL",
     "address": "The Hearing Centre!Hill House!Picton Terrace",
-    "town_name": "Carmarthen",
+    "townName": "Carmarthen",
     "postcode": "SA31 3BT"
   },
   {
@@ -876,7 +876,7 @@
     "lon": "-0.101997219",
     "number": "413",
     "address": "Old Bailey",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "EC4M 7EH"
   },
   {
@@ -886,7 +886,7 @@
     "lon": "-0.114515648",
     "number": "NULL",
     "address": "First Avenue House!42-49 High Holborn",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "WC1V 6NP"
   },
   {
@@ -896,7 +896,7 @@
     "lon": "-0.113741703",
     "number": "NULL",
     "address": "County Court at Central London, Royal Courts of Justice!Thomas More Building!Royal Courts of Justice!Strand",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "WC2A 2LL"
   },
   {
@@ -906,7 +906,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "Room 1.05!1st Floor, Thomas More Building!Royal Courts of Justice!Strand",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "WC2A 2LL"
   },
   {
@@ -916,7 +916,7 @@
     "lon": "-0.118745426",
     "number": "NULL",
     "address": "Victory House!30-34 Kingsway",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "WC2B 6EX"
   },
   {
@@ -926,7 +926,7 @@
     "lon": "-2.702384715",
     "number": "NULL",
     "address": "HMCTS Probate!PO Box 12625",
-    "town_name": "Harlow",
+    "townName": "Harlow",
     "postcode": "CM20 9QE"
   },
   {
@@ -936,7 +936,7 @@
     "lon": "-0.899965458",
     "number": "NULL",
     "address": "5th Floor!St Katharine's House!21-27 St Katharine's Street",
-    "town_name": "Northampton",
+    "townName": "Northampton",
     "postcode": "NN1 2LH"
   },
   {
@@ -946,7 +946,7 @@
     "lon": "-0.110316308",
     "number": "NULL",
     "address": "The Rolls Building!7 Rolls Buildings!Fetter Lane",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "EC4A 1NL"
   },
   {
@@ -956,7 +956,7 @@
     "lon": "0.471206127",
     "number": "NULL",
     "address": "Chelmsford County and Family Court Hearing Centre!Priory Place!New London Road!",
-    "town_name": "Chelmsford",
+    "townName": "Chelmsford",
     "postcode": "CM2 0PP"
   },
   {
@@ -966,7 +966,7 @@
     "lon": "0.500601895",
     "number": "414",
     "address": "New Street",
-    "town_name": "Chelmsford",
+    "townName": "Chelmsford",
     "postcode": "CM1 1EL"
   },
   {
@@ -976,7 +976,7 @@
     "lon": "0.473167176",
     "number": "NULL",
     "address": "10 New Street",
-    "town_name": "Chelmsford",
+    "townName": "Chelmsford",
     "postcode": "CM1 1NT"
   },
   {
@@ -986,7 +986,7 @@
     "lon": "-2.083171656",
     "number": "NULL",
     "address": "Cheltenham Courthouse!St Georges Road",
-    "town_name": "Cheltenham",
+    "townName": "Cheltenham",
     "postcode": "GL50 3PF"
   },
   {
@@ -996,7 +996,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "Cheshire & Merseyside Collections  ! PO Box 326",
-    "town_name": "Runcorn",
+    "townName": "Runcorn",
     "postcode": "WA7 9DU"
   },
   {
@@ -1006,7 +1006,7 @@
     "lon": "-2.886985425",
     "number": "NULL",
     "address": "Trident House!Little St John Street",
-    "town_name": "Chester",
+    "townName": "Chester",
     "postcode": "CH1 1SN"
   },
   {
@@ -1016,7 +1016,7 @@
     "lon": "-2.891793466",
     "number": "415",
     "address": "The Castle",
-    "town_name": "Chester",
+    "townName": "Chester",
     "postcode": "CH1 2AN"
   },
   {
@@ -1026,7 +1026,7 @@
     "lon": "-2.893505941",
     "number": "NULL",
     "address": "Grosvenor Street",
-    "town_name": "Chester",
+    "townName": "Chester",
     "postcode": "CH1 2XA"
   },
   {
@@ -1036,7 +1036,7 @@
     "lon": "-1.423743704",
     "number": "NULL",
     "address": "Chesterfield Justice Centre!Tapton Lane",
-    "town_name": "Chesterfield",
+    "townName": "Chesterfield",
     "postcode": "S41 7TW"
   },
   {
@@ -1046,7 +1046,7 @@
     "lon": "-0.090062019",
     "number": "NULL",
     "address": "1 Queen Victoria Street",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "EC4N 4XY"
   },
   {
@@ -1056,7 +1056,7 @@
     "lon": "-0.097579785",
     "number": "NULL",
     "address": "The Gee Street Courthouse!29-41 Gee Street",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "EC1V 3RE"
   },
   {
@@ -1066,7 +1066,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "PO Box 826",
-    "town_name": "North Shields",
+    "townName": "North Shields",
     "postcode": "NE29 1DZ"
   },
   {
@@ -1076,7 +1076,7 @@
     "lon": "0.904373623",
     "number": "NULL",
     "address": "St Botolphs Circus!Magdelen Street",
-    "town_name": "Colchester",
+    "townName": "Colchester",
     "postcode": "CO2 7EF"
   },
   {
@@ -1086,7 +1086,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "St. Katharine's House!21-27 St. Katharine's Street",
-    "town_name": "Northampton",
+    "townName": "Northampton",
     "postcode": "NN1 2LH"
   },
   {
@@ -1096,7 +1096,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "County Court Money Claims Centre!PO Box 527",
-    "town_name": "Salford",
+    "townName": "Salford",
     "postcode": "M5 0BY"
   },
   {
@@ -1106,7 +1106,7 @@
     "lon": "-0.113546081",
     "number": "NULL",
     "address": "Room E307!Royal Courts of Justice!Strand",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "WC2A 2LL"
   },
   {
@@ -1116,7 +1116,7 @@
     "lon": "-0.113741162",
     "number": "NULL",
     "address": "Criminal Appeal Office!The Royal Courts of Justice!Strand",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "WC2A 2LL"
   },
   {
@@ -1126,7 +1126,7 @@
     "lon": "-0.114516",
     "number": "5",
     "address": "PO Box 70185!First Avenue House!42-49 High Holborn",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "WC1A 9JA"
   },
   {
@@ -1136,7 +1136,7 @@
     "lon": "-1.506439638",
     "number": "417",
     "address": "140 Much Park Street",
-    "town_name": "Coventry",
+    "townName": "Coventry",
     "postcode": "CV1 2SN"
   },
   {
@@ -1146,7 +1146,7 @@
     "lon": "-1.507627538",
     "number": "NULL",
     "address": "Little Park Street",
-    "town_name": "Coventry",
+    "townName": "Coventry",
     "postcode": "CV1 2SQ"
   },
   {
@@ -1156,7 +1156,7 @@
     "lon": "-0.181070089",
     "number": "NULL",
     "address": "The Law Courts!Woodfield Road",
-    "town_name": "Crawley",
+    "townName": "Crawley",
     "postcode": "RH10 8BF"
   },
   {
@@ -1166,7 +1166,7 @@
     "lon": "-2.438754668",
     "number": "NULL",
     "address": "The Law Courts!Civic Centre",
-    "town_name": "Crewe",
+    "townName": "Crewe",
     "postcode": "CW1 2DT"
   },
   {
@@ -1176,7 +1176,7 @@
     "lon": "-2.438754668",
     "number": "NULL",
     "address": "The Law Courts!Civic Centre",
-    "town_name": "Crewe",
+    "townName": "Crewe",
     "postcode": "CW1 2DP"
   },
   {
@@ -1186,7 +1186,7 @@
     "lon": "-0.092149174",
     "number": "NULL",
     "address": "The Law Courts!Altyre Road",
-    "town_name": "Croydon",
+    "townName": "Croydon",
     "postcode": "CR9 5AB"
   },
   {
@@ -1196,7 +1196,7 @@
     "lon": "-0.092148629",
     "number": "418",
     "address": "The Law Courts!Altyre Road",
-    "town_name": "Croydon",
+    "townName": "Croydon",
     "postcode": "CR9 5AB"
   },
   {
@@ -1206,7 +1206,7 @@
     "lon": "-0.104574195",
     "number": "NULL",
     "address": "Montague Court!101 London Road",
-    "town_name": "Croydon",
+    "townName": "Croydon",
     "postcode": "CR0 2RF"
   },
   {
@@ -1216,7 +1216,7 @@
     "lon": "-0.093984285",
     "number": "NULL",
     "address": "Barclay Road",
-    "town_name": "Croydon",
+    "townName": "Croydon",
     "postcode": "CR9 3NG"
   },
   {
@@ -1226,7 +1226,7 @@
     "lon": "-3.021274259",
     "number": "NULL",
     "address": "Tudor Road",
-    "town_name": "Cwmbran",
+    "townName": "Cwmbran",
     "postcode": "NP44 3YA"
   },
   {
@@ -1236,7 +1236,7 @@
     "lon": "-1.559759232",
     "number": "NULL",
     "address": "4 Coniscliffe Road",
-    "town_name": "Darlington",
+    "townName": "Darlington",
     "postcode": "DL3 7RG"
   },
   {
@@ -1246,7 +1246,7 @@
     "lon": "-1.549849208",
     "number": "NULL",
     "address": "Parkgate",
-    "town_name": "Darlington",
+    "townName": "Darlington",
     "postcode": "DL1 1RU"
   },
   {
@@ -1256,7 +1256,7 @@
     "lon": "0.220272137",
     "number": "NULL",
     "address": "Home Gardens",
-    "town_name": "Dartford",
+    "townName": "Dartford",
     "postcode": "DA1 1DX"
   },
   {
@@ -1266,7 +1266,7 @@
     "lon": "-1.473068947",
     "number": "419",
     "address": "Morledge",
-    "town_name": "Derby",
+    "townName": "Derby",
     "postcode": "DE1 2XE"
   },
   {
@@ -1276,7 +1276,7 @@
     "lon": "-1.479587807",
     "number": "NULL",
     "address": "The Court House!St Mary's Gate",
-    "town_name": "Derby",
+    "townName": "Derby",
     "postcode": "DE1 3JR"
   },
   {
@@ -1286,7 +1286,7 @@
     "lon": "-1.479587807",
     "number": "NULL",
     "address": "Derby Justice Centre!St Marys Gate!Derbyshire!",
-    "town_name": "Derby",
+    "townName": "Derby",
     "postcode": "DE1 3JR"
   },
   {
@@ -1296,7 +1296,7 @@
     "lon": "-4.139575101",
     "number": "NULL",
     "address": "The Magistrates' Court!St Andrew Street",
-    "town_name": "Plymouth",
+    "townName": "Plymouth",
     "postcode": "PL1 2DP"
   },
   {
@@ -1306,7 +1306,7 @@
     "lon": "-1.12956269",
     "number": "NULL",
     "address": "College Road",
-    "town_name": "Doncaster",
+    "townName": "Doncaster",
     "postcode": "DN1 3HS"
   },
   {
@@ -1316,7 +1316,7 @@
     "lon": "-1.130246544",
     "number": "420",
     "address": "College Road",
-    "town_name": "Doncaster",
+    "townName": "Doncaster",
     "postcode": "DN1 3HS"
   },
   {
@@ -1326,7 +1326,7 @@
     "lon": "-2.088007327",
     "number": "NULL",
     "address": "The Inhedge",
-    "town_name": "Dudley",
+    "townName": "Dudley",
     "postcode": "DY1 1RY"
   },
   {
@@ -1336,7 +1336,7 @@
     "lon": "-2.087874368",
     "number": "NULL",
     "address": "Dudley Court House!The Inhedge",
-    "town_name": "Dudley",
+    "townName": "Dudley",
     "postcode": "DY1 1RY"
   },
   {
@@ -1346,7 +1346,7 @@
     "lon": "-2.976980392",
     "number": "NULL",
     "address": "Ground Floor!Caledonian House!Greenmarket!",
-    "town_name": "Dundee",
+    "townName": "Dundee",
     "postcode": "DD1 4QB"
   },
   {
@@ -1356,7 +1356,7 @@
     "lon": "-1.569431515",
     "number": "NULL",
     "address": "Durham Justice Centre!Green Lane!Old Elvet",
-    "town_name": "Durham",
+    "townName": "Durham",
     "postcode": "DH1 3RG"
   },
   {
@@ -1366,7 +1366,7 @@
     "lon": "-1.567909292",
     "number": "422",
     "address": "The Law Courts!Old Elvet",
-    "town_name": "Durham",
+    "townName": "Durham",
     "postcode": "DH1 3HW"
   },
   {
@@ -1376,7 +1376,7 @@
     "lon": "-0.323141493",
     "number": "NULL",
     "address": "The Court House!Green Man Lane",
-    "town_name": "Ealing",
+    "townName": "Ealing",
     "postcode": "W13 0SD"
   },
   {
@@ -1386,7 +1386,7 @@
     "lon": "-0.598103716",
     "number": "NULL",
     "address": "Law Courts!Chalvey Park!Off Windsor Road!",
-    "town_name": "Slough",
+    "townName": "Slough",
     "postcode": "SL1 2HJ"
   },
   {
@@ -1396,7 +1396,7 @@
     "lon": "-0.026134465",
     "number": "NULL",
     "address": "East London Family Court!6th and 7th Floor, 11 Westferry Circus!(Entrance in Columbus Courtyard)",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "E14 4HD"
   },
   {
@@ -1406,7 +1406,7 @@
     "lon": "-0.004853988",
     "number": "NULL",
     "address": "2nd Floor!Import Building!2 Clove Crescent",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "E14 2BE"
   },
   {
@@ -1416,7 +1416,7 @@
     "lon": "-3.214564809",
     "number": "NULL",
     "address": "52 Melville Street",
-    "town_name": "Edinburgh",
+    "townName": "Edinburgh",
     "postcode": "EH3 7HF"
   },
   {
@@ -1426,7 +1426,7 @@
     "lon": "-3.214564809",
     "number": "NULL",
     "address": "54-56 Melville Street",
-    "town_name": "Edinburgh",
+    "townName": "Edinburgh",
     "postcode": "EH3 7HF"
   },
   {
@@ -1436,7 +1436,7 @@
     "lon": "-3.249592727",
     "number": "NULL",
     "address": "Riverside House!2nd Floor!502 Gorgie Road!",
-    "town_name": "Edinburgh",
+    "townName": "Edinburgh",
     "postcode": "EH11 3AF"
   },
   {
@@ -1446,7 +1446,7 @@
     "lon": "-3.205070227",
     "number": "NULL",
     "address": "Upper Tribunal (Administrative Appeals Chamber)!George House !126 George Street",
-    "town_name": "Edinburgh",
+    "townName": "Edinburgh",
     "postcode": "EH2 4HH"
   },
   {
@@ -1456,7 +1456,7 @@
     "lon": "-0.065950605",
     "number": "NULL",
     "address": "Court House!59 Fore Street",
-    "town_name": "Edmonton",
+    "townName": "Edmonton",
     "postcode": "N18 2TN"
   },
   {
@@ -1466,7 +1466,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "Rolls Building !7 Rolls Buildings !Fetter Lane",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "EC4A 1NL"
   },
   {
@@ -1476,7 +1476,7 @@
     "lon": "-0.057274499",
     "number": "NULL",
     "address": "288 Southbury Road",
-    "town_name": "Enfield",
+    "townName": "Enfield",
     "postcode": "EN1 1TR"
   },
   {
@@ -1486,7 +1486,7 @@
     "lon": "-3.525229406",
     "number": "423",
     "address": "Southernhay Gardens",
-    "town_name": "Exeter",
+    "townName": "Exeter",
     "postcode": "EX1 1UH"
   },
   {
@@ -1496,7 +1496,7 @@
     "lon": "-3.517161481",
     "number": "NULL",
     "address": "The Court House!Heavitree Road",
-    "town_name": "Exeter",
+    "townName": "Exeter",
     "postcode": "EX1 2LS"
   },
   {
@@ -1506,7 +1506,7 @@
     "lon": "-0.113741162",
     "number": "NULL",
     "address": "1st Mezzanine, Queen’s Building! The Royal Courts of Justice!Strand",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "WC2A 2LL"
   },
   {
@@ -1516,7 +1516,7 @@
     "lon": "-0.110035474",
     "number": "NULL",
     "address": "Field House!15-25 Breams Buildings",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "EC4A 1DZ"
   },
   {
@@ -1526,7 +1526,7 @@
     "lon": "1.169220294",
     "number": "NULL",
     "address": "The Law Courts!Castle Hill Avenue",
-    "town_name": "Folkestone",
+    "townName": "Folkestone",
     "postcode": "CT20 2DH"
   },
   {
@@ -1536,7 +1536,7 @@
     "lon": "-2.247850312",
     "number": "NULL",
     "address": "Alexandra House!14-22 The Parsonage",
-    "town_name": "Manchester",
+    "townName": "Manchester",
     "postcode": "M3 2JA"
   },
   {
@@ -1546,7 +1546,7 @@
     "lon": "-1.600300544",
     "number": "NULL",
     "address": "Gateshead Law Courts!Warwick Street",
-    "town_name": "Gateshead",
+    "townName": "Gateshead",
     "postcode": "NE8 1DT"
   },
   {
@@ -1556,7 +1556,7 @@
     "lon": "-1.600300544",
     "number": "NULL",
     "address": "Warwick Street",
-    "town_name": "Gateshead",
+    "townName": "Gateshead",
     "postcode": "NE8 1DT"
   },
   {
@@ -1566,7 +1566,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "PO Box 9300",
-    "town_name": "Leicester",
+    "townName": "Leicester",
     "postcode": "LE1 8DJ"
   },
   {
@@ -1576,7 +1576,7 @@
     "lon": "-4.266288327",
     "number": "NULL",
     "address": "Eagle Building!215 Bothwell Street",
-    "town_name": "Glasgow",
+    "townName": "Glasgow",
     "postcode": "G2 7TS"
   },
   {
@@ -1586,7 +1586,7 @@
     "lon": "-4.262729",
     "number": "NULL",
     "address": "20 York Street",
-    "town_name": "Glasgow",
+    "townName": "Glasgow",
     "postcode": "G2 8GT"
   },
   {
@@ -1596,7 +1596,7 @@
     "lon": "-2.249396734",
     "number": "NULL",
     "address": "Kimbrose Way",
-    "town_name": "Gloucester",
+    "townName": "Gloucester",
     "postcode": "GL1 2DE"
   },
   {
@@ -1606,7 +1606,7 @@
     "lon": "-2.249265842",
     "number": "424",
     "address": "Longsmith Street",
-    "town_name": "Gloucester",
+    "townName": "Gloucester",
     "postcode": "GL1 2TS"
   },
   {
@@ -1616,7 +1616,7 @@
     "lon": "-0.082223335",
     "number": "425",
     "address": "Great Grimsby Combined Court!Town Hall Square",
-    "town_name": "Grimsby",
+    "townName": "Grimsby",
     "postcode": "DN31 1HX"
   },
   {
@@ -1626,7 +1626,7 @@
     "lon": "1.724932543",
     "number": "NULL",
     "address": "North Quay",
-    "town_name": "Great Yarmouth",
+    "townName": "Great Yarmouth",
     "postcode": "NR30 1PW"
   },
   {
@@ -1636,7 +1636,7 @@
     "lon": "-2.252201156",
     "number": "NULL",
     "address": "Manchester and Salford Magistrates' Court!Crown Square",
-    "town_name": "Manchester",
+    "townName": "Manchester",
     "postcode": "M60 1PR"
   },
   {
@@ -1646,7 +1646,7 @@
     "lon": "-0.081410882",
     "number": "NULL",
     "address": "Victoria Street",
-    "town_name": "Grimsby",
+    "townName": "Grimsby",
     "postcode": "DN31 1NH"
   },
   {
@@ -1656,7 +1656,7 @@
     "lon": "-0.576926512",
     "number": "NULL",
     "address": "The Law Courts!Mary Road",
-    "town_name": "Guildford",
+    "townName": "Guildford",
     "postcode": "GU1 4PS"
   },
   {
@@ -1666,7 +1666,7 @@
     "lon": "-0.578951733",
     "number": "474",
     "address": "Bedford Road",
-    "town_name": "Guildford",
+    "townName": "Guildford",
     "postcode": "GU1 4ST"
   },
   {
@@ -1676,7 +1676,7 @@
     "lon": "-0.576926512",
     "number": "NULL",
     "address": "Mary Road",
-    "town_name": "Guildford",
+    "townName": "Guildford",
     "postcode": "GU1 4PS"
   },
   {
@@ -1686,7 +1686,7 @@
     "lon": "-4.038593393",
     "number": "NULL",
     "address": "Ground Floor!Block C!Brandon Gate!Leechlea Road",
-    "town_name": "Hamilton",
+    "townName": "Hamilton",
     "postcode": "ML3 6AU"
   },
   {
@@ -1696,7 +1696,7 @@
     "lon": "0.096744368",
     "number": "NULL",
     "address": "The Court House",
-    "town_name": "Harlow",
+    "townName": "Harlow",
     "postcode": "CM20 1HH"
   },
   {
@@ -1706,7 +1706,7 @@
     "lon": "-0.483987528",
     "number": "NULL",
     "address": "Colnbrook Bypass",
-    "town_name": "Harmondsworth",
+    "townName": "Harmondsworth",
     "postcode": "UB7 0HD"
   },
   {
@@ -1716,7 +1716,7 @@
     "lon": "-1.539668622",
     "number": "NULL",
     "address": "Harrogate Justice Centre!The Court House!Victoria Avenue",
-    "town_name": "Harrogate",
+    "townName": "Harrogate",
     "postcode": "HG1 1EL"
   },
   {
@@ -1726,7 +1726,7 @@
     "lon": "-0.339809325",
     "number": "468",
     "address": "Hailsham Drive!off Headstone Drive",
-    "town_name": "Harrow",
+    "townName": "Harrow",
     "postcode": "HA1 4TU"
   },
   {
@@ -1736,7 +1736,7 @@
     "lon": "0.566648102",
     "number": "551",
     "address": "Hastings County Court and Family Court Hearing Centre!The Law Courts!Bohemia Road!",
-    "town_name": "Hastings",
+    "townName": "Hastings",
     "postcode": "TN34 1QX"
   },
   {
@@ -1746,7 +1746,7 @@
     "lon": "0.566648102",
     "number": "NULL",
     "address": "The Law Courts!Horntye Park!Bohemia Road!",
-    "town_name": "Hastings",
+    "townName": "Hastings",
     "postcode": "TN34 1ND"
   },
   {
@@ -1756,7 +1756,7 @@
     "lon": "-0.238101979",
     "number": "NULL",
     "address": "Comet Way",
-    "town_name": "Hatfield",
+    "townName": "Hatfield",
     "postcode": "AL10 9SJ"
   },
   {
@@ -1766,7 +1766,7 @@
     "lon": "-0.414073341",
     "number": "NULL",
     "address": "York House, !2-3 Dukes Green Avenue",
-    "town_name": "Feltham",
+    "townName": "Feltham",
     "postcode": "TW14 0LS"
   },
   {
@@ -1776,7 +1776,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "The Court House!Elmleigh Road!Havant",
-    "town_name": "Portsmouth",
+    "townName": "Portsmouth",
     "postcode": "PO9 2AL"
   },
   {
@@ -1786,7 +1786,7 @@
     "lon": "-4.980593831",
     "number": "NULL",
     "address": "Penffynnon!Hawthorn Rise",
-    "town_name": "Haverfordwest",
+    "townName": "Haverfordwest",
     "postcode": "SA61 2AX"
   },
   {
@@ -1796,7 +1796,7 @@
     "lon": "-4.980593831",
     "number": "NULL",
     "address": "Penffynnon!Hawthorn Rise",
-    "town_name": "Haverfordwest",
+    "townName": "Haverfordwest",
     "postcode": "SA61 2AX"
   },
   {
@@ -1806,7 +1806,7 @@
     "lon": "-0.245453629",
     "number": "NULL",
     "address": "The Court House!The Hyde",
-    "town_name": "Hendon",
+    "townName": "Hendon",
     "postcode": "NW9 7BY"
   },
   {
@@ -1816,7 +1816,7 @@
     "lon": "-2.71098967",
     "number": "NULL",
     "address": "Hereford Justice Centre!Bath Street",
-    "town_name": "Hereford",
+    "townName": "Hereford",
     "postcode": "HR1 2HE"
   },
   {
@@ -1826,7 +1826,7 @@
     "lon": "NULL",
     "number": "762",
     "address": "The Shirehall!St Peter's Square",
-    "town_name": "Hereford",
+    "townName": "Hereford",
     "postcode": "HR1 2HY"
   },
   {
@@ -1836,7 +1836,7 @@
     "lon": "-2.71098967",
     "number": "NULL",
     "address": "The Court House!Bath Street",
-    "town_name": "Hereford",
+    "townName": "Hereford",
     "postcode": "HR1 2HE"
   },
   {
@@ -1846,7 +1846,7 @@
     "lon": "-0.07667869",
     "number": "NULL",
     "address": "Shire Hall!Fore Street",
-    "town_name": "Hertford",
+    "townName": "Hertford",
     "postcode": "SG14 1BY"
   },
   {
@@ -1856,7 +1856,7 @@
     "lon": "-0.746142494",
     "number": "NULL",
     "address": "The Law Courts!Ground Floor!Easton Street",
-    "town_name": "High Wycombe",
+    "townName": "High Wycombe",
     "postcode": "HP11 1LR"
   },
   {
@@ -1866,7 +1866,7 @@
     "lon": "-0.746142494",
     "number": "NULL",
     "address": "Law Courts!Easton Street",
-    "town_name": "High Wycombe",
+    "townName": "High Wycombe",
     "postcode": "HP11 1LR"
   },
   {
@@ -1876,7 +1876,7 @@
     "lon": "-0.105472209",
     "number": "NULL",
     "address": "51 Holloway Road",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "N7 8JA"
   },
   {
@@ -1886,7 +1886,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "Contact and Compliance Centre!P.O. Box 84",
-    "town_name": "Cwmbran",
+    "townName": "Cwmbran",
     "postcode": "NP44 1ZP"
   },
   {
@@ -1896,7 +1896,7 @@
     "lon": "-0.322662087",
     "number": "NULL",
     "address": "The Law Courts!Hurst Road",
-    "town_name": "Horsham",
+    "townName": "Horsham",
     "postcode": "RH12 2ET"
   },
   {
@@ -1906,7 +1906,7 @@
     "lon": "-0.322561253",
     "number": "NULL",
     "address": "The Law Courts!Hurst Road",
-    "town_name": "Horsham",
+    "townName": "Horsham",
     "postcode": "RH12 2ET"
   },
   {
@@ -1916,7 +1916,7 @@
     "lon": "-0.161568483",
     "number": "1602",
     "address": "The Court House!Lansdowne Road",
-    "town_name": "Hove",
+    "townName": "Hove",
     "postcode": "BN3 3BN"
   },
   {
@@ -1926,7 +1926,7 @@
     "lon": "-1.783467154",
     "number": "NULL",
     "address": "Queensgate House!Queensgate",
-    "town_name": "Huddersfield",
+    "townName": "Huddersfield",
     "postcode": "HD1 2RR"
   },
   {
@@ -1936,7 +1936,7 @@
     "lon": "-0.333155163",
     "number": "NULL",
     "address": "The Law Courts!Market Place",
-    "town_name": "Kingston-upon-Hull",
+    "townName": "Kingston-upon-Hull",
     "postcode": "HU1 1RD"
   },
   {
@@ -1946,7 +1946,7 @@
     "lon": "-0.330324045",
     "number": "NULL",
     "address": "Wilberforce Court!Alfred Gelder Street",
-    "town_name": "Hull",
+    "townName": "Hull",
     "postcode": "HU1 1UY"
   },
   {
@@ -1956,7 +1956,7 @@
     "lon": "-0.185752133",
     "number": "NULL",
     "address": "Walden Rd",
-    "town_name": "Huntingdon",
+    "townName": "Huntingdon",
     "postcode": "PE29 3DW"
   },
   {
@@ -1966,7 +1966,7 @@
     "lon": "-0.096535092",
     "number": "440",
     "address": "Sessions House!Newington Causeway",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "SE1 6AZ"
   },
   {
@@ -1976,7 +1976,7 @@
     "lon": "-4.224199877",
     "number": "NULL",
     "address": "Highland Rail House!First Floor!Station Square!Academy Street",
-    "town_name": "Inverness",
+    "townName": "Inverness",
     "postcode": "IV1 1LE"
   },
   {
@@ -1986,7 +1986,7 @@
     "lon": "-4.18790328",
     "number": "NULL",
     "address": "Ground Floor!Urquhart House!Beechwood Business Park",
-    "town_name": "Inverness",
+    "townName": "Inverness",
     "postcode": "IV2 3BW"
   },
   {
@@ -1996,7 +1996,7 @@
     "lon": "1.151474645",
     "number": "NULL",
     "address": "8 Arcade Street",
-    "town_name": "Ipswich",
+    "townName": "Ipswich",
     "postcode": "IP1 1EJ"
   },
   {
@@ -2006,7 +2006,7 @@
     "lon": "1.143596706",
     "number": "426",
     "address": "The Courthouse!1 Russell Road",
-    "town_name": "Ipswich",
+    "townName": "Ipswich",
     "postcode": "IP1 2AG"
   },
   {
@@ -2016,7 +2016,7 @@
     "lon": "1.151474645",
     "number": "NULL",
     "address": "Ground Floor!8 Arcade Street",
-    "town_name": "Ipswich",
+    "townName": "Ipswich",
     "postcode": "IP1 1EJ"
   },
   {
@@ -2026,7 +2026,7 @@
     "lon": "1.148893368",
     "number": "NULL",
     "address": "Elm Street",
-    "town_name": "Ipswich",
+    "townName": "Ipswich",
     "postcode": "IP1 2AP"
   },
   {
@@ -2036,7 +2036,7 @@
     "lon": "-1.291858299",
     "number": "478",
     "address": "The Law Courts!1 Quay Street",
-    "town_name": "Newport",
+    "townName": "Newport",
     "postcode": "PO30 5YT"
   },
   {
@@ -2046,7 +2046,7 @@
     "lon": "-0.340330607",
     "number": "475",
     "address": "36 Ridgeway Road",
-    "town_name": "Isleworth",
+    "townName": "Isleworth",
     "postcode": "TW7 5LP"
   },
   {
@@ -2056,7 +2056,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "PO Box 1288",
-    "town_name": "Maidstone",
+    "townName": "Maidstone",
     "postcode": "ME14 9PG"
   },
   {
@@ -2066,7 +2066,7 @@
     "lon": "-2.240893417",
     "number": "NULL",
     "address": "Comberton Place ",
-    "town_name": "Kidderminster",
+    "townName": "Kidderminster",
     "postcode": "DY10 1QQ"
   },
   {
@@ -2076,7 +2076,7 @@
     "lon": "0.393988964",
     "number": "765",
     "address": "The Court House!College Lane",
-    "town_name": "King's Lynn",
+    "townName": "King's Lynn",
     "postcode": "PE30 1PQ"
   },
   {
@@ -2086,7 +2086,7 @@
     "lon": "0.394004259",
     "number": "NULL",
     "address": "The Courthouse!College Lane",
-    "town_name": "King's Lynn",
+    "townName": "King's Lynn",
     "postcode": "PE30 1PQ"
   },
   {
@@ -2096,7 +2096,7 @@
     "lon": "-0.305225131",
     "number": "NULL",
     "address": "Hearing Centre!St James Road",
-    "town_name": "Kingston-upon-Thames",
+    "townName": "Kingston-upon-Thames",
     "postcode": "KT1 2AD"
   },
   {
@@ -2106,7 +2106,7 @@
     "lon": "-0.304698002",
     "number": "427",
     "address": "6-8 Penrhyn Road",
-    "town_name": "Kingston-upon-Thames",
+    "townName": "Kingston-upon-Thames",
     "postcode": "KT1 2BB"
   },
   {
@@ -2116,7 +2116,7 @@
     "lon": "-0.331682184",
     "number": "403",
     "address": "Lowgate",
-    "town_name": "Kingston-upon-Hull",
+    "townName": "Kingston-upon-Hull",
     "postcode": "HU1 2EZ"
   },
   {
@@ -2126,7 +2126,7 @@
     "lon": "-1.783924992",
     "number": "NULL",
     "address": "Court House!Civic Centre",
-    "town_name": "Huddersfield",
+    "townName": "Huddersfield",
     "postcode": "HD1 2NW"
   },
   {
@@ -2136,7 +2136,7 @@
     "lon": "-2.797380634",
     "number": "NULL",
     "address": "George Street",
-    "town_name": "Lancaster",
+    "townName": "Lancaster",
     "postcode": "LA1 1XZ"
   },
   {
@@ -2146,7 +2146,7 @@
     "lon": "-2.806229331",
     "number": "409",
     "address": "The Castle",
-    "town_name": "Lancaster",
+    "townName": "Lancaster",
     "postcode": "LA1 1YJ"
   },
   {
@@ -2156,7 +2156,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "3rd Floor!10 Alfred Place",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "WC1E 7LR"
   },
   {
@@ -2166,7 +2166,7 @@
     "lon": "-0.16247338",
     "number": "NULL",
     "address": "176a Lavender Hill",
-    "town_name": "Battersea",
+    "townName": "Battersea",
     "postcode": "SW11 1JU"
   },
   {
@@ -2176,7 +2176,7 @@
     "lon": "-1.533936266",
     "number": "NULL",
     "address": "Warwickshire Justice Centre!Newbold Terrace",
-    "town_name": "Leamington Spa",
+    "townName": "Leamington Spa",
     "postcode": "CV32 4EL"
   },
   {
@@ -2186,7 +2186,7 @@
     "lon": "-1.551754992",
     "number": "NULL",
     "address": "The Courthouse!1 Oxford Row",
-    "town_name": "Leeds",
+    "townName": "Leeds",
     "postcode": "LS1 3BG"
   },
   {
@@ -2196,7 +2196,7 @@
     "lon": "-1.551395015",
     "number": "NULL",
     "address": "York House!31 York Place",
-    "town_name": "Leeds",
+    "townName": "Leeds",
     "postcode": "LS1 2ED"
   },
   {
@@ -2206,7 +2206,7 @@
     "lon": "-1.545355355",
     "number": "NULL",
     "address": "4th Floor!City Exchange!11 Albion Street!",
-    "town_name": "Leeds",
+    "townName": "Leeds",
     "postcode": "LS1 5ES"
   },
   {
@@ -2216,7 +2216,7 @@
     "lon": "-1.552856602",
     "number": "NULL",
     "address": "Westgate",
-    "town_name": "Leeds",
+    "townName": "Leeds",
     "postcode": "LS1 3BY"
   },
   {
@@ -2226,7 +2226,7 @@
     "lon": "-1.551607877",
     "number": "NULL",
     "address": "York House!31 York Place",
-    "town_name": "Leeds",
+    "townName": "Leeds",
     "postcode": "LS1 2ED"
   },
   {
@@ -2236,7 +2236,7 @@
     "lon": "-1.127374126",
     "number": "NULL",
     "address": "90 Wellington Street",
-    "town_name": "Leicester",
+    "townName": "Leicester",
     "postcode": "LE1 6HG"
   },
   {
@@ -2246,7 +2246,7 @@
     "lon": "-1.127374126",
     "number": "430",
     "address": "90 Wellington Street",
-    "town_name": "Leicester",
+    "townName": "Leicester",
     "postcode": "LE1 6HG"
   },
   {
@@ -2256,7 +2256,7 @@
     "lon": "-1.134345846",
     "number": "NULL",
     "address": "15 Pocklingtons Walk",
-    "town_name": "Leicester",
+    "townName": "Leicester",
     "postcode": "LE1 6BT"
   },
   {
@@ -2266,7 +2266,7 @@
     "lon": "-1.130281667",
     "number": "NULL",
     "address": "Kings Court!5a New Walk",
-    "town_name": "Leicester",
+    "townName": "Leicester",
     "postcode": "LE1 6TE"
   },
   {
@@ -2276,7 +2276,7 @@
     "lon": "0.009744786",
     "number": "431",
     "address": "The Law Courts!High Street",
-    "town_name": "Lewes",
+    "townName": "Lewes",
     "postcode": "BN7 1YB"
   },
   {
@@ -2286,7 +2286,7 @@
     "lon": "-2.699834899",
     "number": "NULL",
     "address": "Lancastergate",
-    "town_name": "Leyland",
+    "townName": "Leyland",
     "postcode": "PR25 2EX"
   },
   {
@@ -2296,7 +2296,7 @@
     "lon": "-0.542039908",
     "number": "NULL",
     "address": "360 High Street",
-    "town_name": "Lincoln",
+    "townName": "Lincoln",
     "postcode": "LN5 7PS"
   },
   {
@@ -2306,7 +2306,7 @@
     "lon": "-0.541738652",
     "number": "432",
     "address": "The Castle!Castle Hill",
-    "town_name": "Lincoln",
+    "townName": "Lincoln",
     "postcode": "LN1 3GA"
   },
   {
@@ -2316,7 +2316,7 @@
     "lon": "-0.542039908",
     "number": "NULL",
     "address": "The Court House!358 High Street",
-    "town_name": "Lincoln",
+    "townName": "Lincoln",
     "postcode": "LN5 7QA"
   },
   {
@@ -2326,7 +2326,7 @@
     "lon": "-2.989777782",
     "number": "NULL",
     "address": "The Queen Elizabeth II Law Courts!Derby Square",
-    "town_name": "Liverpool",
+    "townName": "Liverpool",
     "postcode": "L2 1XA"
   },
   {
@@ -2336,7 +2336,7 @@
     "lon": "-2.989389728",
     "number": "NULL",
     "address": "35 Vernon Street",
-    "town_name": "Liverpool",
+    "townName": "Liverpool",
     "postcode": "L2 2BX"
   },
   {
@@ -2346,7 +2346,7 @@
     "lon": "-2.989777782",
     "number": "433",
     "address": "The Queen Elizabeth II Law Courts!Derby Square",
-    "town_name": "Liverpool",
+    "townName": "Liverpool",
     "postcode": "L2 1XA"
   },
   {
@@ -2356,7 +2356,7 @@
     "lon": "-2.989778078",
     "number": "NULL",
     "address": "Queen Elizabeth II Law Courts!Derby Square",
-    "town_name": "Liverpool",
+    "townName": "Liverpool",
     "postcode": "L2 1XA"
   },
   {
@@ -2366,7 +2366,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "36 Dale Street",
-    "town_name": "Liverpool",
+    "townName": "Liverpool",
     "postcode": "L2 5UZ"
   },
   {
@@ -2376,7 +2376,7 @@
     "lon": "-2.989685044",
     "number": "NULL",
     "address": "The Queen Elizabeth II Law Courts!Derby Square",
-    "town_name": "Liverpool",
+    "townName": "Liverpool",
     "postcode": "L2 1XA"
   },
   {
@@ -2386,7 +2386,7 @@
     "lon": "-3.369819335",
     "number": "NULL",
     "address": "Noyadd Parks",
-    "town_name": "LLandrindod Wells",
+    "townName": "LLandrindod Wells",
     "postcode": "LD1 5DF"
   },
   {
@@ -2396,7 +2396,7 @@
     "lon": "-3.823291339",
     "number": "0",
     "address": "The Court House!Conwy Road",
-    "town_name": "Llandudno",
+    "townName": "Llandudno",
     "postcode": "LL30 1GA"
   },
   {
@@ -2406,7 +2406,7 @@
     "lon": "-4.16314253",
     "number": "0",
     "address": "Town Hall Square",
-    "town_name": "Llanelli",
+    "townName": "Llanelli",
     "postcode": "SA15 3AW"
   },
   {
@@ -2416,7 +2416,7 @@
     "lon": "-0.104601431",
     "number": "NULL",
     "address": "Montague Court !101 London Road !West Croydon !",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "CR0 2RF"
   },
   {
@@ -2426,7 +2426,7 @@
     "lon": "-0.110316308",
     "number": "NULL",
     "address": "Rolls Building! 7 Rolls Buildings! Fetter Lane",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "EC4A 1NL"
   },
   {
@@ -2436,7 +2436,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "P.O. Box 75667",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "WC1A 9QD"
   },
   {
@@ -2446,7 +2446,7 @@
     "lon": "-0.114515648",
     "number": "NULL",
     "address": "42-49 High Holborn!First Avenue House",
-    "town_name": "Holborn",
+    "townName": "Holborn",
     "postcode": "WC1V 6NP"
   },
   {
@@ -2456,7 +2456,7 @@
     "lon": "-1.202189608",
     "number": "NULL",
     "address": "60 Pinfold Gate ",
-    "town_name": "Loughborough",
+    "townName": "Loughborough",
     "postcode": "LE11 1AZ"
   },
   {
@@ -2466,7 +2466,7 @@
     "lon": "-0.420285203",
     "number": "NULL",
     "address": "Stuart Street",
-    "town_name": "Luton",
+    "townName": "Luton",
     "postcode": "LU1 5BL"
   },
   {
@@ -2476,7 +2476,7 @@
     "lon": "-0.41427787",
     "number": "769",
     "address": "7 George Street",
-    "town_name": "Luton",
+    "townName": "Luton",
     "postcode": "LU1 2AA"
   },
   {
@@ -2486,7 +2486,7 @@
     "lon": "-0.412774807",
     "number": "NULL",
     "address": "Luton Justice Centre !Floors 4 & 5, Arndale House!The Mall",
-    "town_name": "Luton",
+    "townName": "Luton",
     "postcode": "LU1 2LJ"
   },
   {
@@ -2496,7 +2496,7 @@
     "lon": "0.518683775",
     "number": "434",
     "address": "The Law Courts!Barker Road",
-    "town_name": "Maidstone",
+    "townName": "Maidstone",
     "postcode": "ME16 8EQ"
   },
   {
@@ -2506,7 +2506,7 @@
     "lon": "0.523309707",
     "number": "NULL",
     "address": "The Courthouse!Palace Avenue",
-    "town_name": "Maidstone",
+    "townName": "Maidstone",
     "postcode": "ME15 6LL"
   },
   {
@@ -2516,7 +2516,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "Triton House!St. Andrews Street North",
-    "town_name": "Bury St Edmunds",
+    "townName": "Bury St Edmunds",
     "postcode": "IP33 1TR"
   },
   {
@@ -2526,7 +2526,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "Port Talbot Justice Centre!Harbourside Road",
-    "town_name": "Port Talbot",
+    "townName": "Port Talbot",
     "postcode": "SA13 1SB"
   },
   {
@@ -2536,7 +2536,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "Central Family Court!First Avenue House!42-49 High Holborn!",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "WC1V 6NP"
   },
   {
@@ -2546,7 +2546,7 @@
     "lon": "-2.252672837",
     "number": "NULL",
     "address": "1 Bridge Street West",
-    "town_name": "Manchester",
+    "townName": "Manchester",
     "postcode": "M60 9DJ"
   },
   {
@@ -2556,7 +2556,7 @@
     "lon": "-2.252201156",
     "number": "435",
     "address": "Courts of Justice!Crown Square",
-    "town_name": "Manchester",
+    "townName": "Manchester",
     "postcode": "M3 3FL"
   },
   {
@@ -2566,7 +2566,7 @@
     "lon": "-2.235166099",
     "number": "436",
     "address": "The Court House!Aytoun Street",
-    "town_name": "Manchester",
+    "townName": "Manchester",
     "postcode": "M1 3FS"
   },
   {
@@ -2576,7 +2576,7 @@
     "lon": "-2.252672913",
     "number": "NULL",
     "address": "Manchester Civil Justice Centre!Ground Floor!1 Bridge Street West!P.O. BOX 4240",
-    "town_name": "Manchester",
+    "townName": "Manchester",
     "postcode": "M60 9DJ"
   },
   {
@@ -2586,7 +2586,7 @@
     "lon": "-2.248295",
     "number": "NULL",
     "address": "Alexandra House!14-22 The Parsonage",
-    "town_name": "Manchester",
+    "townName": "Manchester",
     "postcode": "M3 2JA"
   },
   {
@@ -2596,7 +2596,7 @@
     "lon": "-2.252201028",
     "number": "NULL",
     "address": "Crown Square",
-    "town_name": "Manchester",
+    "townName": "Manchester",
     "postcode": "M60 1PR"
   },
   {
@@ -2606,7 +2606,7 @@
     "lon": "-2.239108916",
     "number": "NULL",
     "address": "1st Floor !Piccadilly Exchange!2 Piccadilly Plaza!Mosley Street",
-    "town_name": "Manchester",
+    "townName": "Manchester",
     "postcode": "M1 4AH"
   },
   {
@@ -2616,7 +2616,7 @@
     "lon": "-1.205622661",
     "number": "NULL",
     "address": "Rosemary Street",
-    "town_name": "Mansfield",
+    "townName": "Mansfield",
     "postcode": "NG19 6EE"
   },
   {
@@ -2626,7 +2626,7 @@
     "lon": "1.381807033",
     "number": "NULL",
     "address": "The Courthouse!Cecil Square",
-    "town_name": "Margate",
+    "townName": "Margate",
     "postcode": "CT9 1RL"
   },
   {
@@ -2636,7 +2636,7 @@
     "lon": "-0.091340084",
     "number": "NULL",
     "address": "Guildhall Buildings!Basinghall Street",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "EC2V 5AR"
   },
   {
@@ -2646,7 +2646,7 @@
     "lon": "0.519554764",
     "number": "NULL",
     "address": "Anchorage House!47-67 High Street",
-    "town_name": "Chatham",
+    "townName": "Chatham",
     "postcode": "ME4 4DW"
   },
   {
@@ -2656,7 +2656,7 @@
     "lon": "0.526904903",
     "number": "NULL",
     "address": "The Court House!The Brook",
-    "town_name": "Chatham",
+    "townName": "Chatham",
     "postcode": "ME4 4JZ"
   },
   {
@@ -2666,7 +2666,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "PO BOX 8793 !5th Floor",
-    "town_name": "Leicester",
+    "townName": "Leicester",
     "postcode": "LE1 8BN"
   },
   {
@@ -2676,7 +2676,7 @@
     "lon": "-3.380497626",
     "number": "437",
     "address": "The Law Courts!Glebeland Place",
-    "town_name": "Merthyr Tydfil",
+    "townName": "Merthyr Tydfil",
     "postcode": "CF47 8BH"
   },
   {
@@ -2686,7 +2686,7 @@
     "lon": "-1.594101342",
     "number": "NULL",
     "address": "The Law Courts",
-    "town_name": "Bedlington",
+    "townName": "Bedlington",
     "postcode": "NE22 7LX"
   },
   {
@@ -2696,7 +2696,7 @@
     "lon": "-1.23123218",
     "number": "NULL",
     "address": "The Law Courts!Centre Square",
-    "town_name": "Middlesbrough",
+    "townName": "Middlesbrough",
     "postcode": "TS1 2AE"
   },
   {
@@ -2706,7 +2706,7 @@
     "lon": "-1.149354177",
     "number": "NULL",
     "address": "Nottingham Justice Centre!Carrington Street",
-    "town_name": "Nottingham",
+    "townName": "Nottingham",
     "postcode": "NG2 1EE"
   },
   {
@@ -2716,7 +2716,7 @@
     "lon": "-1.898515826",
     "number": "NULL",
     "address": "Centre City Tower!13th Floor!5-7 Hill Street!",
-    "town_name": "Birmingham",
+    "townName": "Birmingham",
     "postcode": "B5 4UU"
   },
   {
@@ -2726,7 +2726,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "Midlands Regional Fixed Penalty Office!PO BOX 10066",
-    "town_name": "Loughborough",
+    "townName": "Loughborough",
     "postcode": "LE11 9HB"
   },
   {
@@ -2736,7 +2736,7 @@
     "lon": "-0.765354627",
     "number": "NULL",
     "address": "351 Silbury Boulevard!Witan Gate East",
-    "town_name": "Central Milton Keynes",
+    "townName": "Central Milton Keynes",
     "postcode": "MK9 2DT"
   },
   {
@@ -2746,7 +2746,7 @@
     "lon": "-0.766292199",
     "number": "NULL",
     "address": "301 Silbury Boulevard!Witan Gate East",
-    "town_name": "Central Milton Keynes",
+    "townName": "Central Milton Keynes",
     "postcode": "MK9 2AJ"
   },
   {
@@ -2756,7 +2756,7 @@
     "lon": "-3.13717025",
     "number": "769",
     "address": "Law Courts",
-    "town_name": "Mold",
+    "townName": "Mold",
     "postcode": "CH7 1AE"
   },
   {
@@ -2766,7 +2766,7 @@
     "lon": "-0.899965458",
     "number": "NULL",
     "address": "4th Floor!St Katharine's House!21-27 St Katharine's Street",
-    "town_name": "Northampton",
+    "townName": "Northampton",
     "postcode": "NN1 2LH"
   },
   {
@@ -2776,7 +2776,7 @@
     "lon": "-1.609995",
     "number": "NULL",
     "address": "Newcastle Civil & Family Courts and Tribunals Centre!Barras Bridge",
-    "town_name": "Newcastle upon Tyne",
+    "townName": "Newcastle upon Tyne",
     "postcode": "NE1 8QF"
   },
   {
@@ -2786,7 +2786,7 @@
     "lon": "-1.62218998",
     "number": "NULL",
     "address": "1 Waterloo Square",
-    "town_name": "Newcastle-upon-Tyne",
+    "townName": "Newcastle-upon-Tyne",
     "postcode": "NE1 4DR"
   },
   {
@@ -2796,7 +2796,7 @@
     "lon": "-1.610340563",
     "number": "NULL",
     "address": "The Moot Hall!CastleGarth",
-    "town_name": "Newcastle-upon-Tyne",
+    "townName": "Newcastle-upon-Tyne",
     "postcode": "NE1 1RQ"
   },
   {
@@ -2806,7 +2806,7 @@
     "lon": "-1.603677361",
     "number": "439",
     "address": "The Law Courts!The Quayside",
-    "town_name": "Newcastle-upon-Tyne",
+    "townName": "Newcastle-upon-Tyne",
     "postcode": "NE1 3LA"
   },
   {
@@ -2816,7 +2816,7 @@
     "lon": "-1.610047759",
     "number": "NULL",
     "address": "Market Street",
-    "town_name": "Newcastle-upon-Tyne",
+    "townName": "Newcastle-upon-Tyne",
     "postcode": "NE1 6XA"
   },
   {
@@ -2826,7 +2826,7 @@
     "lon": "-2.992492531",
     "number": "NULL",
     "address": "5th Floor!Clarence House!Clarence Place",
-    "town_name": "Newport",
+    "townName": "Newport",
     "postcode": "NP19 7AA"
   },
   {
@@ -2836,7 +2836,7 @@
     "lon": "-3.004937068",
     "number": "441",
     "address": "The Law Courts!Faulkner Road",
-    "town_name": "Newport",
+    "townName": "Newport",
     "postcode": "NP20 4PR"
   },
   {
@@ -2846,7 +2846,7 @@
     "lon": "-2.919665967",
     "number": "NULL",
     "address": "Columbus House!Langstone Business Park!Chepstow Road",
-    "town_name": "Newport",
+    "townName": "Newport",
     "postcode": "NP18 2LX"
   },
   {
@@ -2856,7 +2856,7 @@
     "lon": "-2.986461452",
     "number": "NULL",
     "address": "Usk Way",
-    "town_name": "Newport",
+    "townName": "Newport",
     "postcode": "NP20 2GE"
   },
   {
@@ -2866,7 +2866,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "Newport (Gwent) Civil and Family Court !5th Floor!Clarence House!Clarence Place",
-    "town_name": "Newport",
+    "townName": "Newport",
     "postcode": "NP19 7AA"
   },
   {
@@ -2876,7 +2876,7 @@
     "lon": "-3.613000268",
     "number": "NULL",
     "address": "The Court House!Newfoundland Way",
-    "town_name": "Newton Abbot",
+    "townName": "Newton Abbot",
     "postcode": "TQ12 1LA"
   },
   {
@@ -2886,7 +2886,7 @@
     "lon": "-1.569631616",
     "number": "NULL",
     "address": "Central Avenue",
-    "town_name": "Newton Aycliffe",
+    "townName": "Newton Aycliffe",
     "postcode": "DL5 5RT"
   },
   {
@@ -2896,7 +2896,7 @@
     "lon": "-3.785143662",
     "number": "NULL",
     "address": "North and Wales Fixed Penalty Office!PO Box 223!Morley",
-    "town_name": "Leeds",
+    "townName": "Leeds",
     "postcode": "LS27 1DN"
   },
   {
@@ -2906,7 +2906,7 @@
     "lon": "-1.459390472",
     "number": "NULL",
     "address": "Kings Court!Earl Grey Way!Royal Quays",
-    "town_name": "North Shields",
+    "townName": "North Shields",
     "postcode": "NE29 6AR"
   },
   {
@@ -2916,7 +2916,7 @@
     "lon": "-2.9050786",
     "number": "NULL",
     "address": "North Somerset Courthouse!The Hedges!St Georges",
-    "town_name": "Weston-Super-Mare",
+    "townName": "Weston-Super-Mare",
     "postcode": "BS22 7BB"
   },
   {
@@ -2926,7 +2926,7 @@
     "lon": "-2.225232769",
     "number": "NULL",
     "address": "The Court House!Ryecroft",
-    "town_name": "Newcastle-under-Lyme",
+    "townName": "Newcastle-under-Lyme",
     "postcode": "ST5 2AA"
   },
   {
@@ -2936,7 +2936,7 @@
     "lon": "-1.443301453",
     "number": "NULL",
     "address": "The Courthouse!Tynemouth Road",
-    "town_name": "North Shields",
+    "townName": "North Shields",
     "postcode": "NE30 1AG"
   },
   {
@@ -2946,7 +2946,7 @@
     "lon": "-2.989389728",
     "number": "NULL",
     "address": "North West Regional Divorce Centre!35 Vernon Street",
-    "town_name": "Liverpool",
+    "townName": "Liverpool",
     "postcode": "L2 2BX"
   },
   {
@@ -2956,7 +2956,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "P.O. Box 826!North Shields",
-    "town_name": "North Shields",
+    "townName": "North Shields",
     "postcode": "NE29 1DZ"
   },
   {
@@ -2966,7 +2966,7 @@
     "lon": "-0.893639925",
     "number": "442",
     "address": "85-87 Lady's Lane",
-    "town_name": "Northampton",
+    "townName": "Northampton",
     "postcode": "NN1 3HQ"
   },
   {
@@ -2976,7 +2976,7 @@
     "lon": "-0.895663351",
     "number": "NULL",
     "address": "Campbell Square",
-    "town_name": "Northampton",
+    "townName": "Northampton",
     "postcode": "NN1 3EB"
   },
   {
@@ -2986,7 +2986,7 @@
     "lon": "-0.899965137",
     "number": "NULL",
     "address": "Ground Floor!St Katharine's House!St Katharine's Street",
-    "town_name": "Northampton",
+    "townName": "Northampton",
     "postcode": "NN1 2LX"
   },
   {
@@ -2996,7 +2996,7 @@
     "lon": "1.30103606",
     "number": "443",
     "address": "The Law Courts!Bishopgate",
-    "town_name": "Norwich",
+    "townName": "Norwich",
     "postcode": "NR3 1UR"
   },
   {
@@ -3006,7 +3006,7 @@
     "lon": "1.30103606",
     "number": "NULL",
     "address": "Bishopgate",
-    "town_name": "Norwich",
+    "townName": "Norwich",
     "postcode": "NR3 1UP"
   },
   {
@@ -3016,7 +3016,7 @@
     "lon": "1.295415",
     "number": "NULL",
     "address": "The Old Bakery!115 Queens Road",
-    "town_name": "Norwich",
+    "townName": "Norwich",
     "postcode": "NR1 3PL"
   },
   {
@@ -3026,7 +3026,7 @@
     "lon": "-1.146650555",
     "number": "NULL",
     "address": "60 Canal Street",
-    "town_name": "Nottingham",
+    "townName": "Nottingham",
     "postcode": "NG1 7EJ"
   },
   {
@@ -3036,7 +3036,7 @@
     "lon": "-1.146650555",
     "number": "444",
     "address": "60 Canal Street",
-    "town_name": "Nottingham",
+    "townName": "Nottingham",
     "postcode": "NG1 7EL"
   },
   {
@@ -3046,7 +3046,7 @@
     "lon": "-1.149400758",
     "number": "NULL",
     "address": "Nottingham Justice Centre!Carrington Street",
-    "town_name": "Nottingham",
+    "townName": "Nottingham",
     "postcode": "NG2 1EE"
   },
   {
@@ -3056,7 +3056,7 @@
     "lon": "-1.147561",
     "number": "NULL",
     "address": "50 Carrington Street",
-    "town_name": "Nottingham",
+    "townName": "Nottingham",
     "postcode": "NG1 7FG"
   },
   {
@@ -3066,7 +3066,7 @@
     "lon": "-1.462590263",
     "number": "NULL",
     "address": "Warwickshire Justice Centre!Vicarage Street",
-    "town_name": "Nuneaton",
+    "townName": "Nuneaton",
     "postcode": "CV11 4JU"
   },
   {
@@ -3076,7 +3076,7 @@
     "lon": "-1.462428147",
     "number": "NULL",
     "address": "Warwickshire Justice Centre!Vicarage Street",
-    "town_name": "Nuneaton",
+    "townName": "Nuneaton",
     "postcode": "CV11 4JU"
   },
   {
@@ -3086,7 +3086,7 @@
     "lon": "-1.258118",
     "number": "NULL",
     "address": "The Court House!Speedwell Street",
-    "town_name": "Oxford",
+    "townName": "Oxford",
     "postcode": "OX1 1RZ"
   },
   {
@@ -3096,7 +3096,7 @@
     "lon": "-1.257072127",
     "number": "445",
     "address": "St Aldates",
-    "town_name": "Oxford",
+    "townName": "Oxford",
     "postcode": "OX1 1TL"
   },
   {
@@ -3106,7 +3106,7 @@
     "lon": "-1.257072127",
     "number": "NULL",
     "address": "Combined Court Building!St Aldates",
-    "town_name": "Oxford",
+    "townName": "Oxford",
     "postcode": "OX1 1LY"
   },
   {
@@ -3116,7 +3116,7 @@
     "lon": "-0.109676441",
     "number": "NULL",
     "address": "Rolls Building! 7 Rolls Buildings! Fetter Lane",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "EC4A 1NL"
   },
   {
@@ -3126,7 +3126,7 @@
     "lon": "-0.23991676",
     "number": "473",
     "address": "Crown Buildings!Rivergate",
-    "town_name": "Peterborough",
+    "townName": "Peterborough",
     "postcode": "PE1 1EJ"
   },
   {
@@ -3136,7 +3136,7 @@
     "lon": "-0.241543269",
     "number": "NULL",
     "address": "The Court House!Bridge Street",
-    "town_name": "Peterborough",
+    "townName": "Peterborough",
     "postcode": "PE1 1ED"
   },
   {
@@ -3146,7 +3146,7 @@
     "lon": "-1.336910565",
     "number": "NULL",
     "address": "St Aidans Way",
-    "town_name": "Peterlee",
+    "townName": "Peterlee",
     "postcode": "SR8 1QR"
   },
   {
@@ -3156,7 +3156,7 @@
     "lon": "-4.141693801",
     "number": "446",
     "address": "The Law Courts!10 Armada Way",
-    "town_name": "Plymouth",
+    "townName": "Plymouth",
     "postcode": "PL1 2ER"
   },
   {
@@ -3166,7 +3166,7 @@
     "lon": "-4.139574503",
     "number": "NULL",
     "address": "St Andrews Street",
-    "town_name": "Plymouth",
+    "townName": "Plymouth",
     "postcode": "PL1 2DP"
   },
   {
@@ -3176,7 +3176,7 @@
     "lon": "-3.344303265",
     "number": "NULL",
     "address": "The Courthouse!Courthouse Street",
-    "town_name": "Pontypridd",
+    "townName": "Pontypridd",
     "postcode": "CF37 1JR"
   },
   {
@@ -3186,7 +3186,7 @@
     "lon": "-1.960933831",
     "number": "NULL",
     "address": "The Law Courts!Park Road",
-    "town_name": "Poole",
+    "townName": "Poole",
     "postcode": "BH15 2NS"
   },
   {
@@ -3196,7 +3196,7 @@
     "lon": "-3.785949793",
     "number": "NULL",
     "address": "Harbourside Road",
-    "town_name": "Port Talbot",
+    "townName": "Port Talbot",
     "postcode": "SA13 1SB"
   },
   {
@@ -3206,7 +3206,7 @@
     "lon": "-1.091162856",
     "number": "447",
     "address": "The Courts of Justice!Winston Churchill Avenue",
-    "town_name": "Portsmouth",
+    "townName": "Portsmouth",
     "postcode": "PO1 2EB"
   },
   {
@@ -3216,7 +3216,7 @@
     "lon": "-1.089926337",
     "number": "NULL",
     "address": "The Law Courts!Winston Churchill Avenue",
-    "town_name": "Portsmouth",
+    "townName": "Portsmouth",
     "postcode": "PO1 2DQ"
   },
   {
@@ -3226,7 +3226,7 @@
     "lon": "-3.416430884",
     "number": "308",
     "address": "Victoria Road",
-    "town_name": "Prestatyn",
+    "townName": "Prestatyn",
     "postcode": "LL19 7TE"
   },
   {
@@ -3236,7 +3236,7 @@
     "lon": "-2.698982792",
     "number": "448",
     "address": "The Law Courts!Openshaw Place!Ring Way",
-    "town_name": "Preston",
+    "townName": "Preston",
     "postcode": "PR1 2LL"
   },
   {
@@ -3246,7 +3246,7 @@
     "lon": "-2.69852626",
     "number": "448",
     "address": "The Family Court!Sessions House!Lancaster Road",
-    "town_name": "Preston",
+    "townName": "Preston",
     "postcode": "PR1 2PD"
   },
   {
@@ -3256,7 +3256,7 @@
     "lon": "-2.702384715",
     "number": "NULL",
     "address": "Lawson Street",
-    "town_name": "Preston",
+    "townName": "Preston",
     "postcode": "PR1 2QT"
   },
   {
@@ -3266,7 +3266,7 @@
     "lon": "-0.113546081",
     "number": "NULL",
     "address": "Queen's Bench Division - Foreign Process!The Royal Courts of Justice!Strand!",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "WC2A 2LL"
   },
   {
@@ -3276,7 +3276,7 @@
     "lon": "-0.971178806",
     "number": "NULL",
     "address": "Hearing Centre!160-163 Friar Street",
-    "town_name": "Reading",
+    "townName": "Reading",
     "postcode": "RG1 1HE"
   },
   {
@@ -3286,7 +3286,7 @@
     "lon": "-0.967403324",
     "number": "449",
     "address": "Old Shire Hall!The Forbury",
-    "town_name": "Reading",
+    "townName": "Reading",
     "postcode": "RG1 3EH"
   },
   {
@@ -3296,7 +3296,7 @@
     "lon": "-0.975741766",
     "number": "NULL",
     "address": "Castle Street",
-    "town_name": "Reading",
+    "townName": "Reading",
     "postcode": "RG1 7TQ"
   },
   {
@@ -3306,7 +3306,7 @@
     "lon": "-0.974034994",
     "number": "NULL",
     "address": "2nd Floor!30-31 Friar Street",
-    "town_name": "Reading",
+    "townName": "Reading",
     "postcode": "RG1 1DX"
   },
   {
@@ -3316,7 +3316,7 @@
     "lon": "-1.937242038",
     "number": "NULL",
     "address": "Redditch Magistrates' Court!Grove Street!Worcs",
-    "town_name": "Redditch",
+    "townName": "Redditch",
     "postcode": "B98 8DB"
   },
   {
@@ -3326,7 +3326,7 @@
     "lon": "-2.234740132",
     "number": "NULL",
     "address": "The Court House!Colne Road (Junction with Swaledale Avenue)!Reedley (Nr Brierfield)",
-    "town_name": "Burnley",
+    "townName": "Burnley",
     "postcode": "BB10 2LJ"
   },
   {
@@ -3336,7 +3336,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "Cambridge County Court!197 East Road",
-    "town_name": "Cambridge",
+    "townName": "Cambridge",
     "postcode": "CB1 1BA"
   },
   {
@@ -3346,7 +3346,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "10 Alfred Place",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "WC1E 7LR"
   },
   {
@@ -3356,7 +3356,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "Centre City Tower!13th Floor!5-7 Hill Street!",
-    "town_name": "Birmingham",
+    "townName": "Birmingham",
     "postcode": "B5 4UU"
   },
   {
@@ -3366,7 +3366,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "1st Floor !Piccadilly Exchange !2 Piccadilly Plaza!",
-    "town_name": "Manchester",
+    "townName": "Manchester",
     "postcode": "M1 4AH"
   },
   {
@@ -3376,7 +3376,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "Havant Justice Centre!The Court House!Elmleigh Road!Havant",
-    "town_name": "Portsmouth",
+    "townName": "Portsmouth",
     "postcode": "PO9 2AL"
   },
   {
@@ -3386,7 +3386,7 @@
     "lon": "-0.110316308",
     "number": "NULL",
     "address": "7 Rolls Buildings!Fetter Lane",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "EC4A 1NL"
   },
   {
@@ -3396,7 +3396,7 @@
     "lon": "0.187594184",
     "number": "NULL",
     "address": "2a Oaklands Avenue",
-    "town_name": "Romford",
+    "townName": "Romford",
     "postcode": "RM1 4DP"
   },
   {
@@ -3406,7 +3406,7 @@
     "lon": "0.186143",
     "number": "NULL",
     "address": "Main Road",
-    "town_name": "Romford",
+    "townName": "Romford",
     "postcode": "RM1 3BH"
   },
   {
@@ -3416,7 +3416,7 @@
     "lon": "-0.113546081",
     "number": "NULL",
     "address": "Strand",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "WC2A 2LL"
   },
   {
@@ -3426,7 +3426,7 @@
     "lon": "-1.810385761",
     "number": "480",
     "address": "Salisbury Law Courts!Wilton Road",
-    "town_name": "Salisbury",
+    "townName": "Salisbury",
     "postcode": "SP2 7EP"
   },
   {
@@ -3436,7 +3436,7 @@
     "lon": "-0.40803257",
     "number": "NULL",
     "address": "The Law Courts!Northway",
-    "town_name": "Scarborough",
+    "townName": "Scarborough",
     "postcode": "YO12 7AE"
   },
   {
@@ -3446,7 +3446,7 @@
     "lon": "-2.989101619",
     "number": "NULL",
     "address": "29 Merton Road",
-    "town_name": "Bootle",
+    "townName": "Bootle",
     "postcode": "L20 3XX"
   },
   {
@@ -3456,7 +3456,7 @@
     "lon": "-0.113741162",
     "number": "NULL",
     "address": "Royal Courts of Justice!Strand",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "WC2A 2LL"
   },
   {
@@ -3466,7 +3466,7 @@
     "lon": "0.177275902",
     "number": "NULL",
     "address": "The Courthouse!Morewood Close!London Road",
-    "town_name": "Sevenoaks",
+    "townName": "Sevenoaks",
     "postcode": "TN13 2HU"
   },
   {
@@ -3476,7 +3476,7 @@
     "lon": "-1.468739006",
     "number": "451",
     "address": "The Law Courts!50 West Bar",
-    "town_name": "Sheffield",
+    "townName": "Sheffield",
     "postcode": "S3 8PH"
   },
   {
@@ -3486,7 +3486,7 @@
     "lon": "-1.468739006",
     "number": "NULL",
     "address": "48 West Bar",
-    "town_name": "Sheffield",
+    "townName": "Sheffield",
     "postcode": "S3 8PH"
   },
   {
@@ -3496,7 +3496,7 @@
     "lon": "-1.465029999",
     "number": "NULL",
     "address": "Castle Street",
-    "town_name": "Sheffield",
+    "townName": "Sheffield",
     "postcode": "S3 8LU"
   },
   {
@@ -3506,7 +3506,7 @@
     "lon": "-2.729809486",
     "number": "452",
     "address": "Shrewsbury Justice Centre!Preston Street",
-    "town_name": "Shrewsbury",
+    "townName": "Shrewsbury",
     "postcode": "SY2 5NX"
   },
   {
@@ -3516,7 +3516,7 @@
     "lon": "-2.013208398",
     "number": "NULL",
     "address": "The Court House!Otley Street",
-    "town_name": "Skipton",
+    "townName": "Skipton",
     "postcode": "BD23 1RH"
   },
   {
@@ -3526,7 +3526,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "The Court House!Otley Street",
-    "town_name": "Skipton",
+    "townName": "Skipton",
     "postcode": "BD23 1RH"
   },
   {
@@ -3536,7 +3536,7 @@
     "lon": "-0.598103716",
     "number": "NULL",
     "address": "The Law Courts!Windsor Road",
-    "town_name": "Slough",
+    "townName": "Slough",
     "postcode": "SL1 2HE"
   },
   {
@@ -3546,7 +3546,7 @@
     "lon": "0.017283716",
     "number": "453",
     "address": "75 Hollybush Hill",
-    "town_name": "Snaresbrook",
+    "townName": "Snaresbrook",
     "postcode": "E11 1QW"
   },
   {
@@ -3556,7 +3556,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "Southend Magistrates' Court!80 Victoria Avenue",
-    "town_name": "Southend-on-Sea",
+    "townName": "Southend-on-Sea",
     "postcode": "SS2 6EU"
   },
   {
@@ -3566,7 +3566,7 @@
     "lon": "-1.43888147",
     "number": "NULL",
     "address": "Millbank!Secretan Way!Tyne & Wear",
-    "town_name": "South Shields",
+    "townName": "South Shields",
     "postcode": "NE33 1RG"
   },
   {
@@ -3576,7 +3576,7 @@
     "lon": "-1.438810056",
     "number": "NULL",
     "address": "Millbank!Secretan Way!Tyne & Wear",
-    "town_name": "South Shields",
+    "townName": "South Shields",
     "postcode": "NE33 1RG"
   },
   {
@@ -3586,7 +3586,7 @@
     "lon": "NULL",
     "number": "0",
     "address": "PO Box 1792",
-    "town_name": "Southampton",
+    "townName": "Southampton",
     "postcode": "SO15 9GG"
   },
   {
@@ -3596,7 +3596,7 @@
     "lon": "-2.2243265",
     "number": "NULL",
     "address": "Castle Street",
-    "town_name": "Worcester",
+    "townName": "Worcester",
     "postcode": "WR1 3QZ"
   },
   {
@@ -3606,7 +3606,7 @@
     "lon": "-1.402976894",
     "number": "454",
     "address": "The Courts of Justice!London Road",
-    "town_name": "Southampton",
+    "townName": "Southampton",
     "postcode": "SO15 2XQ"
   },
   {
@@ -3616,7 +3616,7 @@
     "lon": "0.715028391",
     "number": "NULL",
     "address": "80 Victoria Avenue",
-    "town_name": "Southend-on-Sea",
+    "townName": "Southend-on-Sea",
     "postcode": "SS2 6EU"
   },
   {
@@ -3626,7 +3626,7 @@
     "lon": "0.709728704",
     "number": "772",
     "address": "The Court House!Victoria Avenue",
-    "town_name": "Southend-on-Sea",
+    "townName": "Southend-on-Sea",
     "postcode": "SS2 6EG"
   },
   {
@@ -3636,7 +3636,7 @@
     "lon": "0.709728704",
     "number": "NULL",
     "address": "The Court House!80 Victoria Avenue",
-    "town_name": "Southend-on-Sea",
+    "townName": "Southend-on-Sea",
     "postcode": "SS2 6EU"
   },
   {
@@ -3646,7 +3646,7 @@
     "lon": "-0.082171553",
     "number": "471",
     "address": "1 English Grounds!(off Battlebridge Lane)",
-    "town_name": "Southwark",
+    "townName": "Southwark",
     "postcode": "SE1 2HU"
   },
   {
@@ -3656,7 +3656,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "1st Floor!Darlington Magistrates' Court!Parkgate!",
-    "town_name": "Darlington",
+    "townName": "Darlington",
     "postcode": "DL1 1ZD"
   },
   {
@@ -3666,7 +3666,7 @@
     "lon": "-0.335151396",
     "number": "450",
     "address": "Bricket Road",
-    "town_name": "St. Albans",
+    "townName": "St. Albans",
     "postcode": "AL1 3JW"
   },
   {
@@ -3676,7 +3676,7 @@
     "lon": "-0.336793819",
     "number": "NULL",
     "address": "The Civic Centre!St Peter's Street",
-    "town_name": "St. Albans",
+    "townName": "St. Albans",
     "postcode": "AL1 3LB"
   },
   {
@@ -3686,7 +3686,7 @@
     "lon": "-2.736751227",
     "number": "NULL",
     "address": "Corporation Street",
-    "town_name": "St. Helens",
+    "townName": "St. Helens",
     "postcode": "WA10 1SZ"
   },
   {
@@ -3696,7 +3696,7 @@
     "lon": "-2.119429195",
     "number": "455",
     "address": "Victoria Square",
-    "town_name": "Stafford",
+    "townName": "Stafford",
     "postcode": "ST16 2QQ"
   },
   {
@@ -3706,7 +3706,7 @@
     "lon": "-1.932383151",
     "number": "NULL",
     "address": "The Court House!Bryans Lane",
-    "town_name": "Rugeley",
+    "townName": "Rugeley",
     "postcode": "WS15 2FX"
   },
   {
@@ -3716,7 +3716,7 @@
     "lon": "-0.498095603",
     "number": "NULL",
     "address": "The Law Courts!Knowle Green",
-    "town_name": "Staines",
+    "townName": "Staines",
     "postcode": "TW18 1XH"
   },
   {
@@ -3726,7 +3726,7 @@
     "lon": "-0.498095603",
     "number": "NULL",
     "address": "The Law Courts!Knowle Green",
-    "town_name": "Staines",
+    "townName": "Staines",
     "postcode": "TW18 1XH"
   },
   {
@@ -3736,7 +3736,7 @@
     "lon": "-0.204136225",
     "number": "NULL",
     "address": "The Court House!Danesgate",
-    "town_name": "Stevenage",
+    "townName": "Stevenage",
     "postcode": "SG1 1XH"
   },
   {
@@ -3746,7 +3746,7 @@
     "lon": "-3.937371446",
     "number": "NULL",
     "address": "Wallace House!Maxwell Place",
-    "town_name": "Stirling",
+    "townName": "Stirling",
     "postcode": "FK8 1JU"
   },
   {
@@ -3756,7 +3756,7 @@
     "lon": "-2.155254583",
     "number": "NULL",
     "address": "The Courthouse!Edward Street",
-    "town_name": "Stockport",
+    "townName": "Stockport",
     "postcode": "SK1 3DQ"
   },
   {
@@ -3766,7 +3766,7 @@
     "lon": "-2.155810904",
     "number": "NULL",
     "address": "The Courthouse!Edward Street",
-    "town_name": "Stockport",
+    "townName": "Stockport",
     "postcode": "SK1 3NF"
   },
   {
@@ -3776,7 +3776,7 @@
     "lon": "-2.175753907",
     "number": "456",
     "address": "Bethesda Street!Hanley",
-    "town_name": "Stoke-on-Trent",
+    "townName": "Stoke-on-Trent",
     "postcode": "ST1 3BP"
   },
   {
@@ -3786,7 +3786,7 @@
     "lon": "0.000305031",
     "number": "NULL",
     "address": "389 – 397 Stratford High Street!Stratford",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "E15 4SB"
   },
   {
@@ -3796,7 +3796,7 @@
     "lon": "0.000305031",
     "number": "NULL",
     "address": "The Court House!389-397 High Street!Stratford!",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "E15 4SB"
   },
   {
@@ -3806,7 +3806,7 @@
     "lon": "-1.387547742",
     "number": "NULL",
     "address": "Gillbridge Avenue",
-    "town_name": "Sunderland",
+    "townName": "Sunderland",
     "postcode": "SR1 3AP"
   },
   {
@@ -3816,7 +3816,7 @@
     "lon": "-0.193890347",
     "number": "NULL",
     "address": "Copthall House!9 The Pavement!Grove Road!",
-    "town_name": "Sutton",
+    "townName": "Sutton",
     "postcode": "SM1 1DA"
   },
   {
@@ -3826,7 +3826,7 @@
     "lon": "-3.938025692",
     "number": "NULL",
     "address": "Caravella House!Quay West!Quay Parade",
-    "town_name": "Swansea",
+    "townName": "Swansea",
     "postcode": "SA1 1SP"
   },
   {
@@ -3836,7 +3836,7 @@
     "lon": "-3.957540958",
     "number": "457",
     "address": "The Law Courts!St Helen's Road",
-    "town_name": "Swansea",
+    "townName": "Swansea",
     "postcode": "SA1 4PF"
   },
   {
@@ -3846,7 +3846,7 @@
     "lon": "-3.9453794",
     "number": "NULL",
     "address": "Grove Place",
-    "town_name": "Swansea",
+    "townName": "Swansea",
     "postcode": "SA1 5DB"
   },
   {
@@ -3856,7 +3856,7 @@
     "lon": "-1.781910902",
     "number": "458",
     "address": "The Law Courts!Islington Street",
-    "town_name": "Swindon",
+    "townName": "Swindon",
     "postcode": "SN1 2HG"
   },
   {
@@ -3866,7 +3866,7 @@
     "lon": "-1.781089089",
     "number": "NULL",
     "address": "Princes Street",
-    "town_name": "Swindon",
+    "townName": "Swindon",
     "postcode": "SN1 2JB"
   },
   {
@@ -3876,7 +3876,7 @@
     "lon": "-2.102196595",
     "number": "NULL",
     "address": "Henry Square",
-    "town_name": "Ashton-under-Lyne",
+    "townName": "Ashton-under-Lyne",
     "postcode": "OL6 7TP"
   },
   {
@@ -3886,7 +3886,7 @@
     "lon": "-3.107709057",
     "number": "459",
     "address": "The Shire Hall",
-    "town_name": "Taunton",
+    "townName": "Taunton",
     "postcode": "TA1 4EU"
   },
   {
@@ -3896,7 +3896,7 @@
     "lon": "-3.109669994",
     "number": "NULL",
     "address": "The Magistrates' Court!St John's Road",
-    "town_name": "Taunton",
+    "townName": "Taunton",
     "postcode": "TA1 4AX"
   },
   {
@@ -3906,7 +3906,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "PO Box 16972",
-    "town_name": "Birmingham",
+    "townName": "Birmingham",
     "postcode": "B16 6TZ"
   },
   {
@@ -3916,7 +3916,7 @@
     "lon": "-0.107441828",
     "number": "NULL",
     "address": "Taylor House!88 Rosebery Avenue",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "EC1R 4QU"
   },
   {
@@ -3926,7 +3926,7 @@
     "lon": "-0.109676441",
     "number": "NULL",
     "address": "Rolls Building! 7 Rolls Buildings! Fetter Lane",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "EC4A 1NL"
   },
   {
@@ -3936,7 +3936,7 @@
     "lon": "-1.23123218",
     "number": "460",
     "address": "Centre Square",
-    "town_name": "Middlesbrough",
+    "townName": "Middlesbrough",
     "postcode": "TS1 2AE"
   },
   {
@@ -3946,7 +3946,7 @@
     "lon": "-1.234574282",
     "number": "NULL",
     "address": "Teesside Justice Centre!Teesside Magistrates Court, !SSCS and Employment Tribunal Hearing Centre!Victoria Square",
-    "town_name": "Middlesbrough",
+    "townName": "Middlesbrough",
     "postcode": "TS1 2AS"
   },
   {
@@ -3956,7 +3956,7 @@
     "lon": "-2.450848977",
     "number": "NULL",
     "address": "Telford Justice Centre!Telford Square!Malinsgate",
-    "town_name": "Telford",
+    "townName": "Telford",
     "postcode": "TF3 4HX"
   },
   {
@@ -3966,7 +3966,7 @@
     "lon": "-2.450848977",
     "number": "NULL",
     "address": "Telford Justice Centre!Telford Square!Malinsgate!Shropshire",
-    "town_name": "Telford",
+    "townName": "Telford",
     "postcode": "TF3 4HX"
   },
   {
@@ -3976,7 +3976,7 @@
     "lon": "-0.023562585",
     "number": "NULL",
     "address": "58 Bow Road",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "E3 4DJ"
   },
   {
@@ -3986,7 +3986,7 @@
     "lon": "1.381807033",
     "number": "NULL",
     "address": "The Court House!2nd Floor!Cecil Square",
-    "town_name": "Margate",
+    "townName": "Margate",
     "postcode": "CT9 1RL"
   },
   {
@@ -3996,7 +3996,7 @@
     "lon": "-3.551821309",
     "number": "NULL",
     "address": "The Willows!Nicholson Road",
-    "town_name": "Torquay",
+    "townName": "Torquay",
     "postcode": "TQ2 7AZ"
   },
   {
@@ -4006,7 +4006,7 @@
     "lon": "-0.899965458",
     "number": "NULL",
     "address": "5th Floor! St Katharine's House! 21-27 St Katharine's Street",
-    "town_name": "Northampton",
+    "townName": "Northampton",
     "postcode": "NN1 2LH"
   },
   {
@@ -4016,7 +4016,7 @@
     "lon": "-5.056408276",
     "number": "NULL",
     "address": "Edward Street",
-    "town_name": "Truro",
+    "townName": "Truro",
     "postcode": "TR1 2PB"
   },
   {
@@ -4026,7 +4026,7 @@
     "lon": "-5.056408276",
     "number": "477",
     "address": "Courts of Justice!Edward Street",
-    "town_name": "Truro",
+    "townName": "Truro",
     "postcode": "TR1 2PB"
   },
   {
@@ -4036,7 +4036,7 @@
     "lon": "-5.043798229",
     "number": "NULL",
     "address": "The Court House!Tremorvah Wood Lane!Mitchell Hill!",
-    "town_name": "Truro",
+    "townName": "Truro",
     "postcode": "TR1 1HZ"
   },
   {
@@ -4046,7 +4046,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "5th Floor Rolls Building!7 Rolls Buildings!Fetter Lane!",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "EC4A 1NL"
   },
   {
@@ -4056,7 +4056,7 @@
     "lon": "-0.110316308",
     "number": "NULL",
     "address": "7 Rolls Building!Fetter Lane",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "EC4A 1NL"
   },
   {
@@ -4066,7 +4066,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "5th Floor, Rolls Building!7 Rolls Buildings!Fetter Lane",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "EC4A 1NL"
   },
   {
@@ -4076,7 +4076,7 @@
     "lon": "-0.421476543",
     "number": "NULL",
     "address": "501 Uxbridge Road",
-    "town_name": "Hayes",
+    "townName": "Hayes",
     "postcode": "UB4 8HL"
   },
   {
@@ -4086,7 +4086,7 @@
     "lon": "-0.481587317",
     "number": "NULL",
     "address": "The Court House!Harefield Road",
-    "town_name": "Uxbridge",
+    "townName": "Uxbridge",
     "postcode": "UB8 1PQ"
   },
   {
@@ -4096,7 +4096,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "1 Mulberry Way",
-    "town_name": "Wakefield",
+    "townName": "Wakefield",
     "postcode": "WF1 2QN"
   },
   {
@@ -4106,7 +4106,7 @@
     "lon": "-3.166483122",
     "number": "NULL",
     "address": "3rd Floor!Cardiff and the Vale Magistrates Court!Fitzalan Place",
-    "town_name": "Cardiff",
+    "townName": "Cardiff",
     "postcode": "CF24 0RZ"
   },
   {
@@ -4116,7 +4116,7 @@
     "lon": "-3.785143662",
     "number": "NULL",
     "address": "Port Talbot Justice Centre!Harbourside Road",
-    "town_name": "Port Talbot",
+    "townName": "Port Talbot",
     "postcode": "SA13 1SB"
   },
   {
@@ -4126,7 +4126,7 @@
     "lon": "-1.977965538",
     "number": "NULL",
     "address": "Bridge House!Bridge Street",
-    "town_name": "Walsall",
+    "townName": "Walsall",
     "postcode": "WS1 1JQ"
   },
   {
@@ -4136,7 +4136,7 @@
     "lon": "-1.985638941",
     "number": "NULL",
     "address": "Stafford Street",
-    "town_name": "Walsall",
+    "townName": "Walsall",
     "postcode": "WS2 8HA"
   },
   {
@@ -4146,7 +4146,7 @@
     "lon": "-0.209217124",
     "number": "NULL",
     "address": "76-78 Upper Richmond Road",
-    "town_name": "Putney",
+    "townName": "Putney",
     "postcode": "SW15 2SU"
   },
   {
@@ -4156,7 +4156,7 @@
     "lon": "NULL",
     "number": "NULL",
     "address": "Fox Court !30 Brooke Street !London!",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "EC1N 7RS"
   },
   {
@@ -4166,7 +4166,7 @@
     "lon": "-2.5988062",
     "number": "462",
     "address": "Law Courts!Legh Street",
-    "town_name": "Warrington",
+    "townName": "Warrington",
     "postcode": "WA1 1UR"
   },
   {
@@ -4176,7 +4176,7 @@
     "lon": "-2.5988062",
     "number": "NULL",
     "address": "Warrington Law Courts!Legh Street",
-    "town_name": "Warrington",
+    "townName": "Warrington",
     "postcode": "WA1 1UR"
   },
   {
@@ -4186,7 +4186,7 @@
     "lon": "-1.533457106",
     "number": "463",
     "address": "Warwickshire Justice Centre!Newbold Terrace",
-    "town_name": "Leamington Spa",
+    "townName": "Leamington Spa",
     "postcode": "CV32 4EL"
   },
   {
@@ -4196,7 +4196,7 @@
     "lon": "-0.398796389",
     "number": "NULL",
     "address": "3rd Floor!Cassiobury House!11-19 Station Road!",
-    "town_name": "Watford",
+    "townName": "Watford",
     "postcode": "WD17 1EZ"
   },
   {
@@ -4206,7 +4206,7 @@
     "lon": "-0.397444147",
     "number": "NULL",
     "address": "Radius House!51 Clarendon Road",
-    "town_name": "Watford",
+    "townName": "Watford",
     "postcode": "WD17 1HP"
   },
   {
@@ -4216,7 +4216,7 @@
     "lon": "-0.689109351",
     "number": "NULL",
     "address": "The Court House!Midland Road",
-    "town_name": "Wellingborough",
+    "townName": "Wellingborough",
     "postcode": "NN8 1HF"
   },
   {
@@ -4226,7 +4226,7 @@
     "lon": "-3.146283303",
     "number": "366",
     "address": "Mansion House!24 Severn Street",
-    "town_name": "Welshpool",
+    "townName": "Welshpool",
     "postcode": "SY21 7UX"
   },
   {
@@ -4236,7 +4236,7 @@
     "lon": "-3.542340206",
     "number": "NULL",
     "address": "Hall Park!Ramsay Brow",
-    "town_name": "Workington",
+    "townName": "Workington",
     "postcode": "CA14 4AS"
   },
   {
@@ -4246,7 +4246,7 @@
     "lon": "-1.402911949",
     "number": "NULL",
     "address": "Southampton Courthouse!100 The Avenue",
-    "town_name": "Southampton",
+    "townName": "Southampton",
     "postcode": "SO17 1EY"
   },
   {
@@ -4256,7 +4256,7 @@
     "lon": "-0.412620877",
     "number": "NULL",
     "address": "Gloucester House!4 Dukes Green Avenue",
-    "town_name": "Feltham",
+    "townName": "Feltham",
     "postcode": "TW14 0LR"
   },
   {
@@ -4266,7 +4266,7 @@
     "lon": "-1.599286672",
     "number": "NULL",
     "address": "Collection and Enforcement Centre!P.O. Box 135",
-    "town_name": "Leeds",
+    "townName": "Leeds",
     "postcode": "LS27 7ZT"
   },
   {
@@ -4276,7 +4276,7 @@
     "lon": "-0.164180319",
     "number": "NULL",
     "address": "181 Marylebone Road",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "NW1 5BR"
   },
   {
@@ -4286,7 +4286,7 @@
     "lon": "-2.9050786",
     "number": "NULL",
     "address": "North Somerset Courthouse!The Hedges!St Georges",
-    "town_name": "Weston-Super-Mare",
+    "townName": "Weston-Super-Mare",
     "postcode": "BS22 7BB"
   },
   {
@@ -4296,7 +4296,7 @@
     "lon": "-2.460105034",
     "number": "NULL",
     "address": "The Law Courts!Westwey Road",
-    "town_name": "Weymouth",
+    "townName": "Weymouth",
     "postcode": "DT4 8BS"
   },
   {
@@ -4306,7 +4306,7 @@
     "lon": "-2.626427738",
     "number": "NULL",
     "address": "Darlington Street",
-    "town_name": "Wigan",
+    "townName": "Wigan",
     "postcode": "WN1 1DW"
   },
   {
@@ -4316,7 +4316,7 @@
     "lon": "-2.626427738",
     "number": "NULL",
     "address": "Wigan and Leigh Courthouse!Darlington Street",
-    "town_name": "Wigan",
+    "townName": "Wigan",
     "postcode": "WN1 1DW"
   },
   {
@@ -4326,7 +4326,7 @@
     "lon": "-0.248805377",
     "number": "NULL",
     "address": "9 Acton Lane",
-    "town_name": "Harlesden",
+    "townName": "Harlesden",
     "postcode": "NW10 8SB"
   },
   {
@@ -4336,7 +4336,7 @@
     "lon": "-0.247778701",
     "number": "NULL",
     "address": "448 High Road",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "NW10 2DZ"
   },
   {
@@ -4346,7 +4346,7 @@
     "lon": "-0.203600952",
     "number": "NULL",
     "address": "The Court House!Alexandra Road",
-    "town_name": "Wimbledon",
+    "townName": "Wimbledon",
     "postcode": "SW19 7JP"
   },
   {
@@ -4356,7 +4356,7 @@
     "lon": "-1.31898486",
     "number": "465",
     "address": "Winchester Combined Court!The Law Courts",
-    "town_name": "Winchester",
+    "townName": "Winchester",
     "postcode": "SO23 9EL"
   },
   {
@@ -4366,7 +4366,7 @@
     "lon": "-1.31898486",
     "number": "NULL",
     "address": "1st Floor!Southside Offices!The Law Courts!",
-    "town_name": "Winchester",
+    "townName": "Winchester",
     "postcode": "SO23 9EL"
   },
   {
@@ -4376,7 +4376,7 @@
     "lon": "-3.013473025",
     "number": "NULL",
     "address": "Chester Street",
-    "town_name": "Birkenhead",
+    "townName": "Birkenhead",
     "postcode": "CH41 5HW"
   },
   {
@@ -4386,7 +4386,7 @@
     "lon": "-2.122132135",
     "number": "421",
     "address": "Pipers Row",
-    "town_name": "Wolverhampton",
+    "townName": "Wolverhampton",
     "postcode": "WV1 3LQ"
   },
   {
@@ -4396,7 +4396,7 @@
     "lon": "-2.130417377",
     "number": "NULL",
     "address": "The Law Courts!North Street",
-    "town_name": "Wolverhampton",
+    "townName": "Wolverhampton",
     "postcode": "WV1 1RA"
   },
   {
@@ -4406,7 +4406,7 @@
     "lon": "-0.105165586",
     "number": "469",
     "address": "Woodall House!Lordship Lane",
-    "town_name": "Wood Green",
+    "townName": "Wood Green",
     "postcode": "N22 5LF"
   },
   {
@@ -4416,7 +4416,7 @@
     "lon": "0.0901384",
     "number": "472",
     "address": "2 Belmarsh Road",
-    "town_name": "London",
+    "townName": "London",
     "postcode": "SE28 0EY"
   },
   {
@@ -4426,7 +4426,7 @@
     "lon": "-2.221883335",
     "number": "466",
     "address": "The Shirehall!Foregate Street",
-    "town_name": "Worcester",
+    "townName": "Worcester",
     "postcode": "WR1 1EQ"
   },
   {
@@ -4436,7 +4436,7 @@
     "lon": "-2.224341131",
     "number": "NULL",
     "address": "Castle Street",
-    "town_name": "Worcester",
+    "townName": "Worcester",
     "postcode": "WR1 3QZ"
   },
   {
@@ -4446,7 +4446,7 @@
     "lon": "-0.374064809",
     "number": "NULL",
     "address": "The Law Courts!Christchurch Road",
-    "town_name": "Worthing",
+    "townName": "Worthing",
     "postcode": "BN11 1JD"
   },
   {
@@ -4456,7 +4456,7 @@
     "lon": "-0.374040178",
     "number": "NULL",
     "address": "The Law Courts!Christchurch Road",
-    "town_name": "Worthing",
+    "townName": "Worthing",
     "postcode": "BN11 1JE"
   },
   {
@@ -4466,7 +4466,7 @@
     "lon": "-2.989527923",
     "number": "NULL",
     "address": "The Law Courts!Bodhyfryd",
-    "town_name": "Wrexham",
+    "townName": "Wrexham",
     "postcode": "LL12 7BP"
   },
   {
@@ -4476,7 +4476,7 @@
     "lon": "-2.989527923",
     "number": "NULL",
     "address": "Bodhyfryd",
-    "town_name": "Wrexham",
+    "townName": "Wrexham",
     "postcode": "LL12 7BP"
   },
   {
@@ -4486,7 +4486,7 @@
     "lon": "-0.489818842",
     "number": "NULL",
     "address": "Hearing Centre A!Twinwoods Business Centre!Thurleigh Road!",
-    "town_name": "Bedford",
+    "townName": "Bedford",
     "postcode": "MK44 1FD"
   },
   {
@@ -4496,7 +4496,7 @@
     "lon": "-2.633787222",
     "number": "NULL",
     "address": "The Law Courts!Petters Way",
-    "town_name": "Yeovil",
+    "townName": "Yeovil",
     "postcode": "BA20 1SW"
   },
   {
@@ -4506,7 +4506,7 @@
     "lon": "-1.07655092",
     "number": "386",
     "address": "Piccadilly House!55 Piccadilly",
-    "town_name": "York",
+    "townName": "York",
     "postcode": "YO1 9WL"
   },
   {
@@ -4516,7 +4516,7 @@
     "lon": "-1.079646934",
     "number": "467",
     "address": "York Crown Court!The Castle",
-    "town_name": "York",
+    "townName": "York",
     "postcode": "YO1 9WZ"
   },
   {
@@ -4526,7 +4526,7 @@
     "lon": "-1.081907797",
     "number": "NULL",
     "address": "Law Courts!Clifford Street",
-    "town_name": "York",
+    "townName": "York",
     "postcode": "YO1 9RE"
   }
 ]

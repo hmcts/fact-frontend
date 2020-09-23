@@ -14,7 +14,7 @@ app.get('/courts', (req: Request, res: Response) => {
   const filteredDocs = documents.filter(doc => {
     if (doc['postcode'].toUpperCase().split(' ').indexOf(query) >= 0 ||
         doc['address'].toUpperCase().split(' ').indexOf(query) >= 0 ||
-        doc['town_name'].toUpperCase().split(' ').indexOf(query) >= 0 ||
+        doc['townName'].toUpperCase().split(' ').indexOf(query) >= 0 ||
         doc['name'].toUpperCase().split(' ').indexOf(query) >= 0) {
       return true;
     }
