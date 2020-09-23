@@ -95,7 +95,8 @@ describe('Search Controller', () => {
       await getSearchResults(req, res);
       const expectedData: PageData = {
         ...i18n.search.location,
-        path: '/location-search',
+        path: '/search-for-location',
+        results: [],
         errors: true,
       };
       expect(res.render).toBeCalledWith('search/location', expectedData);
