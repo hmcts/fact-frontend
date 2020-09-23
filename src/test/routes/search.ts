@@ -14,7 +14,7 @@ describe('search', () => {
     test('should redirect search location page', async () => {
       await request(app)
         .post('/search-option')
-        .send({ knowName: 'yes' })
+        .send({ knowLocation: 'yes' })
         .expect((res) => expect(res.status).to.equal(302));
     });
 
@@ -22,17 +22,37 @@ describe('search', () => {
     test('should redirect home page', async () => {
       await request(app)
         .post('/search-option')
-        .send({ knowName: 'no' })
+        .send({ knowLocation: 'no' })
         .expect((res) => {
           expect(res.status).to.equal(302);
         });
     });
+
+    test('should render the search option if no options was selected', async () => {
+      await request(app)
+        .post('/search-option')
+        .expect((res) => {
+          expect(res.status).to.equal(200);
+        });
+    });
   });
 
-  describe('search option', () => {
+  describe('location search', () => {
     test('should return search location page', async () => {
       await request(app)
-        .get('/search-option')
+        .get('/location-search')
+        .expect((res) => expect(res.status).to.equal(200));
+    });
+
+    test('should return search location page if no option was selected', async () => {
+      await request(app)
+        .get('/search-for-location')
+        .expect((res) => expect(res.status).to.equal(200));
+    });
+
+    test('should return results if london was the query', async () => {
+      await request(app)
+        .get('/search-for-location?search=london')
         .expect((res) => expect(res.status).to.equal(200));
     });
   });
