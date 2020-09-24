@@ -10,12 +10,12 @@ app.use(bodyParser.json());
 
 app.get('/courts', (req: Request, res: Response) => {
   const query: string = (req.query.search as string).toUpperCase();
-  const documents = [...data];
-  const filteredDocs = documents.filter(doc => {
-    if (doc['postcode'].toUpperCase().split(' ').indexOf(query) >= 0 ||
-        doc['address'].toUpperCase().split(' ').indexOf(query) >= 0 ||
-        doc['townName'].toUpperCase().split(' ').indexOf(query) >= 0 ||
-        doc['name'].toUpperCase().split(' ').indexOf(query) >= 0) {
+  const courts = [...data];
+  const filteredDocs = courts.filter(court => {
+    if (court['postcode'].toUpperCase().split(' ').indexOf(query) >= 0 ||
+        court['address'].toUpperCase().split(' ').indexOf(query) >= 0 ||
+        court['townName'].toUpperCase().split(' ').indexOf(query) >= 0 ||
+        court['name'].toUpperCase().split(' ').indexOf(query) >= 0) {
       return true;
     }
   });
