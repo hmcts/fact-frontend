@@ -48,24 +48,6 @@ app.use((req, res, next) => {
 });
 
 setupDev(app,developmentMode);
-// returning "not found" page for requests with paths not resolved by the router
-app.use((req: any, res: any) => {
-  res.status(404);
-  const data = req.i18n.getDataByLanguage(req.lng).notFound;
-  res.render('not-found', data);
-});
-
-// error handler
-app.use((err: HTTPError, req: any, res: express.Response) => {
-  logger.error(`${err.stack || err}`);
-
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = env === 'development' ? err : {};
-  res.status(err.status || 500);
-  const data = req.i18n.getDataByLanguage(req.lng).error;
-  res.render('error', data);
-});
 
 // info
 app.get(
@@ -96,3 +78,22 @@ healthcheck.addTo(app, healthCheckConfig);
 
 // remaining routes
 routes(app);
+
+// returning "not found" page for requests with paths not resolved by the router
+app.use((req: any, res: any) => {
+  res.status(404);
+  const data = req.i18n.getDataByLanguage(req.lng).notFound;
+  res.render('not-found', data);
+});
+
+// error handler
+app.use((err: HTTPError, req: any, res: express.Response) => {
+  logger.error(`${err.stack || err}`);
+
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = env === 'development' ? err : {};
+  res.status(err.status || 500);
+  const data = req.i18n.getDataByLanguage(req.lng).error;
+  res.render('error', data);
+});
