@@ -1,7 +1,3 @@
-import { glob } from 'glob';
-
-const { Express, Logger } = require('@hmcts/nodejs-logging');
-
 import * as bodyParser from 'body-parser';
 import config from 'config';
 import cookieParser from 'cookie-parser';
@@ -9,21 +5,28 @@ import express from 'express';
 import { Helmet } from './modules/helmet';
 import * as path from 'path';
 import favicon from 'serve-favicon';
-import { HTTPError } from 'HttpError';
+import { HTTPError } from 'interfaces/HttpError';
 import { Nunjucks } from './modules/nunjucks';
 import { I18next } from './modules/i18next';
-const { setupDev } = require('./development');
+import { container } from './container';
+import { healthOptions } from './utils/healthOptions';
+import * as os from 'os';
+import { infoRequestHandler } from '@hmcts/info-provider';
+import routes from './routes';
 
+const healthcheck = require('@hmcts/nodejs-healthcheck');
+const { Express, Logger } = require('@hmcts/nodejs-logging');
+const { setupDev } = require('./development');
 const env = process.env.NODE_ENV || 'development';
 const developmentMode = env === 'development';
+const logger = Logger.getLogger('app');
 
 export const app = express();
 app.locals.ENV = env;
+app.locals.container = container;
 
 // setup logging of HTTP requests
 app.use(Express.accessLogger());
-
-const logger = Logger.getLogger('app');
 
 new Nunjucks(developmentMode).enableFor(app);
 // secure the application by adding various HTTP headers to its responses
@@ -44,10 +47,6 @@ app.use((req, res, next) => {
   next();
 });
 
-glob.sync(__dirname + '/routes/**/*.+(ts|js)')
-  .map(filename => require(filename))
-  .forEach(route => route.default(app));
-
 setupDev(app,developmentMode);
 // returning "not found" page for requests with paths not resolved by the router
 app.use((req: any, res: any) => {
@@ -67,3 +66,33 @@ app.use((err: HTTPError, req: any, res: express.Response) => {
   const data = req.i18n.getDataByLanguage(req.lng).error;
   res.render('error', data);
 });
+
+// info
+app.get(
+  '/info',
+  infoRequestHandler({
+    extraBuildInfo: {
+      host: os.hostname(),
+      name: 'expressjs-template',
+      uptime: process.uptime(),
+    },
+    info: { },
+  }),
+);
+
+// health
+const healthCheckConfig = {
+  checks: {
+    'fact-api': healthcheck.web(`${config.get('services.api.url')}/health`, healthOptions),
+  },
+  buildInfo: {
+    name: config.get('services.frontend.name'),
+    host: os.hostname(),
+    uptime: process.uptime(),
+  },
+};
+
+healthcheck.addTo(app, healthCheckConfig);
+
+// remaining routes
+routes(app);
