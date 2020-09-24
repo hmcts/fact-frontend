@@ -11,5 +11,5 @@ export interface SearchResult {
   name: string;
   postcode: string;
   slug: string;
-  town_name: string;
+  townName: string;
 }

@@ -1,11 +1,10 @@
-import { PageData } from '../../../../main/interfaces/PageData';
+import { PageData } from '../../../../../main/interfaces/PageData';
 import { mockRequest } from '../../../utils/mockRequest';
 import { mockResponse } from '../../../utils/mockResponse';
-import { SearchResultsController } from '../../../../main/controllers/search/SearchResultsController';
+import { SearchResultsController } from '../../../../../main/controllers/search/SearchResultsController';
 
 const i18n = {
   search: {
-    option: {},
     location: {
       foundResults: '',
     },
@@ -26,7 +25,7 @@ describe('SearchResultsController', () => {
       ...i18n.search.location,
       path: '/search-for-location',
       results: [],
-      errors: true,
+      errors: true
     };
     expect(res.render).toBeCalledWith('search/location', expectedData);
   });
@@ -54,7 +53,7 @@ describe('SearchResultsController', () => {
       name: 'London',
       slug: 'London',
       address: 'Address Street',
-      'town_name': 'AAA',
+      'townName': 'AAA',
       postcode: 'AAA AAA',
     }];
     const req = mockRequest(i18n);

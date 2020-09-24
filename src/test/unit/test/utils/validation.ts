@@ -1,4 +1,4 @@
-import { hasProperty, isEmpty } from '../../../main/utils/validation';
+import { hasProperty, isEmpty } from '../../../../main/utils/validation';
 
 describe('validation', () => {
   describe('hasProperty', () => {

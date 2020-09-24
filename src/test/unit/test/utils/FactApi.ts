@@ -1,4 +1,4 @@
-import { FactApi } from '../../../main/utils/FactApi';
+import { FactApi } from '../../../../main/utils/FactApi';
 
 describe('FactApi', () => {
   test('Should return results from get request', async () => {
@@ -7,7 +7,7 @@ describe('FactApi', () => {
         name: 'London',
         slug: 'London',
         address: 'Address Street',
-        'town_name': 'AAA',
+        'townName': 'AAA',
         postcode: 'AAA AAA',
       }],
     };
