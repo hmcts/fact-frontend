@@ -9,6 +9,7 @@ export interface FactRequest extends Request {
         location: SearchResultsData;
         results: {};
       };
+      home: {};
     };
   };
   lng?: string;
