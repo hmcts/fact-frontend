@@ -3,7 +3,7 @@ import { mockRequest } from '../../utils/mockRequest';
 import { mockResponse } from '../../utils/mockResponse';
 
 const i18n = {
-  home: '',
+  home: {},
 };
 
 describe('Home Controller', () => {
