@@ -11,7 +11,7 @@ export class FactApi {
 
   public search(query: string): Promise<SearchResult[]> {
     return this.axios
-      .get(`/courts?search=${query}`)
+      .get(`/courts?q=${query}`)
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
