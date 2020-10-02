@@ -19,7 +19,7 @@ Feature: Search
 
     Examples:
       | partial_search_content |
-      | Oxford                 |
+      | Oxf                 |
 
   Scenario Outline: Full search criteria that returns search result
     And I have entered "<full_search_content>" as search criteria
@@ -40,7 +40,7 @@ Feature: Search
 
     Examples:
       | full_search_content |
-      | WC1A                |
+      | WC1A 9QD            |
 
   Scenario Outline: Partial postcode search criteria that returns search result
     And I have entered "<partial_search_content>" as search criteria
@@ -53,17 +53,6 @@ Feature: Search
       | partial_search_content |
       | WC1A                   |
 
-  Scenario Outline: Search criteria that returns no search results
-    And I have entered "<search_content>" that has no partial or full search matches
-    When I have selected to search for that content
-    Then there are no matching results
-    And I am presented with a no matching results display
-    And I can re-enter search content
-    And I can select to search for that content
-
-    Examples:
-      | search_content |
-      | Ply            |
 
   Scenario Outline: Search when no criteria entered
     And I have not entered search content
