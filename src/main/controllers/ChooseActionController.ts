@@ -17,6 +17,7 @@ export class ChooseActionController {
       };
       return res.render('choose-action', data);
     }
+    // TODO story for user choosing court option
     res.redirect('/');
   }
 }
