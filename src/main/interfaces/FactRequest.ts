@@ -10,6 +10,7 @@ export interface FactRequest extends Request {
         results: {};
       };
       home: {};
+      'choose-action': {};
     };
   };
   lng?: string;

@@ -35,7 +35,7 @@ Given('I continue having not selected a court option', async() => {
 });
 
 Then('I am presented with an error message', async() => {
-  const elementExist = await I.checkElement('#option-error');
+  const elementExist = await I.checkElement('#choose-action-error');
   expect(elementExist).equal(true);
 });
 

@@ -22,7 +22,7 @@ export class SearchOptionController {
     if (knowLocation === 'yes') {
       return res.redirect('/location-search');
     }
-    // TODO story if the user doesnt know the name
-    return res.redirect('/');
+
+    return res.redirect('/service-choose-action');
   }
 }

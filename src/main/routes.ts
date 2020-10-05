@@ -7,5 +7,7 @@ export default function(app: Application): void {
   app.post('/search-option', app.locals.container.cradle.searchOptionController.post);
   app.get('/location-search', app.locals.container.cradle.locationSearchController.get);
   app.get('/search-for-location', app.locals.container.cradle.searchResultsController.get);
+  app.get('/service-choose-action', app.locals.container.cradle.chooseActionController.get);
+  app.post('/service-choose-action', app.locals.container.cradle.chooseActionController.post);
 
 }
