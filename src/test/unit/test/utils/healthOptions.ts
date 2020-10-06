@@ -1,4 +1,4 @@
-import { healthOptions } from '../../../main/utils/healthOptions';
+import { healthOptions } from '../../../../main/utils/healthOptions';
 import config from 'config';
 
 const mockResponse = () => {

@@ -1,0 +1,13 @@
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+{% macro errorSummary(title, text, href) %}
+  {{ govukErrorSummary({
+    titleText: title,
+    errorList: [
+      {
+        text: text,
+        href: href
+      }
+    ]
+  }) }}
+{% endmacro %}
