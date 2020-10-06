@@ -3,6 +3,11 @@ import { expect } from 'chai';
 
 import * as I from '../utlis/puppeteer.util';
 
+Then('I am presented with the {string} page', async function(title: string) {
+  const pageTitle = await I.getPageTitle();
+  expect(pageTitle).equal(title);
+});
+
 Then('I can select a {string} option from the list displayed', async (option: string) => {
   let element;
   switch(option) {
