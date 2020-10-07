@@ -20,15 +20,15 @@
 
 {% block content %}
 {% if errors %}
-  {{ errorSummary(error.title, error.text, "#know-location") }}
+  {{ errorSummary(error.title, error.text, "#choose-action") }}
 {% endif %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form method="POST">
       {{ govukRadios({
-        idPrefix: "know-location",
-        name: "knowLocation",
+        idPrefix: "choose-action",
+        name: "chooseAction",
         fieldset: {
           legend: {
             text: question,
@@ -42,14 +42,23 @@
         errorMessage: { text: error.text | safe } if errors,
         items: [
           {
-            id: "i-have-the-name",
-            value: "yes",
+            id: "nearest-court",
             text: answers.a1
           },
           {
-            id: "i-do-not-have-the-name",
-            value: "no",
+            id: "document-court",
             text: answers.a2
+          },
+          {
+             id: "update-court",
+             text: answers.a3
+          },
+          {
+             divider: "or"
+          },
+          {
+             id: "not-listed",
+             text: answers.a4
           }
         ]
       }) }}

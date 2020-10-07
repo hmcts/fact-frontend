@@ -1,8 +1,17 @@
 {% extends "govuk/template.njk" %}
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
 
 {% block head %}
   {% include "webpack/css.njk" %}
+{% endblock %}
+
+{% block header %}
+    {{ govukHeader({
+        containerClasses: "govuk-width-container",
+        serviceName: serviceName | safe,
+        serviceUrl: (globals.basePath if globals.basePath) + "/"
+    }) }}
 {% endblock %}
 
 {% block beforeContent %}

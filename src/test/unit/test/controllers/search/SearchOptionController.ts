@@ -29,15 +29,14 @@ describe('Search Option Controller', () => {
     expect(res.redirect).toHaveBeenCalledWith('/location-search');
   });
 
-  // TODO story if the user doesnt know the name
-  test('Should redirect the home page', async () => {
+  test('Should redirect to the Choose Action page', async () => {
     const req = mockRequest(i18n);
     req.body = {
       knowLocation: 'no',
     };
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/');
+    expect(res.redirect).toHaveBeenCalledWith('/service-choose-action');
   });
 
   test('Should render search option if no data has been entered', async () => {
