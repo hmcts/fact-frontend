@@ -69,3 +69,12 @@ export const checkElementLength = async (selector: string) => {
     return false;
   }
 };
+
+export const getArrayFromElement = async (el: any) => {
+  try {
+    return Array.from(el.children);
+  } catch (error) {
+    console.log("The element didn't appear.");
+    return [];
+  }
+};
