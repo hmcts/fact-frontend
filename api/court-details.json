@@ -1,0 +1,412 @@
+[
+  {
+    "name": "Birmingham Civil and Family Justice Centre",
+    "slug": "birmingham-civil-and-family-justice-centre",
+    "info": "",
+    "open": true,
+    "directions": null,
+    "lat": 52.4816515396297,
+    "lon": -1.89566151163058,
+    "crown_location_code": null,
+    "county_location_code": 127,
+    "magistrates_location_code": null,
+    "areas_of_law": [
+      {"service":"Adoption","url":"https://www.gov.uk/child-adoption/applying-for-an-adoption-court-order","online":"","onlineText":""},
+      {"service":"Bankruptcy","url":"https://www.gov.uk/bankruptcy","online":"https://www.gov.uk/apply-for-bankruptcy","onlineText":""},
+      {"service":"Benefits","url":"https://www.gov.uk/appeal-benefit-decision","online":"https://www.gov.uk/appeal-benefit-decision/submit-appeal","onlineText":"Appeal a benefits decision online"},
+      {"service":"Child arrangements","url":"https://www.gov.uk/looking-after-children-divorce","online":"https://apply-to-court-about-child-arrangements.service.justice.gov.uk/","onlineText":""},
+      {"service":"Civil partnership","url":"https://www.gov.uk/end-civil-partnership","online":"","onlineText":"Dissolve a civil partnership online"},
+      {"service":"Claims against employers","url":"https://www.gov.uk/employment-tribunals","online":"","onlineText":""},
+      {"service":"Divorce","url":"https://www.gov.uk/divorce","online":"https://www.gov.uk/apply-for-divorce","onlineText":"Apply for a divorce online"},
+      {"service":"Domestic abuse","url":"https://www.gov.uk/injunction-domestic-violence","online":"","onlineText":""},
+      {"service":"Forced marriage","url":"https://www.gov.uk/apply-forced-marriage-protection-order","online":"","onlineText":""},
+      {"service":"Female Genital Mutilation","url":"https://www.gov.uk/government/collections/female-genital-mutilation","online":"","onlineText":""},
+      {"service":"Housing possession","url":"https://www.gov.uk/evicting-tenants","online":"https://www.gov.uk/possession-claim-online-recover-property","onlineText":"Make or respond to a possession claim online"},
+      {"service":"Immigration and asylum","url":"https://www.gov.uk/immigration-asylum-tribunal","online":"","onlineText":""},
+      {"service":"Money claims","url":"https://www.gov.uk/make-court-claim-for-money","online":"https://www.gov.uk/make-money-claim","onlineText":"Make a money claim online"},
+      {"service":"Probate","url":"https://www.gov.uk/applying-for-probate","online":"https://www.gov.uk/applying-for-probate/apply-for-probate","onlineText":"Apply for probate online"},
+      {"service":"Tax","url":"https://www.gov.uk/tax-tribunal","online":""}
+    ],
+    "types": [
+      "Family Court",
+      "County Court"
+    ],
+    "emails": [
+      {
+        "address": "bailiffs.birmingham.countycourt@justice.gov.uk",
+        "description": "Bailiffs",
+        "explanation": null
+      },
+      {
+        "address": "birmingham@thepsu.org.uk",
+        "description": "Personal support unit",
+        "explanation": null
+      },
+      {
+        "address": "courtofprotection.birmingham.countycourt@justice.gov.uk",
+        "description": "",
+        "explanation": null
+      },
+      {
+        "address": "utiac.birmingham@justice.gov.uk",
+        "description": "",
+        "explanation": null
+      },
+      {
+        "address": "bpc.birmingham@justice.gov.uk",
+        "description": "Business and Property Courts",
+        "explanation": null
+      },
+      {
+        "address": "qb.birmingham@justice.gov.uk",
+        "description": "Queen's Bench",
+        "explanation": null
+      },
+      {
+        "address": "family.birmingham.countycourt@justice.gov.uk",
+        "description": "Family queries",
+        "explanation": null
+      },
+      {
+        "address": "enquiries.birmingham.countycourt@justice.gov.uk",
+        "description": "Enquiries",
+        "explanation": null
+      },
+      {
+        "address": "hearings.birmingham.countycourt@justice.gov.uk",
+        "description": "Listing",
+        "explanation": null
+      },
+      {
+        "address": "multi-track.birmingham.countycourt@justice.gov.uk",
+        "description": "",
+        "explanation": null
+      },
+      {
+        "address": "fast-track.birmingham.countycourt@justice.gov.uk",
+        "description": "",
+        "explanation": null
+      },
+      {
+        "address": "administrativecourtoffice.birmingham@hmcts.x.gsi.gov.uk",
+        "description": "Admin court",
+        "explanation": null
+      },
+      {
+        "address": "smallclaims.birmingham.countycourt@justice.gov.uk",
+        "description": "Small claims",
+        "explanation": null
+      }
+    ],
+    "contacts": [
+      {
+        "number": "0121  681 4441",
+        "description": "High Court",
+        "explanation": ""
+      },
+      {
+        "number": "701987 Birmingham 7",
+        "description": "DX",
+        "explanation": ""
+      },
+      {
+        "number": "0300 123 1142",
+        "description": "Social security and child support",
+        "explanation": null
+      },
+      {
+        "number": "01264 785 057",
+        "description": "Fax",
+        "explanation": "Family fax"
+      },
+      {
+        "number": "0121 250 6764",
+        "description": "Appointments",
+        "explanation": "Civil appointment booking line"
+      },
+      {
+        "number": "01264 785 131",
+        "description": "Fax",
+        "explanation": "High Court fax"
+      },
+      {
+        "number": "0121 681 3010",
+        "description": "Appointments",
+        "explanation": "Emergency  Family appointment bookings"
+      },
+      {
+        "number": "0121 250 6354",
+        "description": "Personal Support Unit",
+        "explanation": "Personal Support Unit Enquiries"
+      },
+      {
+        "number": "0121 250 6777",
+        "description": "Enforcement",
+        "explanation": "Enforcement appointment booking line"
+      },
+      {
+        "number": "0300 123 5577",
+        "description": "County Court",
+        "explanation": "Civil and Family Contact Centre enquiry line"
+      },
+      {
+        "number": "0121 250 6395",
+        "description": "County Court",
+        "explanation": "Court of Protection"
+      }
+    ],
+    "opening_times": [
+      {
+        "description": "Telephone Enquiries from",
+        "hours": "8:30am to 5pm"
+      },
+      {
+        "description": "Court building open",
+        "hours": "Monday to Friday 9am to 5pm"
+      },
+      {
+        "description": "Court counter open",
+        "hours": "By prior appointment only (except High Court and Administrative Court 10am to 4pm)"
+      }
+    ],
+    "facilities": [
+      {
+        "description": "<p>Located on every floor.</p>",
+        "name": "Disabled toilet"
+      },
+      {
+        "description": "<p>Wheelchair access in to the building, lifts to all floors.&nbsp;</p>",
+        "name": "Disabled access"
+      },
+      {
+        "description": "<p>Located 4th floor.</p>",
+        "name": "Prayer / Quiet room"
+      },
+      {
+        "description": "<p>We have a security arch. Please alert the security officer if you have a pacemaker.</p>\r\n<p>For safety and security, all users and their possessions will be searched by security when they enter the building.</p>",
+        "name": "Security arch"
+      },
+      {
+        "description": "<p>Refreshments are available via vending machine</p>",
+        "name": "Refreshments"
+      },
+      {
+        "description": "<p><a href=\"https://www.thepsu.org/\">The PSU</a> is available on site to provide assistance.</p>",
+        "name": "Witness service"
+      },
+      {
+        "description": "<p>Assistance dogs are welcome.</p>",
+        "name": "Assistance dogs"
+      },
+      {
+        "description": "<p>This court has wireless internet access available.</p>",
+        "name": "Wireless network connection"
+      },
+      {
+        "description": "<p>Located on 1st, 2nd, 3rd, 4th, 5th &amp; 6th floors.</p>\r\n<p>&nbsp;</p>",
+        "name": "Interview room"
+      },
+      {
+        "description": "<p>Court/hearing room video facilities and prison to court video link facilities are available by prior arrangement. Please contact the court by telephone or email to let us know of your requirements.</p>",
+        "name": "Video facilities"
+      },
+      {
+        "description": "<p>The building has hearing enhancement facilities available by prior arrangement.&nbsp; Please contact the Court office by telephone or email if necessary.</p>",
+        "name": "Loop Hearing"
+      },
+      {
+        "description": "<p>Baby changing facilities are available in the disabled toilets on the 2nd floor</p>\r\n<p>&nbsp;</p>",
+        "name": "Baby changing facility"
+      }
+    ],
+    "addresses": [
+      {
+        "type": "Visit us or write to us",
+        "address": "Priory Courts\r\n33 Bull Street",
+        "town": "Birmingham",
+        "postcode": "B4 6DS"
+      }
+    ],
+    "gbs": null
+  },
+  {
+    "name": "West Cumbria Courthouse",
+    "slug": "west-cumbria-courthouse",
+    "info": "<p><strong>This court or tribunal is open</strong></p>\r\n<p>Our courts and tribunals are open and have social distancing measures to protect you, the judiciary and our staff. Your hearing notice will inform you whether it is taking place in person, by video or by telephone. If you are self-isolating and cannot attend in person, please contact the court or tribunal immediately so they can consider alternative arrangements.&nbsp;</p>\r\n<p>Due to the coronavirus, we&rsquo;re taking longer to answer calls and emails. Please only contact us if necessary.</p>",
+    "open": true,
+    "directions": null,
+    "lat": 54.6439704287508,
+    "lon": -3.54234020589208,
+    "crown_location_code": null,
+    "county_location_code": 373,
+    "magistrates_location_code": 1752,
+    "areas_of_law": [
+      "Adoption",
+      "Bankruptcy",
+      "Children",
+      "Crime",
+      "Divorce",
+      "Domestic violence",
+      "Employment",
+      "Housing possession",
+      "Money claims",
+      "Social security"
+    ],
+    "types": [
+      "Magistrates' Court",
+      "Family Court",
+      "County Court"
+    ],
+    "emails": [
+      {
+        "address": "sscsa-liverpool@justice.gov.uk",
+        "description": "Social security and child support",
+        "explanation": null
+      },
+      {
+        "address": "cm-workingtonmcenq@justice.gov.uk",
+        "description": "Enquiries",
+        "explanation": "Magistrates enquiries"
+      },
+      {
+        "address": "enquiries.westcumbria@justice.gov.uk",
+        "description": "Enquiries",
+        "explanation": "County Court enquiries"
+      },
+      {
+        "address": "cm-workingtonfam@justice.gov.uk",
+        "description": "Enquiries",
+        "explanation": "Family Court enquiries"
+      }
+    ],
+    "contacts": [
+      {
+        "number": "01539 720 478",
+        "description": "Enquiries",
+        "explanation": "Fines"
+      },
+      {
+        "number": "01900  622 44",
+        "description": "Enquiries",
+        "explanation": "Magistrates/County"
+      },
+      {
+        "number": "0300 332 1000",
+        "description": "Witness service",
+        "explanation": null
+      },
+      {
+        "number": "743420 Workington 5",
+        "description": "DX",
+        "explanation": ""
+      },
+      {
+        "number": "0300 123 1142",
+        "description": "Social security and child support",
+        "explanation": ""
+      }
+    ],
+    "opening_times": [
+      {
+        "description": "Counter open",
+        "hours": "Monday to Friday 9am to 5pm (Magistrates' Court)"
+      },
+      {
+        "description": "Counter open",
+        "hours": "Monday to Friday 10am to 2pm (County Court)(Llys Sirol)"
+      },
+      {
+        "description": "Court open",
+        "hours": "Monday to Friday 9am to 5pm"
+      },
+      {
+        "description": "Telephone enquiries answered",
+        "hours": "Monday to Friday 9am to 5pm (Magistrates)"
+      },
+      {
+        "description": "Telephone enquiries answered",
+        "hours": "Monday to Friday 10am to 2pm (County)"
+      }
+    ],
+    "facilities": [
+      {
+        "description": "<p>Sound reinforcement as well as fixed and portable induction loop facilities are available.</p>",
+        "name": "Loop Hearing"
+      },
+      {
+        "description": "<p>There are no parking facilities at this building except for blue badge holders (subject to prior arrangements).&nbsp; The nearest public car park is located opposite the court at Marks and Spencer.</p>",
+        "name": "No parking"
+      },
+      {
+        "description": "<p>Changing facilities are available at Workington court, please ask the court usher. However, children should not be brought to court unless they have someone to look after them whilst you are in court.</p>",
+        "name": "Baby changing facility"
+      },
+      {
+        "description": "<p>Disabled access and toilet facilities are available. Parking is available to orange badge holders.</p>",
+        "name": "Disabled access"
+      },
+      {
+        "description": "<p>Rooms are available on request.</p>",
+        "name": "Interview room"
+      },
+      {
+        "description": "<p>Assistance dogs are welcome.</p>",
+        "name": "Assistance dogs"
+      },
+      {
+        "description": "<p>Court/hearing room video conferencing facilities and prison to court video link facilities are available (by prior arrangement)</p>",
+        "name": "Video facilities"
+      }
+    ],
+    "addresses": [
+      {
+        "type": "Visiting",
+        "address": "Hall Park\nRamsay Brow\n\n",
+        "town": "Workington",
+        "postcode": "CA14 4AS"
+      }
+    ],
+    "gbs": null
+  },
+  {
+    "name": "North West Regional Divorce Centre",
+    "slug": "north-west-regional-divorce-centre",
+    "info": "",
+    "open": true,
+    "directions": null,
+    "lat": 53.4094847497055,
+    "lon": -2.98938972812673,
+    "crown_location_code": null,
+    "county_location_code": null,
+    "magistrates_location_code": null,
+    "areas_of_law": [
+      "Civil partnership",
+      "Divorce"
+    ],
+    "types": [],
+    "emails": [],
+    "contacts": [
+      {
+        "number": "0300 303 0642",
+        "description": "Divorce",
+        "explanation": ""
+      },
+      {
+        "number": "702600 Liverpool 5",
+        "description": "DX",
+        "explanation": null
+      }
+    ],
+    "opening_times": [],
+    "facilities": [],
+    "addresses": [
+      {
+        "type": "Postal",
+        "address": "North West Regional Divorce Centre\r\n35 Vernon Street",
+        "town": "Liverpool",
+        "postcode": "L2 2BX"
+      }
+    ],
+    "gbs": null
+  }
+]
