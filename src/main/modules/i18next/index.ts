@@ -19,12 +19,10 @@ export class I18next {
 
   public enableFor(app: express.Express): void {
     app.use(i18nextMiddleware.handle(i18next));
-    app.use(this.unifyObjects);
-  }
-
-  private unifyObjects(req: FactRequest, res: Response, next: NextFunction) {
-    Object.assign(res.locals, req.i18n.getDataByLanguage(req.lng).template);
-    next();
+    app.use((req: FactRequest, res: Response, next: NextFunction) => {
+      Object.assign(res.locals, req.i18n.getDataByLanguage(req.lng).template);
+      next();
+    });
   }
 
 }
