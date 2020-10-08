@@ -34,4 +34,17 @@ describe('healthOptions', () => {
     await results.callback(new Error('error'), res);
     expect(console.log).toBeCalledWith('Health check failed!');
   });
+
+  test('Should return health check down if status is not good', async () => {
+    const res: any = mockResponse();
+    res.body.status = 'not good';
+    const results: any = healthOptions();
+    expect(results).toBeTruthy();
+    expect(results.timeout).toBe(config.get('health.timeout'));
+    expect(results.deadline).toBe(config.get('health.deadline'));
+
+    console.log = jest.fn();
+    const healthResponse: string = await results.callback(null, res);
+    expect(healthResponse).toStrictEqual({ status: 'DOWN' });
+  });
 });
