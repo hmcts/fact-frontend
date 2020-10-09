@@ -34,174 +34,228 @@ href: "/"
     <h1 class="govuk-heading-l">
       {{ results.name }}
     </h1>
-  </div>
 
-  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-two-thirds">
 
-    {% if not results['in_person'] %}
-      <p class="govuk-body-m">
-        This location services {{ catchmentArea }} for {{ results['service_area'] }}. We do not provide an in-person service.
-      </p>
-      <h2 class="govuk-heading-l">
-        Contact us
-      </h2>
-      <h2 class="govuk-heading-l">
-        {{ results.addresses[0].type }}:
-      </h2>
-      <p class="govuk-body-m address">
-        {{ results.addresses[0].address }}<br>
-        {{ results.addresses[0].town }}<br>
-        {{ results.addresses[0].postcode }}
-      </p>
-    {% else %}
-      {% for address in results.addresses %}
-        {% if results.addresses.length > 1 %}
-          <div class="govuk-grid-column-one-half multiple-addresses">
-        {% endif %}
-            <h2 class="govuk-heading-l">
-              {{ address.type }}:
-            </h2>
-            <h3 class="govuk-heading-m">
-              Address
-            </h3>
-            <p class="govuk-body-m address">
-              {{ address.address }}<br>
-              {{ address.town }}<br>
-              {{ address.postcode }}
-            </p>
-          {% if results.addresses.length > 1 %}
-          </div>
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-
-    {% if results['in_person'] %}
-      <p class="govuk-link">
-        <a href="https://maps.google.com/maps?q={{ results.lat }},{{ results.lon }}">Get directions</a>
-      </p>
-      <p class="govuk-link">
-        <a href="https://www.gov.uk/guidance/what-to-expect-coming-to-a-court-or-tribunal">What to expect coming to a court or tribunal</a>
-      </p>
-    {% endif %}
-
-    {% if results.urgent %}
-      {{ govukWarningText({
-        text: results.urgent,
-        iconFallbackText: "Warning"
-      }) }}
-    {% endif %}
-
-    {% if results.info %}
-      <h3 class="govuk-heading-m">
-        Additional Information
-      </h3>
-      <p class="govuk-body-m">
-        {{ results.info }}
-      </p>
-    {% endif %}
-
-    {% if results['opening_times'] and results['opening_times'].length > 0%}
-      <h3 class="govuk-heading-m">
-        Opening times
-      </h3>
-      {% for times in results['opening_times'] %}
+      {% if not results['in_person'] %}
         <p class="govuk-body-m">
-          {{ times.description }}: {{ times.hours }}
+          This location services {{ catchmentArea }} for {{ results['service_area'] }}. We do not provide an in-person service.
         </p>
-      {% endfor %}
-    {% endif %}
-
-    {% if results['in_person'] and results.facilities.length > 0%}
-      <h3 class="govuk-heading-m">
-        Building facilities
-      </h3>
-<!--      <p class="govuk-body-m">-->
-<!--        If you have a disability and need help coming to a hearing, please contact <a href="mailto:">{{ courtEmailEnquiries }}</a> or {{ courtPhoneEnquiries }}.-->
-<!--      </p>-->
-
-      {% for facility in results.facilities %}
-        <h4 class="govuk-heading-s">
-          {{ facility.name }}
-        </h4>
-        <p class="govuk-body-m">
-          {{ facility.description }}
-        </p>
-      {% endfor %}
-    {% endif %}
-  </div>
-
-  <div class="govuk-grid-column-one-third">
-    {% if results['in_person'] %}
-      <img src="{{ court.url }}" alt="Front view of {{ results.name }}">
-      <p class="govuk-body-s">
-        {{ results.name }}
-      </p>
-      <h3 class="govuk-heading-m">
-        This location handles:
-      </h3>
-      <ul class="govuk-list">
-        {% for area in results['areas_of_law'] %}
-          <li>
-            <a class="govuk-link" href="{{ area.url }}">{{ area.service }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    {% else %}
-      {% if probateService or divorceService or civilPartnershipService or moneyClaimsService %}
-        <h2 class="govuk-heading-m" >
-          Related content
+        <h2 class="govuk-heading-l">
+          Contact us
         </h2>
-        <p class="govuk-body-m">
-          Find out more about</br>
-          {% if moneyClaimsService %}
-            <a class="govuk-link" href="https://www.gov.uk/make-court-claim-for-money">starting a money claim application</a>
-          {% endif%}
-          {% if divorceService %}
-            <a class="govuk-link" href="https://www.gov.uk/divorce">starting a divorce application</a>
-          </br>
-          {% endif%}
-          {% if civilPartnershipService %}
-            <a class="govuk-link" href="https://www.gov.uk/end-civil-partnership">ending a civil partnership</a>
-          {% endif%}
-          {% if probateService %}
-            <a class="govuk-link" href="https://www.gov.uk/applying-for-probate">starting a probate application</a>
-          {% endif%}
+        <h2 class="govuk-heading-l">
+          {{ results.addresses[0].type }}:
+        </h2>
+        <p class="govuk-body-m address">
+          {{ results.addresses[0].address }}<br>
+          {{ results.addresses[0].town }}<br>
+          {{ results.addresses[0].postcode }}
+        </p>
+      {% else %}
+        {% for address in results.addresses %}
+          {% if results.addresses.length > 1 %}
+            <div class="govuk-grid-column-one-half multiple-addresses">
+          {% endif %}
+              <h2 class="govuk-heading-l">
+                {{ address.type }}:
+              </h2>
+              <h3 class="govuk-heading-m">
+                Address
+              </h3>
+              <p class="govuk-body-m address">
+                {{ address.address }}<br>
+                {{ address.town }}<br>
+                {{ address.postcode }}
+              </p>
+            {% if results.addresses.length > 1 %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      {% if results['in_person'] %}
+        <p class="govuk-link">
+          <a href="https://maps.google.com/maps?q={{ results.lat }},{{ results.lon }}">Get directions</a>
+        </p>
+        <p class="govuk-link">
+          <a href="https://www.gov.uk/guidance/what-to-expect-coming-to-a-court-or-tribunal">What to expect coming to a court or tribunal</a>
         </p>
       {% endif %}
-    {% endif %}
 
-    <h3 class="govuk-heading-m">
-      Useful links:
-    </h3>
-    <p class="govuk-body-m">
-      <a href="https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service/about/complaints-procedure">Make a complaint</a>
-    </p>
+      {% if results.urgent %}
+        {{ govukWarningText({
+          text: results.urgent,
+          iconFallbackText: "Warning"
+        }) }}
+      {% endif %}
 
-    {% if results.crown_location_code or results.county_location_code or results.magistrates_location_code or results['dx_number'] %}
+      {% if results.info %}
+        <h3 class="govuk-heading-m">
+          Additional Information
+        </h3>
+        <p class="govuk-body-m">
+          {{ results.info }}
+        </p>
+      {% endif %}
+
+      {% if results['opening_times'] and results['opening_times'].length > 0%}
+        <h3 class="govuk-heading-m">
+          Opening times
+        </h3>
+        {% for times in results['opening_times'] %}
+          <p class="govuk-body-m">
+            {{ times.description }}: {{ times.hours }}
+          </p>
+        {% endfor %}
+      {% endif %}
+
+      {% if results.emails and results.emails.length > 0 %}
+        <div class="govuk-grid-row">
+          <h3 class="govuk-heading-m">
+            Email
+          </h3>
+          {% for email in results.emails %}
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-third">
+                <p class="govuk-body-m">
+                  {{ email.description}}
+                </p>
+              </div>
+              <div class="govuk-grid-column-two-thirds">
+                <div class="govuk-body-m">
+                  <a class="govuk-link" href="mailto:{{ email.address }}">{{ email.address }}</a>
+                  {% if email.explanation %}
+                    </br>
+                    <p class="govuk-body-m">({{ email.explanation }})</p>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if results.contacts and results.contacts.length > 0 %}
+        <div class="govuk-grid-row">
+          <h3 class="govuk-heading-m">
+            Telephone
+          </h3>
+          {% for telephone in results.contacts %}
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+              <p class="govuk-body-m">
+                {{ telephone.description}}
+              </p>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+              <div class="govuk-body-m">
+                <a class="govuk-link" href="tel:{{ email.address }}">{{ telephone.number }}</a>
+                {% if telephone.explanation %}
+                </br>
+                <p class="govuk-body-m">({{ telephone.explanation }})</p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if results['in_person'] and results.facilities.length > 0%}
+        <div class="govuk-grid-row">
+          <h3 class="govuk-heading-m">
+            Building facilities
+          </h3>
+    <!--      <p class="govuk-body-m">-->
+    <!--        If you have a disability and need help coming to a hearing, please contact <a href="mailto:">{{ courtEmailEnquiries }}</a> or {{ courtPhoneEnquiries }}.-->
+    <!--      </p>-->
+
+          {% for facility in results.facilities %}
+            <h4 class="govuk-heading-s">
+              {{ facility.name }}
+            </h4>
+            <p class="govuk-body-m">
+              {{ facility.description }}
+            </p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      {% if results['in_person'] %}
+        <img src="{{ court.url }}" alt="Front view of {{ results.name }}">
+        <p class="govuk-body-s">
+          {{ results.name }}
+        </p>
+        <h3 class="govuk-heading-m">
+          This location handles:
+        </h3>
+        <ul class="govuk-list">
+          {% for area in results['areas_of_law'] %}
+            <li>
+              <a class="govuk-link" href="{{ area.url }}">{{ area.service }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        {% if probateService or divorceService or civilPartnershipService or moneyClaimsService %}
+          <h2 class="govuk-heading-m" >
+            Related content
+          </h2>
+          <p class="govuk-body-m">
+            Find out more about</br>
+            {% if moneyClaimsService %}
+              <a class="govuk-link" href="https://www.gov.uk/make-court-claim-for-money">starting a money claim application</a>
+            {% endif%}
+            {% if divorceService %}
+              <a class="govuk-link" href="https://www.gov.uk/divorce">starting a divorce application</a>
+            </br>
+            {% endif%}
+            {% if civilPartnershipService %}
+              <a class="govuk-link" href="https://www.gov.uk/end-civil-partnership">ending a civil partnership</a>
+            {% endif%}
+            {% if probateService %}
+              <a class="govuk-link" href="https://www.gov.uk/applying-for-probate">starting a probate application</a>
+            {% endif%}
+          </p>
+        {% endif %}
+      {% endif %}
+
       <h3 class="govuk-heading-m">
-        Court codes for legal professionals:
+        Useful links:
       </h3>
-      {% if results.crown_location_code %}
-        <p class="govuk-body-m">
-          Crown Court location code: <span class="govuk-body-m">{{ results.crown_location_code }}</span>
-        </p>
+      <p class="govuk-body-m">
+        <a href="https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service/about/complaints-procedure">Make a complaint</a>
+      </p>
+
+      {% if results.crown_location_code or results.county_location_code or results.magistrates_location_code or results['dx_number'] %}
+        <h3 class="govuk-heading-m">
+          Court codes for legal professionals:
+        </h3>
+        {% if results.crown_location_code %}
+          <p class="govuk-body-m">
+            Crown Court location code: <span class="govuk-body-m">{{ results.crown_location_code }}</span>
+          </p>
+        {% endif %}
+        {% if results.county_location_code %}
+          <p class="govuk-body-m">
+            County Court location code: <span class="govuk-body-m">{{ results.county_location_code }}</span>
+          </p>
+        {% endif %}
+        {% if results.magistrates_location_code %}
+          <p class="govuk-body-m">
+            Magistrates' Court location code: <span class="govuk-body-m">{{ results.magistrates_location_code }}</span>
+          </p>
+        {% endif %}
+        {% if results['dx_number'] %}
+          <p class="govuk-body-m">
+            DX: <span class="govuk-body-m">{{ results['dx_number'] }}</span>
+          </p>
+        {% endif %}
       {% endif %}
-      {% if results.county_location_code %}
-        <p class="govuk-body-m">
-          County Court location code: <span class="govuk-body-m">{{ results.county_location_code }}</span>
-        </p>
-      {% endif %}
-      {% if results.magistrates_location_code %}
-        <p class="govuk-body-m">
-          Magistrates' Court location code: <span class="govuk-body-m">{{ results.magistrates_location_code }}</span>
-        </p>
-      {% endif %}
-      {% if results['dx_number'] %}
-        <p class="govuk-body-m">
-          DX: <span class="govuk-body-m">{{ results['dx_number'] }}</span>
-        </p>
-      {% endif %}
-    {% endif %}
+    </div>
   </div>
 </div>
 
