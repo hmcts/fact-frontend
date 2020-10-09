@@ -1,0 +1,194 @@
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+{% extends "template.njk" %}
+
+{% block pageTitle %}
+{{ title }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ super() }}
+
+{{ govukBackLink({
+text: "Back",
+href: "/"
+}) }}
+{% endblock %}
+
+{% set catchmentArea = "the South-East of England" if regionalCentre else "all of England and Wales" %}
+{% if results['service-area'] %}
+  {% if 'probate' in results['service-area'] %}
+    {% set probateService = true %}
+  {% elif 'divorce' in results['service-area'] %}
+    {% set divorceService = true %}
+    {% set civilPartnershipService = true %}
+  {% elif 'money' in results['service-area'] %}
+    {% set moneyClaimsService = true %}
+  {% endif %}
+{% endif %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">
+      {{ results.name }}
+    </h1>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if not results['in_person'] %}
+      <p class="govuk-body-m">
+        This location services {{ catchmentArea }} for {{ results['service_area'] }}. We do not provide an in-person service.
+      </p>
+      <h2 class="govuk-heading-l">
+        Contact us
+      </h2>
+      <h3 class="govuk-heading-m">
+        Write to us:
+      </h3>
+      <p class="govuk-body-m address">
+        {{ addresses[0].address }}<br>
+        {{ addresses[0].town }}<br>
+        {{ addresses[0].postcode }}
+      </p>
+    {% endif %}
+    {% for address in results.addresses %}
+      {% if results.addresses.length > 1 %}
+        <div class="govuk-grid-column-one-half multiple-addresses">
+      {% endif %}
+          <h2 class="govuk-heading-l">
+            {{ address.type }}:
+          </h2>
+          <h3 class="govuk-heading-m">
+            Address
+          </h3>
+          <p class="govuk-body-m address">
+            {{ address.address }}<br>
+            {{ address.town }}<br>
+            {{ address.postcode }}
+          </p>
+        {% if results.addresses.length > 1 %}
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    {% if results['in_person'] %}
+      <p class="govuk-link">
+        <a href="https://maps.google.com/maps?q={{ results.lat }},{{ results.lon }}">Get directions</a>
+      </p>
+      <p class="govuk-link">
+        <a href="https://www.gov.uk/guidance/what-to-expect-coming-to-a-court-or-tribunal">What to expect coming to a court or tribunal</a>
+      </p>
+    {% endif %}
+
+    {% if results.urgent %}
+      {{ govukWarningText({
+        text: results.urgent,
+        iconFallbackText: "Warning"
+      }) }}
+    {% endif %}
+
+    {% if results.info %}
+      <h3 class="govuk-heading-m">
+        Additional Information
+      </h3>
+      <p class="govuk-body-m">
+        {{ results.info }}
+      </p>
+    {% endif %}
+
+    {% if results['in_person'] %}
+      <h3 class="govuk-heading-m">
+        Building facilities
+      </h3>
+<!--      <p class="govuk-body-m">-->
+<!--        If you have a disability and need help coming to a hearing, please contact <a href="mailto:">{{ courtEmailEnquiries }}</a> or {{ courtPhoneEnquiries }}.-->
+<!--      </p>-->
+
+      {% for facility in results.facilities %}
+        <h4 class="govuk-heading-s">
+          {{ facility.name }}
+        </h4>
+        <p class="govuk-body-m">
+          {{ facility.description }}
+        </p>
+      {% endfor %}
+    {% endif %}
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    {% if results['in_person'] %}
+      <img src="{{ court.url }}" alt="Front view of {{ results.name }}">
+      <p class="govuk-body-s">
+        {{ results.name }}
+      </p>
+      <h3 class="govuk-heading-m">
+        This location handles:
+      </h3>
+      <ul class="govuk-list">
+        {% for area in results['areas_of_law'] %}
+          <li>
+            <a class="govuk-link" href="{{ area.url }}">{{ area.service }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      {% if probateService or divorceService or civilPartnershipService or moneyClaimsService %}
+        <h2 class="govuk-heading-m" >
+          Related content
+        </h2>
+        <p class="govuk-body-m">
+          Find out more about</br>
+          {% if moneyClaimsService %}
+            <a class="govuk-link" href="https://www.gov.uk/make-court-claim-for-money">starting a money claim application</a>
+          {% endif%}
+          {% if divorceService %}
+            <a class="govuk-link" href="https://www.gov.uk/divorce">starting a divorce application</a>
+          </br>
+          {% endif%}
+          {% if civilPartnershipService %}
+            <a class="govuk-link" href="https://www.gov.uk/end-civil-partnership">ending a civil partnership</a>
+          {% endif%}
+          {% if probateService %}
+            <a class="govuk-link" href="https://www.gov.uk/applying-for-probate">starting a probate application</a>
+          {% endif%}
+        </p>
+      {% endif %}
+    {% endif %}
+
+    <h3 class="govuk-heading-m">
+      Useful links:
+    </h3>
+    <p class="govuk-body-m">
+      <a href="https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service/about/complaints-procedure">Make a complaint</a>
+    </p>
+
+    <h3 class="govuk-heading-m">
+      Court codes for legal professionals:
+    </h3>
+    {% if results.crown_location_code %}
+      <p class="govuk-body-m">
+        Crown Court location code: <span class="govuk-body-m">{{ results.crown_location_code }}</span>
+      </p>
+    {% endif %}
+    {% if results.county_location_code %}
+      <p class="govuk-body-m">
+        County Court location code: <span class="govuk-body-m">{{ results.county_location_code }}</span>
+      </p>
+    {% endif %}
+    {% if results.magistrates_location_code %}
+      <p class="govuk-body-m">
+        Magistrates' Court location code: <span class="govuk-body-m">{{ results.magistrates_location_code }}</span>
+      </p>
+    {% endif %}
+    {% if results['dx_number'] %}
+      <p class="govuk-body-m">
+        DX: <span class="govuk-body-m">{{ results['dx_number'] }}</span>
+      </p>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

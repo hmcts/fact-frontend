@@ -12,6 +12,7 @@ export interface FactRequest extends Request {
       home: {};
       'choose-action': {};
       template: {};
+      'court-details': {};
     };
   };
   lng?: string;

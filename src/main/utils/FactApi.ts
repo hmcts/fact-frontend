@@ -18,4 +18,14 @@ export class FactApi {
         return [];
       });
   }
+
+  public court(slug: string): Promise<SearchResult[]> {
+    return this.axios
+      .get(`/courts/${slug}`)
+      .then(results => results.data)
+      .catch(err => {
+        this.logger.error(err);
+        return [];
+      });
+  }
 }
