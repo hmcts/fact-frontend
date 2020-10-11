@@ -8,7 +8,7 @@ Given('results are returned', async () => {
 });
 
 When('I select a court or tribunal link', async () => {
-  await I.click('#search-results > a');
+  await I.click('#search-results > h2 > a');
 });
 
 Given("that location is an 'in-person' court or tribunal", async () => {
@@ -17,8 +17,8 @@ Given("that location is an 'in-person' court or tribunal", async () => {
 });
 
 Then("I am presented with the profile page for an 'in-person' court or tribunal", async function() {
-  const addressElement = await I.checkElement('#addresses');
-  const subHeadingElement = await I.getElement('h2');
+  const addressElement = await I.checkElement('.single-address');
+  const subHeadingElement = await I.getElement('.single-address');
   const subHeading = await I.getElementText(subHeadingElement);
   expect(addressElement).equal(true);
   expect(subHeading).equal('Visit or contact us:');
@@ -31,28 +31,27 @@ Given("that location is not an 'in-person' court or tribunal", async () => {
 });
 
 Then("I am presented with the profile page for a not 'in-person' court or tribunal", async function() {
-  const subHeadingElement = await I.getElement('h2');
+  const subHeadingElement = await I.getElement('.postal-address');
   const subHeading = await I.getElementText(subHeadingElement);
-  expect(subHeading).equal('Contact us:');
+  expect(subHeading).equal('Contact us');
 });
 
 Given('that location entry comprises a single address', async () => {
-  const element = await I.getElement('#addresses');
-  const elChildrenLength = await I.checkElementLength(element.children);
-  expect(elChildrenLength).equal(1);
+  const addressElement = await I.checkElement('.single-address');
+  expect(addressElement).equal(true);
 });
 
 Then('the type of address is presented to me on the profile page e.g. {string} or {string}', async function(type1: string, type2: string) {
-  const element = await I.getElement('#addresses');
-  const headingText = await I.getElementText(element[0]);
+  const element = await I.getElement('.single-address');
+  const headingText = await I.getElementText(element);
   expect(headingText).to.satisfy((value: string) => {
     return value.toLowerCase() === type1 || value.toLowerCase() === type2;
   });
 });
 
 Given('the address for that type is presented to me on the profile page', async () => {
-  const element = await I.getElement('#addresses');
-  expect(element.children[0]).not.to.be(null);
+  const subHeadingElement = await I.checkElement('.single-address');
+  expect(subHeadingElement).equal(true);
 });
 
 Then('both types of address are presented to me on the profile page e.g. {string} and {string}', async function(type1: string, type2: string) {

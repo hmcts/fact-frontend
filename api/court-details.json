@@ -214,7 +214,7 @@
     ],
     "addresses": [
       {
-        "type": "Visit us or write to us",
+        "type": "Visit or contact us",
         "address": "Priory Courts\r\n33 Bull Street",
         "town": "Birmingham",
         "postcode": "B4 6DS"
@@ -227,6 +227,8 @@
     "slug": "west-cumbria-courthouse",
     "info": "<p><strong>This court or tribunal is open</strong></p>\r\n<p>Our courts and tribunals are open and have social distancing measures to protect you, the judiciary and our staff. Your hearing notice will inform you whether it is taking place in person, by video or by telephone. If you are self-isolating and cannot attend in person, please contact the court or tribunal immediately so they can consider alternative arrangements.&nbsp;</p>\r\n<p>Due to the coronavirus, we&rsquo;re taking longer to answer calls and emails. Please only contact us if necessary.</p>",
     "open": true,
+    "in_person": true,
+    "dx_number": "701987 Birmingham 7",
     "directions": null,
     "lat": 54.6439704287508,
     "lon": -3.54234020589208,
@@ -354,6 +356,12 @@
     "addresses": [
       {
         "type": "Visiting",
+        "address": "Hall Park\nRamsay Brow\n\n",
+        "town": "Workington",
+        "postcode": "CA14 4AS"
+      },
+      {
+        "type": "Write to us",
         "address": "Hall Park\nRamsay Brow\n\n",
         "town": "Workington",
         "postcode": "CA14 4AS"
