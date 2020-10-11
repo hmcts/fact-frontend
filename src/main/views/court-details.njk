@@ -38,37 +38,43 @@ href: "/"
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-grid-row">
         {% if not results['in_person'] %}
-          <p class="govuk-body-m">
-            This location services {{ catchmentArea }} for {{ results['service_area'] }}. We do not provide an in-person service.
-          </p>
-          <h2 class="govuk-heading-l">
-            Contact us
-          </h2>
-          <h2 class="govuk-heading-l">
-            {{ results.addresses[0].type }}:
-          </h2>
-          <p class="govuk-body-m address">
-            {{ results.addresses[0].address }}<br>
-            {{ results.addresses[0].town }}<br>
-            {{ results.addresses[0].postcode }}
-          </p>
+          <div id="not-in-person">
+            <p class="govuk-body-m">
+              This location services {{ catchmentArea }} for {{ results['service_area'] }}. We do not provide an in-person service.
+            </p>
+            <h2 class="govuk-heading-l postal-address">
+              Contact us
+            </h2>
+            <h3 class="govuk-heading-m">
+              {{ results.addresses[0].type }}:
+            </h3>
+            <p class="govuk-body-m address">
+              {{ results.addresses[0].address }}<br>
+              {{ results.addresses[0].town }}<br>
+              {{ results.addresses[0].postcode }}
+            </p>
+          </div>
         {% else %}
           {% for address in results.addresses %}
             {% if results.addresses.length > 1 %}
               <div class="govuk-grid-column-one-half multiple-addresses">
-            {% endif %}
                 <h2 class="govuk-heading-l">
                   {{ address.type }}:
                 </h2>
-                <h3 class="govuk-heading-m">
-                  Address
-                </h3>
-                <p class="govuk-body-m address">
-                  {{ address.address }}<br>
-                  {{ address.town }}<br>
-                  {{ address.postcode }}
-                </p>
-              {% if results.addresses.length > 1 %}
+            {% else %}
+              <h2 class="govuk-heading-l single-address">
+                {{ address.type }}:
+              </h2>
+              <h3 class="govuk-heading-m">
+                Address
+              </h3>
+            {% endif %}
+              <p class="govuk-body-m address">
+                {{ address.address }}<br>
+                {{ address.town }}<br>
+                {{ address.postcode }}
+              </p>
+            {% if results.addresses.length > 1 %}
               </div>
             {% endif %}
           {% endfor %}
