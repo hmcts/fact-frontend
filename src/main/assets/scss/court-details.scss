@@ -1,7 +1,13 @@
-.multiple-addresses {
-  padding-left: 0;
-}
+#court-tribunal-details {
+  #side-content {
+    padding: 0 30px;
+  }
 
-#emails, #contacts {
-  word-wrap: break-word
+  .multiple-addresses {
+    padding-left: 0;
+  }
+
+  #emails, #contacts {
+    word-wrap: break-word
+  }
 }

@@ -29,7 +29,7 @@ href: "/"
 {% endif %}
 {% block content %}
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row" id="court-tribunal-details">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l">
       {{ results.name }}
@@ -193,11 +193,17 @@ href: "/"
               {{ facility.description }}
             </p>
           {% endfor %}
+          <h4 class="govuk-heading-s">
+            Translators or Interpreters
+          </h4>
+          <p class="govuk-body-m">
+            <a href="https://www.gov.uk/get-interpreter-at-court-or-tribunal">Get an interpreter at a court or tribunal.</a>
+          </p>
         </div>
       {% endif %}
     </div>
 
-    <div class="govuk-grid-column-one-third">
+    <div class="govuk-grid-column-one-third" id="side-content">
       {% if results['in_person'] %}
         <div class="govuk-grid-row">
           <img src="{{ court.url }}" alt="Front view of {{ results.name }}">
@@ -250,7 +256,7 @@ href: "/"
           Useful links:
         </h3>
         <p class="govuk-body-m">
-          <a class="govuk-link" href="https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service/about/complaints-procedure">Make a complaint</a>
+          <a class="govuk-link" href="https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service/about/complaints-procedure">Contact us to make a complaint</a>
         </p>
       </div>
 
