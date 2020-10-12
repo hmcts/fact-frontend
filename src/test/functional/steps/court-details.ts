@@ -116,7 +116,7 @@ Then('the type of each service is presented on the profile page', async () => {
 Given('the opening days and hours for each service is presented to me on the profile page', async () => {
   const element = await I.getElement('#opening-times > p');
   const text = await I.getElementText(element);
-  expect(text).equal('Telephone Enquiries from: 8:30am to 5pm');
+  expect(text).equal('Court building open: Monday to Friday 9am to 5pm');
 });
 
 Given('that location entry includes one or more telephone numbers for a service', async () => {
@@ -124,43 +124,33 @@ Given('that location entry includes one or more telephone numbers for a service'
   expect(hasTelephoneInfo).equal(true);
 });
 
-Given('that location entry does not include one or more emails for that service', async () => {
-  const hasEmailInfo = await I.checkElement('#emails');
-  expect(hasEmailInfo).equal(false);
-});
-
 Then('the contact description for each service is presented on the profile page', async () => {
-  const element = await I.getElement('#contacts');
-  const text = await I.getElementText(element.children[0].children[0]);
-  expect(text).equal('Court counter open');
+  const element = await I.getElement('#contacts > div > .govuk-grid-column-one-third > p');
+  const text = await I.getElementText(element);
+  expect(text).equal('High Court');
 });
 
 Given('the contact details for each service is presented to me on the profile page', async () => {
-  const element = await I.getElement('#contacts');
-  const text = await I.getElementText(element.children[0].children[1]);
-  expect(text).equal('Court of Protection');
+  const element = await I.getElement('#contacts > div > .govuk-grid-column-two-thirds > div > a');
+  const text = await I.getElementText(element);
+  expect(text).equal('0121 681 4441');
 });
 
 Given('that location entry includes one or more emails for that service', async () => {
-  const hasEmailInfo = await I.checkElement('#email');
+  const hasEmailInfo = await I.checkElement('#emails');
   expect(hasEmailInfo).equal(true);
 });
 
-Given('that location entry does not include one or more telephone numbers for that service', async () => {
-  const hasTelephoneInfo = await I.checkElement('#contacts');
-  expect(hasTelephoneInfo).equal(false);
-});
-
 Then('the email description for each service is presented to me on the profile page', async () => {
-  const element = await I.getElement('#email');
-  const text = await I.getElementText(element.children[0].children[0]);
-  expect(text).equal('Court counter open');
+  const element = await I.getElement('#emails > div > .govuk-grid-column-one-third > p');
+  const text = await I.getElementText(element);
+  expect(text).equal('Bailiffs');
 });
 
 Given('the email details for each service is presented to me on the profile page', async () => {
-  const element = await I.getElement('#contacts');
-  const text = await I.getElementText(element.children[0].children[1]);
-  expect(text).equal('urgent.birmingham.cfjc@justice.gov.uk');
+  const element = await I.getElement('#emails > div > .govuk-grid-column-two-thirds > div > a');
+  const text = await I.getElementText(element);
+  expect(text).equal('bailiffs.birmingham.countycourt@justice.gov.uk');
 });
 
 Given('that location entry includes one or building facilities', async () => {
@@ -169,14 +159,14 @@ Given('that location entry includes one or building facilities', async () => {
 });
 
 Then('the name of each facility is presented on the profile page', async () => {
-  const element = await I.getElement('#building-facilities');
-  const text = await I.getElementText(element.children[0].children[0]);
+  const element = await I.getElement('#building-facilities > h4');
+  const text = await I.getElementText(element);
   expect(text).equal('Disabled toilet');
 });
 
 Given('the description of each facility is presented to me on the profile page', async () => {
-  const element = await I.getElement('#building-facilities');
-  const text = await I.getElementText(element.children[0].children[1]);
+  const element = await I.getElement('#building-facilities > p');
+  const text = await I.getElementText(element);
   expect(text).equal('Located on every floor.');
 });
 
@@ -186,20 +176,19 @@ Given('that location entry does not hide listings for areas of law offered by th
 });
 
 Given('that location entry includes hearings for one or more areas of law', async () => {
-  const element = await I.getElement('#areas-of-law');
-  const elChildrenLength = await I.checkElementLength(element.children);
+  const elChildrenLength = await I.checkElementLength('#areas-of-law > ul > li');
   expect(elChildrenLength).to.be.greaterThan(1);
 });
 
 Then('a guidance link for each area of law is presented to me on the profile page', async () => {
-  const element = await I.getElement('#areas-of-law');
-  const isElementAnchor = await I.checkElementIsAnchor(element.children[0]);
+  const element = await I.getElement('#areas-of-law > ul > li > a');
+  const isElementAnchor = await I.checkElementIsAnchor(element);
   expect(isElementAnchor).equal(true);
 });
 
 Then('those area of law details are listed in ascending alphabetical order', async () => {
-  const element = await I.getElement('#areas-of-law');
-  const areasOfLaw = await I.getArrayFromElement(element);
+  const elements = await I.getElements('#areas-of-law > ul > li > a');
+  const areasOfLaw = await I.getTextFromList(elements);
   expect(areasOfLaw).not.equal([]);
   expect(areasOfLaw).equals(areasOfLaw.sort());
 });
@@ -215,8 +204,8 @@ Then('no guidance link for the areas of law are presented to me on the profile p
 });
 
 Given('that location entry includes one or more court location codes', async () => {
-  const hasLocationCodes = await I.checkElement('#location-codes');
-  expect(hasLocationCodes).equal(true);
+  const hasLocationCodes = await I.checkElementLength('#location-codes > p');
+  expect(hasLocationCodes).to.be.greaterThan(1);
 });
 
 Then('each court type is presented on the profile page', async () => {
@@ -225,18 +214,18 @@ Then('each court type is presented on the profile page', async () => {
 });
 
 Given('the court location code for each court type is presented to me on the profile page', async () => {
-  const element = await I.getElement('#location-codes');
-  const text = await I.getElementText(element.children[0]);
+  const element = await I.getElement('#location-codes > p');
+  const text = await I.getElementText(element);
   expect(text).equal('County Court location code: 127');
 });
 
 Then('that location entry includes DX details', async () => {
-  const hasDx = await I.checkElement('#dx');
+  const hasDx = await I.checkElement('#dx-number');
   expect(hasDx).equal(true);
 });
 
 Given('the DX number is presented to me on the profile page', async () => {
-  const element = await I.getElement('#dx');
-  const text = await I.getElementText(element.children[0]);
+  const element = await I.getElement('#dx-number');
+  const text = await I.getElementText(element);
   expect(text).equal('DX: 701987 Birmingham 7');
 });

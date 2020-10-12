@@ -177,7 +177,7 @@ href: "/"
       {% endif %}
 
       {% if results['in_person'] and results.facilities.length > 0%}
-        <div class="govuk-grid-row">
+        <div class="govuk-grid-row" id="building-facilities">
           <h3 class="govuk-heading-m">
             Building facilities
           </h3>
@@ -204,17 +204,22 @@ href: "/"
           <p class="govuk-body-s">
             {{ results.name }}
           </p>
-          <h3 class="govuk-heading-m">
-            This location handles:
-          </h3>
-          <ul class="govuk-list">
-            {% for area in results['areas_of_law'] | sort(attribute="service") %}
-              <li>
-                <a class="govuk-link" href="{{ area.url }}">{{ area.service }}</a>
-              </li>
-            {% endfor %}
-          </ul>
         </div>
+
+        {% if results['areas_of_law'] and results['areas_of_law'].length > 0 %}
+          <div class="govuk-grid-row" id="areas-of-law">
+            <h3 class="govuk-heading-m">
+              This location handles:
+            </h3>
+            <ul class="govuk-list">
+              {% for area in results['areas_of_law'] | sort(attribute="service") %}
+                <li>
+                  <a class="govuk-link" href="{{ area.url }}">{{ area.service }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
       {% else %}
         {% if probateService or divorceService or civilPartnershipService or moneyClaimsService %}
           <div class="govuk-grid-row">
@@ -250,7 +255,7 @@ href: "/"
       </div>
 
       {% if results.crown_location_code or results.county_location_code or results.magistrates_location_code or results['dx_number'] %}
-        <div class="govuk-grid-row">
+        <div class="govuk-grid-row" id="location-codes">
           <h3 class="govuk-heading-m">
             Court codes for legal professionals:
           </h3>
@@ -270,7 +275,7 @@ href: "/"
             </p>
           {% endif %}
           {% if results['dx_number'] %}
-            <p class="govuk-body-m">
+            <p class="govuk-body-m" id="dx-number">
               DX: <span class="govuk-body-m">{{ results['dx_number'] }}</span>
             </p>
           {% endif %}

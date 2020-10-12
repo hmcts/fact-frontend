@@ -42,7 +42,7 @@
         "explanation": null
       },
       {
-        "address": "courtofprotection.birmingham.countycourt@justice.gov.uk",
+        "address": "courtofprotection.birmingham.countycourt@justice.gov.uk<courtofprotection.birmingham.countycourt@justice.gov.uk>",
         "description": "",
         "explanation": null
       },
@@ -165,51 +165,51 @@
     ],
     "facilities": [
       {
-        "description": "<p>Located on every floor.</p>",
+        "description": "Located on every floor.",
         "name": "Disabled toilet"
       },
       {
-        "description": "<p>Wheelchair access in to the building, lifts to all floors.&nbsp;</p>",
+        "description": "Wheelchair access in to the building, lifts to all floors.&nbsp;",
         "name": "Disabled access"
       },
       {
-        "description": "<p>Located 4th floor.</p>",
+        "description": "Located 4th floor.",
         "name": "Prayer / Quiet room"
       },
       {
-        "description": "<p>We have a security arch. Please alert the security officer if you have a pacemaker.</p>\r\n<p>For safety and security, all users and their possessions will be searched by security when they enter the building.</p>",
+        "description": "We have a security arch. Please alert the security officer if you have a pacemaker.\r\nFor safety and security, all users and their possessions will be searched by security when they enter the building.",
         "name": "Security arch"
       },
       {
-        "description": "<p>Refreshments are available via vending machine</p>",
+        "description": "Refreshments are available via vending machine",
         "name": "Refreshments"
       },
       {
-        "description": "<p><a href=\"https://www.thepsu.org/\">The PSU</a> is available on site to provide assistance.</p>",
+        "description": "<a href=\"https://www.thepsu.org/\">The PSU</a> is available on site to provide assistance.",
         "name": "Witness service"
       },
       {
-        "description": "<p>Assistance dogs are welcome.</p>",
+        "description": "Assistance dogs are welcome.",
         "name": "Assistance dogs"
       },
       {
-        "description": "<p>This court has wireless internet access available.</p>",
+        "description": "This court has wireless internet access available.",
         "name": "Wireless network connection"
       },
       {
-        "description": "<p>Located on 1st, 2nd, 3rd, 4th, 5th &amp; 6th floors.</p>\r\n<p>&nbsp;</p>",
+        "description": "Located on 1st, 2nd, 3rd, 4th, 5th &amp; 6th floors.\r\n&nbsp;",
         "name": "Interview room"
       },
       {
-        "description": "<p>Court/hearing room video facilities and prison to court video link facilities are available by prior arrangement. Please contact the court by telephone or email to let us know of your requirements.</p>",
+        "description": "Court/hearing room video facilities and prison to court video link facilities are available by prior arrangement. Please contact the court by telephone or email to let us know of your requirements.",
         "name": "Video facilities"
       },
       {
-        "description": "<p>The building has hearing enhancement facilities available by prior arrangement.&nbsp; Please contact the Court office by telephone or email if necessary.</p>",
+        "description": "The building has hearing enhancement facilities available by prior arrangement.&nbsp; Please contact the Court office by telephone or email if necessary.",
         "name": "Loop Hearing"
       },
       {
-        "description": "<p>Baby changing facilities are available in the disabled toilets on the 2nd floor</p>\r\n<p>&nbsp;</p>",
+        "description": "Baby changing facilities are available in the disabled toilets on the 2nd floor\r\n&nbsp;",
         "name": "Baby changing facility"
       }
     ],
@@ -226,7 +226,7 @@
   {
     "name": "West Cumbria Courthouse",
     "slug": "west-cumbria-courthouse",
-    "info": "<p><strong>This court or tribunal is open</strong></p>\r\n<p>Our courts and tribunals are open and have social distancing measures to protect you, the judiciary and our staff. Your hearing notice will inform you whether it is taking place in person, by video or by telephone. If you are self-isolating and cannot attend in person, please contact the court or tribunal immediately so they can consider alternative arrangements.&nbsp;</p>\r\n<p>Due to the coronavirus, we&rsquo;re taking longer to answer calls and emails. Please only contact us if necessary.</p>",
+    "info": "<strong>This court or tribunal is open</strong>\r\nOur courts and tribunals are open and have social distancing measures to protect you, the judiciary and our staff. Your hearing notice will inform you whether it is taking place in person, by video or by telephone. If you are self-isolating and cannot attend in person, please contact the court or tribunal immediately so they can consider alternative arrangements.&nbsp;\r\nDue to the coronavirus, we&rsquo;re taking longer to answer calls and emails. Please only contact us if necessary.",
     "open": true,
     "in_person": true,
     "dx_number": "701987 Birmingham 7",
@@ -326,31 +326,31 @@
     ],
     "facilities": [
       {
-        "description": "<p>Sound reinforcement as well as fixed and portable induction loop facilities are available.</p>",
+        "description": "Sound reinforcement as well as fixed and portable induction loop facilities are available.",
         "name": "Loop Hearing"
       },
       {
-        "description": "<p>There are no parking facilities at this building except for blue badge holders (subject to prior arrangements).&nbsp; The nearest public car park is located opposite the court at Marks and Spencer.</p>",
+        "description": "There are no parking facilities at this building except for blue badge holders (subject to prior arrangements).&nbsp; The nearest public car park is located opposite the court at Marks and Spencer.",
         "name": "No parking"
       },
       {
-        "description": "<p>Changing facilities are available at Workington court, please ask the court usher. However, children should not be brought to court unless they have someone to look after them whilst you are in court.</p>",
+        "description": "Changing facilities are available at Workington court, please ask the court usher. However, children should not be brought to court unless they have someone to look after them whilst you are in court.",
         "name": "Baby changing facility"
       },
       {
-        "description": "<p>Disabled access and toilet facilities are available. Parking is available to orange badge holders.</p>",
+        "description": "Disabled access and toilet facilities are available. Parking is available to orange badge holders.",
         "name": "Disabled access"
       },
       {
-        "description": "<p>Rooms are available on request.</p>",
+        "description": "Rooms are available on request.",
         "name": "Interview room"
       },
       {
-        "description": "<p>Assistance dogs are welcome.</p>",
+        "description": "Assistance dogs are welcome.",
         "name": "Assistance dogs"
       },
       {
-        "description": "<p>Court/hearing room video conferencing facilities and prison to court video link facilities are available (by prior arrangement)</p>",
+        "description": "Court/hearing room video conferencing facilities and prison to court video link facilities are available (by prior arrangement)",
         "name": "Video facilities"
       }
     ],
