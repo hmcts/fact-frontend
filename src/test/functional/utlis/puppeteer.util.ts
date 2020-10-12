@@ -62,7 +62,7 @@ export const checkElementIsAnchor = async (el: any) => {
 export const checkElementLength = async (selector: string) => {
   try {
     await scope.page.waitForSelector(selector);
-    const el = scope.page.$(selector);
+    const el = await scope.page.$$(selector);
     return el.length;
   } catch (error) {
     console.log("The element didn't appear.");

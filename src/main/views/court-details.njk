@@ -92,7 +92,7 @@ href: "/"
         </div>
       {% endif %}
       {% if results.urgent %}
-        <div class="govuk-grid-row">
+        <div class="govuk-grid-row" id="urgent-notice">
           {{ govukWarningText({
             text: results.urgent,
             iconFallbackText: "Warning"
@@ -101,7 +101,7 @@ href: "/"
       {% endif %}
 
       {% if results.info %}
-        <div class="govuk-grid-row">
+        <div class="govuk-grid-row" id="additional-info">
           <h3 class="govuk-heading-m">
             Additional Information
           </h3>
@@ -112,7 +112,7 @@ href: "/"
       {% endif %}
 
       {% if results['opening_times'] and results['opening_times'].length > 0%}
-        <div class="govuk-grid-row">
+        <div class="govuk-grid-row" id="opening-times">
           <h3 class="govuk-heading-m">
             Opening times
           </h3>
@@ -208,7 +208,7 @@ href: "/"
             This location handles:
           </h3>
           <ul class="govuk-list">
-            {% for area in results['areas_of_law'] %}
+            {% for area in results['areas_of_law'] | sort(attribute="service") %}
               <li>
                 <a class="govuk-link" href="{{ area.url }}">{{ area.service }}</a>
               </li>

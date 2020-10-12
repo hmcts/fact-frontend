@@ -54,24 +54,25 @@ Given('the address for that type is presented to me on the profile page', async 
   expect(subHeadingElement).equal(true);
 });
 
+Given('that location entry comprises a primary and secondary address', async () => {
+  const elChildrenLength = await I.checkElementLength('.multiple-addresses');
+  expect(elChildrenLength).to.be.greaterThan(1);
+});
+
 Then('both types of address are presented to me on the profile page e.g. {string} and {string}', async function(type1: string, type2: string) {
-  const element = await I.getElement('#addresses');
-  const addressText1 = await I.getElementText(element[0]);
-  const addressText2 = await I.getElementText(element[1]);
-  expect(addressText1).equal(type1);
-  expect(addressText2).equal(type2);
+  const element = await I.getElement('.multiple-addresses > h2');
+  const secondElement = await I.getElement('.multiple-addresses:nth-child(2) > h2');
+  const addressType1 = await I.getElementText(element);
+  const addressType2 = await I.getElementText(secondElement);
+  expect(addressType1.toLowerCase()).equal(type1);
+  expect(addressType2.toLowerCase()).equal(type2);
 });
 
 Given('the addresses for those types are presented on the profile page', async () => {
-  const element = await I.getElement('#addresses');
-  expect(element.children[0]).not.to.be(null);
-  expect(element.children[1]).not.to.be(null);
-});
-
-Given('that location entry comprises a primary and secondary address', async () => {
-  const element = await I.getElement('#addresses');
-  const elChildrenLength = await I.checkElementLength(element.children);
-  expect(elChildrenLength).to.be.greaterThan(1);
+  const element = await I.getElement('.multiple-addresses > p');
+  const secondElement = await I.getElement('.multiple-addresses:nth-child(2) > p');
+  expect(element).not.equal(null);
+  expect(secondElement).not.equal(null);
 });
 
 Then('both types of address are presented {string} on the profile page', async function(type: string) {
@@ -86,9 +87,8 @@ Given('that location entry includes an urgent notice for that location', async (
 });
 
 Then('that urgent notice is presented to me on the profile page', async () => {
-  const urgentNoticeEl = await I.getElement('#urgent-notice');
-  const text = await I.getElementText(urgentNoticeEl);
-  expect(text).equal('Urgent in-person application');
+  const isCourtUrgentText = await I.checkElement('.govuk-warning-text');
+  expect(isCourtUrgentText).equal(true);
 });
 
 Given('that location entry includes additional information for that location', async () => {
@@ -97,10 +97,9 @@ Given('that location entry includes additional information for that location', a
 });
 
 Then('that additional information is presented to me on the profile page', async () => {
-  const element = await I.getElement('#additional-info');
+  const element = await I.getElement('#additional-info > h3');
   const text = await I.getElementText(element);
   expect(text).equal('Additional Information');
-  expect(element.children[0]).not.to.be(null);
 });
 
 Given('that location entry includes opening times for one or more services offered', async () => {
@@ -109,15 +108,15 @@ Given('that location entry includes opening times for one or more services offer
 });
 
 Then('the type of each service is presented on the profile page', async () => {
-  const element = await I.getElement('#opening-times');
-  const text = await I.getElementText(element.children[0].children[0]);
-  expect(text).equal('Court counter open');
+  const element = await I.getElement('#opening-times > h3');
+  const text = await I.getElementText(element);
+  expect(text).equal('Opening times');
 });
 
 Given('the opening days and hours for each service is presented to me on the profile page', async () => {
-  const element = await I.getElement('#opening-times');
-  const text = await I.getElementText(element.children[0].children[1]);
-  expect(text).equal('Monday to Friday 9am to 5pm');
+  const element = await I.getElement('#opening-times > p');
+  const text = await I.getElementText(element);
+  expect(text).equal('Telephone Enquiries from: 8:30am to 5pm');
 });
 
 Given('that location entry includes one or more telephone numbers for a service', async () => {
