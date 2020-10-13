@@ -185,7 +185,7 @@ href: "/"
             <p class="govuk-body-m">
               If you have a disability and need help coming to a hearing, please contact
               {% if results.enquiries.email %}
-                <a href="mailto:">{{ results.enquiries.email.address }}</a>
+                <a class="govuk-link" href="mailto:">{{ results.enquiries.email.address }}</a>
               {% endif %}
               {% if results.enquiries.email and results.enquiries.phone %}
                 or
