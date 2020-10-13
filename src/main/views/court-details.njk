@@ -70,8 +70,8 @@ href: "/"
               </h3>
             {% endif %}
               <p class="govuk-body-m address">
-                {{ address.address }}<br>
-                {{ address.town }}<br>
+                {{ address.address }}
+                {{ address.town }}
                 {{ address.postcode }}
               </p>
             {% if results.addresses.length > 1 %}
@@ -286,6 +286,29 @@ href: "/"
             </p>
           {% endif %}
         </div>
+      {% endif %}
+      <div class="govuk-grid-row" id="puas">
+        <h3 class="govuk-heading-m">
+          Professional users’ court and tribunal access scheme
+        </h3>
+      {% if results.puas %}
+        <p class="govuk-body-m" id="is-puas">
+          This location participates in this scheme.
+        </p>
+        <p class="govuk-body-m">
+          <a class="govuk-link" href="https://www.gov.uk/guidance/professional-users-court-and-tribunal-access-scheme">
+            Register for the scheme
+          </a>
+        </p>
+      {% else %}
+        <p class="govuk-body-m" id="is-not-puas">
+          This location does not participates in this scheme.
+        </p>
+        <p class="govuk-body-m">
+          <a class="govuk-link" href="https://www.gov.uk/guidance/professional-users-court-and-tribunal-access-scheme">
+            Learn about the scheme
+          </a>
+        </p>
       {% endif %}
     </div>
   </div>

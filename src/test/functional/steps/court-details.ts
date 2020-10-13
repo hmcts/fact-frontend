@@ -229,3 +229,31 @@ Given('the DX number is presented to me on the profile page', async () => {
   const text = await I.getElementText(element);
   expect(text).equal('DX: 701987 Birmingham 7');
 });
+
+Given('that location participates in the Professional users’ court and tribunal access scheme', async () => {
+  const element = await I.checkElement('#is-puas');
+  expect(element).equal(true);
+});
+
+Then('the profile page includes a statement that the location participates in the access scheme', async () => {
+  const element = await I.getElement('#is-puas');
+  const text = await I.getElementText(element);
+  expect(text).equal('This location participates in this scheme.');
+});
+
+Given('that location does not participate in the Professional users’ court and tribunal access scheme', async () => {
+  const element = await I.checkElement('#is-not-puas');
+  expect(element).equal(true);
+});
+
+Then('the profile page includes a statement that the location does not participate in the access scheme', async () => {
+  const element = await I.getElement('#is-not-puas');
+  const text = await I.getElementText(element);
+  expect(text).equal('This location does not participates in this scheme.');
+});
+
+Given('a link to learn about the scheme is included', async () => {
+  const element = await I.getElement('#puas > :nth-child(3) > a');
+  const isElementAnchor = await I.checkElementIsAnchor(element);
+  expect(isElementAnchor).equal(true);
+});

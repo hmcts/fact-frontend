@@ -231,6 +231,7 @@
     "dx_number": "701987 Birmingham 7",
     "urgent": "HM Courts and Tribunal Service has temporarily closed this court or tribunal until further notice",
     "directions": null,
+    "puas": true,
     "lat": 54.6439704287508,
     "lon": -3.54234020589208,
     "crown_location_code": null,
@@ -405,7 +406,7 @@
     "facilities": [],
     "addresses": [
       {
-        "type": "visit us",
+        "type": "write to us",
         "address": "North West Regional Divorce Centre\r\n35 Vernon Street",
         "town": "Liverpool",
         "postcode": "L2 2BX"
