@@ -181,9 +181,20 @@ href: "/"
           <h3 class="govuk-heading-m">
             Building facilities
           </h3>
-    <!--      <p class="govuk-body-m">-->
-    <!--        If you have a disability and need help coming to a hearing, please contact <a href="mailto:">{{ courtEmailEnquiries }}</a> or {{ courtPhoneEnquiries }}.-->
-    <!--      </p>-->
+          {% if results.enquiries.email or results.enquiries.phone %}
+            <p class="govuk-body-m">
+              If you have a disability and need help coming to a hearing, please contact
+              {% if results.enquiries.email %}
+                <a href="mailto:">{{ results.enquiries.email.address }}</a>
+              {% endif %}
+              {% if results.enquiries.email and results.enquiries.phone %}
+                or
+              {% endif %}
+              {% if results.enquiries.phone %}
+                {{ results.enquiries.phone.number }}.
+              {% endif %}
+            </p>
+          {% endif %}
 
           {% for facility in results.facilities %}
             <h4 class="govuk-heading-s">

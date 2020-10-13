@@ -4,6 +4,7 @@ import { FactApi } from '../utils/FactApi';
 import { isEmpty } from '../utils/validation';
 import autobind from 'autobind-decorator';
 import { PageData } from '../interfaces/PageData';
+import { Enquiries } from '../interfaces/Enquiries';
 
 @autobind
 export class CourtDetailsController {
@@ -22,9 +23,15 @@ export class CourtDetailsController {
     };
 
     if (!isEmpty(slug)) {
-      const courts = await this.api.court(slug);
+      const courts: any = await this.api.court(slug);
       if (courts) {
-        data.results = courts;
+        const enquiries: Enquiries = {
+          phone: '',
+          email: ''
+        };
+        enquiries.email = courts.emails.find((email: { description: string }) => email.description.toLowerCase() === 'enquiries');
+        enquiries.phone = courts.contacts.find((contact: { description: string }) => contact.description.toLowerCase() === 'enquiries');
+        data.results = { ...courts, enquiries };
       }
     } else {
       data.errors = true;
