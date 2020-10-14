@@ -184,29 +184,3 @@ Feature: Court Name Know - Court Details
     Examples:
       | dx_number_court                            |
       | Birmingham Civil and Family Justice Centre |
-
-  Scenario Outline: Court or tribunal Access Scheme applicable
-    And I have entered "<puas_court>" as search criteria
-    When I have selected to search for that court or tribunal name or address
-    Given results are returned
-    When I select a court or tribunal link
-    And that location participates in the Professional users’ court and tribunal access scheme
-    Then the profile page includes a statement that the location participates in the access scheme
-    And a link to learn about the scheme is included
-
-    Examples:
-      | puas_court              |
-      | West Cumbria Courthouse |
-
-  Scenario Outline: Court or tribunal Access Scheme not applicable
-    And I have entered "<not_puas_court>" as search criteria
-    When I have selected to search for that court or tribunal name or address
-    Given results are returned
-    When I select a court or tribunal link
-    And that location does not participate in the Professional users’ court and tribunal access scheme
-    Then the profile page includes a statement that the location does not participate in the access scheme
-    And a link to learn about the scheme is included
-
-    Examples:
-      | not_puas_court                             |
-      | Birmingham Civil and Family Justice Centre |
