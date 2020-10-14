@@ -165,7 +165,7 @@ Then('the name of each facility is presented on the profile page', async () => {
 });
 
 Given('the description of each facility is presented to me on the profile page', async () => {
-  const element = await I.getElement('#building-facilities > p');
+  const element = await I.getElement('#building-facilities > p:nth-child(4)');
   const text = await I.getElementText(element);
   expect(text).equal('Located on every floor.');
 });
