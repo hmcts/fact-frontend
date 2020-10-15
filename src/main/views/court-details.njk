@@ -275,7 +275,7 @@ href: "/"
         </p>
       </div>
 
-      {% if results.crown_location_code or results.county_location_code or results.magistrates_location_code or results['dx_number'] %}
+      {% if results.crown_location_code or results.county_location_code or results.magistrates_location_code or (results['dx_number'] and results['dx_number'].length > 0) %}
         <div class="govuk-grid-row" id="location-codes">
           <h3 class="govuk-heading-m">
             {{ courtCodesHeading }}:
@@ -295,10 +295,12 @@ href: "/"
               {{ magistratesCourtCodeText }}: <span class="govuk-body-m">{{ results.magistrates_location_code }}</span>
             </p>
           {% endif %}
-          {% if results['dx_number'] %}
-            <p class="govuk-body-m" id="dx-number">
-              DX: <span class="govuk-body-m">{{ results['dx_number'] }}</span>
-            </p>
+          {% if results['dx_number'] and results['dx_number'].length > 0 %}
+            {% for dx in results['dx_number'] %}
+              <p class="govuk-body-m .dx-number">
+                DX: <span class="govuk-body-m">{{ dx }}</span>
+              </p>
+            {% endfor %}
           {% endif %}
         </div>
       {% endif %}
