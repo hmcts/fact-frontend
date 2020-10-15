@@ -42,8 +42,11 @@ export class CourtDetailsController {
     } else {
       data.errors = true;
     }
-
-    res.render('court-details', data);
+    if (('in_person' in data.results) && data.results['in_person']) {
+      return res.render('court-details/in-person-court', data);
+    } else {
+      return res.render('court-details/not-in-person-court', data);
+    }
   }
   
   private getCatchmentArea(regionalCentre: boolean, area: { area1: string; area2: string }) {

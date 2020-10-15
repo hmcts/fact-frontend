@@ -25,7 +25,7 @@ export class FactApi {
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
-        return [];
+        return {};
       });
   }
 }

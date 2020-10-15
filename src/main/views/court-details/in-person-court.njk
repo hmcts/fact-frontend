@@ -4,19 +4,18 @@
 {% extends "template.njk" %}
 
 {% block pageTitle %}
-{{ title }}
+  {{ title }}
 {% endblock %}
 
 {% block beforeContent %}
-{{ super() }}
+  {{ super() }}
 
-{{ govukBackLink({
-text: "Back",
-href: "/"
-}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/"
+  }) }}
 {% endblock %}
 
-{% set catchmentArea = "the South-East of England" if regionalCentre else "all of England and Wales" %}
 {% if results['service-area'] %}
   {% if 'probate' in results['service-area'] %}
     {% set probateService = true %}
@@ -37,64 +36,41 @@ href: "/"
 
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-grid-row">
-        {% if not results['in_person'] %}
-          <div id="not-in-person">
-            <p class="govuk-body-m">
-              {{ notInPersonP1 }}
-            </p>
-            <h2 class="govuk-heading-l postal-address">
-              {{ contactUsHeading }}
-            </h2>
-            <h3 class="govuk-heading-m">
-              {{ results.addresses[0].type }}:
-            </h3>
-            <p class="govuk-body-m address">
-              {% for addressLine in results.addresses[0].address_lines %}
-                {{ addressLine }}<br>
-              {% endfor %}
-              {{ results.addresses[0].town }}<br>
-              {{ results.addresses[0].postcode }}
-            </p>
-          </div>
-        {% else %}
-          {% for address in results.addresses %}
-            {% if results.addresses.length > 1 %}
-              <div class="govuk-grid-column-one-half multiple-addresses">
-                <h2 class="govuk-heading-l">
-                  {{ address.type }}:
-                </h2>
-            {% else %}
-              <h2 class="govuk-heading-l single-address">
+        {% for address in results.addresses %}
+          {% if results.addresses.length > 1 %}
+            <div class="govuk-grid-column-one-half multiple-addresses">
+              <h2 class="govuk-heading-l">
                 {{ address.type }}:
               </h2>
-              <h3 class="govuk-heading-m">
-                {{ addressHeading }}
-              </h3>
-            {% endif %}
-              <p class="govuk-body-m address">
-                {% for addressLine in address.address_lines %}
-                  {{ addressLine }}<br>
-                {% endfor %}
-                {{ address.town }}<br>
-                {{ address.postcode }}
-              </p>
-            {% if results.addresses.length > 1 %}
-              </div>
-            {% endif %}
-          {% endfor %}
-        {% endif %}
+          {% else %}
+            <h2 class="govuk-heading-l single-address">
+              {{ address.type }}:
+            </h2>
+            <h3 class="govuk-heading-m">
+              {{ addressHeading }}
+            </h3>
+          {% endif %}
+            <p class="govuk-body-m address">
+              {% for addressLine in address.address_lines %}
+                {{ addressLine }}<br>
+              {% endfor %}
+              {{ address.town }}<br>
+              {{ address.postcode }}
+            </p>
+          {% if results.addresses.length > 1 %}
+            </div>
+          {% endif %}
+        {% endfor %}
       </div>
 
-      {% if results['in_person'] %}
-        <div class="govuk-grid-row">
-          <p class="govuk-body-m">
-            <a class="govuk-link" href="https://maps.google.com/maps?q={{ results.lat }},{{ results.lon }}">{{ directionsText }}</a>
-          </p>
-          <p class="govuk-body-m">
-            <a class="govuk-link" href="https://www.gov.uk/guidance/what-to-expect-coming-to-a-court-or-tribunal">{{ visitingExpectationText }}</a>
-          </p>
-        </div>
-      {% endif %}
+      <div class="govuk-grid-row">
+        <p class="govuk-body-m">
+          <a class="govuk-link" href="https://maps.google.com/maps?q={{ results.lat }},{{ results.lon }}">{{ directionsText }}</a>
+        </p>
+        <p class="govuk-body-m">
+          <a class="govuk-link" href="https://www.gov.uk/guidance/what-to-expect-coming-to-a-court-or-tribunal">{{ visitingExpectationText }}</a>
+        </p>
+      </div>
       {% if results.urgent %}
         <div class="govuk-grid-row" id="urgent-notice">
           {{ govukWarningText({
@@ -180,7 +156,7 @@ href: "/"
         </div>
       {% endif %}
 
-      {% if results['in_person'] and results.facilities.length > 0%}
+      {% if results.facilities.length > 0%}
         <div class="govuk-grid-row" id="building-facilities">
           <h3 class="govuk-heading-m">
             {{ buildingFacilitiesHeading }}
@@ -219,52 +195,26 @@ href: "/"
     </div>
 
     <div class="govuk-grid-column-one-third" id="side-content">
-      {% if results['in_person'] %}
-        <div class="govuk-grid-row">
-          <img src="{{ court.image_file }}" alt="Front view of {{ results.name }}">
-          <p class="govuk-body-s">
-            {{ results.name }}
-          </p>
-        </div>
+      <div class="govuk-grid-row">
+        <img src="{{ court.image_file }}" alt="Front view of {{ results.name }}">
+        <p class="govuk-body-s">
+          {{ results.name }}
+        </p>
+      </div>
 
-        {% if results['areas_of_law'] and results['areas_of_law'].length > 0 %}
-          <div class="govuk-grid-row" id="areas-of-law">
-            <h3 class="govuk-heading-m">
-              {{ areasOfLawHeading }}:
-            </h3>
-            <ul class="govuk-list">
-              {% for area in results['areas_of_law'] | sort(attribute="name") %}
-                <li>
-                  <a class="govuk-link" href="{{ area.external_link }}">{{ area.name }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-          </div>
-        {% endif %}
-      {% else %}
-        {% if probateService or divorceService or civilPartnershipService or moneyClaimsService %}
-          <div class="govuk-grid-row">
-              <h2 class="govuk-heading-m" >
-                {{ relatedContentHeading }}
-              </h2>
-              <p class="govuk-body-m">
-                Find out more about</br>
-                {% if moneyClaimsService %}
-                  <a class="govuk-link" href="https://www.gov.uk/make-court-claim-for-money">{{ claimApplicationText }}</a>
-                {% endif%}
-                {% if divorceService %}
-                  <a class="govuk-link" href="https://www.gov.uk/divorce">{{ divorceApplicationText }}</a>
-                </br>
-                {% endif%}
-                {% if civilPartnershipService %}
-                  <a class="govuk-link" href="https://www.gov.uk/end-civil-partnership">{{ civilPartnershipText }}</a>
-                {% endif%}
-                {% if probateService %}
-                  <a class="govuk-link" href="https://www.gov.uk/applying-for-probate">{{ probateApplicationText }}</a>
-                {% endif%}
-              </p>
-          </div>
-        {% endif %}
+      {% if results['areas_of_law'] and results['areas_of_law'].length > 0 %}
+        <div class="govuk-grid-row" id="areas-of-law">
+          <h3 class="govuk-heading-m">
+            {{ areasOfLawHeading }}:
+          </h3>
+          <ul class="govuk-list">
+            {% for area in results['areas_of_law'] | sort(attribute="name") %}
+              <li>
+                <a class="govuk-link" href="{{ area.external_link }}">{{ area.name }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
       {% endif %}
       <div class="govuk-grid-row">
         <h3 class="govuk-heading-m">

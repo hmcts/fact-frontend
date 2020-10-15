@@ -1,7 +1,7 @@
 import { PageData } from './PageData';
 
 export interface CourtDetailsData extends PageData {
-  results: CourtDetailsResult[];
+  results: CourtDetailsResult | {};
   notInPersonP1: string;
   catchmentArea: {
     area1: string;
