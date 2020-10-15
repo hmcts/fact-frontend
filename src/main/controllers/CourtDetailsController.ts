@@ -3,11 +3,14 @@ import { Response } from 'express';
 import { FactApi } from '../utils/FactApi';
 import { isEmpty } from '../utils/validation';
 import autobind from 'autobind-decorator';
-import { PageData } from '../interfaces/PageData';
 import { Enquiries } from '../interfaces/Enquiries';
+import { CourtDetailsData } from '../interfaces/CourtDetailsData';
 
 @autobind
 export class CourtDetailsController {
+
+  //TODO this comes into place when the user comes from a no name court search
+  private regionalCentre = false;
 
   constructor(
       private readonly api: FactApi
@@ -15,7 +18,7 @@ export class CourtDetailsController {
 
   public async get(req: FactRequest, res: Response) {
     const slug: string = req.params.slug as string;
-    const data: PageData = {
+    const data: CourtDetailsData = {
       ...req.i18n.getDataByLanguage(req.lng)['court-details'],
       path: '/individual-location-pages/courts',
       results: [],
@@ -31,6 +34,9 @@ export class CourtDetailsController {
         };
         enquiries.email = courts.emails.find((email: { description: string }) => email.description.toLowerCase() === 'enquiries');
         enquiries.phone = courts.contacts.find((contact: { description: string }) => contact.description.toLowerCase() === 'enquiries');
+        data.notInPersonP1 = data.notInPersonP1
+          .replace('{catchmentArea}', this.getCatchmentArea(this.regionalCentre, data.catchmentArea))
+          .replace('{serviceArea}', courts['service_area']);
         data.results = { ...courts, enquiries };
       }
     } else {
@@ -38,5 +44,9 @@ export class CourtDetailsController {
     }
 
     res.render('court-details', data);
+  }
+  
+  private getCatchmentArea(regionalCentre: boolean, area: { area1: string; area2: string }) {
+    return regionalCentre ? area.area1 : area.area2;
   }
 }

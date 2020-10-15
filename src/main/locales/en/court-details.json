@@ -1,7 +1,7 @@
 {
   "title": "Find a court or tribunal - GOV.UK",
   "serviceName": "Find a court or tribunal",
-  "notInPersonP1": "This location services {{ catchmentArea }} for {{ results['service_area'] }}. We do not provide an in-person service.",
+  "notInPersonP1": "This location services {catchmentArea} for {serviceArea}. We do not provide an in-person service.",
   "contactUsHeading": "Contact us",
   "addressHeading": "Address",
   "directionsText": "Get directions",
@@ -25,5 +25,9 @@
   "courtCodesHeading": "Court codes for legal professionals",
   "crownCourtCodeText": "Crown Court location code",
   "countyCourtCodeText": "County Court location code",
-  "magistratesCourtCodeText": "Magistrates' Court location code"
+  "magistratesCourtCodeText": "Magistrates' Court location code",
+  "catchmentArea": {
+    "area1": "the South-East of England",
+    "area2": "all of England and Wales"
+  }
 }
