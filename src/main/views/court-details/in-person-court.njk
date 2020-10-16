@@ -16,16 +16,6 @@
   }) }}
 {% endblock %}
 
-{% if results['service-area'] %}
-  {% if 'probate' in results['service-area'] %}
-    {% set probateService = true %}
-  {% elif 'divorce' in results['service-area'] %}
-    {% set divorceService = true %}
-    {% set civilPartnershipService = true %}
-  {% elif 'money' in results['service-area'] %}
-    {% set moneyClaimsService = true %}
-  {% endif %}
-{% endif %}
 {% block content %}
 
 <div class="govuk-grid-row" id="court-tribunal-details">
@@ -144,7 +134,7 @@
             </div>
             <div class="govuk-grid-column-two-thirds">
               <div class="govuk-body-m">
-                <a class="govuk-link" href="tel:{{ email.address }}">{{ telephone.number }}</a>
+                <a class="govuk-link" href="tel:{{ telephone.number }}">{{ telephone.number }}</a>
                 {% if telephone.explanation %}
                 </br>
                 <p class="govuk-body-m">({{ telephone.explanation }})</p>
