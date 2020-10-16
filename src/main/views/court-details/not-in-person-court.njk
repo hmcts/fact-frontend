@@ -45,10 +45,10 @@
         </div>
       </div>
 
-      {% if results.urgent %}
-        <div class="govuk-grid-row" id="urgent-notice">
+      {% if results['urgent_message'] %}
+        <div class="govuk-grid-row" id="urgent-message">
           {{ govukWarningText({
-            text: results.urgent,
+            text: results['urgent_message'],
             iconFallbackText: "Warning"
           }) }}
         </div>
@@ -152,7 +152,7 @@
           {% endif %}
           {% if results['dx_number'] and results['dx_number'].length > 0 %}
             {% for dx in results['dx_number'] %}
-              <p class="govuk-body-m .dx-number">
+              <p class="govuk-body-m dx-number">
                 DX: <span class="govuk-body-m">{{ dx }}</span>
               </p>
             {% endfor %}

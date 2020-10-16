@@ -53,20 +53,20 @@ Feature: Court Name Know - Court Details
     And the addresses for those types are presented on the profile page
 
     Examples:
-      | multiple_addresses_court |
-      | West Cumbria Courthouse  |
+      | multiple_addresses_court                      |
+      | Aylesbury Magistrates' Court and Family Court |
 
   Scenario Outline: Court or tribunal urgent notice
-    And I have entered "<urgent_notice_court>" as search criteria
+    And I have entered "<urgent_message_court>" as search criteria
     When I have selected to search for that court or tribunal name or address
     Given results are returned
     When I select a court or tribunal link
-    And that location entry includes an urgent notice for that location
+    And that location entry includes an urgent message for that location
     Then that urgent notice is presented to me on the profile page
 
     Examples:
-      | urgent_notice_court     |
-      | West Cumbria Courthouse |
+      | urgent_message_court                  |
+      | Telford County Court and Family Court |
 
   Scenario Outline: Court or tribunal additional information
     And I have entered "<additional_info_court>" as search criteria
@@ -157,8 +157,8 @@ Feature: Court Name Know - Court Details
     Then no guidance link for the areas of law are presented to me on the profile page
 
     Examples:
-      | no_area_of_law_court               |
-      | North West Regional Divorce Centre |
+      | no_area_of_law_court              |
+      | Tax Chamber (First-tier Tribunal) |
 
   Scenario Outline: Court or tribunal court location codes
     And I have entered "<location_court>" as search criteria
