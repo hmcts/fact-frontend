@@ -17,7 +17,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row" id="court-tribunal-details">
+<div class="govuk-grid-row .court-tribunal-details">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l">
       {{ results.name }}
@@ -66,7 +66,7 @@
       {% endif %}
 
       {% if results.enquiries and results.enquiries.phone.length > 0 %}
-        <div class="govuk-grid-row" id="contacts">
+        <div class="govuk-grid-row .contacts" id="contacts">
           <h4 class="govuk-heading-s">
             {{ telephoneAndFaxHeading }}
           </h4>
@@ -93,7 +93,7 @@
       {% endif %}
 
       {% if results.enquiries.email %}
-        <div class="govuk-grid-row" id="emails">
+        <div class="govuk-grid-row .emails" id="emails">
           <h4 class="govuk-heading-s">
             {{ emailHeading }}
           </h4>
@@ -105,7 +105,7 @@
       {% endif %}
     </div>
 
-    <div class="govuk-grid-column-one-third" id="side-content">
+    <div class="govuk-grid-column-one-third .side-content">
       {% if results['areas_of_law'] and results['areas_of_law'].length > 0 %}
         <div class="govuk-grid-row" id="areas-of-law">
           <h3 class="govuk-heading-m">

@@ -18,7 +18,7 @@
 
 {% block content %}
 
-<div class="govuk-grid-row" id="court-tribunal-details">
+<div class="govuk-grid-row .court-tribunal-details">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l">
       {{ results.name }}
@@ -172,7 +172,7 @@
       {% endif %}
     </div>
 
-    <div class="govuk-grid-column-one-third" id="side-content">
+    <div class="govuk-grid-column-one-third .side-content">
       <div class="govuk-grid-row">
         <img src="{{ court.image_file }}" alt="Front view of {{ results.name }}">
         <p class="govuk-body-s">

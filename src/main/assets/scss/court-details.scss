@@ -1,5 +1,5 @@
-#court-tribunal-details {
-  #side-content {
+.court-tribunal-details {
+  .side-content {
     padding: 0 30px;
   }
 
@@ -7,7 +7,8 @@
     padding-left: 0;
   }
 
-  #emails, #contacts {
-    word-wrap: break-word
+  .emails,
+  .contacts {
+    word-wrap: break-word;
   }
 }
