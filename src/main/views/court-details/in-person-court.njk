@@ -161,21 +161,9 @@
           <h3 class="govuk-heading-m">
             {{ buildingFacilitiesHeading }}
           </h3>
-          {% if results.enquiries.email or results.enquiries.phone %}
-            <p class="govuk-body-m">
-              {{ buildingFacilitiesP1 }}
-              {% if results.enquiries.email %}
-                <a class="govuk-link" href="mailto:{{ results.enquiries.email.address }}">{{ results.enquiries.email.address }}</a>
-              {% endif %}
-              {% if results.enquiries.email and results.enquiries.phone %}
-                or
-              {% endif %}
-              {% if results.enquiries.phone %}
-                {{ results.enquiries.phone.number }}.
-              {% endif %}
-            </p>
-          {% endif %}
-
+          <p class="govuk-body-m">
+            {{ buildingFacilitiesP1 }}
+          </p>
           {% for facility in results.facilities %}
             <h4 class="govuk-heading-s">
               {{ facility.name }}

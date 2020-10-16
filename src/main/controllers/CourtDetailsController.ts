@@ -3,7 +3,6 @@ import { Response } from 'express';
 import { FactApi } from '../utils/FactApi';
 import { isEmpty } from '../utils/validation';
 import autobind from 'autobind-decorator';
-import { Enquiries } from '../interfaces/Enquiries';
 import { CourtDetailsData } from '../interfaces/CourtDetailsData';
 
 @autobind
@@ -28,16 +27,10 @@ export class CourtDetailsController {
     if (!isEmpty(slug)) {
       const courts: any = await this.api.court(slug);
       if (courts) {
-        const enquiries: Enquiries = {
-          phone: '',
-          email: ''
-        };
-        enquiries.email = courts.emails.find((email: { description: string }) => email.description.toLowerCase() === 'enquiries');
-        enquiries.phone = courts.contacts.find((contact: { description: string }) => contact.description.toLowerCase() === 'enquiries');
         data.notInPersonP1 = data.notInPersonP1
           .replace('{catchmentArea}', this.getCatchmentArea(this.regionalCentre, data.catchmentArea))
           .replace('{serviceArea}', courts['service_area']);
-        data.results = { ...courts, enquiries };
+        data.results = courts ;
       }
     } else {
       data.errors = true;
