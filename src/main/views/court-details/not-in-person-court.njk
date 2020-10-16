@@ -56,26 +56,29 @@
 
       {% if results.info %}
         <div class="govuk-grid-row" id="additional-info">
-          <h3 class="govuk-heading-m">
+          <h4 class="govuk-heading-s">
             {{ additionalInfoHeading }}
-          </h3>
+          </h4>
           <p class="govuk-body-m">
             {{ results.info }}
           </p>
         </div>
       {% endif %}
 
-      {% if results.contacts and results.contacts.length > 0 %}
+      {% if results.enquiries and results.enquiries.phone.length > 0 %}
         <div class="govuk-grid-row" id="contacts">
-          <h4 class="govuk-heading-m">
+          <h4 class="govuk-heading-s">
             {{ telephoneAndFaxHeading }}
           </h4>
-          {% for telephone in results.contacts %}
+          {% for telephone in results.enquiries.phone %}
             <p class="govuk-body-m">
-              {{ telephone.description}}: {{ telephone.number }}<br>
+              Telephone: {{ telephone.number }}<br>
               {{ telephone.explanation }}
             </p>
           {% endfor %}
+          <p class="govuk-body-m">
+            Fax: {{ results.enquiries.fax.number }}
+          </p>
           <p class="govuk-body-m">
             <a class="govuk-link" href="https://www.gov.uk/call-charges">
               Find out about call charges
@@ -91,7 +94,7 @@
 
       {% if results.enquiries.email %}
         <div class="govuk-grid-row" id="emails">
-          <h4 class="govuk-heading-m">
+          <h4 class="govuk-heading-s">
             {{ emailHeading }}
           </h4>
           <p class="govuk-body-m">

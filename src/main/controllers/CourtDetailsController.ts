@@ -29,11 +29,13 @@ export class CourtDetailsController {
       const courts: any = await this.api.court(slug);
       if (courts) {
         const enquiries: Enquiries = {
-          phone: '',
-          email: ''
+          phone: [],
+          email: {},
+          fax: {}
         };
+        enquiries.phone = courts.contacts.filter((contact: { description: string }) => contact.description.toLowerCase() === 'enquiries');
         enquiries.email = courts.emails.find((email: { description: string }) => email.description.toLowerCase() === 'enquiries');
-        enquiries.phone = courts.contacts.find((contact: { description: string }) => contact.description.toLowerCase() === 'enquiries');
+        enquiries.fax = courts.contacts.find((contact: { description: string }) => contact.description.toLowerCase() === 'fax');
         data.notInPersonP1 = data.notInPersonP1
           .replace('{catchmentArea}', this.getCatchmentArea(this.regionalCentre, data.catchmentArea))
           .replace('{serviceArea}', courts['service_area']);

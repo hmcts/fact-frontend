@@ -1,4 +1,5 @@
 export interface Enquiries {
-  phone: string;
-  email: string;
+  phone: [];
+  email: {};
+  fax: {};
 }
