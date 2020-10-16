@@ -68,7 +68,7 @@ describe('FactApi', () => {
     const spy = jest.spyOn(mockLogger, 'error');
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.court( null )).resolves.toEqual([]);
+    await expect(api.court( null )).resolves.toEqual({});
     await expect(spy).toBeCalled();
 
   });
