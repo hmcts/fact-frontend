@@ -5,6 +5,7 @@ import { isEmpty } from '../utils/validation';
 import autobind from 'autobind-decorator';
 import { Enquiries } from '../interfaces/Enquiries';
 import { CourtDetailsData } from '../interfaces/CourtDetailsData';
+import config from 'config';
 
 @autobind
 export class CourtDetailsController {
@@ -36,6 +37,7 @@ export class CourtDetailsController {
         enquiries.phone = courts.contacts.filter((contact: { description: string }) => contact.description.toLowerCase() === 'enquiries');
         enquiries.email = courts.emails.find((email: { description: string }) => email.description.toLowerCase() === 'enquiries');
         enquiries.fax = courts.contacts.find((contact: { description: string }) => contact.description.toLowerCase() === 'fax');
+        courts['image_file'] = `${config.get('services.image-store.url')}/${courts['image_file']}`
         data.notInPersonP1 = data.notInPersonP1
           .replace('{catchmentArea}', this.getCatchmentArea(this.regionalCentre, data.catchmentArea))
           .replace('{serviceArea}', courts['service_area']);
