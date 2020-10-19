@@ -23,7 +23,6 @@ export class CourtDetailsController {
       ...req.i18n.getDataByLanguage(req.lng)['court-details'],
       path: '/individual-location-pages/courts',
       results: {},
-      errors: false,
     };
 
     if (!isEmpty(slug)) {
@@ -49,7 +48,6 @@ export class CourtDetailsController {
         }
       }
     }
-    data.errors = true;
     next();
   }
   

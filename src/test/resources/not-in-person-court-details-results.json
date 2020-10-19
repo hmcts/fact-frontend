@@ -1,7 +1,7 @@
 {
-  "name": "London",
-  "slug": "London",
-  "in_person": true,
+  "name": "Not-London",
+  "slug": "Not-London",
+  "in_person": false,
   "dx_number": "701987 London 7",
   "info": "London",
   "open": true,
