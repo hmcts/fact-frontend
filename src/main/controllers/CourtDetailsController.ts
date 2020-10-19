@@ -1,10 +1,10 @@
 import { FactRequest } from '../interfaces/FactRequest';
-import { Response } from 'express';
+import { NextFunction, Response } from 'express';
 import { FactApi } from '../utils/FactApi';
-import { isEmpty } from '../utils/validation';
+import { isEmpty, isObjectEmpty } from '../utils/validation';
 import autobind from 'autobind-decorator';
 import { Enquiries } from '../interfaces/Enquiries';
-import { CourtDetailsData } from '../interfaces/CourtDetailsData';
+import { CourtDetailsData, CourtDetailsResult } from '../interfaces/CourtDetailsData';
 import config from 'config';
 
 @autobind
@@ -17,18 +17,18 @@ export class CourtDetailsController {
       private readonly api: FactApi
   ) { }
 
-  public async get(req: FactRequest, res: Response) {
+  public async get(req: FactRequest, res: Response, next: NextFunction) {
     const slug: string = req.params.slug as string;
     const data: CourtDetailsData = {
       ...req.i18n.getDataByLanguage(req.lng)['court-details'],
       path: '/individual-location-pages/courts',
-      results: [],
+      results: {},
       errors: false,
     };
 
     if (!isEmpty(slug)) {
-      const courts: any = await this.api.court(slug);
-      if (courts) {
+      const courts: CourtDetailsResult = await this.api.court(slug);
+      if (!isObjectEmpty(courts)) {
         const enquiries: Enquiries = {
           phone: [],
           email: {},
@@ -42,15 +42,15 @@ export class CourtDetailsController {
           .replace('{catchmentArea}', this.getCatchmentArea(this.regionalCentre, data.catchmentArea))
           .replace('{serviceArea}', courts['service_area']);
         data.results = { ...courts, enquiries };
+        if (courts['in_person']) {
+          return res.render('court-details/in-person-court', data);
+        } else {
+          return res.render('court-details/not-in-person-court', data);
+        }
       }
-    } else {
-      data.errors = true;
     }
-    if (('in_person' in data.results) && data.results['in_person']) {
-      return res.render('court-details/in-person-court', data);
-    } else {
-      return res.render('court-details/not-in-person-court', data);
-    }
+    data.errors = true;
+    next();
   }
   
   private getCatchmentArea(regionalCentre: boolean, area: { area1: string; area2: string }) {

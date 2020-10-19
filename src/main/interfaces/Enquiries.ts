@@ -1,5 +1,5 @@
 export interface Enquiries {
-  phone: [];
+  phone: {}[];
   email: {};
   fax: {};
 }

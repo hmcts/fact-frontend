@@ -1,6 +1,7 @@
 import { Logger } from '../interfaces/Logger';
 import { AxiosInstance } from 'axios';
 import { SearchResult } from '../interfaces/SearchResultsData';
+import { CourtDetailsResult } from '../interfaces/CourtDetailsData';
 
 export class FactApi {
 
@@ -19,7 +20,7 @@ export class FactApi {
       });
   }
 
-  public court(slug: string): Promise<SearchResult[]> {
+  public court(slug: string): Promise<CourtDetailsResult> {
     return this.axios
       .get(`/courts/${slug}`)
       .then(results => results.data)
