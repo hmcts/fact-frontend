@@ -3,21 +3,22 @@ import { Response } from 'express';
 import { hasProperty } from '../utils/validation';
 import { PageData } from '../interfaces/PageData';
 
-export class ChooseActionController {
+export class ChooseAreaOfLawController {
   public get(req: FactRequest, res: Response): void {
-    res.render('choose-action', req.i18n.getDataByLanguage(req.lng)['choose-action']);
+    res.render('choose-area-of-law', req.i18n.getDataByLanguage(req.lng)['choose-area-of-law']);
   }
 
   public post(req: FactRequest, res: Response): void {
-    if (!hasProperty(req.body, 'chooseAction')) {
+    if (!hasProperty(req.body, 'chooseAreaOfLaw')) {
       const data: PageData = {
-        ...req.i18n.getDataByLanguage(req.lng)['choose-action'],
-        path: '/service-choose-action',
+        ...req.i18n.getDataByLanguage(req.lng)['choose-area-of-law'],
+        path: '/service-category',
         errors: true,
       };
-      return res.render('choose-action', data);
+      return res.render('choose-area-of-law', data);
     }
 
-    res.redirect('/service-category');
+    res.redirect('/');
   }
 }
+

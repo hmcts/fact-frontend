@@ -1,0 +1,131 @@
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "macros/error-summary.njk" import errorSummary %}
+
+{% extends "template.njk" %}
+
+{% block pageTitle %}
+  {{ title }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/"
+  }) }}
+{% endblock %}
+
+{% block content %}
+{% if errors %}
+  {{ errorSummary(error.title, error.text, "#choose-action") }}
+{% endif %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="POST">
+      {{ govukRadios({
+        idPrefix: "choose-action",
+        name: "chooseAction",
+        fieldset: {
+          legend: {
+            text: question,
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        },
+        errorMessage: { text: error.text | safe } if errors,
+        items: [
+          {
+            id: "money",
+            text: answers.a1,
+            label: {
+                classes: "govuk-label--s"
+            },
+            hint: {
+                    text: hint1
+            }
+          },
+          {
+            id: "probate-and-divorce-and-ending-civil-partnerships",
+            text: answers.a2,
+            label: {
+              classes: "govuk-label--s"
+            },
+            hint: {
+                    text: hint2
+            }
+          },
+          {
+            id: "childcare-and-parenting",
+            text: answers.a3,
+            label: {
+              classes: "govuk-label--s"
+            },
+            hint: {
+                    text: hint3
+            }
+          },
+          {
+            id: "harm-and-abuse",
+            text: answers.a4,
+            label: {
+                classes: "govuk-label--s"
+            },
+            hint: {
+                    text: hint4
+            }
+          },
+          {
+            id: "immigration-and-asylum",
+            text: answers.a5,
+            label: {
+                classes: "govuk-label--s"
+            },
+            hint: {
+                    text: hint5
+            }
+          },
+          {
+            id: "crime",
+            text: answers.a6,
+            label: {
+                classes: "govuk-label--s"
+            },
+            hint: {
+                    text: hint6
+            }
+          },
+          {
+            id: "high-courts",
+            text: answers.a7,
+            label: {
+                  classes: "govuk-label--s"
+            },
+            hint: {
+                    text: hint7
+            }
+          },
+          {
+             divider: "or"
+          },
+          {
+             id: "not-listed",
+             text: answers.a8,
+             label: {
+                  classes: "govuk-label--s"
+            }
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        text: button,
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}

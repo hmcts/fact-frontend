@@ -1,0 +1,27 @@
+{
+  "title": "Choose an area of law - Find a court or tribunal - GOV.UK",
+  "serviceName": "Find a court or tribunal",
+  "question": "What do you want to know more about?",
+  "answers": {
+    "a1": "Money",
+    "a2": "Probate, divorce or ending civil partnerships",
+    "a3": "Childcare and parenting",
+    "a4": "Harm and abuse",
+    "a5": "Immigration and asylum",
+    "a6": "Crime",
+    "a7": "High Courts",
+    "a8": "I can't find what I'm looking for"
+  },
+  "hint1": "Money claims, rent or mortgage disputes, bankruptcy, job disputes related to pay, appealing a tax or benefits decision.",
+  "hint2": "Probate application and disputes, divorce, ending a civil partnership.",
+  "hint3": "Arrangements for looking after your children if you separate from your partner or making an adoption legal.",
+  "hint4": "Applying for an injunction against someone who is harassing or abusing you, being made to marry against your will or preventing Female Genital Mutilation (FGM).",
+  "hint5": "Seeking asylum, right to live in the UK, and appealing deportation.",
+  "hint6": "Minor criminal fines for TV licenses or speeding, major criminal cases at a Crown or Magistrates’ Court.",
+  "hint7": "Courts that deal with the most serious and high profile cases in criminal and civil law.",
+  "button": "Continue",
+  "error": {
+    "title": "There is a problem",
+    "text": "Field is blank - Select what do you want to know more about"
+  }
+}
