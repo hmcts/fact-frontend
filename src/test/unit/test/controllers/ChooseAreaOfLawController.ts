@@ -31,5 +31,5 @@ describe('Choose Area of Law Controller', () => {
   });
 
   //Todo add in tests for redirecting to correct page
-  
+
 });
