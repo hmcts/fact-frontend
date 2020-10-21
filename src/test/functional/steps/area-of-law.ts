@@ -1,6 +1,7 @@
-import {Given} from 'cucumber';
+import { Given, Then } from 'cucumber';
 
 import * as I from '../utlis/puppeteer.util';
+import { expect } from 'chai';
 
 Given('I continue having selected an {string} from that page', async (option: string) => {
   let element;
@@ -43,4 +44,9 @@ Given('I continue having selected an {string} from that page', async (option: st
 
 Given('I continue having not selected an area of law option', async() => {
   await I.click('.govuk-button');
+});
+
+Then('I am presented with an error message for area of law', async() => {
+  const elementExist = await I.checkElement('#choose-area-of-law-error');
+  expect(elementExist).equal(true);
 });
