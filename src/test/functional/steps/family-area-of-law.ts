@@ -1,5 +1,5 @@
 import { Given, Then } from 'cucumber';
-import * as I from '../../utlis/puppeteer.util';
+import * as I from '../utlis/puppeteer.util';
 import { expect } from 'chai';
 
 Then('I can select a {string} from the family area of law page', async (option: string) => {

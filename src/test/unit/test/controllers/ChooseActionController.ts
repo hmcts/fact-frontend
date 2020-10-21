@@ -27,7 +27,6 @@ describe('Choose Action Controller', () => {
     expect(res.redirect).toHaveBeenCalledWith('/service-category');
   });
 
-  // TODO story for the user choosing court option (court for documents)
   test('Should redirect to the Choose Area of Law page', async () => {
     const req = mockRequest(i18n);
     req.body = {
@@ -38,7 +37,6 @@ describe('Choose Action Controller', () => {
     expect(res.redirect).toHaveBeenCalledWith('/service-category');
   });
 
-  // TODO story for the user choosing court option (court for updates)
   test('Should redirect to the Choose Area of Law page', async () => {
     const req = mockRequest(i18n);
     req.body = {
