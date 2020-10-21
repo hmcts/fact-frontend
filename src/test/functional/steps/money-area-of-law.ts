@@ -1,7 +1,8 @@
 import { Given, Then, When } from 'cucumber';
 import * as I from '../utlis/puppeteer.util';
+import { expect } from 'chai';
 
-When('I select the {string} from the areas of law page', async (option: string) => {
+When('I select {string} from the areas of law page', async (option: string) => {
   const element = option;
   await I.click(element);
   await I.click('.govuk-button');
@@ -39,7 +40,7 @@ Then('I can select a {string} from the money area of law page', async (option: s
       break;
     }
     case 'minor criminal offences': {
-      element = 'minor-criminal-offences';
+      element = '#minor-criminal-offences';
       break;
     }
     default: {
@@ -52,4 +53,9 @@ Then('I can select a {string} from the money area of law page', async (option: s
 
 Given('I continue having not selected an money area of law option', async() => {
   await I.click('.govuk-button');
+});
+
+Then('I am presented with an error message for money area of law', async() => {
+  const elementExist = await I.checkElement('#money-area-of-law-error');
+  expect(elementExist).equal(true);
 });

@@ -8,6 +8,7 @@ import { HomeController } from './controllers/HomeController';
 import { LocationSearchController } from './controllers/search/LocationSearchController';
 import { ChooseActionController } from './controllers/ChooseActionController';
 import { ChooseAreaOfLawController } from './controllers/ChooseAreaOfLawController';
+import { MoneyAreaOfLawController } from './controllers/MoneyAreaOfLawController';
 
 const { Logger } = require('@hmcts/nodejs-logging');
 const logger = Logger.getLogger('app');
@@ -21,5 +22,6 @@ export const container = createContainer({ injectionMode: InjectionMode.CLASSIC 
   locationSearchController: asClass(LocationSearchController),
   searchResultsController: asClass(SearchResultsController),
   chooseActionController: asClass(ChooseActionController),
-  chooseAreaOfLawController: asClass(ChooseAreaOfLawController)
+  chooseAreaOfLawController: asClass(ChooseAreaOfLawController),
+  moneyAreaOfLawController: asClass(MoneyAreaOfLawController)
 });

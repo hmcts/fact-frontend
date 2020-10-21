@@ -1,0 +1,29 @@
+{
+  "title": "Choose an area of law - money - Find a court or tribunal - GOV.UK",
+  "serviceName": "Find a court or tribunal",
+  "question": "What kind of help do you need with money?",
+  "answers": {
+    "a1": "Money claims",
+    "a2": "Probate",
+    "a3": "Housing",
+    "a4": "Bankruptcy",
+    "a5": "Benefits",
+    "a6": "Claims against employers",
+    "a7": "Tax",
+    "a8": "Minor criminal offences",
+    "a9": "I can't find what I'm looking for"
+  },
+  "hint1": "Claims for when you are owed money or responding to money claims against you.",
+  "hint2": "Settlement and disputes over a deceased person's property, money and possessions, storing a will.",
+  "hint3": "Tenant evictions and rent or mortgage disputes.",
+  "hint4": "Opposing a bankruptcy petition, support for a person at risk of violence order, canceling a bankruptcy.",
+  "hint5": "Appealing entitlement to benefits such as Personal Independence Payment (PIP), Employment and Support Allowance (ESA) or Universal Credit.",
+  "hint6": "Appealing a decision about employment disputes related to pay, unfair dismissal and discrimination.",
+  "hint7": "Appealing a tax decision.",
+  "hint8": "TV licence fines, speeding or parking fines.",
+  "button": "Continue",
+  "error": {
+    "title": "There is a problem",
+    "text": "Select what kind of help you need with money"
+  }
+}

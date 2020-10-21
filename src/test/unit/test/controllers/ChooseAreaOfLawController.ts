@@ -30,6 +30,14 @@ describe('Choose Area of Law Controller', () => {
     expect(res.render).toBeCalledWith('choose-area-of-law', expectedData);
   });
 
-  //Todo add in tests for redirecting to correct page
+  test('Should render Money Area of Law page if Money is selected', async () => {
+    const req = mockRequest(i18n);
+    req.body = {
+      chooseAreaOfLaw: 'money',
+    };
+    const res = mockResponse();
+    await controller.post(req, res);
+    expect(res.redirect).toHaveBeenCalledWith('/service-area-money');
+  });
 
 });

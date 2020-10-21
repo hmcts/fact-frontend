@@ -18,7 +18,10 @@ export class ChooseAreaOfLawController {
       return res.render('choose-area-of-law', data);
     }
 
+    if (req.body.chooseAreaOfLaw as string === 'money') {
+      return res.redirect('/service-area-money');
+    }
+
     res.redirect('/');
   }
 }
-
