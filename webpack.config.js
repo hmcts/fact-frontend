@@ -13,7 +13,7 @@ module.exports = {
     rules: [...scss.rules],
   },
   output: {
-    path: path.resolve(__dirname, 'src/main/public/'),
-    filename: 'main.[contenthash].js',
+    path: path.resolve(__dirname, 'public/'),
+    filename: 'main.js',
   },
 };

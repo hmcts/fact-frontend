@@ -5,7 +5,7 @@ coverage/*
 # data definition files
 **/*.d.ts
 # 3rd party libs
-/src/main/public/
+public/
 # custom definition files
 /src/main/types/
 jest.*config.js
