@@ -10,8 +10,6 @@ node_modules/
 *log
 .DS_Store
 
-src/main/views/webpack/*
-
 node-rpm-packaging/
 mochawesome-report/
 npm-debug.log.*
