@@ -17,37 +17,36 @@ describe('Choose Action Controller', () => {
     expect(res.render).toBeCalledWith('choose-action', i18n['choose-action']);
   });
 
-  // TODO story for the user choosing court option (nearest court)
-  test('Should redirect to the nearest court', async () => {
+  test('Should redirect to the Choose Area of Law page', async () => {
     const req = mockRequest(i18n);
     req.body = {
       chooseAction: 'nearest-court',
     };
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/');
+    expect(res.redirect).toHaveBeenCalledWith('/service-category');
   });
 
   // TODO story for the user choosing court option (court for documents)
-  test('Should redirect to the nearest court', async () => {
+  test('Should redirect to the Choose Area of Law page', async () => {
     const req = mockRequest(i18n);
     req.body = {
       chooseAction: 'document-court',
     };
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/');
+    expect(res.redirect).toHaveBeenCalledWith('/service-category');
   });
 
   // TODO story for the user choosing court option (court for updates)
-  test('Should redirect to the nearest court', async () => {
+  test('Should redirect to the Choose Area of Law page', async () => {
     const req = mockRequest(i18n);
     req.body = {
       chooseAction: 'update-court',
     };
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/');
+    expect(res.redirect).toHaveBeenCalledWith('/service-category');
   });
 
   test('Should render Choose Action page with errors if no data has been entered', async () => {
