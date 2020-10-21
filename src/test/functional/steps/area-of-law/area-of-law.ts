@@ -1,6 +1,6 @@
 import { Given, Then } from 'cucumber';
 
-import * as I from '../utlis/puppeteer.util';
+import * as I from '../../utlis/puppeteer.util';
 import { expect } from 'chai';
 
 Given('I continue having selected an {string} from that page', async (option: string) => {
@@ -10,7 +10,7 @@ Given('I continue having selected an {string} from that page', async (option: st
       element = '#money';
       break;
     }
-    case 'probate': {
+    case 'family': {
       element = '#probate-and-divorce-and-ending-civil-partnerships';
       break;
     }

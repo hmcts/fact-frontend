@@ -1,5 +1,5 @@
 import { Given, Then, When } from 'cucumber';
-import * as I from '../utlis/puppeteer.util';
+import * as I from '../../utlis/puppeteer.util';
 import { expect } from 'chai';
 
 When('I select {string} from the areas of law page', async (option: string) => {

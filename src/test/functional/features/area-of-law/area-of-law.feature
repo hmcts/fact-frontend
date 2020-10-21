@@ -19,7 +19,7 @@ Feature: No name option
     Examples:
       | area of law     |
       | money           |
-      | probate         |
+      | family          |
       | childcare       |
       | harm            |
       | immigration     |
@@ -43,7 +43,7 @@ Feature: No name option
     Examples:
       | area of law     |
       | money           |
-      | probate         |
+      | family          |
       | childcare       |
       | harm            |
       | immigration     |
