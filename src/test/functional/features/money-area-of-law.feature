@@ -9,7 +9,7 @@ Feature: Money area of law
     Then I can select an "<options>" option from the list displayed
     Given I can continue having selected that option
     Then I am presented with the "Choose an area of law - Find a court or tribunal - GOV.UK" page
-    When I select "#money" from the areas of law page
+    When I select "#money" from the areas of law page and continue
     Then I am presented with the "Choose an area of law - money - Find a court or tribunal - GOV.UK" page
     Given I can select a "<money category>" from the money area of law page
     Then I can continue having selected that option
@@ -35,7 +35,7 @@ Feature: Money area of law
     Then I can select an "<options>" option from the list displayed
     Given I can continue having selected that option
     Then I am presented with the "Choose an area of law - Find a court or tribunal - GOV.UK" page
-    When I select "#money" from the areas of law page
+    When I select "#money" from the areas of law page and continue
     Then I am presented with the "Choose an area of law - money - Find a court or tribunal - GOV.UK" page
     And I continue having not selected an money area of law option
     Then I am presented with an error message for money area of law

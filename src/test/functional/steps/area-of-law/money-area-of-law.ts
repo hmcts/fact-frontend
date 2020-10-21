@@ -2,7 +2,7 @@ import { Given, Then, When } from 'cucumber';
 import * as I from '../../utlis/puppeteer.util';
 import { expect } from 'chai';
 
-When('I select {string} from the areas of law page', async (option: string) => {
+When('I select {string} from the areas of law page and continue', async (option: string) => {
   const element = option;
   await I.click(element);
   await I.click('.govuk-button');
