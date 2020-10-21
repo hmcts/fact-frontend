@@ -13,6 +13,7 @@ export interface FactRequest extends Request {
       'choose-action': {};
       template: {};
       'choose-area-of-law': {};
+      'money-area-of-law': {};
     };
   };
   lng?: string;

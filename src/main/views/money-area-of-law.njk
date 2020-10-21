@@ -20,15 +20,15 @@
 
 {% block content %}
 {% if errors %}
-  {{ errorSummary(error.title, error.text, "#choose-area-of-law") }}
+  {{ errorSummary(error.title, error.text, "#money-area-of-law-error") }}
 {% endif %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form method="POST">
       {{ govukRadios({
-        idPrefix: "choose-area-of-law",
-        name: "chooseAreaOfLaw",
+        idPrefix: "money-area-of-law",
+        name: "moneyAreaOfLaw",
         fieldset: {
           legend: {
             text: question,
@@ -39,9 +39,8 @@
         errorMessage: { text: error.text | safe } if errors,
         items: [
           {
-            id: "money",
+            id: "money-claims",
             text: answers.a1,
-            value: "money",
             label: {
                 classes: "govuk-label--s"
             },
@@ -50,9 +49,8 @@
             }
           },
           {
-            id: "probate-and-divorce-and-ending-civil-partnerships",
+            id: "probate",
             text: answers.a2,
-            value: "probate-and-divorce-and-ending-civil-partnerships",
             label: {
               classes: "govuk-label--s"
             },
@@ -61,9 +59,8 @@
             }
           },
           {
-            id: "childcare-and-parenting",
+            id: "housing",
             text: answers.a3,
-            value: "childcare-and-parenting",
             label: {
               classes: "govuk-label--s"
             },
@@ -72,9 +69,8 @@
             }
           },
           {
-            id: "harm-and-abuse",
+            id: "bankruptcy",
             text: answers.a4,
-            value: "harm-and-abuse",
             label: {
                 classes: "govuk-label--s"
             },
@@ -83,9 +79,8 @@
             }
           },
           {
-            id: "immigration-and-asylum",
+            id: "benefits",
             text: answers.a5,
-            value: "immigration-and-asylum",
             label: {
                 classes: "govuk-label--s"
             },
@@ -94,9 +89,8 @@
             }
           },
           {
-            id: "crime",
+            id: "claims-against-employers",
             text: answers.a6,
-            value: "crime",
             label: {
                 classes: "govuk-label--s"
             },
@@ -105,9 +99,8 @@
             }
           },
           {
-            id: "high-courts",
+            id: "tax",
             text: answers.a7,
-            value: "high-courts",
             label: {
                   classes: "govuk-label--s"
             },
@@ -116,12 +109,21 @@
             }
           },
           {
+            id: "minor-criminal-offences",
+            text: answers.a8,
+            label: {
+                  classes: "govuk-label--s"
+            },
+            hint: {
+                    text: hint8
+            }
+          },
+          {
              divider: "or"
           },
           {
              id: "not-listed",
-             text: answers.a8,
-             value: "not-listed",
+             text: answers.a9,
              label: {
                   classes: "govuk-label--s"
             }

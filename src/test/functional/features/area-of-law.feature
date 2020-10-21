@@ -32,7 +32,7 @@ Feature: No name option
     Given I can continue having selected that option
     Then I am presented with the "Choose an area of law - Find a court or tribunal - GOV.UK" page
     And I continue having not selected an area of law option
-    Then I am presented with an error message
+    Then I am presented with an error message for area of law
     And I continue having selected an "<area of law>" from that page
     Examples:
       | options         |
