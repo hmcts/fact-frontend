@@ -1,6 +1,6 @@
-import { FactRequest } from '../interfaces/FactRequest';
-import { hasProperty } from '../utils/validation';
-import { PageData } from '../interfaces/PageData';
+import { FactRequest } from '../../interfaces/FactRequest';
+import { hasProperty } from '../../utils/validation';
+import { PageData } from '../../interfaces/PageData';
 import { Response } from 'express';
 
 export class MoneyAreaOfLawController {

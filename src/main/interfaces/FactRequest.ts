@@ -14,6 +14,7 @@ export interface FactRequest extends Request {
       template: {};
       'choose-area-of-law': {};
       'money-area-of-law': {};
+      'family-area-of-law': {};
     };
   };
   lng?: string;

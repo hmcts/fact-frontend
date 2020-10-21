@@ -20,15 +20,15 @@
 
 {% block content %}
 {% if errors %}
-  {{ errorSummary(error.title, error.text, "#choose-area-of-law") }}
+  {{ errorSummary(error.title, error.text, "#family-area-of-law-error") }}
 {% endif %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form method="POST">
       {{ govukRadios({
-        idPrefix: "choose-area-of-law",
-        name: "chooseAreaOfLaw",
+        idPrefix: "family-area-of-law",
+        name: "familyAreaOfLaw",
         fieldset: {
           legend: {
             text: question,
@@ -39,9 +39,8 @@
         errorMessage: { text: error.text | safe } if errors,
         items: [
           {
-            id: "money",
+            id: "probate",
             text: answers.a1,
-            value: "money",
             label: {
                 classes: "govuk-label--s"
             },
@@ -50,9 +49,8 @@
             }
           },
           {
-            id: "family",
+            id: "divorce",
             text: answers.a2,
-            value: "family",
             label: {
               classes: "govuk-label--s"
             },
@@ -61,9 +59,8 @@
             }
           },
           {
-            id: "childcare-and-parenting",
+            id: "civil-partnership",
             text: answers.a3,
-            value: "childcare-and-parenting",
             label: {
               classes: "govuk-label--s"
             },
@@ -72,9 +69,8 @@
             }
           },
           {
-            id: "harm-and-abuse",
+            id: "forced-marriage",
             text: answers.a4,
-            value: "harm-and-abuse",
             label: {
                 classes: "govuk-label--s"
             },
@@ -83,45 +79,11 @@
             }
           },
           {
-            id: "immigration-and-asylum",
-            text: answers.a5,
-            value: "immigration-and-asylum",
-            label: {
-                classes: "govuk-label--s"
-            },
-            hint: {
-                    text: hint5
-            }
-          },
-          {
-            id: "crime",
-            text: answers.a6,
-            value: "crime",
-            label: {
-                classes: "govuk-label--s"
-            },
-            hint: {
-                    text: hint6
-            }
-          },
-          {
-            id: "high-courts",
-            text: answers.a7,
-            value: "high-courts",
-            label: {
-                  classes: "govuk-label--s"
-            },
-            hint: {
-                    text: hint7
-            }
-          },
-          {
              divider: "or"
           },
           {
              id: "not-listed",
-             text: answers.a8,
-             value: "not-listed",
+             text: answers.a5,
              label: {
                   classes: "govuk-label--s"
             }

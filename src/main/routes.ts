@@ -13,5 +13,7 @@ export default function(app: Application): void {
   app.post('/service-category', app.locals.container.cradle.chooseAreaOfLawController.post);
   app.get('/service-area-money', app.locals.container.cradle.moneyAreaOfLawController.get);
   app.post('/service-area-money', app.locals.container.cradle.moneyAreaOfLawController.post);
+  app.get('/service-area-probate-divorce-civil-partnerships', app.locals.container.cradle.familyAreaOfLawController.get);
+  app.post('/service-area-probate-divorce-civil-partnerships', app.locals.container.cradle.familyAreaOfLawController.post);
 
 }

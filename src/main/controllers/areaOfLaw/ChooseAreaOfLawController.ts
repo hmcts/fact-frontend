@@ -1,7 +1,7 @@
-import { FactRequest } from '../interfaces/FactRequest';
+import { FactRequest } from '../../interfaces/FactRequest';
 import { Response } from 'express';
-import { hasProperty } from '../utils/validation';
-import { PageData } from '../interfaces/PageData';
+import { hasProperty } from '../../utils/validation';
+import { PageData } from '../../interfaces/PageData';
 
 export class ChooseAreaOfLawController {
   public get(req: FactRequest, res: Response): void {
@@ -20,6 +20,8 @@ export class ChooseAreaOfLawController {
 
     if (req.body.chooseAreaOfLaw as string === 'money') {
       return res.redirect('/service-area-money');
+    } else if (req.body.chooseAreaOfLaw as string === 'family') {
+      return res.redirect('/service-area-probate-divorce-civil-partnerships');
     }
 
     res.redirect('/');
