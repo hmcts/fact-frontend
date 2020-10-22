@@ -114,7 +114,11 @@
           <ul class="govuk-list">
             {% for area in results['areas_of_law'] | sort(attribute="name") %}
             <li>
-              <a class="govuk-link" href="{{ area.external_link }}">{{ area.name }}</a>
+              {% if area.external_link %}
+                <a class="govuk-link" href="{{ area.external_link }}">{{ area.name }}</a>
+              {% else %}
+                {{ area.name }}
+              {% endif %}
             </li>
             {% endfor %}
           </ul>
