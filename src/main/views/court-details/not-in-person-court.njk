@@ -17,7 +17,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row .court-tribunal-details">
+<div class="govuk-grid-row court-tribunal-details">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l">
       {{ results.name }}
@@ -105,7 +105,7 @@
       {% endif %}
     </div>
 
-    <div class="govuk-grid-column-one-third .side-content">
+    <div class="govuk-grid-column-one-third side-content">
       {% if results['areas_of_law'] and results['areas_of_law'].length > 0 %}
         <div class="govuk-grid-row" id="areas-of-law">
           <h3 class="govuk-heading-m">
