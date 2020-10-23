@@ -1,14 +1,11 @@
 .court-tribunal-details {
+  word-wrap: break-word;
+
   .side-content {
     padding: 0 30px;
   }
 
   .multiple-addresses {
     padding-left: 0;
-  }
-
-  .emails,
-  .contacts {
-    word-wrap: break-word;
   }
 }
