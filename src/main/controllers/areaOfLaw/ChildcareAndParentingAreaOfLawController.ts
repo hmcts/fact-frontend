@@ -3,19 +3,19 @@ import { hasProperty } from '../../utils/validation';
 import { PageData } from '../../interfaces/PageData';
 import { Response } from 'express';
 
-export class FamilyAndChildrenAreaOfLawController {
+export class ChildcareAndParentingAreaOfLawController {
   public get(req: FactRequest, res: Response): void {
-    res.render('family-and-children-area-of-law', req.i18n.getDataByLanguage(req.lng)['family-and-children-area-of-law']);
+    res.render('childcare-and-parenting-area-of-law', req.i18n.getDataByLanguage(req.lng)['childcare-and-parenting-area-of-law']);
   }
 
   public post(req: FactRequest, res: Response): void {
-    if (!hasProperty(req.body, 'familyAndChildrenAreaOfLaw')) {
+    if (!hasProperty(req.body, 'childcareAndParentingAreaOfLaw')) {
       const data: PageData = {
-        ...req.i18n.getDataByLanguage(req.lng)['family-and-children-area-of-law'],
+        ...req.i18n.getDataByLanguage(req.lng)['childcare-and-parenting-area-of-law'],
         path: '/service-area-childcare-parenting',
         errors: true,
       };
-      return res.render('family-and-children-area-of-law', data);
+      return res.render('childcare-and-parenting-area-of-law', data);
     }
 
     res.redirect('/');

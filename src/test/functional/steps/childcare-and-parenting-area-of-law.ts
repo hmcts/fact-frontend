@@ -26,6 +26,6 @@ Given('I continue having not selected a family and children area of law option',
 });
 
 Then('I am presented with an error message for family and children area of law', async() => {
-  const elementExist = await I.checkElement('#family-and-children-area-of-law-error');
+  const elementExist = await I.checkElement('#childcare-and-parenting-area-of-law-error');
   expect(elementExist).equal(true);
 });

@@ -20,15 +20,15 @@
 
 {% block content %}
 {% if errors %}
-  {{ errorSummary(error.title, error.text, "#family-and-children-area-of-law-error") }}
+  {{ errorSummary(error.title, error.text, "#childcare-and-parenting-area-of-law") }}
 {% endif %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form method="POST">
       {{ govukRadios({
-        idPrefix: "family-and-children-area-of-law",
-        name: "familyAndChildrenAreaOfLaw",
+        idPrefix: "childcare-and-parenting-area-of-law",
+        name: "childcareAndParentingAreaOfLaw",
         fieldset: {
           legend: {
             text: question,
