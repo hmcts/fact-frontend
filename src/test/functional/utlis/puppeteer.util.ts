@@ -1,4 +1,4 @@
-import Axios from "axios";
+import Axios from 'axios';
 
 const scope = require('../support/scope');
 
