@@ -13,6 +13,7 @@ import { healthOptions } from './utils/healthOptions';
 import * as os from 'os';
 import { infoRequestHandler } from '@hmcts/info-provider';
 import routes from './routes';
+import { ProxyMiddleware } from './modules/proxy';
 
 const healthcheck = require('@hmcts/nodejs-healthcheck');
 const { Express, Logger } = require('@hmcts/nodejs-logging');
@@ -29,10 +30,9 @@ app.locals.container = container;
 app.use(Express.accessLogger());
 
 new Nunjucks(developmentMode).enableFor(app);
-// secure the application by adding various HTTP headers to its responses
 new Helmet(config.get('app.security')).enableFor(app);
-
 new I18next().enableFor(app);
+new ProxyMiddleware().enableFor(app);
 
 app.use(favicon(path.join(__dirname, '/public/assets/images/favicon.ico')));
 app.use(bodyParser.json());
