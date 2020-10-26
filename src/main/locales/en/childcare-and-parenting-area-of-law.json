@@ -1,0 +1,17 @@
+{
+  "title": "Choose an area of law - childcare and parenting - Find a court or tribunal - GOV.UK",
+  "serviceName": "Find a court or tribunal",
+  "question": "What kind of help do you need with childcare and parenting?",
+  "answers": {
+    "a1": "Childcare arrangements if you separate from your partner",
+    "a2": "Adoption",
+    "a3": "I can't find what I'm looking for"
+  },
+  "hint1": "Making child arrangements if you divorce or separate.",
+  "hint2": "Support for a child adoption application.",
+  "button": "Continue",
+  "error": {
+    "title": "There is a problem",
+    "text": "Select what kind of help you need childcare and parenting"
+  }
+}

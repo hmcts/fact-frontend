@@ -40,7 +40,7 @@ describe('Choose Area of Law Controller', () => {
     expect(res.redirect).toHaveBeenCalledWith('/service-area-money');
   });
 
-  test('Should render Family Area of Law page if Money is selected', async () => {
+  test('Should render Family Area of Law page if Family is selected', async () => {
     const req = mockRequest(i18n);
     req.body = {
       chooseAreaOfLaw: 'family',
@@ -48,6 +48,16 @@ describe('Choose Area of Law Controller', () => {
     const res = mockResponse();
     await controller.post(req, res);
     expect(res.redirect).toHaveBeenCalledWith('/service-area-probate-divorce-civil-partnerships');
+  });
+
+  test('Should render Childcare and Parenting Area of Law page if Childcare and parenting is selected', async () => {
+    const req = mockRequest(i18n);
+    req.body = {
+      chooseAreaOfLaw: 'childcare-and-parenting',
+    };
+    const res = mockResponse();
+    await controller.post(req, res);
+    expect(res.redirect).toHaveBeenCalledWith('/service-area-childcare-parenting');
   });
 
 });
