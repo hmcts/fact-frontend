@@ -6,6 +6,11 @@ import { app } from '../../main/app';
 
 const agent = supertest.agent(app);
 
+const startPage = '/';
+const searchOptionPage = '/search-option';
+const locationSearchPage = '/location-search';
+const serviceChooseActionPage = '/service-choose-action';
+
 class Pa11yResult {
   documentTitle: string;
   pageUrl: string;
@@ -38,9 +43,10 @@ function ensurePageCallWillSucceed(url: string): Promise<void> {
   });
 }
 
-function runPally(url: string): Pa11yResult {
+function runPallyWith(url: string, actions: string[]): Pa11yResult {
   return pa11y(url, {
     hideElements: '.govuk-footer__licence-logo, .govuk-header__logotype-crown',
+    actions: actions
   });
 }
 
@@ -53,11 +59,11 @@ function expectNoErrors(messages: PallyIssue[]): void {
   }
 }
 
-function testAccessibility(url: string): void {
+function testAccessibilityWithActions(url: string, actions: string[]): void {
   describe(`Page ${url}`, () => {
     test('should have no accessibility errors', done => {
       ensurePageCallWillSucceed(url)
-        .then(() => runPally(agent.get(url).url))
+        .then(() => runPallyWith(agent.get(url).url, actions))
         .then((result: Pa11yResult) => {
           expectNoErrors(result.issues);
           done();
@@ -67,9 +73,25 @@ function testAccessibility(url: string): void {
   });
 }
 
-describe('Accessibility', () => {
-  // testing accessibility of the home page
-  testAccessibility('/');
+function testAccessibility(url: string): void {
+  testAccessibilityWithActions(url, []);
+}
 
-  // TODO: include each path of your application in accessibility checks
+function testAccessibilityOfFormError(url: string) {
+  testAccessibilityWithActions(url, [
+    'click element .govuk-button'
+  ]);
+}
+
+describe('Accessibility', () => {
+  testAccessibility(startPage);
+
+  testAccessibility(searchOptionPage);
+  testAccessibilityOfFormError(searchOptionPage);
+
+  testAccessibility(locationSearchPage);
+  testAccessibilityOfFormError(locationSearchPage);
+
+  testAccessibility(serviceChooseActionPage);
+  testAccessibilityOfFormError(serviceChooseActionPage);
 });
