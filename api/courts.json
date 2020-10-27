@@ -100,6 +100,16 @@
     "postcode": "HP21 7FT"
   },
   {
+    "name": "Aylesbury Magistrates' Court and Family Court",
+    "slug": "aylesbury-magistrates-court-and-family-court",
+    "lat": 51.81077982865295,
+    "lon": -0.8081712038549062,
+    "number": "NULL",
+    "address": "Walton Street",
+    "townName": "Aylesbury",
+    "postcode": "HP21 7QZ"
+  },
+  {
     "name": "Ayr Social Security and Child Support Tribunal",
     "slug": "Ayr-Social-Security-and-Child-Support-Tribunal",
     "lat": "55.46644863",

@@ -55,7 +55,7 @@
       <div class="search-results" id="search-results">
         {% for item in results | sort(attribute="name") %}
           <h2 class="govuk-heading-m">
-            <a class="govuk-link" href="{{ item.name }}">{{ item.name }}</a>
+            <a class="govuk-link" href="/individual-location-pages/courts/{{ item.slug }}">{{ item.name }}</a>
           </h2>
         {% endfor %}
       </div>

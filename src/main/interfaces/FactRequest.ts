@@ -1,5 +1,6 @@
 import { Request } from 'express';
 import { SearchResultsData } from './SearchResultsData';
+import { CourtDetailsData } from './CourtDetailsData';
 
 export interface FactRequest extends Request {
   i18n?: {
@@ -12,6 +13,7 @@ export interface FactRequest extends Request {
       home: {};
       'choose-action': {};
       template: {};
+      'court-details': CourtDetailsData;
     };
   };
   lng?: string;
