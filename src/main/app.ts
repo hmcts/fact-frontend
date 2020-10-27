@@ -13,6 +13,7 @@ import { healthOptions } from './utils/healthOptions';
 import * as os from 'os';
 import { infoRequestHandler } from '@hmcts/info-provider';
 import routes from './routes';
+import { ProxyMiddleware } from './modules/proxy';
 import { PropertiesVolume } from './modules/properties-volume';
 import { AppInsights } from './modules/appinsights';
 
@@ -31,10 +32,9 @@ app.locals.container = container;
 app.use(Express.accessLogger());
 
 new Nunjucks(developmentMode).enableFor(app);
-// secure the application by adding various HTTP headers to its responses
 new Helmet(config.get('app.security')).enableFor(app);
-
 new I18next().enableFor(app);
+new ProxyMiddleware().enableFor(app);
 new PropertiesVolume().enableFor(app);
 new AppInsights().enableFor(app);
 

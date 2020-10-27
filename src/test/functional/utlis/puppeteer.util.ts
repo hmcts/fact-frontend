@@ -1,8 +1,18 @@
+import Axios from 'axios';
+
 const scope = require('../support/scope');
 
 export const newPage = async () => {
   scope.page = await scope.browser.newPage();
 };
+
+export async function makeAnApiCallTo(url: string) {
+  scope.response = await Axios.get(url);
+}
+
+export async function getTheJsonResponse() {
+  return scope.response;
+}
 
 export const goTo = async (url: string) => {
   await scope.page.goto(url);
