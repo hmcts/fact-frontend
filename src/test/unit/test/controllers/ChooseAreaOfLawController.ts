@@ -2,19 +2,34 @@ import { mockRequest } from '../../utils/mockRequest';
 import { mockResponse } from '../../utils/mockResponse';
 import { PageData } from '../../../../main/interfaces/PageData';
 import { ChooseAreaOfLawController } from '../../../../main/controllers/areaOfLaw/ChooseAreaOfLawController';
+const expectedAreasOfLaw = require('../../../resources/areas-of-law-results.json');
 
 const i18n = {
-  'choose-area-of-law': {},
+  'choose-area-of-law': {
+    name: '',
+    description: '',
+  },
 };
 
 describe('Choose Area of Law Controller', () => {
-  const controller = new ChooseAreaOfLawController();
+  const response: any = { data: {} };
+  const api: any = { court: async () => response.data };
+  const controller = new ChooseAreaOfLawController(api);
 
   test('Should render the choose area page', async () => {
+    response.data = expectedAreasOfLaw;
     const req = mockRequest(i18n);
     const res = mockResponse();
     await controller.get(req, res);
-    expect(res.render).toBeCalledWith('choose-area-of-law', i18n['choose-area-of-law']);
+
+    const expectedData: PageData = {
+      ...i18n['choose-area-of-law'],
+      path: '/services',
+      results: {
+        ...response.data
+      }
+    };
+    expect(res.render).toBeCalledWith('choose-area-of-law', expectedData);
   });
 
   test('Should render Choose Area of Law page with errors if no data has been entered', async () => {

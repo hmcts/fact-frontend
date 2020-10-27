@@ -9,8 +9,8 @@ export default function(app: Application): void {
   app.get('/search-for-location', app.locals.container.cradle.searchResultsController.get);
   app.get('/service-choose-action', app.locals.container.cradle.chooseActionController.get);
   app.post('/service-choose-action', app.locals.container.cradle.chooseActionController.post);
-  app.get('/service-category', app.locals.container.cradle.chooseAreaOfLawController.get);
-  app.post('/service-category', app.locals.container.cradle.chooseAreaOfLawController.post);
+  app.get('/services', app.locals.container.cradle.chooseAreaOfLawController.get);
+  app.post('/services', app.locals.container.cradle.chooseAreaOfLawController.post);
   app.get('/service-area-money', app.locals.container.cradle.moneyAreaOfLawController.get);
   app.post('/service-area-money', app.locals.container.cradle.moneyAreaOfLawController.post);
   app.get('/service-area-probate-divorce-civil-partnerships', app.locals.container.cradle.familyAreaOfLawController.get);

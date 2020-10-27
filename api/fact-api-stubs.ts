@@ -3,6 +3,7 @@ import * as bodyParser from 'body-parser';
 const app = express();
 
 const data = require('./courts.json');
+const servicesData = require('./areasOfLaw.json');
 const port = 8080;
 
 
@@ -20,6 +21,10 @@ app.get('/courts', (req: Request, res: Response) => {
     }
   });
   res.json(filteredDocs);
+});
+
+app.get('/services', (req: Request, res: Response) => {
+  res.json(servicesData);
 });
 
 app.listen(port, () => {

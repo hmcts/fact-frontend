@@ -7,31 +7,31 @@ Given('I continue having selected an {string} from that page', async (option: st
   let element;
   switch(option) {
     case 'money': {
-      element = '#money';
+      element = '#Money';
       break;
     }
     case 'family': {
-      element = '#probate-and-divorce-and-ending-civil-partnerships';
+      element = '#Probate';
       break;
     }
     case 'childcare': {
-      element = '#childcare-and-parenting';
+      element = '#Childcare';
       break;
     }
     case 'harm': {
-      element = '#harm-and-abuse';
+      element = '#Harm';
       break;
     }
     case 'immigration': {
-      element = '#immigration-and-asylum';
+      element = '#Immigration';
       break;
     }
     case 'crime': {
-      element = '#crime';
+      element = '#Crime';
       break;
     }
     case 'high courts': {
-      element = '#high-courts';
+      element = '#High';
       break;
     }
     default: {

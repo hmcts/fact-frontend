@@ -18,6 +18,6 @@ export class ChooseActionController {
       return res.render('choose-action', data);
     }
 
-    res.redirect('/service-category');
+    res.redirect('/services');
   }
 }

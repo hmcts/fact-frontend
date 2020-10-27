@@ -1,5 +1,6 @@
 import { Request } from 'express';
 import { SearchResultsData } from './SearchResultsData';
+import { AreaOfLawData } from './AreaOfLawData';
 
 export interface FactRequest extends Request {
   i18n?: {
@@ -12,7 +13,7 @@ export interface FactRequest extends Request {
       home: {};
       'choose-action': {};
       template: {};
-      'choose-area-of-law': {};
+      'choose-area-of-law': AreaOfLawData;
       'money-area-of-law': {};
       'family-area-of-law': {};
       'childcare-and-parenting-area-of-law': {};

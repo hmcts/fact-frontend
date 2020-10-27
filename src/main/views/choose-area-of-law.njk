@@ -26,108 +26,40 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form method="POST">
-      {{ govukRadios({
-        idPrefix: "choose-area-of-law",
-        name: "chooseAreaOfLaw",
-        fieldset: {
-          legend: {
-            text: question,
-            classes: "govuk-fieldset__legend--l",
-            isPageHeading: true
-          }
-        },
-        errorMessage: { text: error.text | safe } if errors,
-        items: [
-          {
-            id: "money",
-            text: answers.a1,
-            value: "money",
-            label: {
-                classes: "govuk-label--s"
-            },
-            hint: {
-                    text: hint1
-            }
-          },
-          {
-            id: "family",
-            text: answers.a2,
-            value: "family",
-            label: {
-              classes: "govuk-label--s"
-            },
-            hint: {
-                    text: hint2
-            }
-          },
-          {
-            id: "childcare-and-parenting",
-            text: answers.a3,
-            value: "childcare-and-parenting",
-            label: {
-              classes: "govuk-label--s"
-            },
-            hint: {
-                    text: hint3
-            }
-          },
-          {
-            id: "harm-and-abuse",
-            text: answers.a4,
-            value: "harm-and-abuse",
-            label: {
-                classes: "govuk-label--s"
-            },
-            hint: {
-                    text: hint4
-            }
-          },
-          {
-            id: "immigration-and-asylum",
-            text: answers.a5,
-            value: "immigration-and-asylum",
-            label: {
-                classes: "govuk-label--s"
-            },
-            hint: {
-                    text: hint5
-            }
-          },
-          {
-            id: "crime",
-            text: answers.a6,
-            value: "crime",
-            label: {
-                classes: "govuk-label--s"
-            },
-            hint: {
-                    text: hint6
-            }
-          },
-          {
-            id: "high-courts",
-            text: answers.a7,
-            value: "high-courts",
-            label: {
-                  classes: "govuk-label--s"
-            },
-            hint: {
-                    text: hint7
-            }
-          },
-          {
-             divider: "or"
-          },
-          {
-             id: "not-listed",
-             text: answers.a8,
-             value: "not-listed",
-             label: {
-                  classes: "govuk-label--s"
-            }
-          }
-        ]
-      }) }}
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+                {{ question }}
+            </h1>
+        </legend>
+        <div class="govuk-radios">
+        {% if errors %}
+            <span id="#choose-area-of-law" class="govuk-error-message">
+              {{ error.text }}
+            </span>
+        {% endif %}
+        {% for result in results %}
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id={{ result.name }} name="chooseAreaOfLaw" type="radio" value={{ result.name }}>
+                <label class="govuk-label govuk-radios__label" for=result.name>
+                    {{ result.name }}
+                </label>
+                <div id=result.description class="govuk-hint govuk-radios__hint">
+                    {{ result.description }}
+                </div>
+            </div>
+        {% endfor %}
+            <div class="govuk-radios__divider">or</div>
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="not-listed" name="chooseAreaOfLaw" type="radio" value="not-listed">
+                <label class="govuk-label govuk-radios__label" for="not-listed">
+                    {{ answers.a1 }}
+                </label>
+            </div>
+        </div>
+    </fieldset>
+</div>
       {{ govukButton({
         text: button,
         classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
