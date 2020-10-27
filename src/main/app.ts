@@ -13,6 +13,12 @@ import { healthOptions } from './utils/healthOptions';
 import * as os from 'os';
 import { infoRequestHandler } from '@hmcts/info-provider';
 import routes from './routes';
+<<<<<<< Updated upstream
+=======
+import { ProxyMiddleware } from './modules/proxy';
+import { PropertiesVolume } from './modules/properties-volume';
+import { AppInsights } from './modules/appinsights';
+>>>>>>> Stashed changes
 
 const healthcheck = require('@hmcts/nodejs-healthcheck');
 const { Express, Logger } = require('@hmcts/nodejs-logging');
@@ -33,6 +39,12 @@ new Nunjucks(developmentMode).enableFor(app);
 new Helmet(config.get('app.security')).enableFor(app);
 
 new I18next().enableFor(app);
+<<<<<<< Updated upstream
+=======
+new ProxyMiddleware().enableFor(app);
+new PropertiesVolume().enableFor(app);
+new AppInsights().enableFor(app);
+>>>>>>> Stashed changes
 
 app.use(favicon(path.join(__dirname, '/public/assets/images/favicon.ico')));
 app.use(bodyParser.json());

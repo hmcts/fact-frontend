@@ -1,6 +1,11 @@
 nodejs:
   applicationPort: 3100
   aadIdentityName: fact
+  keyVaults:
+    fact:
+      resourceGroup: fact
+      secrets:
+        - AppInsightsInstrumentationKey
   ingressHost: fact.{{ .Values.global.environment }}.platform.hmcts.net
   image: 'hmctspublic.azurecr.io/fact/frontend:latest'
   environment:
