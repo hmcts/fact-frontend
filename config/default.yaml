@@ -12,3 +12,5 @@ services:
 health:
   timeout: 5000
   deadline: 15000
+appInsights:
+  instrumentationKey:
