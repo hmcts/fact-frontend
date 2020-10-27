@@ -1,12 +1,25 @@
-version: '2'
+version: '3'
 
 services:
-  frontend:
-    build:
-      context: .
-      args:
-        - http_proxy
-        - https_proxy
-        - no_proxy
+
+  fact-database:
+    image: postgres
+    volumes:
+      - ./docker/database:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_MULTIPLE_DATABASES: fact
+      DB_USERNAME: fact
+      DB_PASSWORD: fact
+      POSTGRES_HOST_AUTH_METHOD: trust
     ports:
-      - 3100:3100
+      - 5050:5432
+
+  fact-api:
+    image: "hmctspublic.azurecr.io/fact/api:latest"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://fact-database:5432/fact
+      - MAPIT_KEY=
+    ports:
+      - 8080:8080
+    depends_on:
+      - fact-database
