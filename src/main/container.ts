@@ -7,6 +7,7 @@ import { SearchOptionController } from './controllers/search/SearchOptionControl
 import { HomeController } from './controllers/HomeController';
 import { LocationSearchController } from './controllers/search/LocationSearchController';
 import { ChooseActionController } from './controllers/ChooseActionController';
+import { CourtDetailsController } from './controllers/CourtDetailsController';
 import { ChooseAreaOfLawController } from './controllers/areaOfLaw/ChooseAreaOfLawController';
 import { MoneyAreaOfLawController } from './controllers/areaOfLaw/MoneyAreaOfLawController';
 import { FamilyAreaOfLawController } from './controllers/areaOfLaw/FamilyAreaOfLawController';
@@ -24,6 +25,7 @@ export const container = createContainer({ injectionMode: InjectionMode.CLASSIC 
   locationSearchController: asClass(LocationSearchController),
   searchResultsController: asClass(SearchResultsController),
   chooseActionController: asClass(ChooseActionController),
+  courtDetailsController: asClass(CourtDetailsController),
   chooseAreaOfLawController: asClass(ChooseAreaOfLawController),
   moneyAreaOfLawController: asClass(MoneyAreaOfLawController),
   familyAreaOfLawController: asClass(FamilyAreaOfLawController),

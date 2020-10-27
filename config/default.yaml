@@ -9,6 +9,11 @@ services:
   api:
     name: 'FACT API'
     url: 'http://localhost:8080'
+  image-store:
+    name: 'Image Store'
+    url: 'https://factaat.blob.core.windows.net/images'
 health:
   timeout: 5000
   deadline: 15000
+appInsights:
+  instrumentationKey:

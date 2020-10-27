@@ -1,3 +1,5 @@
 services:
   api:
     url: FACT_API_URL
+appInsights:
+  instrumentationKey: APPINSIGHTS_KEY

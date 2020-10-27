@@ -1,6 +1,7 @@
 import { Logger } from '../interfaces/Logger';
 import { AxiosInstance } from 'axios';
 import { SearchResult } from '../interfaces/SearchResultsData';
+import { CourtDetailsResult } from '../interfaces/CourtDetailsData';
 import { AreaOfLawData } from '../interfaces/AreaOfLawData';
 
 export class FactApi {
@@ -17,6 +18,16 @@ export class FactApi {
       .catch(err => {
         this.logger.error(err);
         return [];
+      });
+  }
+
+  public court(slug: string): Promise<CourtDetailsResult> {
+    return this.axios
+      .get(`/courts/${slug}`)
+      .then(results => results.data)
+      .catch(err => {
+        this.logger.error(err);
+        return {};
       });
   }
 
