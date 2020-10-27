@@ -14,6 +14,8 @@ import * as os from 'os';
 import { infoRequestHandler } from '@hmcts/info-provider';
 import routes from './routes';
 import { ProxyMiddleware } from './modules/proxy';
+import { PropertiesVolume } from './modules/properties-volume';
+import { AppInsights } from './modules/appinsights';
 
 const healthcheck = require('@hmcts/nodejs-healthcheck');
 const { Express, Logger } = require('@hmcts/nodejs-logging');
@@ -33,6 +35,8 @@ new Nunjucks(developmentMode).enableFor(app);
 new Helmet(config.get('app.security')).enableFor(app);
 new I18next().enableFor(app);
 new ProxyMiddleware().enableFor(app);
+new PropertiesVolume().enableFor(app);
+new AppInsights().enableFor(app);
 
 app.use(favicon(path.join(__dirname, '/public/assets/images/favicon.ico')));
 app.use(bodyParser.json());
