@@ -5,7 +5,7 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 export class ProxyMiddleware {
 
   enableFor(app: Application): void {
-    app.use('*.json', createProxyMiddleware({ target: config.get('services.api.url') }));
+    app.use('*.json', createProxyMiddleware({ logLevel: 'debug', target: config.get('services.api.url') }));
   }
 
 }
