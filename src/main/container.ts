@@ -7,6 +7,7 @@ import { SearchOptionController } from './controllers/search/SearchOptionControl
 import { HomeController } from './controllers/HomeController';
 import { LocationSearchController } from './controllers/search/LocationSearchController';
 import { ChooseActionController } from './controllers/ChooseActionController';
+import { CourtDetailsController } from './controllers/CourtDetailsController';
 
 const { Logger } = require('@hmcts/nodejs-logging');
 const logger = Logger.getLogger('app');
@@ -19,5 +20,6 @@ export const container = createContainer({ injectionMode: InjectionMode.CLASSIC 
   searchOptionController: asClass(SearchOptionController),
   locationSearchController: asClass(LocationSearchController),
   searchResultsController: asClass(SearchResultsController),
-  chooseActionController: asClass(ChooseActionController)
+  chooseActionController: asClass(ChooseActionController),
+  courtDetailsController: asClass(CourtDetailsController)
 });

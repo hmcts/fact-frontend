@@ -3,6 +3,7 @@ import * as bodyParser from 'body-parser';
 const app = express();
 
 const data = require('./courts.json');
+const courtDetails = require('./court-details.json');
 const port = 8080;
 
 
@@ -20,6 +21,13 @@ app.get('/courts', (req: Request, res: Response) => {
     }
   });
   res.json(filteredDocs);
+});
+
+app.get('/courts/:slug', (req: Request, res: Response) => {
+  const slug: string = (req.params.slug as string).toLowerCase();
+  const courts = [...courtDetails];
+  const court = courts.find(court => court.slug.toLowerCase() === slug);
+  res.json(court);
 });
 
 app.listen(port, () => {

@@ -5,3 +5,7 @@ export const hasProperty = (actual: {}, expected: string): boolean => {
 export const isEmpty = (value: string): boolean => {
   return value === undefined || value === '';
 };
+
+export const isObjectEmpty = (obj: {}): boolean => {
+  return Object.keys(obj).length === 0;
+};
