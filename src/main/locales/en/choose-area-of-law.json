@@ -8,6 +8,6 @@
   "button": "Continue",
   "error": {
     "title": "There is a problem",
-    "text": "Field is blank - Select what do you want to know more about"
+    "text": "Select what do you want to know more about"
   }
 }
