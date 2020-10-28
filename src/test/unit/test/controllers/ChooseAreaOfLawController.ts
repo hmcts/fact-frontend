@@ -49,7 +49,7 @@ describe('Choose Area of Law Controller', () => {
   test('Should render Money Area of Law page if Money is selected', async () => {
     const req = mockRequest(i18n);
     req.body = {
-      chooseAreaOfLaw: 'Money',
+      chooseAreaOfLaw: 'money',
     };
     const res = mockResponse();
     await controller.post(req, res);
@@ -59,7 +59,7 @@ describe('Choose Area of Law Controller', () => {
   test('Should render Family Area of Law page if Family is selected', async () => {
     const req = mockRequest(i18n);
     req.body = {
-      chooseAreaOfLaw: 'Probate',
+      chooseAreaOfLaw: 'probate-divorce-or-ending-civil-partnerships',
     };
     const res = mockResponse();
     await controller.post(req, res);
@@ -69,7 +69,7 @@ describe('Choose Area of Law Controller', () => {
   test('Should render Childcare and Parenting Area of Law page if Childcare and parenting is selected', async () => {
     const req = mockRequest(i18n);
     req.body = {
-      chooseAreaOfLaw: 'Childcare',
+      chooseAreaOfLaw: 'childcare-and-parenting',
     };
     const res = mockResponse();
     await controller.post(req, res);
