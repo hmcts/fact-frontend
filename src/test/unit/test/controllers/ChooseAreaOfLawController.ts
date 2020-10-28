@@ -13,7 +13,7 @@ const i18n = {
 
 describe('Choose Area of Law Controller', () => {
   const response: any = { data: {} };
-  const api: any = { court: async () => response.data };
+  const api: any = { services: async () => response.data };
   const controller = new ChooseAreaOfLawController(api);
 
   test('Should render the choose area page', async () => {
@@ -25,22 +25,23 @@ describe('Choose Area of Law Controller', () => {
     const expectedData: PageData = {
       ...i18n['choose-area-of-law'],
       path: '/services',
-      results: {
-        ...response.data
-      }
+      results: response.data
     };
     expect(res.render).toBeCalledWith('choose-area-of-law', expectedData);
   });
 
   test('Should render Choose Area of Law page with errors if no data has been entered', async () => {
+    response.data = expectedAreasOfLaw;
     const req = mockRequest(i18n);
     req.body = {};
     const res = mockResponse();
     await controller.post(req, res);
+
     const expectedData: PageData = {
       ...i18n['choose-area-of-law'],
-      path: '/service-category',
-      errors: true,
+      path: '/services',
+      results: response.data,
+      errors: true
     };
     expect(res.render).toBeCalledWith('choose-area-of-law', expectedData);
   });
@@ -48,7 +49,7 @@ describe('Choose Area of Law Controller', () => {
   test('Should render Money Area of Law page if Money is selected', async () => {
     const req = mockRequest(i18n);
     req.body = {
-      chooseAreaOfLaw: 'money',
+      chooseAreaOfLaw: 'Money',
     };
     const res = mockResponse();
     await controller.post(req, res);
@@ -58,7 +59,7 @@ describe('Choose Area of Law Controller', () => {
   test('Should render Family Area of Law page if Family is selected', async () => {
     const req = mockRequest(i18n);
     req.body = {
-      chooseAreaOfLaw: 'family',
+      chooseAreaOfLaw: 'Probate',
     };
     const res = mockResponse();
     await controller.post(req, res);
@@ -68,7 +69,7 @@ describe('Choose Area of Law Controller', () => {
   test('Should render Childcare and Parenting Area of Law page if Childcare and parenting is selected', async () => {
     const req = mockRequest(i18n);
     req.body = {
-      chooseAreaOfLaw: 'childcare-and-parenting',
+      chooseAreaOfLaw: 'Childcare',
     };
     const res = mockResponse();
     await controller.post(req, res);
