@@ -24,7 +24,7 @@ describe('Family Area of Law Controller', () => {
 
     const expectedData: PageData = {
       ...i18n['family-area-of-law'],
-      path: '/services/family/service-areas',
+      path: '/services/probate-divorce-or-ending-civil-partnerships/service-areas',
       results: response.data
     };
     expect(res.render).toBeCalledWith('family-area-of-law', expectedData);
@@ -39,7 +39,7 @@ describe('Family Area of Law Controller', () => {
 
     const expectedData: PageData = {
       ...i18n['family-area-of-law'],
-      path: '/services/family/service-areas',
+      path: '/services/probate-divorce-or-ending-civil-partnerships/service-areas',
       results: response.data,
       errors: true
     };

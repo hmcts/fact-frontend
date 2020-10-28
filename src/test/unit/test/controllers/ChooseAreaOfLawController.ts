@@ -63,7 +63,7 @@ describe('Choose Area of Law Controller', () => {
     };
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services/family/service-areas');
+    expect(res.redirect).toHaveBeenCalledWith('/services/probate-divorce-or-ending-civil-partnerships/service-areas');
   });
 
   test('Should render Childcare and Parenting Area of Law page if Childcare and parenting is selected', async () => {

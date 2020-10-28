@@ -16,7 +16,7 @@ export class FamilyAreaOfLawController {
   public async get(req: FactRequest, res: Response) {
     const data: FamilyAreaOfLawData = {
       ...req.i18n.getDataByLanguage(req.lng)['family-area-of-law'],
-      path: '/services/family/service-areas',
+      path: '/services/probate-divorce-or-ending-civil-partnerships/service-areas',
       results: [],
     };
 
@@ -31,7 +31,7 @@ export class FamilyAreaOfLawController {
     if (!hasProperty(req.body, 'familyAreaOfLaw')) {
       const data: PageData = {
         ...req.i18n.getDataByLanguage(req.lng)['family-area-of-law'],
-        path: '/services/family/service-areas',
+        path: '/services/probate-divorce-or-ending-civil-partnerships/service-areas',
         errors: true,
         results: [],
       };
