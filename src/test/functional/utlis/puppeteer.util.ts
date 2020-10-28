@@ -23,6 +23,7 @@ export const getPageTitle = async () => {
 };
 
 export const getUrl = async () => {
+  await scope.page.waitForNavigation({ waitUntil: 'networkidle0' });
   return await scope.page.url();
 };
 
