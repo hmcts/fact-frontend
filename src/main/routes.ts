@@ -14,8 +14,8 @@ export default function(app: Application): void {
   app.post('/services', app.locals.container.cradle.chooseAreaOfLawController.post);
   app.get('/services/money/service-areas', app.locals.container.cradle.moneyAreaOfLawController.get);
   app.post('/services/money/service-areas', app.locals.container.cradle.moneyAreaOfLawController.post);
-  app.get('/service-area-probate-divorce-civil-partnerships', app.locals.container.cradle.familyAreaOfLawController.get);
-  app.post('/service-area-probate-divorce-civil-partnerships', app.locals.container.cradle.familyAreaOfLawController.post);
+  app.get('/services/family/service-areas', app.locals.container.cradle.familyAreaOfLawController.get);
+  app.post('/services/family/service-areas', app.locals.container.cradle.familyAreaOfLawController.post);
   app.get('/service-area-childcare-parenting', app.locals.container.cradle.childcareAndParentingAreaOfLawController.get);
   app.post('/service-area-childcare-parenting', app.locals.container.cradle.childcareAndParentingAreaOfLawController.post);
 }
