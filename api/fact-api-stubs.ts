@@ -5,6 +5,7 @@ const app = express();
 const data = require('./courts.json');
 const courtDetails = require('./court-details.json');
 const servicesData = require('./areasOfLaw.json');
+const moneyServiceAreasData = require('./moneyAreaOfLaw.json');
 const port = 8080;
 
 
@@ -33,6 +34,10 @@ app.get('/courts/:slug', (req: Request, res: Response) => {
 
 app.get('/services', (req: Request, res: Response) => {
   res.json(servicesData);
+});
+
+app.get('/services/money/service-areas', (req: Request, res: Response) => {
+  res.json(moneyServiceAreasData);
 });
 
 app.listen(port, () => {
