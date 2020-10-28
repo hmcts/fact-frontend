@@ -6,7 +6,7 @@ Then('I can select a {string} from the family and children area of law page', as
   let element;
   switch(option) {
     case 'childcare': {
-      element = '#childcare';
+      element = '#childcare-arrangements-if-you-separate-from-your-partner';
       break;
     }
     case 'adoption': {
