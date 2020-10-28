@@ -184,3 +184,16 @@ Feature: Court Name Know - Court Details
     Examples:
       | dx_number_court                            |
       | Birmingham Civil and Family Justice Centre |
+
+  Scenario Outline: In person court or tribunal location details
+    And I have entered "<location_court>" as search criteria
+    When I have selected to search for that court or tribunal name or address
+    Given results are returned
+    When I select a court or tribunal link
+    And that location is an 'in-person' court or tribunal
+    When I select the directions hyperlink for that location
+    Then I am presented with the Google Maps page for that location
+
+    Examples:
+      | location_court                             |
+      | Birmingham Civil and Family Justice Centre |
