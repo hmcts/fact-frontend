@@ -44,7 +44,7 @@ export class ChooseAreaOfLawController {
     }
 
     if (req.body.chooseAreaOfLaw as string === 'money') {
-      return res.redirect('/service-area-money');
+      return res.redirect('/services/money/service-areas');
     } else if (req.body.chooseAreaOfLaw as string === 'probate-divorce-or-ending-civil-partnerships') {
       return res.redirect('/service-area-probate-divorce-civil-partnerships');
     } else if (req.body.chooseAreaOfLaw as string === 'childcare-and-parenting') {

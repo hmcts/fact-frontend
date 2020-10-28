@@ -3,6 +3,7 @@ import { AxiosInstance } from 'axios';
 import { SearchResult } from '../interfaces/SearchResultsData';
 import { CourtDetailsResult } from '../interfaces/CourtDetailsData';
 import { AreaOfLawData } from '../interfaces/AreaOfLawData';
+import { MoneyAreaOfLawData } from '../interfaces/MoneyAreaOfLawData';
 
 export class FactApi {
 
@@ -34,6 +35,16 @@ export class FactApi {
   public services(): Promise<AreaOfLawData[]> {
     return this.axios
       .get('/services')
+      .then(results => results.data)
+      .catch(err => {
+        this.logger.error(err);
+        return [];
+      });
+  }
+
+  public moneyAreaOfLaw(): Promise<MoneyAreaOfLawData[]> {
+    return this.axios
+      .get('/services/money/service-areas')
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
