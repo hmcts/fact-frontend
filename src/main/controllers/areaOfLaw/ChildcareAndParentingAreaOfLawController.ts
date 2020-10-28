@@ -1,20 +1,45 @@
 import { FactRequest } from '../../interfaces/FactRequest';
-import { hasProperty } from '../../utils/validation';
+import { hasProperty, isObjectEmpty } from '../../utils/validation';
 import { PageData } from '../../interfaces/PageData';
 import { Response } from 'express';
+import { FactApi } from '../../utils/FactApi';
+import { ChildcareAndParentingAreaOfLawData } from '../../interfaces/ChildcareAndParentingAreaOfLawData';
+import autobind from 'autobind-decorator';
 
+@autobind
 export class ChildcareAndParentingAreaOfLawController {
-  public get(req: FactRequest, res: Response): void {
-    res.render('childcare-and-parenting-area-of-law', req.i18n.getDataByLanguage(req.lng)['childcare-and-parenting-area-of-law']);
+
+  constructor(
+    private readonly api: FactApi
+  ) { }
+
+  public async get(req: FactRequest, res: Response) {
+    const data: ChildcareAndParentingAreaOfLawData = {
+      ...req.i18n.getDataByLanguage(req.lng)['childcare-and-parenting-area-of-law'],
+      path: '/services/childcare-and-parenting/service-areas',
+      results: [],
+    };
+
+    const childcareAndParentingAreaOfLaw = await this.api.childcareAndParentingAreaOfLaw();
+    if (!isObjectEmpty(childcareAndParentingAreaOfLaw)) {
+      data.results = childcareAndParentingAreaOfLaw;
+    }
+    res.render('childcare-and-parenting-area-of-law', data);
   }
 
-  public post(req: FactRequest, res: Response): void {
+  public async post(req: FactRequest, res: Response) {
     if (!hasProperty(req.body, 'childcareAndParentingAreaOfLaw')) {
       const data: PageData = {
         ...req.i18n.getDataByLanguage(req.lng)['childcare-and-parenting-area-of-law'],
-        path: '/service-area-childcare-parenting',
+        path: '/services/childcare-and-parenting/service-areas',
         errors: true,
+        results: [],
       };
+
+      const childcareAndParentingAreaOfLaw = await this.api.childcareAndParentingAreaOfLaw();
+      if (!isObjectEmpty(childcareAndParentingAreaOfLaw)) {
+        data.results = childcareAndParentingAreaOfLaw;
+      }
       return res.render('childcare-and-parenting-area-of-law', data);
     }
 

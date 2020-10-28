@@ -3,12 +3,8 @@
   "serviceName": "Find a court or tribunal",
   "question": "What kind of help do you need with childcare and parenting?",
   "answers": {
-    "a1": "Childcare arrangements if you separate from your partner",
-    "a2": "Adoption",
-    "a3": "I can't find what I'm looking for"
+    "a1": "I can't find what I'm looking for"
   },
-  "hint1": "Making child arrangements if you divorce or separate.",
-  "hint2": "Support for a child adoption application.",
   "button": "Continue",
   "error": {
     "title": "There is a problem",
