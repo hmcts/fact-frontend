@@ -1,20 +1,45 @@
 import { FactRequest } from '../../interfaces/FactRequest';
-import { hasProperty } from '../../utils/validation';
+import { hasProperty, isObjectEmpty } from '../../utils/validation';
 import { PageData } from '../../interfaces/PageData';
 import { Response } from 'express';
+import { FactApi } from '../../utils/FactApi';
+import { FamilyAreaOfLawData } from '../../interfaces/FamilyAreaOfLawData';
+import autobind from 'autobind-decorator';
 
+@autobind
 export class FamilyAreaOfLawController {
-  public get(req: FactRequest, res: Response): void {
-    res.render('family-area-of-law', req.i18n.getDataByLanguage(req.lng)['family-area-of-law']);
+
+  constructor(
+    private readonly api: FactApi
+  ) { }
+
+  public async get(req: FactRequest, res: Response) {
+    const data: FamilyAreaOfLawData = {
+      ...req.i18n.getDataByLanguage(req.lng)['family-area-of-law'],
+      path: '/services/family/service-areas',
+      results: [],
+    };
+
+    const familyAreaOfLaw = await this.api.familyAreaOfLaw();
+    if (!isObjectEmpty(familyAreaOfLaw)) {
+      data.results = familyAreaOfLaw;
+    }
+    res.render('family-area-of-law', data);
   }
 
-  public post(req: FactRequest, res: Response): void {
+  public async post(req: FactRequest, res: Response) {
     if (!hasProperty(req.body, 'familyAreaOfLaw')) {
       const data: PageData = {
         ...req.i18n.getDataByLanguage(req.lng)['family-area-of-law'],
-        path: '/service-area-probate-divorce-civil-partnerships',
+        path: '/services/family/service-areas',
         errors: true,
+        results: [],
       };
+
+      const familyAreaOfLaw = await this.api.familyAreaOfLaw();
+      if (!isObjectEmpty(familyAreaOfLaw)) {
+        data.results = familyAreaOfLaw;
+      }
       return res.render('family-area-of-law', data);
     }
 

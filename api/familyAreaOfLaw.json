@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Probate",
+    "description": "Applying for probate, storing a will, settlement and disputes over a deceased person's property, money and possessions."
+  },
+  {
+    "name": "Divorce",
+    "description": "Ending a marriage, getting a legal separation or help with money, property and children during a divorce."
+  },
+  {
+    "name": "Civil partnership",
+    "description": "Ending a civil partnership."
+  },
+  {
+    "name": "Forced marriage",
+    "description": "Being made to marry against your will."
+  }
+]

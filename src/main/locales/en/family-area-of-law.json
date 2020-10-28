@@ -3,11 +3,7 @@
   "serviceName": "Find a court or tribunal",
   "question": "What kind of help do you need with probate, divorce or ending civil partnerships?",
   "answers": {
-    "a1": "Probate",
-    "a2": "Divorce",
-    "a3": "Civil partnership",
-    "a4": "Forced marriage",
-    "a5": "I can't find what I'm looking for"
+    "a1": "I can't find what I'm looking for"
   },
   "hint1": "Applying for probate, storing a will, settlement and disputes over a deceased person's property, money and possessions.",
   "hint2": "Ending a marriage, getting a legal separation or help with money, property and children during a divorce.",

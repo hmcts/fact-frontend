@@ -4,6 +4,7 @@ import { SearchResult } from '../interfaces/SearchResultsData';
 import { CourtDetailsResult } from '../interfaces/CourtDetailsData';
 import { AreaOfLawData } from '../interfaces/AreaOfLawData';
 import { MoneyAreaOfLawData } from '../interfaces/MoneyAreaOfLawData';
+import { FamilyAreaOfLawData } from '../interfaces/FamilyAreaOfLawData';
 
 export class FactApi {
 
@@ -45,6 +46,16 @@ export class FactApi {
   public moneyAreaOfLaw(): Promise<MoneyAreaOfLawData[]> {
     return this.axios
       .get('/services/money/service-areas')
+      .then(results => results.data)
+      .catch(err => {
+        this.logger.error(err);
+        return [];
+      });
+  }
+
+  public familyAreaOfLaw(): Promise<FamilyAreaOfLawData[]> {
+    return this.axios
+      .get('/services/family/service-areas')
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
