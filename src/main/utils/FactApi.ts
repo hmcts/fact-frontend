@@ -5,6 +5,7 @@ import { CourtDetailsResult } from '../interfaces/CourtDetailsData';
 import { AreaOfLawData } from '../interfaces/AreaOfLawData';
 import { MoneyAreaOfLawData } from '../interfaces/MoneyAreaOfLawData';
 import { FamilyAreaOfLawData } from '../interfaces/FamilyAreaOfLawData';
+import { ChildcareAndParentingAreaOfLawData } from '../interfaces/ChildcareAndParentingAreaOfLawData';
 
 export class FactApi {
 
@@ -55,7 +56,17 @@ export class FactApi {
 
   public familyAreaOfLaw(): Promise<FamilyAreaOfLawData[]> {
     return this.axios
-      .get('/services/family/service-areas')
+      .get('/services/probate-divorce-ending-civil-partnerships/service-areas')
+      .then(results => results.data)
+      .catch(err => {
+        this.logger.error(err);
+        return [];
+      });
+  }
+
+  public childcareAndParentingAreaOfLaw(): Promise<ChildcareAndParentingAreaOfLawData[]> {
+    return this.axios
+      .get('/services/childcare-and-parenting/service-areas')
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);

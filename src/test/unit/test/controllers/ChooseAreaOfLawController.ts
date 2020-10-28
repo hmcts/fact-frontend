@@ -73,7 +73,7 @@ describe('Choose Area of Law Controller', () => {
     };
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/service-area-childcare-parenting');
+    expect(res.redirect).toHaveBeenCalledWith('/services/childcare-and-parenting/service-areas');
   });
 
 });

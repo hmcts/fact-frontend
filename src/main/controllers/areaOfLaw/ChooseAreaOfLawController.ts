@@ -48,7 +48,7 @@ export class ChooseAreaOfLawController {
     } else if (req.body.chooseAreaOfLaw as string === 'probate-divorce-or-ending-civil-partnerships') {
       return res.redirect('/services/probate-divorce-or-ending-civil-partnerships/service-areas');
     } else if (req.body.chooseAreaOfLaw as string === 'childcare-and-parenting') {
-      return res.redirect('/service-area-childcare-parenting');
+      return res.redirect('/services/childcare-and-parenting/service-areas');
     }
 
     res.redirect('/');
