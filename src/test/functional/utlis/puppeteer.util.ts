@@ -23,7 +23,6 @@ export const getPageTitle = async () => {
 };
 
 export const getUrl = async () => {
-  await scope.page.waitForNavigation();
   return await scope.page.url();
 };
 
