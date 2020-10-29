@@ -8,7 +8,7 @@ export class PropertiesVolume {
   enableFor(server: Application) {
     if (server.locals.ENV !== 'development') {
       propertiesVolume.addTo(config);
-
+      console.log(get(config, 'secrets.fact.AppInsightsInstrumentationKey'));
       set(config, 'applicationInsights.instrumentationKey', get(config, 'secrets.fact.AppInsightsInstrumentationKey'));
     }
   }
