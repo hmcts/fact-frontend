@@ -207,8 +207,8 @@ Feature: Court Name Know - Court Details
     Then a link to learn about the scheme is included
 
     Examples:
-      | access_scheme_court                        |
-      | Birmingham Civil and Family Justice Centre |
+      | access_scheme_court  |
+      | Central Family Court |
 
   Scenario Outline: Court or tribunal Access Scheme not applicable
     And I have entered "<no_access_scheme_court>" as search criteria
@@ -220,5 +220,5 @@ Feature: Court Name Know - Court Details
     And a link to learn about the scheme is included
 
     Examples:
-      | no_access_scheme_court                             |
-      | Birmingham Civil and Family Justice Centre |
+      | no_access_scheme_court |
+      | Chancery Division      |
