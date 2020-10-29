@@ -56,7 +56,7 @@ export class FactApi {
 
   public familyAreaOfLaw(): Promise<FamilyAreaOfLawData[]> {
     return this.axios
-      .get('/services/probate-divorce-ending-civil-partnerships/service-areas')
+      .get('/services/Probate, divorce or ending civil partnerships/service-areas')
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
@@ -66,7 +66,7 @@ export class FactApi {
 
   public childcareAndParentingAreaOfLaw(): Promise<ChildcareAndParentingAreaOfLawData[]> {
     return this.axios
-      .get('/services/childcare-and-parenting/service-areas')
+      .get('/services/Childcare and parenting/service-areas')
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
