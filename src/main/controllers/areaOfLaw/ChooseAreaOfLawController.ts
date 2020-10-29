@@ -43,14 +43,6 @@ export class ChooseAreaOfLawController {
       return res.render('choose-area-of-law', data);
     }
 
-    if (req.body.chooseAreaOfLaw as string === 'money') {
-      return res.redirect('/services/money/service-areas');
-    } else if (req.body.chooseAreaOfLaw as string === 'probate-divorce-or-ending-civil-partnerships') {
-      return res.redirect('/services/probate-divorce-or-ending-civil-partnerships/service-areas');
-    } else if (req.body.chooseAreaOfLaw as string === 'childcare-and-parenting') {
-      return res.redirect('/services/childcare-and-parenting/service-areas');
-    }
-
-    res.redirect('/');
+    res.redirect('/services/' + req.body.chooseAreaOfLaw + '/service-areas');
   }
 }
