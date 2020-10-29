@@ -2,6 +2,7 @@ import { Response } from 'express';
 import { FactRequest } from '../../interfaces/FactRequest';
 import { PageData } from '../../interfaces/PageData';
 import { hasProperty } from '../../utils/validation';
+import { cloneDeep } from 'lodash';
 
 export class SearchOptionController {
 
@@ -12,7 +13,7 @@ export class SearchOptionController {
   public post(req: FactRequest, res: Response): void {
     if (!hasProperty(req.body, 'knowLocation')) {
       const data: PageData = {
-        ...req.i18n.getDataByLanguage(req.lng).search.option,
+        ...cloneDeep(req.i18n.getDataByLanguage(req.lng).search.option),
         path: '/search-option',
         errors: true,
       };

@@ -44,7 +44,7 @@
         {% endif %}
         {% for result in results %}
             <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id={{ result.name | lower | replace(" ", "-") | replace(",", "") }} name="chooseAreaOfLaw" type="radio" value={{ result.name | lower | replace(" ", "-") | replace(",", "") }}>
+                <input class="govuk-radios__input" id={{ result.name | lower | replace(" ", "-") | replace(",", "") }} name="chooseService" type="radio" value={{ result.name | lower | replace(" ", "-") | replace(",", "") }}>
                 <label class="govuk-label govuk-radios__label govuk-label--s" for={{ result.name | lower | replace(" ", "-") | replace(",", "") }}>
                     {{ result.name }}
                 </label>
@@ -55,7 +55,7 @@
         {% endfor %}
             <div class="govuk-radios__divider">or</div>
             <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="not-listed" name="chooseAreaOfLaw" type="radio" value="not-listed">
+                <input class="govuk-radios__input" id="not-listed" name="chooseService" type="radio" value="not-listed">
                 <label class="govuk-label govuk-radios__label govuk-label--s" for="not-listed">
                     {{ answers.a1 }}
                 </label>

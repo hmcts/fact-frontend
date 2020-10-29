@@ -20,7 +20,7 @@
 
 {% block content %}
 {% if errors %}
-  {{ errorSummary(error.title, error.text, "#childcare-and-parenting-area-of-law-error") }}
+  {{ errorSummary(error.title, error.text, "#service-area-error") }}
 {% endif %}
 
 <div class="govuk-grid-row">
@@ -30,7 +30,7 @@
         {% if errors %}
             <div class="govuk-error-message govuk-form-group--error">
         {% endif %}
-    <fieldset class="govuk-fieldset" aria-describedby="childcare-and-parenting-area-of-law-error">
+    <fieldset class="govuk-fieldset" aria-describedby="service-area-error">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
                 {{ question }}
@@ -38,13 +38,13 @@
         </legend>
         <div class="govuk-radios">
         {% if errors %}
-            <span id="childcare-and-parenting-area-of-law-error" class="govuk-error-message">
+            <span id="service-area-error" class="govuk-error-message">
               {{ error.text }}
             </span>
         {% endif %}
         {% for result in results %}
             <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id={{ result.name | lower | replace(" ", "-") | replace(",", "") }} name="childcareAndParentingAreaOfLaw" type="radio" value={{ result.name | lower | replace(" ", "-") | replace(",", "") }}>
+                <input class="govuk-radios__input" id={{ result.name | lower | replace(" ", "-") | replace(",", "") }} name="serviceArea" type="radio" value={{ result.name | lower | replace(" ", "-") | replace(",", "") }}>
                 <label class="govuk-label govuk-radios__label govuk-label--s" for={{ result.name | lower | replace(" ", "-") | replace(",", "") }}>
                     {{ result.name }}
                 </label>
@@ -55,7 +55,7 @@
         {% endfor %}
             <div class="govuk-radios__divider">or</div>
             <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="not-listed" name="childcareAndParentingAreaOfLaw" type="radio" value="not-listed">
+                <input class="govuk-radios__input" id="not-listed" name="serviceArea" type="radio" value="not-listed">
                 <label class="govuk-label govuk-radios__label govuk-label--s" for="not-listed">
                     {{ answers.a1 }}
                 </label>

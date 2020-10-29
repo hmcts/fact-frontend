@@ -2,10 +2,8 @@ import { Logger } from '../interfaces/Logger';
 import { AxiosInstance } from 'axios';
 import { SearchResult } from '../interfaces/SearchResultsData';
 import { CourtDetailsResult } from '../interfaces/CourtDetailsData';
+import { ServicesData } from '../interfaces/ServicesData';
 import { ServiceData } from '../interfaces/ServiceData';
-import { MoneyAreaOfLawData } from '../interfaces/MoneyAreaOfLawData';
-import { FamilyAreaOfLawData } from '../interfaces/FamilyAreaOfLawData';
-import { ChildcareAndParentingAreaOfLawData } from '../interfaces/ChildcareAndParentingAreaOfLawData';
 
 export class FactApi {
 
@@ -34,7 +32,7 @@ export class FactApi {
       });
   }
 
-  public services(): Promise<ServiceData[]> {
+  public services(): Promise<ServicesData[]> {
     return this.axios
       .get('/services')
       .then(results => results.data)
@@ -44,9 +42,9 @@ export class FactApi {
       });
   }
 
-  public moneyAreaOfLaw(): Promise<MoneyAreaOfLawData[]> {
+  public service(service: string): Promise<ServiceData[]> {
     return this.axios
-      .get('/services/money/service-areas')
+      .get(`/services/${service}/service-areas`)
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
@@ -54,23 +52,4 @@ export class FactApi {
       });
   }
 
-  public familyAreaOfLaw(): Promise<FamilyAreaOfLawData[]> {
-    return this.axios
-      .get('/services/Probate, divorce or ending civil partnerships/service-areas')
-      .then(results => results.data)
-      .catch(err => {
-        this.logger.error(err);
-        return [];
-      });
-  }
-
-  public childcareAndParentingAreaOfLaw(): Promise<ChildcareAndParentingAreaOfLawData[]> {
-    return this.axios
-      .get('/services/Childcare and parenting/service-areas')
-      .then(results => results.data)
-      .catch(err => {
-        this.logger.error(err);
-        return [];
-      });
-  }
 }

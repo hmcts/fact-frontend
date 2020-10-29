@@ -2,9 +2,10 @@ import { FactRequest } from '../../interfaces/FactRequest';
 import { Response } from 'express';
 import { hasProperty, isObjectEmpty } from '../../utils/validation';
 import { PageData } from '../../interfaces/PageData';
-import { ServiceData } from '../../interfaces/ServiceData';
+import { ServicesData } from '../../interfaces/ServicesData';
 import { FactApi } from '../../utils/FactApi';
 import autobind from 'autobind-decorator';
+import { cloneDeep } from 'lodash';
 
 @autobind
 export class ChooseServiceController {
@@ -14,8 +15,8 @@ export class ChooseServiceController {
   ) { }
 
   public async get(req: FactRequest, res: Response) {
-    const data: ServiceData = {
-      ...req.i18n.getDataByLanguage(req.lng)['choose-service'],
+    const data: ServicesData = {
+      ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['choose-service']),
       path: '/services',
       results: [],
     };
@@ -28,21 +29,33 @@ export class ChooseServiceController {
   }
 
   public async post(req: FactRequest, res: Response) {
-    if (!hasProperty(req.body, 'chooseAreaOfLaw')) {
+    if (!hasProperty(req.body, 'chooseService')) {
       const data: PageData = {
-        ...req.i18n.getDataByLanguage(req.lng)['choose-service'],
+        ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['choose-service']),
         path: '/services',
         errors: true,
         results: [],
       };
 
-      const areasOfLaw = await this.api.services();
-      if (!isObjectEmpty(areasOfLaw)) {
-        data.results = areasOfLaw;
+      const chosenService = await this.api.services();
+      if (!isObjectEmpty(chosenService)) {
+        data.results = chosenService;
       }
       return res.render('choose-service', data);
     }
 
-    res.redirect('/services/' + req.body.chooseAreaOfLaw + '/service-areas');
+    if (req.body.chooseService as string === 'money') {
+      return res.redirect('/services/Money/service-areas');
+    } else if (req.body.chooseService as string === 'probate-divorce-or-ending-civil-partnerships') {
+      return res.redirect('/services/Probate, divorce or ending civil partnerships/service-areas');
+    } else if (req.body.chooseService as string === 'childcare-and-parenting') {
+      return res.redirect('/services/Childcare and parenting/service-areas');
+    } else if (req.body.chooseService as string === 'harm-and-abuse') {
+      return res.redirect('/services/Harm and abuse/service-areas');
+    } else if (req.body.chooseService as string === 'crime') {
+      return res.redirect('/services/Crime/service-areas');
+    } else {
+      return res.redirect('/');
+    }
   }
 }

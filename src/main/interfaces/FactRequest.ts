@@ -1,7 +1,8 @@
 import { Request } from 'express';
 import { SearchResultsData } from './SearchResultsData';
-import { ServiceData } from './ServiceData';
+import { ServicesData } from './ServicesData';
 import { CourtDetailsData } from './CourtDetailsData';
+import { ServiceData } from './ServiceData';
 
 export interface FactRequest extends Request {
   i18n?: {
@@ -15,10 +16,9 @@ export interface FactRequest extends Request {
       'choose-action': {};
       template: {};
       'court-details': CourtDetailsData;
-      'choose-service': ServiceData;
-      'money-area-of-law': {};
-      'family-area-of-law': {};
-      'childcare-and-parenting-area-of-law': {};
+      'choose-service': ServicesData;
+      service: ServiceData;
+      [property: string]: {};
     };
   };
   lng?: string;
