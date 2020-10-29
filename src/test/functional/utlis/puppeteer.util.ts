@@ -18,6 +18,11 @@ export const goTo = async (url: string) => {
   await scope.page.goto(url);
 };
 
+export const getUrl = async () => {
+  await scope.page.waitForNavigation();
+  return await scope.page.url();
+};
+
 export const getPageTitle = async () => {
   return await scope.page.title();
 };
