@@ -101,3 +101,5 @@ app.use((err: HTTPError, req: any, res: express.Response) => {
   const data = req.i18n.getDataByLanguage(req.lng).error;
   res.render('error', data);
 });
+
+console.log(config);
