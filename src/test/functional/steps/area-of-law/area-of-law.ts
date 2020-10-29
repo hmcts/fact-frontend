@@ -46,7 +46,7 @@ Given('I continue having not selected an area of law option', async() => {
   await I.click('.govuk-button');
 });
 
-Then('I am presented with an error message for area of law', async() => {
-  const elementExist = await I.checkElement('#choose-area-of-law-error');
+Then('I am presented with an error message for services', async() => {
+  const elementExist = await I.checkElement('#choose-service-error');
   expect(elementExist).equal(true);
 });

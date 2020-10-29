@@ -9,7 +9,7 @@ Feature: No name option
     Then I can select an "<options>" option from the list displayed
     Given I can continue having selected that option
     Then I am presented with the "Choose an area of law - Find a court or tribunal - GOV.UK" page
-    And I continue having selected an "<area of law>" from that page
+    And I continue having selected an "<service>" from that page
     Examples:
       | options         |
       | nearest court   |
@@ -17,7 +17,7 @@ Feature: No name option
       | update court    |
       | not listed      |
     Examples:
-      | area of law     |
+      | service         |
       | money           |
       | family          |
       | childcare       |
@@ -32,8 +32,8 @@ Feature: No name option
     Given I can continue having selected that option
     Then I am presented with the "Choose an area of law - Find a court or tribunal - GOV.UK" page
     And I continue having not selected an area of law option
-    Then I am presented with an error message for area of law
-    And I continue having selected an "<area of law>" from that page
+    Then I am presented with an error message for services
+    And I continue having selected an "<service>" from that page
     Examples:
       | options         |
       | nearest court   |
@@ -41,7 +41,7 @@ Feature: No name option
       | update court    |
       | not listed      |
     Examples:
-      | area of law     |
+      | service         |
       | money           |
       | family          |
       | childcare       |
