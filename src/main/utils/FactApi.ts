@@ -2,7 +2,7 @@ import { Logger } from '../interfaces/Logger';
 import { AxiosInstance } from 'axios';
 import { SearchResult } from '../interfaces/SearchResultsData';
 import { CourtDetailsResult } from '../interfaces/CourtDetailsData';
-import { AreaOfLawData } from '../interfaces/AreaOfLawData';
+import { ServiceData } from '../interfaces/ServiceData';
 import { MoneyAreaOfLawData } from '../interfaces/MoneyAreaOfLawData';
 import { FamilyAreaOfLawData } from '../interfaces/FamilyAreaOfLawData';
 import { ChildcareAndParentingAreaOfLawData } from '../interfaces/ChildcareAndParentingAreaOfLawData';
@@ -34,7 +34,7 @@ export class FactApi {
       });
   }
 
-  public services(): Promise<AreaOfLawData[]> {
+  public services(): Promise<ServiceData[]> {
     return this.axios
       .get('/services')
       .then(results => results.data)

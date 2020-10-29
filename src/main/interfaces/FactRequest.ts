@@ -1,6 +1,6 @@
 import { Request } from 'express';
 import { SearchResultsData } from './SearchResultsData';
-import { AreaOfLawData } from './AreaOfLawData';
+import { ServiceData } from './ServiceData';
 import { CourtDetailsData } from './CourtDetailsData';
 
 export interface FactRequest extends Request {
@@ -15,7 +15,7 @@ export interface FactRequest extends Request {
       'choose-action': {};
       template: {};
       'court-details': CourtDetailsData;
-      'choose-area-of-law': AreaOfLawData;
+      'choose-service': ServiceData;
       'money-area-of-law': {};
       'family-area-of-law': {};
       'childcare-and-parenting-area-of-law': {};

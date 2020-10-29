@@ -20,7 +20,7 @@
 
 {% block content %}
 {% if errors %}
-  {{ errorSummary(error.title, error.text, "#choose-area-of-law") }}
+  {{ errorSummary(error.title, error.text, "#choose-service-error") }}
 {% endif %}
 
 <div class="govuk-grid-row">
@@ -30,7 +30,7 @@
         {% if errors %}
             <div class="govuk-error-message govuk-form-group--error">
         {% endif %}
-    <fieldset class="govuk-fieldset" aria-describedby="choose-area-of-law-error">
+    <fieldset class="govuk-fieldset" aria-describedby="choose-service-error">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
                 {{ question }}
@@ -38,7 +38,7 @@
         </legend>
         <div class="govuk-radios">
         {% if errors %}
-            <span id="choose-area-of-law-error" class="govuk-error-message">
+            <span id="choose-service-error" class="govuk-error-message">
               {{ error.text }}
             </span>
         {% endif %}

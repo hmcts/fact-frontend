@@ -1,11 +1,11 @@
 import { mockRequest } from '../../utils/mockRequest';
 import { mockResponse } from '../../utils/mockResponse';
 import { PageData } from '../../../../main/interfaces/PageData';
-import { ChooseAreaOfLawController } from '../../../../main/controllers/areaOfLaw/ChooseAreaOfLawController';
+import { ChooseServiceController } from '../../../../main/controllers/areaOfLaw/ChooseServiceController';
 const expectedAreasOfLaw = require('../../../resources/areas-of-law-results.json');
 
 const i18n = {
-  'choose-area-of-law': {
+  'choose-service': {
     name: '',
     description: '',
   },
@@ -14,7 +14,7 @@ const i18n = {
 describe('Choose Area of Law Controller', () => {
   const response: any = { data: {} };
   const api: any = { services: async () => response.data };
-  const controller = new ChooseAreaOfLawController(api);
+  const controller = new ChooseServiceController(api);
 
   test('Should render the choose area page', async () => {
     response.data = expectedAreasOfLaw;
@@ -23,7 +23,7 @@ describe('Choose Area of Law Controller', () => {
     await controller.get(req, res);
 
     const expectedData: PageData = {
-      ...i18n['choose-area-of-law'],
+      ...i18n['choose-service'],
       path: '/services',
       results: response.data
     };
@@ -38,7 +38,7 @@ describe('Choose Area of Law Controller', () => {
     await controller.post(req, res);
 
     const expectedData: PageData = {
-      ...i18n['choose-area-of-law'],
+      ...i18n['choose-service'],
       path: '/services',
       results: response.data,
       errors: true
