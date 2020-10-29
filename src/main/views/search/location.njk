@@ -30,7 +30,7 @@
         {{ hint }}
       </span>
     </h1>
-    <form method="GET" action="/search-for-location">
+    <form method="GET" action="/courts">
       {{ govukInput({
         label: {
           text: text,
@@ -49,17 +49,17 @@
       }) }}
     </form>
 
-    {% if (path !== '/location-search') and (results.length > 0) %}
+    {% if (path !== '/search') and (results.length > 0) %}
       <p class="govuk-body">{{ foundResults | safe }}</p>
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       <div class="search-results" id="search-results">
         {% for item in results | sort(attribute="name") %}
           <h2 class="govuk-heading-m">
-            <a class="govuk-link" href="/individual-location-pages/courts/{{ item.slug }}">{{ item.name }}</a>
+            <a class="govuk-link" href="/courts/{{ item.slug }}">{{ item.name }}</a>
           </h2>
         {% endfor %}
       </div>
-    {% elif (path !== '/location-search') %}
+    {% elif (path !== '/search') %}
       <div class="no-search-results" id="no-search-results">
         <p class="govuk-body-m govuk-!-font-weight-bold">{{ noResults.p1 }}</p>
         <p class="govuk-body">{{ noResults.p2 }}</p>

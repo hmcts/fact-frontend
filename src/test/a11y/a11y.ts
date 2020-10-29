@@ -8,7 +8,7 @@ const agent = supertest.agent(app);
 
 const startPage = '/';
 const searchOptionPage = '/search-option';
-const locationSearchPage = '/location-search';
+const locationSearchPage = '/search';
 const serviceChooseActionPage = '/service-choose-action';
 
 class Pa11yResult {
