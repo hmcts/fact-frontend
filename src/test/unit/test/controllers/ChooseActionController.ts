@@ -54,7 +54,7 @@ describe('Choose Action Controller', () => {
     await controller.post(req, res);
     const expectedData: PageData = {
       ...i18n['choose-action'],
-      path: '/service-choose-action',
+      path: '/services',
       errors: true,
     };
     expect(res.render).toBeCalledWith('choose-action', expectedData);
