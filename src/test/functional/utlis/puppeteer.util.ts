@@ -19,7 +19,6 @@ export const goTo = async (url: string) => {
 };
 
 export const getUrl = async () => {
-  await scope.page.waitForNavigation();
   return await scope.page.url();
 };
 
