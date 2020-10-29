@@ -16,7 +16,7 @@ export class SearchResultsController {
     const query: string = req.query.search as string;
     const data: SearchResultsData = {
       ...req.i18n.getDataByLanguage(req.lng).search.location,
-      path: '/search-for-location',
+      path: '/courts',
       results: [],
       search: query,
       errors: false,

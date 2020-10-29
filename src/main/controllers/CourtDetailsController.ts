@@ -21,7 +21,7 @@ export class CourtDetailsController {
     const slug: string = req.params.slug as string;
     const data: CourtDetailsData = {
       ...req.i18n.getDataByLanguage(req.lng)['court-details'],
-      path: '/individual-location-pages/courts',
+      path: '/courts/' + slug,
       results: {},
     };
 
