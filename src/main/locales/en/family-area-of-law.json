@@ -5,10 +5,6 @@
   "answers": {
     "a1": "I can't find what I'm looking for"
   },
-  "hint1": "Applying for probate, storing a will, settlement and disputes over a deceased person's property, money and possessions.",
-  "hint2": "Ending a marriage, getting a legal separation or help with money, property and children during a divorce.",
-  "hint3": "Ending a civil partnership.",
-  "hint4": "Being made to marry against your will.",
   "button": "Continue",
   "error": {
     "title": "There is a problem",
