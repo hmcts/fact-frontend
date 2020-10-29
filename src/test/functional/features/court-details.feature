@@ -191,8 +191,7 @@ Feature: Court Name Know - Court Details
     Given results are returned
     When I select a court or tribunal link
     And that location is an 'in-person' court or tribunal
-    When I select the directions hyperlink for that location
-    Then I am presented with the Google Maps page for that location
+    And I can select the directions hyperlink for that location
 
     Examples:
       | location_court                             |

@@ -225,13 +225,8 @@ Given('the DX number is presented to me on the profile page', async () => {
   expect(text).equal('DX: 701987 Birmingham 7');
 });
 
-When('I select the directions hyperlink for that location', async () => {
+Given('I can select the directions hyperlink for that location', async () => {
   const hasDx = await I.checkElement('#direction-map');
   expect(hasDx).equal(true);
   await I.click('#direction-map > a');
-});
-
-Then('I am presented with the Google Maps page for that location', async () => {
-  const url = await I.getUrl();
-  expect(url).contains('https://www.google.com/maps');
 });
