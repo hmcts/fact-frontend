@@ -196,3 +196,29 @@ Feature: Court Name Know - Court Details
     Examples:
       | location_court                             |
       | Birmingham Civil and Family Justice Centre |
+
+  Scenario Outline: Court or tribunal Access Scheme applicable
+    And I have entered "<access_scheme_court>" as search criteria
+    When I have selected to search for that court or tribunal name or address
+    Given results are returned
+    When I select a court or tribunal link
+    And that location is an 'in-person' court or tribunal
+    And that location participates in the Professional users’ court and tribunal access scheme
+    Then a link to learn about the scheme is included
+
+    Examples:
+      | access_scheme_court                        |
+      | Birmingham Civil and Family Justice Centre |
+
+  Scenario Outline: Court or tribunal Access Scheme not applicable
+    And I have entered "<no_access_scheme_court>" as search criteria
+    When I have selected to search for that court or tribunal name or address
+    Given results are returned
+    When I select a court or tribunal link
+    And that location is an 'in-person' court or tribunal
+    And that location does not participate in the Professional users’ court and tribunal access scheme
+    And a link to learn about the scheme is included
+
+    Examples:
+      | no_access_scheme_court                             |
+      | Birmingham Civil and Family Justice Centre |
