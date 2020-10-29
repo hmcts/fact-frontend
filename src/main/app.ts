@@ -102,4 +102,3 @@ app.use((err: HTTPError, req: any, res: express.Response) => {
   res.render('error', data);
 });
 
-console.log(config);
