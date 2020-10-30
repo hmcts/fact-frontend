@@ -20,7 +20,10 @@
 
 {% block content %}
 {% if errors %}
-{{ errorSummary(error.title, error.text, "#radio-buttons" ) }}
+{% for result in results.slice(0, 1) %}
+{% set firstRadio = "#" + result.name %}
+{{ errorSummary(error.title, error.text, firstRadio ) }}
+{% endfor %}
 {% endif %}
 
 <div class="govuk-grid-row">
@@ -44,8 +47,8 @@
         {% endif %}
         {% for result in results %}
             <div class="govuk-radios__item" id="radio-buttons">
-                <input class="govuk-radios__input" id={{ result.name | lower | replace(" ", "-") | replace(",", "") }} name="chooseService" type="radio" value={{ result.name | lower | replace(" ", "-") | replace(",", "") }}>
-                <label class="govuk-label govuk-radios__label govuk-label--s" for={{ result.name | lower | replace(" ", "-") | replace(",", "") }}>
+                <input class="govuk-radios__input" id={{ result.name }} name="chooseService" type="radio" value={{ result.name | lower | replace(" ", "-") | replace(",", "") }}>
+                <label class="govuk-label govuk-radios__label govuk-label--s" for={{ result.name }}>
                     {{ result.name }}
                 </label>
                 <div id={{ result.description }} class="govuk-hint govuk-radios__hint">
