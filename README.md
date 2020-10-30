@@ -83,7 +83,7 @@ $ yarn test:routes
 Running accessibility tests:
 
 ```bash
-$ yarn test:a11y
+$ yarn test:pa11y
 ```
 
 Make sure all the paths in your application are covered by accessibility tests (see [a11y.ts](src/test/a11y/a11y.ts)).
