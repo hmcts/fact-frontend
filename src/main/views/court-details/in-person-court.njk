@@ -12,7 +12,7 @@
 
   {{ govukBackLink({
     text: "Back",
-    href: "/search-for-location"
+    href: "/courts"
   }) }}
 {% endblock %}
 
@@ -54,7 +54,7 @@
       </div>
 
       <div class="govuk-grid-row">
-        <p class="govuk-body-m">
+        <p class="govuk-body-m" id="direction-map">
           <a class="govuk-link" href="https://maps.google.com/maps?q={{ results.lat }},{{ results.lon }}">{{ directionsText }}</a>
         </p>
         <p class="govuk-body-m">
@@ -236,6 +236,26 @@
           {% endif %}
         </div>
       {% endif %}
+      <div class="govuk-grid-row" id="access-scheme">
+        <h3 class="govuk-heading-m">
+          {{ accessSchemeHeading }}
+        </h3>
+        {% if results['access_scheme'] %}
+          <p class="govuk-body-m">
+            {{ registerACText }}
+          </p>
+          <a class="govuk-link govuk-body-m" href="https://www.gov.uk/guidance/professional-users-court-and-tribunal-access-scheme">
+            {{ registerACLink }}
+          </a>
+        {% else %}
+          <p class="govuk-body-m">
+            {{ learnACText }}
+          </p>
+          <a class="govuk-link govuk-body-m" href="https://www.gov.uk/guidance/professional-users-court-and-tribunal-access-scheme">
+            {{ learnACLink }}
+          </a>
+        {% endif %}
+      </div>
     </div>
   </div>
 </div>

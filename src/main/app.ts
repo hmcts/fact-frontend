@@ -8,7 +8,6 @@ import favicon from 'serve-favicon';
 import { HTTPError } from 'interfaces/HttpError';
 import { Nunjucks } from './modules/nunjucks';
 import { I18next } from './modules/i18next';
-import { container } from './container';
 import { healthOptions } from './utils/healthOptions';
 import * as os from 'os';
 import { infoRequestHandler } from '@hmcts/info-provider';
@@ -16,6 +15,7 @@ import routes from './routes';
 import { ProxyMiddleware } from './modules/proxy';
 import { PropertiesVolume } from './modules/properties-volume';
 import { AppInsights } from './modules/appinsights';
+import { Container } from './modules/awilix';
 
 const healthcheck = require('@hmcts/nodejs-healthcheck');
 const { Express, Logger } = require('@hmcts/nodejs-logging');
@@ -26,16 +26,16 @@ const logger = Logger.getLogger('app');
 
 export const app = express();
 app.locals.ENV = env;
-app.locals.container = container;
 
 // setup logging of HTTP requests
 app.use(Express.accessLogger());
 
+new PropertiesVolume().enableFor(app);
+new Container().enableFor(app);
 new Nunjucks(developmentMode).enableFor(app);
 new Helmet(config.get('app.security')).enableFor(app);
 new I18next().enableFor(app);
 new ProxyMiddleware().enableFor(app);
-new PropertiesVolume().enableFor(app);
 new AppInsights().enableFor(app);
 
 app.use(favicon(path.join(__dirname, '/public/assets/images/favicon.ico')));
@@ -101,3 +101,4 @@ app.use((err: HTTPError, req: any, res: express.Response) => {
   const data = req.i18n.getDataByLanguage(req.lng).error;
   res.render('error', data);
 });
+

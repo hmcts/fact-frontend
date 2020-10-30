@@ -23,7 +23,7 @@ describe('SearchResultsController', () => {
     await controller.get(req, res);
     const expectedData: PageData = {
       ...i18n.search.location,
-      path: '/search-for-location',
+      path: '/courts',
       results: [],
       errors: true
     };
@@ -40,7 +40,7 @@ describe('SearchResultsController', () => {
 
     const expectedData: PageData = {
       ...i18n.search.location,
-      path: '/search-for-location',
+      path: '/courts',
       search: req.query.search,
       results: [],
       errors: false
@@ -64,7 +64,7 @@ describe('SearchResultsController', () => {
     await controller.get(req, res);
     const expectedData: PageData = {
       ...i18n.search.location,
-      path: '/search-for-location',
+      path: '/courts',
       search: req.query.search,
       results: response.data,
       errors: false

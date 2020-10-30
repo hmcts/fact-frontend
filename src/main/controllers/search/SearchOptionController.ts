@@ -21,7 +21,7 @@ export class SearchOptionController {
     }
     const knowLocation = req.body.knowLocation as string;
     if (knowLocation === 'yes') {
-      return res.redirect('/location-search');
+      return res.redirect('/search');
     }
 
     return res.redirect('/service-choose-action');

@@ -31,7 +31,7 @@ describe('CourtDetailsController', () => {
     await controller.get(req, res, nextFunction);
     const expectedData: PageData = {
       ...i18n['court-details'],
-      path: '/individual-location-pages/courts',
+      path: '/courts/London',
       results: {
         ...response.data,
         enquiries: {
@@ -54,7 +54,7 @@ describe('CourtDetailsController', () => {
     await controller.get(req, res, nextFunction);
     const expectedData: PageData = {
       ...i18n['court-details'],
-      path: '/individual-location-pages/courts',
+      path: '/courts/Not-London',
       results: {
         ...response.data,
         enquiries: {

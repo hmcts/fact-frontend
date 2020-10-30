@@ -9,7 +9,7 @@ export class PropertiesVolume {
     if (server.locals.ENV !== 'development') {
       propertiesVolume.addTo(config);
 
-      set(config, 'applicationInsights.instrumentationKey', get(config, 'secrets.fact.AppInsightsInstrumentationKey'));
+      set(config, 'appInsights.instrumentationKey', get(config, 'secrets.fact.AppInsightsInstrumentationKey'));
     }
   }
 }
