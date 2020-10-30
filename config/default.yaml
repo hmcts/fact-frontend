@@ -1,4 +1,4 @@
-app:
+  app:
   useCSRFProtection: 'true'
   security:
     referrerPolicy: 'origin'
