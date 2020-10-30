@@ -44,15 +44,15 @@ export class ChooseServiceController {
       return res.render('choose-service', data);
     }
 
-    if (req.body.chooseService as string === 'money') {
+    if (req.body.chooseService as string === 'serviceChosen1') {
       return res.redirect('/services/Money/service-areas');
-    } else if (req.body.chooseService as string === 'probate-divorce-or-ending-civil-partnerships') {
+    } else if (req.body.chooseService as string === 'serviceChosen2') {
       return res.redirect('/services/Probate, divorce or ending civil partnerships/service-areas');
-    } else if (req.body.chooseService as string === 'childcare-and-parenting') {
+    } else if (req.body.chooseService as string === 'serviceChosen3') {
       return res.redirect('/services/Childcare and parenting/service-areas');
-    } else if (req.body.chooseService as string === 'harm-and-abuse') {
+    } else if (req.body.chooseService as string === 'serviceChosen4') {
       return res.redirect('/services/Harm and abuse/service-areas');
-    } else if (req.body.chooseService as string === 'crime') {
+    } else if (req.body.chooseService as string === 'serviceChosen6') {
       return res.redirect('/services/Crime/service-areas');
     } else {
       return res.redirect('/');
