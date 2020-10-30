@@ -10,7 +10,7 @@ Feature: Family area of law
     Given I can continue having selected that option
     Then I am presented with the "Choose an area of law - Find a court or tribunal - GOV.UK" page
     When I select "#probate-divorce-or-ending-civil-partnerships" from the areas of law page and continue
-    Then I am presented with the "Choose an area of law - family - Find a court or tribunal - GOV.UK" page
+    Then I am presented with the "Choose an area of law - probate, divorce or ending civil partnerships - Find a court or tribunal - GOV.UK" page
     Given I can select a "<family category>" from the family area of law page
     Then I can continue having selected that option
     Examples:
@@ -32,9 +32,9 @@ Feature: Family area of law
     Given I can continue having selected that option
     Then I am presented with the "Choose an area of law - Find a court or tribunal - GOV.UK" page
     When I select "#probate-divorce-or-ending-civil-partnerships" from the areas of law page and continue
-    Then I am presented with the "Choose an area of law - family - Find a court or tribunal - GOV.UK" page
+    Then I am presented with the "Choose an area of law - probate, divorce or ending civil partnerships - Find a court or tribunal - GOV.UK" page
     And I continue having not selected a family area of law option
-    Then I am presented with an error message for family area of law
+    Then I am presented with an error message for service area
     Given I can select a "<family category>" from the family area of law page
     Then I can continue having selected that option
     Examples:

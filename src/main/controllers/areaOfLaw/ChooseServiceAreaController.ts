@@ -7,7 +7,7 @@ import { ServiceData } from '../../interfaces/ServiceData';
 import { cloneDeep } from 'lodash';
 
 @autobind
-export class ServiceController {
+export class ChooseServiceAreaController {
 
   constructor(
     private readonly api: FactApi
@@ -21,7 +21,7 @@ export class ServiceController {
       results: [],
     };
 
-    const serviceData = await this.api.service(serviceChosen);
+    const serviceData = await this.api.serviceAreas(serviceChosen);
     if (!isObjectEmpty(serviceData)) {
       data.results = serviceData;
       data.title = data.title
@@ -45,7 +45,7 @@ export class ServiceController {
         results: [],
       };
 
-      const serviceData = await this.api.service(serviceChosen);
+      const serviceData = await this.api.serviceAreas(serviceChosen);
       if (!isObjectEmpty(serviceData)) {
         data.results = serviceData;
         data.title = data.title
@@ -57,9 +57,6 @@ export class ServiceController {
       }
 
       return res.render('service', data);
-
-      // data.error.text = data.error.text
-      //   .replace(serviceChosen.toLowerCase(), '{serviceChosen}');
     }
 
     res.redirect('/');

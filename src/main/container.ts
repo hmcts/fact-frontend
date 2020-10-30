@@ -12,7 +12,7 @@ import { ChooseServiceController } from './controllers/areaOfLaw/ChooseServiceCo
 // import { MoneyAreaOfLawController } from './controllers/areaOfLaw/MoneyAreaOfLawController';
 // import { FamilyAreaOfLawController } from './controllers/areaOfLaw/FamilyAreaOfLawController';
 // import { ChildcareAndParentingAreaOfLawController } from './controllers/areaOfLaw/ChildcareAndParentingAreaOfLawController';
-import { ServiceController } from './controllers/areaOfLaw/ServiceController';
+import { ChooseServiceAreaController } from './controllers/areaOfLaw/ChooseServiceAreaController';
 
 const { Logger } = require('@hmcts/nodejs-logging');
 const logger = Logger.getLogger('app');
@@ -28,8 +28,5 @@ export const container = createContainer({ injectionMode: InjectionMode.CLASSIC 
   chooseActionController: asClass(ChooseActionController),
   courtDetailsController: asClass(CourtDetailsController),
   chooseServiceController: asClass(ChooseServiceController),
-  // moneyAreaOfLawController: asClass(MoneyAreaOfLawController),
-  // familyAreaOfLawController: asClass(FamilyAreaOfLawController),
-  // childcareAndParentingAreaOfLawController: asClass(ChildcareAndParentingAreaOfLawController),
-  serviceController: asClass(ServiceController)
+  chooseServiceAreaController: asClass(ChooseServiceAreaController)
 });

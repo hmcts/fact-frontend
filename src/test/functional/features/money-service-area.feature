@@ -38,7 +38,7 @@ Feature: Money area of law
     When I select "#money" from the areas of law page and continue
     Then I am presented with the "Choose an area of law - money - Find a court or tribunal - GOV.UK" page
     And I continue having not selected an money area of law option
-    Then I am presented with an error message for money area of law
+    Then I am presented with an error message for service area
     Given I can select a "<money category>" from the money area of law page
     Then I can continue having selected that option
     Examples:

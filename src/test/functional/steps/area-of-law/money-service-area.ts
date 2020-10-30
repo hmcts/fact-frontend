@@ -55,7 +55,7 @@ Given('I continue having not selected an money area of law option', async() => {
   await I.click('.govuk-button');
 });
 
-Then('I am presented with an error message for money area of law', async() => {
-  const elementExist = await I.checkElement('#money-area-of-law-error');
+Then('I am presented with an error message for service area', async() => {
+  const elementExist = await I.checkElement('#service-area-error');
   expect(elementExist).equal(true);
 });

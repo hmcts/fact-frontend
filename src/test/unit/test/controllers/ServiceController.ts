@@ -1,7 +1,7 @@
 import { mockRequest } from '../../utils/mockRequest';
 import { mockResponse } from '../../utils/mockResponse';
 import { PageData } from '../../../../main/interfaces/PageData';
-import { ServiceController } from '../../../../main/controllers/areaOfLaw/ServiceController';
+import { ChooseServiceAreaController } from '../../../../main/controllers/areaOfLaw/ChooseServiceAreaController';
 const expectedMoneyServiceAreas = require('../../../resources/money-service-results.json');
 
 const i18n = {
@@ -14,7 +14,7 @@ const i18n = {
 describe('Service Controller', () => {
   const response: any = { data: {} };
   const api: any = { moneyAreaOfLaw: async () => response.data };
-  const controller = new ServiceController(api);
+  const controller = new ChooseServiceAreaController(api);
 
   test('Should render the money service areas page', async () => {
     response.data = expectedMoneyServiceAreas;
