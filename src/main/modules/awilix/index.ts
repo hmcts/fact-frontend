@@ -9,6 +9,8 @@ import { LocationSearchController } from '../../controllers/search/LocationSearc
 import { ChooseActionController } from '../../controllers/ChooseActionController';
 import { CourtDetailsController } from '../../controllers/CourtDetailsController';
 import { Application } from 'express';
+import { ChooseServiceController } from '../../controllers/service/ChooseServiceController';
+import { ChooseServiceAreaController } from '../../controllers/service/ChooseServiceAreaController';
 
 const { Logger } = require('@hmcts/nodejs-logging');
 const logger = Logger.getLogger('app');
@@ -25,7 +27,9 @@ export class Container {
       locationSearchController: asClass(LocationSearchController),
       searchResultsController: asClass(SearchResultsController),
       chooseActionController: asClass(ChooseActionController),
-      courtDetailsController: asClass(CourtDetailsController)
+      courtDetailsController: asClass(CourtDetailsController),
+      chooseServiceController: asClass(ChooseServiceController),
+      chooseServiceAreaController: asClass(ChooseServiceAreaController),
     });
   }
 }
