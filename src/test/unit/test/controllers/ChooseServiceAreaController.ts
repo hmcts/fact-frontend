@@ -1,7 +1,7 @@
 import { mockRequest } from '../../utils/mockRequest';
 import { mockResponse } from '../../utils/mockResponse';
 import { PageData } from '../../../../main/interfaces/PageData';
-import { ChooseServiceAreaController } from '../../../../main/controllers/areaOfLaw/ChooseServiceAreaController';
+import { ChooseServiceAreaController } from '../../../../main/controllers/service/ChooseServiceAreaController';
 import { cloneDeep } from 'lodash';
 
 const i18n = {

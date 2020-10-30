@@ -28,8 +28,6 @@ export class ChooseServiceAreaController {
         .replace('{serviceChosen}', serviceChosen.toLowerCase());
       data.question = data.question
         .replace('{serviceChosen}', serviceChosen.toLowerCase());
-      data.error.text = data.error.text
-        .replace('{serviceChosen}', serviceChosen.toLowerCase());
     }
 
     res.render('service', data);

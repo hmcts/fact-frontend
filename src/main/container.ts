@@ -8,11 +8,8 @@ import { HomeController } from './controllers/HomeController';
 import { LocationSearchController } from './controllers/search/LocationSearchController';
 import { ChooseActionController } from './controllers/ChooseActionController';
 import { CourtDetailsController } from './controllers/CourtDetailsController';
-import { ChooseServiceController } from './controllers/areaOfLaw/ChooseServiceController';
-// import { MoneyAreaOfLawController } from './controllers/areaOfLaw/MoneyAreaOfLawController';
-// import { FamilyAreaOfLawController } from './controllers/areaOfLaw/FamilyAreaOfLawController';
-// import { ChildcareAndParentingAreaOfLawController } from './controllers/areaOfLaw/ChildcareAndParentingAreaOfLawController';
-import { ChooseServiceAreaController } from './controllers/areaOfLaw/ChooseServiceAreaController';
+import { ChooseServiceController } from './controllers/service/ChooseServiceController';
+import { ChooseServiceAreaController } from './controllers/service/ChooseServiceAreaController';
 
 const { Logger } = require('@hmcts/nodejs-logging');
 const logger = Logger.getLogger('app');

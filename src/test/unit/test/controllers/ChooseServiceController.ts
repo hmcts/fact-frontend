@@ -1,7 +1,7 @@
 import { mockRequest } from '../../utils/mockRequest';
 import { mockResponse } from '../../utils/mockResponse';
 import { PageData } from '../../../../main/interfaces/PageData';
-import { ChooseServiceController } from '../../../../main/controllers/areaOfLaw/ChooseServiceController';
+import { ChooseServiceController } from '../../../../main/controllers/service/ChooseServiceController';
 const expectedAreasOfLaw = require('../../../resources/service-results.json');
 
 const i18n = {
