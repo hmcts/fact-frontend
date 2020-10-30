@@ -11,13 +11,13 @@ const startPage = '/';
 const searchOptionPage = '/search-option';
 const locationSearchPage = '/search';
 const serviceChooseActionPage = '/service-choose-action';
-const searchLocationLondon = '/search-for-location?search=London';
-const courtDetailsInPerson = '/individual-location-pages/courts/birmingham-civil-and-family-justice-centre';
-const courtDetailsMultipleAddress = '/individual-location-pages/courts/aylesbury-magistrates-court-and-family-court';
-const courtDetailsNotInPerson = '/individual-location-pages/courts/north-west-regional-divorce-centre';
-const courtDetailsUrgentMessage = '/individual-location-pages/courts/telford-county-court-and-family-court';
-const courtDetailsNoAreaOfLaw = '/individual-location-pages/courts/tax-chamber-first-tier-tribunal';
-const courtDetailsAdditionalInfo = '/individual-location-pages/courts/west-cumbria-courthouse';
+const searchLocationLondon = '/courts?search=London';
+const courtDetailsInPerson = '/courts/birmingham-civil-and-family-justice-centre';
+const courtDetailsMultipleAddress = '/courts/aylesbury-magistrates-court-and-family-court';
+const courtDetailsNotInPerson = '/courts/north-west-regional-divorce-centre';
+const courtDetailsUrgentMessage = '/courts/telford-county-court-and-family-court';
+const courtDetailsNoAreaOfLaw = '/courts/tax-chamber-first-tier-tribunal';
+const courtDetailsAdditionalInfo = '/courts/west-cumbria-courthouse';
 
 class Pa11yResult {
   documentTitle: string;
