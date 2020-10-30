@@ -230,3 +230,21 @@ Given('I can select the directions hyperlink for that location', async () => {
   expect(hasDx).equal(true);
   await I.click('#direction-map > a');
 });
+
+Given('that location participates in the Professional users’ court and tribunal access scheme', async () => {
+  const element = await I.getElement('#access-scheme > p');
+  const text = await I.getElementText(element);
+  expect(text).equal('This location participates in this scheme');
+});
+
+Then('a link to learn about the scheme is included', async () => {
+  const element = await I.getElement('#access-scheme > a');
+  const isElementAnchor = await I.checkElementIsAnchor(element);
+  expect(isElementAnchor).equal(true);
+});
+
+Given('that location does not participate in the Professional users’ court and tribunal access scheme', async () => {
+  const element = await I.getElement('#access-scheme > p');
+  const text = await I.getElementText(element);
+  expect(text).equal('This location does not participate in this scheme');
+});
