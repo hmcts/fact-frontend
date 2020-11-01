@@ -13,12 +13,13 @@ export class ChooseServiceAreaController {
     private readonly api: FactApi
   ) { }
 
-  public async get(req: FactRequest, res: Response) {
+  private async getServiceData(req: FactRequest, hasErrors: boolean) {
     const serviceChosen: string = req.params.service as string;
     const data: ServiceData = {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng).service),
       path: '/services/' + serviceChosen + '/service-areas',
       results: [],
+      errors: hasErrors,
     };
 
     const serviceData = await this.api.serviceAreas(serviceChosen);
@@ -28,36 +29,27 @@ export class ChooseServiceAreaController {
         .replace('{serviceChosen}', serviceChosen.toLowerCase());
       data.question = data.question
         .replace('{serviceChosen}', serviceChosen.toLowerCase());
+      if (hasErrors) {
+        data.error.text = data.error.text
+          .replace('{serviceChosen}', serviceChosen.toLowerCase());
+      }
     }
 
+    return data;
+  }
+
+  public async get(req: FactRequest, res: Response) {
+    const data = await this.getServiceData(req, false);
     res.render('service', data);
   }
 
   public async post(req: FactRequest, res: Response) {
-    const serviceChosen: string = req.params.service as string;
     if (!hasProperty(req.body, 'serviceArea')) {
-      const data: ServiceData = {
-        ...cloneDeep(req.i18n.getDataByLanguage(req.lng).service),
-        path: '/services/' + serviceChosen + '/service-areas',
-        errors: true,
-        results: [],
-      };
-
-      const serviceData = await this.api.serviceAreas(serviceChosen);
-      if (!isObjectEmpty(serviceData)) {
-        data.results = serviceData;
-        data.title = data.title
-          .replace('{serviceChosen}', serviceChosen.toLowerCase());
-        data.question = data.question
-          .replace('{serviceChosen}', serviceChosen.toLowerCase());
-        data.error.text = data.error.text
-          .replace('{serviceChosen}', serviceChosen.toLowerCase());
-      }
-
-      return res.render('service', data);
+      const data = await this.getServiceData(req, true);
+      res.render('service', data);
+    } else {
+      res.redirect('/');
     }
-
-    res.redirect('/');
   }
 
 }

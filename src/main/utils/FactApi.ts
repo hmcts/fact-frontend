@@ -2,8 +2,8 @@ import { Logger } from '../interfaces/Logger';
 import { AxiosInstance } from 'axios';
 import { SearchResult } from '../interfaces/SearchResultsData';
 import { CourtDetailsResult } from '../interfaces/CourtDetailsData';
-import { ServicesData } from '../interfaces/ServicesData';
-import { ServiceData } from '../interfaces/ServiceData';
+import { ServicesResult } from '../interfaces/ServicesData';
+import { ServiceResult } from '../interfaces/ServiceData';
 
 export class FactApi {
 
@@ -32,7 +32,7 @@ export class FactApi {
       });
   }
 
-  public services(): Promise<ServicesData[]> {
+  public services(): Promise<ServicesResult[]> {
     return this.axios
       .get('/services')
       .then(results => results.data)
@@ -42,7 +42,7 @@ export class FactApi {
       });
   }
 
-  public serviceAreas(service: string): Promise<ServiceData[]> {
+  public serviceAreas(service: string): Promise<ServiceResult[]> {
     return this.axios
       .get(`/services/${service}/service-areas`)
       .then(results => results.data)
