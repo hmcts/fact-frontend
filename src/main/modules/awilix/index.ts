@@ -11,6 +11,7 @@ import { CourtDetailsController } from '../../controllers/CourtDetailsController
 import { Application } from 'express';
 import { ChooseServiceController } from '../../controllers/service/ChooseServiceController';
 import { ChooseServiceAreaController } from '../../controllers/service/ChooseServiceAreaController';
+import { UnknownServiceController } from '../../controllers/service/UnknownServiceController';
 
 const { Logger } = require('@hmcts/nodejs-logging');
 const logger = Logger.getLogger('app');
@@ -29,7 +30,8 @@ export class Container {
       chooseActionController: asClass(ChooseActionController),
       courtDetailsController: asClass(CourtDetailsController),
       chooseServiceController: asClass(ChooseServiceController),
-      chooseServiceAreaController: asClass(ChooseServiceAreaController),
+      courtDetailsController: asClass(CourtDetailsController),
+      chooseUnknownServiceController: asClass(UnknownServiceController)
     });
   }
 }

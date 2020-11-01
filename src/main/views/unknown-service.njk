@@ -1,0 +1,35 @@
+{% extends "template.njk" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">{{ h1 }}</h1>
+    <p class="govuk-body">
+      {{ p_1 }}
+    </p>
+    <h2 class="govuk-heading-m">{{ h2_1 }}</h2>
+    <p class="govuk-body">
+      <a href="/search">{{ a_1 }}</a>.
+    </p>
+    <h2 class="govuk-heading-m">
+      {{ h2_2 }}
+    </h2>
+    <p class="govuk-body">
+      <a href="https://www.gov.uk/court-fees-what-they-are">{{ a_2 }}</a>.
+    </p>
+    <h2 class="govuk-heading-m">
+      {{ h2_3 }}
+    </h2>
+    <p class="govuk-body">
+      {{ a_3_1 }}<a href="https://www.gov.uk/government/collections/court-and-tribunal-forms">{{ a_3_2 }}</a>{{ a_3_3 }}
+    </p>
+    <h2 class="govuk-heading-m">
+      {{ h2_4 }}
+    </h2>
+    <p class="govuk-body">
+      <a href="https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service/about#our-courts">{{ a_4 }}</a>.
+    </p>
+
+  </div>
+</div>
+{% endblock %}
