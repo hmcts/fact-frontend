@@ -11,7 +11,7 @@ const i18n = {
   },
 };
 
-describe('Choose Service Controller', () => {
+describe('Choose service controller', () => {
   const response: any = { data: {} };
   const api: any = { services: async () => response.data };
   const controller = new ChooseServiceController(api);
