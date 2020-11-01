@@ -36,6 +36,7 @@ describe('Choose service area controller', () => {
       ...cloneDeep(i18n.service),
       path: '/services/' + req.params.service + '/service-areas',
       results: response.data,
+      errors: false,
     };
     expect(res.render).toBeCalledWith('service', expectedData);
   });
