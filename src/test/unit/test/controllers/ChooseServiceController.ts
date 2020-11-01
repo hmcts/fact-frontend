@@ -49,7 +49,7 @@ describe('Choose Service Controller', () => {
   test('Should render Money Service page if Money is selected', async () => {
     const req = mockRequest(i18n);
     req.body = {
-      chooseService: 'money',
+      chooseService: 'serviceChosen1',
     };
     const res = mockResponse();
     await controller.post(req, res);
@@ -59,7 +59,7 @@ describe('Choose Service Controller', () => {
   test('Should render Family Service page if Family is selected', async () => {
     const req = mockRequest(i18n);
     req.body = {
-      chooseService: 'probate-divorce-or-ending-civil-partnerships',
+      chooseService: 'serviceChosen2',
     };
     const res = mockResponse();
     await controller.post(req, res);
@@ -69,7 +69,7 @@ describe('Choose Service Controller', () => {
   test('Should render Childcare and Parenting Service page if Childcare and parenting is selected', async () => {
     const req = mockRequest(i18n);
     req.body = {
-      chooseService: 'childcare-and-parenting',
+      chooseService: 'serviceChosen3',
     };
     const res = mockResponse();
     await controller.post(req, res);
@@ -79,7 +79,7 @@ describe('Choose Service Controller', () => {
   test('Should render Harm and Abuse Service page if harm and abuse is selected', async () => {
     const req = mockRequest(i18n);
     req.body = {
-      chooseService: 'harm-and-abuse',
+      chooseService: 'serviceChosen4',
     };
     const res = mockResponse();
     await controller.post(req, res);
@@ -89,7 +89,7 @@ describe('Choose Service Controller', () => {
   test('Should render Crime Service page if crime is selected', async () => {
     const req = mockRequest(i18n);
     req.body = {
-      chooseService: 'crime',
+      chooseService: 'serviceChosen6',
     };
     const res = mockResponse();
     await controller.post(req, res);
