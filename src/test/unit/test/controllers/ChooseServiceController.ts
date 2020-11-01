@@ -26,7 +26,8 @@ describe('Choose service controller', () => {
     const expectedData: PageData = {
       ...cloneDeep(i18n['choose-service']),
       path: '/services',
-      results: response.data
+      results: response.data,
+      errors: false,
     };
     expect(res.render).toBeCalledWith('choose-service', expectedData);
   });

@@ -44,7 +44,7 @@ export class ChooseServiceController {
       'serviceChosen2' : 'Probate, divorce or ending civil partnerships',
       'serviceChosen3' : 'Childcare and parenting',
       'serviceChosen4' : 'Harm and abuse',
-      'serviceChosen5' : 'Crime',
+      'serviceChosen6' : 'Crime',
     };
 
     const serviceChosen = serviceName[req.body.chooseService];
