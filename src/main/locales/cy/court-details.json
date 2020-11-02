@@ -29,5 +29,10 @@
   "catchmentArea": {
     "area1": "the South-East of England",
     "area2": "all of England and Wales"
-  }
+  },
+  "accessSchemeHeading": "Professional users’ court and tribunal access scheme",
+  "registerACText": "This location participates in this scheme",
+  "registerACLink": "Register for the scheme",
+  "learnACText": "This location does not participate in this scheme",
+  "learnACLink": "Learn about the scheme"
 }
