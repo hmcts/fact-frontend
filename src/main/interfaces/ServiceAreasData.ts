@@ -1,7 +1,7 @@
 import { PageData } from './PageData';
 
-export interface ServiceData extends PageData {
-  results: ServiceResult[] | {};
+export interface ServiceAreasData extends PageData {
+  results: ServiceAreaResult[] | {};
   title: string;
   question: string;
   error: {
@@ -9,7 +9,7 @@ export interface ServiceData extends PageData {
   };
 }
 
-export interface ServiceResult {
+export interface ServiceAreaResult {
   name: string;
   description: string;
 }
