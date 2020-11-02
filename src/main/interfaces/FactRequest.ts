@@ -1,6 +1,6 @@
 import { Request } from 'express';
 import { SearchResultsData } from './SearchResultsData';
-import { ServicesData } from './ServicesData';
+import { ServicesData, ServicesResult } from './ServicesData';
 import { CourtDetailsData } from './CourtDetailsData';
 import { ServiceData } from './ServiceData';
 
@@ -18,6 +18,7 @@ export interface FactRequest extends Request {
       'court-details': CourtDetailsData;
       'choose-service': ServicesData;
       service: ServiceData;
+      oneService: ServicesResult;
       [property: string]: {};
     };
   };

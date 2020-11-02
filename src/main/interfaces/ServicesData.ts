@@ -7,4 +7,5 @@ export interface ServicesData extends PageData {
 export interface ServicesResult {
   name: string;
   description: string;
+  slug: string;
 }

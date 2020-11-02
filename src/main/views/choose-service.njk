@@ -47,7 +47,7 @@
         {% endif %}
         {% for result in results %}
             <div class="govuk-radios__item" id="radio-buttons">
-                <input class="govuk-radios__input" id={{ result.name | lower | replace(" ", "-") | replace(",", "") }} name="chooseService" type="radio" value="serviceChosen{{ loop.index }}">
+                <input class="govuk-radios__input" id={{ result.name | lower | replace(" ", "-") | replace(",", "") }} name="chooseService" type="radio" value={{ result.slug }}>
                 <label class="govuk-label govuk-radios__label govuk-label--s" for={{ result.name | lower | replace(" ", "-") | replace(",", "") }}>
                     {{ result.name }}
                 </label>

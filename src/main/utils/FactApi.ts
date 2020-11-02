@@ -52,4 +52,14 @@ export class FactApi {
       });
   }
 
+  public service(service: string): Promise<ServicesResult> {
+    return this.axios
+      .get(`/services/${service}`)
+      .then(results => results.data)
+      .catch(err => {
+        this.logger.error(err);
+        return [];
+      });
+  }
+
 }
