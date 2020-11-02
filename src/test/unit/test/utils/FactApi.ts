@@ -56,6 +56,40 @@ describe('FactApi', () => {
     await expect(api.court('London')).resolves.toEqual(results.data);
   });
 
+  test('Should return services result', async () => {
+    const results = {
+      data: [{
+        name: 'Money',
+        description: 'Money claims, rent or mortgage disputes, bankruptcy, job disputes related to pay, appealing a tax or benefits decision.'
+
+      }],
+    };
+
+    const mockAxios = { get: async () => results } as any;
+    const mockLogger = {} as any;
+
+    const api = new FactApi(mockAxios, mockLogger);
+
+    await expect(api.services()).resolves.toEqual(results.data);
+  });
+
+  test('Should return service areas result', async () => {
+    const results = {
+      data: [{
+        name: 'Money claims',
+        description: 'Claims for when you are owed money or responding to money claims against you.'
+
+      }],
+    };
+
+    const mockAxios = { get: async () => results } as any;
+    const mockLogger = {} as any;
+
+    const api = new FactApi(mockAxios, mockLogger);
+
+    await expect(api.serviceAreas('Money')).resolves.toEqual(results.data);
+  });
+
   test('Should return no result and log error from get request', async () => {
 
     const mockAxios = { get: async () => {

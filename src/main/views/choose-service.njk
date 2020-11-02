@@ -1,0 +1,77 @@
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "macros/error-summary.njk" import errorSummary %}
+
+{% extends "template.njk" %}
+
+{% block pageTitle %}
+  {{ title }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/"
+  }) }}
+{% endblock %}
+
+{% block content %}
+{% if errors %}
+{% for result in results.slice(0, 1) %}
+{% set firstRadio = "#" + result.name | lower | replace(" ", "-") | replace(",", "") %}
+{{ errorSummary(error.title, error.text, firstRadio ) }}
+{% endfor %}
+{% endif %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="POST">
+<div class="govuk-form-group">
+        {% if errors %}
+            <div class="govuk-error-message govuk-form-group--error">
+        {% endif %}
+    <fieldset class="govuk-fieldset" aria-describedby="choose-service-error">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+                {{ question }}
+            </h1>
+        </legend>
+        <div class="govuk-radios">
+        {% if errors %}
+            <span id="choose-service-error" class="govuk-error-message">
+              {{ error.text }}
+            </span>
+        {% endif %}
+        {% for result in results %}
+            <div class="govuk-radios__item" id="radio-buttons">
+                <input class="govuk-radios__input" id={{ result.name | lower | replace(" ", "-") | replace(",", "") }} name="chooseService" type="radio" value="serviceChosen{{ loop.index }}">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for={{ result.name | lower | replace(" ", "-") | replace(",", "") }}>
+                    {{ result.name }}
+                </label>
+                <div id={{ result.description }} class="govuk-hint govuk-radios__hint">
+                    {{ result.description }}
+                </div>
+            </div>
+        {% endfor %}
+            <div class="govuk-radios__divider">or</div>
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="not-listed" name="chooseService" type="radio" value="not-listed">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="not-listed">
+                    {{ answers.a1 }}
+                </label>
+            </div>
+        </div>
+    </fieldset>
+</div>
+      {{ govukButton({
+        text: button,
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}

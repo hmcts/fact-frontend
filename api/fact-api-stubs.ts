@@ -4,6 +4,10 @@ const app = express();
 
 const data = require('./courts.json');
 const courtDetails = require('./court-details.json');
+const servicesData = require('./areasOfLaw.json');
+const moneyServiceAreasData = require('./moneyAreaOfLaw.json');
+const familyServiceAreasData = require('./familyAreaOfLaw.json');
+const childcareAndParentingServiceAreasData = require('./childcareAndParentingAreaOfLaw.json');
 const port = 8080;
 
 
@@ -28,6 +32,22 @@ app.get('/courts/:slug', (req: Request, res: Response) => {
   const courts = [...courtDetails];
   const court = courts.find(court => court.slug.toLowerCase() === slug);
   res.json(court);
+});
+
+app.get('/services', (req: Request, res: Response) => {
+  res.json(servicesData);
+});
+
+app.get('/services/money/service-areas', (req: Request, res: Response) => {
+  res.json(moneyServiceAreasData);
+});
+
+app.get('/services/probate-divorce-ending-civil-partnerships/service-areas', (req: Request, res: Response) => {
+  res.json(familyServiceAreasData);
+});
+
+app.get('/services/childcare-and-parenting/service-areas', (req: Request, res: Response) => {
+  res.json(childcareAndParentingServiceAreasData);
 });
 
 app.listen(port, () => {

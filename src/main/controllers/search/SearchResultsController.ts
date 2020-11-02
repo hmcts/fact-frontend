@@ -4,6 +4,7 @@ import { isEmpty } from '../../utils/validation';
 import { FactApi } from '../../utils/FactApi';
 import autobind from 'autobind-decorator';
 import { SearchResultsData } from '../../interfaces/SearchResultsData';
+import { cloneDeep } from 'lodash';
 
 @autobind
 export class SearchResultsController {
@@ -15,7 +16,7 @@ export class SearchResultsController {
   public async get(req: FactRequest, res: Response): Promise<void> {
     const query: string = req.query.search as string;
     const data: SearchResultsData = {
-      ...req.i18n.getDataByLanguage(req.lng).search.location,
+      ...cloneDeep(req.i18n.getDataByLanguage(req.lng).search.location),
       path: '/courts',
       results: [],
       search: query,

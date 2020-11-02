@@ -6,6 +6,7 @@ import autobind from 'autobind-decorator';
 import { Enquiries } from '../interfaces/Enquiries';
 import { CourtDetailsData, CourtDetailsResult } from '../interfaces/CourtDetailsData';
 import config from 'config';
+import { cloneDeep } from 'lodash';
 
 @autobind
 export class CourtDetailsController {
@@ -20,7 +21,7 @@ export class CourtDetailsController {
   public async get(req: FactRequest, res: Response, next: NextFunction) {
     const slug: string = req.params.slug as string;
     const data: CourtDetailsData = {
-      ...req.i18n.getDataByLanguage(req.lng)['court-details'],
+      ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['court-details']),
       path: '/courts/' + slug,
       results: {},
     };
@@ -50,7 +51,7 @@ export class CourtDetailsController {
     }
     next();
   }
-  
+
   private getCatchmentArea(regionalCentre: boolean, area: { area1: string; area2: string }) {
     return regionalCentre ? area.area1 : area.area2;
   }
