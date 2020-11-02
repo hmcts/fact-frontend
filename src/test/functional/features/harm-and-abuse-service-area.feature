@@ -5,7 +5,7 @@ Feature: Family area of law
     When I select "I do not have the name"
     Then I am presented with the "What do you want to do? - Find a court or tribunal - GOV.UK" page
 
-  Scenario Outline: Select family area of law or I can't find what I'm looking for
+  Scenario Outline: Select harm and abuse area of law or I can't find what I'm looking for
     Then I can select an "<options>" option from the list displayed
     Given I can continue having selected that option
     Then I am presented with the "Choose an area of law - Find a court or tribunal - GOV.UK" page
@@ -26,7 +26,7 @@ Feature: Family area of law
       | forced marriage           |
       | not listed                |
 
-  Scenario Outline: Do not select family area of law or I can't find what I'm looking for
+  Scenario Outline: Do not select harm and abuse area of law or I can't find what I'm looking for
     Then I can select an "<options>" option from the list displayed
     Given I can continue having selected that option
     Then I am presented with the "Choose an area of law - Find a court or tribunal - GOV.UK" page
