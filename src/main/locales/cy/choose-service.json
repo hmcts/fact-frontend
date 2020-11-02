@@ -1,0 +1,13 @@
+{
+  "title": "Choose an area of law - Find a court or tribunal - GOV.UK",
+  "serviceName": "Find a court or tribunal",
+  "question": "What do you want to know more about?",
+  "answers": {
+    "a1": "I can't find what I'm looking for"
+  },
+  "button": "Continue",
+  "error": {
+    "title": "There is a problem",
+    "text": "Select what do you want to know more about"
+  }
+}

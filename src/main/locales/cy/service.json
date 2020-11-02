@@ -1,0 +1,13 @@
+{
+  "title": "Choose an area of law - {serviceChosen} - Find a court or tribunal - GOV.UK",
+  "serviceName": "Find a court or tribunal",
+  "question": "What kind of help do you need with {serviceChosen}?",
+  "answers": {
+    "a1": "I can't find what I'm looking for"
+  },
+  "button": "Continue",
+  "error": {
+    "title": "There is a problem",
+    "text": "Select what kind of help you need with {serviceChosen}"
+  }
+}
