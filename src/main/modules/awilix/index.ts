@@ -30,7 +30,7 @@ export class Container {
       chooseActionController: asClass(ChooseActionController),
       courtDetailsController: asClass(CourtDetailsController),
       chooseServiceController: asClass(ChooseServiceController),
-      courtDetailsController: asClass(CourtDetailsController),
+      chooseServiceAreaController: asClass(ChooseServiceAreaController),
       chooseUnknownServiceController: asClass(UnknownServiceController)
     });
   }
