@@ -67,10 +67,21 @@ describe('CourtDetailsController', () => {
     expect(res.render).toBeCalledWith('court-details/not-in-person-court', expectedData);
   });
 
-  test('Should render the court details page with no results', async () => {
+  test('Should render the court details page with no results for empty slug', async () => {
     const req = mockRequest(i18n);
     req.params = {
       slug: ''
+    };
+    const res = mockResponse();
+    await controller.get(req, res, nextFunction);
+    expect(nextFunction).toBeCalled();
+  });
+
+  test('Should render the court details page with no results for no court returned from api', async () => {
+    response.data = '';
+    const req = mockRequest(i18n);
+    req.params = {
+      slug: 'somewhere'
     };
     const res = mockResponse();
     await controller.get(req, res, nextFunction);
