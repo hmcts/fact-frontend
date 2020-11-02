@@ -4,7 +4,7 @@ const app = express();
 
 const data = require('./courts.json');
 const courtDetails = require('./court-details.json');
-const servicesData = require('./areasOfLaw.json');
+const servicesData = require('./services.json');
 const moneyServiceAreasData = require('./moneyAreaOfLaw.json');
 const familyServiceAreasData = require('./familyAreaOfLaw.json');
 const childcareAndParentingServiceAreasData = require('./childcareAndParentingAreaOfLaw.json');
