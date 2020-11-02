@@ -60,7 +60,8 @@ describe('FactApi', () => {
     const results = {
       data: [{
         name: 'Money',
-        description: 'Money claims, rent or mortgage disputes, bankruptcy, job disputes related to pay, appealing a tax or benefits decision.'
+        description: 'Money claims, rent or mortgage disputes, bankruptcy, job disputes related to pay, appealing a tax or benefits decision.',
+        slug: 'money'
 
       }],
     };
@@ -71,6 +72,23 @@ describe('FactApi', () => {
     const api = new FactApi(mockAxios, mockLogger);
 
     await expect(api.services()).resolves.toEqual(results.data);
+  });
+
+  test('Should return service result', async () => {
+    const results = {
+      data: [{
+        name: 'name',
+        description: 'description',
+        slug: 'slug'
+      }],
+    };
+
+    const mockAxios = { get: async () => results } as any;
+    const mockLogger = {} as any;
+
+    const api = new FactApi(mockAxios, mockLogger);
+
+    await expect(api.court('slug')).resolves.toEqual(results.data);
   });
 
   test('Should return service areas result', async () => {

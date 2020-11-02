@@ -42,13 +42,13 @@ export class FactApi {
       });
   }
 
-  public service(service: string): Promise<ServiceResult> {
+  public service(slug: string): Promise<ServiceResult> {
     return this.axios
-      .get(`/services/${service}`)
+      .get(`/services/${slug}`)
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
-        return [];
+        return {};
       });
   }
 

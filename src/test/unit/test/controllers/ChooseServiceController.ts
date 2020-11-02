@@ -48,55 +48,14 @@ describe('Choose service controller', () => {
     expect(res.render).toBeCalledWith('choose-service', expectedData);
   });
 
-  test('Should render Money Service page if Money is selected', async () => {
+  test('Should render the chosen service page when the chosen service is selected', async () => {
     const req = mockRequest(i18n);
     req.body = {
-      chooseService: 'serviceChosen1',
+      chooseService: 'chosen-service',
     };
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services/Money/service-areas');
+    expect(res.redirect).toHaveBeenCalledWith('/services/chosen-service/service-areas');
   });
-
-  test('Should render Family Service page if Family is selected', async () => {
-    const req = mockRequest(i18n);
-    req.body = {
-      chooseService: 'serviceChosen2',
-    };
-    const res = mockResponse();
-    await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services/Probate, divorce or ending civil partnerships/service-areas');
-  });
-
-  test('Should render Childcare and Parenting Service page if Childcare and parenting is selected', async () => {
-    const req = mockRequest(i18n);
-    req.body = {
-      chooseService: 'serviceChosen3',
-    };
-    const res = mockResponse();
-    await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services/Childcare and parenting/service-areas');
-  });
-
-  test('Should render Harm and Abuse Service page if harm and abuse is selected', async () => {
-    const req = mockRequest(i18n);
-    req.body = {
-      chooseService: 'serviceChosen4',
-    };
-    const res = mockResponse();
-    await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services/Harm and abuse/service-areas');
-  });
-
-  test('Should render Crime Service page if crime is selected', async () => {
-    const req = mockRequest(i18n);
-    req.body = {
-      chooseService: 'serviceChosen6',
-    };
-    const res = mockResponse();
-    await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services/Crime/service-areas');
-  });
-
 
 });
