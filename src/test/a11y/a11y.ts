@@ -18,6 +18,7 @@ const courtDetailsNotInPerson = '/courts/north-west-regional-divorce-centre';
 const courtDetailsUrgentMessage = '/courts/telford-county-court-and-family-court';
 const courtDetailsNoAreaOfLaw = '/courts/tax-chamber-first-tier-tribunal';
 const courtDetailsAdditionalInfo = '/courts/west-cumbria-courthouse';
+const unknownServicePage = '/services/unknown-service';
 
 class Pa11yResult {
   documentTitle: string;
@@ -99,5 +100,6 @@ describe('Accessibility', () => {
   testAccessibility(courtDetailsAdditionalInfo);
 
   testAccessibility(serviceChooseActionPage);
+  testAccessibility(unknownServicePage);
   testAccessibilityOfFormError(serviceChooseActionPage);
 });

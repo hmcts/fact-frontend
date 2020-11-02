@@ -47,7 +47,7 @@ export class ChooseServiceAreaController {
       const data = await this.getServiceData(req, true);
       res.render('service', data);
     } else {
-      res.redirect('/');
+      res.redirect('/services/unknown-service');
     }
   }
 

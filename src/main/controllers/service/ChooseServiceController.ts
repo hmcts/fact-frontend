@@ -48,7 +48,10 @@ export class ChooseServiceController {
     };
 
     const serviceChosen = serviceName[req.body.chooseService];
-    return res.redirect('/services/' + serviceChosen + '/service-areas');
-
+    if(serviceChosen){
+      return res.redirect('/services/' + serviceChosen + '/service-areas');
+    } else {
+      return res.redirect('/services/unknown-service');
+    }
   }
 }
