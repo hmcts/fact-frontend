@@ -48,6 +48,22 @@ describe('Choose service controller', () => {
     expect(res.render).toBeCalledWith('choose-service', expectedData);
   });
 
+  test('Should render Choose Service page with errors if empty api data returned', async () => {
+    response.data = [];
+    const req = mockRequest(i18n);
+    req.body = {};
+    const res = mockResponse();
+    await controller.post(req, res);
+
+    const expectedData: PageData = {
+      ...cloneDeep(i18n['choose-service']),
+      path: '/services',
+      results: response.data,
+      errors: true
+    };
+    expect(res.render).toBeCalledWith('choose-service', expectedData);
+  });
+
   test('Should render the chosen service page when the chosen service is selected', async () => {
     const req = mockRequest(i18n);
     req.body = {

@@ -1,6 +1,7 @@
 import { FactRequest } from '../interfaces/FactRequest';
 import { NextFunction, Response } from 'express';
 import { FactApi } from '../utils/FactApi';
+import { decideCatchmentArea } from '../utils/CourtDetailsUtils';
 import { isEmpty, isObjectEmpty } from '../utils/validation';
 import autobind from 'autobind-decorator';
 import { Enquiries } from '../interfaces/Enquiries';
@@ -39,7 +40,7 @@ export class CourtDetailsController {
         enquiries.fax = courts.contacts.find((contact: { description: string }) => contact.description.toLowerCase() === 'fax');
         courts['image_file'] = `${config.get('services.image-store.url')}/${courts['image_file']}`;
         data.notInPersonP1 = data.notInPersonP1
-          .replace('{catchmentArea}', this.getCatchmentArea(this.regionalCentre, data.catchmentArea))
+          .replace('{catchmentArea}', decideCatchmentArea(this.regionalCentre, data.catchmentArea))
           .replace('{serviceArea}', courts['service_area']);
         data.results = { ...courts, enquiries };
         if (courts['in_person']) {
@@ -50,9 +51,5 @@ export class CourtDetailsController {
       }
     }
     next();
-  }
-
-  private getCatchmentArea(regionalCentre: boolean, area: { area1: string; area2: string }) {
-    return regionalCentre ? area.area1 : area.area2;
   }
 }

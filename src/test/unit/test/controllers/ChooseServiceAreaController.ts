@@ -97,4 +97,24 @@ describe('Choose service area controller', () => {
 
     expect(res.redirect).toHaveBeenCalledWith('/services/unknown-service');
   });
+
+  test('Should render a service area page with errors if a service area does not exist', async () => {
+    response.data = [];
+    const req = mockRequest(i18n);
+    req.params = {
+      service: 'Chosen Service'
+    };
+    req.body = {};
+    const res = mockResponse();
+    await controller.post(req, res);
+
+    const expectedData: PageData = {
+      ...cloneDeep(i18n.service),
+      path: '/services/' + req.params.service + '/service-areas',
+      results: response.data,
+      errors: true
+    };
+    expect(res.render).toBeCalledWith('service', expectedData);
+  });
+
 });

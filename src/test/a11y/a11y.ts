@@ -19,6 +19,12 @@ const courtDetailsUrgentMessage = '/courts/telford-county-court-and-family-court
 const courtDetailsNoAreaOfLaw = '/courts/tax-chamber-first-tier-tribunal';
 const courtDetailsAdditionalInfo = '/courts/west-cumbria-courthouse';
 const unknownServicePage = '/services/unknown-service';
+const services = '/services';
+const servicesMoney = '/services/Money/service-areas';
+const servicesProbateDivorce = '/services/Probate, divorce or ending civil partnerships/service-areas';
+const servicesChildcare = '/services/Childcare and parenting/service-areas';
+const servicesHarmAbuse = '/services/Harm and abuse/service-areas';
+const servicesCrime = '/services/Crime/service-areas';
 
 class Pa11yResult {
   documentTitle: string;
@@ -102,4 +108,17 @@ describe('Accessibility', () => {
   testAccessibility(serviceChooseActionPage);
   testAccessibility(unknownServicePage);
   testAccessibilityOfFormError(serviceChooseActionPage);
+
+  testAccessibility(services);
+  testAccessibilityOfFormError(services);
+  testAccessibility(servicesMoney);
+  testAccessibilityOfFormError(servicesMoney);
+  testAccessibility(servicesProbateDivorce);
+  testAccessibilityOfFormError(servicesProbateDivorce);
+  testAccessibility(servicesChildcare);
+  testAccessibilityOfFormError(servicesChildcare);
+  testAccessibility(servicesHarmAbuse);
+  testAccessibilityOfFormError(servicesHarmAbuse);
+  testAccessibility(servicesCrime);
+  testAccessibilityOfFormError(servicesCrime);
 });
