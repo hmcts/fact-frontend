@@ -42,7 +42,7 @@ export class FactApi {
       });
   }
 
-  public service(slug: string): Promise<ServiceResult> {
+  public getService(slug: string): Promise<ServiceResult> {
     return this.axios
       .get(`/services/${slug}`)
       .then(results => results.data)

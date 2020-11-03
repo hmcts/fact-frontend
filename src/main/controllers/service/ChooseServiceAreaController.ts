@@ -24,15 +24,15 @@ export class ChooseServiceAreaController {
 
     const serviceAreasData = await this.api.serviceAreas(serviceChosen);
     if (!isObjectEmpty(serviceAreasData)) {
-      const serviceData = await this.api.service(serviceChosen);
+      const service = await this.api.getService(serviceChosen);
       data.results = serviceAreasData;
       data.title = data.title
-        .replace('{serviceChosen}', serviceData.name.toLowerCase());
+        .replace('{serviceChosen}', service.name.toLowerCase());
       data.question = data.question
-        .replace('{serviceChosen}', serviceData.name.toLowerCase());
+        .replace('{serviceChosen}', service.name.toLowerCase());
       if (hasErrors) {
         data.error.text = data.error.text
-          .replace('{serviceChosen}', serviceData.name.toLowerCase());
+          .replace('{serviceChosen}', service.name.toLowerCase());
       }
     }
     return data;
