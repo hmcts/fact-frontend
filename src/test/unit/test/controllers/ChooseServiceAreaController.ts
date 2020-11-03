@@ -17,8 +17,11 @@ const i18n = {
 };
 
 describe('Choose service area controller', () => {
-  const response: any = { data: {} };
-  const api: any = { serviceAreas: async () => response.data };
+  const response: any = { data: {}, serviceData: {} };
+  const api: any = {
+    serviceAreas: async () => response.data,
+    getService: async () => response.serviceData
+  };
   const controller = new ChooseServiceAreaController(api);
 
   test('Should render a service areas page', async () => {
@@ -26,6 +29,13 @@ describe('Choose service area controller', () => {
       name: 'Service area',
       description: 'service area description',
     }];
+
+    response.serviceData = {
+      name: 'Service',
+      description: 'service description',
+      slug: 'slug',
+    };
+
     const req = mockRequest(i18n);
     req.params = {
       service: 'Chosen Service'
@@ -46,6 +56,13 @@ describe('Choose service area controller', () => {
       name: 'Service area',
       description: 'service area description',
     }];
+
+    response.serviceData = {
+      name: 'Service',
+      description: 'service description',
+      slug: 'slug',
+    };
+
     const req = mockRequest(i18n);
     req.params = {
       service: 'Chosen Service'
