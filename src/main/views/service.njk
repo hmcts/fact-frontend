@@ -21,7 +21,7 @@
 {% block content %}
 {% if errors %}
 {% for result in results.slice(0, 1) %}
-{% set firstRadioServiceArea = "#serviceAreaChosen1" %}
+{% set firstRadioServiceArea = "#" + result.name | lower | replace(" ", "-") | replace(",", "") %}
 {{ errorSummary(error.title, error.text, firstRadioServiceArea) }}
 {% endfor %}
 {% endif %}
@@ -47,8 +47,8 @@
         {% endif %}
         {% for result in results %}
             <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="serviceAreaChosen{{ loop.index }}" name="serviceArea" type="radio" value="serviceAreaChosen{{ loop.index }}" >
-                <label class="govuk-label govuk-radios__label govuk-label--s" for="serviceAreaChosen{{ loop.index }}">
+                <input class="govuk-radios__input" id={{ result.name | lower | replace(" ", "-") | replace(",", "") }} name="serviceArea" type="radio" value="serviceAreaChosen{{ loop.index }}" >
+                <label class="govuk-label govuk-radios__label govuk-label--s" for={{ result.name | lower | replace(" ", "-") | replace(",", "") }}>
                     {{ result.name }}
                 </label>
                 <div class="govuk-hint govuk-radios__hint">
