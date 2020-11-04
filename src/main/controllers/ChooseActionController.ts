@@ -5,11 +5,14 @@ import { PageData } from '../interfaces/PageData';
 import { cloneDeep } from 'lodash';
 
 export class ChooseActionController {
+
   public get(req: FactRequest, res: Response): void {
     res.render('choose-action', req.i18n.getDataByLanguage(req.lng)['choose-action']);
   }
 
   public post(req: FactRequest, res: Response): void {
+    const action = req.body.chooseAction;
+    console.log(action);
     if (!hasProperty(req.body, 'chooseAction')) {
       const data: PageData = {
         ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['choose-action']),
@@ -18,7 +21,6 @@ export class ChooseActionController {
       };
       return res.render('choose-action', data);
     }
-
     res.redirect('/services');
   }
 }

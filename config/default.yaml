@@ -1,3 +1,5 @@
+security:
+  referrerPolicy: 'origin'
 app:
   useCSRFProtection: 'true'
   security:
@@ -15,5 +17,10 @@ services:
 health:
   timeout: 5000
   deadline: 15000
+session:
+  secret: 'local'
+  redis:
+    host:
+    key:
 appInsights:
   instrumentationKey:
