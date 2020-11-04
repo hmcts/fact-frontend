@@ -2,3 +2,5 @@ nodejs:
   # Don't modify below here
   image: ${IMAGE_NAME}
   ingressHost: ${SERVICE_FQDN}
+  environment:
+    FACT_API_URL: http://fact-api-pr-81.service.core-compute-preview.internal
