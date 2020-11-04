@@ -3,7 +3,7 @@ import { hasProperty, isObjectEmpty } from '../../utils/validation';
 import { Response } from 'express';
 import { FactApi } from '../../utils/FactApi';
 import autobind from 'autobind-decorator';
-import { ServiceData } from '../../interfaces/ServiceData';
+import { ServiceAreasData } from '../../interfaces/ServiceAreasData';
 import { cloneDeep } from 'lodash';
 
 @autobind
@@ -15,23 +15,24 @@ export class ChooseServiceAreaController {
 
   private async getServiceData(req: FactRequest, hasErrors: boolean) {
     const serviceChosen: string = req.params.service as string;
-    const data: ServiceData = {
+    const data: ServiceAreasData = {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng).service),
       path: '/services/' + serviceChosen + '/service-areas',
       results: [],
       errors: hasErrors,
     };
 
-    const serviceData = await this.api.serviceAreas(serviceChosen);
-    if (!isObjectEmpty(serviceData)) {
-      data.results = serviceData;
+    const serviceAreasData = await this.api.serviceAreas(serviceChosen);
+    if (!isObjectEmpty(serviceAreasData)) {
+      const serviceData = await this.api.getService(serviceChosen);
+      data.results = serviceAreasData;
       data.title = data.title
-        .replace('{serviceChosen}', serviceChosen.toLowerCase());
+        .replace('{serviceChosen}', serviceData.name.toLowerCase());
       data.question = data.question
-        .replace('{serviceChosen}', serviceChosen.toLowerCase());
+        .replace('{serviceChosen}', serviceData.name.toLowerCase());
       if (hasErrors) {
         data.error.text = data.error.text
-          .replace('{serviceChosen}', serviceChosen.toLowerCase());
+          .replace('{serviceChosen}', serviceData.name.toLowerCase());
       }
     }
     return data;

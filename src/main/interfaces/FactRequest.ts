@@ -2,7 +2,7 @@ import { Request } from 'express';
 import { SearchResultsData } from './SearchResultsData';
 import { ServicesData } from './ServicesData';
 import { CourtDetailsData } from './CourtDetailsData';
-import { ServiceData } from './ServiceData';
+import { ServiceAreasData } from './ServiceAreasData';
 
 export interface FactRequest extends Request {
   i18n?: {
@@ -17,7 +17,7 @@ export interface FactRequest extends Request {
       template: {};
       'court-details': CourtDetailsData;
       'choose-service': ServicesData;
-      service: ServiceData;
+      service: ServiceAreasData;
       [property: string]: {};
     };
   };

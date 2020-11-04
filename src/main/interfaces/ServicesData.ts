@@ -1,10 +1,11 @@
 import { PageData } from './PageData';
 
 export interface ServicesData extends PageData {
-  results: ServicesResult[] | {};
+  results: ServiceResult[] | {};
 }
 
-export interface ServicesResult {
+export interface ServiceResult {
   name: string;
   description: string;
+  slug: string;
 }

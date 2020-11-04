@@ -21,8 +21,8 @@
 {% block content %}
 {% if errors %}
 {% for result in results.slice(0, 1) %}
-{% set firstRadio = "#" + result.name | lower | replace(" ", "-") | replace(",", "") %}
-{{ errorSummary(error.title, error.text, firstRadio ) }}
+{% set firstRadioServiceArea = "#" + result.name | lower | replace(" ", "-") | replace(",", "") %}
+{{ errorSummary(error.title, error.text, firstRadioServiceArea) }}
 {% endfor %}
 {% endif %}
 
