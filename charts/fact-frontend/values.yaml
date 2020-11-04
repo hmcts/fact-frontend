@@ -9,5 +9,5 @@ nodejs:
   ingressHost: fact.{{ .Values.global.environment }}.platform.hmcts.net
   image: 'hmctspublic.azurecr.io/fact/frontend:latest'
   environment:
-    FACT_API_URL: "http://fact-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal"
+    FACT_API_URL: "http://fact-api-pr-75.service.core-compute-preview.internal"
     IMAGE_BASE_URL: "https://fact{{ .Values.global.environment }}.blob.core.windows.net/images/"
