@@ -20,11 +20,11 @@ const courtDetailsNoAreaOfLaw = '/courts/tax-chamber-first-tier-tribunal';
 const courtDetailsAdditionalInfo = '/courts/west-cumbria-courthouse';
 const unknownServicePage = '/services/unknown-service';
 const services = '/services';
-const servicesMoney = '/services/Money/service-areas';
-const servicesProbateDivorce = '/services/Probate, divorce or ending civil partnerships/service-areas';
-const servicesChildcare = '/services/Childcare and parenting/service-areas';
-const servicesHarmAbuse = '/services/Harm and abuse/service-areas';
-const servicesCrime = '/services/Crime/service-areas';
+const servicesMoney = '/services/money/service-areas';
+const servicesProbateDivorce = '/services/probate-divorce-or-ending-civil-partnerships/service-areas';
+const servicesChildcare = '/services/childcare-and-parenting/service-areas';
+const servicesHarmAbuse = '/services/harm-and-abuse/service-areas';
+const servicesCrime = '/services/crime/service-areas';
 
 class Pa11yResult {
   documentTitle: string;

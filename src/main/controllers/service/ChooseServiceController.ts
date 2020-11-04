@@ -39,19 +39,6 @@ export class ChooseServiceController {
       return res.render('choose-service', data);
     }
 
-    const serviceName: any = {
-      'serviceChosen1' : 'Money',
-      'serviceChosen2' : 'Probate, divorce or ending civil partnerships',
-      'serviceChosen3' : 'Childcare and parenting',
-      'serviceChosen4' : 'Harm and abuse',
-      'serviceChosen6' : 'Crime',
-    };
-
-    const serviceChosen = serviceName[req.body.chooseService];
-    if(serviceChosen){
-      return res.redirect('/services/' + serviceChosen + '/service-areas');
-    } else {
-      return res.redirect('/services/unknown-service');
-    }
+    return res.redirect('/services/' + req.body.chooseService + '/service-areas');
   }
 }
