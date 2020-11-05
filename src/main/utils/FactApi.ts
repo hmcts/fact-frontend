@@ -82,4 +82,14 @@ export class FactApi {
       });
   }
 
+  public getServiceArea(service: string, serviceArea: string): Promise<ServiceAreaResult> {
+    return this.axios
+      .get(`/services/${service}/${serviceArea}`)
+      .then(results => results.data)
+      .catch(err => {
+        this.logger.error(err);
+        return [];
+      });
+  }
+
 }
