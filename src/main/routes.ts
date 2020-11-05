@@ -17,5 +17,7 @@ export default function(app: Application): void {
   app.post('/services/:service/service-areas/:action', app.locals.container.cradle.chooseServiceAreaController.post);
   app.get('/services/unknown-service', app.locals.container.cradle.chooseUnknownServiceController.get);
   app.get('/search-results', app.locals.container.cradle.serviceSearchResultsController.get);
+  app.get('/postcode', app.locals.container.cradle.servicePostcodeSearchController.get);
+  app.post('/postcode', app.locals.container.cradle.servicePostcodeSearchController.post);
 
 }

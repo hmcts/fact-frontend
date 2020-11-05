@@ -1,0 +1,58 @@
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "macros/error-summary.njk" import errorSummary %}
+
+{% extends "template.njk" %}
+
+{% block pageTitle %}
+  {{ title }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: ""
+  }) }}
+{% endblock %}
+
+{% block content %}
+{% if errors %}
+  {{ errorSummary(error.title, error.text, "#postcode") }}
+{% endif %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">{{ question }}
+      <span id="header-hint" class="govuk-hint">
+        {{ hint }}
+      </span>
+    </h1>
+    <form method="POST">
+      {{ govukInput({
+        label: {
+          text: text,
+          classes: "govuk-label",
+          isPageHeading: true
+        },
+        classes: "govuk-input govuk-input--width-10",
+        id: "postcode",
+        name: "postcode",
+        value: postcode,
+        hint: {
+          text: example
+        },
+        errorMessage: { text: error.text | safe } if errors,
+        autocomplete: "postal-code"
+      }) }}
+      {{ govukButton({
+        text: button,
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}
