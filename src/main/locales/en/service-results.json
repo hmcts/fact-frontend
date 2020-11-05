@@ -4,5 +4,9 @@
   "question": "Court or tribunal search results",
   "hint": "We manage your {service-area} applications at our central service centre. Find where to send your documents or ask about your application’s progress.",
   "applyOnlineHeading": "Apply online",
-  "nameOfCourt": "{court-name}"
+  "regionStatement": "This location provides services for all of England and Wales.",
+  "nameOfCourt": "{court-name}",
+  "slug": "{slug}",
+  "applyOnline": "{applyOnline}",
+  "applyOnlineUrl": "{applyOnlineUrl}"
 }

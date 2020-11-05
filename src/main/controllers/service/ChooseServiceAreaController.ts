@@ -50,11 +50,15 @@ export class ChooseServiceAreaController {
       res.render('service', data);
     } else {
       const action: string = req.params.action as string;
-      if(action == 'documents' || 'update' || 'not-listed' && req.body.serviceArea != 'not-listed'){
+      if(action === 'documents' || action === 'update' || action === 'not-listed' && req.body.serviceArea != 'not-listed'){
         const courtsInServiceArea = await this.api.courtsInServiceAreas(req.params.service, req.body.serviceArea);
         for(const courtInServiceArea of courtsInServiceArea) {
           if (courtInServiceArea.catchment == 'national') {
-            if ( action == 'update'|| action == 'not-listed' ){
+            if (action === 'update'|| action === 'not-listed'){
+              return res.redirect('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
+            }
+          } else if(courtInServiceArea.catchment == 'regional'){
+            if(action === 'documents'){
               return res.redirect('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
             }
           }

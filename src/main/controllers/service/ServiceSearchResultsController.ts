@@ -17,6 +17,12 @@ export class ServiceSearchResultsController {
       if( court.catchment === 'national' ){
         req.i18n.getDataByLanguage(req.lng)['service-results'].nameOfCourt = req.i18n.getDataByLanguage(req.lng)['service-results'].nameOfCourt
           .replace('{court-name}', court.name);
+        req.i18n.getDataByLanguage(req.lng)['service-results'].slug = req.i18n.getDataByLanguage(req.lng)['service-results'].slug
+          .replace('{slug}', court.slug);
+        req.i18n.getDataByLanguage(req.lng)['service-results'].applyOnline = req.i18n.getDataByLanguage(req.lng)['service-results'].applyOnline
+          .replace('{applyOnline}', serviceAreaData.applyOnline);
+        req.i18n.getDataByLanguage(req.lng)['service-results'].applyOnlineUrl = req.i18n.getDataByLanguage(req.lng)['service-results'].applyOnlineUrl
+          .replace('{applyOnlineUrl}', serviceAreaData.applyOnlineUrl);
       }
     }
     req.i18n.getDataByLanguage(req.lng)['service-results'].hint = req.i18n.getDataByLanguage(req.lng)['service-results'].hint

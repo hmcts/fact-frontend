@@ -13,4 +13,6 @@ export interface ServiceAreaResult {
   name: string;
   description: string;
   slug: string;
+  applyOnline: string;
+  applyOnlineUrl: string;
 }

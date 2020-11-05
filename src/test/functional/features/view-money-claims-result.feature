@@ -12,9 +12,9 @@ Feature: View money claims result
     When I select "#money" from the areas of law page and continue
     Then I select "#money-claims" category from the list of categories
     Given I can continue having selected that option
-    Then I am presented with a single search results entry
+    Then I am presented with the "Search for location - Find a court or tribunal - GOV.UK" page
     And I can select that entry via the hyperlink
-    Then I am presented with the "Individual court or tribunal page - Find a court or tribunal - GOV.UK" page
+    Then I can view the details of County Court Money Claims Centre (CCMCC)
   Examples:
     | options         |
     | document court  |
