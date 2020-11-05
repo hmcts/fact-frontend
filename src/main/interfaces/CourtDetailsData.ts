@@ -12,6 +12,7 @@ export interface CourtDetailsData extends PageData {
 export interface CourtDetailsResult {
   name: string;
   slug: string;
+  catchment: string;
   info: string;
   open: boolean;
   directions: string;

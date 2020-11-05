@@ -51,14 +51,18 @@ export class ChooseServiceAreaController {
     } else {
       const action: string = req.params.action as string;
       if(action == 'documents' || 'update' || 'not-listed' && req.body.serviceArea != 'not-listed'){
-      // Get courts
-      // If the courts contains a nation
-      // If the action is update/not listed
-      // Redirect to service results with national court
-      // Else if the court
+        const courtsInServiceArea = await this.api.courtsInServiceAreas(req.params.service, req.body.serviceArea);
+        for(const courtInServiceArea of courtsInServiceArea) {
+          if (courtInServiceArea.catchment == 'national') {
+            if ( action == ('update'|| 'not-listed') ){
+              console.log('inside if statement');
+              return res.redirect('/search-results');
+            }
+          }
+        }
+      } else {
+        res.redirect('/services/unknown-service');
       }
-      res.redirect('/services/unknown-service');
     }
   }
-
 }
