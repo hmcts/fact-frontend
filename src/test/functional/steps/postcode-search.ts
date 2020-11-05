@@ -1,10 +1,11 @@
 import { Given, Then, When } from 'cucumber';
 
 import * as I from '../utlis/puppeteer.util';
-import { expect } from "chai";
+import { expect } from 'chai';
 
-Given('I can select a {string} from the category area of law page', async (option: string) => {
-  await I.click(option);
+Given('I can select a {string} from the category area of law page and continue', async (element: string) => {
+  await I.click(element);
+  await I.click('.govuk-button');
 });
 
 When('I continue having entered a postcode {string}', async (postcode: string) => {
@@ -17,6 +18,7 @@ Then('I can continue my user journey', async () => {
 
 When('I continue having entered an invalid postcode {string}', async (postcode: string) => {
   await I.fillField('#postcode', postcode);
+  await I.click('.govuk-button');
 });
 
 Then('I am presented with an postcode error message', async() => {
