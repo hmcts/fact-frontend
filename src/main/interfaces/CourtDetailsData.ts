@@ -3,6 +3,7 @@ import { PageData } from './PageData';
 export interface CourtDetailsData extends PageData {
   results: CourtDetailsResult | {};
   notInPersonP1: string;
+  title: string;
   catchmentArea: {
     area1: string;
     area2: string;

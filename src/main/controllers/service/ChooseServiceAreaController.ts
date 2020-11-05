@@ -54,9 +54,8 @@ export class ChooseServiceAreaController {
         const courtsInServiceArea = await this.api.courtsInServiceAreas(req.params.service, req.body.serviceArea);
         for(const courtInServiceArea of courtsInServiceArea) {
           if (courtInServiceArea.catchment == 'national') {
-            if ( action == ('update'|| 'not-listed') ){
-              console.log('inside if statement');
-              return res.redirect('/search-results');
+            if ( action == 'update'|| action == 'not-listed' ){
+              return res.redirect('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
             }
           }
         }

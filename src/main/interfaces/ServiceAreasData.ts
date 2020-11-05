@@ -12,4 +12,5 @@ export interface ServiceAreasData extends PageData {
 export interface ServiceAreaResult {
   name: string;
   description: string;
+  slug: string;
 }

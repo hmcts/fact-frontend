@@ -10,6 +10,7 @@ const familyServiceAreasData = require('./familyAreaOfLaw.json');
 const childcareAndParentingServiceAreasData = require('./childcareAndParentingAreaOfLaw.json');
 const courtsInMoneyClaims = require('./courts-in-money-claims.json');
 const moneyServiceData = require('./money-service-data.json');
+const moneyClaimsData = require('./money-claims-data.json');
 const port = 8080;
 
 
@@ -58,6 +59,10 @@ app.get('/services/childcare-and-parenting/service-areas', (req: Request, res: R
 
 app.get('/courts/money/money-claims', (req: Request, res: Response) => {
   res.json(courtsInMoneyClaims);
+});
+
+app.get('/services/money/money-claims', (req: Request, res: Response) => {
+  res.json(moneyClaimsData);
 });
 
 app.listen(port, () => {
