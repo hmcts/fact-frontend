@@ -26,6 +26,7 @@ const servicesChildcare = '/services/childcare-and-parenting/service-areas/updat
 const servicesHarmAbuse = '/services/harm-and-abuse/service-areas/update';
 const servicesCrime = '/services/crime/service-areas/update';
 const serviceSearchResultsMoneyClaims = '/services/money/money-claims/search-results';
+const servicePostcodeSearchMoneyClaims = '/services/money/money-claims/search-by-postcode';
 
 class Pa11yResult {
   documentTitle: string;
@@ -123,4 +124,6 @@ describe('Accessibility', () => {
   testAccessibility(servicesCrime);
   testAccessibilityOfFormError(servicesCrime);
   testAccessibility(serviceSearchResultsMoneyClaims);
+  testAccessibility(servicePostcodeSearchMoneyClaims);
+  testAccessibilityOfFormError(servicePostcodeSearchMoneyClaims);
 });

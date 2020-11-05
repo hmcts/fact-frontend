@@ -4,6 +4,7 @@ import { ServicesData } from './ServicesData';
 import { CourtDetailsData } from './CourtDetailsData';
 import { ServiceAreasData } from './ServiceAreasData';
 import { ServiceSearchResults } from './ServiceSearchResults';
+import { PostcodeSearchData } from './PostcodeSearchData';
 
 export interface FactRequest extends Request {
   i18n?: {
@@ -21,6 +22,7 @@ export interface FactRequest extends Request {
       service: ServiceAreasData;
       [property: string]: {};
       'service-results': ServiceSearchResults;
+      'postcode-search': PostcodeSearchData;
     };
   };
   lng?: string;
