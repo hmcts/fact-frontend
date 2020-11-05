@@ -72,4 +72,14 @@ export class FactApi {
       });
   }
 
+  public courtsInServiceAreas(service: string, serviceArea: string): Promise<CourtDetailsResult[]> {
+    return this.axios
+      .get(`/courts/${service}/${serviceArea}`)
+      .then(results => results.data)
+      .catch(err => {
+        this.logger.error(err);
+        return [];
+      });
+  }
+
 }
