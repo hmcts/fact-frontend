@@ -1,7 +1,7 @@
-import { ServicePostcodeSearchController } from '../../../../main/controllers/service/ServicePostcodeSearchController';
-import { mockRequest } from '../../utils/mockRequest';
-import { mockResponse } from '../../utils/mockResponse';
-import { PageData } from '../../../../main/interfaces/PageData';
+import { ServicePostcodeSearchController } from '../../../../../main/controllers/service/ServicePostcodeSearchController';
+import { mockRequest } from '../../../utils/mockRequest';
+import { mockResponse } from '../../../utils/mockResponse';
+import { PageData } from '../../../../../main/interfaces/PageData';
 
 const i18n = {
   'postcode-search': {}

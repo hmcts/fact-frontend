@@ -1,9 +1,9 @@
-import { mockRequest } from '../../utils/mockRequest';
-import { mockResponse } from '../../utils/mockResponse';
-import { PageData } from '../../../../main/interfaces/PageData';
-import { ChooseServiceController } from '../../../../main/controllers/service/ChooseServiceController';
+import { mockRequest } from '../../../utils/mockRequest';
+import { mockResponse } from '../../../utils/mockResponse';
+import { PageData } from '../../../../../main/interfaces/PageData';
+import { ChooseServiceController } from '../../../../../main/controllers/service/ChooseServiceController';
 import { cloneDeep } from 'lodash';
-const expectedAreasOfLaw = require('../../../resources/service-results.json');
+const expectedAreasOfLaw = require('../../../../resources/service-results.json');
 
 const i18n = {
   'choose-service': {
