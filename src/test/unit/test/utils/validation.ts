@@ -1,4 +1,4 @@
-import { hasProperty, isEmpty } from '../../../../main/utils/validation';
+import { hasProperty, isEmpty, isPostcodeValid } from '../../../../main/utils/validation';
 
 describe('validation', () => {
   describe('hasProperty', () => {
@@ -54,6 +54,26 @@ describe('validation', () => {
       const string: any = undefined;
       const results = isEmpty(string);
       expect(results).toBe(true);
+    });
+  });
+
+  describe('isPostcodeValid', () => {
+    test('Should return true if postcode is valid', async () => {
+      const string = 'EH1 9SP';
+      const results = isPostcodeValid(string);
+      expect(results).toBe(true);
+    });
+
+    test('Should return false if postcode is invalid', async () => {
+      const string = 'isPostcodeValid';
+      const results = isPostcodeValid(string);
+      expect(results).toBe(false);
+    });
+
+    test('Should return false if string is empty', async () => {
+      const string = '';
+      const results = isPostcodeValid(string);
+      expect(results).toBe(false);
     });
   });
 });

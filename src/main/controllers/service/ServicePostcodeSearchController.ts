@@ -4,12 +4,12 @@ import { PageData } from '../../interfaces/PageData';
 import { cloneDeep } from 'lodash';
 import { isPostcodeValid } from '../../utils/validation';
 
-export class ServicePostcodeSearch {
+export class ServicePostcodeSearchController {
 
   public get(req: FactRequest, res: Response): void {
     const data: PageData = {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['postcode-search']),
-      path: '/search',
+      path: '/postcode',
     };
     res.render('postcode-search', data);
   }
@@ -18,11 +18,11 @@ export class ServicePostcodeSearch {
     const { postcode } = req.body;
     const data: PageData = {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['postcode-search']),
-      path: '/search',
+      path: '/postcode',
       errors: false
     };
     if (isPostcodeValid(postcode)) {
-      return res.redirect('/');
+      return res.redirect('/results');
     }
     data.errors = true;
     return res.render('postcode-search', data);
