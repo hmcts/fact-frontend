@@ -15,9 +15,10 @@ export class ChooseServiceAreaController {
 
   private async getServiceData(req: FactRequest, hasErrors: boolean) {
     const serviceChosen: string = req.params.service as string;
+    const action: string = req.params.action as string;
     const data: ServiceAreasData = {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng).service),
-      path: '/services/' + serviceChosen + '/service-areas',
+      path: '/services/' + serviceChosen + '/service-areas' + action,
       results: [],
       errors: hasErrors,
     };
@@ -44,17 +45,17 @@ export class ChooseServiceAreaController {
   }
 
   public async post(req: FactRequest, res: Response) {
-    const action = 'documents';
     if (!hasProperty(req.body, 'serviceArea')) {
       const data = await this.getServiceData(req, true);
       res.render('service', data);
     } else {
-      if(req.body.serviceArea != 'not-listed' && action == 'documents' || 'update' || 'not-listed'){
-        // Get courts
-        // If the courts contains a nation
-        // If the action is update/not listed
-        // Redirect to service results with national court
-        // Else if the court
+      const action: string = req.params.action as string;
+      if(action == 'documents' || 'update' || 'not-listed' && req.body.serviceArea != 'not-listed'){
+      // Get courts
+      // If the courts contains a nation
+      // If the action is update/not listed
+      // Redirect to service results with national court
+      // Else if the court
       }
       res.redirect('/services/unknown-service');
     }

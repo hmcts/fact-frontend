@@ -11,9 +11,9 @@ export default function(app: Application): void {
   app.post('/service-choose-action', app.locals.container.cradle.chooseActionController.post);
   app.get('/courts/:slug', app.locals.container.cradle.courtDetailsController.get);
   app.get('/individual-location-pages/courts/:slug', app.locals.container.cradle.courtDetailsController.get);
-  app.get('/services', app.locals.container.cradle.chooseServiceController.get);
-  app.post('/services', app.locals.container.cradle.chooseServiceController.post);
-  app.get('/services/:service/service-areas', app.locals.container.cradle.chooseServiceAreaController.get);
-  app.post('/services/:service/service-areas', app.locals.container.cradle.chooseServiceAreaController.post);
+  app.get('/services/:action', app.locals.container.cradle.chooseServiceController.get);
+  app.post('/services/:action', app.locals.container.cradle.chooseServiceController.post);
+  app.get('/services/:service/service-areas/:action', app.locals.container.cradle.chooseServiceAreaController.get);
+  app.post('/services/:service/service-areas/:action', app.locals.container.cradle.chooseServiceAreaController.post);
   app.get('/services/unknown-service', app.locals.container.cradle.chooseUnknownServiceController.get);
 }

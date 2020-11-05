@@ -14,9 +14,10 @@ export class ChooseServiceController {
   ) { }
 
   private async getServices(req: FactRequest, hasErrors: boolean) {
+    const action: string = req.params.action as string;
     const data: ServicesData = {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['choose-service']),
-      path: '/services',
+      path: '/services' + action,
       results: [],
       errors: hasErrors,
     };
@@ -29,6 +30,8 @@ export class ChooseServiceController {
   }
 
   public async get(req: FactRequest, res: Response) {
+    const action: string = req.params.query as string;
+    console.log(action);
     const data = await this.getServices(req, false);
     res.render('choose-service', data);
   }
@@ -39,6 +42,6 @@ export class ChooseServiceController {
       return res.render('choose-service', data);
     }
 
-    return res.redirect('/services/' + req.body.chooseService + '/service-areas');
+    return res.redirect('/services/' + req.body.chooseService + '/service-areas/' + req.params.action as string);
   }
 }
