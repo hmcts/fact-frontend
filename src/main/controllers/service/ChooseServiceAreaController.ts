@@ -52,13 +52,22 @@ export class ChooseServiceAreaController {
       const action: string = req.params.action as string;
       if(action === 'documents' || action === 'update' || action === 'not-listed' && req.body.serviceArea != 'not-listed'){
         const courtsInServiceArea = await this.api.courtsInServiceAreas(req.params.service, req.body.serviceArea);
+        let nationalCounter = 0;
+        let regionalCounter = 0;
         for(const courtInServiceArea of courtsInServiceArea) {
-          if (courtInServiceArea.catchment == 'national') {
-            if (action === 'update'|| action === 'not-listed'){
-              return res.redirect('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
-            }
-          } else if(courtInServiceArea.catchment == 'regional'){
-            if(action === 'documents'){
+          if (courtInServiceArea.catchment === 'national') {
+            nationalCounter++;
+          } else if (courtInServiceArea.catchment === 'regional') {
+            regionalCounter++;
+          }
+        }
+        console.log(nationalCounter);
+        console.log(regionalCounter);
+        if(nationalCounter > 0) {
+          if (action === 'update' || action === 'not-listed') {
+            return res.redirect('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
+          } else if(action === 'documents'){
+            if(regionalCounter === 0){
               return res.redirect('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
             }
           }

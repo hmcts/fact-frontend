@@ -14,7 +14,7 @@ Feature: View money claims result
     Given I can continue having selected that option
     Then I am presented with the "Search for location - Find a court or tribunal - GOV.UK" page
     And I can select that entry via the hyperlink
-    Then I can view the details of County Court Money Claims Centre (CCMCC)
+    Then I can view the selected court or tribunal details
   Examples:
     | options         |
     | document court  |
