@@ -61,8 +61,6 @@ export class ChooseServiceAreaController {
             regionalCounter++;
           }
         }
-        console.log(nationalCounter);
-        console.log(regionalCounter);
         if(nationalCounter > 0) {
           if (action === 'update' || action === 'not-listed') {
             return res.redirect('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
