@@ -295,7 +295,7 @@
   {
     "name": "North West Regional Money Claims Centre",
     "slug": "north-west-regional-money-claims-centre",
-    "catchment": "regional",
+    "catchment": "local",
     "info": "Test additional info message",
     "open": true,
     "directions": null,
