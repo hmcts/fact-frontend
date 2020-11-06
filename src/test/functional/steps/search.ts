@@ -73,7 +73,7 @@ Given('I have not entered search content', async () => {
   expect(elementExist).equal(true);
 });
 
-Then('I am presented with a "Field is blank" error display', async () => {
+Then('I am presented with an error', async () => {
   const elementExist = await I.checkElement('#search-error');
   expect(elementExist).equal(true);
 });

@@ -18,7 +18,7 @@ import { AppInsights } from './modules/appinsights';
 import { Container } from './modules/awilix';
 
 const healthcheck = require('@hmcts/nodejs-healthcheck');
-const { Express, Logger } = require('@hmcts/nodejs-logging');
+const { Logger } = require('@hmcts/nodejs-logging');
 const { setupDev } = require('./development');
 const env = process.env.NODE_ENV || 'development';
 const developmentMode = env === 'development';
@@ -26,9 +26,6 @@ const logger = Logger.getLogger('app');
 
 export const app = express();
 app.locals.ENV = env;
-
-// setup logging of HTTP requests
-app.use(Express.accessLogger());
 
 new PropertiesVolume().enableFor(app);
 new Container().enableFor(app);

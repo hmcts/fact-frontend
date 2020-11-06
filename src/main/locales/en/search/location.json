@@ -4,6 +4,7 @@
   "question": "What is the name or address of the court or tribunal?",
   "hint": "The name of the court or tribunal can be found on a letter, email or text from us.",
   "text": "Enter a court name, address, town or city",
+  "textExample": "For example, Blackburn Family Court. ",
   "button": "Search",
   "noResults": {
     "p1": "There are no matching results.",
@@ -16,8 +17,12 @@
   },
   "foundResults": "We found {total} courts or tribunals matching your search for '{search}'.",
   "mostRelevant": "Most relevant results displayed.",
-  "error":{
+  "errorBlank": {
     "title": "There is a problem",
-    "text": "Field is blank - Enter a court name, address, town or city"
+    "text": "Enter a court name, address, town or city"
+  },
+  "errorTooShort": {
+    "title": "There is a problem",
+    "text": "Search must be 3 characters or more"
   }
 }
