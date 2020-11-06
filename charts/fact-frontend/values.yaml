@@ -8,6 +8,7 @@ nodejs:
         - AppInsightsInstrumentationKey
   ingressHost: fact.{{ .Values.global.environment }}.platform.hmcts.net
   image: 'hmctspublic.azurecr.io/fact/frontend:latest'
+  cpuRequests: 50m"
   autoscaling:        # Default is false
     enabled: true 
     maxReplicas: 5    # Required setting
