@@ -1,7 +1,5 @@
 nodejs:
   applicationPort: 3100
-  memoryRequests: 64Mi
-  devcpuRequests: 50m
   cpuRequests: 50m
   aadIdentityName: fact
   keyVaults:
