@@ -76,6 +76,18 @@ app.get('/search/postcode', (req: Request, res: Response) => {
   res.json(result);
 });
 
+app.get('/search/postcode', (req: Request, res: Response) => {
+  const { postcode, serviceType } = req.query;
+  const serviceAreasData = [...serviceAreas];
+  //backend should use mapit to determine the local authorities (council)
+  console.log(postcode);
+  const localAuthority = 'Haringey Borough Council';
+
+  const serviceArea = serviceAreasData.find(service => service.serviceAreaType === serviceType);
+  const result = serviceArea.serviceAreaCourts.find((court: any) => court.catchmentType === 'regional' && court.localAuthority === localAuthority);
+  res.json(result);
+});
+
 app.listen(port, () => {
   console.log(`Application started: http://localhost:${port}`);
 });
