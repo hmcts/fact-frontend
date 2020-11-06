@@ -17,12 +17,55 @@ const i18n = {
 };
 
 describe('Choose service area controller', () => {
-  const response: any = { data: {}, serviceData: {} };
+  const response: any = { data: {}, serviceData: {}, courtsInServiceAreasData: {} };
   const api: any = {
     serviceAreas: async () => response.data,
-    getService: async () => response.serviceData
+    getService: async () => response.serviceData,
+    courtsInServiceAreas: async() => response.courtsInServiceAreasData
   };
   const controller = new ChooseServiceAreaController(api);
+
+  test('Should redirect to search results if action is update and service area has a national centre ', async () => {
+    const req = mockRequest(i18n);
+    req.params = {
+      service: 'service',
+      action: 'update'
+    };
+    req.body = {
+      serviceArea: 'service-area'
+    };
+    response.courtsInServiceAreasData = [
+      {
+        name: 'national court',
+        slug: 'national-court',
+        catchment: 'national'
+      }
+    ];
+    const res = mockResponse();
+    await controller.post(req, res);
+    expect(res.redirect).toHaveBeenCalledWith('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
+  });
+
+  test('Should redirect to search results if action is documents and service area has a national centre and no regional centre', async () => {
+    const req = mockRequest(i18n);
+    req.params = {
+      service: 'service',
+      action: 'documents'
+    };
+    req.body = {
+      serviceArea: 'service-area'
+    };
+    response.courtsInServiceAreasData = [
+      {
+        name: 'national court',
+        slug: 'national-court',
+        catchment: 'national'
+      }
+    ];
+    const res = mockResponse();
+    await controller.post(req, res);
+    expect(res.redirect).toHaveBeenCalledWith('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
+  });
 
   test('Should render a service areas page', async () => {
     response.data = [{
@@ -38,13 +81,14 @@ describe('Choose service area controller', () => {
 
     const req = mockRequest(i18n);
     req.params = {
-      service: 'Chosen Service'
+      service: 'chosen-service',
+      action: 'action',
     };
     const res = mockResponse();
     await controller.get(req, res);
     const expectedData: PageData = {
       ...cloneDeep(i18n.service),
-      path: '/services/' + req.params.service + '/service-areas',
+      path: '/services/' + req.params.service + '/service-areas/' +req.params.action ,
       results: response.data,
       errors: false,
     };
@@ -65,7 +109,8 @@ describe('Choose service area controller', () => {
 
     const req = mockRequest(i18n);
     req.params = {
-      service: 'Chosen Service'
+      service: 'chosen-service',
+      action: 'action',
     };
     req.body = {};
     const res = mockResponse();
@@ -73,7 +118,7 @@ describe('Choose service area controller', () => {
 
     const expectedData: PageData = {
       ...cloneDeep(i18n.service),
-      path: '/services/' + req.params.service + '/service-areas',
+      path: '/services/' + req.params.service + '/service-areas/' +req.params.action,
       results: response.data,
       errors: true
     };
@@ -87,7 +132,8 @@ describe('Choose service area controller', () => {
     }];
     const req = mockRequest(i18n);
     req.params = {
-      service: 'Chosen Service'
+      service: 'chosen-service',
+      action: 'action',
     };
     req.body = {
       serviceArea: 'chosen service area',
@@ -102,7 +148,8 @@ describe('Choose service area controller', () => {
     response.data = [];
     const req = mockRequest(i18n);
     req.params = {
-      service: 'Chosen Service'
+      service: 'chosen-service',
+      action: 'action',
     };
     req.body = {};
     const res = mockResponse();
@@ -110,7 +157,7 @@ describe('Choose service area controller', () => {
 
     const expectedData: PageData = {
       ...cloneDeep(i18n.service),
-      path: '/services/' + req.params.service + '/service-areas',
+      path: '/services/' + req.params.service + '/service-areas/' +req.params.action,
       results: response.data,
       errors: true
     };

@@ -18,7 +18,7 @@ export class ChooseServiceAreaController {
     const action: string = req.params.action as string;
     const data: ServiceAreasData = {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng).service),
-      path: '/services/' + serviceChosen + '/service-areas' + action,
+      path: '/services/' + serviceChosen + '/service-areas/' + action,
       results: [],
       errors: hasErrors,
     };
