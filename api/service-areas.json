@@ -1,0 +1,60 @@
+[
+  {
+    "name": "Divorce",
+    "description": "Ending a marriage, getting a legal separation or help with money, property and children during a divorce.",
+    "slug": "divorce",
+    "serviceAreaType": "Family",
+    "serviceAreaCourts": [
+      {
+        "slug": "bury-st-edmunds-regional-divorce-centre",
+        "catchmentType": "regional",
+        "courtName": "Bury St Edmunds Regional Divorce Centre",
+        "courtNameCy": null,
+        "localAuthority": "Haringey Borough Council"
+      },
+      {
+        "slug": "newport-south-wales-regional-divorce-centre",
+        "catchmentType": "regional",
+        "courtName": "Newport (South Wales) Regional Divorce Centre",
+        "courtNameCy": null,
+        "localAuthority": "Reading Borough Council"
+      },
+      {
+        "slug": "north-west-regional-divorce-centre",
+        "catchmentType": "regional",
+        "courtName": "North West Regional Divorce Centre ",
+        "courtNameCy": null,
+        "localAuthority": "Hackney Borough Council"
+      }
+    ]
+  },
+  {
+    "name": "Civil partnership",
+    "description": "Ending a civil partnership.",
+    "slug": "civil-partnership",
+    "serviceAreaType": "Family",
+    "serviceAreaCourts": [
+      {
+        "slug": "bury-st-edmunds-regional-divorce-centre",
+        "catchmentType": "regional",
+        "courtName": "Bury St Edmunds Regional Divorce Centre",
+        "courtNameCy": null,
+        "localAuthority": "Haringey Borough Council"
+      },
+      {
+        "slug": "newport-south-wales-regional-divorce-centre",
+        "catchmentType": "regional",
+        "courtName": "Newport (South Wales) Regional Divorce Centre",
+        "courtNameCy": null,
+        "localAuthority": "Reading Borough Council"
+      },
+      {
+        "slug": "north-west-regional-divorce-centre",
+        "catchmentType": "regional",
+        "courtName": "North West Regional Divorce Centre ",
+        "courtNameCy": null,
+        "localAuthority": "Hackney Borough Council"
+      }
+    ]
+  }
+]

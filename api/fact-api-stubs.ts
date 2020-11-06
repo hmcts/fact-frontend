@@ -10,6 +10,7 @@ const familyServiceAreasData = require('./familyAreaOfLaw.json');
 const childcareAndParentingServiceAreasData = require('./childcareAndParentingAreaOfLaw.json');
 const moneyServiceData = require('./money-service-data.json');
 const moneyClaimsData = require('./money-claims-data.json');
+const serviceAreas = require('./service-areas.json');
 const port = 8080;
 
 
@@ -58,6 +59,18 @@ app.get('/services/childcare-and-parenting/service-areas', (req: Request, res: R
 
 app.get('/service-areas/money-claims', (req: Request, res: Response) => {
   res.json(moneyClaimsData);
+});
+
+app.get('/search/postcode', (req: Request, res: Response) => {
+  const { postcode, serviceType } = req.query;
+  const serviceAreasData = [...serviceAreas];
+  //backend should use mapit to determine the local authorities (council)
+  console.log(postcode);
+  const localAuthority = 'Haringey Borough Council';
+
+  const serviceArea = serviceAreasData.find(service => service.serviceAreaType === serviceType);
+  const result = serviceArea.serviceAreaCourts.find((court: any) => court.catchmentType === 'regional' && court.localAuthority === localAuthority);
+  res.json(result);
 });
 
 app.listen(port, () => {
