@@ -1,7 +1,7 @@
 nodejs:
   applicationPort: 3100
-  memoryRequests: "512Mi"
-  cpuRequests: "100m"
+  memoryRequests: 512Mi
+  cpuRequests: 50m
   aadIdentityName: fact
   keyVaults:
     fact:
