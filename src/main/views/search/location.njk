@@ -30,7 +30,10 @@
         {{ hint }}
       </span>
     </h1>
-    <form method="GET" action="/courts">
+    {% if lng == cy %}
+      <form method="GET" action="/courts?lng=cy">
+    {% else %}
+      <form method="GET" action="/courts">
       <div class="govuk-form-group {{ 'govuk-form-group--error' if error.text }}" id="form-group">
         <h2 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--m" for="search">

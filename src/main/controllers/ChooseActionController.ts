@@ -3,6 +3,7 @@ import { Response } from 'express';
 import { hasProperty } from '../utils/validation';
 import { PageData } from '../interfaces/PageData';
 import { cloneDeep } from 'lodash';
+const url = require('url');
 
 export class ChooseActionController {
   public get(req: FactRequest, res: Response): void {
@@ -19,6 +20,9 @@ export class ChooseActionController {
       return res.render('choose-action', data);
     }
 
-    res.redirect('/services');
+    return res.redirect(url.format({
+      pathname: '/services',
+      query:req.query,
+    }));
   }
 }

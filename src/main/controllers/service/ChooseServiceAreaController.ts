@@ -5,6 +5,7 @@ import { FactApi } from '../../utils/FactApi';
 import autobind from 'autobind-decorator';
 import { ServiceAreasData } from '../../interfaces/ServiceAreasData';
 import { cloneDeep } from 'lodash';
+const url = require('url');
 
 @autobind
 export class ChooseServiceAreaController {
@@ -22,9 +23,9 @@ export class ChooseServiceAreaController {
       errors: hasErrors,
     };
 
-    const serviceAreasData = await this.api.serviceAreas(serviceChosen);
+    const serviceAreasData = await this.api.serviceAreas(serviceChosen, req.lng);
     if (!isObjectEmpty(serviceAreasData)) {
-      const serviceData = await this.api.getService(serviceChosen);
+      const serviceData = await this.api.getService(serviceChosen, req.lng);
       data.results = serviceAreasData;
       data.title = data.title
         .replace('{serviceChosen}', serviceData.name.toLowerCase());
@@ -48,7 +49,10 @@ export class ChooseServiceAreaController {
       const data = await this.getServiceData(req, true);
       res.render('service', data);
     } else {
-      res.redirect('/services/unknown-service');
+      return res.redirect(url.format({
+        pathname: '/services/unknown-service',
+        query:req.query,
+      }));
     }
   }
 
