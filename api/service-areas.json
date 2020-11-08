@@ -1,8 +1,8 @@
 [
   {
-    "name": "Divorce",
+    "name": "Probate",
     "description": "Ending a marriage, getting a legal separation or help with money, property and children during a divorce.",
-    "slug": "divorce",
+    "slug": "probate",
     "serviceAreaType": "Family",
     "serviceAreaCourts": [
       {

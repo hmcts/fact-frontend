@@ -62,14 +62,17 @@ app.get('/service-areas/money-claims', (req: Request, res: Response) => {
 });
 
 app.get('/search/postcode', (req: Request, res: Response) => {
-  const { postcode, serviceType } = req.query;
+  const { postcode, serviceArea } = req.query;
   const serviceAreasData = [...serviceAreas];
   //backend should use mapit to determine the local authorities (council)
   console.log(postcode);
   const localAuthority = 'Haringey Borough Council';
 
-  const serviceArea = serviceAreasData.find(service => service.serviceAreaType === serviceType);
-  const result = serviceArea.serviceAreaCourts.find((court: any) => court.catchmentType === 'regional' && court.localAuthority === localAuthority);
+  const serviceAreaObj = serviceAreasData.find(service => service.slug === serviceArea);
+  let result = {};
+  if (serviceAreaObj.serviceAreaType === 'Family') {
+    result = serviceAreaObj.serviceAreaCourts.find((court: any) => court.catchmentType === 'regional' && court.localAuthority === localAuthority);
+  }
   res.json(result);
 });
 
