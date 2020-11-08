@@ -85,6 +85,8 @@ export class ChooseServiceAreaController {
               return res.redirect('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
             }
           }
+        } else {
+          res.redirect('/services/unknown-service');
         }
       } else {
         res.redirect('/services/unknown-service');

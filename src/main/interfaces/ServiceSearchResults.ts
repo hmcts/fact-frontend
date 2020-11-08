@@ -5,6 +5,6 @@ export interface ServiceSearchResults extends PageData {
   nameOfCourt: string;
   slug: string;
   regionStatement: string;
-  applyOnline: string;
-  applyOnlineUrl: string;
+  onlineText: string;
+  onlineUrl: string;
 }

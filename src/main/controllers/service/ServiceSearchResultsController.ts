@@ -28,10 +28,10 @@ export class ServiceSearchResultsController {
           .replace('{court-name}', court.courtName);
         data.slug = data.slug
           .replace('{slug}', court.slug);
-        data.applyOnline = data.applyOnline
-          .replace('{applyOnline}', serviceAreaData.applyOnline);
-        data.applyOnlineUrl = data.applyOnlineUrl
-          .replace('{applyOnlineUrl}', serviceAreaData.applyOnlineUrl);
+        data.onlineText = data.onlineText
+          .replace('{applyOnline}', serviceAreaData.onlineText);
+        data.onlineUrl = data.onlineUrl
+          .replace('{applyOnlineUrl}', serviceAreaData.onlineUrl);
       }
     }
     data.hint = data.hint

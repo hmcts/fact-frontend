@@ -3,12 +3,12 @@
   "description": "Claims for when you are owed money or responding to money claims against you.",
   "slug": "money-claims",
   "serviceAreaType": null,
-  "applyOnline": "Make a money claim online",
-  "applyOnlineUrl": "https://www.gov.uk/make-money-claim",
+  "onlineText": "Make a money claim online",
+  "onlineUrl": "https://www.gov.uk/make-money-claim",
   "serviceAreaCourts": [
     {
       "slug": "county-court-money-claims-centre-ccmcc",
-      "catchmentType": "national",
+      "catchmentType": "local",
       "courtName": "County Court Money Claims Centre (CCMCC)"
     }
   ]
