@@ -1,6 +1,5 @@
 import { FactRequest } from '../../interfaces/FactRequest';
 import { Response } from 'express';
-import { isEmpty } from '../../utils/validation';
 import { FactApi } from '../../utils/FactApi';
 import autobind from 'autobind-decorator';
 import { SearchResultsData } from '../../interfaces/SearchResultsData';
@@ -20,10 +19,15 @@ export class SearchResultsController {
       path: '/courts',
       results: [],
       search: query,
-      errors: false,
     };
 
-    if (!isEmpty(query)) {
+    if (query === '') {
+      data.error = data.errorBlank;
+    }
+    else if (query && query.length < 3) {
+      data.error = data.errorTooShort;
+    }
+    else {
       const courts = await this.api.search(query);
 
       if (courts.length > 0) {
@@ -32,8 +36,6 @@ export class SearchResultsController {
           .replace('{total}', data.results.length.toString())
           .replace('{search}', data.search);
       }
-    } else {
-      data.errors = true;
     }
 
     res.render('search/location', data);

@@ -54,7 +54,7 @@ Feature: Court Name Know - Court Details
 
     Examples:
       | multiple_addresses_court                      |
-      | Aylesbury Magistrates' Court and Family Court |
+      | Darlington Magistrates' Court and Family Court |
 
   Scenario Outline: Court or tribunal urgent notice
     And I have entered "<urgent_message_court>" as search criteria

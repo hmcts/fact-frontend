@@ -26,7 +26,7 @@ describe('Search Option Controller', () => {
     };
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/search');
+    expect(res.redirect).toHaveBeenCalledWith('/search-by-name');
   });
 
   test('Should redirect to the Choose Action page', async () => {

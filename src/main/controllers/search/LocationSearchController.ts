@@ -8,7 +8,7 @@ export class LocationSearchController {
   public get(req: FactRequest, res: Response): void {
     const data: PageData = {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng).search.location),
-      path: '/search',
+      path: '/search-by-name',
     };
     res.render('search/location', data);
   }
