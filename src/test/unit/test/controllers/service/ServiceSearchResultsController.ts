@@ -30,7 +30,7 @@ describe('Service Search Results Controller', () => {
     await controller.get(req, res);
     const expectedData: PageData = {
       ...i18n['postcode-search'],
-      path: '/postcode',
+      path: '/search-by-postcode',
       errors: true
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
