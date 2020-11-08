@@ -20,7 +20,7 @@ describe('Home Controller', () => {
     await controller.get(req, res);
     const expectedData: PageData = {
       ...i18n.search.location,
-      path: '/search',
+      path: '/search-by-name',
     };
     expect(res.render).toBeCalledWith('search/location', expectedData);
   });

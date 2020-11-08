@@ -9,7 +9,7 @@ const axios = Axios.create({ baseURL: config.TEST_URL });
 
 const startPage = '/';
 const searchOptionPage = '/search-option';
-const locationSearchPage = '/search';
+const locationSearchPage = '/search-by-name';
 const serviceChooseActionPage = '/service-choose-action';
 const searchLocationLondon = '/courts?search=London';
 const courtDetailsInPerson = '/courts/birmingham-civil-and-family-justice-centre';
