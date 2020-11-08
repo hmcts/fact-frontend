@@ -16,7 +16,7 @@ describe('Service Postcode Search Controller', () => {
     await controller.get(req, res);
     const expectedData: PageData = {
       ...i18n['postcode-search'],
-      path: '/postcode',
+      path: '/search-by-postcode',
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
@@ -30,7 +30,7 @@ describe('Service Postcode Search Controller', () => {
     await controller.post(req, res);
     const expectedData: PageData = {
       ...i18n['postcode-search'],
-      path: '/postcode',
+      path: '/search-by-postcode',
       errors: true
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);

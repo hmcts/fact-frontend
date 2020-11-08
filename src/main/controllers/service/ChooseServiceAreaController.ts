@@ -75,7 +75,7 @@ export class ChooseServiceAreaController {
           res.redirect('/services/unknown-service');
         }
       } else {
-        res.redirect('/postcode');
+        res.redirect('/search-by-postcode');
       }
     }
   }

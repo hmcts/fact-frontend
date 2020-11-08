@@ -9,7 +9,7 @@ export class ServicePostcodeSearchController {
   public get(req: FactRequest, res: Response): void {
     const data: PageData = {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['postcode-search']),
-      path: '/postcode',
+      path: '/search-by-postcode',
     };
     res.render('postcode-search', data);
   }
@@ -18,7 +18,7 @@ export class ServicePostcodeSearchController {
     const { postcode } = req.body;
     const data: PageData = {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['postcode-search']),
-      path: '/postcode',
+      path: '/search-by-postcode',
       errors: false
     };
     if (isPostcodeValid(postcode)) {
