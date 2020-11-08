@@ -72,19 +72,9 @@ export class FactApi {
       });
   }
 
-  public courtsInServiceAreas(service: string, serviceArea: string): Promise<CourtDetailsResult[]> {
+  public getServiceArea(serviceArea: string): Promise<ServiceAreaResult> {
     return this.axios
-      .get(`/courts/${service}/${serviceArea}`)
-      .then(results => results.data)
-      .catch(err => {
-        this.logger.error(err);
-        return [];
-      });
-  }
-
-  public getServiceArea(service: string, serviceArea: string): Promise<ServiceAreaResult> {
-    return this.axios
-      .get(`/services/${service}/${serviceArea}`)
+      .get(`/service-areas/${serviceArea}`)
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
