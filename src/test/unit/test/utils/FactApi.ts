@@ -176,47 +176,6 @@ describe('FactApi', () => {
     await expect(spy).toBeCalled();
   });
 
-  test('Should return courts in service areas', async () => {
-    const results = {
-      data: [
-        {
-          'name': 'Court 1',
-          'slug': 'court-1',
-          'catchment': 'national'
-        },
-        {
-          'name': 'Court 2',
-          'slug': 'court-2',
-          'catchment': 'local'
-        }
-      ],
-    };
-
-    const mockAxios = { get: async () => results } as any;
-    const mockLogger = {} as any;
-
-    const api = new FactApi(mockAxios, mockLogger);
-
-    await expect(api.courtsInServiceAreas('service', 'service-area')).resolves.toEqual(results.data);
-  });
-
-  test('Should return no courts and log error in service areas', async () => {
-    const mockAxios = {
-      get: async () => {
-        throw new Error('Error');
-      }
-    } as any;
-    const mockLogger = {
-      error: async (message: string) => console.log(message)
-    } as any;
-
-    const spy = jest.spyOn(mockLogger, 'error');
-    const api = new FactApi(mockAxios, mockLogger);
-
-    await expect(api.courtsInServiceAreas('service', 'service-area')).resolves.toEqual([]);
-    await expect(spy).toBeCalled();
-  });
-
   test('Should return service area', async () => {
     const results = {
       data: [{
@@ -233,7 +192,7 @@ describe('FactApi', () => {
 
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.getServiceArea('service', 'service-area')).resolves.toEqual(results.data);
+    await expect(api.getServiceArea('service-area')).resolves.toEqual(results.data);
   });
 
   test('Should return no service area and log error', async () => {
@@ -247,7 +206,7 @@ describe('FactApi', () => {
     const spy = jest.spyOn(mockLogger, 'error');
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.getServiceArea('service', 'service-area' )).resolves.toEqual([]);
+    await expect(api.getServiceArea('service-area' )).resolves.toEqual([]);
     await expect(spy).toBeCalled();
   });
 

@@ -13,11 +13,9 @@ export class ChooseServiceAreaController {
     private readonly api: FactApi
   ) { }
 
-  private async getServiceData(req: FactRequest, hasErrors: boolean) {
-    const serviceChosen: string = req.params.service as string;
-    const action: string = req.params.action as string;
+  private async getServiceData(serviceChosen: string, action: string, serviceAreasPageData: ServiceAreasData, hasErrors: boolean) {
     const data: ServiceAreasData = {
-      ...cloneDeep(req.i18n.getDataByLanguage(req.lng).service),
+      ...cloneDeep(serviceAreasPageData),
       path: '/services/' + serviceChosen + '/service-areas/' + action,
       results: [],
       errors: hasErrors,
@@ -40,24 +38,42 @@ export class ChooseServiceAreaController {
   }
 
   public async get(req: FactRequest, res: Response) {
-    const data = await this.getServiceData(req, false);
+    const serviceChosen = req.params.service as string;
+    const action = req.params.action as string;
+    const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
+    const data = await this.getServiceData(serviceChosen, action, serviceAreasPageData,false);
     res.render('service', data);
   }
 
   public async post(req: FactRequest, res: Response) {
+    enum Action {
+      SendDocuments = 'documents',
+      Update = 'update',
+      NotListed = 'not-listed',
+    }
+
+    enum Catchment {
+      National = 'national',
+      Regional = 'regional'
+    }
+
     if (!hasProperty(req.body, 'serviceArea')) {
-      const data = await this.getServiceData(req, true);
-      res.render('service', data);
+      const serviceChosen = req.params.service as string;
+      const action = req.params.action as string;
+      const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
+      const serviceData = await this.getServiceData(serviceChosen, action, serviceAreasPageData, true);
+      res.render('service', serviceData);
     } else {
       const action: string = req.params.action as string;
-      if(action === 'documents' || action === 'update' || action === 'not-listed' && req.body.serviceArea != 'not-listed'){
-        const courtsInServiceArea = await this.api.courtsInServiceAreas(req.params.service, req.body.serviceArea);
+      if(action === Action.SendDocuments || action === Action.Update || action === Action.NotListed && req.body.serviceArea != 'not-listed'){
+        const serviceArea = await this.api.getServiceArea(req.body.serviceArea);
+        const courtsInServiceArea = serviceArea.serviceAreaCourts;
         let nationalCounter = 0;
         let regionalCounter = 0;
         for(const courtInServiceArea of courtsInServiceArea) {
-          if (courtInServiceArea.catchment === 'national') {
+          if (courtInServiceArea.catchmentType === Catchment.National) {
             nationalCounter++;
-          } else if (courtInServiceArea.catchment === 'regional') {
+          } else if (courtInServiceArea.catchmentType === Catchment.Regional) {
             regionalCounter++;
           }
         }

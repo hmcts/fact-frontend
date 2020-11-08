@@ -8,21 +8,7 @@ When('I select {string} category from the list of categories', async (option: st
 });
 
 Then('I select an {string} of either send documents, get an application update or not listed', async (option: string) => {
-  let element;
-  switch(option) {
-    case 'document court': {
-      element = '#document-court';
-      break;
-    }
-    case 'update court': {
-      element = '#update-court';
-      break;
-    }
-    default: {
-      element = '#not-listed';
-      break;
-    }
-  }
+  const element = option;
   await I.click(element);
 });
 

@@ -8,7 +8,6 @@ const servicesData = require('./services.json');
 const moneyServiceAreasData = require('./moneyAreaOfLaw.json');
 const familyServiceAreasData = require('./familyAreaOfLaw.json');
 const childcareAndParentingServiceAreasData = require('./childcareAndParentingAreaOfLaw.json');
-const courtsInMoneyClaims = require('./courts-in-money-claims.json');
 const moneyServiceData = require('./money-service-data.json');
 const moneyClaimsData = require('./money-claims-data.json');
 const port = 8080;
@@ -57,11 +56,7 @@ app.get('/services/childcare-and-parenting/service-areas', (req: Request, res: R
   res.json(childcareAndParentingServiceAreasData);
 });
 
-app.get('/courts/money/money-claims', (req: Request, res: Response) => {
-  res.json(courtsInMoneyClaims);
-});
-
-app.get('/services/money/money-claims', (req: Request, res: Response) => {
+app.get('/service-areas/money-claims', (req: Request, res: Response) => {
   res.json(moneyClaimsData);
 });
 

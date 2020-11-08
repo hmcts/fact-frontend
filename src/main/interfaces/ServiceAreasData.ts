@@ -15,4 +15,11 @@ export interface ServiceAreaResult {
   slug: string;
   applyOnline: string;
   applyOnlineUrl: string;
+  serviceAreaCourts: ServiceAreaCourt[];
+}
+
+export interface ServiceAreaCourt {
+  slug: string;
+  catchmentType: string;
+  courtName: string;
 }

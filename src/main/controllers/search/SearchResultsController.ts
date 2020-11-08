@@ -14,7 +14,7 @@ export class SearchResultsController {
   ) { }
 
   public async get(req: FactRequest, res: Response): Promise<void> {
-    const query: string = req.query.search as string;
+    const query = req.query.search as string;
     const data: SearchResultsData = {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng).search.location),
       path: '/courts',

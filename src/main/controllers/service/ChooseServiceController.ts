@@ -30,8 +30,6 @@ export class ChooseServiceController {
   }
 
   public async get(req: FactRequest, res: Response) {
-    const action: string = req.params.query as string;
-    console.log(action);
     const data = await this.getServices(req, false);
     res.render('choose-service', data);
   }
@@ -42,6 +40,9 @@ export class ChooseServiceController {
       return res.render('choose-service', data);
     }
 
-    return res.redirect('/services/' + req.body.chooseService + '/service-areas/' + req.params.action as string);
+    const action = req.params.action as string;
+    const serviceChosen = req.body.chooseService;
+
+    return res.redirect('/services/' + serviceChosen + '/service-areas/' + action);
   }
 }
