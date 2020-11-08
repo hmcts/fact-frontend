@@ -19,7 +19,7 @@
 {% endblock %}
 
 {% block content %}
-{% if errors %}
+{% if error %}
   {{ errorSummary(error.title, error.text, "#search") }}
 {% endif %}
 
@@ -31,22 +31,24 @@
       </span>
     </h1>
     <form method="GET" action="/courts">
-      {{ govukInput({
-        label: {
-          text: text,
-          classes: "govuk-label--m",
-          isPageHeading: true
-        },
-        classes: "govuk-input govuk-!-width-three-quarters",
-        id: "search",
-        name: "search",
-        value: search,
-        errorMessage: { text: error.text | safe } if errors
-        }) }}
-        {{ govukButton({
-          text: button,
-          classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
-      }) }}
+      <div class="govuk-form-group {{ 'govuk-form-group--error' if error.text }}" id="form-group">
+        <h2 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="search">
+            {{ text | safe }}
+          </label>
+          <div id="event-name-hint" class="govuk-hint">
+            {{ textExample | safe }}
+          </div>
+
+          {% if (error.text) %}
+            <span id="search-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> {{ error.text | safe }}
+            </span>
+          {% endif %}
+        </h2>
+        <input class="govuk-input govuk-!-width-three-quarters {{ 'govuk-input--error' if error.text }}" id="search" name="search" type="text" value="{{ search | safe }}">
+        <button type="submit" class="govuk-button">Search</button>
+      </div>
     </form>
 
     {% if (path !== '/search') and (results.length > 0) %}
