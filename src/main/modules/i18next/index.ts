@@ -10,7 +10,9 @@ const resources = requireDir(module, '../../', {include: /locales/}).locales;
 export class I18next {
 
   constructor() {
-    const options = {preload: ['en', 'cy'], resources, fallbackLng: 'en', supportedLngs:['en','cy'], detection: {order: ['querystring']}};
+    const options = {preload: ['en', 'cy'], resources, fallbackLng: 'en', supportedLngs:['en','cy'],
+      detection: {order: ['querystring', 'cookie'],  caches: ['cookie']
+      }};
 
     i18next
       .use(i18nextMiddleware.LanguageDetector)

@@ -3,7 +3,6 @@ import { FactRequest } from '../../interfaces/FactRequest';
 import { PageData } from '../../interfaces/PageData';
 import { hasProperty } from '../../utils/validation';
 import { cloneDeep } from 'lodash';
-const url = require('url');
 
 export class SearchOptionController {
 
@@ -22,15 +21,9 @@ export class SearchOptionController {
     }
     const knowLocation = req.body.knowLocation as string;
     if (knowLocation === 'yes') {
-      return res.redirect(url.format({
-        pathname: '/search',
-        query:req.query
-      }));
+      return res.redirect('/search');
     }
 
-    return res.redirect(url.format({
-      pathname: '/service-choose-action',
-      query:req.query,
-    }));
+    return res.redirect('/service-choose-action');
   }
 }

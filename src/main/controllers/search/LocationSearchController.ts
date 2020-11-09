@@ -10,7 +10,6 @@ export class LocationSearchController {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng).search.location),
       path: '/search',
     };
-    Object.assign(data, req.lng);
     res.render('search/location', data);
   }
 }
