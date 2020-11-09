@@ -15,8 +15,8 @@ Feature: View money claims result
     Then I am presented with the "Search for location - Find a court or tribunal - GOV.UK" page
     And I can select that entry via the hyperlink
     Then I can view the selected court or tribunal details
-  Examples:
-    | options         |
-    | #document-court  |
-    | #update-court    |
-    | #not-listed      |
+    Examples:
+      | options         |
+      | #document-court  |
+      | #update-court    |
+      | #not-listed      |

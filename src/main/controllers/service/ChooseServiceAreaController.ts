@@ -5,6 +5,7 @@ import { FactApi } from '../../utils/FactApi';
 import autobind from 'autobind-decorator';
 import { ServiceAreasData } from '../../interfaces/ServiceAreasData';
 import { cloneDeep } from 'lodash';
+import { Action } from '../../utils/Action';
 
 @autobind
 export class ChooseServiceAreaController {
@@ -38,52 +39,34 @@ export class ChooseServiceAreaController {
   }
 
   public async get(req: FactRequest, res: Response) {
-    const serviceChosen = req.params.service as string;
-    const action = req.params.action as string;
+    const {service, action} = req.params;
     const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
-    const data = await this.getServiceData(serviceChosen, action, serviceAreasPageData,false);
+    const data = await this.getServiceData(service, action, serviceAreasPageData,false);
     res.render('service', data);
   }
 
   public async post(req: FactRequest, res: Response) {
-    enum Action {
-      SendDocuments = 'documents',
-      Update = 'update',
-      NotListed = 'not-listed',
-    }
-
-    enum Catchment {
-      National = 'national',
-      Regional = 'regional'
-    }
-
+    const action = req.params.action as string;
     if (!hasProperty(req.body, 'serviceArea')) {
       const serviceChosen = req.params.service as string;
-      const action = req.params.action as string;
       const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
       const serviceData = await this.getServiceData(serviceChosen, action, serviceAreasPageData, true);
       res.render('service', serviceData);
     } else {
-      const action: string = req.params.action as string;
       if(req.body.serviceArea === 'not-listed') {
         res.redirect('/services/unknown-service');
       } else if(action === Action.SendDocuments || action === Action.Update || action === Action.NotListed){
         const serviceArea = await this.api.getServiceArea(req.body.serviceArea);
         const courtsInServiceArea = serviceArea.serviceAreaCourts;
-        let nationalCounter = 0;
-        let regionalCounter = 0;
-        for(const courtInServiceArea of courtsInServiceArea) {
-          if (courtInServiceArea.catchmentType === Catchment.National) {
-            nationalCounter++;
-          } else if (courtInServiceArea.catchmentType === Catchment.Regional) {
-            regionalCounter++;
-          }
-        }
-        if(nationalCounter > 0) {
+
+        const nationalCourt = courtsInServiceArea.find(court => court.catchmentType === 'national');
+        const regionalCourt = courtsInServiceArea.find(court => court.catchmentType === 'regional');
+
+        if(nationalCourt != null) {
           if (action === 'update' || action === 'not-listed') {
             return res.redirect('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
           } else if(action === 'documents'){
-            if(regionalCounter === 0){
+            if(regionalCourt === undefined){
               return res.redirect('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
             }
           }

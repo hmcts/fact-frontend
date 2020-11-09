@@ -31,11 +31,15 @@
             {{ hint }}
           </p>
         </div>
+        {% for court in results.serviceAreaCourts %}
+        {% if court.catchmentType === 'national' %}
         <div class="search-result" id="search-result">
           <h2 class="govuk-heading-m">
-            <a class="govuk-link" href="/courts/{{ slug }}">{{ nameOfCourt }}</a>
+            <a class="govuk-link" href="/courts/{{ court.slug }}">{{ court.courtName }}</a>
           </h2>
         </div>
+        {% endif %}
+        {% endfor %}
       </div>
      <div class="govuk-grid-row">
           <p class="govuk-body-m">
@@ -49,7 +53,7 @@
             {{ applyOnlineHeading }}
           </h3>
           <p class="govuk-body-m">
-          <a class="govuk-link" href="{{ onlineUrl }}"> {{ onlineText }} </a>
+          <a class="govuk-link" href="{{ results.onlineUrl }}"> {{ results.onlineText }} </a>
           </p>
       </div>
     </div>
