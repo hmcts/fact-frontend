@@ -269,4 +269,37 @@ describe('Choose service area controller', () => {
     expect(res.redirect).toHaveBeenCalledWith('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
   });
 
+  test('Should redirect to unknown service if action is documents and has a regional court', async () => {
+    const req = mockRequest(i18n);
+    req.params = {
+      service: 'service',
+      action: 'documents'
+    };
+    req.body = {
+      serviceArea: 'service-area'
+    };
+    response.serviceAreaResults = {
+      name: 'service area',
+      description: 'service area description',
+      slug: 'service-area-slug',
+      onlineText: 'Apply online',
+      onlineUrl: 'Online url',
+      serviceAreaCourts: [
+        {
+          name: 'court 1',
+          slug: 'court-1',
+          catchmentType: 'national'
+        },
+        {
+          name: 'court 2',
+          slug: 'court-2',
+          catchmentType: 'regional'
+        }
+      ]
+    };
+    const res = mockResponse();
+    await controller.post(req, res);
+    expect(res.redirect).toHaveBeenCalledWith('/services/unknown-service');
+  });
+
 });

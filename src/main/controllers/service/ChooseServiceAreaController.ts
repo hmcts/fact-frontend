@@ -69,6 +69,8 @@ export class ChooseServiceAreaController {
           } else if(action === Action.SendDocuments){
             if(regionalCourt === undefined){
               return res.redirect('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
+            } else {
+              res.redirect('/services/unknown-service');
             }
           }
         } else {
