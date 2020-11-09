@@ -17,7 +17,6 @@ Feature: Postcode Proximity Feature
     Examples:
       | options        | area_of_law             | area_of_law_category |
       | nearest court  | money                   | money-claims         |
-      | nearest court  | childcare-and-parenting | adoption             |
 
 
   Scenario Outline: Enter postcode - invalid format
@@ -34,7 +33,6 @@ Feature: Postcode Proximity Feature
     Examples:
       | options        | area_of_law             | area_of_law_category |
       | nearest court  | money                   | money-claims         |
-      | nearest court  | childcare-and-parenting | adoption             |
 
   Scenario Outline: No postcode entered
     Then I can select an "<options>" option from the list displayed
@@ -50,4 +48,3 @@ Feature: Postcode Proximity Feature
     Examples:
       | options        | area_of_law             | area_of_law_category |
       | nearest court  | money                   | money-claims         |
-      | nearest court  | childcare-and-parenting | adoption             |
