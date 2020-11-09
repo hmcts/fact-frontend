@@ -188,4 +188,85 @@ describe('Choose service area controller', () => {
     expect(res.render).toBeCalledWith('service', expectedData);
   });
 
+  test('Should redirect to unknown service if service area selected is not listed', async () => {
+    const req = mockRequest(i18n);
+    req.params = {
+      service: 'service',
+      action: 'update'
+    };
+    req.body = {
+      serviceArea: 'not-listed'
+    };
+
+    const res = mockResponse();
+    await controller.post(req, res);
+    expect(res.redirect).toHaveBeenCalledWith('/services/unknown-service');
+  });
+
+  test('Should redirect to unknown service if no national court found', async () => {
+    const req = mockRequest(i18n);
+    req.params = {
+      service: 'service',
+      action: 'update'
+    };
+    req.body = {
+      serviceArea: 'service-area'
+    };
+    response.serviceAreaResults = {
+      name: 'service area',
+      description: 'service area description',
+      slug: 'service-area-slug',
+      onlineText: 'Apply online',
+      onlineUrl: 'Online url',
+      serviceAreaCourts: [
+        {
+          name: 'court 1',
+          slug: 'court-1',
+          catchmentType: 'local'
+        },
+        {
+          name: 'court 2',
+          slug: 'court-2',
+          catchmentType: 'local'
+        }
+      ]
+    };
+    const res = mockResponse();
+    await controller.post(req, res);
+    expect(res.redirect).toHaveBeenCalledWith('/services/unknown-service');
+  });
+
+  test('Should redirect to search results if action is documents and no regional court found', async () => {
+    const req = mockRequest(i18n);
+    req.params = {
+      service: 'service',
+      action: 'documents'
+    };
+    req.body = {
+      serviceArea: 'service-area'
+    };
+    response.serviceAreaResults = {
+      name: 'service area',
+      description: 'service area description',
+      slug: 'service-area-slug',
+      onlineText: 'Apply online',
+      onlineUrl: 'Online url',
+      serviceAreaCourts: [
+        {
+          name: 'court 1',
+          slug: 'court-1',
+          catchmentType: 'national'
+        },
+        {
+          name: 'court 2',
+          slug: 'court-2',
+          catchmentType: 'local'
+        }
+      ]
+    };
+    const res = mockResponse();
+    await controller.post(req, res);
+    expect(res.redirect).toHaveBeenCalledWith('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
+  });
+
 });
