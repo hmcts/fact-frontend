@@ -21,7 +21,6 @@ export class ServiceSearchResultsController {
 
     const serviceAreaData = await this.api.getServiceArea(req.params.serviceArea);
     data.results = serviceAreaData;
-
     data.hint = data.hint
       .replace('{service-area}', serviceAreaData.name.toLowerCase());
     res.render('service-results', data);

@@ -6,6 +6,7 @@ import autobind from 'autobind-decorator';
 import { ServiceAreasData } from '../../interfaces/ServiceAreasData';
 import { cloneDeep } from 'lodash';
 import { Action } from '../../utils/Action';
+import { Catchment } from '../../utils/Catchment';
 
 @autobind
 export class ChooseServiceAreaController {
@@ -59,13 +60,13 @@ export class ChooseServiceAreaController {
         const serviceArea = await this.api.getServiceArea(req.body.serviceArea);
         const courtsInServiceArea = serviceArea.serviceAreaCourts;
 
-        const nationalCourt = courtsInServiceArea.find(court => court.catchmentType === 'national');
-        const regionalCourt = courtsInServiceArea.find(court => court.catchmentType === 'regional');
+        const nationalCourt = courtsInServiceArea.find(court => court.catchmentType === Catchment.National);
+        const regionalCourt = courtsInServiceArea.find(court => court.catchmentType === Catchment.Regional);
 
         if(nationalCourt != null) {
-          if (action === 'update' || action === 'not-listed') {
+          if (action === Action.Update || action === Action.NotListed) {
             return res.redirect('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
-          } else if(action === 'documents'){
+          } else if(action === Action.SendDocuments){
             if(regionalCourt === undefined){
               return res.redirect('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
             }
