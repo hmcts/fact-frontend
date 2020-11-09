@@ -8,7 +8,7 @@
   "serviceAreaCourts": [
     {
       "slug": "county-court-money-claims-centre-ccmcc",
-      "catchmentType": "local",
+      "catchmentType": "national",
       "courtName": "County Court Money Claims Centre (CCMCC)"
     }
   ]
