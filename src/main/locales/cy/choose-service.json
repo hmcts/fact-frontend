@@ -1,13 +1,13 @@
 {
-  "title": "Choose an area of law - Find a court or tribunal - GOV.UK",
-  "serviceName": "Find a court or tribunal",
-  "question": "What do you want to know more about?",
+  "title": "Dewiswch faes cyfreithiol - Dod o hyd i lys neu dribiwnlys - GOV.UK",
+  "serviceName": "Dod o hyd i lys neu dribiwnlys",
+  "question": "Beth ydych chi’n awyddus i wybod mwy amdano?",
   "answers": {
-    "a1": "I can't find what I'm looking for"
+    "a1": "Alla i ddim dod o hyd i'r hyn yr ydw i’n chwilio amdano"
   },
-  "button": "Continue",
+  "button": "Parhau",
   "error": {
-    "title": "There is a problem",
-    "text": "Select what do you want to know more about"
+    "title": "Mae yna broblem",
+    "text": "Dewiswch beth yr ydych chi’n awyddus i wybod mwy amdano"
   }
 }
