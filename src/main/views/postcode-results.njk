@@ -26,30 +26,54 @@
     </h1>
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-grid-row">
-        <div>
+        {% if results.length > 1 %}
+          <div>
+            <p class="govuk-body-m">
+              {{ multipleResultsHint }}
+            </p>
+          </div>
+          {% for court in results %}
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-three-quarters">
+                <h2 class="govuk-heading-m">
+                  <a class="govuk-link" href="/courts/{{ court.slug }}">{{ court.name }}</a>
+                </h2>
+              </div>
+              <div class="govuk-grid-column-one-quarter">
+                <p class="govuk-body-m">
+                  {{ court.distance }} {{ unit }}
+                </p>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <div>
+            <p class="govuk-body-m">
+              {{ hint }}
+              <br>
+              {{ secondHint }}
+            </p>
+          </div>
+          <div class="search-result">
+            <h2 class="govuk-heading-m">
+              <a class="govuk-link" href="/courts/{{ court.slug }}">{{ court.courtName }}</a>
+            </h2>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    {% if results.length === 1 %}
+      <div class="govuk-grid-column-one-third side-content">
+        <div id="areas-of-law">
+          <h3 class="govuk-heading-m">
+            {{ applyOnlineHeading }}
+          </h3>
           <p class="govuk-body-m">
-            {{ hint }}
-            <br>
-            {{ secondHint }}
+            <a class="govuk-link" href="{{ serviceArea.applyOnlineUrl }}"> {{ serviceArea.applyOnline }} </a>
           </p>
         </div>
-        <div class="search-result">
-          <h2 class="govuk-heading-m">
-            <a class="govuk-link" href="/courts/{{ court.slug }}">{{ court.courtName }}</a>
-          </h2>
-        </div>
       </div>
-    </div>
-    <div class="govuk-grid-column-one-third side-content">
-      <div id="areas-of-law">
-        <h3 class="govuk-heading-m">
-          {{ applyOnlineHeading }}
-        </h3>
-        <p class="govuk-body-m">
-          <a class="govuk-link" href="{{ serviceArea.applyOnlineUrl }}"> {{ serviceArea.applyOnline }} </a>
-        </p>
-      </div>
-    </div>
+    {% endif %}
   </div>
 </div>
 {% endblock %}

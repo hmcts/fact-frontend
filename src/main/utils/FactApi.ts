@@ -1,7 +1,7 @@
 import { Logger } from '../interfaces/Logger';
 import { AxiosInstance } from 'axios';
 import { SearchResult } from '../interfaces/SearchResultsData';
-import { CourtDetailsResult } from '../interfaces/CourtDetailsData';
+import { CourtDetailsResult, CourtDetailsWithDistanceResult } from '../interfaces/CourtDetailsData';
 import { ServiceResult } from '../interfaces/ServicesData';
 import { ServiceAreaResult } from '../interfaces/ServiceAreasData';
 
@@ -72,9 +72,19 @@ export class FactApi {
       });
   }
 
-  public postcodeSearch(postcode: string, serviceArea: string): Promise<SearchResult> {
+  public getServiceAreaType(serviceArea: string): Promise<string> {
     return this.axios
-      .get(`/search/postcode?postcode=${postcode}&serviceArea=${serviceArea}`)
+      .get(`/service-areas/${serviceArea}/service-area-type`)
+      .then(results => results.data)
+      .catch(err => {
+        this.logger.error(err);
+        return '';
+      });
+  }
+
+  public postcodeServiceAreaSearch(postcode: string, serviceArea: string): Promise<CourtDetailsWithDistanceResult[]> {
+    return this.axios
+      .get(`search/results.json?postcode=${postcode}&aol=${serviceArea}`)
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
