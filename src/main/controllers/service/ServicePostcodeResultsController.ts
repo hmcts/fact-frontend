@@ -25,11 +25,11 @@ export class ServicePostcodeResultsController {
         errors: false,
         results: []
       };
-      const serviceAreaType = await this.api.getServiceAreaType(serviceArea);
-      if (serviceAreaType === 'Family') {
+      const serviceAreaData = await this.api.getServiceArea(serviceArea, req.lng);
+      if (serviceAreaData.serviceAreaType === 'Family') {
         console.log('Family TODO');
         data.hint = data.hint.replace('{serviceArea}', req.params.serviceArea);
-      } else if (serviceAreaType === 'Civil') {
+      } else if (serviceAreaData.serviceAreaType === 'Civil') {
         console.log('Civil TODO');
       } else {
         data.results = await this.api.postcodeServiceAreaSearch(postcode, serviceArea);

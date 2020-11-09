@@ -61,32 +61,13 @@ app.get('/service-areas/money-claims', (req: Request, res: Response) => {
   res.json(moneyClaimsData);
 });
 
-app.get('/search/postcode', (req: Request, res: Response) => {
-  const { postcode, serviceArea } = req.query;
+app.get('/service-area/:serviceArea/service-area-type', (req: Request, res: Response) => {
+  const serviceArea: string = (req.params.serviceArea as string);
   const serviceAreasData = [...serviceAreas];
-  //backend should use mapit to determine the local authorities (council)
-  console.log(postcode);
-  const localAuthority = 'Haringey Borough Council';
-
   const serviceAreaObj = serviceAreasData.find(service => service.slug === serviceArea);
   let result = {};
-  if (serviceAreaObj && serviceAreaObj.serviceAreaType === 'Family') {
-    result = serviceAreaObj.serviceAreaCourts.find((court: any) => court.catchmentType === 'regional' && court.localAuthority === localAuthority);
-  }
-  res.json(result);
-});
-
-app.get('/search/postcode', (req: Request, res: Response) => {
-  const { postcode, serviceArea } = req.query;
-  const serviceAreasData = [...serviceAreas];
-  //backend should use mapit to determine the local authorities (council)
-  console.log(postcode);
-  const localAuthority = 'Haringey Borough Council';
-
-  const serviceAreaObj = serviceAreasData.find(service => service.slug === serviceArea);
-  let result = {};
-  if (serviceAreaObj && serviceAreaObj.serviceAreaType === 'Family') {
-    result = serviceAreaObj.serviceAreaCourts.find((court: any) => court.catchmentType === 'regional' && court.localAuthority === localAuthority);
+  if (serviceAreaObj) {
+    result = serviceAreaObj.serviceAreaType;
   }
   res.json(result);
 });

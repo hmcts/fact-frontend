@@ -72,16 +72,6 @@ export class FactApi {
       });
   }
 
-  public getServiceAreaType(serviceArea: string): Promise<string> {
-    return this.axios
-      .get(`/service-areas/${serviceArea}/service-area-type`)
-      .then(results => results.data)
-      .catch(err => {
-        this.logger.error(err);
-        return '';
-      });
-  }
-
   public postcodeServiceAreaSearch(postcode: string, serviceArea: string): Promise<CourtDetailsWithDistanceResult[]> {
     return this.axios
       .get(`search/results.json?postcode=${postcode}&aol=${serviceArea}`)
