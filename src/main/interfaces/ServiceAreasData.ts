@@ -12,4 +12,14 @@ export interface ServiceAreasData extends PageData {
 export interface ServiceAreaResult {
   name: string;
   description: string;
+  slug: string;
+  onlineUrl: string;
+  onlineText: string;
+  serviceAreaCourts: ServiceAreaCourt[];
+}
+
+export interface ServiceAreaCourt {
+  slug: string;
+  catchmentType: string;
+  courtName: string;
 }

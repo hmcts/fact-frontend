@@ -14,17 +14,11 @@ Feature: Harm and abuse area of law
     Given I can select a "<harm and abuse category>" from the harm and abuse service area page
     Then I can continue having selected that option
     Examples:
-      | options         |
-      | nearest court   |
-      | document court  |
-      | update court    |
-      | not listed      |
-    Examples:
-      | harm and abuse category   |
-      | domestic abuse            |
-      | female genital mutilation |
-      | forced marriage           |
-      | not listed                |
+      | options         | harm and abuse category   |
+      | nearest court   | domestic abuse            |
+      | document court  | female genital mutilation |
+      | update court    | forced marriage           |
+      | not listed      | not listed                |
 
   Scenario Outline: Do not select harm and abuse area of law or I can't find what I'm looking for
     Then I can select an "<options>" option from the list displayed
@@ -37,14 +31,8 @@ Feature: Harm and abuse area of law
     Given I can select a "<harm and abuse category>" from the crime service area page
     Then I can continue having selected that option
     Examples:
-      | options         |
-      | nearest court   |
-      | document court  |
-      | update court    |
-      | not listed      |
-    Examples:
-      | harm and abuse category   |
-      | domestic abuse            |
-      | female genital mutilation |
-      | forced marriage           |
-      | not listed                |
+      | options         | harm and abuse category   |
+      | nearest court   | domestic abuse            |
+      | document court  | female genital mutilation |
+      | update court    | forced marriage           |
+      | not listed      | not listed                |

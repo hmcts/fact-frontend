@@ -56,6 +56,23 @@ describe('FactApi', () => {
     await expect(api.court('London', 'en')).resolves.toEqual(results.data);
   });
 
+  test('Should return no result and log error from get request', async () => {
+
+    const mockAxios = { get: async () => {
+      throw new Error('Error');
+    }} as any;
+    const mockLogger = {
+      error: async ( message: string ) => console.log(message)
+    } as any;
+
+    const spy = jest.spyOn(mockLogger, 'error');
+    const api = new FactApi(mockAxios, mockLogger);
+
+    await expect(api.court( null , 'en')).resolves.toEqual({});
+    await expect(spy).toBeCalled();
+
+  });
+
   test('Should return services result', async () => {
     const results = {
       data: [{
@@ -105,7 +122,24 @@ describe('FactApi', () => {
 
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.court('slug', 'en')).resolves.toEqual(results.data);
+    await expect(api.getService('slug', 'en')).resolves.toEqual(results.data);
+  });
+
+  test('Should return no service result and log error', async () => {
+    const mockAxios = {
+      get: async () => {
+        throw new Error('Error');
+      }
+    } as any;
+    const mockLogger = {
+      error: async (message: string) => console.log(message)
+    } as any;
+
+    const spy = jest.spyOn(mockLogger, 'error');
+    const api = new FactApi(mockAxios, mockLogger);
+
+    await expect(api.getService('slug', 'en')).resolves.toEqual({});
+    await expect(spy).toBeCalled();
   });
 
   test('Should return service areas result', async () => {
@@ -142,8 +176,26 @@ describe('FactApi', () => {
     await expect(spy).toBeCalled();
   });
 
-  test('Should return no result and log error from get request', async () => {
+  test('Should return service area', async () => {
+    const results = {
+      data: [{
+        'name': 'service area',
+        'description': 'description.',
+        'slug': 'service-area',
+        'applyOnline': 'Apply to service area online',
+        'applyOnlineUrl': 'https://www.gov.uk/make-service-area'
+      }],
+    };
 
+    const mockAxios = { get: async () => results } as any;
+    const mockLogger = {} as any;
+
+    const api = new FactApi(mockAxios, mockLogger);
+
+    await expect(api.getServiceArea('service-area', 'en')).resolves.toEqual(results.data);
+  });
+
+  test('Should return no service area and log error', async () => {
     const mockAxios = { get: async () => {
       throw new Error('Error');
     }} as any;
@@ -155,7 +207,8 @@ describe('FactApi', () => {
     const api = new FactApi(mockAxios, mockLogger);
 
     await expect(api.court( null ,'en')).resolves.toEqual({});
+    await expect(api.getServiceArea('service-area' , 'en')).resolves.toEqual([]);
     await expect(spy).toBeCalled();
-
   });
+
 });

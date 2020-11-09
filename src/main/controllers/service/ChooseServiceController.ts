@@ -14,9 +14,10 @@ export class ChooseServiceController {
   ) { }
 
   private async getServices(req: FactRequest, hasErrors: boolean) {
+    const action: string = req.params.action as string;
     const data: ServicesData = {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['choose-service']),
-      path: '/services',
+      path: '/services' + action,
       results: [],
       errors: hasErrors,
     };
@@ -39,6 +40,9 @@ export class ChooseServiceController {
       return res.render('choose-service', data);
     }
 
-    return res.redirect('/services/' + req.body.chooseService + '/service-areas');
+    const action = req.params.action as string;
+    const serviceChosen = req.body.chooseService;
+
+    return res.redirect('/services/' + serviceChosen + '/service-areas/' + action);
   }
 }

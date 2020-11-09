@@ -20,12 +20,14 @@ describe('Choose service controller', () => {
   test('Should render the choose area page', async () => {
     response.data = expectedAreasOfLaw;
     const req = mockRequest(i18n);
+    req.params = {
+      action: 'action',
+    };
     const res = mockResponse();
     await controller.get(req, res);
-
     const expectedData: PageData = {
       ...cloneDeep(i18n['choose-service']),
-      path: '/services',
+      path: '/services' + req.params.action,
       results: response.data,
       errors: false,
     };
@@ -35,13 +37,16 @@ describe('Choose service controller', () => {
   test('Should render Choose Service page with errors if no data has been entered', async () => {
     response.data = expectedAreasOfLaw;
     const req = mockRequest(i18n);
+    req.params = {
+      action: 'action',
+    };
     req.body = {};
     const res = mockResponse();
     await controller.post(req, res);
 
     const expectedData: PageData = {
       ...cloneDeep(i18n['choose-service']),
-      path: '/services',
+      path: '/services' + req.params.action,
       results: response.data,
       errors: true
     };
@@ -51,13 +56,16 @@ describe('Choose service controller', () => {
   test('Should render Choose Service page with errors if empty api data returned', async () => {
     response.data = [];
     const req = mockRequest(i18n);
+    req.params = {
+      action: 'action',
+    };
     req.body = {};
     const res = mockResponse();
     await controller.post(req, res);
 
     const expectedData: PageData = {
       ...cloneDeep(i18n['choose-service']),
-      path: '/services',
+      path: '/services' + req.params.action,
       results: response.data,
       errors: true
     };
@@ -66,12 +74,15 @@ describe('Choose service controller', () => {
 
   test('Should render the chosen service page when the chosen service is selected', async () => {
     const req = mockRequest(i18n);
+    req.params = {
+      action: 'action',
+    };
     req.body = {
       chooseService: 'chosen-service',
     };
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services/chosen-service/service-areas');
+    expect(res.redirect).toHaveBeenCalledWith('/services/chosen-service/service-areas/' + req.params.action);
   });
 
 });

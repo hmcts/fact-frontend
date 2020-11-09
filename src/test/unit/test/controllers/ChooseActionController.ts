@@ -17,34 +17,44 @@ describe('Choose Action Controller', () => {
     expect(res.render).toBeCalledWith('choose-action', i18n['choose-action']);
   });
 
-  test('Should redirect to the Choose Area of Law page', async () => {
+  test('Should redirect to the Choose Area of Law page when nearest-court is selected', async () => {
     const req = mockRequest(i18n);
     req.body = {
       chooseAction: 'nearest-court',
     };
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services');
+    expect(res.redirect).toHaveBeenCalledWith('/services/' + req.body.chooseAction);
   });
 
-  test('Should redirect to the Choose Area of Law page', async () => {
+  test('Should redirect to the Choose Area of Law page when document-court is selected', async () => {
     const req = mockRequest(i18n);
     req.body = {
       chooseAction: 'document-court',
     };
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services');
+    expect(res.redirect).toHaveBeenCalledWith('/services/' + req.body.chooseAction);
   });
 
-  test('Should redirect to the Choose Area of Law page', async () => {
+  test('Should redirect to the Choose Area of Law page when update-court is selected', async () => {
     const req = mockRequest(i18n);
     req.body = {
       chooseAction: 'update-court',
     };
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services');
+    expect(res.redirect).toHaveBeenCalledWith('/services/' + req.body.chooseAction);
+  });
+
+  test('Should redirect to the Choose Area of Law page when not-listed is selected', async () => {
+    const req = mockRequest(i18n);
+    req.body = {
+      chooseAction: 'not-listed',
+    };
+    const res = mockResponse();
+    await controller.post(req, res);
+    expect(res.redirect).toHaveBeenCalledWith('/services/' + req.body.chooseAction);
   });
 
   test('Should render Choose Action page with errors if no data has been entered', async () => {

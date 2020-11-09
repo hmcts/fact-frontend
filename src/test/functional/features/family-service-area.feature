@@ -12,20 +12,14 @@ Feature: Family area of law
     When I select "#probate-divorce-or-ending-civil-partnerships" from the areas of law page and continue
     Then I am presented with the "Choose an area of law - probate, divorce or ending civil partnerships - Find a court or tribunal - GOV.UK" page
     Given I can select a "<family category>" from the family area of law page
-    Then I can continue having selected that option
+    Then I can continue having selected that family area of law option
     Examples:
-      | options         |
-      | nearest court   |
-      | document court  |
-      | update court    |
-      | not listed      |
-    Examples:
-      | family category           |
-      | probate                   |
-      | divorce                   |
-      | civil partnership         |
-      | forced marriage           |
-      | not listed                |
+      | options         | family category           |
+      | nearest court   | probate                   |
+      | document court  | divorce                   |
+      | update court    | civil partnership         |
+      | not listed      | forced marriage           |
+      |                 | not listed                |
 
   Scenario Outline: Do not select family area of law or I can't find what I'm looking for
     Then I can select an "<options>" option from the list displayed
@@ -38,15 +32,9 @@ Feature: Family area of law
     Given I can select a "<family category>" from the family area of law page
     Then I can continue having selected that option
     Examples:
-      | options         |
-      | nearest court   |
-      | document court  |
-      | update court    |
-      | not listed      |
-    Examples:
-      | family category           |
-      | probate                   |
-      | divorce                   |
-      | civil partnership         |
-      | forced marriage           |
-      | not listed                |
+      | options         | family category           |
+      | nearest court   | probate                   |
+      | document court  | divorce                   |
+      | update court    | civil partnership         |
+      | not listed      | forced marriage           |
+      |                 | not listed                |

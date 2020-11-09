@@ -19,12 +19,13 @@ const courtDetailsUrgentMessage = '/courts/telford-county-court-and-family-court
 const courtDetailsNoAreaOfLaw = '/courts/tax-chamber-first-tier-tribunal';
 const courtDetailsAdditionalInfo = '/courts/west-cumbria-courthouse';
 const unknownServicePage = '/services/unknown-service';
-const services = '/services';
-const servicesMoney = '/services/money/service-areas';
-const servicesProbateDivorce = '/services/probate-divorce-or-ending-civil-partnerships/service-areas';
-const servicesChildcare = '/services/childcare-and-parenting/service-areas';
-const servicesHarmAbuse = '/services/harm-and-abuse/service-areas';
-const servicesCrime = '/services/crime/service-areas';
+const services = '/services/update';
+const servicesMoney = '/services/money/service-areas/update';
+const servicesProbateDivorce = '/services/probate-divorce-or-ending-civil-partnerships/service-areas/update';
+const servicesChildcare = '/services/childcare-and-parenting/service-areas/update';
+const servicesHarmAbuse = '/services/harm-and-abuse/service-areas/update';
+const servicesCrime = '/services/crime/service-areas/update';
+const serviceSearchResultsMoneyClaims = '/services/money/money-claims/search-results';
 
 class Pa11yResult {
   documentTitle: string;
@@ -121,4 +122,5 @@ describe('Accessibility', () => {
   testAccessibilityOfFormError(servicesHarmAbuse);
   testAccessibility(servicesCrime);
   testAccessibilityOfFormError(servicesCrime);
+  testAccessibility(serviceSearchResultsMoneyClaims);
 });
