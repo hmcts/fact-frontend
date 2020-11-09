@@ -1,28 +1,28 @@
 {
-  "title": "Search for contact details - Find a court or tribunal - GOV.UK",
-  "serviceName": "Find a court or tribunal",
-  "question": "What is the name or address of the court or tribunal?",
-  "hint": "The name of the court or tribunal can be found on a letter, email or text from us.",
-  "text": "Enter a court name, address, town or city",
-  "button": "Search",
+  "title": "Search for contact details - Dod o hyd i lys neu dribiwnlys - GOV.UK",
+  "serviceName": "Dod o hyd i lys neu dribiwnlys",
+  "question": "Beth yw enw a chyfeiriad y llys neu’r tribiwnlys?",
+  "hint": "Gellir gweld enw’r llys neu’r tribiwnlys ar lythyr, -bos neu neges destun a anfonwyd gennym.",
+  "text": "Rhowch enw llys, cyfeiriad, tref neu ddinas",
   "textExample": "For example, Blackburn Family Court. ",
+  "button": "Search",
   "noResults": {
-    "p1": "There are no matching results.",
-    "p2": "Improve your search results by:",
+    "p1": "Nid oes canlyniad sy’n cyfateb.",
+    "p2": "Gellir gwella ar y chwiliad drwy:",
     "list": {
-      "li1": "double-checking your spelling",
-      "li2": "using fewer keywords",
-      "li3": "searching for something less specific"
+      "li1": "gwneud yn siŵr eich bod wedi sillafu’r gair yn gywir",
+      "li2": "defnyddio llai o allweddeiriau",
+      "li3": "chwilio am rywbeth llai penodol"
     }
   },
   "foundResults": "We found {total} courts or tribunals matching your search for '{search}'.",
   "mostRelevant": "Most relevant results displayed.",
   "errorBlank": {
-    "title": "There is a problem",
-    "text": "Enter a court name, address, town or city"
+    "title": "Mae yna broblem",
+    "text": "Rhowch enw llys, cyfeiriad, tref neu ddinas"
   },
   "errorTooShort": {
-    "title": "There is a problem",
+    "title": "Mae yna broblem",
     "text": "Search must be 3 characters or more"
   }
 }
