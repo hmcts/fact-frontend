@@ -1,17 +1,17 @@
 {
-  "title": "What do you want to do? - Find a court or tribunal - GOV.UK",
-  "serviceName": "Find a court or tribunal",
-  "question": "What do you want to do?",
+  "title": "Beth ydych chi eisiau ei wneud? - Dod o hyd i lys neu dribiwnlys - GOV.UK",
+  "serviceName": "Dod o hyd i lys neu dribiwnlys",
+  "question": "Beth ydych chi eisiau ei wneud?",
   "answers": {
-    "a1": "Find the nearest court or tribunal",
-    "a2": "Find a court or tribunal to send documents to",
-    "a3": "Contact a court or tribunal to get an update on your application",
-    "a4": "It is not listed here"
+    "a1": "Dod o hyd i’r llys neu’r tribiwnlys agosaf",
+    "a2": "Dod o hyd i lys neu dribiwnlys i anfon dogfennau iddo",
+    "a3": "Cysylltu â llys neu dribiwnlys i gael diweddariad ynglŷn â’ch cais",
+    "a4": "Nid yw wedi ei restru yma"
   },
-  "paragraph": "or",
-  "button": "Continue",
+  "paragraph": "neu",
+  "button": "Parhau",
   "error": {
-    "title": "There is a problem",
-    "text": "Field is blank - Select what you want to do"
+    "title": "Mae yna broblem",
+    "text": "Mae’r blwch yn wag - Beth ydych chi eisiau ei wneud?"
   }
 }
