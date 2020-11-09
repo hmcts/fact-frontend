@@ -22,9 +22,9 @@ export class ChooseServiceAreaController {
       errors: hasErrors,
     };
 
-    const serviceAreasData = await this.api.serviceAreas(serviceChosen);
+    const serviceAreasData = await this.api.serviceAreas(serviceChosen, req.lng);
     if (!isObjectEmpty(serviceAreasData)) {
-      const serviceData = await this.api.getService(serviceChosen);
+      const serviceData = await this.api.getService(serviceChosen, req.lng);
       data.results = serviceAreasData;
       data.title = data.title
         .replace('{serviceChosen}', serviceData.name.toLowerCase());
