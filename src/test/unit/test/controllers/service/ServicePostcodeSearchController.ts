@@ -4,7 +4,9 @@ import { mockResponse } from '../../../utils/mockResponse';
 import { PageData } from '../../../../../main/interfaces/PageData';
 
 const i18n = {
-  'postcode-search': {}
+  'postcode-search': {
+    hint: ''
+  }
 };
 
 describe('Service Postcode Search Controller', () => {
@@ -12,37 +14,41 @@ describe('Service Postcode Search Controller', () => {
 
   test('Should render the postcode search page', async () => {
     const req = mockRequest(i18n);
+    req.query = {
+      error: ''
+    };
+    req.params = {
+      service: 'money',
+      serviceArea: 'money-claims'
+    };
     const res = mockResponse();
     await controller.get(req, res);
     const expectedData: PageData = {
       ...i18n['postcode-search'],
       path: '/search-by-postcode',
+      actionUrl: '/services/money/money-claims/courts/near',
+      errors: false
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
 
-  test('Should render the postcode search page with error if postcode is invalid', async () => {
+  test('Should render the postcode search page with errors', async () => {
     const req = mockRequest(i18n);
-    req.body = {
-      postcode: ''
+    req.query = {
+      error: 'true'
+    };
+    req.params = {
+      service: 'money',
+      serviceArea: 'money-claims'
     };
     const res = mockResponse();
-    await controller.post(req, res);
+    await controller.get(req, res);
     const expectedData: PageData = {
       ...i18n['postcode-search'],
       path: '/search-by-postcode',
+      actionUrl: '/services/money/money-claims/courts/near',
       errors: true
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
-  });
-
-  test('Should redirect if the postcode is valid', async () => {
-    const req = mockRequest(i18n);
-    req.body = {
-      postcode: 'EH1 9SP'
-    };
-    const res = mockResponse();
-    await controller.post(req, res);
-    expect(res.redirect).toBeCalledWith('/results');
   });
 });
