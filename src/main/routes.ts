@@ -18,7 +18,8 @@ export default function(app: Application): void {
   app.get('/services/:service/service-areas/:action', app.locals.container.cradle.chooseServiceAreaController.get);
   app.post('/services/:service/service-areas/:action', app.locals.container.cradle.chooseServiceAreaController.post);
   app.get('/services/:service/:serviceArea/search-results', app.locals.container.cradle.serviceSearchResultsController.get);
-  app.get('/search-by-postcode', app.locals.container.cradle.servicePostcodeSearchController.get);
+  app.get('/services/:service/:serviceArea/search-by-postcode', app.locals.container.cradle.servicePostcodeSearchController.get);
+  app.get('/services/:service/:serviceArea/courts/near', app.locals.container.cradle.servicePostcodeResultsController.get);
 
   // legacy urls
   app.get('/search', (req, res) => res.redirect(301, '/search-option'));

@@ -25,12 +25,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">{{ question }}
-      <span id="header-hint" class="govuk-hint">
-        {{ hint }}
-      </span>
+    <h1 class="govuk-heading-l">
+      {{ question }}
     </h1>
-    <form method="GET" action="/search-results">
+    <span id="header-hint" class="govuk-hint">
+      {{ hint }}
+    </span>
+    <form method="GET" action="{{ actionUrl }}">
       {{ govukInput({
         label: {
           text: text,
