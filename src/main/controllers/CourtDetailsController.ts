@@ -28,7 +28,7 @@ export class CourtDetailsController {
     };
 
     if (!isEmpty(slug)) {
-      const courts: CourtDetailsResult = await this.api.court(slug);
+      const courts: CourtDetailsResult = await this.api.court(slug, req.lng);
       if (!isObjectEmpty(courts)) {
         const enquiries: Enquiries = {
           phone: [],

@@ -17,7 +17,7 @@ describe('FactApi', () => {
 
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.search('London')).resolves.toEqual(results.data);
+    await expect(api.search('London' ,'en')).resolves.toEqual(results.data);
   });
 
   test('Should return no result and log error from get request', async () => {
@@ -32,7 +32,7 @@ describe('FactApi', () => {
     const spy = jest.spyOn(mockLogger, 'error');
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.search( null )).resolves.toEqual([]);
+    await expect(api.search( null ,'en')).resolves.toEqual([]);
     await expect(spy).toBeCalled();
 
   });
@@ -53,7 +53,7 @@ describe('FactApi', () => {
 
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.court('London')).resolves.toEqual(results.data);
+    await expect(api.court('London', 'en')).resolves.toEqual(results.data);
   });
 
   test('Should return no result and log error from get request', async () => {
@@ -88,7 +88,7 @@ describe('FactApi', () => {
 
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.services()).resolves.toEqual(results.data);
+    await expect(api.services('en')).resolves.toEqual(results.data);
   });
 
   test('Should return no result and log error from services', async () => {
@@ -104,7 +104,7 @@ describe('FactApi', () => {
     const spy = jest.spyOn(mockLogger, 'error');
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.services()).resolves.toEqual([]);
+    await expect(api.services('en')).resolves.toEqual([]);
     await expect(spy).toBeCalled();
   });
 
@@ -122,6 +122,7 @@ describe('FactApi', () => {
 
     const api = new FactApi(mockAxios, mockLogger);
 
+    await expect(api.court('slug', 'en')).resolves.toEqual(results.data);
     await expect(api.getService('slug')).resolves.toEqual(results.data);
   });
 
@@ -156,7 +157,7 @@ describe('FactApi', () => {
 
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.serviceAreas('Money')).resolves.toEqual(results.data);
+    await expect(api.serviceAreas('Money', 'en')).resolves.toEqual(results.data);
   });
 
   test('Should return no result and log error from service areas', async () => {
@@ -172,7 +173,7 @@ describe('FactApi', () => {
     const spy = jest.spyOn(mockLogger, 'error');
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.serviceAreas('Money')).resolves.toEqual([]);
+    await expect(api.serviceAreas('Money','en')).resolves.toEqual([]);
     await expect(spy).toBeCalled();
   });
 
@@ -206,6 +207,7 @@ describe('FactApi', () => {
     const spy = jest.spyOn(mockLogger, 'error');
     const api = new FactApi(mockAxios, mockLogger);
 
+    await expect(api.court( null ,'en')).resolves.toEqual({});
     await expect(api.getServiceArea('service-area' )).resolves.toEqual([]);
     await expect(spy).toBeCalled();
   });

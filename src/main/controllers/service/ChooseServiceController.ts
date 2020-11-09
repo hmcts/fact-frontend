@@ -22,7 +22,7 @@ export class ChooseServiceController {
       errors: hasErrors,
     };
 
-    const services = await this.api.services();
+    const services = await this.api.services(req.lng);
     if (!isObjectEmpty(services)) {
       data.results = services;
     }

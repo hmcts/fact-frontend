@@ -28,7 +28,7 @@ export class SearchResultsController {
       data.error = data.errorTooShort;
     }
     else {
-      const courts = await this.api.search(query);
+      const courts = await this.api.search(query, req.lng);
 
       if (courts.length > 0) {
         data.results = courts;

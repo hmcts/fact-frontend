@@ -12,9 +12,9 @@ export class FactApi {
     private readonly logger: Logger
   ) { }
 
-  public search(query: string): Promise<SearchResult[]> {
+  public search(query: string, lng: string): Promise<SearchResult[]> {
     return this.axios
-      .get(`/courts?q=${query}`)
+      .get(`/courts?q=${query}`, {  headers: {'Accept-Language': lng}})
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
@@ -22,9 +22,9 @@ export class FactApi {
       });
   }
 
-  public court(slug: string): Promise<CourtDetailsResult> {
+  public court(slug: string, lng: string): Promise<CourtDetailsResult> {
     return this.axios
-      .get(`/courts/${slug}`)
+      .get(`/courts/${slug}`,{  headers: {'Accept-Language': lng}})
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
@@ -32,9 +32,9 @@ export class FactApi {
       });
   }
 
-  public services(): Promise<ServiceResult[]> {
+  public services(lng: string): Promise<ServiceResult[]> {
     return this.axios
-      .get('/services')
+      .get('/services', {  headers: {'Accept-Language': lng}})
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
@@ -42,9 +42,9 @@ export class FactApi {
       });
   }
 
-  public getService(slug: string): Promise<ServiceResult> {
+  public getService(slug: string, lng: string): Promise<ServiceResult> {
     return this.axios
-      .get(`/services/${slug}`)
+      .get(`/services/${slug}`, {  headers: {'Accept-Language': lng}})
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
@@ -52,9 +52,9 @@ export class FactApi {
       });
   }
 
-  public serviceAreas(service: string): Promise<ServiceAreaResult[]> {
+  public serviceAreas(service: string, lng: string): Promise<ServiceAreaResult[]> {
     return this.axios
-      .get(`/services/${service}/service-areas`)
+      .get(`/services/${service}/service-areas`, {  headers: {'Accept-Language': lng}})
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
@@ -62,7 +62,7 @@ export class FactApi {
       });
   }
 
-  public getServiceArea(serviceArea: string): Promise<ServiceAreaResult> {
+  public getServiceArea(serviceArea: string, lng: string): Promise<ServiceAreaResult> {
     return this.axios
       .get(`/service-areas/${serviceArea}`)
       .then(results => results.data)
