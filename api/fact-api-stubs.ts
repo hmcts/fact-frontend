@@ -85,7 +85,7 @@ app.get('/search/postcode', (req: Request, res: Response) => {
 
   const serviceAreaObj = serviceAreasData.find(service => service.slug === serviceArea);
   let result = {};
-  if (serviceAreaObj.serviceAreaType === 'Family') {
+  if (serviceAreaObj && serviceAreaObj.serviceAreaType === 'Family') {
     result = serviceAreaObj.serviceAreaCourts.find((court: any) => court.catchmentType === 'regional' && court.localAuthority === localAuthority);
   }
   res.json(result);
