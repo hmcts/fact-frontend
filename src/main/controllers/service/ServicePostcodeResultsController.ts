@@ -1,10 +1,10 @@
 import { Response } from 'express';
 import { FactRequest } from '../../interfaces/FactRequest';
-import { PageData } from '../../interfaces/PageData';
 import { cloneDeep } from 'lodash';
 import { isPostcodeValid } from '../../utils/validation';
 import { FactApi } from '../../utils/FactApi';
 import autobind from 'autobind-decorator';
+import { PostcodeSearchData } from '../../interfaces/PostcodeSearch';
 
 @autobind
 export class ServicePostcodeResultsController {
@@ -19,13 +19,21 @@ export class ServicePostcodeResultsController {
       return res.redirect(`/services/${req.params.service}/${req.params.serviceArea}/search-by-postcode?error=true`);
     } else {
       const court = await this.api.postcodeSearch(postcode, req.params.serviceArea);
-      const data: PageData = {
+      const serviceArea = await this.api.getServiceArea(req.params.service, req.params.serviceArea);
+      let data: PostcodeSearchData = {
         ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['postcode-results']),
         path: '/courts/near',
-        errors: true,
-        court: court
+        errors: true
       };
-      return res.render('service-results', data);
+      if (court) {
+        data = {
+          ...data,
+          court: court,
+          serviceArea: serviceArea
+        };
+        data.hint = data.hint.replace('{serviceArea}', req.params.serviceArea);
+        return res.render('postcode-results', data);
+      }
     }
   }
 }

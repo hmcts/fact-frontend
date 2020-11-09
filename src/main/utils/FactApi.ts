@@ -72,7 +72,7 @@ export class FactApi {
       });
   }
 
-  public postcodeSearch(postcode: string, serviceArea: string): Promise<SearchResult[]> {
+  public postcodeSearch(postcode: string, serviceArea: string): Promise<SearchResult> {
     return this.axios
       .get(`/search/postcode?postcode=${postcode}&serviceArea=${serviceArea}`)
       .then(results => results.data)

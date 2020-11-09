@@ -1,0 +1,55 @@
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "macros/error-summary.njk" import errorSummary %}
+
+{% extends "template.njk" %}
+
+{% block pageTitle %}
+  {{ title }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: '/search-option'
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">
+      {{ question }}
+    </h1>
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-row">
+        <div>
+          <p class="govuk-body-m">
+            {{ hint }}
+            <br>
+            {{ secondHint }}
+          </p>
+        </div>
+        <div class="search-result">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link" href="/courts/{{ court.slug }}">{{ court.courtName }}</a>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-third side-content">
+      <div id="areas-of-law">
+        <h3 class="govuk-heading-m">
+          {{ applyOnlineHeading }}
+        </h3>
+        <p class="govuk-body-m">
+          <a class="govuk-link" href="{{ serviceArea.applyOnlineUrl }}"> {{ serviceArea.applyOnline }} </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
