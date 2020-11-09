@@ -25,6 +25,7 @@ const servicesProbateDivorce = '/services/probate-divorce-or-ending-civil-partne
 const servicesChildcare = '/services/childcare-and-parenting/service-areas/update';
 const servicesHarmAbuse = '/services/harm-and-abuse/service-areas/update';
 const servicesCrime = '/services/crime/service-areas/update';
+const serviceSearchResultsMoneyClaims = '/services/money/money-claims/search-results';
 
 class Pa11yResult {
   documentTitle: string;
@@ -121,4 +122,5 @@ describe('Accessibility', () => {
   testAccessibilityOfFormError(servicesHarmAbuse);
   testAccessibility(servicesCrime);
   testAccessibilityOfFormError(servicesCrime);
+  testAccessibility(serviceSearchResultsMoneyClaims);
 });

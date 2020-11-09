@@ -7,6 +7,6 @@
   "regionStatement": "This location provides services for all of England and Wales.",
   "nameOfCourt": "{court-name}",
   "slug": "{slug}",
-  "applyOnline": "{applyOnline}",
-  "applyOnlineUrl": "{applyOnlineUrl}"
+  "onlineText": "{applyOnline}",
+  "onlineUrl": "{applyOnlineUrl}"
 }

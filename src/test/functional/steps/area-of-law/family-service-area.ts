@@ -1,4 +1,4 @@
-import { Given, Then } from 'cucumber';
+import { Then } from 'cucumber';
 import * as I from '../../utlis/puppeteer.util';
 
 Then('I can select a {string} from the family area of law page', async (option: string) => {
@@ -28,6 +28,10 @@ Then('I can select a {string} from the family area of law page', async (option: 
   await I.click(element);
 });
 
-Given('I continue having not selected a family area of law option', async() => {
+Then('I continue having not selected a family area of law option', async() => {
+  await I.click('.govuk-button');
+});
+
+Then('I can continue having selected that family area of law option', async () => {
   await I.click('.govuk-button');
 });

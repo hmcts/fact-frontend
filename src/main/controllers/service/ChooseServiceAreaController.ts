@@ -65,7 +65,9 @@ export class ChooseServiceAreaController {
       res.render('service', serviceData);
     } else {
       const action: string = req.params.action as string;
-      if(action === Action.SendDocuments || action === Action.Update || action === Action.NotListed && req.body.serviceArea != 'not-listed'){
+      if(req.body.serviceArea === 'not-listed') {
+        res.redirect('/services/unknown-service');
+      } else if(action === Action.SendDocuments || action === Action.Update || action === Action.NotListed){
         const serviceArea = await this.api.getServiceArea(req.body.serviceArea);
         const courtsInServiceArea = serviceArea.serviceAreaCourts;
         let nationalCounter = 0;

@@ -16,14 +16,15 @@ export class ServiceSearchResultsController {
     enum Catchment {
       National = 'national'
     }
+
     const serviceAreaData = await this.api.getServiceArea(req.params.serviceArea);
     const courtsData = serviceAreaData.serviceAreaCourts;
 
     const data: ServiceSearchResults = {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['service-results'])
     };
-    for( const court of courtsData ){
-      if( court.catchmentType === Catchment.National ){
+    for (const court of courtsData) {
+      if (court.catchmentType === Catchment.National) {
         data.nameOfCourt = data.nameOfCourt
           .replace('{court-name}', court.courtName);
         data.slug = data.slug
@@ -33,9 +34,9 @@ export class ServiceSearchResultsController {
         data.onlineUrl = data.onlineUrl
           .replace('{applyOnlineUrl}', serviceAreaData.onlineUrl);
       }
+      data.hint = data.hint
+        .replace('{service-area}', serviceAreaData.name.toLowerCase());
+      res.render('service-results', data);
     }
-    data.hint = data.hint
-      .replace('{service-area}', serviceAreaData.name.toLowerCase());
-    res.render('service-results', data);
   }
 }

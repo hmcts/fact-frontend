@@ -5,50 +5,50 @@ import { cloneDeep } from 'lodash';
 
 const i18n = {
   'service-results': {
-    hint: 'We manage your {service-area} applications at our central service centre.',
-    nameOfCourt: '{court-name}',
-    slug: '{slug}',
+    hint: 'We manage your service area applications at our central service centre.',
+    nameOfCourt: 'court 1',
+    slug: 'court-1',
     regionStatement: '',
-    applyOnline: '{applyOnline}',
-    applyOnlineUrl: '{applyOnlineUrl}'
+    onlineText: 'Apply online',
+    onlineUrl: 'Online url'
   },
 };
 
 describe('service search results controller', () => {
-  const response: any = { serviceData: {}, courtsInServiceAreasData: [] };
+  const response: any = { ServiceAreaResult: {} };
   const api: any = {
-    getServiceArea: async () => response.serviceData,
-    courtsInServiceAreas: async() => response.courtsInServiceAreasData
+    getServiceArea: async () => response.ServiceAreaResult,
   };
   const controller = new ServiceSearchResultsController(api);
 
   test('should render single service results', async () => {
-    response.courtsInServiceAreasData = [
-      {
-        name: 'court 1',
-        slug: 'court-1',
-        catchment: 'national'
-      },
-      {
-        name: 'court 2',
-        slug: 'court-2',
-        catchment: 'local'
-      }
-    ];
-    response.serviceData = {
+    response.ServiceAreaResult = {
       name: 'service area',
       description: 'service area description',
       slug: 'service-area-slug',
-      applyOnline: 'apply online',
-      applyOnlineUrl: 'apply online url'
+      onlineText: 'Apply online',
+      onlineUrl: 'Online url',
+      serviceAreaCourts: [
+        {
+          name: 'court 1',
+          slug: 'court-1',
+          catchment: 'national'
+        },
+        {
+          name: 'court 2',
+          slug: 'court-2',
+          catchment: 'local'
+        }
+      ]
     };
+
     const req = mockRequest(i18n);
     req.params = {
       hint: 'We manage your {service-area} applications at our central service centre.',
       nameOfCourt: '{court-name}',
       slug: '{slug}',
-      applyOnline: '{applyOnline}',
-      applyOnlineUrl: '{applyOnlineUrl}',
+      onlineText: '{applyOnline}',
+      onlineUrl: '{applyOnlineUrl}',
       service: 'service',
       serviceArea: 'service-area'
     };

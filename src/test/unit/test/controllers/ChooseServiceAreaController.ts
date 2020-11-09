@@ -17,11 +17,11 @@ const i18n = {
 };
 
 describe('Choose service area controller', () => {
-  const response: any = { data: {}, serviceData: {}, courtsInServiceAreasData: {} };
+  const response: any = { data: {}, serviceData: {}, serviceAreaResults: {} };
   const api: any = {
     serviceAreas: async () => response.data,
     getService: async () => response.serviceData,
-    courtsInServiceAreas: async() => response.courtsInServiceAreasData
+    getServiceArea: async () => response.serviceAreaResults,
   };
   const controller = new ChooseServiceAreaController(api);
 
@@ -34,13 +34,25 @@ describe('Choose service area controller', () => {
     req.body = {
       serviceArea: 'service-area'
     };
-    response.courtsInServiceAreasData = [
-      {
-        name: 'national court',
-        slug: 'national-court',
-        catchment: 'national'
-      }
-    ];
+    response.serviceAreaResults = {
+      name: 'service area',
+      description: 'service area description',
+      slug: 'service-area-slug',
+      onlineText: 'Apply online',
+      onlineUrl: 'Online url',
+      serviceAreaCourts: [
+        {
+          name: 'court 1',
+          slug: 'court-1',
+          catchmentType: 'national'
+        },
+        {
+          name: 'court 2',
+          slug: 'court-2',
+          catchmentType: 'local'
+        }
+      ]
+    };
     const res = mockResponse();
     await controller.post(req, res);
     expect(res.redirect).toHaveBeenCalledWith('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
@@ -55,13 +67,25 @@ describe('Choose service area controller', () => {
     req.body = {
       serviceArea: 'service-area'
     };
-    response.courtsInServiceAreasData = [
-      {
-        name: 'national court',
-        slug: 'national-court',
-        catchment: 'national'
-      }
-    ];
+    response.serviceAreaResults = {
+      name: 'service area',
+      description: 'service area description',
+      slug: 'service-area-slug',
+      onlineText: 'Apply online',
+      onlineUrl: 'Online url',
+      serviceAreaCourts: [
+        {
+          name: 'court 1',
+          slug: 'court-1',
+          catchmentType: 'national'
+        },
+        {
+          name: 'court 2',
+          slug: 'court-2',
+          catchmentType: 'local'
+        }
+      ]
+    };
     const res = mockResponse();
     await controller.post(req, res);
     expect(res.redirect).toHaveBeenCalledWith('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
