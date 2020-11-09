@@ -14,16 +14,11 @@ Feature: Crime area of law
     Given I can select a "<crime category>" from the crime service area page
     Then I can continue having selected that option
     Examples:
-      | options         |
-      | nearest court   |
-      | document court  |
-      | update court    |
-      | not listed      |
-    Examples:
-      | crime category          |
-      | minor                   |
-      | major                   |
-      | not listed              |
+      | options         | crime category          |
+      | nearest court   | minor                   |
+      | document court  | major                   |
+      | update court    | not listed              |
+      | not listed      |                         |
 
   Scenario Outline: Do not select crime area of law or I can't find what I'm looking for
     Then I can select an "<options>" option from the list displayed
@@ -36,13 +31,8 @@ Feature: Crime area of law
     Given I can select a "<crime category>" from the crime service area page
     Then I can continue having selected that option
     Examples:
-      | options         |
-      | nearest court   |
-      | document court  |
-      | update court    |
-      | not listed      |
-    Examples:
-      | crime category          |
-      | minor                   |
-      | major                   |
-      | not listed              |
+      | options         | crime category          |
+      | nearest court   | minor                   |
+      | document court  | major                   |
+      | update court    | not listed              |
+      | not listed      |                         |

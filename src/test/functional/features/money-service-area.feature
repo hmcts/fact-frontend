@@ -14,22 +14,16 @@ Feature: Money area of law
     Given I can select a "<money category>" from the money area of law page
     Then I can continue having selected that option
     Examples:
-      | options         |
-      | nearest court   |
-      | document court  |
-      | update court    |
-      | not listed      |
-    Examples:
-      | money category            |
-      | money claims              |
-      | probate                   |
-      | housing                   |
-      | bankruptcy                |
-      | benefits                  |
-      | claims against employers  |
-      | tax                       |
-      | minor criminal offences   |
-      | not listed                |
+      | options         | money category            |
+      | nearest court   | money claims              |
+      | document court  | probate                   |
+      | update court    | housing                   |
+      | not listed      | bankruptcy                |
+      |                 | benefits                  |
+      |                 | claims against employers  |
+      |                 | tax                       |
+      |                 | minor criminal offences   |
+      |                 | not listed                |
 
   Scenario Outline: Do not select money area of law category or I can't find what I'm looking for
     Then I can select an "<options>" option from the list displayed
@@ -42,19 +36,13 @@ Feature: Money area of law
     Given I can select a "<money category>" from the money area of law page
     Then I can continue having selected that option
     Examples:
-      | options         |
-      | nearest court   |
-      | document court  |
-      | update court    |
-      | not listed      |
-    Examples:
-      | money category            |
-      | money claims              |
-      | probate                   |
-      | housing                   |
-      | bankruptcy                |
-      | benefits                  |
-      | claims against employers  |
-      | tax                       |
-      | minor criminal offences   |
-      | not listed                |
+      | options         | money category            |
+      | nearest court   | money claims              |
+      | document court  | probate                   |
+      | update court    | housing                   |
+      | not listed      | bankruptcy                |
+      |                 | benefits                  |
+      |                 | claims against employers  |
+      |                 | tax                       |
+      |                 | minor criminal offences   |
+      |                 | not listed                |

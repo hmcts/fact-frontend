@@ -11,21 +11,15 @@ Feature: No name option
     Then I am presented with the "Choose an area of law - Find a court or tribunal - GOV.UK" page
     And I continue having selected an "<service>" from that page
     Examples:
-      | options         |
-      | nearest court   |
-      | document court  |
-      | update court    |
-      | not listed      |
-    Examples:
-      | service         |
-      | money           |
-      | family          |
-      | childcare       |
-      | harm            |
-      | immigration     |
-      | crime           |
-      | high courts     |
-      | not listed      |
+      | options         | service         |
+      | nearest court   | money           |
+      | document court  | family          |
+      | update court    | childcare       |
+      | not listed      | harm            |
+      |                 | immigration     |
+      |                 | crime           |
+      |                 | high courts     |
+      |                 | not listed      |
 
   Scenario Outline: Do not select area of law or can't find what I'm looking
     Then I can select an "<options>" option from the list displayed
@@ -35,18 +29,12 @@ Feature: No name option
     Then I am presented with an error message for services
     And I continue having selected an "<service>" from that page
     Examples:
-      | options         |
-      | nearest court   |
-      | document court  |
-      | update court    |
-      | not listed      |
-    Examples:
-      | service         |
-      | money           |
-      | family          |
-      | childcare       |
-      | harm            |
-      | immigration     |
-      | crime           |
-      | high courts     |
-      | not listed      |
+      | options         | service         |
+      | nearest court   | money           |
+      | document court  | family          |
+      | update court    | childcare       |
+      | not listed      | harm            |
+      |                 | immigration     |
+      |                 | crime           |
+      |                 | high courts     |
+      |                 | not listed      |
