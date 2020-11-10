@@ -95,7 +95,12 @@ describe('Choose service area controller', () => {
     response.data = [{
       name: 'Service area',
       description: 'service area description',
-    }];
+    },
+    {
+      name: 'Service area 2',
+      description: 'service area 2 description',
+    }
+    ];
 
     response.serviceData = {
       name: 'Service',
@@ -149,23 +154,126 @@ describe('Choose service area controller', () => {
     expect(res.render).toBeCalledWith('service', expectedData);
   });
 
-  test('Should redirect to postcode search', async () => {
+  test('Should redirect to single service area page if service contains one service area with a national ' +
+    'court and action is update', async () => {
     response.data = [{
       name: 'Service area',
       description: 'service area description',
     }];
+
+    response.serviceData = {
+      name: 'Service',
+      description: 'service description',
+      slug: 'slug',
+    };
+
     const req = mockRequest(i18n);
     req.params = {
       service: 'chosen-service',
-      action: 'nearest',
+      action: 'update',
     };
-    req.body = {
-      serviceArea: 'chosen service area',
-    };
-    const res = mockResponse();
-    await controller.post(req, res);
 
-    expect(res.redirect).toHaveBeenCalledWith('/services/chosen-service/chosen service area/search-by-postcode');
+    response.serviceAreaResults = {
+      name: 'Service area',
+      description: 'service area description',
+      slug: 'service-area-slug',
+      onlineText: 'Apply online',
+      onlineUrl: 'Online url',
+      serviceAreaCourts: [
+        {
+          name: 'court 1',
+          slug: 'court-1',
+          catchmentType: 'national'
+        }
+      ]
+    };
+
+    const res = mockResponse();
+    await controller.get(req, res);
+    expect(res.redirect).toHaveBeenCalledWith('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
+  });
+
+  test('Should redirect to single service page if service contains one service area with a national ' +
+    'court, no regional court and action is documents', async () => {
+    response.data = [{
+      name: 'Service area',
+      description: 'service area description',
+    }];
+
+    response.serviceData = {
+      name: 'Service',
+      description: 'service description',
+      slug: 'slug',
+    };
+
+    const req = mockRequest(i18n);
+    req.params = {
+      service: 'chosen-service',
+      action: 'documents',
+    };
+
+    response.serviceAreaResults = {
+      name: 'Service area',
+      description: 'service area description',
+      slug: 'service-area-slug',
+      onlineText: 'Apply online',
+      onlineUrl: 'Online url',
+      serviceAreaCourts: [
+        {
+          name: 'court',
+          slug: 'court',
+          catchmentType: 'national'
+        }
+      ]
+    };
+
+    const res = mockResponse();
+    await controller.get(req, res);
+    expect(res.redirect).toHaveBeenCalledWith('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
+  });
+
+  test('Should redirect to unknown service if service contains one service area with a national ' +
+    'court and a regional court and action is documents', async () => {
+    response.data = [{
+      name: 'Service area',
+      description: 'service area description',
+    }];
+
+    response.serviceData = {
+      name: 'Service',
+      description: 'service description',
+      slug: 'slug',
+    };
+
+    const req = mockRequest(i18n);
+    req.params = {
+      service: 'chosen-service',
+      action: 'documents',
+    };
+
+    response.serviceAreaResults = {
+      name: 'Service area',
+      description: 'service area description',
+      slug: 'service-area-slug',
+      onlineText: 'Apply online',
+      onlineUrl: 'Online url',
+      serviceAreaCourts: [
+        {
+          name: 'court',
+          slug: 'court',
+          catchmentType: 'national'
+        },
+        {
+          name: 'court 2',
+          slug: 'court-2',
+          catchmentType: 'regional'
+        }
+      ]
+    };
+
+    const res = mockResponse();
+    await controller.get(req, res);
+    expect(res.redirect).toHaveBeenCalledWith('/services/unknown-service');
   });
 
   test('Should render a service area page with errors if a service area does not exist', async () => {
@@ -300,6 +408,25 @@ describe('Choose service area controller', () => {
     const res = mockResponse();
     await controller.post(req, res);
     expect(res.redirect).toHaveBeenCalledWith('/services/unknown-service');
+  });
+
+  test('Should redirect to postcode search', async () => {
+    response.data = [{
+      name: 'Service area',
+      description: 'service area description',
+    }];
+    const req = mockRequest(i18n);
+    req.params = {
+      service: 'chosen-service',
+      action: 'nearest',
+    };
+    req.body = {
+      serviceArea: 'chosen service area',
+    };
+    const res = mockResponse();
+    await controller.post(req, res);
+
+    expect(res.redirect).toHaveBeenCalledWith('/services/chosen-service/chosen service area/search-by-postcode');
   });
 
 });

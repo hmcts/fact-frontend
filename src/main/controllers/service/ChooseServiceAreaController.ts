@@ -43,7 +43,12 @@ export class ChooseServiceAreaController {
     const {service, action} = req.params;
     const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
     const data = await this.getServiceData(service, action, serviceAreasPageData,false, req.lng);
-    res.render('service', data);
+    if(data.results.length === 1){
+      req.body.serviceArea = data.results[0].slug;
+      this.post(req, res);
+    } else {
+      res.render('service', data);
+    }
   }
 
   public async post(req: FactRequest, res: Response) {
