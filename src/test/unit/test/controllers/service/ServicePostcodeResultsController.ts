@@ -20,7 +20,7 @@ describe('Service Postcode Results Controller', () => {
     expect(res.render).toBeCalledWith('service-results');
   });
 
-  test('Should redirect to the postcode search page with error', async () => {
+  test('Should redirect to the postcode search page with blank postcode error', async () => {
     const req = mockRequest(i18n);
     req.query = {
       postcode: ''
@@ -31,6 +31,20 @@ describe('Service Postcode Results Controller', () => {
     };
     const res = mockResponse();
     await controller.get(req, res);
-    expect(res.redirect).toBeCalledWith('/services/money/money-claims/search-by-postcode?error=true');
+    expect(res.redirect).toBeCalledWith('/services/money/money-claims/search-by-postcode?error=blankPostcode');
+  });
+
+  test('Should redirect to the postcode search page with invalid postcode error', async () => {
+    const req = mockRequest(i18n);
+    req.query = {
+      postcode: 'not a postcode'
+    };
+    req.params = {
+      service: 'money',
+      serviceArea: 'money-claims'
+    };
+    const res = mockResponse();
+    await controller.get(req, res);
+    expect(res.redirect).toBeCalledWith('/services/money/money-claims/search-by-postcode?error=invalidPostcode');
   });
 });

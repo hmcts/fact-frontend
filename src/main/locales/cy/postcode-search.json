@@ -6,8 +6,9 @@
   "text": "Enter your postcode",
   "example": "For example, EH1 9SP",
   "button": "Continue",
-  "error":{
+  "errorText":{
     "title": "There is a problem",
-    "text": "Invalid entry – Enter a valid postcode format"
+    "invalidPostcode": "Invalid entry – Enter a valid postcode format",
+    "blankPostcode": "Field is blank – Enter a postcode"
   }
 }

@@ -19,8 +19,8 @@
 {% endblock %}
 
 {% block content %}
-{% if errors %}
-  {{ errorSummary(error.title, error.text, "#postcode") }}
+{% if error %}
+  {{ errorSummary(errorText.title, errorText[errorType], "#postcode") }}
 {% endif %}
 
 <div class="govuk-grid-row">
@@ -45,7 +45,7 @@
         hint: {
           text: example
         },
-        errorMessage: { text: error.text | safe } if errors,
+        errorMessage: { text: errorText[errorType] | safe } if error,
         autocomplete: "postal-code"
       }) }}
       {{ govukButton({
