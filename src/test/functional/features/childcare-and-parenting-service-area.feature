@@ -14,17 +14,11 @@ Feature: Family and children area of law
     Given I can select a "<family and children category>" from the family and children area of law page
     Then I can continue having selected that option
     Examples:
-      | options         |
-      | nearest court   |
-      | document court  |
-      | update court    |
-      | not listed      |
-    Examples:
-      | family and children category   |
-      | childcare                      |
-      | adoption                       |
-      | not listed                     |
-
+      | options         | family and children category   |
+      | nearest court   | childcare                      |
+      | document court  | adoption                       |
+      | update court    | not listed                     |
+      | not listed      |                                |
 
   Scenario Outline: Do not select family and children area of law or I can't find what I'm looking for
     Then I can select an "<options>" option from the list displayed
@@ -37,13 +31,8 @@ Feature: Family and children area of law
     Given I can select a "<family and children category>" from the family and children area of law page
     Then I can continue having selected that option
     Examples:
-      | options         |
-      | nearest court   |
-      | document court  |
-      | update court    |
-      | not listed      |
-    Examples:
-      | family and children category   |
-      | childcare                      |
-      | adoption                       |
-      | not listed                     |
+      | options         | family and children category   |
+      | nearest court   | childcare                      |
+      | document court  | adoption                       |
+      | update court    | not listed                     |
+      | not listed      |                                |
