@@ -60,10 +60,6 @@ app.get('/service-areas/money-claims', (req: Request, res: Response) => {
   res.json(moneyClaimsData);
 });
 
-app.get('/services/money/money-claims', (req: Request, res: Response) => {
-  res.json(moneyClaimsData);
-});
-
 app.listen(port, () => {
   console.log(`Application started: http://localhost:${port}`);
 });
