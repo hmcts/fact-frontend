@@ -33,12 +33,12 @@ describe('service search results controller', () => {
         {
           name: 'court 1',
           slug: 'court-1',
-          catchment: 'national'
+          catchmentType: 'national'
         },
         {
           name: 'court 2',
           slug: 'court-2',
-          catchment: 'local'
+          catchmentType: 'local'
         }
       ]
     };
@@ -58,24 +58,11 @@ describe('service search results controller', () => {
     const expectedData = {
       ...cloneDeep(i18n['service-results'])
     };
+
     expectedData.results = {
-      serviceAreaCourts: [
-        {
-          name: 'court 1',
-          slug: 'court-1',
-          catchment: 'national'
-        },
-        {
-          name: 'court 2',
-          slug: 'court-2',
-          catchment: 'local'
-        }
-      ],
-      slug: 'service-area-slug',
-      description: 'service area description',
-      name: 'service area',
-      onlineText: 'Apply online',
-      onlineUrl: 'Online url',
+      name: 'court 1',
+      slug: 'court-1',
+      catchmentType: 'national'
     };
 
     expect(res.render).toBeCalledWith('service-results', expectedData);

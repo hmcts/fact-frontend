@@ -82,14 +82,4 @@ export class FactApi {
       });
   }
 
-  public postcodeSearch(postcode: string, serviceArea: string): Promise<SearchResult> {
-    return this.axios
-      .get(`/search/postcode?postcode=${postcode}&serviceArea=${serviceArea}`)
-      .then(results => results.data)
-      .catch(err => {
-        this.logger.error(err);
-        return [];
-      });
-  }
-
 }

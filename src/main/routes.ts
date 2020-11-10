@@ -27,7 +27,47 @@ export default function(app: Application): void {
   app.get('/search/courtcode', (req, res) => res.redirect(301, '/search-by-name'));
   app.get('/search/aol', (req, res) => res.redirect(301, '/services'));
   app.get('/search/spoe', (req, res) => res.redirect(301, '/service-choose-action'));
-  app.get('/search/postcode', (req, res) => res.redirect(301, '/search-by-postcode?' + stringify(req.query as any)));
+
+  app.get('/search/postcode', (req, res) => {
+    const params = stringify(req.query as any);
+
+    if (req.query.aol === 'Adoption') {
+      res.redirect(301, '/services/childcare-and-parenting/service-areas/adoption/search-by-postcode?' + params);
+    } else if (req.query.aol === 'Bankruptcy') {
+      res.redirect(301, '/services/money/service-areas/bankruptcy/search-by-postcode?' + params);
+    } else if (req.query.aol === 'Social security') {
+      res.redirect(301, '/services/money/service-areas/benefits/search-by-postcode?' + params);
+    } else if (req.query.aol === 'Children') {
+      res.redirect(301, '/services/childcare-and-parenting/service-areas/childcare-arrangements/search-by-postcode?' + params);
+    } else if (req.query.aol === 'Civil partnership') {
+      res.redirect(301, '/services/probate-divorce-or-ending-civil-partnerships/service-areas/civil-partnership/search-by-postcode?' + params);
+    } else if (req.query.aol === 'Employment') {
+      res.redirect(301, '/services/money/service-areas/claims-against-employers/search-by-postcode?' + params);
+    } else if (req.query.aol === 'Crime') {
+      res.redirect(301, '/services/crime/service-areas/major-criminal-offences/search-by-postcode?' + params);
+    } else if (req.query.aol === 'Minor crime') {
+      res.redirect(301, '/services/crime/service-areas/minor-criminal-offences/search-by-postcode?' + params);
+    } else if (req.query.aol === 'Divorce') {
+      res.redirect(301, '/services/probate-divorce-or-ending-civil-partnerships/service-areas/divorce/search-by-postcode?' + params);
+    } else if (req.query.aol === 'Domestic violence') {
+      res.redirect(301, '/services/harm-and-abuse/service-areas/domestic-abuse/search-by-postcode?' + params);
+    } else if (req.query.aol === 'Forced marriage and FGM') {
+      res.redirect(301, '/services/harm-and-abuse/service-areas/forced-marriage/search-by-postcode?' + params);
+    } else if (req.query.aol === 'Housing possession') {
+      res.redirect(301, '/services/money/service-areas/housing/search-by-postcode?' + params);
+    } else if (req.query.aol === 'High Court District Registry') {
+      res.redirect(301, '/services/high-court-district-registries/service-areas/high-court-district-registries/search-by-postcode?' + params);
+    } else if (req.query.aol === 'Immigration') {
+      res.redirect(301, '/services/immigration-and-asylum/service-areas/immigration/search-by-postcode?' + params);
+    } else if (req.query.aol === 'Money claims') {
+      res.redirect(301, '/services/money/service-areas/money-claims/search-by-postcode?' + params);
+    } else if (req.query.aol === 'Probate') {
+      res.redirect(301, '/services/money/service-areas/probate/search-by-postcode?' + params);
+    } else {
+      res.redirect(301, '/services/unknown-service');
+    }
+  });
+
   app.get('/search/results', (req, res) => {
     if (req.query.postcode) {
       res.redirect(301, '/courts/near?' + stringify(req.query as any));
@@ -37,4 +77,10 @@ export default function(app: Application): void {
       res.redirect(301, '/search-by-name');
     }
   });
+
+  // A-Z court pages
+  for (const letter of 'abcdefghijklmnopqrstuvwxyz'.split('')) {
+    app.get('/courts/' + letter.toUpperCase(), (req, res) => res.redirect(301, '/search-option'));
+  }
+
 }

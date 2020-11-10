@@ -2,12 +2,13 @@
   "title": "What is your postcode? - Find a court or tribunal - GOV.UK",
   "serviceName": "Find a court or tribunal",
   "question": "What is your postcode?",
-  "hint": "We will use your postcode to show you the closest court or tribunal that handles {serviceArea} to you.",
+  "hint": "We will use your postcode to show you the closest court or tribunal that handles money claims to you.",
   "text": "Enter your postcode",
   "example": "For example, EH1 9SP",
   "button": "Continue",
-  "error":{
+  "errorText":{
     "title": "There is a problem",
-    "text": "Invalid entry – Enter a valid postcode format"
+    "invalidPostcode": "Invalid entry – Enter a valid postcode format",
+    "blankPostcode": "Field is blank – Enter a postcode"
   }
 }

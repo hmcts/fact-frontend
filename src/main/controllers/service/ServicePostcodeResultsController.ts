@@ -1,7 +1,7 @@
 import { Response } from 'express';
 import { FactRequest } from '../../interfaces/FactRequest';
 import { cloneDeep } from 'lodash';
-import { isPostcodeValid } from '../../utils/validation';
+import { isEmpty, isPostcodeValid } from '../../utils/validation';
 import { FactApi } from '../../utils/FactApi';
 import autobind from 'autobind-decorator';
 import { PostcodeSearchData } from '../../interfaces/PostcodeSearchData';
@@ -16,8 +16,10 @@ export class ServicePostcodeResultsController {
   public async get(req: FactRequest, res: Response): Promise<void> {
     const postcode: string = req.query.postcode as string;
     const serviceArea = req.params.serviceArea;
-    if (!isPostcodeValid(postcode)) {
-      return res.redirect(`/services/${req.params.service}/${req.params.serviceArea}/search-by-postcode?error=true`);
+    if (isEmpty(postcode)){
+      return res.redirect(`/services/${req.params.service}/${req.params.serviceArea}/search-by-postcode?error=blankPostcode`);
+    } else if (!isPostcodeValid(postcode)) {
+      return res.redirect(`/services/${req.params.service}/${req.params.serviceArea}/search-by-postcode?error=invalidPostcode`);
     } else {
       const data: PostcodeSearchData = {
         ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['postcode-results']),

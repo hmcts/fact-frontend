@@ -16,7 +16,7 @@ Feature: View money claims result
     And I can select that entry via the hyperlink
     Then I can view the selected court or tribunal details
     Examples:
-      | options         |
+      | options          |
       | #document-court  |
       | #update-court    |
       | #not-listed      |
