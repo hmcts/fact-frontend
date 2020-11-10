@@ -5,6 +5,7 @@ import { isEmpty, isPostcodeValid } from '../../utils/validation';
 import { FactApi } from '../../utils/FactApi';
 import autobind from 'autobind-decorator';
 import { PostcodeSearchData } from '../../interfaces/PostcodeSearchData';
+import { PostcodeResultsQuery } from '../../interfaces/PostcodeResultsQuery';
 
 @autobind
 export class ServicePostcodeResultsController {
@@ -14,14 +15,13 @@ export class ServicePostcodeResultsController {
   ) { }
 
   public async get(req: FactRequest, res: Response): Promise<void> {
-    const postcode: string = req.query.postcode as string;
+    const { aol, serviceAreaType, postcode }  = req.query as PostcodeResultsQuery;
+    const baseUrl = `/services/${req.params.service}/${req.params.serviceArea}/search-by-postcode?serviceAreaType=${serviceAreaType}&aol=${aol}`;
     if (isEmpty(postcode)){
-      return res.redirect(`/services/${req.params.service}/${req.params.serviceArea}/search-by-postcode?error=blankPostcode`);
+      return res.redirect(`${baseUrl}&error=blankPostcode`);
     } else if (!isPostcodeValid(postcode)) {
-      return res.redirect(`/services/${req.params.service}/${req.params.serviceArea}/search-by-postcode?error=invalidPostcode`);
+      return res.redirect(`${baseUrl}&error=invalidPostcode`);
     } else {
-      const aol = req.query.aol as string;
-      const serviceAreaType = req.query.serviceAreaType as string;
       const data: PostcodeSearchData = {
         ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['postcode-results']),
         path: '/courts/near',
