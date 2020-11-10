@@ -32,10 +32,12 @@ export class CourtDetailsController {
       if (!isObjectEmpty(courts)) {
         const enquiries: Enquiries = {
           phone: [],
+          welshPhone: [],
           email: {},
           fax: {}
         };
         enquiries.phone = courts.contacts.filter((contact: { description: string }) => contact.description.toLowerCase() === 'enquiries');
+        enquiries.welshPhone = courts.contacts.filter((contact: { description: string }) => contact.description.toLowerCase() === 'welsh');
         enquiries.email = courts.emails.find((email: { description: string }) => email.description.toLowerCase() === 'enquiries');
         enquiries.fax = courts.contacts.find((contact: { description: string }) => contact.description.toLowerCase() === 'fax');
         courts['image_file'] = `${config.get('services.image-store.url')}/${courts['image_file']}`;

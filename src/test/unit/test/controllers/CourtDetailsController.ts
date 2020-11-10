@@ -37,7 +37,8 @@ describe('CourtDetailsController', () => {
         enquiries: {
           email: undefined,
           fax: undefined,
-          phone: []
+          phone: [],
+          welshPhone: []
         }
       }
     };
@@ -60,7 +61,9 @@ describe('CourtDetailsController', () => {
         enquiries: {
           email: undefined,
           fax: undefined,
-          phone: []
+          phone: [],
+          welshPhone: []
+
         }
       }
     };

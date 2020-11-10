@@ -1,7 +1,7 @@
-import { mockRequest } from '../../utils/mockRequest';
-import { mockResponse } from '../../utils/mockResponse';
-import { PageData } from '../../../../main/interfaces/PageData';
-import { ChooseServiceAreaController } from '../../../../main/controllers/service/ChooseServiceAreaController';
+import { mockRequest } from '../../../utils/mockRequest';
+import { mockResponse } from '../../../utils/mockResponse';
+import { PageData } from '../../../../../main/interfaces/PageData';
+import { ChooseServiceAreaController } from '../../../../../main/controllers/service/ChooseServiceAreaController';
 import { cloneDeep } from 'lodash';
 
 const i18n = {
@@ -123,7 +123,6 @@ describe('Choose service area controller', () => {
     };
     expect(res.render).toBeCalledWith('service', expectedData);
   });
-
 
   test('Should render a service area page with errors if no data has been entered', async () => {
     response.data = [{
@@ -428,6 +427,25 @@ describe('Choose service area controller', () => {
     const res = mockResponse();
     await controller.post(req, res);
     expect(res.redirect).toHaveBeenCalledWith('/services/unknown-service');
+  });
+
+  test('Should redirect to postcode search', async () => {
+    response.data = [{
+      name: 'Service area',
+      description: 'service area description',
+    }];
+    const req = mockRequest(i18n);
+    req.params = {
+      service: 'chosen-service',
+      action: 'nearest',
+    };
+    req.body = {
+      serviceArea: 'chosen service area',
+    };
+    const res = mockResponse();
+    await controller.post(req, res);
+
+    expect(res.redirect).toHaveBeenCalledWith('/services/chosen-service/chosen service area/search-by-postcode');
   });
 
 });

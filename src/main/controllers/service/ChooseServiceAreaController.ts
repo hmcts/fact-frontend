@@ -82,7 +82,7 @@ export class ChooseServiceAreaController {
           res.redirect('/services/unknown-service');
         }
       } else {
-        res.redirect('/services/unknown-service');
+        res.redirect('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-by-postcode');
       }
     }
   }

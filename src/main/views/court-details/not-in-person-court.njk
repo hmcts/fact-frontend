@@ -74,9 +74,15 @@
           </h4>
           {% for telephone in results.enquiries.phone %}
             <p class="govuk-body-m">
-              Telephone: {{ telephone.number }}<br>
+              {{ telephoneHeading }}: {{ telephone.number }}<br>
               {{ telephone.explanation }}
             </p>
+          {% endfor %}
+          {% for telephone in results.enquiries.welshPhone %}
+          <p class="govuk-body-m">
+            {{ telephoneHeadingWelsh }}: {{ telephone.number }}<br>
+            {{ telephone.explanation }}
+          </p>
           {% endfor %}
           <p class="govuk-body-m">
             Fax: {{ results.enquiries.fax.number }}

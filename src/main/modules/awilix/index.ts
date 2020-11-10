@@ -13,6 +13,8 @@ import { ChooseServiceController } from '../../controllers/service/ChooseService
 import { ChooseServiceAreaController } from '../../controllers/service/ChooseServiceAreaController';
 import { UnknownServiceController } from '../../controllers/service/UnknownServiceController';
 import { ServiceSearchResultsController } from '../../controllers/service/ServiceSearchResultsController';
+import { ServicePostcodeSearchController } from '../../controllers/service/ServicePostcodeSearchController';
+import { ServicePostcodeResultsController } from '../../controllers/service/ServicePostcodeResultsController';
 
 const { Logger } = require('@hmcts/nodejs-logging');
 const logger = Logger.getLogger('app');
@@ -33,7 +35,9 @@ export class Container {
       chooseServiceController: asClass(ChooseServiceController),
       chooseServiceAreaController: asClass(ChooseServiceAreaController),
       chooseUnknownServiceController: asClass(UnknownServiceController),
-      serviceSearchResultsController: asClass(ServiceSearchResultsController)
+      serviceSearchResultsController: asClass(ServiceSearchResultsController),
+      servicePostcodeSearchController: asClass(ServicePostcodeSearchController),
+      servicePostcodeResultsController: asClass(ServicePostcodeResultsController)
     });
   }
 }
