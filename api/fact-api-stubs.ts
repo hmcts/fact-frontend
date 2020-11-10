@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import * as bodyParser from 'body-parser';
+import { calculateDistance } from './utils';
 const app = express();
 
 const data = require('./courts.json');
@@ -9,7 +10,6 @@ const moneyServiceAreasData = require('./moneyAreaOfLaw.json');
 const familyServiceAreasData = require('./familyAreaOfLaw.json');
 const childcareAndParentingServiceAreasData = require('./childcareAndParentingAreaOfLaw.json');
 const moneyServiceData = require('./money-service-data.json');
-const moneyClaimsData = require('./money-claims-data.json');
 const serviceAreas = require('./service-areas.json');
 const port = 8080;
 
@@ -57,19 +57,30 @@ app.get('/services/childcare-and-parenting/service-areas', (req: Request, res: R
   res.json(childcareAndParentingServiceAreasData);
 });
 
-app.get('/service-areas/money-claims', (req: Request, res: Response) => {
-  res.json(moneyClaimsData);
-});
-
-app.get('/service-area/:serviceArea/service-area-type', (req: Request, res: Response) => {
+app.get('/service-areas/:serviceArea', (req: Request, res: Response) => {
   const serviceArea: string = (req.params.serviceArea as string);
   const serviceAreasData = [...serviceAreas];
   const serviceAreaObj = serviceAreasData.find(service => service.slug === serviceArea);
-  let result = {};
-  if (serviceAreaObj) {
-    result = serviceAreaObj.serviceAreaType;
-  }
-  res.json(result);
+  res.json(serviceAreaObj);
+});
+
+app.get('/search/results.json', (req: Request, res: Response) => {
+  const { postcode, aol} = req.query;
+  console.log(postcode, aol);
+  const lan = 1;
+  const lon = 1;
+  const courts = [...courtDetails];
+  const distanceSortedCourt = courts.sort((court, court2) => {
+    return calculateDistance(lan, lon, court) - calculateDistance(lan, lon, court2);
+  });
+  const filteredDocs = distanceSortedCourt.filter(court => {
+    for (const areaOfLaw of court['areas_of_law']) {
+      if (areaOfLaw.name === aol) {
+        return court;
+      }
+    }
+  });
+  res.json(filteredDocs.slice(0, 10));
 });
 
 app.listen(port, () => {
