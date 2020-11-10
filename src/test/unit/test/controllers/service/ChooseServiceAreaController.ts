@@ -276,25 +276,6 @@ describe('Choose service area controller', () => {
     expect(res.redirect).toHaveBeenCalledWith('/services/unknown-service');
   });
 
-  test('Should redirect to a particular service area', async () => {
-    response.data = [{
-      name: 'Service area',
-      description: 'service area description',
-    }];
-    const req = mockRequest(i18n);
-    req.params = {
-      service: 'chosen-service',
-      action: 'action',
-    };
-    req.body = {
-      serviceArea: 'chosen service area',
-    };
-    const res = mockResponse();
-    await controller.post(req, res);
-
-    expect(res.redirect).toHaveBeenCalledWith('/services/unknown-service');
-  });
-
   test('Should render a service area page with errors if a service area does not exist', async () => {
     response.data = [];
     const req = mockRequest(i18n);
