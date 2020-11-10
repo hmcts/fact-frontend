@@ -72,9 +72,9 @@ export class FactApi {
       });
   }
 
-  public postcodeServiceAreaSearch(postcode: string, serviceArea: string): Promise<CourtDetailsWithDistanceResult[]> {
+  public postcodeServiceAreaSearch(postcode: string, aol: string): Promise<CourtDetailsWithDistanceResult[]> {
     return this.axios
-      .get(`search/results.json?postcode=${postcode}&aol=${serviceArea}`)
+      .get(`search/results.json?postcode=${postcode}&aol=${aol}`)
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);

@@ -12,7 +12,9 @@ export class ServicePostcodeSearchController {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['postcode-search']),
       path: '/search-by-postcode',
       actionUrl: `/services/${req.params.service}/${req.params.serviceArea}/courts/near`,
-      error: hasError
+      error: hasError,
+      aol: req.query.aol,
+      serviceAreaType: req.query.serviceAreaType
     };
     if (hasError) {
       data.errorType = error;

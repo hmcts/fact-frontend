@@ -3,6 +3,7 @@ import { mockResponse } from '../../../utils/mockResponse';
 import { PageData } from '../../../../../main/interfaces/PageData';
 import { ChooseServiceAreaController } from '../../../../../main/controllers/service/ChooseServiceAreaController';
 import { cloneDeep } from 'lodash';
+import { Action } from '../../../../../main/utils/Action';
 
 const i18n = {
   service: {
@@ -157,7 +158,7 @@ describe('Choose service area controller', () => {
     const req = mockRequest(i18n);
     req.params = {
       service: 'chosen-service',
-      action: 'nearest',
+      action: Action.Nearest,
     };
     req.body = {
       serviceArea: 'chosen service area',

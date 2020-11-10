@@ -16,6 +16,7 @@ export interface ServiceAreaResult {
   serviceAreaType: string;
   onlineUrl: string;
   onlineText: string;
+  areaOfLawName: string;
   serviceAreaCourts: ServiceAreaCourt[];
 }
 
