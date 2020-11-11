@@ -7,3 +7,9 @@ export interface PostcodeSearchData extends PageData {
   multipleResultsHint: string;
   results: CourtDetailsWithDistanceResult[];
 }
+
+export type PostcodeSearchQuery = {
+  error: string;
+  postcode: string;
+  noResults: string;
+}

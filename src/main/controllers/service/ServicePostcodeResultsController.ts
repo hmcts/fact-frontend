@@ -34,9 +34,13 @@ export class ServicePostcodeResultsController {
       } else if (serviceAreaType === 'Civil') {
         console.log('Civil TODO');
       } else {
-        data.results = await this.api.postcodeServiceAreaSearch(postcode, aol);
+        const court = await this.api.postcodeServiceAreaSearch(postcode, aol);
+        if (court.length === 0) {
+          return res.redirect(`${baseUrl}&noResults=true&postcode=${postcode}`);
+        }
+        data.results = court;
         data.multipleResultsHint = data.multipleResultsHint
-          .replace('{total}', data.results.length.toString())
+          .replace('{total}', court.length.toString())
           .replace('{postcode}', postcode);
       }
       return res.render('postcode-results', data);

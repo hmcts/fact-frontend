@@ -12,15 +12,14 @@ Feature: Postcode Results Feature
     When I select "#<area_of_law>" from the areas of law page and continue
     Given I can select a "#<area_of_law_category>" from the category area of law page and continue
     Then I am presented with the "What is your postcode? - Find a court or tribunal - GOV.UK" page
-    When I continue having entered a postcode "TW14 1UH"
+    When I continue having entered a postcode "E8 1DY"
     Then I can continue my user journey
     And the results are displayed with distance
-    And any listed entry can be selected via a hyperlink
+    And any listed court entry can be selected via a hyperlink
 
     Examples:
       | options        | area_of_law             | area_of_law_category |
-      | nearest court  | money                   | money-claims         |
-      | nearest court  | childcare-and-parenting | adoption             |
+      | nearest court  | money                   | tax                  |
 
 
   Scenario Outline: Postcode search criteria that returns no search results - no service area match
@@ -31,7 +30,7 @@ Feature: Postcode Results Feature
     Then I am presented with the "What is your postcode? - Find a court or tribunal - GOV.UK" page
     When I continue having entered an invalid postcode "TWA 1UH"
     Then I am presented with an postcode error message
-    When I continue having entered a postcode "TW14 1UH"
+    When I continue having entered a postcode "EH1 9SP"
     Then I can continue my user journey
     Then I am presented with a no matching results display
     And I can re-enter the postcode
@@ -39,5 +38,4 @@ Feature: Postcode Results Feature
 
     Examples:
       | options        | area_of_law             | area_of_law_category |
-      | nearest court  | money                   | money-claims         |
       | nearest court  | childcare-and-parenting | adoption             |
