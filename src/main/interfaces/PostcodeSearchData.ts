@@ -12,4 +12,6 @@ export type PostcodeSearchQuery = {
   error: string;
   postcode: string;
   noResults: string;
+  aol: string;
+  serviceAreaType: string;
 }

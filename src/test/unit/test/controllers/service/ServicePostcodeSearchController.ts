@@ -16,19 +16,25 @@ describe('Service Postcode Search Controller', () => {
   test('Should render the postcode search page', async () => {
     const req = mockRequest(i18n);
     req.query = {
-      error: ''
+      error: '',
+      aol: 'tax',
+      serviceAreaType: 'Other'
     };
     req.params = {
       service: 'money',
-      serviceArea: 'money-claims'
+      serviceArea: 'tax'
     };
     const res = mockResponse();
     await controller.get(req, res);
     const expectedData: PageData = {
       ...i18n['postcode-search'],
       path: '/search-by-postcode',
-      actionUrl: '/services/money/money-claims/courts/near',
-      error: false
+      actionUrl: '/services/money/tax/courts/near',
+      error: false,
+      hasNoResults: false,
+      aol: 'tax',
+      serviceAreaType: 'Other',
+      postcode: undefined
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
@@ -36,20 +42,26 @@ describe('Service Postcode Search Controller', () => {
   test('Should render the postcode search page with blank postcode error', async () => {
     const req = mockRequest(i18n);
     req.query = {
-      error: 'blankPostcode'
+      error: 'blankPostcode',
+      aol: 'tax',
+      serviceAreaType: 'Other'
     };
     req.params = {
       service: 'money',
-      serviceArea: 'money-claims'
+      serviceArea: 'tax'
     };
     const res = mockResponse();
     await controller.get(req, res);
     const expectedData: PageData = {
       ...i18n['postcode-search'],
       path: '/search-by-postcode',
-      actionUrl: '/services/money/money-claims/courts/near',
+      actionUrl: '/services/money/tax/courts/near',
       error: true,
-      errorType: 'blankPostcode'
+      errorType: 'blankPostcode',
+      hasNoResults: false,
+      aol: 'tax',
+      serviceAreaType: 'Other',
+      postcode: undefined
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
@@ -57,20 +69,53 @@ describe('Service Postcode Search Controller', () => {
   test('Should render the postcode search page with invalid postcode error', async () => {
     const req = mockRequest(i18n);
     req.query = {
-      error: 'invalidPostcode'
+      error: 'invalidPostcode',
+      aol: 'tax',
+      serviceAreaType: 'Other'
     };
     req.params = {
       service: 'money',
-      serviceArea: 'money-claims'
+      serviceArea: 'tax'
     };
     const res = mockResponse();
     await controller.get(req, res);
     const expectedData: PageData = {
       ...i18n['postcode-search'],
       path: '/search-by-postcode',
-      actionUrl: '/services/money/money-claims/courts/near',
+      actionUrl: '/services/money/tax/courts/near',
       error: true,
-      errorType: 'invalidPostcode'
+      errorType: 'invalidPostcode',
+      hasNoResults: false,
+      aol: 'tax',
+      serviceAreaType: 'Other',
+      postcode: undefined
+    };
+    expect(res.render).toBeCalledWith('postcode-search', expectedData);
+  });
+
+  test('Should render the postcode search page with no results', async () => {
+    const req = mockRequest(i18n);
+    req.query = {
+      aol: 'tax',
+      serviceAreaType: 'Other',
+      postcode: 'E1 8DY',
+      noResults: 'true'
+    };
+    req.params = {
+      service: 'money',
+      serviceArea: 'tax'
+    };
+    const res = mockResponse();
+    await controller.get(req, res);
+    const expectedData: PageData = {
+      ...i18n['postcode-search'],
+      path: '/search-by-postcode',
+      actionUrl: '/services/money/tax/courts/near',
+      error: false,
+      hasNoResults: true,
+      aol: 'tax',
+      serviceAreaType: 'Other',
+      postcode: 'E1 8DY'
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });

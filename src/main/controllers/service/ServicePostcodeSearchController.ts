@@ -6,7 +6,7 @@ import { PostcodeSearchData, PostcodeSearchQuery } from '../../interfaces/Postco
 export class ServicePostcodeSearchController {
 
   public get(req: FactRequest, res: Response): void {
-    const { error, postcode, noResults }  = req.query as PostcodeSearchQuery;
+    const { error, postcode, noResults, aol, serviceAreaType }  = req.query as PostcodeSearchQuery;
     const hasError: boolean = error === 'blankPostcode' || error === 'invalidPostcode';
     const hasNoResults: boolean = noResults === 'true';
     const data: PostcodeSearchData = {
@@ -15,8 +15,8 @@ export class ServicePostcodeSearchController {
       actionUrl: `/services/${req.params.service}/${req.params.serviceArea}/courts/near`,
       error: hasError,
       hasNoResults: hasNoResults,
-      aol: req.query.aol,
-      serviceAreaType: req.query.serviceAreaType,
+      aol: aol,
+      serviceAreaType: serviceAreaType,
       postcode: postcode
     };
     if (hasError) {
