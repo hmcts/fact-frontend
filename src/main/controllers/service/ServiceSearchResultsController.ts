@@ -31,8 +31,11 @@ export class ServiceSearchResultsController {
 
     data.onlineText = serviceAreaData.onlineText;
     data.onlineUrl = serviceAreaData.onlineUrl;
-    data.hint = data.hint
-      .replace('{service-area}', serviceAreaData.name.toLowerCase());
+    if(serviceAreaData.text){
+      data.hint1 = serviceAreaData.text;
+    } else {
+      data.hint1 = data.hint1.replace('{service-area}', serviceAreaData.name.toLowerCase());
+    }
     res.render('service-results', data);
   }
 }
