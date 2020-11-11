@@ -31,7 +31,7 @@ export class ServiceSearchResultsController {
 
     data.onlineText = serviceAreaData.onlineText;
     data.onlineUrl = serviceAreaData.onlineUrl;
-    data.hint = data.hint
+    data.hint1 = data.hint1
       .replace('{service-area}', serviceAreaData.name.toLowerCase());
     res.render('service-results', data);
   }

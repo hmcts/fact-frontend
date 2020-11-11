@@ -5,7 +5,7 @@ import { cloneDeep } from 'lodash';
 
 const i18n = {
   'service-results': {
-    hint: 'We manage your service area applications at our central service centre.',
+    hint1: 'We manage your service area applications at our central service centre.',
     nameOfCourt: 'court 1',
     slug: 'court-1',
     regionStatement: '',
@@ -45,7 +45,7 @@ describe('service search results controller', () => {
 
     const req = mockRequest(i18n);
     req.params = {
-      hint: 'We manage your {service-area} applications at our central service centre.',
+      hint1: 'We manage your {service-area} applications at our central service centre.',
       nameOfCourt: '{court-name}',
       slug: '{slug}',
       onlineText: '{applyOnline}',

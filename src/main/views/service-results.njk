@@ -28,7 +28,12 @@
       <div class="govuk-grid-row">
         <div>
           <p class="govuk-body-m">
-            {{ hint }}
+          {% if text %}
+            {{ text }}
+          {% else %}
+            {{ hint1 }}
+          {% endif %}
+            {{ hint2 }}
           </p>
         </div>
         <div class="search-result" id="search-result">
