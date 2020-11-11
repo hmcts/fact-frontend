@@ -29,6 +29,7 @@ describe('service search results controller', () => {
       slug: 'service-area-slug',
       onlineText: 'Apply online',
       onlineUrl: 'Online url',
+      text: null,
       serviceAreaCourts: [
         {
           name: 'court 1',

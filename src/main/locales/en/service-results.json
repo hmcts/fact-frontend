@@ -2,7 +2,7 @@
   "title": "Search for location - Find a court or tribunal - GOV.UK",
   "serviceName": "Find a court or tribunal",
   "question": "Court or tribunal search results",
-  "hint1": "We manage your {service-area} applications at our central service centre.",
+  "hint1": "We manage {service-area} applications at our central service centre.",
   "hint2": " Find where to send your documents or ask about your application’s progress.",
   "applyOnlineHeading": "Apply online",
   "regionStatement": "This location provides services for all of England and Wales."
