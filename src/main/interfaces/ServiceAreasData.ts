@@ -15,6 +15,7 @@ export interface ServiceAreaResult {
   slug: string;
   onlineUrl: string;
   onlineText: string;
+  text: string;
   serviceAreaCourts: ServiceAreaCourt[];
 }
 
