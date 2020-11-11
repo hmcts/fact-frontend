@@ -34,7 +34,7 @@ export class ServicePostcodeResultsController {
       } else if (serviceAreaType === 'Civil') {
         console.log('Civil TODO');
       } else {
-        const court = await this.api.postcodeServiceAreaSearch(postcode, aol);
+        const court = await this.api.postcodeServiceAreaSearch(postcode, aol, req.lng);
         if (court.length === 0) {
           return res.redirect(`${baseUrl}&noResults=true&postcode=${postcode}`);
         }
