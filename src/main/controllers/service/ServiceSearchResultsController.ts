@@ -32,9 +32,9 @@ export class ServiceSearchResultsController {
     data.onlineText = serviceAreaData.onlineText;
     data.onlineUrl = serviceAreaData.onlineUrl;
     if(serviceAreaData.text){
-      data.hint1 = serviceAreaData.text;
+      data.hint = serviceAreaData.text;
     } else {
-      data.hint1 = data.hint1.replace('{service-area}', serviceAreaData.name.toLowerCase());
+      data.hint = data.hint.replace('{service-area}', serviceAreaData.name.toLowerCase());
     }
     res.render('service-results', data);
   }
