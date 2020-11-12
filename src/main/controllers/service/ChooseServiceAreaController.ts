@@ -5,14 +5,15 @@ import { FactApi } from '../../utils/FactApi';
 import autobind from 'autobind-decorator';
 import { ServiceAreasData } from '../../interfaces/ServiceAreasData';
 import { cloneDeep } from 'lodash';
+import { ServiceAreaRedirect } from './ServiceAreaRedirect';
 import { Action } from '../../utils/Action';
-import { Catchment } from '../../utils/Catchment';
 
 @autobind
 export class ChooseServiceAreaController {
 
   constructor(
-    private readonly api: FactApi
+    private readonly api: FactApi,
+    private readonly serviceAreaRedirect: ServiceAreaRedirect
   ) { }
 
   private async getServiceData(serviceChosen: string, action: string, serviceAreasPageData: ServiceAreasData, hasErrors: boolean, lng: string) {
@@ -52,39 +53,21 @@ export class ChooseServiceAreaController {
   }
 
   public async post(req: FactRequest, res: Response) {
-    const baseUrl = `/services/${req.params.service}/${req.body.serviceArea}`;
-    const action = req.params.action as string;
+    const action = req.params.action as Action;
+
     if (!hasProperty(req.body, 'serviceArea')) {
       const serviceChosen = req.params.service as string;
       const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
       const serviceData = await this.getServiceData(serviceChosen, action, serviceAreasPageData, true, req.lng);
+
       res.render('service', serviceData);
+    } else if (req.body.serviceArea === 'not-listed') {
+      res.redirect('/services/unknown-service');
     } else {
       const serviceArea = await this.api.getServiceArea(req.body.serviceArea, req.lng);
-      if(req.body.serviceArea === 'not-listed') {
-        res.redirect('/services/unknown-service');
-      } else if(action === Action.SendDocuments || action === Action.Update || action === Action.NotListed){
-        const courtsInServiceArea = serviceArea.serviceAreaCourts;
+      const url = this.serviceAreaRedirect.getUrl(req.params.service, serviceArea, action);
 
-        const nationalCourt = courtsInServiceArea.find(court => court.catchmentType === Catchment.National);
-        const regionalCourt = courtsInServiceArea.find(court => court.catchmentType === Catchment.Regional);
-
-        if(nationalCourt != null) {
-          if (action === Action.Update || action === Action.NotListed) {
-            return res.redirect(baseUrl + '/search-results');
-          } else if(action === Action.SendDocuments){
-            if(regionalCourt === undefined){
-              return res.redirect(baseUrl + '/search-results');
-            } else {
-              res.redirect('/services/unknown-service');
-            }
-          }
-        } else {
-          res.redirect('/services/unknown-service');
-        }
-      } else {
-        res.redirect(`${baseUrl}/search-by-postcode?serviceAreaType=${serviceArea.serviceAreaType}&aol=${serviceArea.areaOfLawName}`);
-      }
+      res.redirect(url);
     }
   }
 }

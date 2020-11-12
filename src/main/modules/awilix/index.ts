@@ -15,6 +15,7 @@ import { UnknownServiceController } from '../../controllers/service/UnknownServi
 import { ServiceSearchResultsController } from '../../controllers/service/ServiceSearchResultsController';
 import { ServicePostcodeSearchController } from '../../controllers/service/ServicePostcodeSearchController';
 import { ServicePostcodeResultsController } from '../../controllers/service/ServicePostcodeResultsController';
+import { ServiceAreaRedirect } from '../../controllers/service/ServiceAreaRedirect';
 
 const { Logger } = require('@hmcts/nodejs-logging');
 const logger = Logger.getLogger('app');
@@ -26,6 +27,7 @@ export class Container {
       logger: asValue(logger),
       axios: asValue(Axios.create({ baseURL: config.get('services.api.url') })),
       api: asClass(FactApi),
+      serviceAreaRedirect: asClass(ServiceAreaRedirect),
       homeController: asClass(HomeController),
       searchOptionController: asClass(SearchOptionController),
       locationSearchController: asClass(LocationSearchController),
