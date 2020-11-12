@@ -89,6 +89,45 @@ describe('Choose service area controller', () => {
     expect(res.render).toBeCalledWith('service', expectedData);
   });
 
+  test('Should redirect to single service page if service contains one service area', async () => {
+    response.data = [{
+      name: 'Service area',
+      description: 'service area description',
+      slug: 'service-area-slug'
+    }];
+
+    response.serviceData = {
+      name: 'Service',
+      description: 'service description',
+      slug: 'slug',
+    };
+
+    const req = mockRequest(i18n);
+    req.params = {
+      service: 'chosen-service',
+      action: 'documents',
+    };
+
+    response.serviceAreaResults = {
+      name: 'Service area',
+      description: 'service area description',
+      slug: 'service-area-slug',
+      onlineText: 'Apply online',
+      onlineUrl: 'Online url',
+      serviceAreaCourts: [
+        {
+          name: 'court',
+          slug: 'court',
+          catchmentType: 'national'
+        }
+      ]
+    };
+
+    const res = mockResponse();
+    await controller.get(req, res);
+    expect(res.redirect).toHaveBeenCalledWith('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
+  });
+
   test('Should render a service area page with errors if a service area does not exist', async () => {
     response.data = [];
     const req = mockRequest(i18n);
