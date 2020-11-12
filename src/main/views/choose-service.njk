@@ -33,7 +33,7 @@
         {% if errors %}
             <div class="govuk-error-message govuk-form-group--error">
         {% endif %}
-    <fieldset class="govuk-fieldset" aria-describedby="choose-service-error">
+    <fieldset class="govuk-fieldset" {% if errors %}aria-describedby="choose-service-error"{% endif %}>
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
                 {{ question }}
