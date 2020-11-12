@@ -1304,5 +1304,209 @@
     "service_area": [],
     "in_person": true,
     "access_scheme": false
+  },
+  {
+    "name": "Taylor House Tribunal Hearing Centre",
+    "slug": "taylor-house-hearing-centre",
+    "info": "",
+    "open": true,
+    "directions": null,
+    "image_file": null,
+    "lat": 51.5273955420962,
+    "lon": -0.107441827965064,
+    "urgent_message": null,
+    "crown_location_code": null,
+    "county_location_code": null,
+    "magistrates_location_code": null,
+    "areas_of_law": [
+      {
+        "name": "Immigration",
+        "external_link": "https://www.gov.uk/tribunal/iac",
+        "display_url": null,
+        "external_link_desc": "Information about the Immigration and Asylum Tribunal"
+      },
+      {
+        "name": "Tax",
+        "external_link": "https://www.gov.uk/tax-tribunal",
+        "display_url": null,
+        "external_link_desc": "Information about tax tribunals"
+      }
+    ],
+    "types": [
+      "Tribunal"
+    ],
+    "emails": [
+      {
+        "address": "i.f.a.taylorhouse@justice.gov.uk",
+        "description": "Tribunals",
+        "explanation": null
+      }
+    ],
+    "contacts": [
+      {
+        "number": "0300 123 1711",
+        "description": "Enquiries",
+        "explanation": ""
+      },
+      {
+        "number": "0870 739 4055",
+        "description": "Fax",
+        "explanation": ""
+      }
+    ],
+    "opening_times": [],
+    "facilities": [
+      {
+        "description": "Assistance dogs are welcome",
+        "name": "Assistance dogs"
+      },
+      {
+        "description": "Refreshments are available from vending machines on site",
+        "name": "Refreshments"
+      },
+      {
+        "description": ".",
+        "name": "Loop Hearing"
+      },
+      {
+        "description": ".",
+        "name": "Interview room"
+      },
+      {
+        "description": ".",
+        "name": "Prayer / Quiet room"
+      },
+      {
+        "description": "Are available at this Court",
+        "name": "Baby changing facility"
+      },
+      {
+        "description": "This building has level access to the building entrance and all floors, lifts to all floors and level access into courtrooms.",
+        "name": "Disabled access"
+      }
+    ],
+    "addresses": [
+      {
+        "address_lines": [
+          "Taylor House",
+          "88 Rosebery Avenue"
+        ],
+        "postcode": "EC1R 4QU",
+        "town": "London",
+        "type": "Visit or contact us"
+      }
+    ],
+    "gbs": null,
+    "dx_number": [],
+    "service_area": [],
+    "in_person": true,
+    "access_scheme": null
+  },
+  {
+    "name": "Midlands (West) Employment Tribunal",
+    "slug": "birmingham-employment-tribunal",
+    "info": "",
+    "open": true,
+    "directions": null,
+    "image_file": "midlands_west_employment_tribunal.jpg",
+    "lat": 52.476224078213,
+    "lon": -1.89851582599967,
+    "urgent_message": null,
+    "crown_location_code": null,
+    "county_location_code": null,
+    "magistrates_location_code": null,
+    "areas_of_law": [
+      {
+        "name": "Employment",
+        "external_link": "https://www.gov.uk/courts-tribunals/employment-tribunal",
+        "display_url": null,
+        "external_link_desc": "Information about the Employment Tribunal"
+      },
+      {
+        "name": "Tax",
+        "external_link": "https://www.gov.uk/tax-tribunal",
+        "display_url": null,
+        "external_link_desc": "Information about tax tribunals"
+      }
+    ],
+    "types": [
+      "Tribunal"
+    ],
+    "emails": [
+      {
+        "address": "midlandswestet@justice.gov.uk",
+        "description": "Enquiries",
+        "explanation": null
+      }
+    ],
+    "contacts": [
+      {
+        "number": "0121 600 7780",
+        "description": "Enquiries",
+        "explanation": null
+      },
+      {
+        "number": "01264 347 999",
+        "description": "Fax",
+        "explanation": null
+      }
+    ],
+    "opening_times": [
+      {
+        "description": "Tribunal open",
+        "hours": "Dydd Llun i Ddydd Gwener/Monday to Friday 9am to 5pm"
+      },
+      {
+        "description": "Telephones",
+        "hours": "Monday to Friday 9am to 5pm"
+      }
+    ],
+    "facilities": [
+      {
+        "description": "Guide and/or assistance dogs are welcome.",
+        "name": "Assistance dogs"
+      },
+      {
+        "description": "Cold water available in the waiting areas and hearing rooms. There are several retail outlets nearby selling food and hot drinks.",
+        "name": "Refreshments"
+      },
+      {
+        "description": "Disabled toilets available",
+        "name": "Disabled toilet"
+      },
+      {
+        "description": "Hearing loop facilities are available.",
+        "name": "Loop Hearing"
+      },
+      {
+        "description": "There is no parking available at this venue. There are car parks in the vicinity.",
+        "name": "No parking"
+      },
+      {
+        "description": "If you have a disability and need assistance getting in or out of the building, please contact the office as soon as possible to discuss your needs and reasonable adjustments. Please bear in mind that the main hearing rooms are on the 13th and 14th floors.",
+        "name": "Disabled access"
+      },
+      {
+        "description": "Interview rooms available, subject to availability.",
+        "name": "Interview room"
+      }
+    ],
+    "addresses": [
+      {
+        "address_lines": [
+          "Centre City Tower",
+          "13th Floor",
+          "5-7 Hill Street"
+        ],
+        "postcode": "B5 4UU",
+        "town": "Birmingham",
+        "type": "Visit us"
+      }
+    ],
+    "gbs": null,
+    "dx_number": [],
+    "service_area": [],
+    "in_person": true,
+    "access_scheme": null
   }
 ]

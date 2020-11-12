@@ -32,6 +32,8 @@
       {{ hint }}
     </span>
     <form method="GET" action="{{ actionUrl }}">
+      <input type="hidden" name="aol" value="{{ aol }}"/>
+      <input type="hidden" name="serviceAreaType" value="{{ serviceAreaType }}"/>
       {{ govukInput({
         label: {
           text: text,
@@ -53,6 +55,17 @@
         classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
       }) }}
     </form>
+    {% if hasNoResults %}
+      <div class="no-search-results" id="no-search-results">
+        <p class="govuk-body-m govuk-!-font-weight-bold">{{ noResults.p1 }}</p>
+        <p class="govuk-body">{{ noResults.p2 }}</p>
+        <ul class="govuk-list govuk-list--bullet">
+          {% for item, text in noResults.list %}
+          <li>{{ text | safe }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
   </div>
 </div>
 

@@ -23,6 +23,7 @@ export interface FactRequest extends Request {
       [property: string]: {};
       'service-results': ServiceSearchResults;
       'postcode-search': PostcodeSearchData;
+      'postcode-results': PostcodeSearchData;
     };
   };
   lng?: string;

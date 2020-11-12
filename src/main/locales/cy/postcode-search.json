@@ -6,6 +6,15 @@
   "text": "Enter your postcode",
   "example": "For example, EH1 9SP",
   "button": "Continue",
+  "noResults": {
+    "p1": "There are no matching results.",
+    "p2": "Improve your search results by:",
+    "list": {
+      "li1": "double-checking your spelling",
+      "li2": "using fewer keywords",
+      "li3": "searching for something less specific"
+    }
+  },
   "errorText":{
     "title": "There is a problem",
     "invalidPostcode": "Invalid entry – Enter a valid postcode format",

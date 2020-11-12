@@ -1,7 +1,7 @@
 import { Logger } from '../interfaces/Logger';
 import { AxiosInstance } from 'axios';
 import { SearchResult } from '../interfaces/SearchResultsData';
-import { CourtDetailsResult } from '../interfaces/CourtDetailsData';
+import { CourtDetailsResult, CourtDetailsWithDistanceResult } from '../interfaces/CourtDetailsData';
 import { ServiceResult } from '../interfaces/ServicesData';
 import { ServiceAreaResult } from '../interfaces/ServiceAreasData';
 
@@ -65,6 +65,16 @@ export class FactApi {
   public getServiceArea(serviceArea: string, lng: string): Promise<ServiceAreaResult> {
     return this.axios
       .get(`/service-areas/${serviceArea}`)
+      .then(results => results.data)
+      .catch(err => {
+        this.logger.error(err);
+        return [];
+      });
+  }
+
+  public postcodeServiceAreaSearch(postcode: string, aol: string, lng: string): Promise<CourtDetailsWithDistanceResult[]> {
+    return this.axios
+      .get(`search/results.json?postcode=${postcode}&aol=${aol}`, {  headers: {'Accept-Language': lng}})
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);

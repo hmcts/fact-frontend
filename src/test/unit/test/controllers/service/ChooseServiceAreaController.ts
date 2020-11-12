@@ -3,6 +3,7 @@ import { mockResponse } from '../../../utils/mockResponse';
 import { PageData } from '../../../../../main/interfaces/PageData';
 import { ChooseServiceAreaController } from '../../../../../main/controllers/service/ChooseServiceAreaController';
 import { cloneDeep } from 'lodash';
+import { Action } from '../../../../../main/utils/Action';
 
 const i18n = {
   service: {
@@ -418,15 +419,18 @@ describe('Choose service area controller', () => {
     const req = mockRequest(i18n);
     req.params = {
       service: 'chosen-service',
-      action: 'nearest',
+      action: Action.Nearest,
     };
     req.body = {
-      serviceArea: 'chosen service area',
+      serviceArea: 'tax',
     };
     const res = mockResponse();
+    api.getServiceArea = async () => {
+      return { serviceAreaType: 'Other', areaOfLawName: 'tax' };
+    };
     await controller.post(req, res);
 
-    expect(res.redirect).toHaveBeenCalledWith('/services/chosen-service/chosen service area/search-by-postcode');
+    expect(res.redirect).toHaveBeenCalledWith('/services/chosen-service/tax/search-by-postcode?serviceAreaType=Other&aol=tax');
   });
 
 });

@@ -1,18 +1,23 @@
 import { FactRequest } from '../../interfaces/FactRequest';
 import { Response } from 'express';
 import { cloneDeep } from 'lodash';
-import { PostcodeSearchData } from '../../interfaces/PostcodeSearchData';
+import { PostcodeSearchData, PostcodeSearchQuery } from '../../interfaces/PostcodeSearchData';
 
 export class ServicePostcodeSearchController {
 
   public get(req: FactRequest, res: Response): void {
-    const error = req.query.error as string;
+    const { error, postcode, noResults, aol, serviceAreaType }  = req.query as PostcodeSearchQuery;
     const hasError: boolean = error === 'blankPostcode' || error === 'invalidPostcode';
+    const hasNoResults: boolean = noResults === 'true';
     const data: PostcodeSearchData = {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['postcode-search']),
       path: '/search-by-postcode',
       actionUrl: `/services/${req.params.service}/${req.params.serviceArea}/courts/near`,
-      error: hasError
+      error: hasError,
+      hasNoResults: hasNoResults,
+      aol: aol,
+      serviceAreaType: serviceAreaType,
+      postcode: postcode
     };
     if (hasError) {
       data.errorType = error;
