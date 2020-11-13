@@ -31,7 +31,7 @@ export class Helmet {
           connectSrc: [self],
           defaultSrc: ["'none'"],
           fontSrc: [self, 'data:', 'https://fonts.gstatic.com'],
-          imgSrc: [self, azureBlob, ...tagManager, googleAnalyticsDomain, 'https://ssl.gstatic.com', 'https://www.gstatic.com'],
+          imgSrc: [self, azureBlob, ...tagManager, googleAnalyticsDomain, 'data:', 'https://ssl.gstatic.com', 'https://www.gstatic.com'],
           objectSrc: [self],
           scriptSrc: [self, ...tagManager, googleAnalyticsDomain, "'unsafe-inline'", "'unsafe-eval'"],
           styleSrc: [self, ...tagManager, "'unsafe-inline'", 'https://fonts.googleapis.com'],
