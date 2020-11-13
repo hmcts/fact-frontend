@@ -6,6 +6,7 @@ export interface HelmetConfig {
 }
 
 const googleAnalyticsDomain = '*.google-analytics.com';
+const tagManager = ['*.googletagmanager.com', 'https://tagmanager.google.com'];
 const self = "'self'";
 const azureBlob = '*.blob.core.windows.net';
 
@@ -29,11 +30,11 @@ export class Helmet {
         directives: {
           connectSrc: [self],
           defaultSrc: ["'none'"],
-          fontSrc: [self, 'data:'],
-          imgSrc: [self, azureBlob, googleAnalyticsDomain],
+          fontSrc: [self, 'data:', 'https://fonts.gstatic.com'],
+          imgSrc: [self, azureBlob, ...tagManager, googleAnalyticsDomain, 'https://ssl.gstatic.com', 'https://www.gstatic.com'],
           objectSrc: [self],
-          scriptSrc: [self,googleAnalyticsDomain, "'sha256-+6WnXIl4mbFTCARd8N3COQmT3bJJmo32N8q8ZSQAIcU='"],
-          styleSrc: [self],
+          scriptSrc: [self, ...tagManager, googleAnalyticsDomain, "'unsafe-inline'", "'unsafe-eval'"],
+          styleSrc: [self, ...tagManager, "'unsafe-inline'", 'https://fonts.googleapis.com'],
         },
       }),
     );
