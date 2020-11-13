@@ -74,7 +74,7 @@ export class FactApi {
 
   public postcodeServiceAreaSearch(postcode: string, aol: string, lng: string): Promise<CourtDetailsWithDistanceResult[]> {
     return this.axios
-      .get(`search/results.json?postcode=${postcode}&aol=${aol}`, {  headers: {'Accept-Language': lng}})
+      .get(`search/results?postcode=${postcode}&aol=${aol}`, {  headers: {'Accept-Language': lng}})
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
