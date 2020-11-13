@@ -4,6 +4,9 @@
 
 {% block head %}
   {% include "webpack/css.njk" %}
+  <script>
+    dataLayer = [];
+  </script>
 
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
@@ -37,8 +40,4 @@
 {% block bodyEnd %}
   {# Run JavaScript at end of the <body>, to avoid blocking the initial render. #}
   {% include "webpack/js.njk" %}
-
-  <script>
-    dataLayer = [];
-  </script>
 {% endblock %}
