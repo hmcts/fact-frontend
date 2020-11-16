@@ -1,0 +1,19 @@
+import { Then, When } from 'cucumber';
+import * as I from '../utlis/puppeteer.util';
+import { expect } from 'chai';
+
+Then('I can view the phase banner at the top of that page', async () => {
+  const elementExist = await I.checkElement('.govuk-phase-banner');
+  expect(elementExist).equal(true);
+});
+
+Then('I can view the content information banner', async () => {
+  const elementExist = await I.checkElement('.govuk-footer');
+  expect(elementExist).equal(true);
+});
+
+When('I can select a hyperlink in the content banner', async () => {
+  const elementExist = await I.checkElement('.govuk-footer__inline-list-item');
+  expect(elementExist).equal(true);
+  await I.click('.govuk-footer__inline-list-item');
+});

@@ -46,7 +46,7 @@ export class ChooseServiceAreaController {
     const data = await this.getServiceData(service, action, serviceAreasPageData,false, req.lng);
     if(data.results.length === 1){
       req.body.serviceArea = data.results[0].slug;
-      this.post(req, res);
+      await this.post(req, res);
     } else {
       res.render('service', data);
     }
