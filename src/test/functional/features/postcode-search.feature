@@ -11,7 +11,7 @@ Feature: Postcode Proximity Feature
     When I select "#<area_of_law>" from the areas of law page and continue
     Given I can select a "#<area_of_law_category>" from the category area of law page and continue
     Then I am presented with the "What is your postcode? - Find a court or tribunal - GOV.UK" page
-    When I continue having entered a postcode "TW14 1UH"
+    When I continue having entered a postcode "E8 1DY"
     Then I can continue my user journey
 
     Examples:
@@ -27,7 +27,7 @@ Feature: Postcode Proximity Feature
     Then I am presented with the "What is your postcode? - Find a court or tribunal - GOV.UK" page
     When I continue having entered an invalid postcode "TWA 1UH"
     Then I am presented with an postcode error message
-    When I continue having entered a postcode "TW14 1UH"
+    When I continue having entered a postcode "E8 1DY"
     Then I can continue my user journey
 
     Examples:
@@ -42,7 +42,7 @@ Feature: Postcode Proximity Feature
     Then I am presented with the "What is your postcode? - Find a court or tribunal - GOV.UK" page
     When I continue having entered an invalid postcode ""
     Then I am presented with an postcode error message
-    When I continue having entered a postcode "TW14 1UH"
+    When I continue having entered a postcode "E8 1DY"
     Then I can continue my user journey
 
     Examples:

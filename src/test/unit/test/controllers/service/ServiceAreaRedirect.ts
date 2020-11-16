@@ -17,8 +17,8 @@ describe('ServiceAreaRedirect', () => {
       ]
     } as any;
 
-    expect(redirect.getUrl('no-example', serviceArea, Action.Nearest)).toBe('/services/no-example/no-example/search-by-postcode?aol=SomeAol');
-    expect(redirect.getUrl('no-example', serviceArea, Action.SendDocuments)).toBe('/services/no-example/no-example/search-by-postcode?aol=SomeAol');
+    expect(redirect.getUrl('no-example', serviceArea, Action.Nearest)).toBe('/services/no-example/no-example/search-by-postcode');
+    expect(redirect.getUrl('no-example', serviceArea, Action.SendDocuments)).toBe('/services/no-example/no-example/search-by-postcode');
     expect(redirect.getUrl('no-example', serviceArea, Action.Update)).toBe('/services/no-example/no-example/search-results');
     expect(redirect.getUrl('no-example', serviceArea, Action.NotListed)).toBe('/services/no-example/no-example/search-results');
   });
@@ -46,7 +46,7 @@ describe('ServiceAreaRedirect', () => {
       ]
     } as any;
 
-    expect(redirect.getUrl('sscs', serviceArea, Action.Nearest)).toBe('/services/sscs/sscs/search-by-postcode?aol=SomeAol');
+    expect(redirect.getUrl('sscs', serviceArea, Action.Nearest)).toBe('/services/sscs/sscs/search-by-postcode');
     expect(redirect.getUrl('sscs', serviceArea, Action.SendDocuments)).toBe('/services/sscs/sscs/search-results');
     expect(redirect.getUrl('sscs', serviceArea, Action.Update)).toBe('/services/sscs/sscs/search-results');
     expect(redirect.getUrl('sscs', serviceArea, Action.NotListed)).toBe('/services/sscs/sscs/search-results');
@@ -62,8 +62,8 @@ describe('ServiceAreaRedirect', () => {
       ]
     } as any;
 
-    expect(redirect.getUrl('divorce', serviceArea, Action.Nearest)).toBe('/services/divorce/divorce/search-by-postcode?aol=SomeAol');
-    expect(redirect.getUrl('divorce', serviceArea, Action.SendDocuments)).toBe('/services/divorce/divorce/search-by-postcode?aol=SomeAol');
+    expect(redirect.getUrl('divorce', serviceArea, Action.Nearest)).toBe('/services/divorce/divorce/search-by-postcode');
+    expect(redirect.getUrl('divorce', serviceArea, Action.SendDocuments)).toBe('/services/divorce/divorce/search-by-postcode');
     expect(redirect.getUrl('divorce', serviceArea, Action.Update)).toBe('/services/divorce/divorce/search-results');
     expect(redirect.getUrl('divorce', serviceArea, Action.NotListed)).toBe('/services/divorce/divorce/search-results');
   });
@@ -77,10 +77,10 @@ describe('ServiceAreaRedirect', () => {
       ]
     } as any;
 
-    expect(redirect.getUrl('finrem', serviceArea, Action.Nearest)).toBe('/services/finrem/finrem/search-by-postcode?aol=SomeAol');
-    expect(redirect.getUrl('finrem', serviceArea, Action.SendDocuments)).toBe('/services/finrem/finrem/search-by-postcode?aol=SomeAol');
-    expect(redirect.getUrl('finrem', serviceArea, Action.Update)).toBe('/services/finrem/finrem/search-by-postcode?aol=SomeAol');
-    expect(redirect.getUrl('finrem', serviceArea, Action.NotListed)).toBe('/services/finrem/finrem/search-by-postcode?aol=SomeAol');
+    expect(redirect.getUrl('finrem', serviceArea, Action.Nearest)).toBe('/services/finrem/finrem/search-by-postcode');
+    expect(redirect.getUrl('finrem', serviceArea, Action.SendDocuments)).toBe('/services/finrem/finrem/search-by-postcode');
+    expect(redirect.getUrl('finrem', serviceArea, Action.Update)).toBe('/services/finrem/finrem/search-by-postcode');
+    expect(redirect.getUrl('finrem', serviceArea, Action.NotListed)).toBe('/services/finrem/finrem/search-by-postcode');
   });
 
   test('Should redirect a regional and local area to the correct endpoints', async () => {
@@ -93,10 +93,10 @@ describe('ServiceAreaRedirect', () => {
       ]
     } as any;
 
-    expect(redirect.getUrl('no-example2', serviceArea, Action.Nearest)).toBe('/services/no-example2/no-example2/search-by-postcode?aol=SomeAol');
-    expect(redirect.getUrl('no-example2', serviceArea, Action.SendDocuments)).toBe('/services/no-example2/no-example2/search-by-postcode?aol=SomeAol');
-    expect(redirect.getUrl('no-example2', serviceArea, Action.Update)).toBe('/services/no-example2/no-example2/search-by-postcode?aol=SomeAol');
-    expect(redirect.getUrl('no-example2', serviceArea, Action.NotListed)).toBe('/services/no-example2/no-example2/search-by-postcode?aol=SomeAol');
+    expect(redirect.getUrl('no-example2', serviceArea, Action.Nearest)).toBe('/services/no-example2/no-example2/search-by-postcode');
+    expect(redirect.getUrl('no-example2', serviceArea, Action.SendDocuments)).toBe('/services/no-example2/no-example2/search-by-postcode');
+    expect(redirect.getUrl('no-example2', serviceArea, Action.Update)).toBe('/services/no-example2/no-example2/search-by-postcode');
+    expect(redirect.getUrl('no-example2', serviceArea, Action.NotListed)).toBe('/services/no-example2/no-example2/search-by-postcode');
   });
 
   test('Should redirect adoption to the correct endpoints', async () => {
@@ -108,10 +108,10 @@ describe('ServiceAreaRedirect', () => {
       ]
     } as any;
 
-    expect(redirect.getUrl('adoption', serviceArea, Action.Nearest)).toBe('/services/adoption/adoption/search-by-postcode?aol=SomeAol');
-    expect(redirect.getUrl('adoption', serviceArea, Action.SendDocuments)).toBe('/services/adoption/adoption/search-by-postcode?aol=SomeAol');
-    expect(redirect.getUrl('adoption', serviceArea, Action.Update)).toBe('/services/adoption/adoption/search-by-postcode?aol=SomeAol');
-    expect(redirect.getUrl('adoption', serviceArea, Action.NotListed)).toBe('/services/adoption/adoption/search-by-postcode?aol=SomeAol');
+    expect(redirect.getUrl('adoption', serviceArea, Action.Nearest)).toBe('/services/adoption/adoption/search-by-postcode');
+    expect(redirect.getUrl('adoption', serviceArea, Action.SendDocuments)).toBe('/services/adoption/adoption/search-by-postcode');
+    expect(redirect.getUrl('adoption', serviceArea, Action.Update)).toBe('/services/adoption/adoption/search-by-postcode');
+    expect(redirect.getUrl('adoption', serviceArea, Action.NotListed)).toBe('/services/adoption/adoption/search-by-postcode');
   });
 
 });

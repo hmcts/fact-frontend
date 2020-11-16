@@ -26,8 +26,8 @@ const servicesChildcare = '/services/childcare-and-parenting/service-areas/updat
 const servicesHarmAbuse = '/services/harm-and-abuse/service-areas/update';
 const servicesCrime = '/services/crime/service-areas/update';
 const serviceSearchResultsMoneyClaims = '/services/money/money-claims/search-results';
-const servicePostcodeSearchTax = '/services/money/tax/search-by-postcode?serviceAreaType=null&aol=Tax';
-const servicePostcodeResultsTax = '/services/money/tax/courts/near?aol=Tax&serviceAreaType=other&postcode=E81DY';
+const servicePostcodeSearchTax = '/services/money/tax/search-by-postcode';
+const servicePostcodeResultsTax = '/services/money/tax/courts/near?postcode=E81DY';
 
 class Pa11yResult {
   documentTitle: string;
