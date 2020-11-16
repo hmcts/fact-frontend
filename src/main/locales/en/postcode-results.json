@@ -4,7 +4,7 @@
   "question": "Court or tribunal search results",
   "hint": "We manage your {serviceArea} applications at our regional divorce units (RDU).",
   "secondHint": "Find where to send your documents or ask about your application’s progress.",
-  "multipleResultsHint": "We found {total} court or tribunal related to tax matching your search for '{postcode}'.",
+  "multipleResultsHint": "We found {total} court or tribunal related to {serviceArea} matching your search for '{postcode}'.",
   "applyOnlineHeading": "Apply online",
   "unit": "miles"
 }

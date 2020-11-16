@@ -19,9 +19,7 @@ describe('Service Postcode Results Controller', () => {
   test('Should render the service results page', async () => {
     const req = mockRequest(i18n);
     req.query = {
-      postcode: 'E8 1DY',
-      aol: 'tax',
-      serviceAreaType: 'Other'
+      postcode: 'E8 1DY'
     };
     req.params = {
       service: 'money',
@@ -42,8 +40,6 @@ describe('Service Postcode Results Controller', () => {
     const req = mockRequest(i18n);
     req.query = {
       postcode: '',
-      aol: 'tax',
-      serviceAreaType: 'Other'
     };
     req.params = {
       service: 'money',
@@ -51,15 +47,13 @@ describe('Service Postcode Results Controller', () => {
     };
     const res = mockResponse();
     await controller.get(req, res);
-    expect(res.redirect).toBeCalledWith('/services/money/tax/search-by-postcode?serviceAreaType=Other&aol=tax&error=blankPostcode');
+    expect(res.redirect).toBeCalledWith('/services/money/tax/search-by-postcode?error=blankPostcode');
   });
 
   test('Should redirect to the postcode search page with invalid postcode error', async () => {
     const req = mockRequest(i18n);
     req.query = {
-      postcode: 'not a postcode',
-      aol: 'tax',
-      serviceAreaType: 'Other'
+      postcode: 'not a postcode'
     };
     req.params = {
       service: 'money',
@@ -67,15 +61,13 @@ describe('Service Postcode Results Controller', () => {
     };
     const res = mockResponse();
     await controller.get(req, res);
-    expect(res.redirect).toBeCalledWith('/services/money/tax/search-by-postcode?serviceAreaType=Other&aol=tax&error=invalidPostcode');
+    expect(res.redirect).toBeCalledWith('/services/money/tax/search-by-postcode?error=invalidPostcode');
   });
 
   test('Should redirect to the postcode search page with no results info', async () => {
     const req = mockRequest(i18n);
     req.query = {
-      postcode: 'E8 1DY',
-      aol: 'tax',
-      serviceAreaType: 'Other'
+      postcode: 'E8 1DY'
     };
     req.params = {
       service: 'money',
@@ -84,6 +76,6 @@ describe('Service Postcode Results Controller', () => {
     const res = mockResponse();
     api.postcodeServiceAreaSearch = async (): Promise<any> => [];
     await controller.get(req, res);
-    expect(res.redirect).toBeCalledWith('/services/money/tax/search-by-postcode?serviceAreaType=Other&aol=tax&noResults=true&postcode=E8 1DY');
+    expect(res.redirect).toBeCalledWith('/services/money/tax/search-by-postcode?noResults=true&postcode=E8 1DY');
   });
 });

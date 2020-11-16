@@ -29,40 +29,38 @@ export default function(app: Application): void {
   app.get('/search/spoe', (req, res) => res.redirect(301, '/service-choose-action'));
 
   app.get('/search/postcode', (req, res) => {
-    const params = stringify(req.query as any);
-
     if (req.query.aol === 'Adoption') {
-      res.redirect(301, '/services/childcare-and-parenting/adoption/search-by-postcode?' + params);
+      res.redirect(301, '/services/childcare-and-parenting/adoption/search-by-postcode');
     } else if (req.query.aol === 'Bankruptcy') {
-      res.redirect(301, '/services/money/bankruptcy/search-by-postcode?' + params);
+      res.redirect(301, '/services/money/bankruptcy/search-by-postcode');
     } else if (req.query.aol === 'Social security') {
-      res.redirect(301, '/services/money/benefits/search-by-postcode?' + params);
+      res.redirect(301, '/services/money/benefits/search-by-postcode');
     } else if (req.query.aol === 'Children') {
-      res.redirect(301, '/services/childcare-and-parenting/childcare-arrangements/search-by-postcode?' + params);
+      res.redirect(301, '/services/childcare-and-parenting/childcare-arrangements/search-by-postcode');
     } else if (req.query.aol === 'Civil partnership') {
-      res.redirect(301, '/services/probate-divorce-or-ending-civil-partnerships/civil-partnership/search-by-postcode?' + params);
+      res.redirect(301, '/services/probate-divorce-or-ending-civil-partnerships/civil-partnership/search-by-postcode');
     } else if (req.query.aol === 'Employment') {
-      res.redirect(301, '/services/money/claims-against-employers/search-by-postcode?' + params);
+      res.redirect(301, '/services/money/claims-against-employers/search-by-postcode');
     } else if (req.query.aol === 'Crime') {
-      res.redirect(301, '/services/crime/major-criminal-offences/search-by-postcode?' + params);
+      res.redirect(301, '/services/crime/major-criminal-offences/search-by-postcode');
     } else if (req.query.aol === 'Minor crime') {
-      res.redirect(301, '/services/crime/minor-criminal-offences/search-by-postcode?' + params);
+      res.redirect(301, '/services/crime/minor-criminal-offences/search-by-postcode');
     } else if (req.query.aol === 'Divorce') {
-      res.redirect(301, '/services/probate-divorce-or-ending-civil-partnerships/divorce/search-by-postcode?' + params);
+      res.redirect(301, '/services/probate-divorce-or-ending-civil-partnerships/divorce/search-by-postcode');
     } else if (req.query.aol === 'Domestic violence') {
-      res.redirect(301, '/services/harm-and-abuse/domestic-abuse/search-by-postcode?' + params);
+      res.redirect(301, '/services/harm-and-abuse/domestic-abuse/search-by-postcode');
     } else if (req.query.aol === 'Forced marriage and FGM') {
-      res.redirect(301, '/services/harm-and-abuse/forced-marriage/search-by-postcode?' + params);
+      res.redirect(301, '/services/harm-and-abuse/forced-marriage/search-by-postcode');
     } else if (req.query.aol === 'Housing possession') {
-      res.redirect(301, '/services/money/housing/search-by-postcode?' + params);
+      res.redirect(301, '/services/money/housing/search-by-postcode');
     } else if (req.query.aol === 'High Court District Registry') {
-      res.redirect(301, '/services/high-court-district-registries/high-court-district-registries/search-by-postcode?' + params);
+      res.redirect(301, '/services/high-court-district-registries/high-court-district-registries/search-by-postcode');
     } else if (req.query.aol === 'Immigration') {
-      res.redirect(301, '/services/immigration-and-asylum/immigration/search-by-postcode?' + params);
+      res.redirect(301, '/services/immigration-and-asylum/immigration/search-by-postcode');
     } else if (req.query.aol === 'Money claims') {
-      res.redirect(301, '/services/money/money-claims/search-by-postcode?' + params);
+      res.redirect(301, '/services/money/money-claims/search-by-postcode');
     } else if (req.query.aol === 'Probate') {
-      res.redirect(301, '/services/money/probate/search-by-postcode?' + params);
+      res.redirect(301, '/services/money/probate/search-by-postcode');
     } else {
       res.redirect(301, '/services/unknown-service');
     }
