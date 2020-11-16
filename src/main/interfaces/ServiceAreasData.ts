@@ -7,6 +7,7 @@ export interface ServiceAreasData extends PageData {
   error: {
     text: string;
   };
+  backPath: string;
 }
 
 export interface ServiceAreaResult {

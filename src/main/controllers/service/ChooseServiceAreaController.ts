@@ -16,12 +16,13 @@ export class ChooseServiceAreaController {
     private readonly serviceAreaRedirect: ServiceAreaRedirect
   ) { }
 
-  private async getServiceData(serviceChosen: string, action: string, serviceAreasPageData: ServiceAreasData, hasErrors: boolean, lng: string) {
+  private async getServiceData(serviceChosen: string, action: string, serviceAreasPageData: ServiceAreasData, hasErrors: boolean, lng: string, referer: string) {
     const data: ServiceAreasData = {
       ...cloneDeep(serviceAreasPageData),
       path: '/services/' + serviceChosen + '/service-areas/' + action,
       results: [],
       errors: hasErrors,
+      backPath: referer,
     };
 
     const serviceAreasData = await this.api.serviceAreas(serviceChosen, lng);
@@ -43,7 +44,8 @@ export class ChooseServiceAreaController {
   public async get(req: FactRequest, res: Response) {
     const {service, action} = req.params;
     const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
-    const data = await this.getServiceData(service, action, serviceAreasPageData,false, req.lng);
+    const data = await this.getServiceData(service, action, serviceAreasPageData,false, req.lng, req.header('Referer'));
+    req.body['chooseAction'] = action;
     if(data.results.length === 1){
       req.body.serviceArea = data.results[0].slug;
       await this.post(req, res);
@@ -58,7 +60,8 @@ export class ChooseServiceAreaController {
     if (!hasProperty(req.body, 'serviceArea')) {
       const serviceChosen = req.params.service as string;
       const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
-      const serviceData = await this.getServiceData(serviceChosen, action, serviceAreasPageData, true, req.lng);
+      const serviceData = await this.getServiceData(serviceChosen, action, serviceAreasPageData, true, req.lng, req.header('Referer'));
+      req.body['chooseAction'] = action;
 
       res.render('service', serviceData);
     } else if (req.body.serviceArea === 'not-listed') {

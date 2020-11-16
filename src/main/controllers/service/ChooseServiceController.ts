@@ -13,13 +13,14 @@ export class ChooseServiceController {
     private readonly api: FactApi
   ) { }
 
-  private async getServices(req: FactRequest, hasErrors: boolean) {
+  private async getServices(req: FactRequest, hasErrors: boolean, referer: string) {
     const action: string = req.params.action as string;
     const data: ServicesData = {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['choose-service']),
       path: '/services' + action,
       results: [],
       errors: hasErrors,
+      backPath: referer
     };
 
     const services = await this.api.services(req.lng);
@@ -30,13 +31,13 @@ export class ChooseServiceController {
   }
 
   public async get(req: FactRequest, res: Response) {
-    const data = await this.getServices(req, false);
+    const data = await this.getServices(req, false, req.header('Referer'));
     res.render('choose-service', data);
   }
 
   public async post(req: FactRequest, res: Response) {
     if (!hasProperty(req.body, 'chooseService')) {
-      const data = await this.getServices(req, true);
+      const data = await this.getServices(req, true, req.header('Referer'));
       return res.render('choose-service', data);
     }
 
