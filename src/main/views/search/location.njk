@@ -34,26 +34,26 @@
       <div class="govuk-form-group {{ 'govuk-form-group--error' if error.text }}" id="form-group">
         <h2 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--m" for="search">
-            {{ text | safe }}
+            {{ text }}
           </label>
           <div id="event-name-hint" class="govuk-hint">
-            {{ textExample | safe }}
+            {{ textExample }}
           </div>
 
           {% if (error.text) %}
             <span id="search-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> {{ error.text | safe }}
+              <span class="govuk-visually-hidden">Error:</span> {{ error.text }}
             </span>
           {% endif %}
         </h2>
-        <input class="govuk-input govuk-!-width-three-quarters {{ 'govuk-input--error' if error.text }}" id="search" name="search" type="text" value="{{ search | safe }}">
+        <input class="govuk-input govuk-!-width-three-quarters {{ 'govuk-input--error' if error.text }}" id="search" name="search" type="text" value="{{ search }}">
         <button type="submit" class="govuk-button">Search</button>
       </div>
     </form>
 
     {% if (path !== '/search-by-name') and (results.length > 0) %}
-      <p class="govuk-body">{{ foundResults | safe }}</p>
-      <p class="govuk-body">{{ mostRelevant | safe }}</p>
+      <p class="govuk-body">{{ foundResults }}</p>
+      <p class="govuk-body">{{ mostRelevant }}</p>
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       <div class="search-results" id="search-results">
         {% for item in results %}
@@ -68,7 +68,7 @@
         <p class="govuk-body">{{ noResults.p2 }}</p>
         <ul class="govuk-list govuk-list--bullet">
         {% for item, text in noResults.list %}
-          <li>{{ text | safe }}</li>
+          <li>{{ text }}</li>
         {% endfor %}
         </ul>
       </div>

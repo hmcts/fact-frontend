@@ -76,7 +76,7 @@
             {{ additionalInfoHeading }}
           </h3>
           <p class="govuk-body-m">
-            {{ results.info }}
+            {{ results.info | safe }}
           </p>
         </div>
       {% endif %}
