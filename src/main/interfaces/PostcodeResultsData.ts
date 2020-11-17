@@ -4,7 +4,10 @@ export interface PostcodeResultsData extends PageData {
   hint: string;
   errorType: string;
   multipleResultsHint: string;
+  secondHint: string;
   results: PostcodeResultsData | {};
+  isDivorceOrCivil: boolean;
+  serviceArea: string;
 }
 
 export interface PostcodeSearchResultsData {
