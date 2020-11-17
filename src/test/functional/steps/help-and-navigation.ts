@@ -17,3 +17,9 @@ When('I can select a hyperlink in the content banner', async () => {
   expect(elementExist).equal(true);
   await I.click('.govuk-footer__inline-list-item');
 });
+
+When('I select the back button', async () => {
+  const elementExist = await I.checkElement('.govuk-back-link');
+  expect(elementExist).equal(true);
+  await I.click('.govuk-back-link');
+});
