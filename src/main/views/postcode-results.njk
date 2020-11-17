@@ -26,14 +26,14 @@
     </h1>
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-grid-row">
-        {% if results.length > 1 %}
+        {% if results.courts.length > 1 %}
           <div>
             <p class="govuk-body-m">
               {{ multipleResultsHint }}
             </p>
           </div>
           <div id="search-results">
-            {% for court in results %}
+            {% for court in results.courts %}
               <div class="govuk-grid-row">
                 <div class="govuk-grid-column-three-quarters">
                   <h2 class="govuk-heading-m">
@@ -64,14 +64,14 @@
         {% endif %}
       </div>
     </div>
-    {% if results.length === 1 %}
+    {% if results.onlineText and results.onlineUrl %}
       <div class="govuk-grid-column-one-third side-content">
         <div id="areas-of-law">
           <h3 class="govuk-heading-m">
             {{ applyOnlineHeading }}
           </h3>
           <p class="govuk-body-m">
-            <a class="govuk-link" href="{{ serviceArea.applyOnlineUrl }}"> {{ serviceArea.applyOnline }} </a>
+            <a class="govuk-link" href="{{ results.onlineUrl }}"> {{ results.onlineText }} </a>
           </p>
         </div>
       </div>

@@ -4,7 +4,7 @@ import { cloneDeep } from 'lodash';
 import { isEmpty, isPostcodeValid } from '../../utils/validation';
 import { FactApi } from '../../utils/FactApi';
 import autobind from 'autobind-decorator';
-import { PostcodeSearchData } from '../../interfaces/PostcodeSearchData';
+import { PostcodeResultsData } from '../../interfaces/PostcodeResultsData';
 
 @autobind
 export class ServicePostcodeResultsController {
@@ -22,20 +22,20 @@ export class ServicePostcodeResultsController {
     } else if (!isPostcodeValid(postcode)) {
       return res.redirect(`${baseUrl}?error=invalidPostcode`);
     } else {
-      const data: PostcodeSearchData = {
+      const data: PostcodeResultsData = {
         ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['postcode-results']),
         path: '/courts/near',
         errors: false,
-        results: []
+        results: {}
       };
       const court = await this.api.postcodeServiceAreaSearch(postcode, serviceArea, req.lng);
-      if (court.length === 0) {
+      if (court.courts.length === 0) {
         return res.redirect(`${baseUrl}?noResults=true&postcode=${postcode}`);
       }
       data.results = court;
       data.multipleResultsHint = data.multipleResultsHint
-        .replace('{total}', court.length.toString())
-        .replace('{serviceArea}', serviceArea)
+        .replace('{total}', court.courts.length.toString())
+        .replace('{serviceArea}', court.name)
         .replace('{postcode}', postcode);
       return res.render('postcode-results', data);
     }

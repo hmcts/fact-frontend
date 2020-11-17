@@ -1,9 +1,10 @@
 import { Logger } from '../interfaces/Logger';
 import { AxiosInstance } from 'axios';
 import { SearchResult } from '../interfaces/SearchResultsData';
-import { CourtDetailsResult, CourtDetailsWithDistanceResult } from '../interfaces/CourtDetailsData';
+import { CourtDetailsResult } from '../interfaces/CourtDetailsData';
 import { ServiceResult } from '../interfaces/ServicesData';
 import { ServiceAreaResult } from '../interfaces/ServiceAreasData';
+import { PostcodeSearchResultsData } from '../interfaces/PostcodeResultsData';
 
 export class FactApi {
 
@@ -72,7 +73,7 @@ export class FactApi {
       });
   }
 
-  public postcodeServiceAreaSearch(postcode: string, serviceAreaSlug: string, lng: string): Promise<CourtDetailsWithDistanceResult[]> {
+  public postcodeServiceAreaSearch(postcode: string, serviceAreaSlug: string, lng: string): Promise<PostcodeSearchResultsData> {
     return this.axios
       .get(`search/results?postcode=${postcode}&serviceArea=${serviceAreaSlug}`, {  headers: {'Accept-Language': lng}})
       .then(results => results.data)
