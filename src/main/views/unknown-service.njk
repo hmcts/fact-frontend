@@ -4,6 +4,10 @@
 {{ title }}
 {% endblock %}
 
+{% block beforeContent %}
+<a href="/" class="govuk-back-link" onclick="goBack(event);">Back</a>
+{% endblock %}
+
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -37,3 +41,10 @@
   </div>
 </div>
 {% endblock %}
+
+<script>
+function goBack(e) {
+  e.preventDefault();
+  history.go(-1);
+}
+</script>

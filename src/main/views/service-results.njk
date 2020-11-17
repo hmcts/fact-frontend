@@ -10,12 +10,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ super() }}
-
-  {{ govukBackLink({
-    text: "Back",
-    href: '/search-option'
-  }) }}
+<a href="/" class="govuk-back-link" onclick="goBack(event);">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -57,4 +52,12 @@
     {% endif %}
   </div>
 </div>
+
+<script>
+function goBack(e) {
+  e.preventDefault();
+  history.go(-1);
+}
+</script>
+
 {% endblock %}

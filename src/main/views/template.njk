@@ -75,6 +75,12 @@
 {% endblock %}
 
 {% block bodyEnd %}
+  <script>
+  function goBack(e) {
+    e.preventDefault();
+    history.go(-1);
+  }
+  </script>
   {# Run JavaScript at end of the <body>, to avoid blocking the initial render. #}
   {% include "webpack/js.njk" %}
 {% endblock %}

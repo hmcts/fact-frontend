@@ -8,12 +8,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ super() }}
-
-  {{ govukBackLink({
-    text: "Back",
-    href: "/courts"
-  }) }}
+<a href="/" class="govuk-back-link" onclick="goBack(event);">Back</a>
 {% endblock %}
 
 {% block content %}
