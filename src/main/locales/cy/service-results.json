@@ -1,9 +1,9 @@
 {
-  "title": "Search for location - Find a court or tribunal - GOV.UK",
-  "serviceName": "Find a court or tribunal",
-  "question": "Court or tribunal search results",
-  "hint": "We manage {service-area} applications at our central service centre. Find where to send your documents or ask about your application’s progress.",
-  "applyOnlineHeading": "Apply online",
-  "regionStatement": "This location provides services for all of England and Wales."
+  "title": "Canlyniadau chwilio ar gyfer lleoliad - Dod o hyd i lys neu dribiwnlys - GOV.UK",
+  "serviceName": "Dod o hyd i lys neu dribiwnlys",
+  "question": "Canlyniadau chwilio am lys neu dribiwnlys",
+  "hint": "We manage {service-area} applications at our central service centre. Gwybodaeth am ble i anfon eich dogfennau neu ofyn am gynnydd eich cais.",
+  "applyOnlineHeading": "Gwnewch gais ar-lein",
+  "regionStatement": "Mae'r lleoliad hwn yn darparu gwasanaethau ar gyfer Cymru a Lloegr."
 }
 
