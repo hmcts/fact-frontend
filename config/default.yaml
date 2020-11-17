@@ -1,7 +1,7 @@
 app:
   useCSRFProtection: 'true'
   security:
-    referrerPolicy: 'same-origin'
+    referrerPolicy: 'origin'
 services:
   frontend:
     name: 'FACT Frontend'

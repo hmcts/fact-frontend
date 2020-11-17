@@ -44,7 +44,6 @@ export class ChooseServiceAreaController {
     const {service, action} = req.params;
     const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
     const data = await this.getServiceData(service, action, serviceAreasPageData,false, req.lng);
-    req.body['chooseAction'] = action;
     if(data.results.length === 1){
       req.body.serviceArea = data.results[0].slug;
       await this.post(req, res);
@@ -60,7 +59,6 @@ export class ChooseServiceAreaController {
       const serviceChosen = req.params.service as string;
       const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
       const serviceData = await this.getServiceData(serviceChosen, action, serviceAreasPageData, true, req.lng);
-      req.body['chooseAction'] = action;
 
       res.render('service', serviceData);
     } else if (req.body.serviceArea === 'not-listed') {
