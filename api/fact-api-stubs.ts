@@ -13,6 +13,10 @@ const moneyServiceData = require('./money-service-data.json');
 const serviceAreas = require('./service-areas.json');
 const port = 8080;
 
+const getServiceArea = (serviceArea: string) => {
+  const serviceAreasData = [...serviceAreas];
+  return serviceAreasData.find(service => service.slug === serviceArea);
+};
 
 app.use(bodyParser.json());
 
@@ -59,14 +63,14 @@ app.get('/services/childcare-and-parenting/service-areas', (req: Request, res: R
 
 app.get('/service-areas/:serviceArea', (req: Request, res: Response) => {
   const serviceArea: string = (req.params.serviceArea as string);
-  const serviceAreasData = [...serviceAreas];
-  const serviceAreaObj = serviceAreasData.find(service => service.slug === serviceArea);
+  const serviceAreaObj = getServiceArea(serviceArea);
   res.json(serviceAreaObj);
 });
 
-app.get('/search/results.json', (req: Request, res: Response) => {
-  const { postcode, aol} = req.query;
-  console.log(postcode, aol);
+app.get('/search/results', (req: Request, res: Response) => {
+  const { postcode, serviceArea } = req.query;
+  console.log(postcode, serviceArea);
+  const serviceAreaObj = getServiceArea(serviceArea as string);
   const lan = 1;
   const lon = 1;
   const courts = [...courtDetails];
@@ -75,12 +79,26 @@ app.get('/search/results.json', (req: Request, res: Response) => {
   });
   const filteredDocs = distanceSortedCourt.filter(court => {
     for (const areaOfLaw of court['areas_of_law']) {
-      if (areaOfLaw.name === aol) {
+      if (areaOfLaw.name === serviceAreaObj.areaOfLawName) {
         return court;
       }
     }
   });
-  res.json(filteredDocs.slice(0, 10));
+  const mappedCourts = filteredDocs.slice(0, 10).map(courts => {
+    return {
+      name: courts.name,
+      slug: courts.slug,
+      distance: courts.distance
+    };
+  });
+
+  const results = {
+    name: serviceAreaObj.name,
+    onlineText: serviceAreaObj.onlineText,
+    onlineUrl: serviceAreaObj.onlineUrl,
+    courts: mappedCourts
+  };
+  res.json(results);
 });
 
 app.listen(port, () => {
