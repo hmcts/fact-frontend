@@ -36,7 +36,7 @@
         hint: {
           text: example
         },
-        errorMessage: { text: errorText[errorType] | safe } if error,
+        errorMessage: { text: errorText[errorType] } if error,
         autocomplete: "postal-code"
       }) }}
       {{ govukButton({
@@ -50,7 +50,7 @@
         <p class="govuk-body">{{ noResults.p2 }}</p>
         <ul class="govuk-list govuk-list--bullet">
           {% for item, text in noResults.list %}
-          <li>{{ text | safe }}</li>
+          <li>{{ text }}</li>
           {% endfor %}
         </ul>
       </div>
