@@ -107,4 +107,21 @@ describe('Service Postcode Results Controller', () => {
     await controller.get(req, res);
     expect(res.redirect).toBeCalledWith('/services/money/tax/search-by-postcode?noResults=true&postcode=E8 1DY');
   });
+
+  test('Should redirect to the postcode search page with no results info due to no courts', async () => {
+    const req = mockRequest(i18n);
+    req.query = {
+      postcode: 'E8 1DY'
+    };
+    req.params = {
+      service: 'money',
+      serviceArea: 'tax'
+    };
+    const res = mockResponse();
+    api.postcodeServiceAreaSearch = async (): Promise<any> => {
+      return { courts: null };
+    };
+    await controller.get(req, res);
+    expect(res.redirect).toBeCalledWith('/services/money/tax/search-by-postcode?noResults=true&postcode=E8 1DY');
+  });
 });

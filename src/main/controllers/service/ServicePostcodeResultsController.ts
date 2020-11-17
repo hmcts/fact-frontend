@@ -32,7 +32,7 @@ export class ServicePostcodeResultsController {
         serviceArea: serviceArea
       };
       const court = await this.api.postcodeServiceAreaSearch(postcode, serviceArea, req.lng);
-      if (court.courts.length === 0) {
+      if (!court.courts || court.courts.length === 0) {
         return res.redirect(`${baseUrl}?noResults=true&postcode=${postcode}`);
       }
       data.results = court;
