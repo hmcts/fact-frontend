@@ -16,9 +16,7 @@ describe('Service Postcode Search Controller', () => {
   test('Should render the postcode search page', async () => {
     const req = mockRequest(i18n);
     req.query = {
-      error: '',
-      aol: 'tax',
-      serviceAreaType: 'Other'
+      error: ''
     };
     req.params = {
       service: 'money',
@@ -32,8 +30,6 @@ describe('Service Postcode Search Controller', () => {
       actionUrl: '/services/money/tax/courts/near',
       error: false,
       hasNoResults: false,
-      aol: 'tax',
-      serviceAreaType: 'Other',
       postcode: undefined
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
@@ -43,8 +39,6 @@ describe('Service Postcode Search Controller', () => {
     const req = mockRequest(i18n);
     req.query = {
       error: 'blankPostcode',
-      aol: 'tax',
-      serviceAreaType: 'Other'
     };
     req.params = {
       service: 'money',
@@ -59,8 +53,6 @@ describe('Service Postcode Search Controller', () => {
       error: true,
       errorType: 'blankPostcode',
       hasNoResults: false,
-      aol: 'tax',
-      serviceAreaType: 'Other',
       postcode: undefined
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
@@ -69,9 +61,7 @@ describe('Service Postcode Search Controller', () => {
   test('Should render the postcode search page with invalid postcode error', async () => {
     const req = mockRequest(i18n);
     req.query = {
-      error: 'invalidPostcode',
-      aol: 'tax',
-      serviceAreaType: 'Other'
+      error: 'invalidPostcode'
     };
     req.params = {
       service: 'money',
@@ -86,8 +76,6 @@ describe('Service Postcode Search Controller', () => {
       error: true,
       errorType: 'invalidPostcode',
       hasNoResults: false,
-      aol: 'tax',
-      serviceAreaType: 'Other',
       postcode: undefined
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
@@ -96,8 +84,6 @@ describe('Service Postcode Search Controller', () => {
   test('Should render the postcode search page with no results', async () => {
     const req = mockRequest(i18n);
     req.query = {
-      aol: 'tax',
-      serviceAreaType: 'Other',
       postcode: 'E1 8DY',
       noResults: 'true'
     };
@@ -113,8 +99,6 @@ describe('Service Postcode Search Controller', () => {
       actionUrl: '/services/money/tax/courts/near',
       error: false,
       hasNoResults: true,
-      aol: 'tax',
-      serviceAreaType: 'Other',
       postcode: 'E1 8DY'
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
