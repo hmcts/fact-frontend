@@ -14,16 +14,15 @@ const serviceAreas = require('./service-areas.json');
 const port = 8080;
 
 const getServiceArea = (serviceArea: string) => {
-  const serviceAreasData = [...serviceAreas];
-  return serviceAreasData.find(service => service.slug === serviceArea);
+  return serviceAreas.find((service: any) => service.slug === serviceArea);
 };
 
 app.use(bodyParser.json());
 
 app.get('/courts', (req: Request, res: Response) => {
   const query: string = (req.query.q as string).toUpperCase();
-  const courts = [...data];
-  const filteredDocs = courts.filter(court => {
+  const courts = data;
+  const filteredDocs = courts.filter((court: any) => {
     if (court['postcode'].toUpperCase().indexOf(query) >= 0 ||
         court['address'].toUpperCase().indexOf(query) >= 0 ||
         court['townName'].toUpperCase().indexOf(query) >= 0 ||
@@ -36,8 +35,7 @@ app.get('/courts', (req: Request, res: Response) => {
 
 app.get('/courts/:slug', (req: Request, res: Response) => {
   const slug: string = (req.params.slug as string).toLowerCase();
-  const courts = [...courtDetails];
-  const court = courts.find(court => court.slug.toLowerCase() === slug);
+  const court = courtDetails.find((court: any) => court.slug.toLowerCase() === slug);
   res.json(court);
 });
 

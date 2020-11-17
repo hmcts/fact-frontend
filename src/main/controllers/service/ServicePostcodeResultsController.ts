@@ -16,13 +16,13 @@ export class ServicePostcodeResultsController {
   public async get(req: FactRequest, res: Response): Promise<void> {
     const postcode  = req.query.postcode as string;
     const serviceArea  = req.params.serviceArea;
-    const isDivorceOrCivil = serviceArea === 'divorce' || serviceArea === 'civil-partnership';
     const baseUrl = `/services/${req.params.service}/${serviceArea}/search-by-postcode`;
     if (isEmpty(postcode)){
       return res.redirect(`${baseUrl}?error=blankPostcode`);
     } else if (!isPostcodeValid(postcode)) {
       return res.redirect(`${baseUrl}?error=invalidPostcode`);
     } else {
+      const isDivorceOrCivil = serviceArea === 'divorce' || serviceArea === 'civil-partnership';
       const data: PostcodeResultsData = {
         ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['postcode-results']),
         path: '/courts/near',
