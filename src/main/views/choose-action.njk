@@ -9,10 +9,6 @@
   {{ title }}
 {% endblock %}
 
-{% block beforeContent %}
-<a href="/" class="govuk-back-link" onclick="goBack(event);">Back</a>
-{% endblock %}
-
 {% block content %}
 {% if errors %}
   {{ errorSummary(error.title, error.text, "#nearest-court") }}

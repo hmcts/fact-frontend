@@ -9,10 +9,6 @@
   {{ title }}
 {% endblock %}
 
-{% block beforeContent %}
-<a href="/" class="govuk-back-link" onclick="goBack(event);">Back</a>
-{% endblock %}
-
 {% block content %}
 {% if errors %}
 {% for result in results.slice(0, 1) %}

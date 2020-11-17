@@ -1,4 +1,5 @@
 {
   "feedback": "This is a new service – your <a class=\"govuk-link\" href=\"#\">feedback</a> will help us to improve it. ",
-  "languageToggle": "<a href=\"?lng=cy\" class=\"govuk-link fact-language\">Cymraeg</a>"
+  "languageToggle": "<a href=\"?lng=cy\" class=\"govuk-link fact-language\">Cymraeg</a>",
+  "backLink": "Back"
 }
