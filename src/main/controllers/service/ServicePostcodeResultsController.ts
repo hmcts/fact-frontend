@@ -41,7 +41,7 @@ export class ServicePostcodeResultsController {
       } else {
         data.multipleResultsHint = data.multipleResultsHint
           .replace('{total}', court.courts.length.toString())
-          .replace('{serviceArea}', court.name)
+          .replace('{serviceArea}', court.slug ? court.slug.replace('-',' ') : court.slug )
           .replace('{postcode}', postcode);
       }
       return res.render('postcode-results', data);

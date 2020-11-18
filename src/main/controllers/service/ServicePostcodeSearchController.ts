@@ -20,7 +20,7 @@ export class ServicePostcodeSearchController {
     if (hasError) {
       data.errorType = error;
     }
-    data.hint = data.hint.replace('{serviceArea}', req.params.serviceArea);
+    data.hint = data.hint.replace('{serviceArea}', req.params.serviceArea.replace('-',' '));
     res.render('postcode-search', data);
   }
 }
