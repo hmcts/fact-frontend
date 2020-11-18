@@ -35,5 +35,9 @@
   "registerACText": "Mae'r lleoliad hwn yn rhan o’r cynllun hwn",
   "registerACLink": "Cofrestru ar gyfer y cynllun",
   "learnACText": "Nid yw'r lleoliad hwn yn rhan o’r cynllun hwn",
-  "learnACLink": "Dysgu am y cynllun"
+  "learnACLink": "Dysgu am y cynllun",
+  "callCharges": "Gwybodaeth am daliadau galwadau",
+  "processingTimes": "Amseroedd prosesu neu ateb",
+  "sendUsYourDocuments": "Anfonwch eich dogfennau atom",
+  "updates": "Cael diweddariad gyda'ch cais"
 }
