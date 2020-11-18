@@ -38,6 +38,8 @@ export class ChooseServiceController {
     if (!hasProperty(req.body, 'chooseService')) {
       const data = await this.getServices(req, true);
       return res.render('choose-service', data);
+    } else if (req.body.chooseService === 'not-listed') {
+      res.redirect('/services/unknown-service');
     }
 
     const action = req.params.action as string;
