@@ -36,7 +36,3 @@ export interface CourtDetailsResult {
   service_area: string;
   in_person: boolean;
 }
-
-export interface CourtDetailsWithDistanceResult extends CourtDetailsResult{
-  distance: number;
-}

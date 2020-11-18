@@ -26,8 +26,8 @@
     "description": "Ending a civil partnership.",
     "slug": "civil-partnership",
     "serviceAreaType": "family",
-    "onlineUrl": "",
-    "onlineText": null,
+    "onlineUrl": "https://www.gov.uk/end-civil-partnership",
+    "onlineText": "Apply to end a civil partnership online",
     "areaOfLawName": "Civil partnership",
     "serviceAreaCourts": [
       {
