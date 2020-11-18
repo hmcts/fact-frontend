@@ -12,6 +12,7 @@ export interface PostcodeResultsData extends PageData {
 
 export interface PostcodeSearchResultsData {
   name: string;
+  slug: string;
   onlineUrl: string;
   onlineText: string;
   courts: CourtWithDistance[];
