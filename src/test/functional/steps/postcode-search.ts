@@ -21,7 +21,10 @@ When('I continue having entered an invalid postcode {string}', async (postcode: 
   await I.click('.govuk-button');
 });
 
-Then('I am presented with an postcode error message', async() => {
+Then('I am presented with an postcode error {string}', async(message: string) => {
   const elementExist = await I.checkElement('#postcode-error');
   expect(elementExist).equal(true);
+  const element = await I.getElements('#postcode-error')
+  const errorMessage = await I.getElementText(element);
+  expect(errorMessage).equal(message);
 });
