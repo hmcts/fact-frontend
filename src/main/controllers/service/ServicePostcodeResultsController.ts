@@ -1,7 +1,7 @@
 import { Response } from 'express';
 import { FactRequest } from '../../interfaces/FactRequest';
 import { cloneDeep } from 'lodash';
-import { isEmpty, isPostcodeValid } from '../../utils/validation';
+import { isEmpty, isPostcodeValid, postcodeIsNorthernIreland, postcodeIsScottish } from '../../utils/validation';
 import { FactApi } from '../../utils/FactApi';
 import autobind from 'autobind-decorator';
 import { PostcodeResultsData } from '../../interfaces/PostcodeResultsData';
@@ -21,6 +21,13 @@ export class ServicePostcodeResultsController {
       return res.redirect(`${baseUrl}?error=blankPostcode`);
     } else if (!isPostcodeValid(postcode)) {
       return res.redirect(`${baseUrl}?error=invalidPostcode`);
+    } else if (postcodeIsScottish(postcode)) {
+      if (serviceArea === 'childcare-arrangements') {
+        return res.redirect(`${baseUrl}?error=scottishChildrenPostcode`);
+      }
+      return res.redirect(`${baseUrl}?error=scottishPostcode`);
+    } else if (postcodeIsNorthernIreland(postcode)) {
+      return res.redirect(`${baseUrl}?error=northernIrelandPostcode`);
     } else {
       const isDivorceOrCivil = serviceArea === 'divorce' || serviceArea === 'civil-partnership';
       const data: PostcodeResultsData = {
