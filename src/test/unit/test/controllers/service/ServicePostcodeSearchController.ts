@@ -81,6 +81,75 @@ describe('Service Postcode Search Controller', () => {
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
 
+  test('Should render the postcode search page with scottish postcode error', async () => {
+    const req = mockRequest(i18n);
+    req.query = {
+      error: 'scottishPostcode'
+    };
+    req.params = {
+      service: 'money',
+      serviceArea: 'tax'
+    };
+    const res = mockResponse();
+    await controller.get(req, res);
+    const expectedData: PageData = {
+      ...i18n['postcode-search'],
+      path: '/search-by-postcode',
+      actionUrl: '/services/money/tax/courts/near',
+      error: true,
+      errorType: 'scottishPostcode',
+      hasNoResults: false,
+      postcode: undefined
+    };
+    expect(res.render).toBeCalledWith('postcode-search', expectedData);
+  });
+
+  test('Should render the postcode search page with scottish children postcode error', async () => {
+    const req = mockRequest(i18n);
+    req.query = {
+      error: 'scottishChildrenPostcode'
+    };
+    req.params = {
+      service: 'childcare-and-parenting',
+      serviceArea: 'children-arrangements'
+    };
+    const res = mockResponse();
+    await controller.get(req, res);
+    const expectedData: PageData = {
+      ...i18n['postcode-search'],
+      path: '/search-by-postcode',
+      actionUrl: '/services/childcare-and-parenting/children-arrangements/courts/near',
+      error: true,
+      errorType: 'scottishChildrenPostcode',
+      hasNoResults: false,
+      postcode: undefined
+    };
+    expect(res.render).toBeCalledWith('postcode-search', expectedData);
+  });
+
+  test('Should render the postcode search page with northern ireland postcode error', async () => {
+    const req = mockRequest(i18n);
+    req.query = {
+      error: 'northernIrelandPostcode'
+    };
+    req.params = {
+      service: 'money',
+      serviceArea: 'tax'
+    };
+    const res = mockResponse();
+    await controller.get(req, res);
+    const expectedData: PageData = {
+      ...i18n['postcode-search'],
+      path: '/search-by-postcode',
+      actionUrl: '/services/money/tax/courts/near',
+      error: true,
+      errorType: 'northernIrelandPostcode',
+      hasNoResults: false,
+      postcode: undefined
+    };
+    expect(res.render).toBeCalledWith('postcode-search', expectedData);
+  });
+
   test('Should render the postcode search page with no results', async () => {
     const req = mockRequest(i18n);
     req.query = {
