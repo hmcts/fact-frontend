@@ -89,12 +89,12 @@
           </p>
           <p class="govuk-body-m">
             <a class="govuk-link" href="https://www.gov.uk/call-charges">
-              Find out about call charges
+              {{ callCharges }}
             </a>
           </p>
           <p class="govuk-body-m">
             <a class="govuk-link" href="https://www.gov.uk/guidance/hmcts-civil-business-centres-performance-information">
-              Processing or reply times
+              {{ processingTimes }}
             </a>
           </p>
         </div>
@@ -106,8 +106,8 @@
             {{ emailHeading }}
           </h4>
           <p class="govuk-body-m">
-            Send us your documents: <a class="govuk-link" href="mailto:{{ results.enquiries.email.address }}">{{ results.enquiries.email.address }}</a><br>
-            Get an update with your application: <a class="govuk-link" href="mailto:{{ results.enquiries.email.address }}">{{ results.enquiries.email.address }}</a>
+            {{ sendUsYourDocuments }}: <a class="govuk-link" href="mailto:{{ results.enquiries.email.address }}">{{ results.enquiries.email.address }}</a><br>
+            {{ updates }}: <a class="govuk-link" href="mailto:{{ results.enquiries.email.address }}">{{ results.enquiries.email.address }}</a>
           </p>
         </div>
       {% endif %}

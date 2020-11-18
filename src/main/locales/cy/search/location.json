@@ -4,8 +4,8 @@
   "question": "Beth yw enw a chyfeiriad y llys neu’r tribiwnlys?",
   "hint": "Gellir gweld enw’r llys neu’r tribiwnlys ar lythyr, -bos neu neges destun a anfonwyd gennym.",
   "text": "Rhowch enw llys, cyfeiriad, tref neu ddinas",
-  "textExample": "For example, Blackburn Family Court. ",
-  "button": "Search",
+  "textExample": "Er enghraifft, Llys Teulu Blackburn. ",
+  "button": "Chwilio",
   "noResults": {
     "p1": "Nid oes canlyniad sy’n cyfateb.",
     "p2": "Gellir gwella ar y chwiliad drwy:",
@@ -15,14 +15,14 @@
       "li3": "chwilio am rywbeth llai penodol"
     }
   },
-  "foundResults": "We found {total} courts or tribunals matching your search for '{search}'.",
-  "mostRelevant": "Most relevant results displayed.",
+  "foundResults": "Daethpwyd o hyd i {total} llys neu dribiwnlys yn cyfateb i'ch chwiliad am '{search}'.",
+  "mostRelevant": "Mae'r canlyniadau mwyaf perthnasol yn cael eu harddangos.",
   "errorBlank": {
     "title": "Mae yna broblem",
     "text": "Rhowch enw llys, cyfeiriad, tref neu ddinas"
   },
   "errorTooShort": {
     "title": "Mae yna broblem",
-    "text": "Search must be 3 characters or more"
+    "text": "Rhaid i beth yr ydych yn chwilio amdano fod yn 3 nod neu fwy"
   }
 }
