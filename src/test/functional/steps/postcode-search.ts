@@ -24,7 +24,7 @@ When('I continue having entered an invalid postcode {string}', async (postcode: 
 Then('I am presented with an postcode error {string}', async(message: string) => {
   const elementExist = await I.checkElement('#postcode-error');
   expect(elementExist).equal(true);
-  const element = await I.getElements('#postcode-error')
+  const element = await I.getElement('#postcode-error');
   const errorMessage = await I.getElementText(element);
-  expect(errorMessage).equal(message);
+  expect(errorMessage).equal('Error:\n' + message);
 });
