@@ -9,15 +9,6 @@
   {{ title }}
 {% endblock %}
 
-{% block beforeContent %}
-  {{ super() }}
-
-  {{ govukBackLink({
-    text: "Back",
-    href: ""
-  }) }}
-{% endblock %}
-
 {% block content %}
 {% if error %}
   {{ errorSummary(errorText.title, errorText[errorType], "#postcode") }}

@@ -9,15 +9,6 @@
   {{ title }}
 {% endblock %}
 
-{% block beforeContent %}
-  {{ super() }}
-
-  {{ govukBackLink({
-    text: "Back",
-    href: "/"
-  }) }}
-{% endblock %}
-
 {% block content %}
 {% if errors %}
   {{ errorSummary(error.title, error.text, "#nearest-court") }}

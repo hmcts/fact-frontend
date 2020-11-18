@@ -9,15 +9,6 @@
   {{ title }}
 {% endblock %}
 
-{% block beforeContent %}
-  {{ super() }}
-
-  {{ govukBackLink({
-    text: "Back",
-    href: '/search-option'
-  }) }}
-{% endblock %}
-
 {% block content %}
 <div class="govuk-grid-row court-tribunal-details">
   <div class="govuk-grid-column-full">
@@ -57,4 +48,5 @@
     {% endif %}
   </div>
 </div>
+
 {% endblock %}

@@ -9,15 +9,6 @@
   {{ title }}
 {% endblock %}
 
-{% block beforeContent %}
-  {{ super() }}
-
-  {{ govukBackLink({
-    text: "Back",
-    href: '/search-option'
-  }) }}
-{% endblock %}
-
 {% block content %}
 {% if error %}
   {{ errorSummary(error.title, error.text, "#search") }}
