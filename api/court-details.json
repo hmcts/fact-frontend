@@ -17,73 +17,136 @@
         "name": "Adoption",
         "external_link": "https%3A//www.gov.uk/child-adoption",
         "display_url": null,
-        "external_link_desc": "Information about adopting a child"
+        "external_link_desc": "Information about adopting a child",
+        "service_areas": [
+          {
+            "name": "Adoption"
+          }
+        ]
       },
       {
         "name": "Bankruptcy",
         "external_link": "https%3A//www.gov.uk/apply-for-bankruptcy",
         "display_url": null,
-        "external_link_desc": "Information about applying for bankruptcy"
+        "external_link_desc": "Information about applying for bankruptcy",
+        "service_areas": [
+          {
+            "name": "Bankruptcy"
+          }
+        ]
       },
       {
         "name": "Children",
         "external_link": null,
         "display_url": null,
-        "external_link_desc": null
+        "external_link_desc": null,
+        "service_areas": [
+          {
+            "name": "Childcare arrangements if you separate from your partner"
+          }
+        ]
       },
       {
         "name": "Civil partnership",
         "external_link": "https%3A//www.gov.uk/end-civil-partnership",
         "display_url": null,
-        "external_link_desc": "Information about ending a civil partnership"
+        "external_link_desc": "Information about ending a civil partnership",
+        "service_areas": [
+          {
+            "name": "Civil partnership"
+          }
+        ]
       },
       {
         "name": "Divorce",
         "external_link": "https%3A//www.gov.uk/divorce",
         "display_url": null,
-        "external_link_desc": "Information about getting a divorce"
+        "external_link_desc": "Information about getting a divorce",
+        "service_areas": [
+          {
+            "name": "Divorce"
+          }
+        ]
       },
       {
         "name": "Domestic violence",
         "external_link": null,
         "display_url": null,
-        "external_link_desc": null
+        "external_link_desc": null,
+        "service_areas": [
+          {
+            "name": "Domestic abuse"
+          }
+        ]
       },
       {
         "name": "Forced marriage and FGM",
         "external_link": "https%3A//www.gov.uk/apply-forced-marriage-protection-order",
         "display_url": null,
-        "external_link_desc": "Information about forced marriage protection orders"
+        "external_link_desc": "Information about forced marriage protection orders",
+        "service_areas": [
+          {
+            "name": "Forced marriage"
+          },
+          {
+            "name": "Female Genital Mutilation"
+          }
+        ]
       },
       {
         "name": "High Court District Registry",
         "external_link": null,
         "display_url": null,
-        "external_link_desc": null
+        "external_link_desc": null,
+        "service_areas": [
+          {
+            "name": "High Court cases – serious or high profile criminal or civil law cases"
+          }
+        ]
       },
       {
         "name": "Housing possession",
         "external_link": "https%3A//www.gov.uk/evicting-tenants",
         "display_url": null,
-        "external_link_desc": "Information about evicting tenants"
+        "external_link_desc": "Information about evicting tenants",
+        "service_areas": [
+          {
+            "name": "Housing"
+          }
+        ]
       },
       {
         "name": "Immigration",
         "external_link": "https%3A//www.gov.uk/tribunal/iac",
         "display_url": null,
-        "external_link_desc": "Information about the Immigration and Asylum Tribunal"
+        "external_link_desc": "Information about the Immigration and Asylum Tribunal",
+        "service_areas": [
+          {
+            "name": "Immigration and asylum"
+          }
+        ]
       },
       {
         "name": "Money claims",
         "external_link": "https%3A//www.gov.uk/make-court-claim-for-money",
         "display_url": null,
-        "external_link_desc": "Information about making a court claim for money"
+        "external_link_desc": "Information about making a court claim for money",
+        "service_areas": [
+          {
+            "name": "Money claims"
+          }
+        ]
       },
       {
         "name": "Social security",
         "external_link": "https%3A//www.gov.uk/tribunal/sscs",
         "display_url": null,
-        "external_link_desc": "Information about the Social Security and Child Support Tribunal"
+        "external_link_desc": "Information about the Social Security and Child Support Tribunal",
+        "service_areas": [
+          {
+            "name": "Benefits"
+          }
+        ]
       }
     ],
     "types": [
@@ -309,13 +372,23 @@
         "name": "Civil partnership",
         "external_link": "https%3A//www.gov.uk/end-civil-partnership",
         "display_url": null,
-        "external_link_desc": "Information about ending a civil partnership"
+        "external_link_desc": "Information about ending a civil partnership",
+        "service_areas": [
+          {
+            "name": "Civil partnership"
+          }
+        ]
       },
       {
         "name": "Divorce",
         "external_link": "https%3A//www.gov.uk/divorce",
         "display_url": null,
-        "external_link_desc": "Information about getting a divorce"
+        "external_link_desc": "Information about getting a divorce",
+        "service_areas": [
+          {
+            "name": "Divorce"
+          }
+        ]
       }
     ],
     "types": [],
@@ -495,13 +568,23 @@
         "name": "Adoption",
         "external_link": "https%3A//www.gov.uk/child-adoption",
         "display_url": null,
-        "external_link_desc": "Information about adopting a child"
+        "external_link_desc": "Information about adopting a child",
+        "service_areas": [
+          {
+            "name": "Adoption"
+          }
+        ]
       },
       {
         "name": "Children",
         "external_link": null,
         "display_url": null,
-        "external_link_desc": null
+        "external_link_desc": null,
+        "service_areas": [
+          {
+            "name": "Childcare arrangements if you separate from your partner"
+          }
+        ]
       },
       {
         "name": "Crime",
@@ -513,13 +596,23 @@
         "name": "Divorce",
         "external_link": "https%3A//www.gov.uk/divorce",
         "display_url": null,
-        "external_link_desc": "Information about getting a divorce"
+        "external_link_desc": "Information about getting a divorce",
+        "service_areas": [
+          {
+            "name": "Divorce"
+          }
+        ]
       },
       {
         "name": "Domestic violence",
         "external_link": null,
         "display_url": null,
-        "external_link_desc": null
+        "external_link_desc": null,
+        "service_areas": [
+          {
+            "name": "Domestic abuse"
+          }
+        ]
       }
     ],
     "types": [
@@ -635,49 +728,89 @@
         "name": "Adoption",
         "external_link": "https%3A//www.gov.uk/child-adoption",
         "display_url": null,
-        "external_link_desc": "Information about adopting a child"
+        "external_link_desc": "Information about adopting a child",
+        "service_areas": [
+          {
+            "name": "Adoption"
+          }
+        ]
       },
       {
         "name": "Bankruptcy",
         "external_link": "https%3A//www.gov.uk/apply-for-bankruptcy",
         "display_url": null,
-        "external_link_desc": "Information about applying for bankruptcy"
+        "external_link_desc": "Information about applying for bankruptcy",
+        "service_areas": [
+          {
+            "name": "Bankruptcy"
+          }
+        ]
       },
       {
         "name": "Children",
         "external_link": null,
         "display_url": null,
-        "external_link_desc": null
+        "external_link_desc": null,
+        "service_areas": [
+          {
+            "name": "Childcare arrangements if you separate from your partner"
+          }
+        ]
       },
       {
         "name": "Divorce",
         "external_link": "https%3A//www.gov.uk/divorce",
         "display_url": null,
-        "external_link_desc": "Information about getting a divorce"
+        "external_link_desc": "Information about getting a divorce",
+        "service_areas": [
+          {
+            "name": "Divorce"
+          }
+        ]
       },
       {
         "name": "Domestic violence",
         "external_link": null,
         "display_url": null,
-        "external_link_desc": null
+        "external_link_desc": null,
+        "service_areas": [
+          {
+            "name": "Domestic abuse"
+          }
+        ]
       },
       {
         "name": "Employment",
         "external_link": "https%3A//www.gov.uk/courts-tribunals/employment-tribunal",
         "display_url": null,
-        "external_link_desc": "Information about the Employment Tribunal"
+        "external_link_desc": "Information about the Employment Tribunal",
+        "service_areas": [
+          {
+            "name": "Claims against employers"
+          }
+        ]
       },
       {
         "name": "High Court District Registry",
         "external_link": null,
         "display_url": null,
-        "external_link_desc": null
+        "external_link_desc": null,
+        "service_areas": [
+          {
+            "name": "High Court cases – serious or high profile criminal or civil law cases"
+          }
+        ]
       },
       {
         "name": "Housing possession",
         "external_link": "https%3A//www.gov.uk/evicting-tenants",
         "display_url": null,
-        "external_link_desc": "Information about evicting tenants"
+        "external_link_desc": "Information about evicting tenants",
+        "service_areas": [
+          {
+            "name": "Housing"
+          }
+        ]
       },
       {
         "name": "Money claims",
@@ -807,19 +940,34 @@
         "name": "Adoption",
         "external_link": "https%3A//www.gov.uk/child-adoption",
         "display_url": null,
-        "external_link_desc": "Information about adopting a child"
+        "external_link_desc": "Information about adopting a child",
+        "service_areas": [
+          {
+            "name": "Adoption"
+          }
+        ]
       },
       {
         "name": "Bankruptcy",
         "external_link": "https%3A//www.gov.uk/apply-for-bankruptcy",
         "display_url": null,
-        "external_link_desc": "Information about applying for bankruptcy"
+        "external_link_desc": "Information about applying for bankruptcy",
+        "service_areas": [
+          {
+            "name": "Bankruptcy"
+          }
+        ]
       },
       {
         "name": "Children",
         "external_link": null,
         "display_url": null,
-        "external_link_desc": null
+        "external_link_desc": null,
+        "service_areas": [
+          {
+            "name": "Childcare arrangements if you separate from your partner"
+          }
+        ]
       },
       {
         "name": "Crime",
@@ -831,25 +979,45 @@
         "name": "Divorce",
         "external_link": "https%3A//www.gov.uk/divorce",
         "display_url": null,
-        "external_link_desc": "Information about getting a divorce"
+        "external_link_desc": "Information about getting a divorce",
+        "service_areas": [
+          {
+            "name": "Divorce"
+          }
+        ]
       },
       {
         "name": "Domestic violence",
         "external_link": null,
         "display_url": null,
-        "external_link_desc": null
+        "external_link_desc": null,
+        "service_areas": [
+          {
+            "name": "Domestic abuse"
+          }
+        ]
       },
       {
         "name": "Employment",
         "external_link": "https%3A//www.gov.uk/courts-tribunals/employment-tribunal",
         "display_url": null,
-        "external_link_desc": "Information about the Employment Tribunal"
+        "external_link_desc": "Information about the Employment Tribunal",
+        "service_areas": [
+          {
+            "name": "Claims against employers"
+          }
+        ]
       },
       {
         "name": "Housing possession",
         "external_link": "https%3A//www.gov.uk/evicting-tenants",
         "display_url": null,
-        "external_link_desc": "Information about evicting tenants"
+        "external_link_desc": "Information about evicting tenants",
+        "service_areas": [
+          {
+            "name": "Housing"
+          }
+        ]
       },
       {
         "name": "Money claims",
@@ -1037,31 +1205,59 @@
         "name": "Adoption",
         "external_link": "https://www.gov.uk/child-adoption",
         "display_url": null,
-        "external_link_desc": "Information about adopting a child"
+        "external_link_desc": "Information about adopting a child",
+        "service_areas": [
+          {
+            "name": "Adoption"
+          }
+        ]
       },
       {
         "name": "Children",
         "external_link": "",
         "display_url": null,
-        "external_link_desc": null
+        "external_link_desc": null,
+        "service_areas": [
+          {
+            "name": "Childcare arrangements if you separate from your partner"
+          }
+        ]
       },
       {
         "name": "Divorce",
         "external_link": "https://www.gov.uk/divorce",
         "display_url": null,
-        "external_link_desc": "Information about getting a divorce"
+        "external_link_desc": "Information about getting a divorce",
+        "service_areas": [
+          {
+            "name": "Divorce"
+          }
+        ]
       },
       {
         "name": "Domestic violence",
         "external_link": "",
         "display_url": null,
-        "external_link_desc": null
+        "external_link_desc": null,
+        "service_areas": [
+          {
+            "name": "Domestic abuse"
+          }
+        ]
       },
       {
         "name": "Forced marriage and FGM",
         "external_link": "https://www.gov.uk/apply-forced-marriage-protection-order",
         "display_url": null,
-        "external_link_desc": "Information about forced marriage protection orders"
+        "external_link_desc": "Information about forced marriage protection orders",
+        "service_areas": [
+          {
+            "name": "Forced marriage"
+          },
+          {
+            "name": "Female Genital Mutilation"
+          }
+        ]
       }
     ],
     "types": [
@@ -1323,13 +1519,23 @@
         "name": "Immigration",
         "external_link": "https://www.gov.uk/tribunal/iac",
         "display_url": null,
-        "external_link_desc": "Information about the Immigration and Asylum Tribunal"
+        "external_link_desc": "Information about the Immigration and Asylum Tribunal",
+        "service_areas": [
+          {
+            "name": "Immigration and asylum"
+          }
+        ]
       },
       {
         "name": "Tax",
         "external_link": "https://www.gov.uk/tax-tribunal",
         "display_url": null,
-        "external_link_desc": "Information about tax tribunals"
+        "external_link_desc": "Information about tax tribunals",
+        "service_areas": [
+          {
+            "name": "Tax"
+          }
+        ]
       }
     ],
     "types": [
@@ -1420,13 +1626,23 @@
         "name": "Employment",
         "external_link": "https://www.gov.uk/courts-tribunals/employment-tribunal",
         "display_url": null,
-        "external_link_desc": "Information about the Employment Tribunal"
+        "external_link_desc": "Information about the Employment Tribunal",
+        "service_areas": [
+          {
+            "name": "Claims against employers"
+          }
+        ]
       },
       {
         "name": "Tax",
         "external_link": "https://www.gov.uk/tax-tribunal",
         "display_url": null,
-        "external_link_desc": "Information about tax tribunals"
+        "external_link_desc": "Information about tax tribunals",
+        "service_areas": [
+          {
+            "name": "Tax"
+          }
+        ]
       }
     ],
     "types": [
