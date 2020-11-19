@@ -4,7 +4,6 @@
   "question": "What is your postcode?",
   "hint": "We will use your postcode to show you the closest court or tribunal that handles {serviceArea} to you.",
   "text": "Enter your postcode",
-  "example": "For example, EH1 9SP",
   "button": "Continue",
   "noResults": {
     "p1": "There are no matching results.",
