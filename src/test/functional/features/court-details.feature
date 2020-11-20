@@ -66,7 +66,7 @@ Feature: Court Name Know - Court Details
 
     Examples:
       | urgent_message_court                  |
-      | Telford County Court and Family Court |
+      | Leeds District Probate Registry |
 
   Scenario Outline: Court or tribunal additional information
     And I have entered "<additional_info_court>" as search criteria
