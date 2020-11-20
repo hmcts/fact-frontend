@@ -2,11 +2,11 @@
   "feedback": "Mae hwn yn wasanaeth newydd - bydd eich <a class=\"govuk-link\" href=\"#\">adborth</a> yn ein helpu ni i’w wella. ",
   "languageToggle": "<a href=\"?lng=en\" class=\"govuk-link fact-language\">English</a>",
   "backLink": "Yn ôl",
-  "help":"Help",
-  "contact": "Contact",
-  "privacy": "Privacy",
-  "cookies": "Cookies",
-  "accessibility": "Accessibility statement",
-  "termsAndConditions": "Terms and conditions",
+  "help":"Cymorth",
+  "contact": "Cysylltu",
+  "privacy": "Preifatrwydd",
+  "cookies": "Cwcis",
+  "accessibility": "Datganiad hygyrchedd",
+  "termsAndConditions": "Telerau ac amodau",
   "usingServicesInWelsh": "Rhestr o Wasanaethau Cymraeg"
 }

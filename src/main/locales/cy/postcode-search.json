@@ -1,22 +1,22 @@
 {
-  "title": "What is your postcode? - Find a court or tribunal - GOV.UK",
-  "serviceName": "Find a court or tribunal",
-  "question": "What is your postcode?",
+  "title": "Beth yw eich cod post? - Dod o hyd i lys neu dribiwnlys - GOV.UK",
+  "serviceName": "Dod o hyd i lys neu dribiwnlys",
+  "question": "Beth yw eich cod post?",
   "hint": "We will use your postcode to show you the closest court or tribunal that handles {serviceArea} to you.",
-  "text": "Enter your postcode",
-  "button": "Continue",
+  "text": "Rhowch eich cod post",
+  "button": "Parhau",
   "noResults": {
-    "p1": "There are no matching results.",
-    "p2": "Improve your search results by:",
+    "p1": "Nid oes canlyniad sy’n cyfateb.",
+    "p2": "Gellir gwella ar y chwiliad drwy:",
     "list": {
-      "li1": "double-checking your spelling",
-      "li2": "using fewer keywords",
-      "li3": "searching for something less specific"
+      "li1": "gwneud yn siŵr eich bod wedi sillafu’r gair yn gywir",
+      "li2": "defnyddio llai o allweddeiriau",
+      "li3": "chwilio am rywbeth llai penodol"
     }
   },
   "errorText":{
-    "title": "There is a problem",
-    "invalidPostcode": "Invalid entry – Enter a valid postcode format",
-    "blankPostcode": "Field is blank – Enter a postcode"
+    "title": "Mae yna broblem",
+    "invalidPostcode": "Cofnod annilys – Rhowch god post dilys",
+    "blankPostcode": "Mae'r blwch yn wag – Rhowch god post"
   }
 }
