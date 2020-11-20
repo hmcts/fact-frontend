@@ -99,5 +99,19 @@ describe('validation', () => {
       const results = isPostcodeValid(postcode, serviceArea);
       expect(results).toBe('northernIrelandPostcode');
     });
+
+    test('Should return invalidPostcode if postcode is channel islands postcode', async () => {
+      const postcode = 'JE2 3QQ';
+      const serviceArea = 'tax';
+      const results = isPostcodeValid(postcode, serviceArea);
+      expect(results).toBe('invalidPostcode');
+    });
+
+    test('Should return invalidPostcode if postcode is isle of man postcode', async () => {
+      const postcode = 'IM1 3AR';
+      const serviceArea = 'tax';
+      const results = isPostcodeValid(postcode, serviceArea);
+      expect(results).toBe('invalidPostcode');
+    });
   });
 });
