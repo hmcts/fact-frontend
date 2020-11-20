@@ -2,7 +2,7 @@
   "title": "Beth yw eich cod post? - Dod o hyd i lys neu dribiwnlys - GOV.UK",
   "serviceName": "Dod o hyd i lys neu dribiwnlys",
   "question": "Beth yw eich cod post?",
-  "hint": "We will use your postcode to show you the closest court or tribunal that handles {serviceArea} to you.",
+  "hint": "Byddwn yn defnyddio eich cod post i ddangos y lls neu’r tribiwnlys agosaf sy’n delio â {serviceArea} ichi.",
   "text": "Rhowch eich cod post",
   "button": "Parhau",
   "noResults": {
