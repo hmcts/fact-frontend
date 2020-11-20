@@ -40,7 +40,9 @@ export class CourtDetailsController {
         enquiries.welshPhone = courts.contacts.filter((contact: { description: string }) => contact.description.toLowerCase() === 'welsh');
         enquiries.email = courts.emails.find((email: { description: string }) => email.description.toLowerCase() === 'enquiries');
         enquiries.fax = courts.contacts.find((contact: { description: string }) => contact.description.toLowerCase() === 'fax');
-        courts['image_file'] = `${config.get('services.image-store.url')}/${courts['image_file']}`;
+        if (courts['image_file']) {
+          courts['image_file'] = `${config.get('services.image-store.url')}/${courts['image_file']}`;
+        }
         data.notInPersonP1 = data.notInPersonP1
           .replace('{catchmentArea}', decideCatchmentArea(this.regionalCentre, data.catchmentArea))
           .replace('{serviceArea}', courts['service_area']);
