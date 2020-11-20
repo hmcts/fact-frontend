@@ -28,7 +28,7 @@ Feature: Postcode Results Feature
     When I select "#<area_of_law>" from the areas of law page and continue
     Given I can select a "#<area_of_law_category>" from the category area of law page and continue
     Then I am presented with the "What is your postcode? - Find a court or tribunal - GOV.UK" page
-    When I continue having entered a postcode "E8 1DY"
+    When I continue having entered a postcode "bn99 1ab"
     Then I can continue my user journey
     Then I am presented with a no matching results display
     And I can re-enter the postcode
