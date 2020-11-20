@@ -16,7 +16,13 @@ const i18n = {
 };
 
 describe('CourtDetailsController', () => {
-  const response: any = { data: {} };
+  const response: any = {
+    data: {
+      contacts: [],
+      emails: [],
+      'image_file': 'image_file'
+    },
+  };
   const api: any = { court: async () => response.data };
   const controller = new CourtDetailsController(api);
   const nextFunction = jest.fn();
@@ -34,6 +40,32 @@ describe('CourtDetailsController', () => {
       path: '/courts/London',
       results: {
         ...response.data,
+        enquiries: {
+          email: undefined,
+          fax: undefined,
+          phone: [],
+          welshPhone: []
+        }
+      }
+    };
+    expect(res.render).toBeCalledWith('court-details/in-person-court', expectedData);
+  });
+
+  test('Should render the court details page with results with no imageurl', async () => {
+    response.data = expectedCourtDetails;
+    const req = mockRequest(i18n);
+    req.params = {
+      slug: 'London'
+    };
+    const res = mockResponse();
+    response.data['image_file'] = null;
+    await controller.get(req, res, nextFunction);
+    const expectedData: PageData = {
+      ...i18n['court-details'],
+      path: '/courts/London',
+      results: {
+        ...response.data,
+        'image_file': null,
         enquiries: {
           email: undefined,
           fax: undefined,
@@ -63,7 +95,6 @@ describe('CourtDetailsController', () => {
           fax: undefined,
           phone: [],
           welshPhone: []
-
         }
       }
     };
