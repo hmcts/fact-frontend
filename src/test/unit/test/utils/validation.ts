@@ -59,21 +59,59 @@ describe('validation', () => {
 
   describe('isPostcodeValid', () => {
     test('Should return true if postcode is valid', async () => {
-      const string = 'EH1 9SP';
-      const results = isPostcodeValid(string);
-      expect(results).toBe(true);
+      const postcode = 'E8 1DY';
+      const serviceArea = 'tax';
+      const results = isPostcodeValid(postcode, serviceArea);
+      expect(results).toBe('');
     });
 
-    test('Should return false if postcode is invalid', async () => {
-      const string = 'isPostcodeValid';
-      const results = isPostcodeValid(string);
-      expect(results).toBe(false);
+    test('Should return invalidPostcode if postcode is invalid', async () => {
+      const postcode = 'isPostcodeValid';
+      const serviceArea = 'tax';
+      const results = isPostcodeValid(postcode, serviceArea);
+      expect(results).toBe('invalidPostcode');
     });
 
-    test('Should return false if string is empty', async () => {
-      const string = '';
-      const results = isPostcodeValid(string);
-      expect(results).toBe(false);
+    test('Should return blankPostcode if postcode is empty', async () => {
+      const postcode = '';
+      const serviceArea = 'tax';
+      const results = isPostcodeValid(postcode, serviceArea);
+      expect(results).toBe('blankPostcode');
+    });
+
+    test('Should return scottishChildrenPostcode if postcode is scottish and serviceArea is children arrangement', async () => {
+      const postcode = 'AB10 1WP';
+      const serviceArea = 'childcare-arrangements';
+      const results = isPostcodeValid(postcode, serviceArea);
+      expect(results).toBe('scottishChildrenPostcode');
+    });
+
+    test('Should return scottishPostcode if postcode is scottish and serviceArea is not children arrangement', async () => {
+      const postcode = 'AB10 1WP';
+      const serviceArea = 'tax';
+      const results = isPostcodeValid(postcode, serviceArea);
+      expect(results).toBe('scottishPostcode');
+    });
+
+    test('Should return northernIrelandPostcode if postcode is scottish and serviceArea is not children arrangement', async () => {
+      const postcode = 'BT1 3LL';
+      const serviceArea = 'tax';
+      const results = isPostcodeValid(postcode, serviceArea);
+      expect(results).toBe('northernIrelandPostcode');
+    });
+
+    test('Should return invalidPostcode if postcode is channel islands postcode', async () => {
+      const postcode = 'JE2 3QQ';
+      const serviceArea = 'tax';
+      const results = isPostcodeValid(postcode, serviceArea);
+      expect(results).toBe('invalidPostcode');
+    });
+
+    test('Should return invalidPostcode if postcode is isle of man postcode', async () => {
+      const postcode = 'IM1 3AR';
+      const serviceArea = 'tax';
+      const results = isPostcodeValid(postcode, serviceArea);
+      expect(results).toBe('invalidPostcode');
     });
   });
 });
