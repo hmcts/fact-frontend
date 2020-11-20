@@ -93,3 +93,33 @@ Feature: Postcode Proximity Feature
     Examples:
       | options        | area_of_law             | area_of_law_category |
       | nearest court  | money                   | money-claims         |
+
+  Scenario Outline: Enter Channel Islands Postcode
+    Then I can select an "<options>" option from the list displayed
+    Given I can continue having selected that option
+    When I select "#<area_of_law>" from the areas of law page and continue
+    Given I can select a "#<area_of_law_category>" from the category area of law page and continue
+    Then I am presented with the "What is your postcode? - Find a court or tribunal - GOV.UK" page
+    When I continue having entered an invalid postcode "JE2 3QQ"
+    Then I am presented with an postcode error "Invalid entry – Enter a valid postcode format"
+    When I continue having entered a postcode "E8 1DY"
+    Then I can continue my user journey
+
+    Examples:
+      | options        | area_of_law             | area_of_law_category |
+      | nearest court  | money                   | money-claims         |
+
+  Scenario Outline: Enter Isle of Man Postcode
+    Then I can select an "<options>" option from the list displayed
+    Given I can continue having selected that option
+    When I select "#<area_of_law>" from the areas of law page and continue
+    Given I can select a "#<area_of_law_category>" from the category area of law page and continue
+    Then I am presented with the "What is your postcode? - Find a court or tribunal - GOV.UK" page
+    When I continue having entered an invalid postcode "IM1 3AR"
+    Then I am presented with an postcode error "Invalid entry – Enter a valid postcode format"
+    When I continue having entered a postcode "E8 1DY"
+    Then I can continue my user journey
+
+    Examples:
+      | options        | area_of_law             | area_of_law_category |
+      | nearest court  | money                   | money-claims         |
