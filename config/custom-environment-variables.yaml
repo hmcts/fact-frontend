@@ -1,5 +1,7 @@
 services:
   api:
     url: FACT_API_URL
+  image-store:
+    url: IMAGE_BASE_URL
 appInsights:
   instrumentationKey: APPINSIGHTS_KEY
