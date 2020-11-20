@@ -17,6 +17,9 @@
   "errorText":{
     "title": "Mae yna broblem",
     "invalidPostcode": "Cofnod annilys – Rhowch god post dilys",
-    "blankPostcode": "Mae'r blwch yn wag – Rhowch god post"
+    "blankPostcode": "Mae'r blwch yn wag – Rhowch god post",
+    "scottishPostcode": "Invalid entry – We do not have court information for this service. Contact the Scottish Courts and Tribunals for help.",
+    "scottishChildrenPostcode": "Invalid entry – If the child (or children) resides in Scotland they will be outside the jurisdiction for this service. Contact the Scottish Courts and Tribunals for help.",
+    "northernIrelandPostcode": "Invalid entry – We do not have court information for Northern Ireland. Contact the Northern Ireland Courts and Tribunals for help."
   }
 }
