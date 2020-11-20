@@ -24,7 +24,7 @@ export interface CourtDetailsResult {
   crown_location_code: number;
   county_location_code: number;
   magistrates_location_code: number;
-  areas_of_law: AreasOfLaw[];
+  areas_of_law: [];
   types: [];
   emails: [];
   contacts: [];
@@ -37,10 +37,3 @@ export interface CourtDetailsResult {
   in_person: boolean;
 }
 
-export interface AreasOfLaw {
-  name: string;
-  external_link: string;
-  display_url: string;
-  external_link_desc: string;
-  service_areas: [];
-}

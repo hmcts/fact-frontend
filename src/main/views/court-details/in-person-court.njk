@@ -178,15 +178,18 @@
           </h3>
           <ul class="govuk-list">
             {% for area in results['areas_of_law'] | sort(attribute="name") %}
-              {% for serviceArea in area['service_areas'] | sort(attribute="name") %}
+            {% if area['display_name'] %}
+            {% set serviceArea = area['display_name'] %}
+            {% else %}
+            {% set serviceArea = area.name %}
+            {% endif %}
               <li>
                 {% if area.external_link %}
-                  <a class="govuk-link" href="{{ area.external_link }}">{{ serviceArea.name }}</a>
+                  <a class="govuk-link" href="{{ area.external_link }}">{{ serviceArea }}</a>
                 {% else %}
-                  {{ serviceArea.name }}
+                  {{ serviceArea }}
                 {% endif %}
               </li>
-              {% endfor %}
             {% endfor %}
           </ul>
         </div>
