@@ -166,7 +166,7 @@
     <div class="govuk-grid-column-one-third side-content">
       {% if results['image_file'] %}
         <div class="govuk-grid-row">
-          <img src="{{ results.image_file }}" alt="Front view of {{ results.name }}">
+          <img src="{{ results.image_file }}" alt="{{ altImageText }} {{ results.name }}">
           <p class="govuk-body-s">
             {{ results.name }}
           </p>

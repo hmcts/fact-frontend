@@ -6,6 +6,7 @@
   "info": "London",
   "open": true,
   "directions": null,
+  "image_file": "London",
   "lat": 52.4816515396297,
   "lon": -1.89566151163058,
   "crown_location_code": 123,

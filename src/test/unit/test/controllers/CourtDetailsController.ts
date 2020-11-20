@@ -16,19 +16,14 @@ const i18n = {
 };
 
 describe('CourtDetailsController', () => {
-  const response: any = {
-    data: {
-      contacts: [],
-      emails: [],
-      'image_file': 'image_file'
-    },
+  const response = {
+    data: expectedCourtDetails
   };
   const api: any = { court: async () => response.data };
   const controller = new CourtDetailsController(api);
   const nextFunction = jest.fn();
 
   test('Should render the court details page with results', async () => {
-    response.data = expectedCourtDetails;
     const req = mockRequest(i18n);
     req.params = {
       slug: 'London'
@@ -52,7 +47,6 @@ describe('CourtDetailsController', () => {
   });
 
   test('Should render the court details page with results with no imageurl', async () => {
-    response.data = expectedCourtDetails;
     const req = mockRequest(i18n);
     req.params = {
       slug: 'London'
