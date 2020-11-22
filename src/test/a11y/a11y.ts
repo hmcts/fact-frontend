@@ -29,6 +29,9 @@ const serviceSearchResultsMoneyClaims = '/services/money/money-claims/search-res
 const servicePostcodeSearchTax = '/services/money/tax/search-by-postcode';
 const servicePostcodeResultsTax = '/services/money/tax/courts/near?postcode=E81DY';
 const servicePostcodeResultsDivorce = '/services/probate-divorce-or-ending-civil-partnerships/divorce/courts/near?postcode=E81DY';
+const servicePostcodeSearchMoneyClaims = '/services/money/money-claims/search-by-postcode';
+const serviceSearchResultsProbate = '/services/probate-divorce-or-ending-civil-partnerships/probate/search-results';
+const serviceSearchResultsMajorCriminalOffences = '/services/crime/major-criminal-offences/search-results';
 
 class Pa11yResult {
   documentTitle: string;
@@ -130,4 +133,8 @@ describe('Accessibility', () => {
   testAccessibilityOfFormError(servicePostcodeSearchTax);
   testAccessibility(servicePostcodeResultsTax);
   testAccessibility(servicePostcodeResultsDivorce);
+  testAccessibility(servicePostcodeSearchMoneyClaims);
+  testAccessibilityOfFormError(servicePostcodeSearchMoneyClaims);
+  testAccessibility(serviceSearchResultsProbate);
+  testAccessibility(serviceSearchResultsMajorCriminalOffences);
 });
