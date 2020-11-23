@@ -183,9 +183,14 @@
             {% else %}
             {% set displayName = area.name %}
             {% endif %}
+            {% if area['display_external_link'] %}
+            {% set externalLink = area['display_external_link'] %}
+            {% else %}
+            {% set externalLink = area['external_link'] %}
+            {% endif %}
               <li>
                 {% if area.external_link %}
-                  <a class="govuk-link" href="{{ area.external_link }}">{{ displayName }}</a>
+                  <a class="govuk-link" href="{{ externalLink }}">{{ displayName }}</a>
                 {% else %}
                   {{ displayName }}
                 {% endif %}
