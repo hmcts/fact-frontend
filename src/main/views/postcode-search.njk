@@ -19,7 +19,11 @@
       {{ question }}
     </h1>
     <span id="header-hint" class="govuk-hint">
-      {{ hint }}
+      {% if serviceAreaIsChildcare %}
+        {{ childcareHint }}
+      {% else %}
+        {{ hint }}
+      {% endif %}
     </span>
     <form method="GET" action="{{ actionUrl }}">
       {{ govukInput({
