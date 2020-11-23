@@ -65,7 +65,7 @@ export class FactApi {
 
   public getServiceArea(serviceArea: string, lng: string): Promise<ServiceAreaResult> {
     return this.axios
-      .get(`/service-areas/${serviceArea}`)
+      .get(`/service-areas/${serviceArea}`, {  headers: {'Accept-Language': lng}})
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
