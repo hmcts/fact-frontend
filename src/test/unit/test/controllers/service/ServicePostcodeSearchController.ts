@@ -115,14 +115,14 @@ describe('Service Postcode Search Controller', () => {
     };
     req.params = {
       service: 'childcare-and-parenting',
-      serviceArea: 'children-arrangements'
+      serviceArea: 'childcare-arrangements'
     };
     const res = mockResponse();
     await controller.get(req, res);
     const expectedData: PageData = {
       ...i18n['postcode-search'],
       path: '/search-by-postcode',
-      actionUrl: '/services/childcare-and-parenting/children-arrangements/courts/near',
+      actionUrl: '/services/childcare-and-parenting/childcare-arrangements/courts/near',
       error: true,
       errorType: 'scottishChildrenPostcode',
       hasNoResults: false,
