@@ -3,7 +3,7 @@
   "serviceName": "Dod o hyd i lys neu dribiwnlys",
   "question": "Beth yw eich cod post?",
   "hint": "Byddwn yn defnyddio eich cod post i ddangos y lls neu’r tribiwnlys agosaf sy’n delio â {serviceArea} ichi.",
-  "childcareHint": "We will use the postcode of your children’s home to show you the closest court or tribunal that handles childcare arrangements to them.",
+  "childcareHint": "Byddwn yn defnyddio cod post cartref eich plant i ddangos y llys neu’r tribiwnlys agosaf atyn nhw sy’n delio â threfniadau gofal plant.",
   "text": "Rhowch eich cod post",
   "button": "Parhau",
   "noResults": {
