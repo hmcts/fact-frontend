@@ -4,8 +4,8 @@ Feature: Help and navigation
 
   Scenario: Beta phase banner
     Then I can view the phase banner at the top of that page
-    And I can view the content information banner
-    When I can select a hyperlink in the content banner
+    When I can select the feedback link
+    Then I am directed to the "HMCTS Feedback Survey - Find a Court or Tribunal"
 
   Scenario Outline: Back path
     And I navigate to the Search Page
@@ -25,3 +25,7 @@ Feature: Help and navigation
       | document court  |
       | update court    |
       | not listed      |
+
+  Scenario: Content information banner
+    Then I can view the content information banner
+    When I can select a hyperlink in the content banner

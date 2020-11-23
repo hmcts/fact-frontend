@@ -23,3 +23,14 @@ When('I select the back button', async () => {
   expect(elementExist).equal(true);
   await I.click('.govuk-back-link');
 });
+
+When('I can select the feedback link', async () => {
+  const elementExist = await I.checkElement('.govuk-link');
+  expect(elementExist).equal(true);
+  await I.click('.govuk-link');
+});
+
+Then('I am directed to the {string}', async (title: string) => {
+  const pageTitle = await I.getPageTitle();
+  expect(pageTitle).equal(title);
+});
