@@ -1,5 +1,5 @@
-Feature: Unknown Service
+Feature: Service not found
 
-  Scenario: Load Unknown Service
+  Scenario: Load Service not found
     Given I am on service-not-found page
-    Then I expect the service-not-found page header to be "Unknown service - Find a court or tribunal - GOV.UK"
+    Then I expect the service-not-found page header to be "Service not found - Find a court or tribunal - GOV.UK"
