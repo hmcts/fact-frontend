@@ -3,11 +3,13 @@ import * as express from 'express';
 import * as nunjucks from 'nunjucks';
 
 export class Nunjucks {
+  MAX_AGE = 28 * 24 * 60 * 1000;
+
   constructor(public developmentMode: boolean) {
     this.developmentMode = developmentMode;
   }
 
-  enableFor(app: express.Express): void {
+  enableFor(app: express.Express): nunjucks.Environment {
     app.set('view engine', 'njk');
     const govUkFrontendPath = path.join(
       __dirname,
@@ -18,7 +20,13 @@ export class Nunjucks {
       'node_modules',
       'govuk-frontend',
     );
-    nunjucks.configure(
+
+    app.use((req, res, next) => {
+      res.locals.pagePath = req.path;
+      next();
+    });
+
+    return nunjucks.configure(
       [path.join(__dirname, '..', '..', 'views'), govUkFrontendPath],
       {
         autoescape: true,
@@ -26,10 +34,5 @@ export class Nunjucks {
         express: app,
       },
     );
-
-    app.use((req, res, next) => {
-      res.locals.pagePath = req.path;
-      next();
-    });
   }
 }
