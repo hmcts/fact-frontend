@@ -23,6 +23,14 @@ export class Nunjucks {
 
     app.use((req, res, next) => {
       res.locals.pagePath = req.path;
+
+      if (!req.cookies || !req.cookies['seen_cookie_message']) {
+        res.locals.showCookieBanner = true;
+        res.cookie('seen_cookie_message', 'yes', { maxAge: this.MAX_AGE });
+      } else {
+        res.locals.showCookieBanner = false;
+      }
+
       next();
     });
 

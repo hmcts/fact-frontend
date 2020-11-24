@@ -23,19 +23,9 @@ const { setupDev } = require('./development');
 const env = process.env.NODE_ENV || 'development';
 const developmentMode = env === 'development';
 const logger = Logger.getLogger('app');
-// 28 days
-const MAX_AGE = 28 * 24 * 60 * 60 * 1000;
 
 export const app = express();
 app.locals.ENV = env;
-
-new PropertiesVolume().enableFor(app);
-new Container().enableFor(app);
-const nunjucksEnvironment = new Nunjucks(developmentMode).enableFor(app);
-new Helmet(config.get('app.security')).enableFor(app);
-new I18next().enableFor(app);
-new ProxyMiddleware().enableFor(app);
-new AppInsights().enableFor(app);
 
 app.use(favicon(path.join(__dirname, '/public/assets/images/favicon.ico')));
 app.use(bodyParser.json());
@@ -49,6 +39,14 @@ app.use((req, res, next) => {
   );
   next();
 });
+
+new PropertiesVolume().enableFor(app);
+new Container().enableFor(app);
+new Nunjucks(developmentMode).enableFor(app);
+new Helmet(config.get('app.security')).enableFor(app);
+new I18next().enableFor(app);
+new ProxyMiddleware().enableFor(app);
+new AppInsights().enableFor(app);
 
 setupDev(app,developmentMode);
 
@@ -78,17 +76,6 @@ const healthCheckConfig = {
 };
 
 healthcheck.addTo(app, healthCheckConfig);
-
-app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
-  const hasSeenCookieBanner = req.cookies['seen_cookie_message'];
-  if (!hasSeenCookieBanner) {
-    nunjucksEnvironment.addGlobal('showCookieBanner', true);
-    res.cookie('seen_cookie_message', 'yes', { maxAge: MAX_AGE });
-  } else {
-    nunjucksEnvironment.addGlobal('showCookieBanner', false);
-  }
-  next();
-});
 
 // remaining routes
 routes(app);
