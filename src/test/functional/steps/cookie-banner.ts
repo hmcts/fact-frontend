@@ -17,11 +17,11 @@ Then('I am redirected and expect the page header to be {string}', async function
 });
 
 Then('I can view the cookies hyperlink link within the page footer', async () => {
-  const element = await I.getElement('.govuk-footer__inline-list-item:nth-child(4)');
+  const element = await I.getElement('.govuk-footer__inline-list-item:nth-child(4) > a');
   const elementExist = await I.checkElementIsAnchor(element);
   expect(elementExist).equal(true);
 });
 
 When('I select that hyperlink', async () => {
-  await I.click('.govuk-footer__inline-list-item:nth-child(4)');
+  await I.click('.govuk-footer__inline-list-item:nth-child(4) > a');
 });
