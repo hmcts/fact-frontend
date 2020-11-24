@@ -10,6 +10,6 @@
   "button": "Continue",
   "error":{
     "title": "There is a problem",
-    "text": "Field is blank - Select if you have the name or not"
+    "text": "Select if you have the name or not"
   }
 }

@@ -30,6 +30,7 @@ describe('Service Postcode Search Controller', () => {
       actionUrl: '/services/money/tax/courts/near',
       error: false,
       hasNoResults: false,
+      serviceAreaIsChildcare: false,
       postcode: undefined
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
@@ -53,6 +54,7 @@ describe('Service Postcode Search Controller', () => {
       error: true,
       errorType: 'blankPostcode',
       hasNoResults: false,
+      serviceAreaIsChildcare: false,
       postcode: undefined
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
@@ -76,6 +78,79 @@ describe('Service Postcode Search Controller', () => {
       error: true,
       errorType: 'invalidPostcode',
       hasNoResults: false,
+      serviceAreaIsChildcare: false,
+      postcode: undefined
+    };
+    expect(res.render).toBeCalledWith('postcode-search', expectedData);
+  });
+
+  test('Should render the postcode search page with scottish postcode error', async () => {
+    const req = mockRequest(i18n);
+    req.query = {
+      error: 'scottishPostcode'
+    };
+    req.params = {
+      service: 'money',
+      serviceArea: 'tax'
+    };
+    const res = mockResponse();
+    await controller.get(req, res);
+    const expectedData: PageData = {
+      ...i18n['postcode-search'],
+      path: '/search-by-postcode',
+      actionUrl: '/services/money/tax/courts/near',
+      error: true,
+      errorType: 'scottishPostcode',
+      hasNoResults: false,
+      serviceAreaIsChildcare: false,
+      postcode: undefined
+    };
+    expect(res.render).toBeCalledWith('postcode-search', expectedData);
+  });
+
+  test('Should render the postcode search page with scottish children postcode error', async () => {
+    const req = mockRequest(i18n);
+    req.query = {
+      error: 'scottishChildrenPostcode'
+    };
+    req.params = {
+      service: 'childcare-and-parenting',
+      serviceArea: 'childcare-arrangements'
+    };
+    const res = mockResponse();
+    await controller.get(req, res);
+    const expectedData: PageData = {
+      ...i18n['postcode-search'],
+      path: '/search-by-postcode',
+      actionUrl: '/services/childcare-and-parenting/childcare-arrangements/courts/near',
+      error: true,
+      errorType: 'scottishChildrenPostcode',
+      hasNoResults: false,
+      serviceAreaIsChildcare: true,
+      postcode: undefined
+    };
+    expect(res.render).toBeCalledWith('postcode-search', expectedData);
+  });
+
+  test('Should render the postcode search page with northern ireland postcode error', async () => {
+    const req = mockRequest(i18n);
+    req.query = {
+      error: 'northernIrelandPostcode'
+    };
+    req.params = {
+      service: 'money',
+      serviceArea: 'tax'
+    };
+    const res = mockResponse();
+    await controller.get(req, res);
+    const expectedData: PageData = {
+      ...i18n['postcode-search'],
+      path: '/search-by-postcode',
+      actionUrl: '/services/money/tax/courts/near',
+      error: true,
+      errorType: 'northernIrelandPostcode',
+      hasNoResults: false,
+      serviceAreaIsChildcare: false,
       postcode: undefined
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
@@ -99,6 +174,7 @@ describe('Service Postcode Search Controller', () => {
       actionUrl: '/services/money/tax/courts/near',
       error: false,
       hasNoResults: true,
+      serviceAreaIsChildcare: false,
       postcode: 'E1 8DY'
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);

@@ -1,4 +1,3 @@
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
 {% extends "template.njk" %}
@@ -164,12 +163,14 @@
     </div>
 
     <div class="govuk-grid-column-one-third side-content">
-      <div class="govuk-grid-row">
-        <img src="{{ results.image_file }}" alt="Front view of {{ results.name }}">
-        <p class="govuk-body-s">
-          {{ results.name }}
-        </p>
-      </div>
+      {% if results['image_file'] %}
+        <div class="govuk-grid-row">
+          <img src="{{ results.image_file }}" alt="{{ altImageText }} {{ results.name }}">
+          <p class="govuk-body-s">
+            {{ results.name }}
+          </p>
+        </div>
+      {% endif %}
 
       {% if results['areas_of_law'] and results['areas_of_law'].length > 0 %}
         <div class="govuk-grid-row" id="areas-of-law">

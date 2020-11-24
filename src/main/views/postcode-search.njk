@@ -1,4 +1,3 @@
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "macros/error-summary.njk" import errorSummary %}
@@ -20,7 +19,11 @@
       {{ question }}
     </h1>
     <span id="header-hint" class="govuk-hint">
-      {{ hint }}
+      {% if serviceAreaIsChildcare %}
+        {{ childcareHint }}
+      {% else %}
+        {{ hint }}
+      {% endif %}
     </span>
     <form method="GET" action="{{ actionUrl }}">
       {{ govukInput({

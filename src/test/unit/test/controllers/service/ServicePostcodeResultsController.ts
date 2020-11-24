@@ -91,6 +91,48 @@ describe('Service Postcode Results Controller', () => {
     expect(res.redirect).toBeCalledWith('/services/money/tax/search-by-postcode?error=invalidPostcode');
   });
 
+  test('Should redirect to the postcode search page with scottish postcode error', async () => {
+    const req = mockRequest(i18n);
+    req.query = {
+      postcode: 'AB10 1WP'
+    };
+    req.params = {
+      service: 'money',
+      serviceArea: 'tax'
+    };
+    const res = mockResponse();
+    await controller.get(req, res);
+    expect(res.redirect).toBeCalledWith('/services/money/tax/search-by-postcode?error=scottishPostcode');
+  });
+
+  test('Should redirect to the postcode search page with scottish children postcode error', async () => {
+    const req = mockRequest(i18n);
+    req.query = {
+      postcode: 'AB10 1WP'
+    };
+    req.params = {
+      service: 'childcare-and-parenting',
+      serviceArea: 'childcare-arrangements'
+    };
+    const res = mockResponse();
+    await controller.get(req, res);
+    expect(res.redirect).toBeCalledWith('/services/childcare-and-parenting/childcare-arrangements/search-by-postcode?error=scottishChildrenPostcode');
+  });
+
+  test('Should redirect to the postcode search page with northern ireland postcode error', async () => {
+    const req = mockRequest(i18n);
+    req.query = {
+      postcode: 'BT1 3LL'
+    };
+    req.params = {
+      service: 'money',
+      serviceArea: 'tax'
+    };
+    const res = mockResponse();
+    await controller.get(req, res);
+    expect(res.redirect).toBeCalledWith('/services/money/tax/search-by-postcode?error=northernIrelandPostcode');
+  });
+
   test('Should redirect to the postcode search page with no results info', async () => {
     const req = mockRequest(i18n);
     req.query = {
