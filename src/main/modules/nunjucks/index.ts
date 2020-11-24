@@ -23,6 +23,15 @@ export class Nunjucks {
       'govuk-frontend',
     );
 
+    nunjucks.configure(
+      [path.join(__dirname, '..', '..', 'views'), govUkFrontendPath],
+      {
+        autoescape: true,
+        watch: this.developmentMode,
+        express: app,
+      },
+    );
+
     app.use((req, res, next) => {
       res.locals.pagePath = req.path;
 
@@ -35,14 +44,5 @@ export class Nunjucks {
 
       next();
     });
-
-    nunjucks.configure(
-      [path.join(__dirname, '..', '..', 'views'), govUkFrontendPath],
-      {
-        autoescape: true,
-        watch: this.developmentMode,
-        express: app,
-      },
-    );
   }
 }
