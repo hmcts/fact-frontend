@@ -3,6 +3,7 @@
   "serviceName": "Find a court or tribunal",
   "question": "What is your postcode?",
   "hint": "We will use your postcode to show you the closest court or tribunal that handles {serviceArea} to you.",
+  "childcareHint": "We will use the postcode of your children’s home to show you the closest court or tribunal that handles childcare arrangements to them.",
   "text": "Enter your postcode",
   "button": "Continue",
   "noResults": {

@@ -16,6 +16,7 @@ export class ServicePostcodeSearchController {
       actionUrl: `/services/${req.params.service}/${req.params.serviceArea}/courts/near`,
       error: hasError,
       hasNoResults: hasNoResults,
+      serviceAreaIsChildcare: req.params.serviceArea === 'childcare-arrangements',
       postcode: postcode
     };
     if (hasError) {
