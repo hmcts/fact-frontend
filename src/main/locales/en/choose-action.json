@@ -12,6 +12,6 @@
   "button": "Continue",
   "error": {
     "title": "There is a problem",
-    "text": "Field is blank - Select what you want to do"
+    "text": "Select what you want to do"
   }
 }
