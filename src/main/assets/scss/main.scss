@@ -2,6 +2,8 @@
 @import 'court-details';
 @import 'postcode-results';
 
+$cookie-banner-colour: #d5e8f3;
+
 // sass-lint:disable class-name-format
 .govuk-phase-banner__text {
   width: 100%;
@@ -12,7 +14,7 @@
 }
 
 .global-cookie-message {
-  background-color: #d5e8f3;
+  background-color: $cookie-banner-colour;
   padding: 10px 30px;
 
   p {
