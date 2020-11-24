@@ -39,7 +39,7 @@ export class ChooseServiceController {
       const data = await this.getServices(req, true);
       return res.render('choose-service', data);
     } else if (req.body.chooseService === 'not-listed') {
-      res.redirect('/services/unknown-service');
+      res.redirect('/services/service-not-found');
     }
 
     const action = req.params.action as string;

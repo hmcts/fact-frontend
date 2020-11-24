@@ -12,7 +12,7 @@ export default function(app: Application): void {
   app.post('/service-choose-action', app.locals.container.cradle.chooseActionController.post);
   app.get('/courts/:slug', app.locals.container.cradle.courtDetailsController.get);
   app.get('/individual-location-pages/courts/:slug', app.locals.container.cradle.courtDetailsController.get);
-  app.get('/services/unknown-service', app.locals.container.cradle.chooseUnknownServiceController.get);
+  app.get('/services/service-not-found', app.locals.container.cradle.chooseUnknownServiceController.get);
   app.get('/services/:action', app.locals.container.cradle.chooseServiceController.get);
   app.post('/services/:action', app.locals.container.cradle.chooseServiceController.post);
   app.get('/services/:service/service-areas/:action', app.locals.container.cradle.chooseServiceAreaController.get);
@@ -62,7 +62,7 @@ export default function(app: Application): void {
     } else if (req.query.aol === 'Probate') {
       res.redirect(301, '/services/money/probate/search-by-postcode');
     } else {
-      res.redirect(301, '/services/unknown-service');
+      res.redirect(301, '/services/service-not-found');
     }
   });
 

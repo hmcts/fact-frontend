@@ -148,7 +148,7 @@ describe('Choose service area controller', () => {
     expect(res.render).toBeCalledWith('service', expectedData);
   });
 
-  test('Should redirect to unknown service if service area selected is not listed', async () => {
+  test('Should redirect to service not found if service area selected is not listed', async () => {
     const req = mockRequest(i18n);
     req.params = {
       service: 'service',
@@ -160,7 +160,7 @@ describe('Choose service area controller', () => {
 
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services/unknown-service');
+    expect(res.redirect).toHaveBeenCalledWith('/services/service-not-found');
   });
 
 });
