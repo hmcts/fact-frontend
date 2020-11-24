@@ -2,14 +2,16 @@ import * as path from 'path';
 import * as express from 'express';
 import * as nunjucks from 'nunjucks';
 
+const MAX_AGE = 28 * 24 * 60 * 1000;
+
 export class Nunjucks {
-  MAX_AGE = 28 * 24 * 60 * 1000;
+
 
   constructor(public developmentMode: boolean) {
     this.developmentMode = developmentMode;
   }
 
-  enableFor(app: express.Express): nunjucks.Environment {
+  enableFor(app: express.Express): void {
     app.set('view engine', 'njk');
     const govUkFrontendPath = path.join(
       __dirname,
@@ -26,7 +28,7 @@ export class Nunjucks {
 
       if (!req.cookies || !req.cookies['seen_cookie_message']) {
         res.locals.showCookieBanner = true;
-        res.cookie('seen_cookie_message', 'yes', { maxAge: this.MAX_AGE });
+        res.cookie('seen_cookie_message', 'yes', { maxAge: MAX_AGE });
       } else {
         res.locals.showCookieBanner = false;
       }
@@ -34,7 +36,7 @@ export class Nunjucks {
       next();
     });
 
-    return nunjucks.configure(
+    nunjucks.configure(
       [path.join(__dirname, '..', '..', 'views'), govUkFrontendPath],
       {
         autoescape: true,
