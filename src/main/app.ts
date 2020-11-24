@@ -23,7 +23,8 @@ const { setupDev } = require('./development');
 const env = process.env.NODE_ENV || 'development';
 const developmentMode = env === 'development';
 const logger = Logger.getLogger('app');
-const MAX_AGE = 28 * 24 * 60 * 1000;
+// 28 days
+const MAX_AGE = 28 * 24 * 60 * 60 * 1000;
 
 export const app = express();
 app.locals.ENV = env;
