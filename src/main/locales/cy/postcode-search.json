@@ -19,8 +19,8 @@
     "title": "Mae yna broblem",
     "invalidPostcode": "Cofnod annilys – Rhowch god post dilys",
     "blankPostcode": "Mae'r blwch yn wag – Rhowch god post",
-    "scottishPostcode": "Invalid entry – We do not have court information for this service. Contact the Scottish Courts and Tribunals for help.",
-    "scottishChildrenPostcode": "Invalid entry – If the child (or children) resides in Scotland they will be outside the jurisdiction for this service. Contact the Scottish Courts and Tribunals for help.",
-    "northernIrelandPostcode": "Invalid entry – We do not have court information for Northern Ireland. Contact the Northern Ireland Courts and Tribunals for help."
+    "scottishPostcode": "Cofnod annilys – Nid oes gennym wybodaeth am lysoedd ar gyfer y gwasanaeth hwn. Cysylltwch â Llysoedd a Thribiwnlysoedd Yr Alban i gael cymorth.",
+    "scottishChildrenPostcode": "Cofnod annilys – Os yw’r plentyn (neu’r plant) yn byw yn Yr Alban, byddant tu hwnt i awdurdodaeth y gwasanaeth hwn. Cysylltwch â Llysoedd a Thribiwnlysoedd Yr Alban i gael cymorth.",
+    "northernIrelandPostcode": "Cofnod annilys – Nid oed gennym wybodaeth am y llysoedd yng Ngogledd Iwerddon. Cysylltwch â Llysoedd a Thribiwnlysoedd Gogledd Iwerddon i gael cymorth."
   }
 }
