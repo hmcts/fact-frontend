@@ -160,7 +160,7 @@ describe('Choose service area controller', () => {
 
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services/unknown-service');
+    expect(res.redirect).toHaveBeenCalledWith('/services/service-not-found');
   });
 
 });
