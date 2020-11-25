@@ -36,3 +36,4 @@ export interface CourtDetailsResult {
   service_area: string;
   in_person: boolean;
 }
+
