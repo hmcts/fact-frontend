@@ -143,6 +143,19 @@
           </h3>
           <p class="govuk-body-m">
             {{ buildingFacilitiesP1 }}
+            {% if results.enquiries.email or results.enquiries.phone.length > 0 %}
+              {% if results.enquiries.email %}
+                <a class="govuk-link" href="mailto:{{ results.enquiries.email.address }}">{{ results.enquiries.email.address }}</a>
+              {% endif %}
+              {% if results.enquiries.email and results.enquiries.phone.length > 0 %}
+                {{ buildingFacilitiesMultipleContacts }}
+              {% endif %}
+              {% if results.enquiries.phone %}
+                {{ results.enquiries.phone[0].number }}
+              {% endif %}.
+            {% else %}
+              {{ buildingFacilitiesContactsUs }}
+            {% endif %}
           </p>
           {% for facility in results.facilities %}
             <h4 class="govuk-heading-s">
