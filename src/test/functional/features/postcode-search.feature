@@ -41,7 +41,7 @@ Feature: Postcode Proximity Feature
     Given I can select a "#<area_of_law_category>" from the category area of law page and continue
     Then I am presented with the "What is your postcode? - Find a court or tribunal - GOV.UK" page
     When I continue having entered an invalid postcode ""
-    Then I am presented with an postcode error "Field is blank – Enter a postcode"
+    Then I am presented with an postcode error "Enter a postcode"
     When I continue having entered a postcode "E8 1DY"
     Then I can continue my user journey
 
