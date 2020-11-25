@@ -18,7 +18,7 @@
   "errorText":{
     "title": "There is a problem",
     "invalidPostcode": "Invalid entry – Enter a valid postcode format",
-    "blankPostcode": "Field is blank – Enter a postcode",
+    "blankPostcode": "Enter a postcode",
     "scottishPostcode": "Invalid entry – We do not have court information for this service. Contact the Scottish Courts and Tribunals for help.",
     "scottishChildrenPostcode": "Invalid entry – If the child (or children) resides in Scotland they will be outside the jurisdiction for this service. Contact the Scottish Courts and Tribunals for help.",
     "northernIrelandPostcode": "Invalid entry – We do not have court information for Northern Ireland. Contact the Northern Ireland Courts and Tribunals for help."
