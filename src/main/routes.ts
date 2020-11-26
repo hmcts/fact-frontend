@@ -1,5 +1,4 @@
 import { Application } from 'express';
-import { stringify } from 'querystring';
 
 export default function(app: Application): void {
 
@@ -68,7 +67,7 @@ export default function(app: Application): void {
 
   app.get('/search/results', (req, res) => {
     if (req.query.postcode) {
-      res.redirect(301, '/courts/near?' + stringify(req.query as any));
+      res.redirect(301, '/services/nearest');
     } else if (req.query.q) {
       res.redirect(301, '/courts?search=' + (req.query.q || ''));
     } else {
