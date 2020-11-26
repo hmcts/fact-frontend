@@ -156,13 +156,13 @@ Given('that location entry includes one or building facilities', async () => {
 Then('the name of each facility is presented on the profile page', async () => {
   const element = await I.getElement('#building-facilities > h4');
   const text = await I.getElementText(element);
-  expect(text).equal('Disabled toilet');
+  expect(text).equal('Parking');
 });
 
 Given('the description of each facility is presented to me on the profile page', async () => {
   const element = await I.getElement('#building-facilities > p:nth-child(4)');
   const text = await I.getElementText(element);
-  expect(text).equal('Located on every floor.');
+  expect(text).equal('Closest multi-story parking facilities are in Newton Street and Albert Street, approx 5 minutes walk away.');
 });
 
 Given('that location entry does not hide listings for areas of law offered by that location', async () => {
