@@ -107,8 +107,11 @@
       {% if results['areas_of_law'] and results['areas_of_law'].length > 0 %}
         <div class="govuk-grid-row" id="areas-of-law">
           <h3 class="govuk-heading-m">
-            {{ areasOfLawHeading }}:
+            {{ areasOfLawHeadingNotInPerson }}
           </h3>
+          <p class="govuk-body-m">
+            {{ areasOfLawHintNotInPerson }}
+          </p>
           <ul class="govuk-list">
             {% for area in results['areas_of_law'] | sort(attribute="name") %}
             {% if area['display_name'] %}
