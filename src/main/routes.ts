@@ -1,5 +1,4 @@
 import { Application } from 'express';
-import { stringify } from 'querystring';
 
 export default function(app: Application): void {
 
