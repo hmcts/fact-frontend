@@ -5,6 +5,9 @@
 {% extends "template.njk" %}
 
 {% block pageTitle %}
+  {% if errors %}
+    {{ errorTitle }}
+  {% endif %}
   {{ title }}
 {% endblock %}
 
