@@ -42,7 +42,7 @@
     </form>
 
     {% if (path !== '/search-by-name') and (results.length > 0) %}
-      <p class="govuk-body">{{ foundResults }}</p>
+      <p role="status" class="govuk-body">{{ foundResults }}</p>
       <p class="govuk-body">{{ mostRelevant }}</p>
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       <div class="search-results" id="search-results">
@@ -54,7 +54,7 @@
       </div>
     {% elif (path !== '/search-by-name') %}
       <div class="no-search-results" id="no-search-results">
-        <p class="govuk-body-m govuk-!-font-weight-bold">{{ noResults.p1 }}</p>
+        <p  role="status" class="govuk-body-m govuk-!-font-weight-bold">{{ noResults.p1 }}</p>
         <p class="govuk-body">{{ noResults.p2 }}</p>
         <ul class="govuk-list govuk-list--bullet">
         {% for item, text in noResults.list %}
