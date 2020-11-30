@@ -5,7 +5,11 @@
 {% extends "template.njk" %}
 
 {% block pageTitle %}
-  {{ title }}
+  {% if (path !== '/search-by-name') %}
+    {{ resultsTitle }}
+  {% else %}
+    {{ title }}
+  {% endif %}
 {% endblock %}
 
 {% block content %}
