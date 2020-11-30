@@ -1,4 +1,5 @@
 {
+  "errorTitle": "Error:",
   "title": "Choose an area of law - {serviceChosen} - Find a court or tribunal - GOV.UK",
   "serviceName": "Find a court or tribunal",
   "question": "What kind of help do you need with {serviceChosen}?",

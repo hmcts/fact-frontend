@@ -5,6 +5,9 @@
 {% extends "template.njk" %}
 
 {% block pageTitle %}
+  {% if error %}
+    {{ errorTitle }}
+  {% endif %}
   {% if (path !== '/search-by-name') %}
     {{ resultsTitle }}
   {% else %}
