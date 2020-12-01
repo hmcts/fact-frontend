@@ -182,8 +182,7 @@ Then('a guidance link for each area of law is presented to me on the profile pag
 });
 
 Then('those area of law details are listed in ascending alphabetical order', async () => {
-  const elements = await I.getElements('#areas-of-law > ul > li > a');
-  const areasOfLaw = await I.getTextFromList(elements);
+  const areasOfLaw = await I.getTextFromElements('#areas-of-law > ul > li > a');
   expect(areasOfLaw).not.equal([]);
   expect(areasOfLaw).equals(areasOfLaw.sort());
 });
