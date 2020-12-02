@@ -50,16 +50,6 @@ export const getElement = async (selector: string) => {
   }
 };
 
-export const getElements = async (selector: string) => {
-  try {
-    await scope.page.waitForSelector(selector);
-    return await scope.page.$$(selector);
-  } catch (error) {
-    console.log('Could not get element.');
-    return null;
-  }
-};
-
 export const getElementText = async (el: any) => {
   try {
     return await scope.page.evaluate((element: HTMLElement) => element.innerText, el);
@@ -90,13 +80,9 @@ export const checkElementLength = async (selector: string) => {
   }
 };
 
-export const getTextFromList = async (el: any) => {
+export const getTextFromElements = async (el: string) => {
   try {
-    const texts: string[] = [];
-    await el.foreach(async (el: any) => {
-      texts.push(await getElementText(el));
-    });
-    return texts;
+    return await scope.page.$$eval(el, (elements: any) => elements.map((e: any) => e.innerText));
   } catch (error) {
     console.log("The element didn't appear.");
     return [];
