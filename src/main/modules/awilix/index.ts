@@ -16,6 +16,7 @@ import { ServiceSearchResultsController } from '../../controllers/service/Servic
 import { ServicePostcodeSearchController } from '../../controllers/service/ServicePostcodeSearchController';
 import { ServicePostcodeResultsController } from '../../controllers/service/ServicePostcodeResultsController';
 import { ServiceAreaRedirect } from '../../controllers/service/ServiceAreaRedirect';
+import { AccessibilityStatementController } from '../../controllers/AccessibilityStatementController';
 
 const { Logger } = require('@hmcts/nodejs-logging');
 const logger = Logger.getLogger('app');
@@ -29,6 +30,7 @@ export class Container {
       api: asClass(FactApi),
       serviceAreaRedirect: asClass(ServiceAreaRedirect),
       homeController: asClass(HomeController),
+      accessibilityStatementController: asClass(AccessibilityStatementController),
       searchOptionController: asClass(SearchOptionController),
       locationSearchController: asClass(LocationSearchController),
       searchResultsController: asClass(SearchResultsController),
