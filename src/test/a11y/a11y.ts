@@ -32,6 +32,7 @@ const servicePostcodeResultsDivorce = '/services/probate-divorce-or-ending-civil
 const servicePostcodeSearchMoneyClaims = '/services/money/money-claims/search-by-postcode';
 const serviceSearchResultsProbate = '/services/probate-divorce-or-ending-civil-partnerships/probate/search-results';
 const serviceSearchResultsMajorCriminalOffences = '/services/crime/major-criminal-offences/search-results';
+const accessibilityStatement = '/accessibility-statement';
 
 class Pa11yResult {
   documentTitle: string;
@@ -137,4 +138,5 @@ describe('Accessibility', () => {
   testAccessibilityOfFormError(servicePostcodeSearchMoneyClaims);
   testAccessibility(serviceSearchResultsProbate);
   testAccessibility(serviceSearchResultsMajorCriminalOffences);
+  testAccessibility(accessibilityStatement);
 });
