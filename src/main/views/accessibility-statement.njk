@@ -1,0 +1,89 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% extends "template.njk" %}
+
+{% block pageTitle %}
+  {{ title }}
+{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">
+    {{ h1 }}
+  </h1>
+  <p class="govuk-body-m">{{ p1 | safe }}</p>
+  <p class="govuk-body-m">{{ p2 }}</p>
+  <ul class="govuk-list govuk-list--bullet">
+  {% for bullet in bullets %}
+    <li>{{ bullet }}</li>
+  {% endfor %}
+  </ul>
+  <p class="govuk-body-m">{{ p3 }}</p>
+  <p class="govuk-body-m">{{ p4 | safe }}</p>
+
+  <h2 class="govuk-heading-l">
+    {{ h2 }}
+  </h2>
+  <p class="govuk-body-m">{{ p5 | safe }}</p>
+
+  <h2 class="govuk-heading-l">
+    {{ h3 }}
+  </h2>
+  <p class="govuk-body-m">{{ p6 }}</p>
+  <ul class="govuk-list govuk-list--bullet">
+      <li>{{ bullet1 | safe }}</li>
+  </ul>
+  <p class="govuk-body-m">{{ p7 }}</p>
+
+  <h2 class="govuk-heading-l">
+    {{ h4 }}
+  </h2>
+  <p class="govuk-body-m">{{ p8 }}</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>{{ bullet1 | safe }}</li>
+  </ul>
+
+  <h2 class="govuk-heading-l">
+    {{ h5 }}
+  </h2>
+  <p class="govuk-body-m">{{ p9 | safe }}</p>
+
+  <h2 class="govuk-heading-l">
+    {{ h6 }}
+  </h2>
+  <p class="govuk-body-m">{{ p10 | safe }}</p>
+  <p class="govuk-body-m">{{ p11 }}</p>
+  <p class="govuk-body-m">{{ p12 }}</p>
+
+  <h2 class="govuk-heading-l">
+    {{ h7 }}
+  </h2>
+  <p class="govuk-body-m">{{ p13 }}</p>
+
+  <h2 class="govuk-heading-l">
+    {{ h8 }}
+  </h2>
+  <p class="govuk-body-m">{{ p14 }}</p>
+
+  <h3 class="govuk-heading-m">
+    {{ h9 }}
+  </h3>
+  <p class="govuk-body-m">{{ p15 }}</p>
+  <p class="govuk-body-m">{{ p16 | safe }}</p>
+  <p class="govuk-body-m">{{ p17 }}</p>
+
+  <h4 class="govuk-heading-s">
+    {{ h10 }}
+  </h4>
+  <p class="govuk-body-m">{{ p18 }}</p>
+
+  <h4 class="govuk-heading-s">
+    {{ h11 }}
+  </h4>
+  <p class="govuk-body-m">{{ p19 }}</p>
+
+  <h4 class="govuk-heading-s">
+    {{ h12 }}
+  </h4>
+  <p class="govuk-body-m">{{ p20 }}</p>
+
+{% endblock %}
