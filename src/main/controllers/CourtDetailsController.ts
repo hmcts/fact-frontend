@@ -34,12 +34,14 @@ export class CourtDetailsController {
           phone: [],
           welshPhone: [],
           email: {},
-          fax: {}
+          fax: {},
+          sendDocumentsEmail: {}
         };
         enquiries.phone = courts.contacts.filter((contact: { description: string }) => contact.description.toLowerCase() === 'enquiries');
         enquiries.welshPhone = courts.contacts.filter((contact: { description: string }) => contact.description.toLowerCase() === 'welsh');
         enquiries.email = courts.emails.find((email: { description: string }) => email.description.toLowerCase() === 'enquiries');
         enquiries.fax = courts.contacts.find((contact: { description: string }) => contact.description.toLowerCase() === 'fax');
+        enquiries.sendDocumentsEmail =  courts.emails.find((email: { description: string }) => email.description.toLowerCase() === 'send documents');
         if (courts['image_file']) {
           courts['image_file'] = `${config.get('services.image-store.url')}/${courts['image_file']}`;
         }

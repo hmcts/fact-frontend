@@ -90,14 +90,18 @@
         </div>
       {% endif %}
 
-      {% if results.enquiries.email %}
+      {% if results.enquiries.email or results.enquiries.sendDocumentsEmail %}
         <div class="govuk-grid-row .emails" id="emails">
           <h4 class="govuk-heading-s">
             {{ emailHeading }}
           </h4>
           <p class="govuk-body-m">
-            {{ sendUsYourDocuments }}: <a class="govuk-link" href="mailto:{{ results.enquiries.email.address }}">{{ results.enquiries.email.address }}</a><br>
-            {{ updates }}: <a class="govuk-link" href="mailto:{{ results.enquiries.email.address }}">{{ results.enquiries.email.address }}</a>
+            {% if results.enquiries.sendDocumentsEmail %}
+              {{ sendUsYourDocuments }}: <a class="govuk-link" href="mailto:{{ results.enquiries.sendDocumentsEmail.address }}">{{ results.enquiries.sendDocumentsEmail.address }}</a><br>
+            {% endif %}
+            {% if results.enquiries.email %}
+              {{ updates }}: <a class="govuk-link" href="mailto:{{ results.enquiries.email.address }}">{{ results.enquiries.email.address }}</a>
+            {% endif %}
           </p>
         </div>
       {% endif %}
