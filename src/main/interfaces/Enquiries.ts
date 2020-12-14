@@ -3,4 +3,5 @@ export interface Enquiries {
     welshPhone: {}[];
     email: {};
     fax: {};
+    sendDocumentsEmail: {};
 }
