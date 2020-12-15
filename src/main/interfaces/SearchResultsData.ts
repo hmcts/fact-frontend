@@ -4,6 +4,7 @@ export interface SearchResultsData extends PageData {
   search: string;
   results: SearchResult[];
   foundResults: string;
+  foundResult: string;
 }
 
 export interface SearchResult {

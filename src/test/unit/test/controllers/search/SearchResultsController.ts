@@ -7,6 +7,7 @@ const i18n = {
   search: {
     location: {
       foundResults: '',
+      foundResult: '',
       errorBlank: {
         title: 'There is a problem',
         text: 'Enter a court name, address, town or city'
