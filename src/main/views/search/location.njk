@@ -49,7 +49,7 @@
     </form>
 
     {% if (path !== '/search-by-name') and (results.length > 0) %}
-      <p role="status" class="govuk-body">{{ foundResults }}</p>
+      <p role="status" class="govuk-body">{{ foundResult if results.length === 1 else foundResults }}</p>
       <p class="govuk-body">{{ mostRelevant }}</p>
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       <div class="search-results" id="search-results">
