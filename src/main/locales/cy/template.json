@@ -1,4 +1,5 @@
 {
+  "cookieBanner": "Mae GOV.UK yn defnyddio cwcis i wneud y wefan yn symlach. <a class=\"govuk-link\" href=\"https://www.gov.uk/help/cookies\">Rhagor o wybodaeth am gwcis</a>",
   "feedback": "Mae hwn yn wasanaeth newydd - bydd eich <a class=\"govuk-link\" href=\"https://www.smartsurvey.co.uk/s/feedbackFaCT\">adborth</a> yn ein helpu ni i’w wella. ",
   "languageToggle": "<a href=\"?lng=en\" class=\"govuk-link fact-language\">English</a>",
   "backLink": "Yn ôl",
