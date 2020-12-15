@@ -4,6 +4,7 @@ export interface PostcodeResultsData extends PageData {
   hint: string;
   errorType: string;
   multipleResultsHint: string;
+  singleResultsHint: string;
   secondHint: string;
   results: PostcodeResultsData | {};
   isDivorceOrCivil: boolean;

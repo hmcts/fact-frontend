@@ -35,6 +35,8 @@ export class SearchResultsController {
         data.foundResults = data.foundResults
           .replace('{total}', data.results.length.toString())
           .replace('{search}', data.search);
+        data.foundResult = data.foundResult
+          .replace('{search}', data.search);
       }
     }
 

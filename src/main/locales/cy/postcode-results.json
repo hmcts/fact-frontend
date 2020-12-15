@@ -6,6 +6,7 @@
   "civilHint": "Rydym yn rheoli ceisiadau i ddod â phartneriaethau sifil i ben yn ein hunedau ysgariad rhanbarthol (RDU).",
   "secondHint": "Dyma'r RDU agosaf i {post code}",
   "thirdHint": "Dewch o hyd i ble i anfon eich dogfennau neu holi am gynnydd eich cais.",
+  "singleResultsHint": "Daethom o hyd i 1 llys neu dribiwnlys sy’n ymwneud â {serviceArea} ac sy’n cyfateb i’r chwiliad am '{postcode}'",
   "multipleResultsHint": "Daethom o hyd i {total} llys neu dribiwnlys sy’n ymwneud â {serviceArea} ac sy’n cyfateb i’r chwiliad am '{postcode}'",
   "applyOnlineHeading": "Gwnewch gais ar-lein",
   "unit": "milltiroedd"

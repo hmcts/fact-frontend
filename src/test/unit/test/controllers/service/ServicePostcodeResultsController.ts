@@ -6,6 +6,7 @@ import { PageData } from '../../../../../main/interfaces/PageData';
 const i18n = {
   'postcode-results': {
     multipleResultsHint: '',
+    singleResultsHint: '',
     secondHint: ''
   }
 };

@@ -42,6 +42,9 @@ export class ServicePostcodeResultsController {
           .replace('{total}', court.courts.length.toString())
           .replace('{serviceArea}', court.slug ? court.slug.replace(/-/g,' ') : court.slug )
           .replace('{postcode}', postcode);
+        data.singleResultsHint = data.singleResultsHint
+          .replace('{serviceArea}', court.slug ? court.slug.replace(/-/g,' ') : court.slug )
+          .replace('{postcode}', postcode);
       }
       return res.render('postcode-results', data);
     }

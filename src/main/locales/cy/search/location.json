@@ -17,6 +17,7 @@
       "li3": "chwilio am rywbeth llai penodol"
     }
   },
+  "foundResult": "Daethpwyd o hyd i 1 llys neu dribiwnlys yn cyfateb i'ch chwiliad am '{search}'.",
   "foundResults": "Daethpwyd o hyd i {total} llys neu dribiwnlys yn cyfateb i'ch chwiliad am '{search}'.",
   "mostRelevant": "Mae'r canlyniadau mwyaf perthnasol yn cael eu harddangos.",
   "errorBlank": {
