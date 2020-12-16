@@ -33,6 +33,7 @@ const servicePostcodeSearchMoneyClaims = '/services/money/money-claims/search-by
 const serviceSearchResultsProbate = '/services/probate-divorce-or-ending-civil-partnerships/probate/search-results';
 const serviceSearchResultsMajorCriminalOffences = '/services/crime/major-criminal-offences/search-results';
 const accessibilityStatement = '/accessibility-statement';
+const cookies = '/cookies';
 
 class Pa11yResult {
   documentTitle: string;
@@ -139,4 +140,5 @@ describe('Accessibility', () => {
   testAccessibility(serviceSearchResultsProbate);
   testAccessibility(serviceSearchResultsMajorCriminalOffences);
   testAccessibility(accessibilityStatement);
+  testAccessibility(cookies);
 });
