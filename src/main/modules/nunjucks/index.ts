@@ -2,8 +2,6 @@ import * as path from 'path';
 import * as express from 'express';
 import * as nunjucks from 'nunjucks';
 
-const MAX_AGE = 28 * 24 * 60 * 1000;
-
 export class Nunjucks {
 
 
@@ -35,9 +33,8 @@ export class Nunjucks {
     app.use((req, res, next) => {
       res.locals.pagePath = req.path;
 
-      if (!req.cookies || !req.cookies['seen_cookie_message']) {
+      if (!req.cookies || !req.cookies['cm-user-preferences']) {
         res.locals.showCookieBanner = true;
-        res.cookie('seen_cookie_message', 'yes', { maxAge: MAX_AGE });
       } else {
         res.locals.showCookieBanner = false;
       }
