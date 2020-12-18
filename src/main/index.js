@@ -5,6 +5,7 @@ cookieManager.init({
   'cookie-banner-id': 'cookie_banner',
   'cookie-banner-visibility-class': 'govuk-visually-hidden',
   'cookie-banner-visible-on-page-with-preference-form': false,
+  'user-preference-cookie-name': 'fact-cookie-preferences',
   'user-preference-configuration-form-id': 'cm_user_preference_form',
   'user-preference-saved-callback': function () {
     const message = document.querySelector('#cookie-preference-success');
@@ -19,6 +20,12 @@ cookieManager.init({
     optional: false,
     cookies: [
       'i18next'
+    ]
+  },
+  {
+    'category-name': 'analytics',
+    optional: true,
+    cookies: [
     ]
   }
   ]
