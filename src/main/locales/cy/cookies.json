@@ -1,4 +1,23 @@
 {
   "title": "Cookie preferences - Find a court or tribunal - GOV.UK",
-  "serviceName": "Find a court or tribunal"
+  "serviceName": "Find a court or tribunal",
+  "h1": "Cookies",
+  "p1": "Cookies are files saved on your phone, tablet or computer when you visit a website. Most websites need cookies to work properly.",
+  "p2": "This service uses cookies to:",
+  "bullets": ["store your language selection", "store your cookie preferences", "measure how you use the service so it can be improved"],
+  "h2": "How cookies are used in this service",
+  "h3": "1. To store your language selection",
+  "caption": "Cookie details",
+  "name": "Name",
+  "purpose":"Purpose",
+  "expires": "Expires",
+  "language": "Your language selection: English or Welsh",
+  "year": "1 year",
+  "h4": "2. To store your cookie preferences",
+  "cookiePreferences": "Your cookie preferences",
+  "h5": "3. To measure website use",
+  "p3": "We use Google Analytics software to collect information about how you use this service. We do this to help make sure the service is meeting the needs of its users and to help us make improvements. We do not allow Google to use or share the data about how you use this site.",
+  "saved": "Your cookie settings were saved",
+  "additionalCookies": "Government services may set additional cookies and, if so, will have their own cookie policy and banner.",
+  "homePageLink": "Go to homepage"
 }

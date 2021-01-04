@@ -16,5 +16,8 @@
   "h4": "2. To store your cookie preferences",
   "cookiePreferences": "Your cookie preferences",
   "h5": "3. To measure website use",
-  "p3": "We use Google Analytics software to collect information about how you use this service. We do this to help make sure the service is meeting the needs of its users and to help us make improvements. We do not allow Google to use or share the data about how you use this site."
+  "p3": "We use Google Analytics software to collect information about how you use this service. We do this to help make sure the service is meeting the needs of its users and to help us make improvements. We do not allow Google to use or share the data about how you use this site.",
+  "saved": "Your cookie settings were saved",
+  "additionalCookies": "Government services may set additional cookies and, if so, will have their own cookie policy and banner.",
+  "homePageLink": "Go to homepage"
 }

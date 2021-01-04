@@ -21,14 +21,11 @@
   {% if showCookieBanner %}
     <div class="global-cookie-message" id="cookie_banner">
       <div class="govuk-width-container">
-          <h1 class="govuk-heading-m">Tell us whether you accept cookies</h1>
-          <p class="govuk-body-s">
-            We use <a href="/cookies">cookies to collect information</a> about how you use the {{
-            service_name }} service. </p>
-          <p class="govuk-body-s"> We use this information to make the website work as well as
-            possible and improve our services.</p>
-          <button type="submit" class="govuk-button">Accept all cookies</button>
-          <a class="govuk-button" href="/cookies">Set cookie preferences</a>
+          <h1 class="govuk-heading-m">{{ cookieBannerH1 }}</h1>
+          <p class="govuk-body-s">{{ cookieBannerP1 | safe }}</p>
+          <p class="govuk-body-s">{{ cookieBannerP2 }}</p>
+          <button type="submit" class="govuk-button">{{ cookieBannerButton }}</button>
+          <a class="govuk-button" href="/cookies">{{ cookieBannerAnchor }}</a>
       </div>
     </div>
   {% endif %}
