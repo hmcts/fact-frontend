@@ -1,5 +1,4 @@
 {
-  "cookieBanner": "Mae GOV.UK yn defnyddio cwcis i wneud y wefan yn symlach. <a class=\"govuk-link\" href=\"https://www.gov.uk/help/cookies\">Rhagor o wybodaeth am gwcis</a>",
   "feedback": "Mae hwn yn wasanaeth newydd - bydd eich <a class=\"govuk-link\" href=\"https://www.smartsurvey.co.uk/s/feedbackFaCT\">adborth</a> yn ein helpu ni i’w wella. ",
   "languageToggle": "<a href=\"?lng=en\" class=\"govuk-link fact-language\">English</a>",
   "backLink": "Yn ôl",
@@ -9,5 +8,10 @@
   "cookies": "Cwcis",
   "accessibility": "Datganiad hygyrchedd",
   "termsAndConditions": "Telerau ac amodau",
-  "usingServicesInWelsh": "Rhestr o Wasanaethau Cymraeg"
+  "usingServicesInWelsh": "Rhestr o Wasanaethau Cymraeg",
+  "cookieBannerH1": "Tell us whether you accept cookies",
+  "cookieBannerP1": "We use <a href=\"/cookies\">cookies to collect information</a> about how you use this service. ",
+  "cookieBannerP2": "We use this information to make the website work as well as possible and improve our services.",
+  "cookieBannerButton": "Accept all cookies",
+  "cookieBannerAnchor": "Set cookie preferences"
 }
