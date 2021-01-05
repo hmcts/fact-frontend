@@ -40,10 +40,10 @@ export class ServicePostcodeResultsController {
       } else {
         data.multipleResultsHint = data.multipleResultsHint
           .replace('{total}', court.courts.length.toString())
-          .replace('{serviceArea}', court.slug ? court.slug.replace(/-/g,' ') : court.slug )
+          .replace('{serviceArea}', court.name ? court.name.toLowerCase() : court.name)
           .replace('{postcode}', postcode);
         data.singleResultsHint = data.singleResultsHint
-          .replace('{serviceArea}', court.slug ? court.slug.replace(/-/g,' ') : court.slug )
+          .replace('{serviceArea}', court.name ? court.name.toLowerCase() : court.name)
           .replace('{postcode}', postcode);
       }
       return res.render('postcode-results', data);

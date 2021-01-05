@@ -5,13 +5,17 @@ import { PageData } from '../../../../../main/interfaces/PageData';
 
 const i18n = {
   'postcode-search': {
-    hint: '',
+    hint: '{serviceArea}',
     errorType: ''
   }
 };
 
 describe('Service Postcode Search Controller', () => {
-  const controller = new ServicePostcodeSearchController();
+  const response: any = { ServiceAreaResult: { name: 'serviceAreaName'} };
+  const api: any = {
+    getServiceArea: async () => response.ServiceAreaResult,
+  };
+  const controller = new ServicePostcodeSearchController(api);
 
   test('Should render the postcode search page', async () => {
     const req = mockRequest(i18n);
@@ -31,7 +35,8 @@ describe('Service Postcode Search Controller', () => {
       error: false,
       hasNoResults: false,
       serviceAreaIsChildcare: false,
-      postcode: undefined
+      postcode: undefined,
+      hint: 'serviceareaname'
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
@@ -55,7 +60,8 @@ describe('Service Postcode Search Controller', () => {
       errorType: 'blankPostcode',
       hasNoResults: false,
       serviceAreaIsChildcare: false,
-      postcode: undefined
+      postcode: undefined,
+      hint: 'serviceareaname'
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
@@ -79,7 +85,8 @@ describe('Service Postcode Search Controller', () => {
       errorType: 'invalidPostcode',
       hasNoResults: false,
       serviceAreaIsChildcare: false,
-      postcode: undefined
+      postcode: undefined,
+      hint: 'serviceareaname'
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
@@ -103,7 +110,8 @@ describe('Service Postcode Search Controller', () => {
       errorType: 'scottishPostcode',
       hasNoResults: false,
       serviceAreaIsChildcare: false,
-      postcode: undefined
+      postcode: undefined,
+      hint: 'serviceareaname'
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
@@ -127,7 +135,8 @@ describe('Service Postcode Search Controller', () => {
       errorType: 'scottishChildrenPostcode',
       hasNoResults: false,
       serviceAreaIsChildcare: true,
-      postcode: undefined
+      postcode: undefined,
+      hint: 'serviceareaname'
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
@@ -151,7 +160,8 @@ describe('Service Postcode Search Controller', () => {
       errorType: 'northernIrelandPostcode',
       hasNoResults: false,
       serviceAreaIsChildcare: false,
-      postcode: undefined
+      postcode: undefined,
+      hint: 'serviceareaname'
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
@@ -175,7 +185,8 @@ describe('Service Postcode Search Controller', () => {
       error: false,
       hasNoResults: true,
       serviceAreaIsChildcare: false,
-      postcode: 'E1 8DY'
+      postcode: 'E1 8DY',
+      hint: 'serviceareaname'
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });

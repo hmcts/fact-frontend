@@ -3,10 +3,16 @@ import { Response } from 'express';
 import { cloneDeep } from 'lodash';
 import { PostcodeSearchData, PostcodeSearchQuery } from '../../interfaces/PostcodeSearchData';
 import { isEmpty } from '../../utils/validation';
+import { FactApi } from '../../utils/FactApi';
+import autobind from 'autobind-decorator';
 
+@autobind
 export class ServicePostcodeSearchController {
+  constructor(
+    private readonly api: FactApi,
+  ) { }
 
-  public get(req: FactRequest, res: Response): void {
+  public async get(req: FactRequest, res: Response) {
     const { error, postcode, noResults }  = req.query as PostcodeSearchQuery;
     const hasError = !isEmpty(error);
     const hasNoResults: boolean = noResults === 'true';
@@ -22,7 +28,8 @@ export class ServicePostcodeSearchController {
     if (hasError) {
       data.errorType = error;
     }
-    data.hint = data.hint.replace('{serviceArea}', req.params.serviceArea.replace(/-/g,' '));
+    const serviceArea = await this.api.getServiceArea(req.params.serviceArea, req.lng);
+    data.hint = data.hint.replace('{serviceArea}', serviceArea.name ? serviceArea.name.toLowerCase() : serviceArea.name);
     res.render('postcode-search', data);
   }
 }
