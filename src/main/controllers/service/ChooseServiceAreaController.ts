@@ -62,7 +62,7 @@ export class ChooseServiceAreaController {
 
       res.render('service', serviceData);
     } else if (req.body.serviceArea === 'not-listed') {
-      res.redirect('/services/service-not-found');
+      res.redirect('/services/' + action);
     } else {
       const serviceArea = await this.api.getServiceArea(req.body.serviceArea, req.lng);
       const url = this.serviceAreaRedirect.getUrl(req.params.service, serviceArea, action);
