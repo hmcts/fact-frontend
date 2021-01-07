@@ -4,7 +4,7 @@
   "question": "Court or tribunal search results",
   "divorceHint": "We manage your divorce applications at our regional divorce units (RDU).",
   "civilHint": "We manage applications to end a civil partnership at our regional divorce units (RDU).",
-  "secondHint": "This is the nearest RDU to {postcode}",
+  "secondHint": "This is the nearest RDU to '{postcode}'",
   "thirdHint": "Find where to send your documents or ask about your application’s progress.",
   "singleResultsHint": "We found 1 court or tribunal related to {serviceArea} matching your search for '{postcode}'.",
   "multipleResultsHint": "We found {total} courts or tribunals related to {serviceArea} matching your search for '{postcode}'.",
