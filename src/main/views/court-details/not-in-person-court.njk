@@ -74,9 +74,11 @@
             {{ telephone.explanation }}
           </p>
           {% endfor %}
-          <p class="govuk-body-m">
-            Fax: {{ results.enquiries.fax.number }}
-          </p>
+          {% if results.enquiries.fax.number %}
+            <p class="govuk-body-m">
+              Fax: {{ results.enquiries.fax.number }}
+            </p>
+          {% endif %}
           <p class="govuk-body-m">
             <a class="govuk-link" href="https://www.gov.uk/call-charges">
               {{ callCharges }}
