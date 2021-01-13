@@ -160,6 +160,18 @@ Feature: Court Name Know - Court Details
       | no_area_of_law_court              |
       | Tax Chamber (First-tier Tribunal) |
 
+  Scenario Outline: Court or tribunal areas of law not to be listed for not-in-person courts where there is no external link
+    And I have entered "<not_in_person_no_area_of_law_court>" as search criteria
+    When I have selected to search for that court or tribunal name or address
+    Given results are returned
+    When I select a court or tribunal link
+    And that location entry hides listings for areas of law offered by that location
+    Then no guidance link for the areas of law are presented to me on the profile page
+
+    Examples:
+      | not_in_person_no_area_of_law_court              |
+      | Enforcement (Crime) Contact Centre - Wales, South West & London  |
+
   Scenario Outline: Court or tribunal court location codes
     And I have entered "<location_court>" as search criteria
     When I have selected to search for that court or tribunal name or address
