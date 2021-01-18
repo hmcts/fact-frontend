@@ -60,7 +60,11 @@
       {% if results.enquiries and results.enquiries.phone.length > 0 %}
         <div class="govuk-grid-row .contacts" id="contacts">
           <h4 class="govuk-heading-s">
-            {{ telephoneAndFaxHeading }}
+            {% if results.enquiries.fax.number %}
+              {{ telephoneAndFaxHeading }}
+            {% else %}
+              {{ telephoneHeading }}
+            {% endif %}
           </h4>
           {% for telephone in results.enquiries.phone %}
             <p class="govuk-body-m">
