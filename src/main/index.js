@@ -1,5 +1,6 @@
 import './assets/scss/main.scss';
-import { initAll } from 'govuk-frontend';
+import {initAll} from 'govuk-frontend';
+
 const cookieManager = require('../../node_modules/@dvsa/cookie-manager/cookie-manager.js');
 cookieManager.init({
   'cookie-banner-id': 'cookie_banner',
@@ -15,19 +16,24 @@ cookieManager.init({
   },
 
   'set-checkboxes-in-preference-form': true,
-  'cookie-manifest': [{
-    'category-name': 'essential',
-    optional: false,
-    cookies: [
-      'i18next'
-    ]
-  },
-  {
-    'category-name': 'analytics',
-    optional: true,
-    cookies: [
-    ]
-  }
+  'cookie-manifest': [
+    {
+      'category-name': 'essential',
+      optional: false,
+      cookies: [
+        'i18next',
+        'fact-cookie-preferences'
+      ]
+    },
+    {
+      'category-name': 'analytics',
+      optional: true,
+      cookies: [
+        '_ga',
+        '_gid',
+        '_gat_UA-37377084-3'
+      ]
+    }
   ]
 });
 initAll();
