@@ -19,11 +19,13 @@
   })(window,document,'script','dataLayer','GTM-N7NMJDR');</script>
 
   {% if showCookieBanner %}
-    <div class="global-cookie-message">
+    <div class="global-cookie-message" id="cookie_banner">
       <div class="govuk-width-container">
-        <p class="govuk-body-s">
-          {{ cookieBanner | safe }}
-        </p>
+          <h1 class="govuk-heading-m">{{ cookieBannerH1 }}</h1>
+          <p class="govuk-body-s">{{ cookieBannerP1 | safe }}</p>
+          <p class="govuk-body-s">{{ cookieBannerP2 }}</p>
+          <button type="submit" class="govuk-button">{{ cookieBannerButton }}</button>
+          <a class="govuk-button" href="/cookies">{{ cookieBannerAnchor }}</a>
       </div>
     </div>
   {% endif %}
@@ -73,7 +75,7 @@
           text: privacy
         },
         {
-          href: "https://www.gov.uk/help/cookies",
+          href: "/cookies",
           text: cookies
         },
         {

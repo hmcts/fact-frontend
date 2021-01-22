@@ -21,6 +21,6 @@ Then('I can select a {string} from the family and children area of law page', as
 });
 
 Given('I continue having not selected a family and children area of law option', async() => {
-  await I.click('.govuk-button');
+  await I.click('.continue');
 });
 

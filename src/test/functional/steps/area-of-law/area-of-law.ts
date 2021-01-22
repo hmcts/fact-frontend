@@ -43,7 +43,7 @@ Given('I continue having selected an {string} from that page', async (option: st
 });
 
 Given('I continue having not selected an area of law option', async() => {
-  await I.click('.govuk-button');
+  await I.click('.continue');
 });
 
 Then('I am presented with an error message for services', async() => {
