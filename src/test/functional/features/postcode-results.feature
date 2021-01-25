@@ -36,4 +36,4 @@ Feature: Postcode Results Feature
 
     Examples:
       | options        | area_of_law | area_of_law_category    |
-      | nearest court  | money       | minor-criminal-offences |
+      | nearest court  | money       | tax |
