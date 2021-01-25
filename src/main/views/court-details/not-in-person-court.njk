@@ -88,11 +88,13 @@
               {{ callCharges }}
             </a>
           </p>
-          <p class="govuk-body-m">
+          {% if results.slug === 'county-court-business-centre-ccbc' or results.slug ==='county-court-money-claims-centre-ccmcc' %}
+            <p class="govuk-body-m">
             <a class="govuk-link" href="https://www.gov.uk/guidance/hmcts-civil-business-centres-performance-information">
               {{ processingTimes }}
             </a>
           </p>
+          {% endif %}
         </div>
       {% endif %}
 
