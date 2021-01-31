@@ -1,0 +1,21 @@
+{% macro locationMetadata(type, name, address, fullPath, imagePaths) %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "{{ type }}",
+      "@id": "{{ fullPath }}",
+      "name": "{{ name | safe }}",
+      "image": [
+        {% for imagePath in imagePaths %}"{{imagePath}}"{% if not loop.last %},
+        {% endif %}{% endfor %}
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{% for address_line in address.address_lines %}{{address_line}}{% if not loop.last %}, {% endif %}{% endfor %}",
+        "addressLocality": "{{address.town}}",
+        "postalCode": "{{address.postcode}}",
+        "addressCountry": "GB"
+      }
+    }
+  </script>
+{% endmacro %}
