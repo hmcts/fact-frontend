@@ -20,11 +20,13 @@
             {{ hint }}
           </p>
         </div>
-        <div class="search-result" id="search-result">
-          <h2 class="govuk-heading-m">
-            <a class="govuk-link" href="/courts/{{ results.slug }}">{{ results.courtName }}</a>
-          </h2>
-        </div>
+        {% if results.slug %}
+          <div class="search-result" id="search-result">
+            <h2 class="govuk-heading-m">
+              <a class="govuk-link" href="/courts/{{ results.slug }}">{{ results.courtName }}</a>
+            </h2>
+          </div>
+        {% endif %}
       </div>
      <div class="govuk-grid-row">
           <p class="govuk-body-m">
