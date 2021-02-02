@@ -10,4 +10,7 @@
       }
     ]
   }) }}
+  <script>
+    dataLayer.push({"errormsg": {{ text | dump | safe }}, "event": "Error shown"})
+  </script>
 {% endmacro %}

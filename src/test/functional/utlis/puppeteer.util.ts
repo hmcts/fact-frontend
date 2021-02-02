@@ -94,3 +94,11 @@ export const getTextFromElements = async (el: string) => {
     return [];
   }
 };
+
+export const getDataLayer = async () => {
+  const dataLayer = await scope.page.evaluate('dataLayer');
+  if (!dataLayer) {
+    throw new Error('no datalayer found');
+  }
+  return dataLayer;
+};
