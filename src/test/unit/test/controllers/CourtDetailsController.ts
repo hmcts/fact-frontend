@@ -28,10 +28,12 @@ describe('CourtDetailsController', () => {
     req.params = {
       slug: 'London'
     };
+    req.hostname = 'testHost';
     const res = mockResponse();
     await controller.get(req, res, nextFunction);
     const expectedData: PageData = {
       ...i18n['court-details'],
+      fullPath: req.hostname + '/courts/London',
       path: '/courts/London',
       results: {
         ...response.data,
@@ -51,11 +53,13 @@ describe('CourtDetailsController', () => {
     req.params = {
       slug: 'London'
     };
+    req.hostname = 'testHost';
     const res = mockResponse();
     response.data['image_file'] = null;
     await controller.get(req, res, nextFunction);
     const expectedData: PageData = {
       ...i18n['court-details'],
+      fullPath: req.hostname + '/courts/London',
       path: '/courts/London',
       results: {
         ...response.data,
@@ -77,10 +81,12 @@ describe('CourtDetailsController', () => {
     req.params = {
       slug: 'Not-London'
     };
+    req.hostname = 'testHost';
     const res = mockResponse();
     await controller.get(req, res, nextFunction);
     const expectedData: PageData = {
       ...i18n['court-details'],
+      fullPath: req.hostname + '/courts/Not-London',
       path: '/courts/Not-London',
       results: {
         ...response.data,
