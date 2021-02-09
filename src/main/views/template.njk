@@ -102,6 +102,23 @@
     e.preventDefault();
     history.go(-1);
   }
+  function pushToDataLayer(radioName, pageName) {
+    var buttons = document.getElementsByName(radioName);
+    for (var i = 0; i < buttons.length; i++) {
+      if (buttons[i].checked) {
+        const val_id = buttons[i].id;
+        const selector = 'label[for=' + val_id + ']';
+        const label = document.querySelector(selector);
+        const label_text = label.innerText;
+        window.dataLayer.push({
+          'event': 'Page selections',
+          'Page': pageName ,
+          'selection': label_text,
+        });
+        console.log(dataLayer)
+      }
+    }
+  }
   </script>
   {# Run JavaScript at end of the <body>, to avoid blocking the initial render. #}
   {% include "webpack/js.njk" %}
