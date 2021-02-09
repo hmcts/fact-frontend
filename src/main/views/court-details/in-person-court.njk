@@ -1,4 +1,5 @@
 {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+{% from "../macros/location-seo-metadata.njk" import locationMetadata %}
 
 {% extends "template.njk" %}
 
@@ -7,6 +8,8 @@
 {% endblock %}
 
 {% block content %}
+{% set imagePaths = [results.image_file] %}
+{{ locationMetadata('Courthouse', results.name, results.addresses[0], fullPath, imagePaths) }}
 
 <div class="govuk-grid-row court-tribunal-details">
   <div class="govuk-grid-column-full">

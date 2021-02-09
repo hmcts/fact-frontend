@@ -24,6 +24,7 @@ export class CourtDetailsController {
     const data: CourtDetailsData = {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['court-details']),
       path: '/courts/' + slug,
+      fullPath: config.get('services.frontend.url') + '/courts/' + slug,
       results: {},
     };
 

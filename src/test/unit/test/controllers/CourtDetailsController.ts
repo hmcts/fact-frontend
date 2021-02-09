@@ -2,6 +2,7 @@ import { PageData } from '../../../../main/interfaces/PageData';
 import { mockRequest } from '../../utils/mockRequest';
 import { mockResponse } from '../../utils/mockResponse';
 import { CourtDetailsController } from '../../../../main/controllers/CourtDetailsController';
+import config from 'config';
 const expectedCourtDetails = require('../../../resources/court-details-results.json');
 const expectedNotInPersonCourtDetails = require('../../../resources/not-in-person-court-details-results.json');
 
@@ -28,10 +29,12 @@ describe('CourtDetailsController', () => {
     req.params = {
       slug: 'London'
     };
+    req.hostname = 'testHost';
     const res = mockResponse();
     await controller.get(req, res, nextFunction);
     const expectedData: PageData = {
       ...i18n['court-details'],
+      fullPath: config.get('services.frontend.url') + '/courts/London',
       path: '/courts/London',
       results: {
         ...response.data,
@@ -51,11 +54,13 @@ describe('CourtDetailsController', () => {
     req.params = {
       slug: 'London'
     };
+    req.hostname = 'testHost';
     const res = mockResponse();
     response.data['image_file'] = null;
     await controller.get(req, res, nextFunction);
     const expectedData: PageData = {
       ...i18n['court-details'],
+      fullPath: config.get('services.frontend.url') + '/courts/London',
       path: '/courts/London',
       results: {
         ...response.data,
@@ -77,10 +82,12 @@ describe('CourtDetailsController', () => {
     req.params = {
       slug: 'Not-London'
     };
+    req.hostname = 'testHost';
     const res = mockResponse();
     await controller.get(req, res, nextFunction);
     const expectedData: PageData = {
       ...i18n['court-details'],
+      fullPath: config.get('services.frontend.url') +  '/courts/Not-London',
       path: '/courts/Not-London',
       results: {
         ...response.data,
