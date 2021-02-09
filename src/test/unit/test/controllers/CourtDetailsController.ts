@@ -2,6 +2,7 @@ import { PageData } from '../../../../main/interfaces/PageData';
 import { mockRequest } from '../../utils/mockRequest';
 import { mockResponse } from '../../utils/mockResponse';
 import { CourtDetailsController } from '../../../../main/controllers/CourtDetailsController';
+import config from 'config';
 const expectedCourtDetails = require('../../../resources/court-details-results.json');
 const expectedNotInPersonCourtDetails = require('../../../resources/not-in-person-court-details-results.json');
 
@@ -33,7 +34,7 @@ describe('CourtDetailsController', () => {
     await controller.get(req, res, nextFunction);
     const expectedData: PageData = {
       ...i18n['court-details'],
-      fullPath: req.hostname + '/courts/London',
+      fullPath: config.get('services.frontend.url') + '/courts/London',
       path: '/courts/London',
       results: {
         ...response.data,
@@ -59,7 +60,7 @@ describe('CourtDetailsController', () => {
     await controller.get(req, res, nextFunction);
     const expectedData: PageData = {
       ...i18n['court-details'],
-      fullPath: req.hostname + '/courts/London',
+      fullPath: config.get('services.frontend.url') + '/courts/London',
       path: '/courts/London',
       results: {
         ...response.data,
@@ -86,7 +87,7 @@ describe('CourtDetailsController', () => {
     await controller.get(req, res, nextFunction);
     const expectedData: PageData = {
       ...i18n['court-details'],
-      fullPath: req.hostname + '/courts/Not-London',
+      fullPath: config.get('services.frontend.url') +  '/courts/Not-London',
       path: '/courts/Not-London',
       results: {
         ...response.data,
