@@ -111,7 +111,8 @@
         const label = document.querySelector(selector);
         const label_text = label.innerText;
         window.dataLayer.push({
-          'event': 'selection page [' + pageName + ']',
+          'event': 'Page selections',
+          'Page': pageName ,
           'selection': label_text,
         });
         console.log(dataLayer)
