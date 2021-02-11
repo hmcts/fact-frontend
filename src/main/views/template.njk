@@ -122,6 +122,15 @@
     }
   }
   </script>
+  {% if seoMetadataDescription %}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type":"Thing",
+        "description": "{{ seoMetadataDescription }}"
+      }
+    </script>
+  {% endif %}
   {# Run JavaScript at end of the <body>, to avoid blocking the initial render. #}
   {% include "webpack/js.njk" %}
 {% endblock %}
