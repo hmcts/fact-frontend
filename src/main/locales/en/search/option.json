@@ -1,6 +1,6 @@
 {
   "errorTitle": "Error:",
-  "title": "What do you want to do? - Find a court or tribunal - GOV.UK",
+  "title": "What is the court name? - Find a Court or Tribunal - GOV.UK",
   "serviceName": "Find a court or tribunal",
   "question": "Do you know the name of the court or tribunal?",
   "hint": "The name of the court or tribunal can be found on a letter, email or text from us.",
@@ -12,5 +12,6 @@
   "error":{
     "title": "There is a problem",
     "text": "Select if you have the name or not"
-  }
+  },
+  "seoMetadataDescription": "Tell us if you know the court or tribunal name or address to find a court or tribunal in England or Wales"
 }
