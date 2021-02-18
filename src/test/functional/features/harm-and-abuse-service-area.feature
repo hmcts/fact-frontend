@@ -8,7 +8,7 @@ Feature: Harm and abuse area of law
   Scenario Outline: Select harm and abuse area of law or I can't find what I'm looking for
     Then I can select an "<options>" option from the list displayed
     Given I can continue having selected that option
-    Then I am presented with the "Choose an area of law - Find a court or tribunal - GOV.UK" page
+    Then I am presented with the "Why do you need a court? - Find a Court or Tribunal - GOV.UK" page
     When I select "#harm-and-abuse" from the areas of law page and continue
     Then I am presented with the "Choose an area of law - harm and abuse - Find a court or tribunal - GOV.UK" page
     Given I can select a "<harm and abuse category>" from the harm and abuse service area page
@@ -23,7 +23,7 @@ Feature: Harm and abuse area of law
   Scenario Outline: Do not select harm and abuse area of law or I can't find what I'm looking for
     Then I can select an "<options>" option from the list displayed
     Given I can continue having selected that option
-    Then I am presented with the "Choose an area of law - Find a court or tribunal - GOV.UK" page
+    Then I am presented with the "Why do you need a court? - Find a Court or Tribunal - GOV.UK" page
     When I select "#harm-and-abuse" from the areas of law page and continue
     Then I am presented with the "Choose an area of law - harm and abuse - Find a court or tribunal - GOV.UK" page
     And I continue having not selected a harm and abuse service area option

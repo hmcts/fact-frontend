@@ -8,7 +8,7 @@ Feature: View money claims result
   Scenario Outline: Select immigration category
     Then I select an "<options>" of either send documents, get an application update or not listed
     Given I can continue having selected that option
-    Then I am presented with the "Choose an area of law - Find a court or tribunal - GOV.UK" page
+    Then I am presented with the "Why do you need a court? - Find a Court or Tribunal - GOV.UK" page
     When I select "#immigration-and-asylum" from the areas of law page and continue
     Then I am presented with the "Search for location - Find a court or tribunal - GOV.UK" page
     And I can select that entry via the hyperlink

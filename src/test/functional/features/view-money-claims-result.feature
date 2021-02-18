@@ -8,7 +8,7 @@ Feature: View money claims result
   Scenario Outline: Select money claims category
     Then I select an "<options>" of either send documents, get an application update or not listed
     Given I can continue having selected that option
-    Then I am presented with the "Choose an area of law - Find a court or tribunal - GOV.UK" page
+    Then I am presented with the "Why do you need a court? - Find a Court or Tribunal - GOV.UK" page
     When I select "#money" from the areas of law page and continue
     Then I select "#money-claims" category from the list of categories
     Given I can continue having selected that option
