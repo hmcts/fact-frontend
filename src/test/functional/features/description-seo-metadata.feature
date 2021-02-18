@@ -7,3 +7,7 @@ Feature: SEO metadata for courts.
   Scenario: SEO metadata tag search option page
     Given the search option page loads
     Then it contains a metadata description tag
+
+  Scenario: SEO metadata tag search by name page
+    Given the search by name page loads
+    Then it contains a metadata description tag
