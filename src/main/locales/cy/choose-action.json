@@ -1,6 +1,6 @@
 {
   "errorTitle": "Gwall:",
-  "title": "Beth ydych chi eisiau ei wneud? - Dod o hyd i lys neu dribiwnlys - GOV.UK",
+  "title": "Dod i hyd i, neu gysylltu â llys - Dod o hyd i Lys neu Dribiwnlys - GOV.UK",
   "serviceName": "Dod o hyd i lys neu dribiwnlys",
   "question": "Beth ydych chi eisiau ei wneud?",
   "answers": {
@@ -14,5 +14,6 @@
   "error": {
     "title": "Mae yna broblem",
     "text": "Beth ydych chi eisiau ei wneud?"
-  }
+  },
+  "seoMetadataDescription": "Dywedwch wrthym beth ydych yn trio ei wneud fel y gallwn eich helpu i ddod o hyd i lys neu dribiwnlys yng Nghymru neu Loegr"
 }

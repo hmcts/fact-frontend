@@ -13,6 +13,11 @@ Given('the search option page loads', async () => {
   await I.goTo(config.TEST_URL + '/search-option');
 });
 
+Given('the choose action page loads', async () => {
+  await I.newPage();
+  await I.goTo(config.TEST_URL + '/service-choose-action');
+});
+
 
 Given('the search by name page loads', async () => {
   await I.newPage();

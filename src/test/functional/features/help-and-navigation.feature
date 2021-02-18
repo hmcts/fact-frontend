@@ -9,7 +9,7 @@ Feature: Help and navigation
   Scenario Outline: Back path
     And I navigate to the Search Page
     When I select "I do not have the name"
-    Then I am presented with the "What do you want to do? - Find a court or tribunal - GOV.UK" page
+    Then I am presented with the "Find or contact a court - Find a Court or Tribunal - GOV.UK" page
     Then I can select an "<options>" option from the list displayed
     Given I can continue having selected that option
     Then I am presented with the "Choose an area of law - Find a court or tribunal - GOV.UK" page
@@ -17,7 +17,7 @@ Feature: Help and navigation
     And I select the back button
     Then I am presented with the "Choose an area of law - Find a court or tribunal - GOV.UK" page
     When I select the back button
-    Then I am presented with the "What do you want to do? - Find a court or tribunal - GOV.UK" page
+    Then I am presented with the "Find or contact a court - Find a Court or Tribunal - GOV.UK" page
     Examples:
       | options         |
       | nearest court   |
