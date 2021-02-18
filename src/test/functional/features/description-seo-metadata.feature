@@ -9,7 +9,7 @@ Feature: SEO metadata for courts.
     Then it contains a metadata description tag
 
   Scenario: SEO metadata tag choose action page
-    Given the search choose action loads
+    Given the choose action page loads
     Then it contains a metadata description tag
 
   Scenario: SEO metadata tag search by name page

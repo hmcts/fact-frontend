@@ -3,7 +3,7 @@ Feature: View money claims result
     Given I am on FACT homepage
     And I navigate to the Search Page
     When I select "I do not have the name"
-    Then I am presented with the "What do you want to do? - Find a court or tribunal - GOV.UK" page
+    Then I am presented with the "Find or contact a court - Find a Court or Tribunal - GOV.UK" page
 
   Scenario Outline: Select immigration category
     Then I select an "<options>" of either send documents, get an application update or not listed
