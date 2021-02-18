@@ -8,6 +8,11 @@ Given('the postcode search page loads', async () => {
   await I.goTo(config.TEST_URL + '/services/crime/major-criminal-offences/search-by-postcode');
 });
 
+Given('the search option page loads', async () => {
+  await I.newPage();
+  await I.goTo(config.TEST_URL + '/search-option');
+});
+
 Then('it contains a metadata description tag', async () => {
   const elementExist = await I.checkElement('head > meta[name="description"]');
   expect(elementExist).equal(true);
