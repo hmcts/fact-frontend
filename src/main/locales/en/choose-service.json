@@ -1,6 +1,6 @@
 {
   "errorTitle": "Error:",
-  "title": "Choose an area of law - Find a court or tribunal - GOV.UK",
+  "title": "Why do you need a court? - Find a Court or Tribunal - GOV.UK",
   "serviceName": "Find a court or tribunal",
   "question": "What do you want to know more about?",
   "answers": {
@@ -10,5 +10,6 @@
   "error": {
     "title": "There is a problem",
     "text": "Select what you want to know more about"
-  }
+  },
+  "seoMetadataDescription": "Tell us what type of case you have so we can help you find a court or tribunal in England or Wales"
 }
