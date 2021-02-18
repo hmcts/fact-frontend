@@ -1,5 +1,5 @@
 {
-  "title": "Service not found - Find a court or tribunal - GOV.UK",
+  "title": "Service not found - Find a Court or Tribunal - GOV.UK",
   "serviceName": "Find a court or tribunal",
   "h1": "Sorry, we couldn't help you",
   "p_1": "If you have a letter, email or text from HM Courts and Tribunals Service (HMCTS), a court or a tribunal check it for contact details of the court or tribunal.",
@@ -12,5 +12,6 @@
   "a_3_2": "court and tribunal forms",
   "a_3_3": ", including divorce, probate, deed poll, money claim, help with fees and social security tribunal forms.",
   "h2_4": "All HMCTS courts and tribunals",
-  "a_4": "List of criminal, civil and family courts and tribunals in England and Wales"
+  "a_4": "List of criminal, civil and family courts and tribunals in England and Wales",
+  "seoMetadataDescription": "Other ways we can help you if you can't find a court or tribunal"
 }

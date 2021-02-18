@@ -1,5 +1,5 @@
 {
-  "title": "Gwasanaeth heb fod yn hysbys - Dod o hyd i lys neu dribiwnlysl - GOV.UK",
+  "title": "Ni ellir dod o hyd i'r gwasanaeth - Dod o hyd i Lys neu Dribiwnlys - GOV.UK",
   "serviceName": "Dod o hyd i lys neu dribiwnlys",
   "h1": "Mae'n ddrwg gennym, doedden ni ddim yn gallu eich helpu chi",
   "p_1": "Os oes gennych lythyr, e-bost neu neges destun gan Wasanaeth Llysoedd a Thribiwnlysoedd EM (GLlTEM), bydd llys neu dribiwnlys yn ei wirio am fanylion cyswllt.",
@@ -12,5 +12,6 @@
   "a_3_2": "ffurflenni llys a thribiwnlys",
   "a_3_3": ", gan gynnwys ysgariad, profiant, gweithred newid enw, hawlio arian, cymorth gyda ffioedd a ffurflenni tribiwnlys nawdd cymdeithasol.",
   "h2_4": "Holl lysoedd a thribiwnlysoedd GLlTEM",
-  "a_4": "Rhestr o lysoedd a thribiwnlysoedd troseddol, sifil a theulu yng Nghymru a Lloegr"
+  "a_4": "Rhestr o lysoedd a thribiwnlysoedd troseddol, sifil a theulu yng Nghymru a Lloegr",
+  "seoMetadataDescription": "Ffyrdd eraill y gallwn eich helpu os na allwch ddod o hyd i lys neu dribiwnlys"
 }

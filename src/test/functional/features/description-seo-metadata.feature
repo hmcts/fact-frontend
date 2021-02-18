@@ -27,3 +27,7 @@ Feature: SEO metadata for courts.
   Scenario: SEO metadata tag postcode search results page
     Given the postcode search results page loads
     Then it contains a metadata description tag
+
+  Scenario: SEO metadata tag service not found page
+    Given the service not found page loads
+    Then it contains a metadata description tag
