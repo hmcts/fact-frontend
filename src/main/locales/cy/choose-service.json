@@ -1,6 +1,6 @@
 {
   "errorTitle": "Gwall:",
-  "title": "Dewiswch faes cyfreithiol - Dod o hyd i lys neu dribiwnlys - GOV.UK",
+  "title": "Pam eich bod angen llys? - Dod o hyd i Lys neu Dribiwnlys - GOV.UK",
   "serviceName": "Dod o hyd i lys neu dribiwnlys",
   "question": "Beth ydych chi’n awyddus i wybod mwy amdano?",
   "answers": {
@@ -10,5 +10,6 @@
   "error": {
     "title": "Mae yna broblem",
     "text": "Dewis beth yr ydych am wybod mwy amdano"
-  }
+  },
+  "seoMetadataDescription": "Dywedwch wrthym pa fath o achos sydd gennych fel y gallwn eich helpu i ddod o hyd i lys neu dribiwnlys yng Nghymru neu Loegr"
 }

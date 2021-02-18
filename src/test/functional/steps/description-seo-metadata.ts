@@ -18,10 +18,14 @@ Given('the choose action page loads', async () => {
   await I.goTo(config.TEST_URL + '/service-choose-action');
 });
 
-
 Given('the search by name page loads', async () => {
   await I.newPage();
   await I.goTo(config.TEST_URL + '/search-by-name');
+});
+
+Given('the choose service page loads', async () => {
+  await I.newPage();
+  await I.goTo(config.TEST_URL + '/services/nearest');
 });
 
 Then('it contains a metadata description tag', async () => {
