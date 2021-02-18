@@ -4,6 +4,9 @@
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 
 {% block head %}
+  {% if seoMetadataDescription %}
+    <meta name="description" content="{{ seoMetadataDescription }}">
+  {% endif %}
   {% include "webpack/css.njk" %}
   <script>
     dataLayer = [];
