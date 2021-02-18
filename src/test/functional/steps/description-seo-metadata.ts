@@ -13,6 +13,11 @@ Given('the search option page loads', async () => {
   await I.goTo(config.TEST_URL + '/search-option');
 });
 
+Given('the choose action page loads', async () => {
+  await I.newPage();
+  await I.goTo(config.TEST_URL + '/service-choose-action');
+});
+
 Then('it contains a metadata description tag', async () => {
   const elementExist = await I.checkElement('head > meta[name="description"]');
   expect(elementExist).equal(true);
