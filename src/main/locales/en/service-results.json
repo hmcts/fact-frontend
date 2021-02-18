@@ -1,8 +1,9 @@
 {
-  "title": "Search for location - Find a court or tribunal - GOV.UK",
+  "title": "Court search results - Find a Court or Tribunal - GOV.UK",
   "serviceName": "Find a court or tribunal",
   "question": "Court or tribunal search results",
   "hint": "We manage {service-area} applications at our central service centre. Find where to send your documents or ask about your application’s progress.",
   "applyOnlineHeading": "Apply online",
-  "regionStatement": "This location provides services for all of England and Wales."
+  "regionStatement": "This location provides services for all of England and Wales.",
+  "seoMetadataDescription": "List of courts or tribunals based on your search"
 }

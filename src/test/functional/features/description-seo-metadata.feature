@@ -19,3 +19,11 @@ Feature: SEO metadata for courts.
   Scenario: SEO metadata tag choose service page
     Given the choose service page loads
     Then it contains a metadata description tag
+
+  Scenario: SEO metadata tag service results page
+    Given the service results page loads
+    Then it contains a metadata description tag
+
+  Scenario: SEO metadata tag postcode search results page
+    Given the postcode search results page loads
+    Then it contains a metadata description tag
