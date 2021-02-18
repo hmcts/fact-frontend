@@ -10,7 +10,7 @@ Feature: View money claims result
     Given I can continue having selected that option
     Then I am presented with the "Why do you need a court? - Find a Court or Tribunal - GOV.UK" page
     When I select "#immigration-and-asylum" from the areas of law page and continue
-    Then I am presented with the "Search for location - Find a court or tribunal - GOV.UK" page
+    Then I am presented with the "Court search results - Find a Court or Tribunal - GOV.UK" page
     And I can select that entry via the hyperlink
     Then I can view the selected court or tribunal details
     Examples:

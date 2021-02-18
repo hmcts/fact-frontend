@@ -28,6 +28,16 @@ Given('the choose service page loads', async () => {
   await I.goTo(config.TEST_URL + '/services/nearest');
 });
 
+Given('the service results page loads', async () => {
+  await I.newPage();
+  await I.goTo(config.TEST_URL + '/services/crime/minor-criminal-offences/search-results');
+});
+
+Given('the postcode search results page loads', async () => {
+  await I.newPage();
+  await I.goTo(config.TEST_URL + '/services/money/money-claims/courts/near?postcode=GU1+4UW');
+});
+
 Then('it contains a metadata description tag', async () => {
   const elementExist = await I.checkElement('head > meta[name="description"]');
   expect(elementExist).equal(true);

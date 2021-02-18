@@ -1,5 +1,5 @@
 {
-  "title": "Search results for location - Find a court or tribunal - GOV.UK",
+  "title": "Court search results - Find a Court or Tribunal - GOV.UK",
   "serviceName": "Find a court or tribunal",
   "question": "Court or tribunal search results",
   "divorceHint": "We manage your divorce applications at our regional divorce units (RDU).",
@@ -9,5 +9,6 @@
   "singleResultsHint": "We found 1 court or tribunal related to {serviceArea} matching your search for '{postcode}'.",
   "multipleResultsHint": "We found {total} courts or tribunals related to {serviceArea} matching your search for '{postcode}'.",
   "applyOnlineHeading": "Apply online",
-  "unit": "miles"
+  "unit": "miles",
+  "seoMetadataDescription": "List of courts or tribunals based on your search"
 }

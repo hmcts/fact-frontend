@@ -1,5 +1,5 @@
 {
-  "title": "Canlyniadau chwilio ar gyfer lleoliad - Dod o hyd i lys neu dribiwnlys - GOV.UK",
+  "title": "Canlyniadau Chwilio am Lys - Dod o hyd i Lys neu Dribiwnlys - GOV.UK",
   "serviceName": "Dod o hyd i lys neu dribiwnlys",
   "question": "Canlyniadau chwilio am lys neu dribiwnlys",
   "divorceHint": "Rydym yn rheoli eich ceisiadau ysgariad yn ein hunedau ysgariad rhanbarthol (RDU).",
@@ -9,5 +9,6 @@
   "singleResultsHint": "Daethom o hyd i 1 llys neu dribiwnlys sy’n ymwneud â {serviceArea} ac sy’n cyfateb i’r chwiliad am '{postcode}'",
   "multipleResultsHint": "Daethom o hyd i {total} llys neu dribiwnlys sy’n ymwneud â {serviceArea} ac sy’n cyfateb i’r chwiliad am '{postcode}'",
   "applyOnlineHeading": "Gwnewch gais ar-lein",
-  "unit": "milltiroedd"
+  "unit": "milltiroedd",
+  "seoMetadataDescription": "Rhestr o dribiwnlysoedd yn seiliedig ar eich chwiliad"
 }

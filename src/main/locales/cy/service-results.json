@@ -1,9 +1,10 @@
 {
-  "title": "Canlyniadau chwilio ar gyfer lleoliad - Dod o hyd i lys neu dribiwnlys - GOV.UK",
+  "title": "Canlyniadau Chwilio am Lys - Dod o hyd i Lys neu Dribiwnlys - GOV.UK",
   "serviceName": "Dod o hyd i lys neu dribiwnlys",
   "question": "Canlyniadau chwilio am lys neu dribiwnlys",
   "hint": "Rydym yn rheoli ceisiadau {service-area} yn ein canolfan wasanaeth ganolog. Gwybodaeth am ble i anfon eich dogfennau neu ofyn am gynnydd eich cais.",
   "applyOnlineHeading": "Gwnewch gais ar-lein",
-  "regionStatement": "Mae'r lleoliad hwn yn darparu gwasanaethau ar gyfer Cymru a Lloegr."
+  "regionStatement": "Mae'r lleoliad hwn yn darparu gwasanaethau ar gyfer Cymru a Lloegr.",
+  "seoMetadataDescription": "Rhestr o dribiwnlysoedd yn seiliedig ar eich chwiliad"
 }
 
