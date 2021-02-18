@@ -1,6 +1,6 @@
 {
   "errorTitle": "Gwall:",
-  "title": "Chwilio am fanylion cyswllt - Dod o hyd i lys neu dribiwnlys - GOV.UK",
+  "title": "Chwiliwch yn ôl enw neu gyfeiriad - Dod o hyd i Lys neu Dribiwnlys - GOV.UK",
   "resultsTitle": "Canlyniadau chwilio - Dod o hyd i lys neu dribiwnlys - GOV.UK",
   "serviceName": "Dod o hyd i lys neu dribiwnlys",
   "question": "Beth yw enw a chyfeiriad y llys neu’r tribiwnlys?",
@@ -27,5 +27,6 @@
   "errorTooShort": {
     "title": "Mae yna broblem",
     "text": "Rhaid i beth yr ydych yn chwilio amdano fod yn 3 nod neu fwy"
-  }
+  },
+  "seoMetadataDescription":"Defnyddiwch enw neu gyfeiriad y llys i ddod o hyd i lys neu dribiwnlys yng Nghymru neu Loegr"
 }

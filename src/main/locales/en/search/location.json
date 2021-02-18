@@ -1,6 +1,6 @@
 {
   "errorTitle": "Error:",
-  "title": "Search for contact details - Find a court or tribunal - GOV.UK",
+  "title": "Search by name or address - Find a Court or Tribunal - GOV.UK",
   "resultsTitle": "Search Results - Find a court or tribunal - GOV.UK",
   "serviceName": "Find a court or tribunal",
   "question": "What is the name or address of the court or tribunal?",
@@ -27,5 +27,6 @@
   "errorTooShort": {
     "title": "There is a problem",
     "text": "Search must be 3 characters or more"
-  }
+  },
+  "seoMetadataDescription":"Use the court's name or address to find a court or tribunal in England or Wales"
 }
