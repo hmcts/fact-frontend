@@ -38,6 +38,11 @@ Given('the postcode search results page loads', async () => {
   await I.goTo(config.TEST_URL + '/services/money/money-claims/courts/near?postcode=GU1+4UW');
 });
 
+Given('the service not found page loads', async () => {
+  await I.newPage();
+  await I.goTo(config.TEST_URL + '/services/unknown-service');
+});
+
 Then('it contains a metadata description tag', async () => {
   const elementExist = await I.checkElement('head > meta[name="description"]');
   expect(elementExist).equal(true);
