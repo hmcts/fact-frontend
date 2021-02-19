@@ -14,6 +14,7 @@ const i18n = {
     error: {
       text: ''
     },
+    courtsManaging: 'Courts managing '
   },
 };
 
@@ -55,6 +56,7 @@ describe('Choose service area controller', () => {
       path: '/services/' + req.params.service + '/service-areas/' +req.params.action ,
       results: response.data,
       errors: false,
+      seoMetadataDescription: 'Courts managing service description'
     };
     expect(res.render).toBeCalledWith('service', expectedData);
   });
@@ -84,7 +86,8 @@ describe('Choose service area controller', () => {
       ...cloneDeep(i18n.service),
       path: '/services/' + req.params.service + '/service-areas/' +req.params.action,
       results: response.data,
-      errors: true
+      errors: true,
+      seoMetadataDescription: 'Courts managing service description'
     };
     expect(res.render).toBeCalledWith('service', expectedData);
   });

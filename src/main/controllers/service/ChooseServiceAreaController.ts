@@ -29,9 +29,10 @@ export class ChooseServiceAreaController {
       const serviceData = await this.api.getService(serviceChosen, lng);
       data.results = serviceAreasData;
       data.title = data.title
-        .replace('{serviceChosen}', serviceData.name.toLowerCase());
+        .replace('{serviceChosen}', serviceData.name.charAt(0).toUpperCase() + serviceData.name.slice(1).toLowerCase());
       data.question = data.question
         .replace('{serviceChosen}', serviceData.name.toLowerCase());
+      data.seoMetadataDescription = data.courtsManaging + serviceData.description.toLowerCase();
       if (hasErrors) {
         data.error.text = data.error.text
           .replace('{serviceChosen}', serviceData.name.toLowerCase());

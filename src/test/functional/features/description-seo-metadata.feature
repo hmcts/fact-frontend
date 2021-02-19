@@ -31,3 +31,7 @@ Feature: SEO metadata for courts.
   Scenario: SEO metadata tag service not found page
     Given the service not found page loads
     Then it contains a metadata description tag
+
+  Scenario: SEO metadata tag service areas page
+    Given the service areas page loads
+    Then it contains a metadata description tag

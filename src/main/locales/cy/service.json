@@ -1,6 +1,6 @@
 {
   "errorTitle": "Gwall:",
-  "title": "Dewiswch faes cyfreithiol - {serviceChosen} - Dod o hyd i lys neu dribiwnlys - GOV.UK",
+  "title": "Achosion {serviceChosen} - Dod o hyd i lys neu dribiwnlys - GOV.UK",
   "serviceName": "Dod o hyd i lys neu dribiwnlys",
   "question": "Dewiswch pa fath o help sydd ei angen arnoch mewn perthynas ag {serviceChosen}?",
   "answers": {
@@ -10,5 +10,6 @@
   "error": {
     "title": "Mae yna broblem",
     "text": "Dewiswch pa fath o help sydd ei angen arnoch mewn perthynas ag {serviceChosen}"
-  }
+  },
+  "courtsManaging": "Llysoedd sy'n rheoli "
 }

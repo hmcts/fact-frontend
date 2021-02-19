@@ -43,6 +43,11 @@ Given('the service not found page loads', async () => {
   await I.goTo(config.TEST_URL + '/services/unknown-service');
 });
 
+Given('the service areas page loads', async () => {
+  await I.newPage();
+  await I.goTo(config.TEST_URL + '/services/money/service-areas/nearest');
+});
+
 Then('it contains a metadata description tag', async () => {
   const elementExist = await I.checkElement('head > meta[name="description"]');
   expect(elementExist).equal(true);
