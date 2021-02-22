@@ -7,7 +7,7 @@ import config from 'config';
  * Generates address structure for use in schema.org JSON-LD structured data objects.
  * @param address - address object from CourtDetailsResult object.
  */
-const generateAddressStruct = (address): any => {
+const generateAddressStruct = (address: any): any => {
   const addressStruct: any = {
     '@type': 'PostalAddress',
     addressCountry: 'GB'

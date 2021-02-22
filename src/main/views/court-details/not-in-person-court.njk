@@ -7,184 +7,186 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row court-tribunal-details">
-  <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l">
-      {{ results.name }}
-    </h1>
+  <script type="application/ld+json">{{ seoMetadata | dump | safe }}</script>
 
-    <div class="govuk-grid-column-two-thirds">
-      <div class="govuk-grid-row">
-        <div id="not-in-person">
-          <p class="govuk-body-m">
-            {{ notInPersonP1 }}
-          </p>
-          <h2 class="govuk-heading-l postal-address">
-            {{ contactUsHeading }}
-          </h2>
-          {% if results.addresses[0] %}
+  <div class="govuk-grid-row court-tribunal-details">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+        {{ results.name }}
+      </h1>
+
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-grid-row">
+          <div id="not-in-person">
+            <p class="govuk-body-m">
+              {{ notInPersonP1 }}
+            </p>
+            <h2 class="govuk-heading-l postal-address">
+              {{ contactUsHeading }}
+            </h2>
+            {% if results.addresses[0] %}
+              <h3 class="govuk-heading-m">
+                {{ results.addresses[0].type }}:
+              </h3>
+              <p class="govuk-body-m address">
+                {% for addressLine in results.addresses[0].address_lines %}
+                {{ addressLine }}<br>
+                {% endfor %}
+                {{ results.addresses[0].town }}<br>
+                {{ results.addresses[0].postcode }}
+              </p>
+            {% endif %}
+          </div>
+        </div>
+
+        {% if results['urgent_message'] %}
+          <div class="govuk-grid-row" id="urgent-message">
+            {{ govukWarningText({
+              text: results['urgent_message'],
+              iconFallbackText: "Warning"
+            }) }}
+          </div>
+        {% endif %}
+
+        {% if results.info %}
+          <div class="govuk-grid-row" id="additional-info">
             <h3 class="govuk-heading-m">
-              {{ results.addresses[0].type }}:
+              {{ additionalInfoHeading }}
             </h3>
-            <p class="govuk-body-m address">
-              {% for addressLine in results.addresses[0].address_lines %}
-              {{ addressLine }}<br>
-              {% endfor %}
-              {{ results.addresses[0].town }}<br>
-              {{ results.addresses[0].postcode }}
-            </p>
-          {% endif %}
-        </div>
-      </div>
-
-      {% if results['urgent_message'] %}
-        <div class="govuk-grid-row" id="urgent-message">
-          {{ govukWarningText({
-            text: results['urgent_message'],
-            iconFallbackText: "Warning"
-          }) }}
-        </div>
-      {% endif %}
-
-      {% if results.info %}
-        <div class="govuk-grid-row" id="additional-info">
-          <h3 class="govuk-heading-m">
-            {{ additionalInfoHeading }}
-          </h3>
-          <p class="govuk-body-m">
-            {{ results.info | safe }}
-          </p>
-        </div>
-      {% endif %}
-
-      {% if results.enquiries and results.enquiries.phone.length > 0 %}
-        <div class="govuk-grid-row .contacts" id="contacts">
-          <h4 class="govuk-heading-s">
-            {% if results.enquiries.fax.number %}
-              {{ telephoneAndFaxHeading }}
-            {% else %}
-              {{ telephoneHeading }}
-            {% endif %}
-          </h4>
-          {% for telephone in results.enquiries.phone %}
             <p class="govuk-body-m">
-              {{ telephoneHeading }}: {{ telephone.number }}<br>
-              {{ telephone.explanation }}
+              {{ results.info | safe }}
             </p>
-          {% endfor %}
-          {% for telephone in results.enquiries.welshPhone %}
-          <p class="govuk-body-m">
-            {{ telephoneHeadingWelsh }}: {{ telephone.number }}<br>
-            {{ telephone.explanation }}
-          </p>
-          {% endfor %}
-          {% if results.enquiries.fax.number %}
-            <p class="govuk-body-m">
-              Fax: {{ results.enquiries.fax.number }}
-            </p>
-          {% endif %}
-          <p class="govuk-body-m">
-            <a class="govuk-link" href="https://www.gov.uk/call-charges">
-              {{ callCharges }}
-            </a>
-          </p>
-          {% if results.slug === 'county-court-business-centre-ccbc' or results.slug ==='county-court-money-claims-centre-ccmcc' %}
-            <p class="govuk-body-m">
-            <a class="govuk-link" href="https://www.gov.uk/guidance/hmcts-civil-business-centres-performance-information">
-              {{ processingTimes }}
-            </a>
-          </p>
-          {% endif %}
-        </div>
-      {% endif %}
+          </div>
+        {% endif %}
 
-      {% if results.enquiries.email or results.enquiries.sendDocumentsEmail %}
-        <div class="govuk-grid-row .emails" id="emails">
-          <h4 class="govuk-heading-s">
-            {{ emailHeading }}
-          </h4>
-          <p class="govuk-body-m">
-            {% if results.enquiries.sendDocumentsEmail %}
-              {{ sendUsYourDocuments }}: <a class="govuk-link" href="mailto:{{ results.enquiries.sendDocumentsEmail.address }}">{{ results.enquiries.sendDocumentsEmail.address }}</a><br>
-            {% endif %}
-            {% if results.enquiries.email %}
-              {{ updates }}: <a class="govuk-link" href="mailto:{{ results.enquiries.email.address }}">{{ results.enquiries.email.address }}</a>
-            {% endif %}
-          </p>
-        </div>
-      {% endif %}
-    </div>
-
-    <div class="govuk-grid-column-one-third side-content">
-      {% if results['areas_of_law'] and results['areas_of_law'] |  selectattr("external_link") | length > 0 %}
-        <div class="govuk-grid-row" id="areas-of-law">
-          <h3 class="govuk-heading-m">
-            {{ areasOfLawHeadingNotInPerson }}
-          </h3>
-          <p class="govuk-body-m">
-            {{ areasOfLawHintNotInPerson }}
-          </p>
-          <ul class="govuk-list">
-            {% for area in results['areas_of_law'] | sort(attribute="name") %}
-              {% if area['display_name'] %}
-                {% set displayName = area['display_name'] %}
+        {% if results.enquiries and results.enquiries.phone.length > 0 %}
+          <div class="govuk-grid-row .contacts" id="contacts">
+            <h4 class="govuk-heading-s">
+              {% if results.enquiries.fax.number %}
+                {{ telephoneAndFaxHeading }}
               {% else %}
-                {% set displayName = area.name %}
+                {{ telephoneHeading }}
               {% endif %}
-              {% if area['display_external_link'] %}
-                {% set externalLink = area['display_external_link'] %}
-              {% else %}
-                {% set externalLink = area['external_link'] %}
-              {% endif %}
-              <li>
-                {% if externalLink %}
-                  <a class="govuk-link" href="{{ externalLink }}">{{ displayName }}</a>
-                {% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-      {% endif %}
-
-      <div class="govuk-grid-row">
-        <h3 class="govuk-heading-m">
-          {{ complaintHeading }}:
-        </h3>
-        <p class="govuk-body-m">
-          <a class="govuk-link" href="https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service/about/complaints-procedure">{{ complaintText }}</a>
-        </p>
-      </div>
-
-      {% if results.crown_location_code or results.county_location_code or results.magistrates_location_code or (results['dx_number'] and results['dx_number'].length > 0) %}
-        <div class="govuk-grid-row" id="location-codes">
-          <h3 class="govuk-heading-m">
-            {{ courtCodesHeading }}:
-          </h3>
-          {% if results.crown_location_code %}
-            <p class="govuk-body-m">
-              {{ crownCourtCodeText }}: <span class="govuk-body-m">{{ results.crown_location_code }}</span>
-            </p>
-          {% endif %}
-          {% if results.county_location_code %}
-            <p class="govuk-body-m">
-              {{ countyCourtCodeText }}: <span class="govuk-body-m">{{ results.county_location_code }}</span>
-            </p>
-          {% endif %}
-          {% if results.magistrates_location_code %}
-            <p class="govuk-body-m">
-              {{ magistratesCourtCodeText }}: <span class="govuk-body-m">{{ results.magistrates_location_code }}</span>
-            </p>
-          {% endif %}
-          {% if results['dx_number'] and results['dx_number'].length > 0 %}
-            {% for dx in results['dx_number'] %}
-              <p class="govuk-body-m dx-number">
-                DX: <span class="govuk-body-m">{{ dx }}</span>
+            </h4>
+            {% for telephone in results.enquiries.phone %}
+              <p class="govuk-body-m">
+                {{ telephoneHeading }}: {{ telephone.number }}<br>
+                {{ telephone.explanation }}
               </p>
             {% endfor %}
-          {% endif %}
+            {% for telephone in results.enquiries.welshPhone %}
+            <p class="govuk-body-m">
+              {{ telephoneHeadingWelsh }}: {{ telephone.number }}<br>
+              {{ telephone.explanation }}
+            </p>
+            {% endfor %}
+            {% if results.enquiries.fax.number %}
+              <p class="govuk-body-m">
+                Fax: {{ results.enquiries.fax.number }}
+              </p>
+            {% endif %}
+            <p class="govuk-body-m">
+              <a class="govuk-link" href="https://www.gov.uk/call-charges">
+                {{ callCharges }}
+              </a>
+            </p>
+            {% if results.slug === 'county-court-business-centre-ccbc' or results.slug ==='county-court-money-claims-centre-ccmcc' %}
+              <p class="govuk-body-m">
+              <a class="govuk-link" href="https://www.gov.uk/guidance/hmcts-civil-business-centres-performance-information">
+                {{ processingTimes }}
+              </a>
+            </p>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if results.enquiries.email or results.enquiries.sendDocumentsEmail %}
+          <div class="govuk-grid-row .emails" id="emails">
+            <h4 class="govuk-heading-s">
+              {{ emailHeading }}
+            </h4>
+            <p class="govuk-body-m">
+              {% if results.enquiries.sendDocumentsEmail %}
+                {{ sendUsYourDocuments }}: <a class="govuk-link" href="mailto:{{ results.enquiries.sendDocumentsEmail.address }}">{{ results.enquiries.sendDocumentsEmail.address }}</a><br>
+              {% endif %}
+              {% if results.enquiries.email %}
+                {{ updates }}: <a class="govuk-link" href="mailto:{{ results.enquiries.email.address }}">{{ results.enquiries.email.address }}</a>
+              {% endif %}
+            </p>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="govuk-grid-column-one-third side-content">
+        {% if results['areas_of_law'] and results['areas_of_law'] |  selectattr("external_link") | length > 0 %}
+          <div class="govuk-grid-row" id="areas-of-law">
+            <h3 class="govuk-heading-m">
+              {{ areasOfLawHeadingNotInPerson }}
+            </h3>
+            <p class="govuk-body-m">
+              {{ areasOfLawHintNotInPerson }}
+            </p>
+            <ul class="govuk-list">
+              {% for area in results['areas_of_law'] | sort(attribute="name") %}
+                {% if area['display_name'] %}
+                  {% set displayName = area['display_name'] %}
+                {% else %}
+                  {% set displayName = area.name %}
+                {% endif %}
+                {% if area['display_external_link'] %}
+                  {% set externalLink = area['display_external_link'] %}
+                {% else %}
+                  {% set externalLink = area['external_link'] %}
+                {% endif %}
+                <li>
+                  {% if externalLink %}
+                    <a class="govuk-link" href="{{ externalLink }}">{{ displayName }}</a>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+
+        <div class="govuk-grid-row">
+          <h3 class="govuk-heading-m">
+            {{ complaintHeading }}:
+          </h3>
+          <p class="govuk-body-m">
+            <a class="govuk-link" href="https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service/about/complaints-procedure">{{ complaintText }}</a>
+          </p>
         </div>
-      {% endif %}
+
+        {% if results.crown_location_code or results.county_location_code or results.magistrates_location_code or (results['dx_number'] and results['dx_number'].length > 0) %}
+          <div class="govuk-grid-row" id="location-codes">
+            <h3 class="govuk-heading-m">
+              {{ courtCodesHeading }}:
+            </h3>
+            {% if results.crown_location_code %}
+              <p class="govuk-body-m">
+                {{ crownCourtCodeText }}: <span class="govuk-body-m">{{ results.crown_location_code }}</span>
+              </p>
+            {% endif %}
+            {% if results.county_location_code %}
+              <p class="govuk-body-m">
+                {{ countyCourtCodeText }}: <span class="govuk-body-m">{{ results.county_location_code }}</span>
+              </p>
+            {% endif %}
+            {% if results.magistrates_location_code %}
+              <p class="govuk-body-m">
+                {{ magistratesCourtCodeText }}: <span class="govuk-body-m">{{ results.magistrates_location_code }}</span>
+              </p>
+            {% endif %}
+            {% if results['dx_number'] and results['dx_number'].length > 0 %}
+              {% for dx in results['dx_number'] %}
+                <p class="govuk-body-m dx-number">
+                  DX: <span class="govuk-body-m">{{ dx }}</span>
+                </p>
+              {% endfor %}
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
     </div>
   </div>
-</div>
 {% endblock %}

@@ -8,6 +8,7 @@ import { Enquiries } from '../interfaces/Enquiries';
 import { CourtDetailsData, CourtDetailsResult } from '../interfaces/CourtDetailsData';
 import config from 'config';
 import { cloneDeep } from 'lodash';
+import { generatePlaceMetadata } from '../utils/SEOMetadata';
 
 @autobind
 export class CourtDetailsController {
@@ -24,8 +25,7 @@ export class CourtDetailsController {
     const data: CourtDetailsData = {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['court-details']),
       path: '/courts/' + slug,
-      fullPath: config.get('services.frontend.url') + '/courts/' + slug,
-      results: {},
+      results: {}
     };
 
     if (!isEmpty(slug)) {
@@ -56,7 +56,9 @@ export class CourtDetailsController {
         data.notInPersonP1 = data.notInPersonP1
           .replace('{catchmentArea}', decideCatchmentArea(this.regionalCentre, data.catchmentArea))
           .replace('{serviceArea}', courtDetails['service_area']);
+        const seoMetadata = generatePlaceMetadata(courtDetails);
         data.results = { ...courtDetails, enquiries };
+        data.seoMetadata = seoMetadata;
         if (courtDetails['in_person']) {
           return res.render('court-details/in-person-court', data);
         } else {
