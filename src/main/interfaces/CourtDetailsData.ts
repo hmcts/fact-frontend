@@ -30,7 +30,7 @@ export interface CourtDetailsResult {
   contacts: [];
   opening_times: [];
   facilities: [];
-  addresses: [];
+  addresses: any[];
   gbs: string;
   dx_number: [];
   service_area: string;
