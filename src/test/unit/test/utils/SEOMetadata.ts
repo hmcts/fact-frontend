@@ -9,10 +9,10 @@ describe('SEOMetadata', () => {
       const courtDetailsResult = {
         name: 'In Person Court',
         slug: 'test-in-person-court',
-        image_file: 'http://example.com/test-image.png',
+        'image_file': 'http://example.com/test-image.png',
         addresses: [
           {
-            address_lines: [ '1 Test Street' ],
+            'address_lines': [ '1 Test Street' ],
             town: 'Test Town',
             postcode: 'TE ST1'
           }
@@ -41,10 +41,10 @@ describe('SEOMetadata', () => {
       const courtDetailsResult = {
         name: 'Not In Person Court',
         slug: 'test-not-in-person-court',
-        image_file: '',
+        'image_file': '',
         addresses: [
           {
-            address_lines: [ 'HMCTS Service', 'PO BOX 000001' ],
+            'address_lines': [ 'HMCTS Service', 'PO BOX 000001' ],
             town: 'Test Town',
             postcode: 'TE ST1'
           }
