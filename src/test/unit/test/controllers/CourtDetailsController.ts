@@ -2,7 +2,6 @@ import { PageData } from '../../../../main/interfaces/PageData';
 import { mockRequest } from '../../utils/mockRequest';
 import { mockResponse } from '../../utils/mockResponse';
 import { CourtDetailsController } from '../../../../main/controllers/CourtDetailsController';
-import config from 'config';
 const expectedCourtDetails = require('../../../resources/court-details-results.json');
 const expectedNotInPersonCourtDetails = require('../../../resources/not-in-person-court-details-results.json');
 
@@ -34,7 +33,6 @@ describe('CourtDetailsController', () => {
     await controller.get(req, res, nextFunction);
     const expectedData: PageData = {
       ...i18n['court-details'],
-      fullPath: config.get('services.frontend.url') + '/courts/London',
       path: '/courts/London',
       results: {
         ...response.data,
@@ -44,6 +42,21 @@ describe('CourtDetailsController', () => {
           phone: [],
           welshPhone: []
         }
+      },
+      seoMetadata: {
+        '@context': 'https://schema.org',
+        '@id': 'http://localhost:3100/courts/London',
+        '@type': 'GovernmentOffice',
+        'address': {
+          '@type': 'PostalAddress',
+          'addressCountry': 'GB',
+          'addressLocality': 'London',
+          'postalCode': 'B4 6DS',
+        },
+        'image': [
+          'https://factaat.blob.core.windows.net/images/London',
+        ],
+        'name': 'London',
       }
     };
     expect(res.render).toBeCalledWith('court-details/in-person-court', expectedData);
@@ -60,7 +73,6 @@ describe('CourtDetailsController', () => {
     await controller.get(req, res, nextFunction);
     const expectedData: PageData = {
       ...i18n['court-details'],
-      fullPath: config.get('services.frontend.url') + '/courts/London',
       path: '/courts/London',
       results: {
         ...response.data,
@@ -71,6 +83,21 @@ describe('CourtDetailsController', () => {
           phone: [],
           welshPhone: []
         }
+      },
+      seoMetadata: {
+        '@context': 'https://schema.org',
+        '@id': 'http://localhost:3100/courts/London',
+        '@type': 'GovernmentOffice',
+        'address': {
+          '@type': 'PostalAddress',
+          'addressCountry': 'GB',
+          'addressLocality': 'London',
+          'postalCode': 'B4 6DS',
+        },
+        'image': [
+          'http://localhost:3100/public/assets/images/hmcts-logo.png',
+        ],
+        'name': 'London',
       }
     };
     expect(res.render).toBeCalledWith('court-details/in-person-court', expectedData);
@@ -87,7 +114,6 @@ describe('CourtDetailsController', () => {
     await controller.get(req, res, nextFunction);
     const expectedData: PageData = {
       ...i18n['court-details'],
-      fullPath: config.get('services.frontend.url') +  '/courts/Not-London',
       path: '/courts/Not-London',
       results: {
         ...response.data,
@@ -97,6 +123,19 @@ describe('CourtDetailsController', () => {
           phone: [],
           welshPhone: []
         }
+      },
+      seoMetadata: {
+        '@context': 'https://schema.org',
+        '@id': 'http://localhost:3100/courts/Not-London',
+        '@type': 'GovernmentOffice',
+        'address': {
+          '@type': 'PostalAddress',
+          'addressCountry': 'GB',
+          'addressLocality': 'London',
+          'postalCode': 'B4 6DS',
+        },
+        'image': ['http://localhost:3100/public/assets/images/hmcts-logo.png',],
+        'name': 'Not-London'
       }
     };
     expect(res.render).toBeCalledWith('court-details/not-in-person-court', expectedData);
