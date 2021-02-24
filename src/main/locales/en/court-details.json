@@ -1,5 +1,5 @@
 {
-  "title": "Find a Court or Tribunal - GOV.UK",
+  "title": "{courtSlug} - Find a Court or Tribunal - GOV.UK",
   "serviceName": "Find a Court or Tribunal",
   "notInPersonP1": "This location services {catchmentArea} for {serviceArea}. We do not provide an in-person service.",
   "contactUsHeading": "Contact us",
@@ -45,5 +45,6 @@
   "sendUsYourDocuments": "Send us your documents",
   "updates": "Get an update with your application",
   "altImageText": "Front view of",
-  "divorceHearings": "Divorce hearings"
+  "divorceHearings": "Divorce hearings",
+  "seoMetadataDescription": "{courtSlug} - Find contact details, opening times, how to get to here, types of cases managed, disabled access to the building"
 }

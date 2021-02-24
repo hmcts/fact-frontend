@@ -22,20 +22,23 @@ export class CourtDetailsController {
 
   public async get(req: FactRequest, res: Response, next: NextFunction) {
     const slug: string = req.params.slug as string;
-    const data: CourtDetailsData = {
-      ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['court-details']),
-      path: '/courts/' + slug,
-      results: {}
-    };
-
     if (!isEmpty(slug)) {
+
+      const data: CourtDetailsData = {
+        ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['court-details']),
+        path: '/courts/' + slug,
+        results: {}
+      };
+      data.title = data.title.replace('{courtSlug}', slug);
       const courtDetails: CourtDetailsResult = await this.api.court(slug, req.lng);
       if (!isObjectEmpty(courtDetails)) {
         if(!courtDetails.open){
-          const data  = {
+          const data = {
+            title: '',
             ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['closed-court']),
             name: courtDetails.name
           };
+          data.title = data.title.replace('{courtSlug}', slug);
           return res.render('court-details/closed-court',  data);
         }
         const enquiries: Enquiries = {
@@ -59,6 +62,7 @@ export class CourtDetailsController {
         const seoMetadata = generatePlaceMetadata(courtDetails);
         data.results = { ...courtDetails, enquiries };
         data.seoMetadata = seoMetadata;
+        data.seoMetadataDescription = (data.seoMetadataDescription as string).replace('{courtSlug}', slug);
         if (courtDetails['in_person']) {
           return res.render('court-details/in-person-court', data);
         } else {
