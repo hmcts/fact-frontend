@@ -21,6 +21,7 @@ export default function(app: Application): void {
   app.get('/services/:service/:serviceArea/search-results', app.locals.container.cradle.serviceSearchResultsController.get);
   app.get('/services/:service/:serviceArea/search-by-postcode', app.locals.container.cradle.servicePostcodeSearchController.get);
   app.get('/services/:service/:serviceArea/courts/near', app.locals.container.cradle.servicePostcodeResultsController.get);
+  app.get('/service-problem', app.locals.container.cradle.errorPageController.get);
 
   // legacy urls
   app.get('/search', (req, res) => res.redirect(301, '/search-option'));
