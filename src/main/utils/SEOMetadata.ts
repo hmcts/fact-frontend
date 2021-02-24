@@ -39,6 +39,7 @@ export const generatePlaceMetadata = (court: CourtDetailsResult): PlaceSEOMetada
     '@type': 'GovernmentOffice'
   };
 
+
   if(hasProperty(court, 'name')) {
     placeStruct.name = court.name;
   } else {
@@ -51,7 +52,7 @@ export const generatePlaceMetadata = (court: CourtDetailsResult): PlaceSEOMetada
     return {};
   }
 
-  if(hasProperty(court, 'image_file') && !isEmpty(court.image_file) && court.image_file !== null) {
+  if(court.in_person === true && hasProperty(court, 'image_file') && !isEmpty(court.image_file) && court.image_file !== null) {
     placeStruct.image = [ court.image_file ] ;
   } else {
     placeStruct.image = [ config.get('services.frontend.url') + '/public/assets/images/hmcts-logo.png' ];
