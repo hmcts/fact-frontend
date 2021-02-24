@@ -8,6 +8,7 @@ describe('SEOMetadata', () => {
     test('Should return in-person-court SEO metadata object', async () => {
       const courtDetailsResult = {
         name: 'In Person Court',
+        'in_person': true,
         slug: 'test-in-person-court',
         'image_file': 'http://example.com/test-image.png',
         addresses: [
