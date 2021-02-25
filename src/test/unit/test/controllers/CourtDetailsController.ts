@@ -37,7 +37,7 @@ describe('CourtDetailsController', () => {
       results: {
         ...response.data,
         enquiries: {
-          email: undefined,
+          emails: [],
           fax: undefined,
           phone: [],
           welshPhone: []
@@ -78,7 +78,7 @@ describe('CourtDetailsController', () => {
         ...response.data,
         'image_file': null,
         enquiries: {
-          email: undefined,
+          emails: [],
           fax: undefined,
           phone: [],
           welshPhone: []
@@ -118,7 +118,7 @@ describe('CourtDetailsController', () => {
       results: {
         ...response.data,
         enquiries: {
-          email: undefined,
+          emails: [],
           fax: undefined,
           phone: [],
           welshPhone: []

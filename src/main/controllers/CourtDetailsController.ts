@@ -41,13 +41,13 @@ export class CourtDetailsController {
         const enquiries: Enquiries = {
           phone: [],
           welshPhone: [],
-          email: {},
+          emails: [],
           fax: {},
           sendDocumentsEmail: {}
         };
         enquiries.phone = courtDetails.contacts.filter((contact: { description: string }) => contact.description.toLowerCase() === 'enquiries');
         enquiries.welshPhone = courtDetails.contacts.filter((contact: { description: string }) => contact.description.toLowerCase() === 'welsh');
-        enquiries.email = courtDetails.emails.find((email: { description: string }) => email.description.toLowerCase() === 'enquiries');
+        enquiries.emails = courtDetails.emails.filter((email: { description: string }) => email.description.toLowerCase() === 'enquiries');
         enquiries.fax = courtDetails.contacts.find((contact: { description: string }) => contact.description.toLowerCase() === 'fax');
         enquiries.sendDocumentsEmail =  courtDetails.emails.find((email: { description: string }) => email.description.toLowerCase() === 'send documents');
         if (courtDetails['image_file']) {
