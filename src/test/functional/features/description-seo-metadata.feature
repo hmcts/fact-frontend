@@ -35,3 +35,11 @@ Feature: SEO metadata for courts.
   Scenario: SEO metadata tag service areas page
     Given the service areas page loads
     Then it contains a metadata description tag
+
+  Scenario: SEO metadata tag in-person court page
+    Given an in-person court page loads
+    Then it contains a metadata description tag
+
+  Scenario: SEO metadata tag not-in-person court page
+    Given an not-in-person court page loads
+    Then it contains a metadata description tag
