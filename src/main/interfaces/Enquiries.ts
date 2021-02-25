@@ -1,7 +1,7 @@
 export interface Enquiries {
     phone: {}[];
     welshPhone: {}[];
-    email: {};
+    emails: {}[];
     fax: {};
     sendDocumentsEmail: {};
 }

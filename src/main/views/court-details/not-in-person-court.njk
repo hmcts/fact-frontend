@@ -30,7 +30,7 @@
               </h3>
               <p class="govuk-body-m address">
                 {% for addressLine in results.addresses[0].address_lines %}
-                {{ addressLine }}<br>
+                  {{ addressLine }}<br>
                 {% endfor %}
                 {{ results.addresses[0].town }}<br>
                 {{ results.addresses[0].postcode }}
@@ -75,10 +75,10 @@
               </p>
             {% endfor %}
             {% for telephone in results.enquiries.welshPhone %}
-            <p class="govuk-body-m">
-              {{ telephoneHeadingWelsh }}: {{ telephone.number }}<br>
-              {{ telephone.explanation }}
-            </p>
+              <p class="govuk-body-m">
+                {{ telephoneHeadingWelsh }}: {{ telephone.number }}<br>
+                {{ telephone.explanation }}
+              </p>
             {% endfor %}
             {% if results.enquiries.fax.number %}
               <p class="govuk-body-m">
@@ -92,26 +92,32 @@
             </p>
             {% if results.slug === 'county-court-business-centre-ccbc' or results.slug ==='county-court-money-claims-centre-ccmcc' %}
               <p class="govuk-body-m">
-              <a class="govuk-link" href="https://www.gov.uk/guidance/hmcts-civil-business-centres-performance-information">
-                {{ processingTimes }}
-              </a>
-            </p>
+                <a class="govuk-link"
+                   href="https://www.gov.uk/guidance/hmcts-civil-business-centres-performance-information">
+                  {{ processingTimes }}
+                </a>
+              </p>
             {% endif %}
           </div>
         {% endif %}
 
-        {% if results.enquiries.email or results.enquiries.sendDocumentsEmail %}
+        {% if results.enquiries.emails or results.enquiries.sendDocumentsEmail %}
           <div class="govuk-grid-row .emails" id="emails">
             <h4 class="govuk-heading-s">
               {{ emailHeading }}
             </h4>
             <p class="govuk-body-m">
               {% if results.enquiries.sendDocumentsEmail %}
-                {{ sendUsYourDocuments }}: <a class="govuk-link" href="mailto:{{ results.enquiries.sendDocumentsEmail.address }}">{{ results.enquiries.sendDocumentsEmail.address }}</a><br>
+                {{ sendUsYourDocuments }}: <a class="govuk-link"
+                                              href="mailto:{{ results.enquiries.sendDocumentsEmail.address }}">{{ results.enquiries.sendDocumentsEmail.address }}</a>
+                <br>
               {% endif %}
-              {% if results.enquiries.email %}
-                {{ updates }}: <a class="govuk-link" href="mailto:{{ results.enquiries.email.address }}">{{ results.enquiries.email.address }}</a>
-              {% endif %}
+              {% for email in results.enquiries.emails %}
+            <p class="govuk-body-m">
+              {{ updates }}: <a class="govuk-link" href="mailto:{{ email.address }}">{{ email.address }}</a><br>
+              {{ email.explanation }}
+            </p>
+            {% endfor %}
             </p>
           </div>
         {% endif %}
@@ -153,7 +159,8 @@
             {{ complaintHeading }}:
           </h3>
           <p class="govuk-body-m">
-            <a class="govuk-link" href="https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service/about/complaints-procedure">{{ complaintText }}</a>
+            <a class="govuk-link"
+               href="https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service/about/complaints-procedure">{{ complaintText }}</a>
           </p>
         </div>
 
@@ -164,17 +171,20 @@
             </h3>
             {% if results.crown_location_code %}
               <p class="govuk-body-m">
-                {{ crownCourtCodeText }}: <span class="govuk-body-m">{{ results.crown_location_code }}</span>
+                {{ crownCourtCodeText }}: <span
+                  class="govuk-body-m">{{ results.crown_location_code }}</span>
               </p>
             {% endif %}
             {% if results.county_location_code %}
               <p class="govuk-body-m">
-                {{ countyCourtCodeText }}: <span class="govuk-body-m">{{ results.county_location_code }}</span>
+                {{ countyCourtCodeText }}: <span
+                  class="govuk-body-m">{{ results.county_location_code }}</span>
               </p>
             {% endif %}
             {% if results.magistrates_location_code %}
               <p class="govuk-body-m">
-                {{ magistratesCourtCodeText }}: <span class="govuk-body-m">{{ results.magistrates_location_code }}</span>
+                {{ magistratesCourtCodeText }}: <span
+                  class="govuk-body-m">{{ results.magistrates_location_code }}</span>
               </p>
             {% endif %}
             {% if results['dx_number'] and results['dx_number'].length > 0 %}
