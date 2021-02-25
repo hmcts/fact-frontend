@@ -18,6 +18,7 @@ import { ServicePostcodeResultsController } from '../../controllers/service/Serv
 import { ServiceAreaRedirect } from '../../controllers/service/ServiceAreaRedirect';
 import { AccessibilityStatementController } from '../../controllers/AccessibilityStatementController';
 import { CookiesController } from '../../controllers/CookiesController';
+import { NotFoundPageController } from '../../controllers/NotFoundPageController';
 
 const { Logger } = require('@hmcts/nodejs-logging');
 const logger = Logger.getLogger('app');
@@ -43,7 +44,8 @@ export class Container {
       chooseUnknownServiceController: asClass(UnknownServiceController),
       serviceSearchResultsController: asClass(ServiceSearchResultsController),
       servicePostcodeSearchController: asClass(ServicePostcodeSearchController),
-      servicePostcodeResultsController: asClass(ServicePostcodeResultsController)
+      servicePostcodeResultsController: asClass(ServicePostcodeResultsController),
+      notFoundPageController:  asClass(NotFoundPageController)
     });
   }
 }
