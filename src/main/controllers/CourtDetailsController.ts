@@ -39,6 +39,7 @@ export class CourtDetailsController {
             ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['closed-court']),
             name: courtDetails.name
           };
+          data.title = data.title.replace('{courtName}', courtDetails.name);
           return res.render('court-details/closed-court',  data);
         }
         const enquiries: Enquiries = {
