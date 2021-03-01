@@ -14,7 +14,7 @@ const i18n = {
       area2: ''
     },
     title: '',
-    seoMetadataDescription: '{courtSlug}'
+    seoMetadataDescription: '{courtName}'
   }
 };
 
@@ -61,7 +61,7 @@ describe('CourtDetailsController', () => {
         ],
         'name': 'London',
       },
-      'seoMetadataDescription': req.params.slug
+      'seoMetadataDescription': 'London'
     };
     expect(res.render).toBeCalledWith('court-details/in-person-court', expectedData);
   });
@@ -103,7 +103,7 @@ describe('CourtDetailsController', () => {
         ],
         'name': 'London'
       },
-      'seoMetadataDescription': req.params.slug
+      'seoMetadataDescription': 'London'
     };
     expect(res.render).toBeCalledWith('court-details/in-person-court', expectedData);
   });
@@ -142,7 +142,7 @@ describe('CourtDetailsController', () => {
         'image': ['http://localhost:3100/public/assets/images/hmcts-logo.png',],
         'name': 'Not-London'
       },
-      'seoMetadataDescription': req.params.slug
+      'seoMetadataDescription': 'Not-London'
     };
     expect(res.render).toBeCalledWith('court-details/not-in-person-court', expectedData);
   });
