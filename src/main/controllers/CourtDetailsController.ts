@@ -29,8 +29,9 @@ export class CourtDetailsController {
         path: '/courts/' + slug,
         results: {}
       };
-      data.title = data.title.replace('{courtSlug}', slug);
       const courtDetails: CourtDetailsResult = await this.api.court(slug, req.lng);
+      data.title = data.title.replace('{courtName}', courtDetails.name);
+
       if (!isObjectEmpty(courtDetails)) {
         if(!courtDetails.open){
           const data = {
@@ -38,7 +39,7 @@ export class CourtDetailsController {
             ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['closed-court']),
             name: courtDetails.name
           };
-          data.title = data.title.replace('{courtSlug}', slug);
+          data.title = data.title.replace('{courtName}', courtDetails.name);
           return res.render('court-details/closed-court',  data);
         }
         const enquiries: Enquiries = {
@@ -62,7 +63,7 @@ export class CourtDetailsController {
         const seoMetadata = generatePlaceMetadata(courtDetails);
         data.results = { ...courtDetails, enquiries };
         data.seoMetadata = seoMetadata;
-        data.seoMetadataDescription = (data.seoMetadataDescription as string).replace('{courtSlug}', slug);
+        data.seoMetadataDescription = (data.seoMetadataDescription as string).replace('{courtName}', courtDetails.name);
         if (courtDetails['in_person']) {
           return res.render('court-details/in-person-court', data);
         } else {

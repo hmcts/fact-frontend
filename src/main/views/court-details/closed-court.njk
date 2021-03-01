@@ -3,7 +3,7 @@
 {% extends "template.njk" %}
 
 {% block pageTitle %}
-  {{ title }}
+  {{ title | safe }}
 {% endblock %}
 
 {% block content %}

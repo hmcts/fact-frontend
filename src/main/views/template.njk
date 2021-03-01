@@ -5,7 +5,7 @@
 
 {% block head %}
   {% if seoMetadataDescription %}
-    <meta name="description" content="{{ seoMetadataDescription }}">
+    <meta name="description" content="{{ seoMetadataDescription | safe }}">
   {% endif %}
   {% include "webpack/css.njk" %}
   <script>
