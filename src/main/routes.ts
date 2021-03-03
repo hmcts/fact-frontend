@@ -83,4 +83,6 @@ export default function(app: Application): void {
     app.get('/courts/' + letter.toUpperCase(), (req, res) => res.redirect(301, '/search-option'));
   }
 
+  app.get('/not-found', (req, res) => res.render('not-found'));
+
 }

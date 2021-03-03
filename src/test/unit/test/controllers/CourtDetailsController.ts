@@ -1,7 +1,8 @@
-import { PageData } from '../../../../main/interfaces/PageData';
-import { mockRequest } from '../../utils/mockRequest';
-import { mockResponse } from '../../utils/mockResponse';
-import { CourtDetailsController } from '../../../../main/controllers/CourtDetailsController';
+import {PageData} from '../../../../main/interfaces/PageData';
+import {mockRequest} from '../../utils/mockRequest';
+import {mockResponse} from '../../utils/mockResponse';
+import {CourtDetailsController} from '../../../../main/controllers/CourtDetailsController';
+
 const expectedCourtDetails = require('../../../resources/court-details-results.json');
 const expectedNotInPersonCourtDetails = require('../../../resources/not-in-person-court-details-results.json');
 
@@ -11,7 +12,9 @@ const i18n = {
     catchmentArea: {
       area1: '',
       area2: ''
-    }
+    },
+    title: '',
+    seoMetadataDescription: '{courtName}'
   }
 };
 
@@ -19,7 +22,7 @@ describe('CourtDetailsController', () => {
   const response = {
     data: expectedCourtDetails
   };
-  const api: any = { court: async () => response.data };
+  const api: any = {court: async () => response.data};
   const controller = new CourtDetailsController(api);
   const nextFunction = jest.fn();
 
@@ -37,7 +40,7 @@ describe('CourtDetailsController', () => {
       results: {
         ...response.data,
         enquiries: {
-          email: undefined,
+          emails: [],
           fax: undefined,
           phone: [],
           welshPhone: []
@@ -57,7 +60,8 @@ describe('CourtDetailsController', () => {
           'https://factaat.blob.core.windows.net/images/London',
         ],
         'name': 'London',
-      }
+      },
+      'seoMetadataDescription': 'London'
     };
     expect(res.render).toBeCalledWith('court-details/in-person-court', expectedData);
   });
@@ -78,7 +82,7 @@ describe('CourtDetailsController', () => {
         ...response.data,
         'image_file': null,
         enquiries: {
-          email: undefined,
+          emails: [],
           fax: undefined,
           phone: [],
           welshPhone: []
@@ -97,8 +101,9 @@ describe('CourtDetailsController', () => {
         'image': [
           'http://localhost:3100/public/assets/images/hmcts-logo.png',
         ],
-        'name': 'London',
-      }
+        'name': 'London'
+      },
+      'seoMetadataDescription': 'London'
     };
     expect(res.render).toBeCalledWith('court-details/in-person-court', expectedData);
   });
@@ -118,7 +123,7 @@ describe('CourtDetailsController', () => {
       results: {
         ...response.data,
         enquiries: {
-          email: undefined,
+          emails: [],
           fax: undefined,
           phone: [],
           welshPhone: []
@@ -136,7 +141,8 @@ describe('CourtDetailsController', () => {
         },
         'image': ['http://localhost:3100/public/assets/images/hmcts-logo.png',],
         'name': 'Not-London'
-      }
+      },
+      'seoMetadataDescription': 'Not-London'
     };
     expect(res.render).toBeCalledWith('court-details/not-in-person-court', expectedData);
   });

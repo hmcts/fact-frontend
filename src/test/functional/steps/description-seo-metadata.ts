@@ -48,6 +48,16 @@ Given('the service areas page loads', async () => {
   await I.goTo(config.TEST_URL + '/services/money/service-areas/nearest');
 });
 
+Given('an in-person court page loads', async () => {
+  await I.newPage();
+  await I.goTo(config.TEST_URL + '/courts/birmingham-civil-and-family-justice-centre');
+});
+
+Given('an not-in-person court page loads', async () => {
+  await I.newPage();
+  await I.goTo(config.TEST_URL + '/courts/county-court-money-claims-centre-ccmcc');
+});
+
 Then('it contains a metadata description tag', async () => {
   const elementExist = await I.checkElement('head > meta[name="description"]');
   expect(elementExist).equal(true);

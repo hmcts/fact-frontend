@@ -10,7 +10,7 @@ Feature: Family and children area of law
     Given I can continue having selected that option
     Then I am presented with the "Why do you need a court? - Find a Court or Tribunal - GOV.UK" page
     When I select "#childcare-and-parenting" from the areas of law page and continue
-    Then I am presented with the "Childcare and parenting cases - Find a court or tribunal - GOV.UK" page
+    Then I am presented with the "Childcare and parenting cases - Find a Court or Tribunal - GOV.UK" page
     Given I can select a "<family and children category>" from the family and children area of law page
     Then I can continue having selected that option
     Examples:
@@ -25,7 +25,7 @@ Feature: Family and children area of law
     Given I can continue having selected that option
     Then I am presented with the "Why do you need a court? - Find a Court or Tribunal - GOV.UK" page
     When I select "#childcare-and-parenting" from the areas of law page and continue
-    Then I am presented with the "Childcare and parenting cases - Find a court or tribunal - GOV.UK" page
+    Then I am presented with the "Childcare and parenting cases - Find a Court or Tribunal - GOV.UK" page
     And I continue having not selected a family and children area of law option
     Then I am presented with an error message for service area
     Given I can select a "<family and children category>" from the family and children area of law page

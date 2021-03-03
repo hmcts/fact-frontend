@@ -1,5 +1,5 @@
 {
-  "title": "Dod o hyd i lys neu dribiwnlys - GOV.UK",
+  "title": "{courtName} - Dod o hyd i lys neu dribiwnlys - GOV.UK",
   "serviceName": "Dod o hyd i lys neu dribiwnlys",
   "notInPersonP1": "Mae’r lleoliad hwn yn gwasanaethu {catchmentArea} ar gyfer {serviceArea}. Nid ydym yn darparu gwasanaeth wyneb yn wyneb.",
   "contactUsHeading": "Cysylltwch â ni",
@@ -45,5 +45,6 @@
   "sendUsYourDocuments": "Anfonwch eich dogfennau atom",
   "updates": "Cael diweddariad gyda'ch cais",
   "altImageText": "Tu blaen",
-  "divorceHearings": "Gwrandawiadau ysgaru"
+  "divorceHearings": "Gwrandawiadau ysgaru",
+  "seoMetadataDescription": "{courtName} - Dod o hyd i fanylion cyswllt, oriau agor, sut i deithio yma, mathau o achosion sy'n cael eu rheoli, mynediad i'r adeilad i bobl anabl"
 }
