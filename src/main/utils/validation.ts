@@ -14,6 +14,10 @@ export const isEmpty = (value: string): boolean => {
   return value === undefined || value === '';
 };
 
+export const isArrayEmpty = (value: Array<any>): boolean => {
+  return value === undefined || value.length === 0;
+};
+
 export const isObjectEmpty = (obj: {}): boolean => {
   return Object.keys(obj).length === 0;
 };
