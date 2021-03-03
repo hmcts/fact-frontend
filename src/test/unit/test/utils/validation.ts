@@ -1,4 +1,4 @@
-import { hasProperty, isEmpty, isPostcodeValid } from '../../../../main/utils/validation';
+import {hasProperty, isArrayEmpty, isEmpty, isPostcodeValid} from '../../../../main/utils/validation';
 
 describe('validation', () => {
   describe('hasProperty', () => {
@@ -53,6 +53,26 @@ describe('validation', () => {
     test('Should return true if string is undefined', async () => {
       const string: any = undefined;
       const results = isEmpty(string);
+      expect(results).toBe(true);
+    });
+  });
+
+  describe('isArrayEmpty', () => {
+    test('Should return true if array is empty', async () => {
+      const array: any[] = [];
+      const results = isArrayEmpty(array);
+      expect(results).toBe(true);
+    });
+
+    test('Should return false if string is not empty', async () => {
+      const array = ['test'];
+      const results = isArrayEmpty(array);
+      expect(results).toBe(false);
+    });
+
+    test('Should return true if string is undefined', async () => {
+      const array: any[] = undefined;
+      const results = isArrayEmpty(array);
       expect(results).toBe(true);
     });
   });

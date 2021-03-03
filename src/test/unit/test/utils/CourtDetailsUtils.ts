@@ -1,4 +1,4 @@
-import {decideCatchmentArea} from '../../../../main/utils/CourtDetailsUtils';
+import {decideCatchmentArea, formatServiceAreas} from '../../../../main/utils/CourtDetailsUtils';
 
 describe('CourtDetailsUtils', () => {
   describe('decideCatchmentArea', () => {
@@ -18,6 +18,32 @@ describe('CourtDetailsUtils', () => {
       };
 
       expect(decideCatchmentArea(false, catchmentArea)).toEqual(catchmentArea.area2);
+    });
+  });
+
+  describe('formatServiceAreas', () => {
+    test('Should return single formatted area', () => {
+      const serviceAreas: string[] = ['Money'];
+
+      expect(formatServiceAreas(serviceAreas)).toEqual('money');
+    });
+
+    test('Should return dual formatted areas', () => {
+      const serviceAreas: string[] = ['Money', 'Civil Protection'];
+
+      expect(formatServiceAreas(serviceAreas)).toEqual('money and civil protection');
+    });
+
+    test('Should return list of formatted areas', () => {
+      const serviceAreas: string[] = ['Money', 'Civil Protection', 'Divorce'];
+
+      expect(formatServiceAreas(serviceAreas)).toEqual('money, civil protection and divorce');
+    });
+
+    test('Should return empty string', () => {
+      const serviceAreas: string[] = ['Money', 'Civil Protection', 'Divorce'];
+
+      expect(formatServiceAreas(serviceAreas)).toEqual('money, civil protection and divorce');
     });
   });
 });
