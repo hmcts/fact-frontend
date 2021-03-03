@@ -33,7 +33,6 @@ export interface CourtDetailsResult {
   addresses: any[];
   gbs: string;
   dx_number: [];
-  service_area: string;
+  service_area: string[];
   in_person: boolean;
 }
-
