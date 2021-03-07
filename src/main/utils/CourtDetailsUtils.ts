@@ -16,3 +16,7 @@ export const formatServiceAreas = (serviceAreas: string[]): string => {
 
   return serviceAreaString.toLowerCase();
 };
+
+export const filterByDescription = (contacts: any[], filter: string[]): any[] => {
+  return contacts.filter((contact) => filter.includes(contact.description.toLowerCase()));
+};

@@ -59,7 +59,7 @@
           </div>
         {% endif %}
 
-        {% if results.enquiries and results.enquiries.phone.length > 0 %}
+        {% if results.enquiries and results.enquiries.phone.length %}
           <div class="govuk-grid-row .contacts" id="contacts">
             <h4 class="govuk-heading-s">
               {% if results.enquiries.fax.number %}
@@ -101,23 +101,23 @@
           </div>
         {% endif %}
 
-        {% if results.enquiries.emails or results.enquiries.sendDocumentsEmail %}
+        {% if results.enquiries.emails.length or results.enquiries.sendDocumentsEmail.length %}
           <div class="govuk-grid-row .emails" id="emails">
             <h4 class="govuk-heading-s">
               {{ emailHeading }}
             </h4>
             <p class="govuk-body-m">
-              {% if results.enquiries.sendDocumentsEmail %}
+              {% if results.enquiries.sendDocumentsEmail.length %}
                 {{ sendUsYourDocuments }}: <a class="govuk-link"
                                               href="mailto:{{ results.enquiries.sendDocumentsEmail.address }}">{{ results.enquiries.sendDocumentsEmail.address }}</a>
                 <br>
               {% endif %}
               {% for email in results.enquiries.emails %}
-            <p class="govuk-body-m">
-              {{ updates }}: <a class="govuk-link" href="mailto:{{ email.address }}">{{ email.address }}</a><br>
-              {{ email.explanation }}
-            </p>
-            {% endfor %}
+              <p class="govuk-body-m">
+                {{ updates }}: <a class="govuk-link" href="mailto:{{ email.address }}">{{ email.address }}</a><br>
+                {{ email.explanation }}
+              </p>
+              {% endfor %}
             </p>
           </div>
         {% endif %}
