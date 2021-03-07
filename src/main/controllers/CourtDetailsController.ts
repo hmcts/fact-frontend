@@ -1,7 +1,7 @@
 import { FactRequest } from '../interfaces/FactRequest';
 import { NextFunction, Response } from 'express';
 import { FactApi } from '../utils/FactApi';
-import {decideCatchmentArea, formatServiceAreas} from '../utils/CourtDetailsUtils';
+import { decideCatchmentArea, filterByDescription, formatServiceAreas } from '../utils/CourtDetailsUtils';
 import { isEmpty, isObjectEmpty } from '../utils/validation';
 import autobind from 'autobind-decorator';
 import { Enquiries } from '../interfaces/Enquiries';
@@ -34,11 +34,11 @@ export class CourtDetailsController {
           viewData.path = '/courts/' + slug;
 
           const enquiries: Enquiries = {
-            phone: courtDetails.contacts.filter((contact: { description: string }) => contact.description.toLowerCase() === 'enquiries'),
-            welshPhone: courtDetails.contacts.filter((contact: { description: string }) => contact.description.toLowerCase() === 'welsh'),
-            emails: courtDetails.emails.filter((email: { description: string }) => email.description.toLowerCase() === 'enquiries'),
-            fax: courtDetails.contacts.find((contact: { description: string }) => contact.description.toLowerCase() === 'fax'),
-            sendDocumentsEmail: courtDetails.emails.find((email: { description: string }) => email.description.toLowerCase() === 'send documents')
+            phone: filterByDescription(courtDetails.contacts, ['enquiries', 'ymholiadau']),
+            welshPhone: filterByDescription(courtDetails.contacts, ['welsh', 'cymraeg']),
+            emails: filterByDescription(courtDetails.emails, ['enquiries', 'ymholiadau']),
+            fax: filterByDescription(courtDetails.contacts, ['fax', 'ffacs']),
+            sendDocumentsEmail: filterByDescription(courtDetails.emails, ['send documents', 'anfon dogfennau']),
           };
 
           if (courtDetails['image_file']) {
