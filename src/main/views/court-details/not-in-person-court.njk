@@ -69,22 +69,59 @@
               {% endif %}
             </h4>
             {% for telephone in results.enquiries.phone %}
-              <p class="govuk-body-m">
-                {{ telephoneHeading }}: {{ telephone.number }}<br>
-                {{ telephone.explanation }}
-              </p>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                  <p class="govuk-body-m">
+                    {{ telephone.description}}
+                  </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                  <div class="govuk-body-m">
+                    <a class="govuk-link" href="tel:{{ telephone.number }}">{{ telephone.number }}</a>
+                    {% if telephone.explanation %}
+                      </br>
+                      <p class="govuk-body-m">({{ telephone.explanation }})</p>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
             {% endfor %}
             {% for telephone in results.enquiries.welshPhone %}
-              <p class="govuk-body-m">
-                {{ telephoneHeadingWelsh }}: {{ telephone.number }}<br>
-                {{ telephone.explanation }}
-              </p>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                  <p class="govuk-body-m">
+                    {{ telephone.description}}
+                  </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                  <div class="govuk-body-m">
+                    <a class="govuk-link" href="tel:{{ telephone.number }}">{{ telephone.number }}</a>
+                    {% if telephone.explanation %}
+                      </br>
+                      <p class="govuk-body-m">({{ telephone.explanation }})</p>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
             {% endfor %}
-            {% if results.enquiries.fax.number %}
-              <p class="govuk-body-m">
-                Fax: {{ results.enquiries.fax.number }}
-              </p>
-            {% endif %}
+            {% for fax in results.enquiries.fax %}
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                  <p class="govuk-body-m">
+                    {{ fax.description}}
+                  </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                  <div class="govuk-body-m">
+                    <a class="govuk-link" href="tel:{{ fax.number }}">{{ fax.number }}</a>
+                    {% if fax.explanation %}
+                      </br>
+                      <p class="govuk-body-m">({{ fax.explanation }})</p>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
             <p class="govuk-body-m">
               <a class="govuk-link" href="https://www.gov.uk/call-charges">
                 {{ callCharges }}
@@ -107,11 +144,12 @@
               {{ emailHeading }}
             </h4>
             <p class="govuk-body-m">
-              {% if results.enquiries.sendDocumentsEmail.length %}
-                {{ sendUsYourDocuments }}: <a class="govuk-link"
-                                              href="mailto:{{ results.enquiries.sendDocumentsEmail.address }}">{{ results.enquiries.sendDocumentsEmail.address }}</a>
-                <br>
-              {% endif %}
+              {% for email in results.enquiries.sendDocumentsEmail %}
+                <p class="govuk-body-m">
+                  {{ sendUsYourDocuments }}: <a class="govuk-link" href="mailto:{{ email.address }}">{{ email.address }}</a><br>
+                  {{ email.explanation }}
+                </p>
+              {% endfor %}
               {% for email in results.enquiries.emails %}
               <p class="govuk-body-m">
                 {{ updates }}: <a class="govuk-link" href="mailto:{{ email.address }}">{{ email.address }}</a><br>
