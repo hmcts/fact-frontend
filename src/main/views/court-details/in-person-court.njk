@@ -50,7 +50,7 @@
           <a class="govuk-link" href="https://maps.google.com/maps?q={{ results.lat }},{{ results.lon }}">{{ directionsText }}</a>
         </p>
         <p class="govuk-body-m">
-          <a class="govuk-link" href="https://www.gov.uk/guidance/what-to-expect-coming-to-a-court-or-tribunal">{{ visitingExpectationText }}</a>
+          <a class="govuk-link" href="{{ visitingExpectationLink }}">{{ visitingExpectationText }}</a>
         </p>
       </div>
       {% if results['urgent_message'] %}
