@@ -9,7 +9,7 @@
     "a3": "Contact a court or tribunal to get an update on your application",
     "a4": "It is not listed here"
   },
-  "paragraph": "or",
+  "divider": "or",
   "button": "Continue",
   "error": {
     "title": "There is a problem",
