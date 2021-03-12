@@ -66,7 +66,7 @@ Feature: Court Name Know - Court Details
 
     Examples:
       | urgent_message_court                  |
-      | Leeds District Probate Registry |
+      | Leicester Tribunal Hearing Centre |
 
   Scenario Outline: Court or tribunal additional information
     And I have entered "<additional_info_court>" as search criteria
@@ -78,7 +78,7 @@ Feature: Court Name Know - Court Details
 
     Examples:
       | additional_info_court     |
-      | West Cumbria Courthouse   |
+      | Leicester Tribunal Hearing Centre   |
 
   Scenario Outline: Court or tribunal opening times
     And I have entered "<opening_times_court>" as search criteria
