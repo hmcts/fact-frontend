@@ -1,4 +1,4 @@
-import {decideCatchmentArea, formatServiceAreas} from '../../../../main/utils/CourtDetailsUtils';
+import {decideCatchmentArea, formatAreasOfLaw} from '../../../../main/utils/CourtDetailsUtils';
 
 describe('CourtDetailsUtils', () => {
   describe('decideCatchmentArea', () => {
@@ -23,27 +23,36 @@ describe('CourtDetailsUtils', () => {
 
   describe('formatServiceAreas', () => {
     test('Should return single formatted area', () => {
-      const serviceAreas: string[] = ['Money'];
+      const areasOfLaw: any = [
+        {name: 'Money', 'display_name': null}
+      ];
 
-      expect(formatServiceAreas(serviceAreas)).toEqual('money');
+      expect(formatAreasOfLaw(areasOfLaw)).toEqual('money');
     });
 
     test('Should return dual formatted areas', () => {
-      const serviceAreas: string[] = ['Money', 'Civil Protection'];
+      const areasOfLaw: any = [
+        {name: 'Money', 'display_name': null},
+        {name: 'Civil Protection', 'display_name': null}
+      ];
 
-      expect(formatServiceAreas(serviceAreas)).toEqual('money and civil protection');
+      expect(formatAreasOfLaw(areasOfLaw)).toEqual('money and civil protection');
     });
 
     test('Should return list of formatted areas', () => {
-      const serviceAreas: string[] = ['Money', 'Civil Protection', 'Divorce'];
+      const areasOfLaw: any = [
+        {name: 'Money', 'display_name': null},
+        {name: 'Civil Protection', 'display_name': null},
+        {name: 'Divorce', 'display_name': null}
+      ];
 
-      expect(formatServiceAreas(serviceAreas)).toEqual('money, civil protection and divorce');
+      expect(formatAreasOfLaw(areasOfLaw)).toEqual('money, civil protection and divorce');
     });
 
     test('Should return empty string', () => {
-      const serviceAreas: string[] = ['Money', 'Civil Protection', 'Divorce'];
+      const areasOfLaw: any = [];
 
-      expect(formatServiceAreas(serviceAreas)).toEqual('money, civil protection and divorce');
+      expect(formatAreasOfLaw(areasOfLaw)).toEqual('');
     });
   });
 });
