@@ -1,7 +1,7 @@
 import { FactRequest } from '../interfaces/FactRequest';
 import { NextFunction, Response } from 'express';
 import { FactApi } from '../utils/FactApi';
-import { decideCatchmentArea, filterByDescription, formatServiceAreas } from '../utils/CourtDetailsUtils';
+import { decideCatchmentArea, filterByDescription, formatAreasOfLaw } from '../utils/CourtDetailsUtils';
 import { isEmpty, isObjectEmpty } from '../utils/validation';
 import autobind from 'autobind-decorator';
 import { Enquiries } from '../interfaces/Enquiries';
@@ -54,7 +54,7 @@ export class CourtDetailsController {
           } else {
             viewData.notInPersonP1 = viewData.notInPersonP1
               .replace('{catchmentArea}', decideCatchmentArea(this.regionalCentre, viewData.catchmentArea))
-              .replace('{serviceArea}', formatServiceAreas(courtDetails['service_area']));
+              .replace('{serviceArea}', formatAreasOfLaw(courtDetails['areas_of_law']));
 
             return res.render('court-details/not-in-person-court', viewData);
           }
