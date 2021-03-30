@@ -12,9 +12,6 @@ services:
   image-store:
     name: 'Image Store'
     url: 'https://factaat.blob.core.windows.net/images'
-  mapit:
-    name: 'MapIt API'
-    url: 'https://mapit.mysociety.org'
 health:
   timeout: 5000
   deadline: 15000

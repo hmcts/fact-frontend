@@ -66,8 +66,7 @@ app.get(
 // health
 const healthCheckConfig = {
   checks: {
-    'fact-api': healthcheck.web(`${config.get('services.api.url')}/health`, healthOptions),
-    'mapit-api': healthcheck.web(`${config.get('services.mapit.url')}/quota`, healthOptions)
+    'fact-api': healthcheck.web(`${config.get('services.api.url')}/health`, healthOptions)
   },
   buildInfo: {
     name: config.get('services.frontend.name'),
