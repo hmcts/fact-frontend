@@ -2,7 +2,7 @@
   "errorTitle": "Gwall:",
   "title": "Achosion {serviceChosen} - Dod o hyd i lys neu dribiwnlys - GOV.UK",
   "serviceName": "Dod o hyd i lys neu dribiwnlys",
-  "question": "Dewiswch pa fath o help sydd ei angen arnoch mewn perthynas ag {serviceChosen}?",
+  "question": "Dewiswch pa fath o help sydd ei angen arnoch mewn perthynas â {serviceChosen}?",
   "answers": {
     "a1": "Alla i ddim dod o hyd i'r hyn yr ydw i’n chwilio amdano"
   },
@@ -10,7 +10,7 @@
   "divider": "neu",
   "error": {
     "title": "Mae yna broblem",
-    "text": "Dewiswch pa fath o help sydd ei angen arnoch mewn perthynas ag {serviceChosen}"
+    "text": "Dewiswch pa fath o help sydd ei angen arnoch mewn perthynas â {serviceChosen}"
   },
   "courtsManaging": "Llysoedd sy'n rheoli "
 }
