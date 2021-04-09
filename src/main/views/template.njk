@@ -2,6 +2,7 @@
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {% from "govuk/components/header/macro.njk" import govukHeader %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
 
 {% block head %}
   {% if seoMetadataDescription %}
@@ -24,17 +25,59 @@
   })(window,document,'script','dataLayer','GTM-N7NMJDR');</script>
 
   {% if showCookieBanner %}
+    {% set html %}
+      <p class="govuk-body">{{ cookieBannerP1 | safe }}</p>
+      <p class="govuk-body">{{ cookieBannerP2 }}</p>
+    {% endset %}
+
+    {% set confirmationHtml %}
+      <p>You can <a href="/cookies">change your cookie settings</a> at any time.</p>
+    {% endset %}
+
     <div class="global-cookie-message" id="cookie_banner">
-      <div class="govuk-width-container">
-          <h1 class="govuk-heading-m">{{ cookieBannerH1 }}</h1>
-          <p class="govuk-body-s">{{ cookieBannerP1 | safe }}</p>
-          <p class="govuk-body-s">{{ cookieBannerP2 }}</p>
-          <button type="submit" class="govuk-button">{{ cookieBannerButton }}</button>
-          <a class="govuk-button" href="/cookies">{{ cookieBannerAnchor }}</a>
-      </div>
+      {{ govukCookieBanner({
+        ariaLabel: cookieBannerH1,
+        messages: [
+          {
+            headingText: cookieBannerH1,
+            html: html,
+            classes: "govuk-cookie-banner__decision",
+            actions: [
+            {
+              text: cookieBannerAcceptButton,
+              type: "submit",
+              name: "cookies",
+              value: "accept"
+            },
+            {
+              text: cookieBannerRejectButton,
+              type: "submit",
+              name: "cookies",
+              value: "reject"
+            },
+            {
+              text: cookieBannerViewCookies,
+              href: "/cookies"
+            }
+          ]
+          },
+          {
+            html: confirmationHtml,
+            role: "alert",
+            hidden: true,
+            classes: "govuk-cookie-banner__confirmation",
+            actions: [
+            {
+              text: cookieBannerHideButton,
+              type: "button",
+              value: "hide"
+            }
+          ]
+          }
+        ]
+      }) }}
     </div>
   {% endif %}
-
 {% endblock %}
 
 {% block bodyStart %}
@@ -76,7 +119,7 @@
           text: contact
         },
         {
-          href: "https://www.gov.uk/help/privacy-notice",
+          href: "https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service/about/personal-information-charter#hmcts-privacy-policy",
           text: privacy
         },
         {

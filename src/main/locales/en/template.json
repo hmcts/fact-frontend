@@ -9,9 +9,12 @@
   "accessibility": "Accessibility statement",
   "termsAndConditions": "Terms and conditions",
   "usingServicesInWelsh": "Rhestr o Wasanaethau Cymraeg",
-  "cookieBannerH1": "Tell us whether you accept cookies",
-  "cookieBannerP1": "We use <a href=\"/cookies\">cookies to collect information</a> about how you use this service. ",
-  "cookieBannerP2": "We use this information to make the website work as well as possible and improve our services.",
-  "cookieBannerButton": "Accept all cookies",
+  "cookieBannerH1": "Cookies on Find a Court or Tribunal",
+  "cookieBannerP1": "We use some essential cookies to make this service work.",
+  "cookieBannerP2": "We’d also like to use analytics cookies so we can understand how you use the service and make improvements.",
+  "cookieBannerAcceptButton": "Accept analytics cookies",
+  "cookieBannerRejectButton": "Reject analytics cookies",
+  "cookieBannerHideButton": "Hide this message",
+  "cookieBannerViewCookies": "View cookies",
   "cookieBannerAnchor": "Set cookie preferences"
 }
