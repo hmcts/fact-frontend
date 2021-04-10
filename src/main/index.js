@@ -1,7 +1,7 @@
 import './assets/scss/main.scss';
 import {initAll} from 'govuk-frontend';
 
-const cookieManager = require('../../node_modules/@dvsa/cookie-manager/cookie-manager.js');
+const cookieManager = require('../../node_modules/@hmcts/fact-cookie-manager/cookie-manager.js');
 cookieManager.init({
   'cookie-banner-id': 'cookie_banner',
   'cookie-banner-visibility-class': 'govuk-visually-hidden',
@@ -14,8 +14,24 @@ cookieManager.init({
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   },
-
+  'cookie-banner-reject-callback': function () {
+    const confirmation = document.querySelector('.govuk-cookie-banner__confirmation');
+    const confirmationMessage = confirmation.querySelector('p').innerHTML;
+    confirmation.querySelector('p').innerHTML = 'You’ve rejected analytics cookies. ' + confirmationMessage;
+    confirmation.removeAttribute('hidden');
+  },
+  'cookie-banner-accept-callback': function () {
+    const confirmation = document.querySelector('.govuk-cookie-banner__confirmation');
+    const confirmationMessage = confirmation.querySelector('p').innerHTML;
+    confirmation.querySelector('p').innerHTML = 'You’ve accepted analytics cookies. ' + confirmationMessage;
+    confirmation.removeAttribute('hidden');
+  },
+  'cookie-banner-saved-callback': function () {
+    const decision = document.querySelector('.govuk-cookie-banner__decision');
+    decision.setAttribute('hidden', true);
+  },
   'set-checkboxes-in-preference-form': true,
+  'cookie-banner-auto-hide': false,
   'cookie-manifest': [
     {
       'category-name': 'essential',

@@ -23,7 +23,7 @@
     "cichecks": "yarn && yarn build && yarn lint && yarn test"
   },
   "dependencies": {
-    "@dvsa/cookie-manager": "^1.0.10",
+    "@hmcts/fact-cookie-manager": "github:hmcts/fact-cookie-manager#master",
     "@hmcts/info-provider": "^1.0.0",
     "@hmcts/nodejs-healthcheck": "^1.7.0",
     "@hmcts/nodejs-logging": "^3.0.1",
