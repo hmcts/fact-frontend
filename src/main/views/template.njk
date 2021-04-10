@@ -24,7 +24,6 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-N7NMJDR');</script>
 
-  {% if showCookieBanner %}
     {% set html %}
       <p class="govuk-body">{{ cookieBannerP1 | safe }}</p>
       <p class="govuk-body">{{ cookieBannerP2 }}</p>
@@ -77,7 +76,6 @@
         ]
       }) }}
     </div>
-  {% endif %}
 {% endblock %}
 
 {% block bodyStart %}
