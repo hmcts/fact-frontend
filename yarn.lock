@@ -863,10 +863,9 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@dvsa/cookie-manager@^1.0.10":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@dvsa/cookie-manager/-/cookie-manager-1.0.10.tgz#6af2da204886abb1f3daf99e189e54369a80d6a8"
-  integrity sha512-jm7Iz+7OlRbNJBIK7KuHX1qtt1aYxBO7YgD+B53PhmwcN5Wn1dGBETbhqXtCTTL0r2dNpCv4olpexqPQRR2Zgw==
+"@hmcts/fact-cookie-manager@github:hmcts/fact-cookie-manager#master":
+  version "1.0.0"
+  resolved "https://codeload.github.com/hmcts/fact-cookie-manager/tar.gz/e94c84e553ecc4ad52033f3e37b04e159674de72"
 
 "@hmcts/info-provider@^1.0.0":
   version "1.0.0"
