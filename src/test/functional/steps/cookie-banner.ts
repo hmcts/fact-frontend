@@ -8,7 +8,7 @@ Then('I can view the cookie options within the cookie banner', async () => {
 });
 
 When('I select that hyperlink in the cookie banner', async () => {
-  await I.click('.global-cookie-message > div > p > a');
+  await I.click('.global-cookie-message a');
 });
 
 Then('I am redirected and expect the page header to be {string}', async function(title: string) {
