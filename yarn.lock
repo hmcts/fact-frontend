@@ -863,9 +863,9 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@hmcts/fact-cookie-manager@github:hmcts/fact-cookie-manager#master":
+"@hmcts/fact-cookie-manager@github:hmcts/fact-cookie-manager#0.0.1":
   version "1.0.0"
-  resolved "https://codeload.github.com/hmcts/fact-cookie-manager/tar.gz/e94c84e553ecc4ad52033f3e37b04e159674de72"
+  resolved "https://codeload.github.com/hmcts/fact-cookie-manager/tar.gz/f879717593928cda2b094084a123c9f9af2860d4"
 
 "@hmcts/info-provider@^1.0.0":
   version "1.0.0"
