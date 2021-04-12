@@ -10,8 +10,14 @@
   {% endif %}
   {% include "webpack/css.njk" %}
   <script>
-    dataLayer = [];
+    dataLayer = window.dataLayer || [];
     dataLayer.push({"language": "{{ language }}", "event": "Site language"})
+
+    function gtag () {
+      dataLayer.push(arguments);
+    }
+
+    gtag('consent', 'default', {'analytics_storage': 'denied'});
   </script>
 
   <meta name="google-site-verification" content="3glfkE1sBXj7EtEdO0ktOm5kyR9E14kR7yw_yJ6GH4U" />
@@ -33,7 +39,7 @@
       <p>You can <a href="/cookies">change your cookie settings</a> at any time.</p>
     {% endset %}
 
-    <div class="global-cookie-message" id="cookie_banner">
+    <div class="global-cookie-message" id="cookie_banner" hidden>
       {{ govukCookieBanner({
         ariaLabel: cookieBannerH1,
         messages: [
@@ -44,15 +50,17 @@
             actions: [
             {
               text: cookieBannerAcceptButton,
-              type: "submit",
-              name: "cookies",
-              value: "accept"
+              attributes: {
+                'data-cm-category': 'analytics',
+                'data-cm-action': 'accept'
+              }
             },
             {
               text: cookieBannerRejectButton,
-              type: "submit",
-              name: "cookies",
-              value: "reject"
+              attributes: {
+              'data-cm-category': 'analytics',
+              'data-cm-action': 'reject'
+              }
             },
             {
               text: cookieBannerViewCookies,
@@ -68,8 +76,9 @@
             actions: [
             {
               text: cookieBannerHideButton,
-              type: "button",
-              value: "hide"
+              attributes: {
+                'data-cm-action': 'hide'
+              }
             }
           ]
           }
