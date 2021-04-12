@@ -8,12 +8,12 @@ const cookieBannerConfirmation = cookieBanner.querySelector('.govuk-cookie-banne
 
 function cookieBannerAccept() {
   const confirmationMessage = cookieBannerConfirmation.querySelector('p');
-  confirmationMessage.innerHTML = 'You’ve accepted analytics cookies. ' + confirmationMessage.innerHTML;
+  confirmationMessage.innerHTML = 'You’ve accepted additional cookies. ' + confirmationMessage.innerHTML;
 }
 
 function cookieBannerReject() {
   const confirmationMessage = cookieBannerConfirmation.querySelector('p');
-  confirmationMessage.innerHTML = 'You’ve rejected analytics cookies. ' + confirmationMessage.innerHTML;
+  confirmationMessage.innerHTML = 'You’ve rejected additional cookies. ' + confirmationMessage.innerHTML;
 }
 
 function cookieBannerSaved(cookieStatus) {
@@ -34,12 +34,22 @@ function preferenceFormSaved(cookieStatus) {
 function cookiePreferencesUpdated(cookieStatus) {
   const dataLayer = window.dataLayer || [];
   const gtag = window.gtag || function () { dataLayer.push(arguments); };
+  const dtrum = window.dtrum;
+
   dataLayer.push({'event': 'cookies', 'preferences': cookieStatus});
 
   if(cookieStatus.analytics === 'on') {
     gtag('consent', 'update', { 'analytics_storage': 'granted' });
   } else {
     gtag('consent', 'update', { 'analytics_storage': 'denied' });
+  }
+
+  if(cookieStatus.rum === 'on') {
+    dtrum.enable();
+    dtrum.enableSessionReplay();
+  } else {
+    dtrum.disableSessionReplay();
+    dtrum.disable();
   }
 }
 

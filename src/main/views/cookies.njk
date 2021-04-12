@@ -34,7 +34,7 @@
     {{ h2 }}
   </h2>
   <h3 class="govuk-heading-m">
-    {{ h3 }}
+    {{ language.header }}
   </h3>
 
   {{ govukTable({
@@ -60,17 +60,17 @@
           text: 'i18next'
         },
         {
-          text: language
+          text: language.i18nDescription
         },
         {
-          text: year
+          text: language.i18nDuration
         }
       ]
     ]
   }) }}
 
   <h3 class="govuk-heading-m">
-    {{ h4 }}
+    {{ preferences.header }}
   </h3>
 
   {{ govukTable({
@@ -96,19 +96,19 @@
           text: 'fact-cookie-preferences'
         },
         {
-          text: cookiePreferences
+          text: preferences.factCookiePreferencesDescription
         },
         {
-          text: year
+          text: preferences.factCookiePreferencesDuration
         }
       ]
     ]
   }) }}
 
   <h3 class="govuk-heading-m">
-    {{ h5 }}
+    {{ analytics.header }}
   </h3>
-  <p class="govuk-body-m">{{ p3 }}</p>
+  <p class="govuk-body-m">{{ analytics.p1 }}</p>
   {{ govukTable({
     firstCellIsHeader: true,
     caption: caption,
@@ -132,10 +132,10 @@
           text: '_ga'
         },
         {
-          text: gaDescription
+          text: analytics.gaDescription
         },
         {
-          text: gaDuration
+          text: analytics.gaDuration
         }
       ],
       [
@@ -143,10 +143,10 @@
           text: '_gid'
         },
         {
-          text: gidDescription
+          text: analytics.gidDescription
         },
         {
-          text: gidDuration
+          text: analytics.gidDuration
         }
       ],
       [
@@ -154,10 +154,107 @@
           text: '_gat_UA-37377084-3'
         },
         {
-          text: gatDescription
+          text: analytics.gatDescription
         },
         {
-          text: gatDuration
+          text: analytics.gatDuration
+        }
+      ]
+    ]
+  }) }}
+
+  <h3 class="govuk-heading-m">
+    {{ apm.header }}
+  </h3>
+  <p class="govuk-body-m">{{ apm.p1 }}</p>
+  <ul class="govuk-list govuk-list--bullet">
+    {% for bullet in apm.bullets %}
+      <li>{{ bullet }}</li>
+    {% endfor %}
+  </ul>
+  <p class="govuk-body-m">{{ apm.p2 }}</p>
+  {{ govukTable({
+    firstCellIsHeader: true,
+    caption: caption,
+    head: [
+      {
+        text: name,
+        classes: 'govuk-!-width-one-quarter'
+      },
+      {
+        text: purpose,
+        classes: 'govuk-!-width-one-half'
+      },
+      {
+        text: expires,
+        classes: 'govuk-!-width-one-quarter'
+      }
+    ],
+    rows: [
+      [
+        {
+          text: 'dtCookie'
+        },
+        {
+          text: apm.dtCookieDescription
+        },
+        {
+          text: apm.dtCookieDuration
+        }
+      ],
+      [
+        {
+          text: 'dtLatC'
+        },
+        {
+          text: apm.dtLatCDescription
+        },
+        {
+          text: apm.dtLatCDuration
+        }
+      ],
+      [
+        {
+          text: 'dtPC'
+        },
+        {
+          text: apm.dtPCDescription
+        },
+        {
+          text: apm.dtPCDuration
+        }
+      ],
+      [
+        {
+          text: 'dtSa'
+        },
+        {
+          text: apm.dtSaDescription
+        },
+        {
+          text: apm.dtSaDuration
+        }
+      ],
+      [
+        {
+          text: 'rxVisitor'
+        },
+        {
+          text: apm.rxVisitorDescription
+        },
+        {
+          text: apm.rxVisitorDuration
+        }
+      ],
+      [
+        {
+          text: 'rxvt'
+        },
+        {
+          text: apm.rxvtDescription
+        },
+        {
+          text: apm.rxvtDuration
         }
       ]
     ]
@@ -182,6 +279,28 @@
         {
           value: 'off',
           text: 'Do not use cookies that measure my website use',
+          checked: true
+        }
+      ]
+    }) }}
+    {{ govukRadios({
+      classes: 'govuk-radios',
+      idPrefix: 'rum',
+      name: 'rum',
+      fieldset: {
+        legend: {
+          text: "Allow cookies that measure website application performance monitoring?",
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: 'on',
+          text: 'Use cookies that measure website application performance monitoring'
+        },
+        {
+          value: 'off',
+          text: 'Do not use cookies that measure website application performance monitoring',
           checked: true
         }
       ]
