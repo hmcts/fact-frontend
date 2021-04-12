@@ -44,7 +44,7 @@ function cookiePreferencesUpdated(cookieStatus) {
     gtag('consent', 'update', { 'analytics_storage': 'denied' });
   }
 
-  if(cookieStatus.rum === 'on') {
+  if(cookieStatus.apm === 'on') {
     dtrum.enable();
     dtrum.enableSessionReplay();
   } else {
@@ -80,6 +80,18 @@ cookieManager.init({
         '_ga',
         '_gid',
         '_gat_UA-37377084-3'
+      ]
+    },
+    {
+      'category-name': 'apm',
+      'optional': true,
+      'cookies': [
+        'dtCookie',
+        'dtLatC',
+        'dtPC',
+        'dtSa',
+        'rxVisitor',
+        'rxvt'
       ]
     }
   ]
