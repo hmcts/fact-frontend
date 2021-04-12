@@ -23,7 +23,7 @@
     "cichecks": "yarn && yarn build && yarn lint && yarn test"
   },
   "dependencies": {
-    "@dvsa/cookie-manager": "^1.0.10",
+    "@hmcts/fact-cookie-manager": "github:hmcts/fact-cookie-manager#0.0.1",
     "@hmcts/info-provider": "^1.0.0",
     "@hmcts/nodejs-healthcheck": "^1.7.0",
     "@hmcts/nodejs-logging": "^3.0.1",
@@ -51,7 +51,7 @@
     "csurf": "^1.11.0",
     "express": "^4.17.1",
     "express-nunjucks": "^2.2.5",
-    "govuk-frontend": "^3.9.0",
+    "govuk-frontend": "^3.11.0",
     "helmet": "^3.21.2",
     "http-proxy-middleware": "^1.0.6",
     "i18next": "^19.7.0",

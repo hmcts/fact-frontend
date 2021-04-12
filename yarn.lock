@@ -863,10 +863,9 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@dvsa/cookie-manager@^1.0.10":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@dvsa/cookie-manager/-/cookie-manager-1.0.10.tgz#6af2da204886abb1f3daf99e189e54369a80d6a8"
-  integrity sha512-jm7Iz+7OlRbNJBIK7KuHX1qtt1aYxBO7YgD+B53PhmwcN5Wn1dGBETbhqXtCTTL0r2dNpCv4olpexqPQRR2Zgw==
+"@hmcts/fact-cookie-manager@github:hmcts/fact-cookie-manager#0.0.1":
+  version "1.0.0"
+  resolved "https://codeload.github.com/hmcts/fact-cookie-manager/tar.gz/f879717593928cda2b094084a123c9f9af2860d4"
 
 "@hmcts/info-provider@^1.0.0":
   version "1.0.0"
@@ -4973,10 +4972,10 @@ got@^9.6.0:
     to-readable-stream "^1.0.0"
     url-parse-lax "^3.0.0"
 
-govuk-frontend@^3.9.0:
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/govuk-frontend/-/govuk-frontend-3.9.0.tgz#7f5db0094cd6ad0475cc5e8e789e33c1cfc90e16"
-  integrity sha512-RxlgKJzlFzKPKd0reUC9/xzR2MJ2x0Ky0VK+ikndVkgODKT+Lpt3qIKEqhuJ4aGpBGOxZV9Cha+CkxYdE7GDHQ==
+govuk-frontend@^3.11.0:
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/govuk-frontend/-/govuk-frontend-3.11.0.tgz#5bc38629ec8b290220c2c389dcd664114a045db1"
+  integrity sha512-1hW/3etYBtKPM+PNdWVOijvWVI3mpYL8eb7WLTtlh/Qxf2mCp6LkCsZk9I034n4EJBYQ5jlUWsUlTOOIypftpg==
 
 graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.4:
   version "4.2.4"
