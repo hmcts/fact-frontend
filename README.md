@@ -2,7 +2,7 @@
 
 Website to find a court or tribunal.
 
-## Getting Started
+## Getting Started.
 
 ### Prerequisites
 
