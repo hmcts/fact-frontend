@@ -1,8 +1,8 @@
 import './assets/scss/main.scss';
 import {initAll} from 'govuk-frontend';
 
-const cookieManager = require('../../node_modules/@hmcts/fact-cookie-manager/cookie-manager.js');
-const cookieBanner = document.querySelector('#cookie_banner');
+const cookieManager = require('@hmcts/cookie-manager');
+const cookieBanner = document.querySelector('#cm-cookie-banner');
 const cookieBannerDecision = cookieBanner.querySelector('.govuk-cookie-banner__decision');
 const cookieBannerConfirmation = cookieBanner.querySelector('.govuk-cookie-banner__confirmation');
 
@@ -16,19 +16,16 @@ function cookieBannerReject() {
   confirmationMessage.innerHTML = 'You’ve rejected analytics cookies. ' + confirmationMessage.innerHTML;
 }
 
-function cookieBannerSaved(cookieStatus) {
+function cookieBannerSaved() {
   cookieBannerDecision.hidden = true;
   cookieBannerConfirmation.hidden = false;
-  cookiePreferencesUpdated(cookieStatus);
 }
 
-function preferenceFormSaved(cookieStatus) {
+function preferenceFormSaved() {
   const message = document.querySelector('.cookie-preference-success');
   message.style.display = 'block';
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-
-  cookiePreferencesUpdated(cookieStatus);
 }
 
 function cookiePreferencesUpdated(cookieStatus) {
@@ -44,15 +41,16 @@ function cookiePreferencesUpdated(cookieStatus) {
 }
 
 cookieManager.init({
-  'cookie-banner-id': 'cookie_banner',
-  'cookie-banner-visible-on-page-with-preference-form': false,
   'user-preference-cookie-name': 'fact-cookie-preferences',
-  'user-preference-configuration-form-id': 'cm_user_preference_form',
-  'user-preference-saved-callback': preferenceFormSaved,
+  'user-preference-saved-callback': cookiePreferencesUpdated,
+  'preference-form-id': 'cm-preference-form',
+  'preference-form-saved-callback': preferenceFormSaved,
+  'set-checkboxes-in-preference-form': true,
+  'cookie-banner-id': 'cm-cookie-banner',
+  'cookie-banner-visible-on-page-with-preference-form': false,
   'cookie-banner-reject-callback': cookieBannerReject,
   'cookie-banner-accept-callback': cookieBannerAccept,
   'cookie-banner-saved-callback': cookieBannerSaved,
-  'set-checkboxes-in-preference-form': true,
   'cookie-banner-auto-hide': false,
   'cookie-manifest': [
     {
