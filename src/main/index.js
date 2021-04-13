@@ -41,12 +41,14 @@ function cookiePreferencesUpdated(cookieStatus) {
     gtag('consent', 'update', { 'analytics_storage': 'denied' });
   }
 
-  if(cookieStatus.apm === 'on') {
-    dtrum.enable();
-    dtrum.enableSessionReplay();
-  } else {
-    dtrum.disableSessionReplay();
-    dtrum.disable();
+  if(dtrum !== undefined) {
+    if(cookieStatus.apm === 'on') {
+      dtrum.enable();
+      dtrum.enableSessionReplay();
+    } else {
+      dtrum.disableSessionReplay();
+      dtrum.disable();
+    }
   }
 }
 
