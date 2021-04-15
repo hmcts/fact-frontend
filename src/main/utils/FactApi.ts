@@ -2,6 +2,7 @@ import { Logger } from '../interfaces/Logger';
 import { AxiosInstance } from 'axios';
 import { SearchResult } from '../interfaces/SearchResultsData';
 import { CourtDetailsResult } from '../interfaces/CourtDetailsData';
+import { CourtWithDistance } from '../interfaces/PostcodeResultsData';
 import { ServiceResult } from '../interfaces/ServicesData';
 import { ServiceAreaResult } from '../interfaces/ServiceAreasData';
 import { PostcodeSearchResultsData } from '../interfaces/PostcodeResultsData';
@@ -74,8 +75,26 @@ export class FactApi {
   }
 
   public postcodeServiceAreaSearch(postcode: string, serviceAreaSlug: string, lng: string): Promise<PostcodeSearchResultsData> {
+    
+    console.log("postcodeServiceAreaSearch: getting courts back by service area and postcode")
+    
     return this.axios
       .get(`search/results?postcode=${postcode}&serviceArea=${serviceAreaSlug}`, {  headers: {'Accept-Language': lng}})
+      .then(results => results.data)
+      .catch(err => {
+        this.logger.error(err);
+        return [{
+          courts: []
+        }]
+      });
+  }
+
+  public postcodeAreaSearch(postcode: string, lng: string): Promise<Array<CourtWithDistance>> {
+    
+    console.log("postcodeAreaSearch: getting courts back by postcode only")
+    
+    return this.axios
+      .get(`search/results/postcode?postcode=${postcode}`, {  headers: {'Accept-Language': lng}})
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
