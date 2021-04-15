@@ -27,6 +27,7 @@ export class ServicePostcodeSearchController {
     if (hasError) {
       data.errorType = error;
     }
+    data.hint = data.hint.replace('{serviceArea}', 'the services nearest');
     res.render('postcode-search', data);
   }
 
