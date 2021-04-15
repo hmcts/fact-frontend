@@ -4,7 +4,7 @@ import { cloneDeep } from 'lodash';
 import { isPostcodeValid } from '../../utils/validation';
 import { FactApi } from '../../utils/FactApi';
 import autobind from 'autobind-decorator';
-import { PostcodeResultsData } from '../../interfaces/PostcodeResultsData';
+import { PostcodeResultsData, CourtWithDistanceResultsData } from '../../interfaces/PostcodeResultsData';
 
 @autobind
 export class ServicePostcodeResultsController {
@@ -14,48 +14,36 @@ export class ServicePostcodeResultsController {
   ) { }
 
   public async getCourtResultsByPostcode(req: FactRequest, res: Response): Promise<void> {
-    const postcode  = req.query.postcode? (req.query.postcode as string).toUpperCase() : '';
+    const postcode  = req.query.postcode? (req.query.postcode as string).toLowerCase() : '';
     const postcodeError = isPostcodeValid(postcode, "");
     const baseUrl = `/services/search-by-postcode`;
-
-    console.log("******* ServicePostcodeResultsController ");
-    console.log("****** postcode is: " + postcode);
 
     if (postcodeError !== '') {
       return res.redirect(`${baseUrl}?error=${postcodeError}`);
     } else {
-      const data: PostcodeResultsData = {
-        ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['postcode-results']),
-        path: '/courts/near',
-        errors: false,
-        results: {}
-      }
-      
+
       const courts = await this.api.postcodeAreaSearch(postcode, req.lng);
-
-      console.log(typeof courts);
-      console.log(courts);
-
-      
-
-      
 
       if (!courts) {
         return res.redirect(`${baseUrl}?noResults=true&postcode=${postcode}`);
       }
 
-      data.results = courts;
+      const
+        data: CourtWithDistanceResultsData = {
+          ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['postcode-results']),
+          path: '/courts/near',
+          errors: false,
+          postcodeOnlySearch: true,
+          results: {
+            "courts": courts
+          }
+      }
 
-      data.multipleResultsHint = data.multipleResultsHint
-        .replace('{total}', "derp")
-        .replace('{serviceArea}', courts.name ? courts.name.toLowerCase() : courts.name)
-        .replace('{postcode}', postcode);
-      data.singleResultsHint = data.singleResultsHint
-        .replace('{serviceArea}', courts.name ? courts.name.toLowerCase() : courts.name)
+      data.postcodeSearchResultsHint = data.postcodeSearchResultsHint
+        .replace('{total}', courts.length.toString())
         .replace('{postcode}', postcode);
 
       return res.render('postcode-results', data);
-  
     };
   }
 

@@ -3,6 +3,7 @@ import { PageData } from './PageData';
 export interface PostcodeResultsData extends PageData {
   hint: string;
   errorType: string;
+  postcodeSearchResultsHint: string;
   multipleResultsHint: string;
   singleResultsHint: string;
   secondHint: string;
@@ -16,6 +17,16 @@ export interface PostcodeSearchResultsData {
   slug: string;
   onlineUrl: string;
   onlineText: string;
+  courts: CourtWithDistance[];
+}
+
+export interface CourtWithDistanceResultsData extends PageData {
+  postcodeSearchResultsHint: string;
+  postcodeOnlySearch: boolean;
+  results: CourtData | {};
+}
+
+export interface CourtData { 
   courts: CourtWithDistance[];
 }
 

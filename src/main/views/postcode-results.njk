@@ -35,9 +35,16 @@
           </div>
         {% else %}
           <div>
-            <p class="govuk-body-m">
-              {{ singleResultsHint if results.courts.length === 1 else multipleResultsHint }}
-            </p>
+            {% if postcodeOnlySearch %}
+              <p class="govuk-body-m">
+                {{ postcodeSearchResultsHint }}
+              </p>
+            {% else %}
+              <p class="govuk-body-m">
+                {{ singleResultsHint if results.courts.length === 1 else multipleResultsHint }}
+              </p>
+            {% endif %}
+
           </div>
           <div id="search-results">
             {% for court in results.courts %}

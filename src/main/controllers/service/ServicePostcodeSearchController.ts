@@ -13,8 +13,6 @@ export class ServicePostcodeSearchController {
   ) { }
 
   public async getCourtsByPostcodeOnly(req: FactRequest, res: Response) {
-    console.log("*************** ServicePostcodeSearchController")
-    
     const { error, postcode, noResults }  = req.query as PostcodeSearchQuery;
     const hasError = !isEmpty(error);
     const hasNoResults: boolean = noResults === 'true';
@@ -29,7 +27,6 @@ export class ServicePostcodeSearchController {
     if (hasError) {
       data.errorType = error;
     }
-
     res.render('postcode-search', data);
   }
 
