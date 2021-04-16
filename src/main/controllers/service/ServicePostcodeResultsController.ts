@@ -23,10 +23,8 @@ export class ServicePostcodeResultsController {
     } else {
 
       const courts = await this.api.postcodeAreaSearch(postcode, req.lng);
-
-      if (!courts) {
+      if (!courts?.length)
         return res.redirect(`${baseUrl}?noResults=true&postcode=${postcode}`);
-      }
 
       const
         data: CourtWithDistanceResultsData = {
@@ -42,7 +40,6 @@ export class ServicePostcodeResultsController {
       data.postcodeSearchResultsHint = data.postcodeSearchResultsHint
         .replace('{total}', courts.length.toString())
         .replace('{postcode}', postcode);
-
       return res.render('postcode-results', data);
     };
   }

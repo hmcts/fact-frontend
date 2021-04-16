@@ -17,6 +17,28 @@ describe('Service Postcode Search Controller', () => {
   };
   const controller = new ServicePostcodeSearchController(api);
 
+  test('Should render the postcode search page when searching with postcode only', async () => {
+    const req = mockRequest(i18n);
+    req.query = {
+      error: ''
+    };
+    req.params = {
+      postcode: 'ABC1234'
+    };
+    const res = mockResponse();
+    await controller.getCourtsByPostcodeOnly(req, res);
+    const expectedData: PageData = {
+      ...i18n['postcode-search'],
+      path: '/search-by-postcode',
+      actionUrl: '/services/courts/near',
+      error: false,
+      hasNoResults: false,
+      postcode: undefined,
+      hint: 'the services nearest'
+    };
+    expect(res.render).toBeCalledWith('postcode-search', expectedData);
+  });
+
   test('Should render the postcode search page', async () => {
     const req = mockRequest(i18n);
     req.query = {
@@ -41,6 +63,29 @@ describe('Service Postcode Search Controller', () => {
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
 
+  test('Should render the postcode search page with blank postcode error when searching by postcode', async () => {
+    const req = mockRequest(i18n);
+    req.query = {
+      error: 'blankPostcode',
+    };
+    req.params = {
+      postcode: 'ABC1234'
+    };
+    const res = mockResponse();
+    await controller.getCourtsByPostcodeOnly(req, res);
+    const expectedData: PageData = {
+      ...i18n['postcode-search'],
+      path: '/search-by-postcode',
+      actionUrl: '/services/courts/near',
+      error: true,
+      errorType: 'blankPostcode',
+      hasNoResults: false,
+      postcode: undefined,
+      hint: 'the services nearest'
+    };
+    expect(res.render).toBeCalledWith('postcode-search', expectedData);
+  });
+  
   test('Should render the postcode search page with blank postcode error', async () => {
     const req = mockRequest(i18n);
     req.query = {
@@ -62,6 +107,29 @@ describe('Service Postcode Search Controller', () => {
       serviceAreaIsChildcare: false,
       postcode: undefined,
       hint: 'serviceareaname'
+    };
+    expect(res.render).toBeCalledWith('postcode-search', expectedData);
+  });
+
+  test('Should render the postcode search page with invalid postcode error when searching by postcode', async () => {
+    const req = mockRequest(i18n);
+    req.query = {
+      error: 'invalidPostcode'
+    };
+    req.params = {
+      postcode: 'ABC1234'
+    };
+    const res = mockResponse();
+    await controller.getCourtsByPostcodeOnly(req, res);
+    const expectedData: PageData = {
+      ...i18n['postcode-search'],
+      path: '/search-by-postcode',
+      actionUrl: '/services/courts/near',
+      error: true,
+      errorType: 'invalidPostcode',
+      hasNoResults: false,
+      postcode: undefined,
+      hint: 'the services nearest'
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
@@ -91,6 +159,29 @@ describe('Service Postcode Search Controller', () => {
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
 
+  test('Should render the postcode search page with scottish postcode error when searching by postcode', async () => {
+    const req = mockRequest(i18n);
+    req.query = {
+      error: 'scottishPostcode'
+    };
+    req.params = {
+      postcode: 'ABC1234'
+    };
+    const res = mockResponse();
+    await controller.getCourtsByPostcodeOnly(req, res);
+    const expectedData: PageData = {
+      ...i18n['postcode-search'],
+      path: '/search-by-postcode',
+      actionUrl: '/services/courts/near',
+      error: true,
+      errorType: 'scottishPostcode',
+      hasNoResults: false,
+      postcode: undefined,
+      hint: 'the services nearest'
+    };
+    expect(res.render).toBeCalledWith('postcode-search', expectedData);
+  });
+
   test('Should render the postcode search page with scottish postcode error', async () => {
     const req = mockRequest(i18n);
     req.query = {
@@ -112,6 +203,29 @@ describe('Service Postcode Search Controller', () => {
       serviceAreaIsChildcare: false,
       postcode: undefined,
       hint: 'serviceareaname'
+    };
+    expect(res.render).toBeCalledWith('postcode-search', expectedData);
+  });
+
+  test('Should render the postcode search page with scottish children postcode error when searching by postcode', async () => {
+    const req = mockRequest(i18n);
+    req.query = {
+      error: 'scottishChildrenPostcode'
+    };
+    req.params = {
+      postcode: 'ABC1234'
+    };
+    const res = mockResponse();
+    await controller.getCourtsByPostcodeOnly(req, res);
+    const expectedData: PageData = {
+      ...i18n['postcode-search'],
+      path: '/search-by-postcode',
+      actionUrl: '/services/courts/near',
+      error: true,
+      errorType: 'scottishChildrenPostcode',
+      hasNoResults: false,
+      postcode: undefined,
+      hint: 'the services nearest'
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
@@ -141,6 +255,29 @@ describe('Service Postcode Search Controller', () => {
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
 
+  test('Should render the postcode search page with northern ireland postcode error when searching by postcode', async () => {
+    const req = mockRequest(i18n);
+    req.query = {
+      error: 'northernIrelandPostcode'
+    };
+    req.params = {
+      postcode: 'ABC1234'
+    };
+    const res = mockResponse();
+    await controller.getCourtsByPostcodeOnly(req, res);
+    const expectedData: PageData = {
+      ...i18n['postcode-search'],
+      path: '/search-by-postcode',
+      actionUrl: '/services/courts/near',
+      error: true,
+      errorType: 'northernIrelandPostcode',
+      hasNoResults: false,
+      postcode: undefined,
+      hint: 'the services nearest'
+    };
+    expect(res.render).toBeCalledWith('postcode-search', expectedData);
+  });
+
   test('Should render the postcode search page with northern ireland postcode error', async () => {
     const req = mockRequest(i18n);
     req.query = {
@@ -162,6 +299,29 @@ describe('Service Postcode Search Controller', () => {
       serviceAreaIsChildcare: false,
       postcode: undefined,
       hint: 'serviceareaname'
+    };
+    expect(res.render).toBeCalledWith('postcode-search', expectedData);
+  });
+
+  test('Should render the postcode search page with no results when searching by postcode', async () => {
+    const req = mockRequest(i18n);
+    req.query = {
+      postcode: 'E1 8DY',
+      noResults: 'true'
+    };
+    req.params = {
+      postcode: 'E1 8DY',
+    };
+    const res = mockResponse();
+    await controller.getCourtsByPostcodeOnly(req, res);
+    const expectedData: PageData = {
+      ...i18n['postcode-search'],
+      path: '/search-by-postcode',
+      actionUrl: '/services/courts/near',
+      error: false,
+      hasNoResults: true,
+      postcode: "E1 8DY",
+      hint: 'the services nearest'
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
