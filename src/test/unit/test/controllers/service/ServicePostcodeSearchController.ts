@@ -34,7 +34,8 @@ describe('Service Postcode Search Controller', () => {
       error: false,
       hasNoResults: false,
       postcode: undefined,
-      hint: 'the services nearest'
+      hint: '{serviceArea}',
+      noServiceSearch: true,
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
@@ -81,11 +82,12 @@ describe('Service Postcode Search Controller', () => {
       errorType: 'blankPostcode',
       hasNoResults: false,
       postcode: undefined,
-      hint: 'the services nearest'
+      hint: '{serviceArea}',
+      noServiceSearch: true,
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
-  
+
   test('Should render the postcode search page with blank postcode error', async () => {
     const req = mockRequest(i18n);
     req.query = {
@@ -129,7 +131,8 @@ describe('Service Postcode Search Controller', () => {
       errorType: 'invalidPostcode',
       hasNoResults: false,
       postcode: undefined,
-      hint: 'the services nearest'
+      hint: '{serviceArea}',
+      noServiceSearch: true,
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
@@ -177,7 +180,8 @@ describe('Service Postcode Search Controller', () => {
       errorType: 'scottishPostcode',
       hasNoResults: false,
       postcode: undefined,
-      hint: 'the services nearest'
+      hint: '{serviceArea}',
+      noServiceSearch: true,
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
@@ -225,7 +229,8 @@ describe('Service Postcode Search Controller', () => {
       errorType: 'scottishChildrenPostcode',
       hasNoResults: false,
       postcode: undefined,
-      hint: 'the services nearest'
+      hint: '{serviceArea}',
+      noServiceSearch: true,
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
@@ -273,7 +278,8 @@ describe('Service Postcode Search Controller', () => {
       errorType: 'northernIrelandPostcode',
       hasNoResults: false,
       postcode: undefined,
-      hint: 'the services nearest'
+      hint: '{serviceArea}',
+      noServiceSearch: true,
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
@@ -320,8 +326,9 @@ describe('Service Postcode Search Controller', () => {
       actionUrl: '/services/courts/near',
       error: false,
       hasNoResults: true,
-      postcode: "E1 8DY",
-      hint: 'the services nearest'
+      postcode: 'E1 8DY',
+      hint: '{serviceArea}',
+      noServiceSearch: true,
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });

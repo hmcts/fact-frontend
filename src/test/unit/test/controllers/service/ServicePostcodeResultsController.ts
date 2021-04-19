@@ -18,16 +18,16 @@ describe('Service Postcode Results Controller', () => {
   const response: any = { CourtDetailsWithDistanceResult: {
     courts: ['court1', 'court2']
   }};
-  const postcodeSearchResponse: Object = [
+  const postcodeSearchResponse: Record<string, any> = [
     {
-      "name": "Test Combined Court",
-      "slug": "test-combined-court",
-      "distance": 10.0
+      'name': 'Test Combined Court',
+      'slug': 'test-combined-court',
+      'distance': 10.0
     },
     {
-      "name": "Test Central Finance Unit",
-      "slug": "test-central-finance-unit",
-      "distance": 10.1
+      'name': 'Test Central Finance Unit',
+      'slug': 'test-central-finance-unit',
+      'distance': 10.1
     }];
   const api: any = {
     postcodeServiceAreaSearch: async () => response.CourtDetailsWithDistanceResult,
