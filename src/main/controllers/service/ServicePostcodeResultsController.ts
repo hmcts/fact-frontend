@@ -16,7 +16,7 @@ export class ServicePostcodeResultsController {
   public async getCourtResultsByPostcode(req: FactRequest, res: Response): Promise<void> {
     const postcode  = req.query.postcode? (req.query.postcode as string).toLowerCase() : '';
     const postcodeError = isPostcodeValid(postcode, '');
-    const baseUrl = `/services/search-by-postcode`;
+    const baseUrl = '/services/search-by-postcode';
 
     if (postcodeError !== '')
       return res.redirect(`${baseUrl}?error=${postcodeError}`);
@@ -26,13 +26,13 @@ export class ServicePostcodeResultsController {
       return res.redirect(`${baseUrl}?noResults=true&postcode=${postcode}`);
 
     const data: CourtWithDistanceResultsData = {
-        ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['postcode-results']),
-        path: '/courts/near',
-        errors: false,
-        postcodeOnlySearch: true,
-        results: {
-          'courts': courts
-        }
+      ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['postcode-results']),
+      path: '/courts/near',
+      errors: false,
+      postcodeOnlySearch: true,
+      results: {
+        'courts': courts
+      }
     };
 
     data.postcodeSearchResultsHint = data.postcodeSearchResultsHint
