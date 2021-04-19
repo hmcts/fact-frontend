@@ -27,7 +27,7 @@ export default function(app: Application): void {
 
 
   // /search-by-postcode // This goes to the backend, doesn't pass in service/service area, just gets back 10 closest places
-                      // Look into backend fact-api, look for one where we don't provide service/area and fetch back 10 
+                      // Look into backend fact-api, look for one where we don't provide service/area and fetch back 10
                       // Split out into separate endpoint if its all coupled together
 
   app.get('/services/:service/:serviceArea/courts/near', app.locals.container.cradle.servicePostcodeResultsController.get);

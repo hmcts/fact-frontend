@@ -20,6 +20,7 @@ export class ServicePostcodeSearchController {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['postcode-search']),
       path: '/search-by-postcode',
       actionUrl: '/services/courts/near',
+      noServiceSearch: true,
       error: hasError,
       hasNoResults: hasNoResults,
       postcode: postcode
@@ -27,7 +28,6 @@ export class ServicePostcodeSearchController {
     if (hasError) {
       data.errorType = error;
     }
-    data.hint = data.hint.replace('{serviceArea}', 'the services nearest');
     res.render('postcode-search', data);
   }
 
@@ -51,7 +51,7 @@ export class ServicePostcodeSearchController {
 
     const serviceArea = await this.api.getServiceArea(req.params.serviceArea, req.lng);
     data.hint = data.hint.replace('{serviceArea}', serviceArea.name ? serviceArea.name.toLowerCase() : serviceArea.name);
-  
+
     res.render('postcode-search', data);
   }
 }
