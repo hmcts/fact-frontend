@@ -32,7 +32,6 @@ export class ServicePostcodeSearchController {
   }
 
   public async get(req: FactRequest, res: Response) {
-
     const { error, postcode, noResults }  = req.query as PostcodeSearchQuery;
     const hasError = !isEmpty(error);
     const hasNoResults: boolean = noResults === 'true';
@@ -48,10 +47,8 @@ export class ServicePostcodeSearchController {
     if (hasError) {
       data.errorType = error;
     }
-
     const serviceArea = await this.api.getServiceArea(req.params.serviceArea, req.lng);
     data.hint = data.hint.replace('{serviceArea}', serviceArea.name ? serviceArea.name.toLowerCase() : serviceArea.name);
-
     res.render('postcode-search', data);
   }
 }

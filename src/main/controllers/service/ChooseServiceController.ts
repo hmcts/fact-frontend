@@ -39,7 +39,6 @@ export class ChooseServiceController {
       const data = await this.getServices(req, true);
       return res.render('choose-service', data);
     } else if (req.body.chooseService === 'not-listed') {
-      console.log(req.originalUrl);
       return req.originalUrl === '/services/documents' ? res.redirect('/services/service-not-found?search=postcode')
         : res.redirect('/services/service-not-found');
     } else {

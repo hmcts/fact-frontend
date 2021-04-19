@@ -15,40 +15,38 @@ export class ServicePostcodeResultsController {
 
   public async getCourtResultsByPostcode(req: FactRequest, res: Response): Promise<void> {
     const postcode  = req.query.postcode? (req.query.postcode as string).toLowerCase() : '';
-    const postcodeError = isPostcodeValid(postcode, "");
+    const postcodeError = isPostcodeValid(postcode, '');
     const baseUrl = `/services/search-by-postcode`;
 
-    if (postcodeError !== '') {
+    if (postcodeError !== '')
       return res.redirect(`${baseUrl}?error=${postcodeError}`);
-    } else {
 
-      const courts = await this.api.postcodeAreaSearch(postcode, req.lng);
-      if (!courts?.length)
-        return res.redirect(`${baseUrl}?noResults=true&postcode=${postcode}`);
+    const courts = await this.api.postcodeAreaSearch(postcode, req.lng);
+    if (!courts?.length)
+      return res.redirect(`${baseUrl}?noResults=true&postcode=${postcode}`);
 
-      const
-        data: CourtWithDistanceResultsData = {
-          ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['postcode-results']),
-          path: '/courts/near',
-          errors: false,
-          postcodeOnlySearch: true,
-          results: {
-            "courts": courts
-          }
-      }
-
-      data.postcodeSearchResultsHint = data.postcodeSearchResultsHint
-        .replace('{total}', courts.length.toString())
-        .replace('{postcode}', postcode);
-      return res.render('postcode-results', data);
+    const
+      data: CourtWithDistanceResultsData = {
+        ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['postcode-results']),
+        path: '/courts/near',
+        errors: false,
+        postcodeOnlySearch: true,
+        results: {
+          'courts': courts
+        }
     };
+
+    data.postcodeSearchResultsHint = data.postcodeSearchResultsHint
+      .replace('{total}', courts.length.toString())
+      .replace('{postcode}', postcode);
+    return res.render('postcode-results', data);
   }
 
   public async get(req: FactRequest, res: Response): Promise<void> {
     const postcode  = req.query.postcode? (req.query.postcode as string).toUpperCase() : '';
     const serviceArea  = req.params.serviceArea;
-
     const baseUrl = `/services/${req.params.service}/${serviceArea}/search-by-postcode`
+
     const postcodeError = isPostcodeValid(postcode, serviceArea);
 
     if (postcodeError !== '') {
@@ -63,13 +61,10 @@ export class ServicePostcodeResultsController {
         isDivorceOrCivil: isDivorceOrCivil,
         serviceArea: serviceArea
       };
-
       const court = await this.api.postcodeServiceAreaSearch(postcode, serviceArea, req.lng);
-
       if (!court.courts || court.courts.length === 0) {
         return res.redirect(`${baseUrl}?noResults=true&postcode=${postcode}`);
       }
-
       data.results = court;
       if (isDivorceOrCivil) {
         data.secondHint = data.secondHint.replace('{postcode}', postcode);
@@ -82,7 +77,6 @@ export class ServicePostcodeResultsController {
           .replace('{serviceArea}', court.name ? court.name.toLowerCase() : court.name)
           .replace('{postcode}', postcode);
       }
-
       return res.render('postcode-results', data);
     }
   }

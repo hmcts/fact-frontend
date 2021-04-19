@@ -14,22 +14,14 @@ export default function(app: Application): void {
   app.get('/courts/:slug', app.locals.container.cradle.courtDetailsController.get);
   app.get('/individual-location-pages/courts/:slug', app.locals.container.cradle.courtDetailsController.get);
   app.get('/services/service-not-found', app.locals.container.cradle.chooseUnknownServiceController.get);
-
   app.get('/services/search-by-postcode', app.locals.container.cradle.servicePostcodeSearchController.getCourtsByPostcodeOnly);
   app.get('/services/courts/near', app.locals.container.cradle.servicePostcodeResultsController.getCourtResultsByPostcode);
-
   app.get('/services/:action', app.locals.container.cradle.chooseServiceController.get);
   app.post('/services/:action', app.locals.container.cradle.chooseServiceController.post);
   app.get('/services/:service/service-areas/:action', app.locals.container.cradle.chooseServiceAreaController.get);
   app.post('/services/:service/service-areas/:action', app.locals.container.cradle.chooseServiceAreaController.post);
   app.get('/services/:service/:serviceArea/search-results', app.locals.container.cradle.serviceSearchResultsController.get);
   app.get('/services/:service/:serviceArea/search-by-postcode', app.locals.container.cradle.servicePostcodeSearchController.get);
-
-
-  // /search-by-postcode // This goes to the backend, doesn't pass in service/service area, just gets back 10 closest places
-                      // Look into backend fact-api, look for one where we don't provide service/area and fetch back 10
-                      // Split out into separate endpoint if its all coupled together
-
   app.get('/services/:service/:serviceArea/courts/near', app.locals.container.cradle.servicePostcodeResultsController.get);
   app.get('/not-found', app.locals.container.cradle.notFoundPageController.get);
 

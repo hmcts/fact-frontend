@@ -8,6 +8,7 @@
   "thirdHint": "Dewch o hyd i ble i anfon eich dogfennau neu holi am gynnydd eich cais.",
   "singleResultsHint": "Daethom o hyd i 1 llys neu dribiwnlys sy’n ymwneud â {serviceArea} ac sy’n cyfateb i’r chwiliad am '{postcode}'",
   "multipleResultsHint": "Daethom o hyd i {total} llys neu dribiwnlys sy’n ymwneud â {serviceArea} ac sy’n cyfateb i’r chwiliad am '{postcode}'",
+  "postcodeSearchResultsHint": "Wnaethom ni ddod o hyd i {total} o lysoedd a thribiwnlysoedd ar gyfer eich chwiliad gyda’r cod post {postcode}",
   "applyOnlineHeading": "Gwnewch gais ar-lein",
   "unit": "milltiroedd",
   "seoMetadataDescription": "Rhestr o dribiwnlysoedd yn seiliedig ar eich chwiliad"
