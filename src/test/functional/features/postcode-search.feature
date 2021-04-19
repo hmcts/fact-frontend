@@ -18,21 +18,6 @@ Feature: Postcode Proximity Feature
       | options        | area_of_law             | area_of_law_category |
       | nearest court  | money                   | money-claims         |
 
-  @test
-  Scenario Outline: User does not know area of law and searches by postcode - valid format
-    Then I can select an "#<options>" option from the list displayed
-    Given I can continue having selected that option
-    When I select "#<area_of_law>" from the areas of law page and continue
-    Then I expect the page header to be "Page not found - Find a Court or Tribunal - GOV.UK"
-    And I select
-    Then I am presented with the "What is your postcode? - Find a Court or Tribunal - GOV.UK" page
-    When I continue having entered a postcode "#<postcode>"
-    Then I can continue my user journey
-
-    Examples:
-      | options        | postcode | area_of_law |
-      | document court  |  E8 1DY | not-listed  |
-
   Scenario Outline: Enter postcode - invalid format
     Then I can select an "<options>" option from the list displayed
     Given I can continue having selected that option
