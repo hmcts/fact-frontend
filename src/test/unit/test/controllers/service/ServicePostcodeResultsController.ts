@@ -68,7 +68,7 @@ describe('Service Postcode Results Controller', () => {
       errors: false,
       postcodeOnlySearch: true,
       results: { 
-        "courts": postcodeSearchResponse 
+        'courts': postcodeSearchResponse 
       }
     };
     const res = mockResponse();
