@@ -14,7 +14,7 @@ export class ServicePostcodeResultsController {
   ) { }
 
   public async getCourtResultsByPostcode(req: FactRequest, res: Response): Promise<void> {
-    const postcode  = req.query.postcode? (req.query.postcode as string).toLowerCase() : '';
+    const postcode  = req.query.postcode ? (req.query.postcode as string).toLowerCase() : '';
     const postcodeError = isPostcodeValid(postcode, '');
     const baseUrl = '/services/search-by-postcode';
 
