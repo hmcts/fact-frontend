@@ -12,6 +12,13 @@ When('I continue having entered a postcode {string}', async (postcode: string) =
   await I.fillField('#postcode', postcode);
 });
 
+Then('I select the option to search by postcode via the hyperlink', async () => {
+  const element = await I.getElement('#main-content > div > div > p:nth-child(4) > a');
+  const elementExist = await I.checkElementIsAnchor(element);
+  expect(elementExist).equal(true);
+  await I.click('#main-content > div > div > p:nth-child(4) > a');
+});
+
 Then('I can continue my user journey', async () => {
   await I.click('.continue');
 });

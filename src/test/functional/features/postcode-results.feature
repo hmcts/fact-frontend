@@ -21,7 +21,6 @@ Feature: Postcode Results Feature
       | options        | area_of_law             | area_of_law_category |
       | nearest court  | money                   | tax                  |
 
-
   Scenario Outline: Postcode search criteria that returns no search results - no service area match
     Then I can select an "<options>" option from the list displayed
     Given I can continue having selected that option
@@ -37,3 +36,23 @@ Feature: Postcode Results Feature
     Examples:
       | options        | area_of_law | area_of_law_category    |
       | nearest court  | money       | tax |
+
+  Scenario Outline: User does not know area of law and searches by postcode and gets list of courts back
+    Given I can select an "<options>" option from the list displayed
+    Then I can continue having selected that option
+    When I select "#<area_of_law>" from the areas of law page and continue
+    Then I expect the page header to be "Service not found - Find a Court or Tribunal - GOV.UK"
+    When I select the option to search by postcode via the hyperlink
+    Then I am presented with the "What is your postcode? - Find a Court or Tribunal - GOV.UK" page
+    And I continue having entered a postcode "<postcode>"
+    And I can continue my user journey
+    Then I am presented with the "Court search results - Find a Court or Tribunal - GOV.UK" page
+    And the results are displayed with distance
+    And any listed court entry can be selected via a hyperlink
+
+    Examples:
+      | options         | postcode | area_of_law |
+      | nearest court  |  E8 1DY  | not-listed  |
+      | document court  |  E8 1DY  | not-listed  |
+      | update court  |  E8 1DY  | not-listed  |
+      | a default option  |  E8 1DY  | not-listed  |
