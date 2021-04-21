@@ -11,17 +11,9 @@
     <p class="govuk-body">
       {{ p_1 }}
     </p>
-
-    {% if searchByPostcode %}
-      <h2 class="govuk-heading-m">{{ h2_1_postcode }}</h2>
-      <p class="govuk-body">
-          <a href="/services/search-by-postcode">{{ a_1_postcode }}</a>
-    {% else %}
-      <h2 class="govuk-heading-m">{{ h2_1 }}</h2>
-      <p class="govuk-body">
-          <a href="/services/search">{{ a_1 }}</a>
-    {% endif %}
-
+    <h2 class="govuk-heading-m">{{ h2_1 }}</h2>
+    <p class="govuk-body">
+        <a href="/services/search-by-postcode">{{ a_1 }}</a>
     </p>
     <h2 class="govuk-heading-m">
       {{ h2_2 }}
