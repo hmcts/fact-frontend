@@ -49,7 +49,7 @@
     "dtSaDescription": "Intermediate store for page-spanning actions",
     "dtSaDuration": "Session end",
     "rxVisitorDescription": "Visitor ID to correlate sessions",
-    "rxVisitorDuration": "Permanent",
+    "rxVisitorDuration": "1 year",
     "rxvtDescription": "Session timeout",
     "rxvtDuration": "Session end"
   }
