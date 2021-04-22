@@ -25,7 +25,11 @@
       {% if serviceAreaIsChildcare %}
         {{ childcareHint }}
       {% else %}
-        {{ hint }}
+        {% if noServiceSearch %}
+          {{ noServiceHint }}
+        {% else %}
+          {{ hint }}
+        {% endif %}
       {% endif %}
     </span>
     <form method="GET" action="{{ actionUrl }}">

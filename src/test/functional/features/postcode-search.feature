@@ -18,7 +18,6 @@ Feature: Postcode Proximity Feature
       | options        | area_of_law             | area_of_law_category |
       | nearest court  | money                   | money-claims         |
 
-
   Scenario Outline: Enter postcode - invalid format
     Then I can select an "<options>" option from the list displayed
     Given I can continue having selected that option

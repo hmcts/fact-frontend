@@ -36,6 +36,7 @@ export class ServiceSearchResultsController {
     } else {
       data.hint = data.hint.replace('{service-area}', serviceAreaData.name.toLowerCase());
     }
+
     res.render('service-results', data);
   }
 }

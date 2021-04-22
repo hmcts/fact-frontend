@@ -8,6 +8,7 @@
   "thirdHint": "Find where to send your documents or ask about your application’s progress.",
   "singleResultsHint": "We found 1 court or tribunal related to {serviceArea} matching your search for '{postcode}'.",
   "multipleResultsHint": "We found {total} courts or tribunals related to {serviceArea} matching your search for '{postcode}'.",
+  "postcodeSearchResultsHint": "We found {total} courts or tribunals matching your search for '{postcode}'.",
   "applyOnlineHeading": "Apply online",
   "unit": "miles",
   "seoMetadataDescription": "List of courts or tribunals based on your search"
