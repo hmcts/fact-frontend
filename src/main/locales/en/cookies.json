@@ -37,9 +37,9 @@
   },
   "apm": {
     "header": "4. To measure application performance",
-    "p1": "We use an Application Performance Monitoring Service to collect information about how you use HMCTS services. We do this to monitor HMCTS services in order to resolve issues within our services as well as collect data on how our services can be improved. HMCTS store information about: ",
+    "p1": "We use Dynatrace Software Intelligence Platform to provide an Application Performance Monitoring Service to collect information about how you use HMCTS services. We do this to monitor HMCTS services in order to resolve issues within our services as well as collect data on how our services can be improved. HMCTS store information about:",
     "bullets": ["Site performance", "Website usage", "User behaviour"],
-    "p2": "Information is presented within the Application Performance Monitoring service for the purposes detailed above. We do not use or share the information or allow Service Providers to use or share the information for any other purposes.",
+    "p2": "Information is presented within the Application Performance Monitoring service for the purposes detailed above. We do not use or share the information for any other purpose. We do not allow Dynatrace to use or share the information for any other purposes.",
     "dtCookieDescription": "Tracks a visit across multiple request",
     "dtCookieDuration": "Session end",
     "dtLatCDescription": "Measures server latency for performance monitoring",
