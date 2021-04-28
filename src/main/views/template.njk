@@ -11,24 +11,27 @@
   {% include "webpack/css.njk" %}
   <script>
     dataLayer = window.dataLayer || [];
-    dataLayer.push({"language": "{{ language }}", "event": "Site language"})
+    dataLayer.push({"language": {{ language | dump | safe }}, "event": "Site language"})
 
-    function gtag () {
-      dataLayer.push(arguments);
+    let match = document.cookie.match(new RegExp('(^| )' + 'fact-cookie-preferences' + '=([^;]+)'));
+    if (match && JSON.parse(decodeURIComponent(match[2])).analytics === 'on')
+    {
+      window['ga-disable-UA-37377084-66'] = false;
+    } else {
+      window['ga-disable-UA-37377084-66'] = true;
     }
-
-    gtag('consent', 'default', {'analytics_storage': 'denied'});
   </script>
 
   <meta name="google-site-verification" content="3glfkE1sBXj7EtEdO0ktOm5kyR9E14kR7yw_yJ6GH4U" />
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
-  {'gtm.start': new Date().getTime(),event:'gtm.js'}
+    {'gtm.start': new Date().getTime(),event:'gtm.js'}
 
-  );var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-N7NMJDR');</script>
+    );var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N7NMJDR');
+  </script>
 
     {% set html %}
       <p class="govuk-body">{{ cookieBannerP1 | safe }}</p>

@@ -30,15 +30,14 @@ function preferenceFormSaved() {
 
 function cookiePreferencesUpdated(cookieStatus) {
   const dataLayer = window.dataLayer || [];
-  const gtag = window.gtag || function () { dataLayer.push(arguments); };
   const dtrum = window.dtrum;
 
   dataLayer.push({'event': 'cookies', 'preferences': cookieStatus});
 
   if(cookieStatus.analytics === 'on') {
-    gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    window['ga-disable-UA-37377084-66'] = false;
   } else {
-    gtag('consent', 'update', { 'analytics_storage': 'denied' });
+    window['ga-disable-UA-37377084-66'] = true;
   }
 
   if(dtrum !== undefined) {
