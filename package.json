@@ -58,7 +58,7 @@
     "i18next-http-middleware": "^3.1.1",
     "jquery": "^3.5.0",
     "lodash": "^4.17.21",
-    "nunjucks": "^3.2.0",
+    "nunjucks": "^3.2.3",
     "require-directory": "^2.1.1",
     "serve-favicon": "^2.5.0",
     "ts-node": "^8.6.2",
