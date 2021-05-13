@@ -5,5 +5,7 @@ services:
     url: FACT_API_URL
   image-store:
     url: IMAGE_BASE_URL
+  admin-portal:
+    url: ADMIN_PORTAL_URL
 appInsights:
   instrumentationKey: APPINSIGHTS_KEY

@@ -19,6 +19,7 @@ import { ServiceAreaRedirect } from '../../controllers/service/ServiceAreaRedire
 import { AccessibilityStatementController } from '../../controllers/AccessibilityStatementController';
 import { CookiesController } from '../../controllers/CookiesController';
 import { NotFoundPageController } from '../../controllers/NotFoundPageController';
+import {AdminPortalController} from '../../controllers/admin/AdminPortalController';
 
 const { Logger } = require('@hmcts/nodejs-logging');
 const logger = Logger.getLogger('app');
@@ -28,10 +29,11 @@ export class Container {
   public enableFor(app: Application) {
     app.locals.container = createContainer({ injectionMode: InjectionMode.CLASSIC }).register({
       logger: asValue(logger),
-      axios: asValue(Axios.create({ baseURL: config.get('services.api.url') })),
+      axios: asValue(Axios.create({ baseURL: config.get('services.api.url'), timeout: 1000 })),
       api: asClass(FactApi),
       serviceAreaRedirect: asClass(ServiceAreaRedirect),
       homeController: asClass(HomeController),
+      adminPortalController: asClass(AdminPortalController),
       accessibilityStatementController: asClass(AccessibilityStatementController),
       cookiesController: asClass(CookiesController),
       searchOptionController: asClass(SearchOptionController),

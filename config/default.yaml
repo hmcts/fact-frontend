@@ -9,6 +9,9 @@ services:
   api:
     name: 'FACT API'
     url: 'http://localhost:8080'
+  admin-portal:
+    name: 'Admin Portal'
+    url: 'http://localhost:3300'
   image-store:
     name: 'Image Store'
     url: 'https://factaat.blob.core.windows.net/images'

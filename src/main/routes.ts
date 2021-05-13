@@ -3,6 +3,7 @@ import { Application } from 'express';
 export default function(app: Application): void {
 
   app.get('/', app.locals.container.cradle.homeController.get);
+  app.get('/admin', app.locals.container.cradle.adminPortalController.get);
   app.get('/accessibility-statement', app.locals.container.cradle.accessibilityStatementController.get);
   app.get('/cookies', app.locals.container.cradle.cookiesController.get);
   app.get('/search-option', app.locals.container.cradle.searchOptionController.get);
