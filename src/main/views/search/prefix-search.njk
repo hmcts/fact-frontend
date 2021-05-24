@@ -18,52 +18,36 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
     <h1 class="govuk-heading-l">
-      Browse by prefix
+      Courts and Tribunals
     </h1>
-    <span id="header-hint" class="govuk-hint">
-      random span thing
 
-      <br>
+    {% if results.length > 0 %}
+    <h2 class="govuk-heading-m">
+          <span id="header-hint" class="govuk-hint">Courts or tribunals starting with '{{prefix}}'</span>
+    </h2>
 
-      {% for court in results %}
+    {% for court in results %}
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="/courts/{{ court.slug }}">{{ court.name }}</a>
+      </h2>
+    {% endfor %}
+    {% else %}
+        <span id="header-hint" class="govuk-hint">Browse by name of court or tribunal</span>
+    {% endif %}
 
-      {{ court.name }} |
-      {{ court.slug }} |
-      {{ court.updated_at }}
+    {% for letter in ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
+      "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"] %}
 
-      <br /> <br>
-
-      {% endfor %}
-
-      {% for letter in a-z %}
-
-        {{ govukButton({
-          text: letter
-        }) }}
-
-      {% endfor %}
-
-    </span>
-    <form method="GET" action="{{ actionUrl }}">
-      {{ govukInput({
-        label: {
-          text: text,
-          classes: "govuk-label",
-          isPageHeading: true
-        },
-        classes: "govuk-input govuk-input--width-2",
-        id: "prefix",
-        name: "prefix",
-        value: prefix,
-        errorMessage: { text: errorText[errorType] } if error,
-        autocomplete: "prefix-code"
-      }) }}
       {{ govukButton({
-        text: button,
-        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8 continue"
+        text: letter,
+        href: "search-by-prefix?prefix=" + letter,
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-0 continue"
       }) }}
-    </form>
+
+    {% endfor %}
+
     {% if hasNoResults %}
       <div class="no-search-results" id="no-search-results">
         <p class="govuk-body-m govuk-!-font-weight-bold">{{ noResults.p1 }}</p>

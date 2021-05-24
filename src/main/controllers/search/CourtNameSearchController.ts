@@ -21,7 +21,7 @@ export class CourtNameSearchController {
     const data: CourtResultsData = {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['postcode-search']),
       path: '/search-by-prefix',
-      actionUrl: `/services/search-by-prefix?prefix=${prefix}`,
+      prefix: prefix,
       error: hasError,
       hasNoResults: hasNoResults,
       results: []
