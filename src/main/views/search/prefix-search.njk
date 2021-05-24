@@ -1,0 +1,81 @@
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "macros/error-summary.njk" import errorSummary %}
+
+{% extends "template.njk" %}
+
+{% block pageTitle %}
+  {% if error %}
+    {{ errorTitle }}
+  {% endif %}
+  {{ title }}
+{% endblock %}
+
+{% block content %}
+{% if error %}
+  {{ errorSummary(errorText.title, errorText[errorType], "#prefix") }}
+{% endif %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Browse by prefix
+    </h1>
+    <span id="header-hint" class="govuk-hint">
+      random span thing
+
+      <br>
+
+      {% for court in results %}
+
+      {{ court.name }} |
+      {{ court.slug }} |
+      {{ court.updated_at }}
+
+      <br /> <br>
+
+      {% endfor %}
+
+      {% for letter in a-z %}
+
+        {{ govukButton({
+          text: letter
+        }) }}
+
+      {% endfor %}
+
+    </span>
+    <form method="GET" action="{{ actionUrl }}">
+      {{ govukInput({
+        label: {
+          text: text,
+          classes: "govuk-label",
+          isPageHeading: true
+        },
+        classes: "govuk-input govuk-input--width-2",
+        id: "prefix",
+        name: "prefix",
+        value: prefix,
+        errorMessage: { text: errorText[errorType] } if error,
+        autocomplete: "prefix-code"
+      }) }}
+      {{ govukButton({
+        text: button,
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8 continue"
+      }) }}
+    </form>
+    {% if hasNoResults %}
+      <div class="no-search-results" id="no-search-results">
+        <p class="govuk-body-m govuk-!-font-weight-bold">{{ noResults.p1 }}</p>
+        <p class="govuk-body">{{ noResults.p2 }}</p>
+        <ul class="govuk-list govuk-list--bullet">
+          {% for item, text in noResults.list %}
+          <li>{{ text }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

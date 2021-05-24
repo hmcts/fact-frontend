@@ -6,6 +6,7 @@ import { CourtWithDistance } from '../interfaces/PostcodeResultsData';
 import { ServiceResult } from '../interfaces/ServicesData';
 import { ServiceAreaResult } from '../interfaces/ServiceAreasData';
 import { PostcodeSearchResultsData } from '../interfaces/PostcodeResultsData';
+import {CourtReference} from '../interfaces/CourtResultsData';
 
 export class FactApi {
 
@@ -98,4 +99,15 @@ export class FactApi {
       });
   }
 
+  public courtPrefixSearch(prefix: string): Promise<Array<CourtReference>> {
+    return this.axios
+      .get(`courts/search?prefix=${prefix}`)
+      .then(results => results.data)
+      .catch(err => {
+        this.logger.error(err);
+        return {
+          results: []
+        };
+      });
+  }
 }
