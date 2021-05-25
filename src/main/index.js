@@ -32,13 +32,7 @@ function cookiePreferencesUpdated(cookieStatus) {
   const dataLayer = window.dataLayer || [];
   const dtrum = window.dtrum;
 
-  dataLayer.push({'event': 'cookies', 'preferences': cookieStatus});
-
-  if(cookieStatus.analytics === 'on') {
-    window['ga-disable-UA-37377084-66'] = false;
-  } else {
-    window['ga-disable-UA-37377084-66'] = true;
-  }
+  dataLayer.push({'event': 'Cookie Preferences', 'cookiePreferences': cookieStatus});
 
   if(dtrum !== undefined) {
     if(cookieStatus.apm === 'on') {
