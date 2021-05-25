@@ -1,0 +1,29 @@
+{
+  "errorTitle": "Gwall:",
+  "title": "Beth yw eich cod post? - Dod o hyd i lys neu dribiwnlys - GOV.UK",
+  "serviceName": "Dod o hyd i lys neu dribiwnlys",
+  "question": "Beth yw eich cod post?",
+  "hint": "Byddwn yn defnyddio eich cod post i ddangos y llys neu’r tribiwnlys agosaf sy’n delio â {serviceArea} ichi.",
+  "noServiceHint": "Byddwn yn defnyddio eich cod post i ddangos pa lys neu dribiwnlys yw’r un agosaf atoch chi",
+  "childcareHint": "Byddwn yn defnyddio cod post cartref eich plant i ddangos y llys neu’r tribiwnlys agosaf atyn nhw sy’n delio â threfniadau gofal plant.",
+  "text": "Rhowch eich cod post",
+  "button": "Parhau",
+  "noResults": {
+    "p1": "Nid oes canlyniad sy’n cyfateb.",
+    "p2": "Gellir gwella ar y chwiliad drwy:",
+    "list": {
+      "li1": "gwneud yn siŵr eich bod wedi sillafu’r gair yn gywir",
+      "li2": "defnyddio llai o allweddeiriau",
+      "li3": "chwilio am rywbeth llai penodol"
+    }
+  },
+  "errorText":{
+    "title": "Mae yna broblem",
+    "invalidPostcode": "Rhowch god post dilys",
+    "blankPostcode": "Rhowch god post",
+    "scottishPostcode": "Nid oes gennym wybodaeth am lysoedd ar gyfer y gwasanaeth hwn. Cysylltwch â Llysoedd a Thribiwnlysoedd Yr Alban i gael cymorth.",
+    "scottishChildrenPostcode": "Os yw’r plentyn (neu’r plant) yn byw yn Yr Alban, byddant tu hwnt i awdurdodaeth y gwasanaeth hwn. Cysylltwch â Llysoedd a Thribiwnlysoedd Yr Alban i gael cymorth.",
+    "northernIrelandPostcode": "Nid oed gennym wybodaeth am y llysoedd yng Ngogledd Iwerddon. Cysylltwch â Llysoedd a Thribiwnlysoedd Gogledd Iwerddon i gael cymorth."
+  },
+  "seoMetadataDescription": "Dywedwch wrthym beth yw eich cod post fel y gallwn eich helpu i ddod o hyd i'r llys mwyaf priodol ar eich cyfer"
+}

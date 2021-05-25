@@ -19,7 +19,7 @@ import { ServiceAreaRedirect } from '../../controllers/service/ServiceAreaRedire
 import { AccessibilityStatementController } from '../../controllers/AccessibilityStatementController';
 import { CookiesController } from '../../controllers/CookiesController';
 import { NotFoundPageController } from '../../controllers/NotFoundPageController';
-import {CourtNameSearchController} from "../../controllers/search/CourtNameSearchController";
+import {CourtPrefixSearchController} from '../../controllers/search/CourtPrefixSearchController';
 
 const { Logger } = require('@hmcts/nodejs-logging');
 const logger = Logger.getLogger('app');
@@ -44,7 +44,7 @@ export class Container {
       chooseServiceAreaController: asClass(ChooseServiceAreaController),
       chooseUnknownServiceController: asClass(UnknownServiceController),
       serviceSearchResultsController: asClass(ServiceSearchResultsController),
-      courtNameSearchController: asClass(CourtNameSearchController),
+      courtNameSearchController: asClass(CourtPrefixSearchController),
       servicePostcodeSearchController: asClass(ServicePostcodeSearchController),
       servicePostcodeResultsController: asClass(ServicePostcodeResultsController),
       notFoundPageController:  asClass(NotFoundPageController)

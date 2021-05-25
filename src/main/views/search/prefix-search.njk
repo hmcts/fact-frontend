@@ -20,19 +20,19 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      Courts and Tribunals
+      {{ question }}
     </h1>
 
     {% if results.length > 0 %}
-    <h2 class="govuk-heading-m">
-          <span id="header-hint" class="govuk-hint">Courts or tribunals starting with '{{prefix}}'</span>
-    </h2>
-
-    {% for court in results %}
       <h2 class="govuk-heading-m">
-        <a class="govuk-link" href="/courts/{{ court.slug }}">{{ court.name }}</a>
+            <span id="header-hint" class="govuk-hint">Courts or tribunals starting with '{{prefix}}'</span>
       </h2>
-    {% endfor %}
+
+      {% for court in results %}
+        <h2 class="govuk-heading-m">
+          <a class="govuk-link" href="/courts/{{ court.slug }}">{{ court.name }}</a>
+        </h2>
+      {% endfor %}
     {% else %}
         <span id="header-hint" class="govuk-hint">Browse by name of court or tribunal</span>
     {% endif %}

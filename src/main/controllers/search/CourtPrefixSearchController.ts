@@ -8,7 +8,7 @@ import {CourtSearchQuery} from '../../interfaces/CourtSearchData';
 import {CourtResultsData} from '../../interfaces/CourtResultsData';
 
 @autobind
-export class CourtNameSearchController {
+export class CourtPrefixSearchController {
   constructor(
     private readonly api: FactApi,
   ) {
@@ -19,7 +19,7 @@ export class CourtNameSearchController {
     const hasError = !isEmpty(error);
     const hasNoResults: boolean = noResults === 'true';
     const data: CourtResultsData = {
-      ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['postcode-search']),
+      ...cloneDeep(req.i18n.getDataByLanguage(req.lng).search['prefix-search']),
       path: '/search-by-prefix',
       prefix: prefix,
       error: hasError,
