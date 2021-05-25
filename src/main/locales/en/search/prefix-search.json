@@ -1,29 +1,15 @@
 {
   "errorTitle": "Error:",
-  "title": "What is your postcode? - Find a Court or Tribunal - GOV.UK",
+  "title": "Search By Prefix - Find a Court or Tribunal - GOV.UK",
   "serviceName": "Find a Court or Tribunal",
   "question": "Court or Tribunal",
-  "hint": "We will use your postcode to show you the closest court or tribunal that handles {serviceArea} to you.",
-  "noServiceHint": "We will use your postcode to show you the closest court or tribunal to you",
-  "childcareHint": "We will use the postcode of your children’s home to show you the closest court or tribunal that handles childcare arrangements to them.",
-  "text": "Enter your postcode",
-  "button": "Continue",
+  "resultsHint": "Courts or tribunals starting with ",
+  "noResultsHint": "Browse by name of court or tribunal",
   "noResults": {
     "p1": "There are no matching results.",
-    "p2": "Improve your search results by:",
-    "list": {
-      "li1": "double-checking your spelling",
-      "li2": "using fewer keywords",
-      "li3": "searching for something less specific"
-    }
+    "p2": "Improve your search results by selecting another option."
   },
   "errorText":{
-    "title": "There is a problem",
-    "invalidPostcode": "Enter a valid postcode format",
-    "blankPostcode": "Enter a postcode",
-    "scottishPostcode": "We do not have court information for this service. Contact the Scottish Courts and Tribunals for help.",
-    "scottishChildrenPostcode": "If the child (or children) resides in Scotland they will be outside the jurisdiction for this service. Contact the Scottish Courts and Tribunals for help.",
-    "northernIrelandPostcode": "We do not have court information for Northern Ireland. Contact the Northern Ireland Courts and Tribunals for help."
-  },
-  "seoMetadataDescription": "Tell us your postcode so we can find the most appropriate court for you"
+    "title": "There is a problem, please try again soon or contact us through the feedback page"
+  }
 }
