@@ -4,7 +4,7 @@
   "serviceName": "Find a Court or Tribunal welsh",
   "question": "Court or Tribunal welsh",
   "resultsHint": "Courts or tribunals starting with welsh",
-  "noResultsHint": "No results found, please choose another option welsh",
+  "noResultsHint": "No results found for courts or tribunals starting with ",
   "summary": "Browse by name of court or tribunal welsh",
   "noResults": {
     "p1": "There are no matching results. welsh",

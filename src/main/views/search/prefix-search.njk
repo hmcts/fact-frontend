@@ -32,7 +32,7 @@
         </h2>
       {% endfor %}
     {% else %}
-      <span id="header-hint" class="govuk-hint">{{ noResultsHint if prefix else summary }}</span>
+      <span id="header-hint" class="govuk-hint">{{ noResultsHint + "'" + prefix + "'" if prefix else summary }}</span>
     {% endif %}
 
     {% for letter in ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",

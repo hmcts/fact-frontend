@@ -4,7 +4,7 @@
   "serviceName": "Find a Court or Tribunal",
   "question": "Court or Tribunal",
   "resultsHint": "Courts or tribunals starting with ",
-  "noResultsHint": "No results found, please choose another option",
+  "noResultsHint": "No results found for courts or tribunals starting with ",
   "summary": "Browse by name of court or tribunal",
   "noResults": {
     "p1": "There are no matching results.",
