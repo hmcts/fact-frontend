@@ -10,7 +10,7 @@ import {CourtResultsData} from '../../interfaces/CourtResultsData';
 @autobind
 export class CourtPrefixSearchController {
   constructor(
-    private readonly api: FactApi,
+    private readonly api: FactApi
   ) {
   }
 
