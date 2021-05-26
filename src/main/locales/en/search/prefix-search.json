@@ -2,14 +2,10 @@
   "errorTitle": "Error:",
   "title": "Search By Prefix - Find a Court or Tribunal - GOV.UK",
   "serviceName": "Find a Court or Tribunal",
-  "question": "Court or Tribunal",
+  "heading": "Court or Tribunal",
   "resultsHint": "Courts or tribunals starting with ",
   "noResultsHint": "No results found for courts or tribunals starting with ",
   "summary": "Browse by name of court or tribunal",
-  "noResults": {
-    "p1": "There are no matching results.",
-    "p2": "Improve your search results by selecting another option"
-  },
   "errorText":{
     "title": "There is a problem, please try again soon or contact us through the feedback page"
   }

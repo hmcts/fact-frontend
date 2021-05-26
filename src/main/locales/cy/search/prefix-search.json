@@ -1,16 +1,13 @@
 {
-  "errorTitle": "Error: welsh",
-  "title": "Search By Prefix - Find a Court or Tribunal - GOV.UK welsh",
-  "serviceName": "Find a Court or Tribunal welsh",
-  "question": "Court or Tribunal welsh",
-  "resultsHint": "Courts or tribunals starting with welsh",
+  "errorTitle": "Error:",
+  "title": "Search By Prefix - Find a Court or Tribunal - GOV.UK",
+  "serviceName": "Find a Court or Tribunal",
+  "heading": "Court or Tribunal cy",
+  "resultsHint": "Courts or tribunals starting with ",
   "noResultsHint": "No results found for courts or tribunals starting with ",
-  "summary": "Browse by name of court or tribunal welsh",
-  "noResults": {
-    "p1": "There are no matching results. welsh",
-    "p2": "Improve your search results by selecting another option welsh"
-  },
-  "errorText": {
-    "title": "There is a problem, please try again soon or contact us through the feedback page welsh"
+  "summary": "Browse by name of court or tribunal",
+  "errorText":{
+    "title": "There is a problem, please try again soon or contact us through the feedback page"
   }
 }
+
