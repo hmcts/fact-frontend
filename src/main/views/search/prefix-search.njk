@@ -26,11 +26,13 @@
       <h2 class="govuk-heading-m">
         <span id="header-hint" class="govuk-hint">{{ resultsHint }} '{{ prefix }}'</span>
       </h2>
-      {% for court in results %}
-        <h2 class="govuk-heading-m">
-          <a class="govuk-link" href="/courts/{{ court.slug }}">{{ court.name }}</a>
-        </h2>
-      {% endfor %}
+      <div id="courtList">
+        {% for court in results %}
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link" href="/courts/{{ court.slug }}">{{ court.name }}</a>
+          </h2>
+        {% endfor %}
+      </div>
     {% else %}
       <span id="header-hint" class="govuk-hint">{{ noResultsHint + "'" + prefix + "'" if prefix else summary }}</span>
     {% endif %}

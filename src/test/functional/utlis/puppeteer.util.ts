@@ -95,6 +95,27 @@ export const getTextFromElements = async (el: string) => {
   }
 };
 
+export const getHtmlFromElements = async (el: string) => {
+  try {
+    return await scope.page.$$eval(el, (elements: any) => elements.map((e: any) => e.innerHTML));
+  } catch (error) {
+    console.log("The element didn't appear.");
+    return [];
+  }
+};
+
+export const getElementList = async (el: string, tag: string) => {
+  try {
+    //return await scope.page.$$eval(el, (elements: any) => elements.map((e: any) => e.innerHTML));
+
+    return await scope.page.$$eval(el, (elements: any) => elements.getElementsByTagName(tag));
+  } catch (error) {
+    console.log("The element didn't appear.");
+    return [];
+  }
+};
+
+
 export const getDataLayer = async () => {
   const dataLayer = await scope.page.evaluate('dataLayer');
   if (!dataLayer) {
@@ -102,3 +123,4 @@ export const getDataLayer = async () => {
   }
   return dataLayer;
 };
+
