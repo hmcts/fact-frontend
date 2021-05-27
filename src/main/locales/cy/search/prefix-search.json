@@ -1,13 +1,13 @@
 {
-  "errorTitle": "Error:",
-  "title": "Search By Prefix - Find a Court or Tribunal - GOV.UK",
-  "serviceName": "Find a Court or Tribunal",
-  "heading": "Court or Tribunal cy",
-  "resultsHint": "Courts or tribunals starting with ",
-  "noResultsHint": "No results found for courts or tribunals starting with ",
-  "summary": "Browse by name of court or tribunal",
+  "errorTitle": "gwall:",
+  "title": "Chwilio Yn ôl Rhagddodiad - Dod o Hyd i Lys neu Dribiwnlys - GOV.UK.",
+  "serviceName": "Dewch o hyd i Lys neu Dribiwnlys",
+  "heading": "Llys neu Dribiwnlys",
+  "resultsHint": "Llysoedd neu dribiwnlysoedd yn dechrau gyda ",
+  "noResultsHint": "Ni ddarganfuwyd unrhyw ganlyniadau ar gyfer llysoedd neu dribiwnlysoedd yn dechrau ",
+  "summary": "Porwch yn ôl enw'r llys neu'r tribiwnlys",
   "errorText":{
-    "title": "There is a problem, please try again soon or contact us through the feedback page"
+    "title": "Mae problem, ceisiwch eto yn fuan neu cysylltwch â ni trwy'r dudalen adborth"
   }
 }
 
