@@ -12,52 +12,53 @@
 {% endblock %}
 
 {% block content %}
-{% if error %}
-  {{ errorSummary(errorText.title, errorText[errorType], "#prefix") }}
-{% endif %}
+  {% if error %}
+    {{ errorSummary(errorText.title, errorText[errorType], "#prefix") }}
+  {% endif %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">
-      {{ heading }}
-    </h1>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        {{ heading }}
+      </h1>
+      <span id="header-hint" class="govuk-hint">{{ summary }}</span>
 
-    {% if results.length > 0 %}
-      <h2 class="govuk-heading-m">
-        <span id="header-hint" class="govuk-hint">{{ resultsHint }} '{{ prefix }}'</span>
-      </h2>
-      <div id="courtList">
-        {% for court in results %}
-          <h2 class="govuk-heading-m">
-            <a class="govuk-link" href="/courts/{{ court.slug }}">{{ court.name }}</a>
-          </h2>
-        {% endfor %}
-      </div>
-    {% else %}
-      <span id="header-hint" class="govuk-hint">{{ noResultsHint + "'" + prefix + "'" if prefix else summary }}</span>
-    {% endif %}
-
-    {% for letter in ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
-      "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"] %}
-      {{ govukButton({
-        text: letter,
-        href: "search-by-prefix?prefix=" + letter,
-        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-0 continue"
-      }) }}
-    {% endfor %}
-
-    {% if hasNoResults %}
-      <div class="no-search-results" id="no-search-results">
-        <p class="govuk-body-m govuk-!-font-weight-bold">{{ noResults.p1 }}</p>
-        <p class="govuk-body">{{ noResults.p2 }}</p>
-        <ul class="govuk-list govuk-list--bullet">
-          {% for item, text in noResults.list %}
-          <li>{{ text }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-    {% endif %}
+      {% for letter in ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
+        "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"] %}
+        {{ govukButton({
+          text: letter,
+          href: "search-by-prefix?prefix=" + letter,
+          classes: "govuk-!-margin-top-0 govuk-!-margin-bottom-2 continue",
+          disabled:  true if prefix === letter else false
+        }) }}
+      {% endfor %}
+    </div>
   </div>
-</div>
+
+  {% if prefix %}
+    <h2 class="govuk-heading-m">
+      {{ resultsHeader }} '{{ prefix }}'
+    </h2>
+    {% if results.length %}
+      <span id="header-hint" class="govuk-hint">{{ results.length }} {{ resultsHint }} '{{ prefix }}'</span>
+    {% else %}
+      <span id="header-hint" class="govuk-hint">{{ noResultsHint }} '{{ prefix }}'</span>
+    {% endif %}
+  {% endif %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if results.length > 0 %}
+        <div id="courtList">
+          {% for court in results %}
+            <h2 class="govuk-heading-m">
+              <a class="govuk-link" href="/courts/{{ court.slug }}">{{ court.name }}</a>
+            </h2>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
 
 {% endblock %}
