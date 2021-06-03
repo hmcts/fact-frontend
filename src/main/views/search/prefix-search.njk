@@ -36,9 +36,6 @@
   </div>
 
   {% if prefix %}
-    <h2 class="govuk-heading-m">
-      {{ resultsHeader }} '{{ prefix }}'
-    </h2>
     {% if results.length %}
       <span id="header-hint" class="govuk-hint">{{ results.length }} {{ resultsHint }} '{{ prefix }}'</span>
     {% else %}
