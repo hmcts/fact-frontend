@@ -64,9 +64,9 @@ Then('I am presented with message that no court found', async function () {
 });
 
 When('I clicked on alphabet B then I click on first court in the list', async function () {
-  const element = await I.getElement('body > div:nth-child(7) > main:nth-child(3) > div:nth-child(1) > div:nth-child(1) > a:nth-child(4)');
+  const element = await I.getElement('a[href=\'search-by-prefix?prefix=B\']');
   const elementExist = await I.checkElementIsAnchor(element);
   expect(elementExist).equal(true);
-  await I.click('body > div:nth-child(7) > main:nth-child(3) > div:nth-child(1) > div:nth-child(1) > a:nth-child(4)');
-  await I.click('body > div:nth-child(7) > main:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > h2:nth-child(1) > a:nth-child(1)');
+  await I.click('a[href=\'search-by-prefix?prefix=B\']');
+  await I.click('body > div:nth-child(7) > main:nth-child(3) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(1) > a:nth-child(1)');
 });
