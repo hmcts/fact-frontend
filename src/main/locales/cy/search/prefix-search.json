@@ -2,11 +2,11 @@
   "errorTitle": "gwall:",
   "title": "Chwilio Yn ôl Rhagddodiad - Dod o Hyd i Lys neu Dribiwnlys - GOV.UK.",
   "serviceName": "Dewch o hyd i Lys neu Dribiwnlys",
-  "heading": "Courts and Tribunals",
-  "resultsHeader": "Courts or tribunals starting with ",
-  "resultsHint": " results found for courts or tribunals starting with ",
+  "heading": "Llysoedd a Thribiwnlysoedd",
+  "resultsHeader": "Llysoedd neu dribiwnlysoedd sy’n cychwyn efo ",
+  "resultsHint": " canlyniadau chwilio ar gyfer llysoedd neu dribiwnlysoedd sy’n cychwyn efo ",
   "noResultsHint": "Ni ddarganfuwyd unrhyw ganlyniadau ar gyfer llysoedd neu dribiwnlysoedd yn dechrau ",
-  "summary": "Browse by name of court or tribunal. Select the first letter of the court's name.",
+  "summary": "Chwilio yn ôl enw llys neu dribiwnlys. Dewiswch lythyren gyntaf enw’r llys.",
   "errorText":{
     "title": "Mae problem, ceisiwch eto yn fuan neu cysylltwch â ni trwy'r dudalen adborth"
   }
