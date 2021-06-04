@@ -1,0 +1,64 @@
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "macros/error-summary.njk" import errorSummary %}
+
+{% extends "template.njk" %}
+
+{% block pageTitle %}
+  {% if error %}
+    {{ errorTitle }}
+  {% endif %}
+  {{ title }}
+{% endblock %}
+
+{% block content %}
+  {% if error %}
+    {{ errorSummary(errorText.title, errorText[errorType], "#prefix") }}
+  {% endif %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        {{ heading }}
+      </h1>
+      <span class="govuk-hint">{{ summary }}</span>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div id="alphabet-buttons" class="govuk-grid-column-two-thirds">
+    {% for letter in ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
+      "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"] %}
+      {{ govukButton({
+        text: letter,
+        href: "search-by-prefix?prefix=" + letter,
+        classes: "govuk-!-margin-top-0 govuk-!-margin-bottom-2 continue",
+        disabled:  true if prefix === letter else false
+      }) }}
+    {% endfor %}
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if prefix %}
+        {% if results.length %}
+          <span id="header-hint" class="govuk-hint">{{ results.length }} {{ resultsHint }} '{{ prefix }}'</span>
+        {% else %}
+          <span id="header-hint" class="govuk-hint">{{ noResultsHint }} '{{ prefix }}'</span>
+        {% endif %}
+      {% endif %}
+
+      {% if results.length > 0 %}
+        <div id="results-list">
+          {% for court in results %}
+            <h2 class="govuk-heading-m">
+              <a class="govuk-link" href="/courts/{{ court.slug }}">{{ court.name }}</a>
+            </h2>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+{% endblock %}
