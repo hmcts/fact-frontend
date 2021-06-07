@@ -1,4 +1,5 @@
 {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
 {% extends "template.njk" %}
 
@@ -74,15 +75,27 @@
       {% endif %}
 
       {% if results['opening_times'] and results['opening_times'].length > 0%}
+
         <div class="govuk-grid-row" id="opening-times">
           <h3 class="govuk-heading-m">
             {{ openingTimesHeading }}
           </h3>
-          {% for times in results['opening_times'] %}
-            <p class="govuk-body-m">
-              {{ times.description }}: {{ times.hours }}
-            </p>
-          {% endfor %}
+            <dl class="govuk-summary-list">
+              {% for times in results['opening_times'] %}
+                <div class="govuk-summary-list__row">
+                  <dd class="govuk-summary-list__key">
+                    <h3 class="govuk-body-m">
+                      {{ times.description }}
+                    </h3>
+                  </dd>
+                  <dd class="govuk-summary-list__value">
+                      <p class="govuk-body-m">
+                        {{ times.hours }}
+                      </p>
+                  </dd>
+                </div>
+              {% endfor %}
+            </dl>
         </div>
       {% endif %}
 
@@ -91,25 +104,25 @@
           <h3 class="govuk-heading-m">
             {{ emailHeading }}
           </h3>
-          {% for email in results.emails %}
-            <div class="govuk-grid-row">
-              <div class="govuk-grid-column-one-third">
-                <p class="govuk-body-m">
-                  {{ email.description}}
-                </p>
-              </div>
-              <div class="govuk-grid-column-two-thirds">
-                <div class="govuk-body-m">
-                  <a class="govuk-link" href="mailto:{{ email.address }}">{{ email.address }}</a>
-                  {% if email.explanation %}
-                    </br>
-                    <p class="govuk-body-m">({{ email.explanation }})</p>
-                  {% endif %}
+            <dl class="govuk-summary-list">
+              {% for email in results.emails %}
+                <div class="govuk-summary-list__row">
+                  <dd class="govuk-summary-list__key">
+                    <p class="govuk-body-m">
+                      {{ email.description}}
+                    </p>
+                  </dd>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link" href="mailto:{{ email.address }}">{{ email.address }}</a>
+                    {% if email.explanation %}
+                      <p class="govuk-body-m">({{ email.explanation }})</p>
+                    {% endif %}
+                  </dd>
                 </div>
-              </div>
-            </div>
-          {% endfor %}
+              {% endfor %}
+            </dl>
         </div>
+
       {% endif %}
 
       {% if results.contacts and results.contacts.length > 0 %}
@@ -117,24 +130,23 @@
           <h3 class="govuk-heading-m">
             {{ telephoneHeading }}
           </h3>
-          {% for telephone in results.contacts %}
-          <div class="govuk-grid-row">
-            <div class="govuk-grid-column-one-third">
-              <p class="govuk-body-m">
-                {{ telephone.description}}
-              </p>
-            </div>
-            <div class="govuk-grid-column-two-thirds">
-              <div class="govuk-body-m">
-                <a class="govuk-link" href="tel:{{ telephone.number }}">{{ telephone.number }}</a>
-                {% if telephone.explanation %}
-                </br>
-                <p class="govuk-body-m">({{ telephone.explanation }})</p>
-                {% endif %}
-              </div>
-            </div>
-          </div>
-          {% endfor %}
+            <dl class="govuk-summary-list">
+              {% for telephone in results.contacts %}
+                <div class="govuk-summary-list__row">
+                  <dd class="govuk-summary-list__key">
+                      <p class="govuk-body-m">
+                        {{ telephone.description}}
+                      </p>
+                  </dd>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link" href="tel:{{ telephone.number }}">{{ telephone.number }}</a>
+                    {% if telephone.explanation %}
+                      <p class="govuk-body-m">({{ telephone.explanation }})</p>
+                    {% endif %}
+                  </dd>
+                </div>
+              {% endfor %}
+            </dl>
         </div>
       {% endif %}
 
@@ -158,14 +170,24 @@
               {{ buildingFacilitiesContactsUs }}
             {% endif %}
           </p>
-          {% for facility in results.facilities %}
-            <h4 class="govuk-heading-s">
-              {{ facility.name }}
-            </h4>
-            <p class="govuk-body-m">
-              {{ facility.description }}
-            </p>
-          {% endfor %}
+
+          <dl class="govuk-summary-list">
+            {% for facility in results.facilities %}
+              <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__key">
+                  <h4 class="govuk-heading-s">
+                    {{ facility.name }}
+                  </h4>
+                </dd>
+                <dd class="govuk-summary-list__value">
+                  <p class="govuk-body-m">
+                    {{ facility.description }}
+                  </p>
+                </dd>
+              </div>
+            {% endfor %}
+          </dl>
+
           <h4 class="govuk-heading-s">
             {{ translatorsOrInterpretersHeading }}
           </h4>
