@@ -80,13 +80,11 @@
           <h3 class="govuk-heading-m">
             {{ openingTimesHeading }}
           </h3>
-            <dl class="govuk-summary-list">
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
               {% for times in results['opening_times'] %}
                 <div class="govuk-summary-list__row">
                   <dd class="govuk-summary-list__key">
-                    <h3 class="govuk-body-m">
-                      {{ times.description }}
-                    </h3>
+                    {{ times.description }}
                   </dd>
                   <dd class="govuk-summary-list__value">
                       <p class="govuk-body-m">
@@ -104,13 +102,11 @@
           <h3 class="govuk-heading-m">
             {{ emailHeading }}
           </h3>
-            <dl class="govuk-summary-list">
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
               {% for email in results.emails %}
                 <div class="govuk-summary-list__row">
                   <dd class="govuk-summary-list__key">
-                    <p class="govuk-body-m">
-                      {{ email.description}}
-                    </p>
+                    {{ email.description}}
                   </dd>
                   <dd class="govuk-summary-list__value">
                     <a class="govuk-link" href="mailto:{{ email.address }}">{{ email.address }}</a>
@@ -130,13 +126,15 @@
           <h3 class="govuk-heading-m">
             {{ telephoneHeading }}
           </h3>
-            <dl class="govuk-summary-list">
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
               {% for telephone in results.contacts %}
                 <div class="govuk-summary-list__row">
                   <dd class="govuk-summary-list__key">
-                      <p class="govuk-body-m">
+                      {# <p class="govuk-body-m">
                         {{ telephone.description}}
-                      </p>
+                      </p> #}
+
+                    {{ telephone.description}}
                   </dd>
                   <dd class="govuk-summary-list__value">
                     <a class="govuk-link" href="tel:{{ telephone.number }}">{{ telephone.number }}</a>
@@ -171,7 +169,7 @@
             {% endif %}
           </p>
 
-          <dl class="govuk-summary-list">
+          <dl class="govuk-summary-list govuk-summary-list--no-border">
             {% for facility in results.facilities %}
               <div class="govuk-summary-list__row">
                 <dd class="govuk-summary-list__key">
