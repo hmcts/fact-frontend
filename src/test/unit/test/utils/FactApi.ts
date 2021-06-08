@@ -278,4 +278,43 @@ describe('FactApi', () => {
     await expect(api.postcodeAreaSearch('AA9 9AA', 'en')).resolves.toEqual({ courts: [] });
     await expect(spy).toBeCalledTimes(1);
   });
+
+  test('Should return list of court from a court name prefix search', async () => {
+    const results = {
+      data: [
+        {
+          name: 'Yarl\'s Wood Immigration and Asylum Hearing Centre',
+          slug: 'yarls-wood-immigration-and-asylum-hearing-centre',
+          updatedAt: '11 Feb 2021'
+        },
+        {
+          name: 'Yeovil County, Family and Magistrates\' Court',
+          slug: 'yeovil-county-family-and-magistrates-court',
+          updatedAt: '26 Feb 2021'
+        }
+      ]
+    };
+
+    const mockAxios = { get: async () => results } as any;
+    const mockLogger = {} as any;
+
+    const api = new FactApi(mockAxios, mockLogger);
+
+    await expect(api.courtPrefixSearch('Y')).resolves.toEqual(results.data);
+  });
+
+  test('Should return no courts from a court name prefix search and log error', async () => {
+    const mockAxios = { get: async () => {
+      throw new Error('Error');
+    }} as any;
+    const mockLogger = {
+      error: async ( message: string ) => console.log(message)
+    } as any;
+
+    const spy = jest.spyOn(mockLogger, 'error');
+    const api = new FactApi(mockAxios, mockLogger);
+
+    await expect(api.courtPrefixSearch('A')).resolves.toEqual({ results: [] });
+    await expect(spy).toBeCalledTimes(1);
+  });
 });

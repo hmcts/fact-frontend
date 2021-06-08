@@ -14,6 +14,7 @@ export default function(app: Application): void {
   app.get('/courts/:slug', app.locals.container.cradle.courtDetailsController.get);
   app.get('/individual-location-pages/courts/:slug', app.locals.container.cradle.courtDetailsController.get);
   app.get('/services/service-not-found', app.locals.container.cradle.chooseUnknownServiceController.get);
+  app.get('/services/search-by-prefix', app.locals.container.cradle.courtNameSearchController.get);
   app.get('/services/search-by-postcode', app.locals.container.cradle.servicePostcodeSearchController.getCourtsByPostcodeOnly);
   app.get('/services/courts/near', app.locals.container.cradle.servicePostcodeResultsController.getCourtResultsByPostcode);
   app.get('/services/:action', app.locals.container.cradle.chooseServiceController.get);
