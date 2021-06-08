@@ -13,12 +13,10 @@
     dataLayer = window.dataLayer || [];
     dataLayer.push({"language": {{ language | dump | safe }}, "event": "Site language"})
 
-    let match = document.cookie.match(new RegExp('(^| )' + 'fact-cookie-preferences' + '=([^;]+)'));
-    if (match && JSON.parse(decodeURIComponent(match[2])).analytics === 'on')
-    {
-      window['ga-disable-UA-37377084-66'] = false;
-    } else {
-      window['ga-disable-UA-37377084-66'] = true;
+    const factCookie = document.cookie.match(new RegExp('(^| )' + 'fact-cookie-preferences' + '=([^;]+)'));
+    if(factCookie) {
+      const cookiePreferences = JSON.parse(decodeURIComponent(factCookie[2]));
+      dataLayer.push({'event': 'Cookie Preferences', 'cookiePreferences': cookiePreferences});
     }
   </script>
 
