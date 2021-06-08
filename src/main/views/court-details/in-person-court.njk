@@ -106,7 +106,7 @@
               {% for email in results.emails %}
                 <div class="govuk-summary-list__row">
                   <dd class="govuk-summary-list__key">
-                    {{ email.description}}
+                    {{ email.description }}
                   </dd>
                   <dd class="govuk-summary-list__value">
                     <a class="govuk-link" href="mailto:{{ email.address }}">{{ email.address }}</a>
@@ -130,11 +130,7 @@
               {% for telephone in results.contacts %}
                 <div class="govuk-summary-list__row">
                   <dd class="govuk-summary-list__key">
-                      {# <p class="govuk-body-m">
-                        {{ telephone.description}}
-                      </p> #}
-
-                    {{ telephone.description}}
+                    {{ telephone.description }}
                   </dd>
                   <dd class="govuk-summary-list__value">
                     <a class="govuk-link" href="tel:{{ telephone.number }}">{{ telephone.number }}</a>
