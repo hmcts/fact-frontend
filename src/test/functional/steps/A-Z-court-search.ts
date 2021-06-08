@@ -21,10 +21,9 @@ Given('I select I can not find what I am looking for', async function () {
 });
 
 When('I click on the link Search for a court by prefix \\(A - Z)', async function () {
-  const element = await I.getElement('body > div:nth-child(7) > main:nth-child(3) > div:nth-child(1) > div:nth-child(1) > p:nth-child(6) > a:nth-child(1)');
-  const elementExist = await I.checkElementIsAnchor(element);
-  expect(elementExist).equal(true);
-  await I.click('body > div:nth-child(7) > main:nth-child(3) > div:nth-child(1) > div:nth-child(1) > p:nth-child(6) > a:nth-child(1)');
+  const element = await I.getElement('#main-content > div > div > p:nth-child(6) > a');
+  expect(await I.checkElementIsAnchor(element)).equal(true);
+  await I.click('#main-content > div > div > p:nth-child(6) > a');
 });
 
 When('I click on the letter {string}', async (character: string) => {
