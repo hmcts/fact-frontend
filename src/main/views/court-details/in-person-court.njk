@@ -106,9 +106,7 @@
               {% for email in results.emails %}
                 <div class="govuk-summary-list__row">
                   <dd class="govuk-summary-list__key">
-                  <h3 class="govuk-body-m">
                     {{ email.description }}
-                  </h3>
                   </dd>
                   <dd class="govuk-summary-list__value">
                     <a class="govuk-link" href="mailto:{{ email.address }}">{{ email.address }}</a>
