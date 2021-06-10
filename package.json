@@ -113,5 +113,12 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-node-externals": "^1.7.2"
+  },
+  "resolutions": {
+    "sass-lint/merge": "^2.1.1",
+    "node-sass/meow/trim-newlines": "^4.0.1",
+    "mini-css-extract-plugin/normalize-url": "^6.0.1",
+    "html-webpack-plugin/pretty-error": "^3.0.4",
+    "uglifyjs-webpack-plugin/serialize-javascript": "^3.1.0"
   }
 }
