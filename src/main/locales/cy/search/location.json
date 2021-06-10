@@ -7,7 +7,7 @@
   "hint": "Gellir gweld enw’r llys neu’r tribiwnlys ar lythyr, e-bost neu neges testun a anfonwyd gennym.",
   "text": "Rhowch enw llys, cyfeiriad, tref neu ddinas",
   "textExample": "Er enghraifft, Llys Teulu Blackburn. ",
-  "button": "Chwilio",
+  "button": "Parhau",
   "noResults": {
     "p1": "Nid oes canlyniad sy’n cyfateb.",
     "p2": "Gellir gwella ar y chwiliad drwy:",

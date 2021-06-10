@@ -114,7 +114,7 @@ Then('the type of each service is presented on the profile page', async () => {
 });
 
 Given('the opening days and hours for each service is presented to me on the profile page', async () => {
-  const element = await I.checkElement('#opening-times > p');
+  const element = await I.checkElement('#opening-times > dl');
   expect(element).equal(true);
 });
 
@@ -124,12 +124,12 @@ Given('that location entry includes one or more telephone numbers for a service'
 });
 
 Then('the contact description for each service is presented on the profile page', async () => {
-  const element = await I.checkElement('#contacts > div > .govuk-grid-column-one-third > p');
+  const element = await I.checkElement('#contacts > dl > div:nth-child(1) ');
   expect(element).equal(true);
 });
 
 Given('the contact details for each service is presented to me on the profile page', async () => {
-  const element = await I.checkElement('#contacts > div > .govuk-grid-column-two-thirds > div > a');
+  const element = await I.checkElement('#contacts > dl > div:nth-child(1) > dd.govuk-summary-list__value > a');
   expect(element).equal(true);
 });
 
@@ -139,12 +139,12 @@ Given('that location entry includes one or more emails for that service', async 
 });
 
 Then('the email description for each service is presented to me on the profile page', async () => {
-  const element = await I.checkElement('#emails > div > .govuk-grid-column-one-third > p');
+  const element = await I.checkElement('#emails > dl > div > dd.govuk-summary-list__key');
   expect(element).equal(true);
 });
 
 Given('the email details for each service is presented to me on the profile page', async () => {
-  const element = await I.checkElement('#emails > div > .govuk-grid-column-two-thirds > div > a');
+  const element = await I.checkElement('#emails > dl > div > dd.govuk-summary-list__value > a');
   expect(element).equal(true);
 });
 
@@ -154,13 +154,13 @@ Given('that location entry includes one or building facilities', async () => {
 });
 
 Then('the name of each facility is presented on the profile page', async () => {
-  const element = await I.getElement('#building-facilities > h4');
+  const element = await I.getElement('#building-facilities > dl > div:nth-child(1) > dd.govuk-summary-list__key');
   const text = await I.getElementText(element);
   expect(text).equal('Parking');
 });
 
 Given('the description of each facility is presented to me on the profile page', async () => {
-  const element = await I.getElement('#building-facilities > p:nth-child(4)');
+  const element = await I.getElement('#building-facilities > dl > div:nth-child(1) > dd.govuk-summary-list__value');
   const text = await I.getElementText(element);
   expect(text).equal('Closest multi-story parking facilities are in Newton Street and Albert Street, approx 5 minutes walk away.');
 });

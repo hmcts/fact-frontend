@@ -7,7 +7,7 @@
   "hint": "The name of the court or tribunal can be found on a letter, email or text from us.",
   "text": "Enter a court name, address, town or city",
   "textExample": "For example, Blackburn Family Court. ",
-  "button": "Search",
+  "button": "Continue",
   "noResults": {
     "p1": "There are no matching results.",
     "p2": "Improve your search results by:",
