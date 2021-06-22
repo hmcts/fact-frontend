@@ -75,7 +75,7 @@ export default function(app: Application): void {
     if (req.query.postcode) {
       res.redirect(301, '/services/nearest');
     } else if (req.query.q) {
-      res.redirect(301, '/courts?search=' + (req.query.q || ''));
+      res.redirect(301, '/courts?search=' + ((req.query.q as string).replace(/[^a-zA-Z-]/g, '') || ''));
     } else {
       res.redirect(301, '/search-by-name');
     }
