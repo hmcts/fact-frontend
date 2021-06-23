@@ -205,6 +205,11 @@
                   {% endif %}
                 </li>
               {% endfor %}
+              {% if results.slug ==='county-court-money-claims-centre-ccmcc' or results.slug === 'civil-money-claims-service-centre' %}
+                <li>
+                    <a class="govuk-link" href="https://money-claim-queries.form.service.justice.gov.uk/">Contact HMCTS about a money claim</a>
+                </li>
+              {% endif %}
             </ul>
           </div>
         {% endif %}
