@@ -143,6 +143,11 @@
             <h4 class="govuk-heading-s">
               {{ emailHeading }}
             </h4>
+            {% if results.slug ==='county-court-money-claims-centre-ccmcc' or results.slug === 'civil-money-claims-service-centre' %}
+              <p class="govuk-body-m">
+                Online Civil Money Claims: <a class="govuk-link" href="https://money-claim-queries.form.service.justice.gov.uk/">Contact HMCTS about a money claim</a>
+              </p>
+            {% endif %}
             <p class="govuk-body-m">
               {% for email in results.enquiries.sendDocumentsEmail %}
                 <p class="govuk-body-m">
@@ -151,10 +156,10 @@
                 </p>
               {% endfor %}
               {% for email in results.enquiries.emails %}
-              <p class="govuk-body-m">
-                {{ updates }}: <a class="govuk-link" href="mailto:{{ email.address }}">{{ email.address }}</a><br>
-                {{ email.explanation }}
-              </p>
+                <p class="govuk-body-m">
+                  {{ updates }}: <a class="govuk-link" href="mailto:{{ email.address }}">{{ email.address }}</a><br>
+                  {{ email.explanation }}
+                </p>
               {% endfor %}
               {% for email in results.emails %}
                 {% if email.description !== 'Enquiries' and email.description !== 'Send documents' %}
@@ -205,11 +210,6 @@
                   {% endif %}
                 </li>
               {% endfor %}
-              {% if results.slug ==='county-court-money-claims-centre-ccmcc' or results.slug === 'civil-money-claims-service-centre' %}
-                <li>
-                    <a class="govuk-link" href="https://money-claim-queries.form.service.justice.gov.uk/">Contact HMCTS about a money claim</a>
-                </li>
-              {% endif %}
             </ul>
           </div>
         {% endif %}
