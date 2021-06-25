@@ -61,7 +61,7 @@
 
         {% if results.enquiries and results.enquiries.phone.length %}
           <div class="govuk-grid-row .contacts" id="contacts">
-            <h4 class="govuk-heading-s">
+            <h4 class="govuk-heading-m">
               {% if results.enquiries.fax.number %}
                 {{ telephoneAndFaxHeading }}
               {% else %}
@@ -138,9 +138,57 @@
           </div>
         {% endif %}
 
+
+        {% if results.slug === 'civil-money-claims-service-centre' or results.slug === 'county-court-money-claims-centre-ccmcc' %}
+          <div class="govuk-grid-row .contacts" id="contacts">
+            <h4 class="govuk-heading-m">
+              Get an update on your application
+            </h4>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-third">
+                <p class="govuk-body-m">
+                  Online Money Claims
+                </p>
+              </div>
+              <div class="govuk-grid-column-two-thirds">
+                <div class="govuk-body-m">
+                  <a class="govuk-link" href="https://money-claim-queries.form.service.justice.gov.uk">Contact HMCTS about a money claim</a>
+                </div>
+              </div>
+            </div>
+
+            {% if results.slug === 'county-court-money-claims-centre-ccmcc' %}
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                  <p class="govuk-body-m">
+                    County Court Money Claims
+                  </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                  <div class="govuk-body-m">
+                    <a class="govuk-link" href="mailto:ccmcccustomerenquiries@justice.gov.uk">ccmcccustomerenquiries@justice.gov.uk</a>
+                  </div>
+                </div>
+              </div>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                  <p class="govuk-body-m">
+                    Money Claims Online
+                  </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                  <div class="govuk-body-m">
+                    <a class="govuk-link" href="mailto:CCBC@Justice.gov.uk">CCBC@Justice.gov.uk</a>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+
         {% if results.enquiries.emails.length or results.enquiries.sendDocumentsEmail.length %}
           <div class="govuk-grid-row .emails" id="emails">
-            <h4 class="govuk-heading-s">
+            <h4 class="govuk-heading-m">
               {{ emailHeading }}
             </h4>
             {% if results.slug ==='county-court-money-claims-centre-ccmcc' or results.slug === 'civil-money-claims-service-centre' %}
