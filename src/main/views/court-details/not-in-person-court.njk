@@ -191,11 +191,6 @@
             <h4 class="govuk-heading-m">
               {{ emailHeading }}
             </h4>
-            {% if results.slug ==='county-court-money-claims-centre-ccmcc' or results.slug === 'civil-money-claims-service-centre' %}
-              <p class="govuk-body-m">
-                Online Civil Money Claims: <a class="govuk-link" href="https://money-claim-queries.form.service.justice.gov.uk/">Contact HMCTS about a money claim</a>
-              </p>
-            {% endif %}
             <p class="govuk-body-m">
               {% for email in results.enquiries.sendDocumentsEmail %}
                 <p class="govuk-body-m">
