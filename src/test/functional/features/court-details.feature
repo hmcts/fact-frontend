@@ -234,3 +234,15 @@ Feature: Court Name Know - Court Details
     Examples:
       | no_access_scheme_court |
       | Chancery Division      |
+
+  Scenario Outline: Not-in-person Court - Get update on application
+    And I have entered "<centre_that_should_allow_update_on_application>" as search criteria
+    When I have selected to search for that court or tribunal name or address
+    Given results are returned
+    When I select a court or tribunal link
+    And that location is a 'not-in-person' court or tribunal
+    Then the get an update on my application section is displayed
+
+    Examples:
+      | centre_that_should_allow_update_on_application     |
+      | County Court Money Claims Centre (CCMCC)           |
