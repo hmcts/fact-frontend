@@ -35,5 +35,10 @@ export interface CourtDetailsResult {
   dx_number: [];
   service_area: string[];
   in_person: boolean;
-  additional_links: [];
+  additional_links: AdditionalLink[];
+}
+
+export interface AdditionalLink {
+  url: string;
+  description: string;
 }
