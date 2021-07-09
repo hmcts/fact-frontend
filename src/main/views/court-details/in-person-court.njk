@@ -237,6 +237,22 @@
           </ul>
         </div>
       {% endif %}
+
+      {% if results.additional_links and results.additional_links.length %}
+        <div class="govuk-grid-row" id="find-out-more-about">
+          <h3 class="govuk-heading-m">
+            {{ findOutMoreAboutHeading }}:
+          </h3>
+          <ul class="govuk-list">
+            {% for additionalLink in results.additional_links %}
+              <li>
+                <a class="govuk-link" href="{{ additionalLink.url }}">{{ additionalLink.description }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
       <div class="govuk-grid-row">
         <h3 class="govuk-heading-m">
           {{ complaintHeading }}:

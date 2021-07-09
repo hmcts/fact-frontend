@@ -35,4 +35,5 @@ export interface CourtDetailsResult {
   dx_number: [];
   service_area: string[];
   in_person: boolean;
+  additional_links: [];
 }
