@@ -1,4 +1,5 @@
 import { PageData } from './PageData';
+import { ApplicationUpdate } from './ApplicationUpdate';
 
 export interface CourtDetailsData extends PageData {
   results: CourtDetailsResult | {};
@@ -28,6 +29,7 @@ export interface CourtDetailsResult {
   types: [];
   emails: [];
   contacts: [];
+  application_updates: ApplicationUpdate[];
   opening_times: [];
   facilities: [];
   addresses: any[];

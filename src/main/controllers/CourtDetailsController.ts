@@ -34,9 +34,9 @@ export class CourtDetailsController {
           viewData.path = '/courts/' + slug;
 
           const enquiries: Enquiries = {
-            phone: filterByDescription(courtDetails.contacts, ['enquiries', 'ymholiadau']),
+            phone: filterByDescription(courtDetails.contacts, ['enquiries', 'ymholidau']),
             welshPhone: filterByDescription(courtDetails.contacts, ['welsh', 'cymraeg']),
-            emails: filterByDescription(courtDetails.emails, ['enquiries', 'ymholiadau']),
+            emails: filterByDescription(courtDetails.emails, ['enquiries', 'ymholidau']),
             fax: filterByDescription(courtDetails.contacts, ['fax', 'ffacs']),
             sendDocumentsEmail: filterByDescription(courtDetails.emails, ['send documents', 'anfon dogfennau']),
           };

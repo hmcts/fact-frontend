@@ -16,6 +16,11 @@ Given("that location is an 'in-person' court or tribunal", async () => {
   expect(addressElement).equal(false);
 });
 
+Given("that location is a 'not-in-person' court or tribunal", async () => {
+  const addressElement = await I.checkElement('#not-in-person');
+  expect(addressElement).equal(true);
+});
+
 Then("I am presented with the profile page for an 'in-person' court or tribunal", async function() {
   const addressElement = await I.checkElement('.single-address');
   const subHeadingElement = await I.getElement('.single-address');
@@ -267,3 +272,7 @@ Then( 'I click the link {string} at index {int} and it takes me to the page{stri
   expect(expPageTitle).equal(pageTitle);
 });
 
+Then('the get an update on my application section is displayed', async () => {
+  const hasApplicationUpdateSection = await I.checkElement('#applicationUpdates');
+  expect(hasApplicationUpdateSection).equal(true);
+});

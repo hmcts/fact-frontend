@@ -16,7 +16,7 @@ Feature: Court Name Know - Court Details
     Examples:
       | in_person_court                             |
       | Birmingham Civil and Family Justice Centre  |
-    
+
   Scenario Outline: Not in-person court or tribunal selection
     And I have entered "<not_in_person_court>" as search criteria
     When I have selected to search for that court or tribunal name or address
@@ -233,6 +233,18 @@ Feature: Court Name Know - Court Details
     Examples:
       | no_access_scheme_court |
       | Chancery Division      |
+
+  Scenario Outline: Not-in-person Court - Get update on application
+    And I have entered "<centre_that_should_allow_update_on_application>" as search criteria
+    When I have selected to search for that court or tribunal name or address
+    Given results are returned
+    When I select a court or tribunal link
+    And that location is a 'not-in-person' court or tribunal
+    Then the get an update on my application section is displayed
+
+    Examples:
+      | centre_that_should_allow_update_on_application     |
+      | County Court Money Claims Centre (CCMCC)           |
 
   Scenario Outline: Court or tribunal Find out more about
     And I have entered "<Find_out_more_about_court>" as search criteria
