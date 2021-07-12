@@ -253,17 +253,17 @@ Given('That location sidebar includes {string}', async (SidebarEntry: string) =>
   expect(hasSidebarEntry).equal(true);
 });
 
-Then( 'I click the link {string} at index {int} and it takes me to the page{string}',async (pageLink : string, index: number, pageTitle: string)=>{
-   const element = await I.getElement('#find-out-more-about > ul >li:nth-child('+ index +') > a');
-   const isElementAnchor = await I.checkElementIsAnchor(element);
-   expect(isElementAnchor).equal(true);
+Then( 'I click the link {string} at index {int} and it takes me to the page{string}',async (pageLink: string, index: number, pageTitle: string) => {
+  const element = await I.getElement('#find-out-more-about > ul >li:nth-child('+ index +') > a');
+  const isElementAnchor = await I.checkElementIsAnchor(element);
+  expect(isElementAnchor).equal(true);
 
-   const linkText=await I.getElementText(element);
-   expect(linkText).equal(pageLink);
+  const linkText=await I.getElementText(element);
+  expect(linkText).equal(pageLink);
 
-   await I.click('#find-out-more-about > ul > li:nth-child('+ index +') > a');
+  await I.click('#find-out-more-about > ul > li:nth-child('+ index +') > a');
 
-   const expPageTitle = await I.getPageTitle();
-   expect(expPageTitle).equal(pageTitle);
+  const expPageTitle = await I.getPageTitle();
+  expect(expPageTitle).equal(pageTitle);
 });
 
