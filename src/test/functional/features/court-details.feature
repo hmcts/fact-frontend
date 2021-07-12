@@ -16,8 +16,7 @@ Feature: Court Name Know - Court Details
     Examples:
       | in_person_court                             |
       | Birmingham Civil and Family Justice Centre  |
-
-
+    
   Scenario Outline: Not in-person court or tribunal selection
     And I have entered "<not_in_person_court>" as search criteria
     When I have selected to search for that court or tribunal name or address
@@ -234,3 +233,15 @@ Feature: Court Name Know - Court Details
     Examples:
       | no_access_scheme_court |
       | Chancery Division      |
+
+  Scenario Outline: Court or tribunal Find out more about
+    And I have entered "<Find_out_more_about_court>" as search criteria
+    When I have selected to search for that court or tribunal name or address
+    Given results are returned
+    When I select a court or tribunal link
+    And That location sidebar includes "<sidebar_entries>"
+    Then I click the link "<page_link>" at index <index> and it takes me to the page"<page_title>"
+
+    Examples:
+      | Find_out_more_about_court  | sidebar_entries       | page_title             | page_link                                       | index |
+      | West London Family Court   | find-out-more-about   | Support Through Court  | Support through court (Independent charity)     | 1     |
