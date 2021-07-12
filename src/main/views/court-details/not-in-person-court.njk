@@ -230,10 +230,10 @@
       </div>
 
       <div class="govuk-grid-column-one-third side-content">
-        {% if results['areas_of_law'] and results['areas_of_law'] |  selectattr("external_link") | length > 0 %}
+        {% if (results['areas_of_law'] and results['areas_of_law'] |  selectattr("external_link") | length > 0) or (results.additional_links and results.additional_links.length) %}
           <div class="govuk-grid-row" id="areas-of-law">
             <h3 class="govuk-heading-m">
-              {{ areasOfLawHeading }}:
+              {{ findOutMoreAboutHeading }}:
             </h3>
             <ul class="govuk-list">
               {% for area in results['areas_of_law'] | sort(attribute="name") %}
@@ -253,16 +253,7 @@
                   {% endif %}
                 </li>
               {% endfor %}
-            </ul>
-          </div>
-        {% endif %}
 
-        {% if results.additional_links and results.additional_links.length %}
-          <div class="govuk-grid-row" id="find-out-more-about">
-            <h3 class="govuk-heading-m">
-              {{ findOutMoreAboutHeading }}:
-            </h3>
-            <ul class="govuk-list">
               {% for additionalLink in results.additional_links %}
                 <li>
                   <a class="govuk-link" href="{{ additionalLink.url }}">{{ additionalLink.description }}</a>
