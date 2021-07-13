@@ -9,10 +9,6 @@ export interface CourtDetailsData extends PageData {
     area1: string;
     area2: string;
   };
-  allAdditionalLinks: {
-    thisLocationHandles: AdditionalLink[];
-    findOutMoreAbout: AdditionalLink[];
-  };
 }
 
 export interface CourtDetailsResult {
@@ -48,4 +44,5 @@ export interface AdditionalLink {
   url: string;
   description: string;
   location: string;
+  isFinancialRemedy?: boolean;
 }

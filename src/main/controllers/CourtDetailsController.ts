@@ -1,7 +1,12 @@
 import { FactRequest } from '../interfaces/FactRequest';
 import { NextFunction, Response } from 'express';
 import { FactApi } from '../utils/FactApi';
-import { decideCatchmentArea, filterByDescription, formatAreasOfLaw } from '../utils/CourtDetailsUtils';
+import {
+  constructAdditionalLinks,
+  decideCatchmentArea,
+  filterByDescription,
+  formatAreasOfLaw
+} from '../utils/CourtDetailsUtils';
 import { isEmpty, isObjectEmpty } from '../utils/validation';
 import autobind from 'autobind-decorator';
 import { Enquiries } from '../interfaces/Enquiries';
@@ -9,6 +14,7 @@ import { CourtDetailsData, CourtDetailsResult } from '../interfaces/CourtDetails
 import config from 'config';
 import { cloneDeep } from 'lodash';
 import { generatePlaceMetadata } from '../utils/SEOMetadata';
+import { SidebarLocation } from '../utils/SidebarLocation';
 
 @autobind
 export class CourtDetailsController {
@@ -47,8 +53,11 @@ export class CourtDetailsController {
 
           viewData.seoMetadata = generatePlaceMetadata(courtDetails);
           viewData.seoMetadataDescription = (viewData.seoMetadataDescription as string).replace('{courtName}', courtDetails.name);
-          viewData
-          viewData.results = { ...courtDetails, enquiries };
+          const additionalLinks = {
+            thisLocationHandles: constructAdditionalLinks(courtDetails.additional_links, SidebarLocation.ThisLocationHandles),
+            findOutMoreAbout: constructAdditionalLinks(courtDetails.additional_links, SidebarLocation.FindOutMoreAbout)
+          };
+          viewData.results = { ...courtDetails, enquiries, additionalLinks };
 
           if (courtDetails['in_person']) {
             return res.render('court-details/in-person-court', viewData);

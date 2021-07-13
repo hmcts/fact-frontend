@@ -202,20 +202,7 @@
         </div>
       {% endif %}
 
-      {% set additionalLinksInThisLocationHandles = false %}
-      {% set additionalLinksInFindOutMoreAbout = false %}
-      {% if results.additional_links and results.additional_links.length %}
-        {% for additionalLink in results.additional_links %}
-          {% if additionalLink.location == 'SidebarLocation.ThisLocationHandle' %}
-            {% set additionalLinksInThisLocationHandles = true %}
-          {% endif %}
-          {% if additionalLink.location == SidebarLocation.FindOutMoreAbout %}
-            {% set additionalLinksInFindOutMoreAbout = true %}
-          {% endif %}
-        {% endfor %}
-      {% endif %}
-
-      {% if (results['areas_of_law'] and results['areas_of_law'].length > 0) or additionalLinksInThisLocationHandles %}
+      {% if (results['areas_of_law'] and results['areas_of_law'].length > 0) or (results.additionalLinks.findOutMoreAbout and results.additionalLinks.findOutMoreAbout.length) %}
         <div class="govuk-grid-row" id="areas-of-law">
           <h3 class="govuk-heading-m">
             {{ areasOfLawHeading }}:
@@ -249,29 +236,25 @@
               </li>
             {% endif %}
 
-            {% for additionalLink in results.additional_links %}
-              {% if additionalLink.location == SidebarLocation.ThisLocationHandles %}
-                <li>
-                  <a class="govuk-link" href="{{ additionalLink.url }}">{{ additionalLink.description }}</a>
-                </li>
-              {% endif %}
+            {% for additionalLink in results.additionalLinks.thisLocationHandles %}
+              <li>
+                <a class="govuk-link" href="{{ additionalLink.url }}">{{ additionalLink.description }}</a>
+              </li>
             {% endfor %}
           </ul>
         </div>
       {% endif %}
 
-      {% if additionalLinksInFindOutMoreAbout == true %}
+      {% if results.additionalLinks.findOutMoreAbout and results.additionalLinks.findOutMoreAbout.length %}
         <div class="govuk-grid-row" id="find-out-more-about">
           <h3 class="govuk-heading-m">
             {{ findOutMoreAboutHeading }}:
           </h3>
           <ul class="govuk-list">
-            {% for additionalLink in results.additional_links %}
-              {% if additionalLink.location == SidebarLocation.FindOutMoreAbout %}
-                <li>
-                  <a class="govuk-link" href="{{ additionalLink.url }}">{{ additionalLink.description }}</a>
-                </li>
-              {% endif %}
+            {% for additionalLink in results.additionalLinks.findOutMoreAbout %}
+              <li>
+                <a class="govuk-link" href="{{ additionalLink.url }}">{{ additionalLink.description }}</a>
+              </li>
             {% endfor %}
           </ul>
         </div>

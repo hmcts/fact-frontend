@@ -178,7 +178,7 @@
       </div>
 
       <div class="govuk-grid-column-one-third side-content">
-        {% if (results['areas_of_law'] and results['areas_of_law'] |  selectattr("external_link") | length > 0) or (results.additional_links and results.additional_links.length) %}
+        {% if (results['areas_of_law'] and results['areas_of_law'] |  selectattr("external_link") | length > 0) or (results.additionalLinks.findOutMoreAbout and results.additionalLinks.findOutMoreAbout.length) %}
           <div class="govuk-grid-row" id="areas-of-law">
             <h3 class="govuk-heading-m">
               {{ findOutMoreAboutHeading }}:
@@ -201,9 +201,14 @@
                   {% endif %}
                 </li>
               {% endfor %}
+            </ul>
 
-              {% for additionalLink in results.additional_links %}
+            <ul class="govuk-list">
+              {% for additionalLink in results.additionalLinks.findOutMoreAbout %}
                 <li>
+                  {% if additionalLink.isFinancialRemedy %}
+                    <p class="govuk-body-m">{{ financialRemedyText }}:</p>
+                  {% endif %}
                   <a class="govuk-link" href="{{ additionalLink.url }}">{{ additionalLink.description }}</a>
                 </li>
               {% endfor %}

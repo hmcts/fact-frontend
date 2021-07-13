@@ -26,5 +26,14 @@ export const filterByDescription = (contacts: any[], filter: string[]): any[] =>
 };
 
 export const constructAdditionalLinks = (additionalLinks: AdditionalLink[], sidebarLocation: string): AdditionalLink[] => {
-  return additionalLinks.filter(link => link.location === sidebarLocation);
+  const results: AdditionalLink[] = [];
+  for (const link of additionalLinks) {
+    if (link.location === sidebarLocation) {
+      if (link.description === 'Financial Remedy') {
+        link.isFinancialRemedy = true;
+      }
+      results.push(link);
+    }
+  }
+  return results;
 };
