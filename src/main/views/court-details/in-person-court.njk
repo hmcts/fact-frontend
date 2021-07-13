@@ -202,7 +202,20 @@
         </div>
       {% endif %}
 
-      {% if results['areas_of_law'] and results['areas_of_law'].length > 0 %}
+      {% set additionalLinksInThisLocationHandles = false %}
+      {% set additionalLinksInFindOutMoreAbout = false %}
+      {% if results.additional_links and results.additional_links.length %}
+        {% for additionalLink in results.additional_links %}
+          {% if additionalLink.location == 'SidebarLocation.ThisLocationHandle' %}
+            {% set additionalLinksInThisLocationHandles = true %}
+          {% endif %}
+          {% if additionalLink.location == SidebarLocation.FindOutMoreAbout %}
+            {% set additionalLinksInFindOutMoreAbout = true %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      {% if (results['areas_of_law'] and results['areas_of_law'].length > 0) or additionalLinksInThisLocationHandles %}
         <div class="govuk-grid-row" id="areas-of-law">
           <h3 class="govuk-heading-m">
             {{ areasOfLawHeading }}:
@@ -229,25 +242,36 @@
                 {% endif %}
               </li>
             {% endfor %}
+
             {% if 'County Court' in results.types %}
               <li>
                 <a class="govuk-link" href="https://www.gov.uk/guidance/debt-respite-breathing-space-scheme-creditors-responsibilities-to-the-court">{{ breathingSpace }}</a>
               </li>
             {% endif %}
+
+            {% for additionalLink in results.additional_links %}
+              {% if additionalLink.location == SidebarLocation.ThisLocationHandles %}
+                <li>
+                  <a class="govuk-link" href="{{ additionalLink.url }}">{{ additionalLink.description }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
           </ul>
         </div>
       {% endif %}
 
-      {% if results.additional_links and results.additional_links.length %}
+      {% if additionalLinksInFindOutMoreAbout == true %}
         <div class="govuk-grid-row" id="find-out-more-about">
           <h3 class="govuk-heading-m">
             {{ findOutMoreAboutHeading }}:
           </h3>
           <ul class="govuk-list">
             {% for additionalLink in results.additional_links %}
-              <li>
-                <a class="govuk-link" href="{{ additionalLink.url }}">{{ additionalLink.description }}</a>
-              </li>
+              {% if additionalLink.location == SidebarLocation.FindOutMoreAbout %}
+                <li>
+                  <a class="govuk-link" href="{{ additionalLink.url }}">{{ additionalLink.description }}</a>
+                </li>
+              {% endif %}
             {% endfor %}
           </ul>
         </div>

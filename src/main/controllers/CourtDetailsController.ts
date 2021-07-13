@@ -47,6 +47,7 @@ export class CourtDetailsController {
 
           viewData.seoMetadata = generatePlaceMetadata(courtDetails);
           viewData.seoMetadataDescription = (viewData.seoMetadataDescription as string).replace('{courtName}', courtDetails.name);
+          viewData
           viewData.results = { ...courtDetails, enquiries };
 
           if (courtDetails['in_person']) {
