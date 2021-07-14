@@ -201,13 +201,11 @@
                   {% endif %}
                 </li>
               {% endfor %}
-            </ul>
 
-            <ul class="govuk-list">
               {% for additionalLink in results.additionalLinks.findOutMoreAbout %}
                 <li>
                   {% if additionalLink.isFinancialRemedy %}
-                    <p class="govuk-body-m">{{ financialRemedyText }}:</p>
+                    <p class="govuk-body-m"><br>{{ financialRemedyText }}:</p>
                   {% endif %}
                   <a class="govuk-link" href="{{ additionalLink.url }}">{{ additionalLink.description }}</a>
                 </li>
