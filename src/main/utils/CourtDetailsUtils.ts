@@ -25,7 +25,7 @@ export const filterByDescription = (contacts: any[], filter: string[]): any[] =>
   return contacts.filter((contact) => filter.includes(contact.description.toLowerCase()));
 };
 
-export const constructAdditionalLinks = (additionalLinks: AdditionalLink[], sidebarLocation: string): AdditionalLink[] => {
+export const filterAdditionalLinks = (additionalLinks: AdditionalLink[], sidebarLocation: string): AdditionalLink[] => {
   const results: AdditionalLink[] = [];
   for (const link of additionalLinks) {
     if (link.location === sidebarLocation) {

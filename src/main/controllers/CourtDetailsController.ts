@@ -2,8 +2,8 @@ import { FactRequest } from '../interfaces/FactRequest';
 import { NextFunction, Response } from 'express';
 import { FactApi } from '../utils/FactApi';
 import {
-  constructAdditionalLinks,
   decideCatchmentArea,
+  filterAdditionalLinks,
   filterByDescription,
   formatAreasOfLaw
 } from '../utils/CourtDetailsUtils';
@@ -54,8 +54,8 @@ export class CourtDetailsController {
           viewData.seoMetadata = generatePlaceMetadata(courtDetails);
           viewData.seoMetadataDescription = (viewData.seoMetadataDescription as string).replace('{courtName}', courtDetails.name);
           const additionalLinks = {
-            thisLocationHandles: constructAdditionalLinks(courtDetails.additional_links, SidebarLocation.ThisLocationHandles),
-            findOutMoreAbout: constructAdditionalLinks(courtDetails.additional_links, SidebarLocation.FindOutMoreAbout)
+            thisLocationHandles: filterAdditionalLinks(courtDetails.additional_links, SidebarLocation.ThisLocationHandles),
+            findOutMoreAbout: filterAdditionalLinks(courtDetails.additional_links, SidebarLocation.FindOutMoreAbout)
           };
           viewData.results = { ...courtDetails, enquiries, additionalLinks };
 
