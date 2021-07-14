@@ -1,9 +1,9 @@
 Feature: Court Name Know - Court Details
 
   Background:
-    Given I am on FACT homepage
-    And I navigate to the Search Page
-    When I select "I have the name"
+   Given I am on FACT homepage
+   And I navigate to the Search Page
+   When I select "I have the name"
 
   Scenario Outline: In-person court or tribunal selection
     And I have entered "<in_person_court>" as search criteria
@@ -252,8 +252,21 @@ Feature: Court Name Know - Court Details
     Given results are returned
     When I select a court or tribunal link
     And That location sidebar includes "<sidebar_entries>"
-    Then I click the link "<page_link>" at index <index> and it takes me to the page"<page_title>"
+    Then I click the link "<page_link>" from "<sidebar_entries>" at index <index> and it takes me to the page"<page_title>"
 
     Examples:
       | Find_out_more_about_court  | sidebar_entries       | page_title             | page_link                                       | index |
-      | West London Family Court   | find-out-more-about   | Support Through Court  | Support through court (Independent charity)     | 1     |
+      | West London Family Court   | find-out-more-about   | Support Through Court  | Support Through Court (Independent charity)     | 1     |
+
+  Scenario Outline: Not-in-person Court - Find out more about Financial Remedy
+   And I have entered "<Find_out_more_about_court>" as search criteria
+   When I have selected to search for that court or tribunal name or address
+   Given results are returned
+   When I select a court or tribunal link
+    And That location sidebar includes "<sidebar_entries>"
+   Then I click the link "<page_link>" from "<sidebar_entries>" at index <index> and it takes me to the page"<page_title>"
+
+   Examples:
+     | Find_out_more_about_court  | sidebar_entries       | page_title                                                |  page_link           | index |
+     | Divorce Service Centre     | areas-of-law          | Money and property when you divorce or separate - GOV.UK  |  Financial Remedy    | 3     |
+    
