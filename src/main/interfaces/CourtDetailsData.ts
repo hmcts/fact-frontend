@@ -44,5 +44,4 @@ export interface AdditionalLink {
   url: string;
   description: string;
   location: string;
-  isFinancialRemedy?: boolean;
 }

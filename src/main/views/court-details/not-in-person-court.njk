@@ -204,9 +204,6 @@
 
               {% for additionalLink in results.additionalLinks.findOutMoreAbout %}
                 <li>
-                  {% if additionalLink.isFinancialRemedy %}
-                    <p class="govuk-body-m"><br>{{ financialRemedyText }}:</p>
-                  {% endif %}
                   <a class="govuk-link" href="{{ additionalLink.url }}">{{ additionalLink.description }}</a>
                 </li>
               {% endfor %}

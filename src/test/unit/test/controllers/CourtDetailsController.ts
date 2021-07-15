@@ -51,8 +51,7 @@ describe('CourtDetailsController', () => {
             {
               url: 'https://www.gov.uk/money-property-when-relationship-ends',
               description: 'Financial Remedy',
-              location: 'This location handles',
-              isFinancialRemedy: true
+              location: 'This location handles'
             }
           ],
           findOutMoreAbout: [
@@ -111,8 +110,7 @@ describe('CourtDetailsController', () => {
             {
               url: 'https://www.gov.uk/money-property-when-relationship-ends',
               description: 'Financial Remedy',
-              location: 'This location handles',
-              isFinancialRemedy: true
+              location: 'This location handles'
             }
           ],
           findOutMoreAbout: [

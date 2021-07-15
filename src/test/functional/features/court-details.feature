@@ -259,16 +259,16 @@ Feature: Court Name Know - Court Details
       | West London Family Court   | find-out-more-about   | Support Through Court  | Support Through Court (Independent charity)  | 1     |
 
   Scenario Outline: Not-in-person Court - Find out more about: Financial Remedy
-   And I have entered "<not_in_person_court>" as search criteria
-   When I have selected to search for that court or tribunal name or address
-   Given results are returned
-   When I select a court or tribunal link
+    And I have entered "<not_in_person_court>" as search criteria
+    When I have selected to search for that court or tribunal name or address
+    Given results are returned
+    When I select a court or tribunal link
     And That location sidebar includes "<sidebar_entries>"
-   Then I click the link "<page_link>" from "<sidebar_entries>" at index <index> and it takes me to the page"<page_title>"
+    Then I click the link "<page_link>" from "<sidebar_entries>" at index <index> and it takes me to the page"<page_title>"
 
    Examples:
      | not_in_person_court        | sidebar_entries       | page_title                                                |  page_link           | index |
-     | Divorce Service Centre     | areas-of-law          | Money and property when you divorce or separate - GOV.UK  |  Financial Remedy    | 3     |
+     | Divorce Service Centre     | areas-of-law          | Money and property when you divorce or separate - GOV.UK  |  If you are making an application to settle your finances following a divorce (Financial Remedy), please refer to the guidance found here | 3     |
 
   Scenario Outline: In-person Court - This location handles: Financial Remedy
     And I have entered "<in_person_court>" as search criteria

@@ -93,25 +93,5 @@ describe('CourtDetailsUtils', () => {
       expect(results[0].url).toEqual(url1);
       expect(results[1].url).toEqual(url3);
     });
-
-    test('Should set flag for \'Financial Remedy\' description', () => {
-      const additionalLinks: AdditionalLink[] = [
-        {
-          url: url1,
-          description: 'Financial Remedy',
-          location: findOutMoreAbout
-        },
-        {
-          url: url2,
-          description: 'Something else',
-          location: findOutMoreAbout
-        }
-      ];
-
-      const results: AdditionalLink[] = filterAdditionalLinks(additionalLinks, findOutMoreAbout);
-      expect(results.length).toEqual(2);
-      expect(results[0].isFinancialRemedy).toBeTruthy();
-      expect(results[1].isFinancialRemedy).toBeUndefined();
-    });
   });
 });
