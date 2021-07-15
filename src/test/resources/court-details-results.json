@@ -54,5 +54,17 @@
       "postcode": "B4 6DS"
     }
   ],
-  "gbs": null
+  "gbs": null,
+  "additional_links": [
+    {
+      "url": "https://www.gov.uk/money-property-when-relationship-ends",
+      "description": "Financial Remedy",
+      "location": "This location handles"
+    },
+    {
+      "url": "https://www.supportthroughcourt.org",
+      "description": "Support Through Court (Independent charity)",
+      "location": "Find out more about"
+    }
+  ]
 }

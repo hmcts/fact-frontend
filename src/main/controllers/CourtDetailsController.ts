@@ -53,11 +53,16 @@ export class CourtDetailsController {
 
           viewData.seoMetadata = generatePlaceMetadata(courtDetails);
           viewData.seoMetadataDescription = (viewData.seoMetadataDescription as string).replace('{courtName}', courtDetails.name);
-          const additionalLinks = {
-            thisLocationHandles: filterAdditionalLinks(courtDetails.additional_links, SidebarLocation.ThisLocationHandles),
-            findOutMoreAbout: filterAdditionalLinks(courtDetails.additional_links, SidebarLocation.FindOutMoreAbout)
-          };
-          viewData.results = { ...courtDetails, enquiries, additionalLinks };
+
+          if (courtDetails.additional_links.length > 0) {
+            const additionalLinks = {
+              thisLocationHandles: filterAdditionalLinks(courtDetails.additional_links, SidebarLocation.ThisLocationHandles),
+              findOutMoreAbout: filterAdditionalLinks(courtDetails.additional_links, SidebarLocation.FindOutMoreAbout)
+            };
+            viewData.results = {...courtDetails, enquiries, additionalLinks};
+          } else {
+            viewData.results = {...courtDetails, enquiries};
+          }
 
           if (courtDetails['in_person']) {
             return res.render('court-details/in-person-court', viewData);
