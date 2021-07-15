@@ -60,6 +60,7 @@ describe('CourtDetailsUtils', () => {
       expect(formatAreasOfLaw(areasOfLaw)).toEqual('');
     });
   });
+
   describe('filterAdditionalLinks', () => {
     const url1 = 'www.test1.com';
     const url2 = 'www.test2.com';
