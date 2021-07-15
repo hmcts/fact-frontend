@@ -253,20 +253,19 @@ Given('that location does not participate in the Professional users’ court and
   expect(text).equal('This location does not participate in this scheme');
 });
 
-Given('That location sidebar includes {string}', async (SidebarEntry: string) => {
-  const hasSidebarEntry = await I.checkElement('#'+ SidebarEntry );
+Given('That location sidebar includes {string}', async (sidebarEntry: string) => {
+  const hasSidebarEntry = await I.checkElement('#'+ sidebarEntry );
   expect(hasSidebarEntry).equal(true);
 });
 
-Then( 'I click the link {string} at index {int} and it takes me to the page{string}',async (pageLink: string, index: number, pageTitle: string) => {
-  const element = await I.getElement('#find-out-more-about > ul >li:nth-child('+ index +') > a');
+Then( 'I click the link {string} from {string} at index {int} and it takes me to the page{string}',async (pageLink: string, sidebarEntry: string, index: number, pageTitle: string) => {
+  const element = await I.getElement('#'+ sidebarEntry +' > ul >li:nth-child('+ index +') > a');
   const isElementAnchor = await I.checkElementIsAnchor(element);
   expect(isElementAnchor).equal(true);
 
   const linkText=await I.getElementText(element);
   expect(linkText).equal(pageLink);
-
-  await I.click('#find-out-more-about > ul > li:nth-child('+ index +') > a');
+  await I.click('#'+ sidebarEntry + '> ul > li:nth-child('+ index +') > a');
 
   const expPageTitle = await I.getPageTitle();
   expect(expPageTitle).equal(pageTitle);
