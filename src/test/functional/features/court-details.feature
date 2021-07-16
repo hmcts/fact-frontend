@@ -266,9 +266,9 @@ Feature: Court Name Know - Court Details
     And That location sidebar includes "<sidebar_entries>"
     Then I click the link "<page_link>" from "<sidebar_entries>" at index <index> and it takes me to the page"<page_title>"
 
-   Examples:
-     | not_in_person_court        | sidebar_entries       | page_title                                                |  page_link           | index |
-     | Divorce Service Centre     | areas-of-law          | Money and property when you divorce or separate - GOV.UK  |  If you are making an application to settle your finances following a divorce (Financial Remedy), please refer to the guidance found here | 3     |
+    Examples:
+      | not_in_person_court        | sidebar_entries       | page_title                                                | page_link                                                                                                                                | index |
+      | Divorce Service Centre     | areas-of-law          | Money and property when you divorce or separate - GOV.UK  | If you are making an application to settle your finances following a divorce (Financial Remedy), please refer to the guidance found here | 3     |
 
   Scenario Outline: In-person Court - This location handles: Financial Remedy
     And I have entered "<in_person_court>" as search criteria
@@ -279,5 +279,5 @@ Feature: Court Name Know - Court Details
     Then I click the link "<page_link>" from "<sidebar_entries>" at index <index> and it takes me to the page"<page_title>"
 
     Examples:
-      | in_person_court                            | sidebar_entries       | page_title                                                |  page_link           | index  |
-      | Birmingham Civil and Family Justice Centre | areas-of-law          | Money and property when you divorce or separate - GOV.UK  |  Financial Remedy    | 15     |
+      | in_person_court                            | sidebar_entries       | page_title                                                | page_link           | index  |
+      | Birmingham Civil and Family Justice Centre | areas-of-law          | Money and property when you divorce or separate - GOV.UK  | Financial Remedy    | 15     |
