@@ -1,4 +1,9 @@
-import {decideCatchmentArea, formatAreasOfLaw} from '../../../../main/utils/CourtDetailsUtils';
+import {
+  filterAdditionalLinks,
+  decideCatchmentArea,
+  formatAreasOfLaw
+} from '../../../../main/utils/CourtDetailsUtils';
+import {AdditionalLink} from '../../../../main/interfaces/CourtDetailsData';
 
 describe('CourtDetailsUtils', () => {
   describe('decideCatchmentArea', () => {
@@ -53,6 +58,40 @@ describe('CourtDetailsUtils', () => {
       const areasOfLaw: any = [];
 
       expect(formatAreasOfLaw(areasOfLaw)).toEqual('');
+    });
+  });
+
+  describe('filterAdditionalLinks', () => {
+    const url1 = 'www.test1.com';
+    const url2 = 'www.test2.com';
+    const url3 = 'www.test3.com';
+
+    const thisLocationHandles = 'This location handles';
+    const findOutMoreAbout = 'Find out more about';
+
+    test('Should filter additional Links on location', () => {
+      const additionalLinks: AdditionalLink[] = [
+        {
+          url: url1,
+          description: 'description1',
+          location: thisLocationHandles
+        },
+        {
+          url: url2,
+          description: 'description2',
+          location: findOutMoreAbout
+        },
+        {
+          url: url3,
+          description: 'description3',
+          location: thisLocationHandles
+        }
+      ];
+
+      const results: AdditionalLink[] = filterAdditionalLinks(additionalLinks, thisLocationHandles);
+      expect(results.length).toEqual(2);
+      expect(results[0].url).toEqual(url1);
+      expect(results[1].url).toEqual(url3);
     });
   });
 });

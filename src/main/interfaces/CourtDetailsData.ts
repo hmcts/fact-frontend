@@ -43,4 +43,5 @@ export interface CourtDetailsResult {
 export interface AdditionalLink {
   url: string;
   description: string;
+  location: string;
 }

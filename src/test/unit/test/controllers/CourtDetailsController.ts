@@ -45,6 +45,22 @@ describe('CourtDetailsController', () => {
           fax: [],
           phone: [],
           welshPhone: []
+        },
+        additionalLinks: {
+          thisLocationHandles: [
+            {
+              url: 'https://www.gov.uk/money-property-when-relationship-ends',
+              description: 'Financial Remedy',
+              location: 'This location handles'
+            }
+          ],
+          findOutMoreAbout: [
+            {
+              url: 'https://www.supportthroughcourt.org',
+              description: 'Support Through Court (Independent charity)',
+              location: 'Find out more about',
+            }
+          ]
         }
       },
       seoMetadata: {
@@ -88,6 +104,22 @@ describe('CourtDetailsController', () => {
           fax: [],
           phone: [],
           welshPhone: []
+        },
+        additionalLinks: {
+          thisLocationHandles: [
+            {
+              url: 'https://www.gov.uk/money-property-when-relationship-ends',
+              description: 'Financial Remedy',
+              location: 'This location handles'
+            }
+          ],
+          findOutMoreAbout: [
+            {
+              url: 'https://www.supportthroughcourt.org',
+              description: 'Support Through Court (Independent charity)',
+              location: 'Find out more about',
+            }
+          ]
         }
       },
       seoMetadata: {

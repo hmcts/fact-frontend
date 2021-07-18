@@ -1,3 +1,5 @@
+import {AdditionalLink} from '../interfaces/CourtDetailsData';
+
 export const decideCatchmentArea = (regionalCentre: boolean, area: { area1: string; area2: string }): string => {
   return regionalCentre ? area.area1 : area.area2;
 };
@@ -21,4 +23,8 @@ export const formatAreasOfLaw = (areasOfLaw: any[]): string => {
 
 export const filterByDescription = (contacts: any[], filter: string[]): any[] => {
   return contacts.filter((contact) => filter.includes(contact.description.toLowerCase()));
+};
+
+export const filterAdditionalLinks = (additionalLinks: AdditionalLink[], sidebarLocation: string): AdditionalLink[] => {
+  return additionalLinks.filter(link => link.location === sidebarLocation);
 };
