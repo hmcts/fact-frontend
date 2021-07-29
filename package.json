@@ -112,7 +112,7 @@
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
     "webpack-dev-middleware": "^5.0.0",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^3.0.0"
   },
   "resolutions": {
     "sass-lint/merge": "^2.1.1",
