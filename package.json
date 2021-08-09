@@ -54,7 +54,7 @@
     "glob-parent": "6.0.0",
     "govuk-frontend": "^3.11.0",
     "helmet": "^3.21.2",
-    "http-proxy-middleware": "^1.0.6",
+    "http-proxy-middleware": "^2.0.1",
     "i18next": "^20.3.2",
     "i18next-http-middleware": "^3.1.1",
     "jquery": "^3.5.0",
