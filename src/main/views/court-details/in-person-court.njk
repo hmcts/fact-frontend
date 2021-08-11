@@ -232,12 +232,6 @@
               </li>
             {% endfor %}
 
-            {% if 'County Court' in results.types %}
-              <li>
-                <a class="govuk-link" href="https://www.gov.uk/guidance/debt-respite-breathing-space-scheme-creditors-responsibilities-to-the-court">{{ breathingSpace }}</a>
-              </li>
-            {% endif %}
-
             {% for additionalLink in results.additionalLinks.thisLocationHandles %}
               <li>
                 <a class="govuk-link" href="{{ additionalLink.url }}">{{ additionalLink.description }}</a>

@@ -88,7 +88,7 @@ Feature: Court Name Know - Court Details
     And that location entry includes opening times for one or more services offered
     Then the type of each service is presented on the profile page
     And the opening days and hours for each service is presented to me on the profile page
-#
+
     Examples:
       | opening_times_court                        |
       | Birmingham Civil and Family Justice Centre |
@@ -252,11 +252,11 @@ Feature: Court Name Know - Court Details
     Given results are returned
     When I select a court or tribunal link
     And That location sidebar includes "<sidebar_entries>"
-    Then I click the link "<page_link>" from "<sidebar_entries>" and it takes me to the page"<page_title>"
+    Then I click the link "<page_link>" from "<sidebar_entries>" at index <index> and it takes me to the page"<page_title>"
 
     Examples:
-      | Find_out_more_about_court  | sidebar_entries       | page_title             | page_link                                     |
-      | West London Family Court   | find-out-more-about   | Support Through Court  | Support Through Court (Independent charity)   |
+      | Find_out_more_about_court  | sidebar_entries       | page_title             | page_link                                    | index |
+      | West London Family Court   | find-out-more-about   | Support Through Court  | Support Through Court (Independent charity)  | 1     |
 
   Scenario Outline: Not-in-person Court - Find out more about: Financial Remedy
     And I have entered "<not_in_person_court>" as search criteria
@@ -264,12 +264,11 @@ Feature: Court Name Know - Court Details
     Given results are returned
     When I select a court or tribunal link
     And That location sidebar includes "<sidebar_entries>"
-    Then I click the link "<page_link>" from "<sidebar_entries>" and it takes me to the page"<page_title>"
+    Then I click the link "<page_link>" from "<sidebar_entries>" at index <index> and it takes me to the page"<page_title>"
 
     Examples:
-      | not_in_person_court        | sidebar_entries       | page_title                                                | page_link                                                                                                                                |
-      | Divorce Service Centre     | areas-of-law          | Money and property when you divorce or separate - GOV.UK  | If you are making an application to settle your finances following a divorce (Financial Remedy), please refer to the guidance found here |
-
+      | not_in_person_court        | sidebar_entries       | page_title                                                | page_link                                                                                                                                | index |
+      | Divorce Service Centre     | areas-of-law          | Money and property when you divorce or separate - GOV.UK  | If you are making an application to settle your finances following a divorce (Financial Remedy), please refer to the guidance found here | 3     |
 
   Scenario Outline: In-person Court - This location handles: Financial Remedy
     And I have entered "<in_person_court>" as search criteria
@@ -277,8 +276,8 @@ Feature: Court Name Know - Court Details
     Given results are returned
     When I select a court or tribunal link
     And That location sidebar includes "<sidebar_entries>"
-    Then I click the link "<page_link>" from "<sidebar_entries>" and it takes me to the page"<page_title>"
+    Then I click the link "<page_link>" from "<sidebar_entries>" at index <index> and it takes me to the page"<page_title>"
 
     Examples:
-      | in_person_court                                         | sidebar_entries       | page_title                                                | page_link         |
-      | manchester-civil-justice-centre-civil-and-family-courts | areas-of-law          | Money and property when you divorce or separate - GOV.UK  | Financial Remedy  |
+      | in_person_court                            | sidebar_entries       | page_title                                                | page_link           | index  |
+      | Birmingham Civil and Family Justice Centre | areas-of-law          | Money and property when you divorce or separate - GOV.UK  | Financial Remedy    | 14     |
