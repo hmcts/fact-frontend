@@ -178,7 +178,7 @@
       </div>
 
       <div class="govuk-grid-column-one-third side-content">
-        {% if (results['areas_of_law'] and results['areas_of_law'] |  selectattr("external_link") | length > 0) or (results.additionalLinks.findOutMoreAbout and results.additionalLinks.findOutMoreAbout.length) %}
+        {% if results['areas_of_law'] and results['areas_of_law'] |  selectattr("external_link") | length > 0 %}
           <div class="govuk-grid-row" id="areas-of-law">
             <h3 class="govuk-heading-m">
               {{ findOutMoreAboutHeading }}:
@@ -199,12 +199,6 @@
                   {% if externalLink %}
                     <a class="govuk-link" href="{{ externalLink }}">{{ displayName }}</a>
                   {% endif %}
-                </li>
-              {% endfor %}
-
-              {% for additionalLink in results.additionalLinks.findOutMoreAbout %}
-                <li>
-                  <a class="govuk-link" href="{{ additionalLink.url }}">{{ additionalLink.description }}</a>
                 </li>
               {% endfor %}
             </ul>

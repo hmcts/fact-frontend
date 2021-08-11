@@ -3,7 +3,6 @@ import { NextFunction, Response } from 'express';
 import { FactApi } from '../utils/FactApi';
 import {
   decideCatchmentArea,
-  filterAdditionalLinks,
   filterByDescription,
   formatAreasOfLaw
 } from '../utils/CourtDetailsUtils';
@@ -14,8 +13,6 @@ import { CourtDetailsData, CourtDetailsResult } from '../interfaces/CourtDetails
 import config from 'config';
 import { cloneDeep } from 'lodash';
 import { generatePlaceMetadata } from '../utils/SEOMetadata';
-import { SidebarLocation } from '../utils/SidebarLocation';
-
 @autobind
 export class CourtDetailsController {
 
@@ -53,16 +50,7 @@ export class CourtDetailsController {
 
           viewData.seoMetadata = generatePlaceMetadata(courtDetails);
           viewData.seoMetadataDescription = (viewData.seoMetadataDescription as string).replace('{courtName}', courtDetails.name);
-
-          if (courtDetails.additional_links.length > 0) {
-            const additionalLinks = {
-              thisLocationHandles: filterAdditionalLinks(courtDetails.additional_links, SidebarLocation.ThisLocationHandles),
-              findOutMoreAbout: filterAdditionalLinks(courtDetails.additional_links, SidebarLocation.FindOutMoreAbout)
-            };
-            viewData.results = {...courtDetails, enquiries, additionalLinks};
-          } else {
-            viewData.results = {...courtDetails, enquiries};
-          }
+          viewData.results = {...courtDetails, enquiries};
 
           if (courtDetails['in_person']) {
             return res.render('court-details/in-person-court', viewData);

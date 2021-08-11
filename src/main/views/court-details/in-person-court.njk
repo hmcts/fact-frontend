@@ -209,9 +209,7 @@
           </h3>
           <ul class="govuk-list">
             {% for area in results['areas_of_law'] | sort(attribute="name") %}
-              {% if area.name === 'Divorce' %}
-                {% set displayName = divorceHearings %}
-              {% elseif area['display_name'] %}
+              {% if area['display_name'] %}
                 {% set displayName = area['display_name'] %}
               {% else %}
                 {% set displayName = area.name %}
@@ -229,23 +227,17 @@
                 {% endif %}
               </li>
             {% endfor %}
-
-            {% for additionalLink in results.additionalLinks.thisLocationHandles %}
-              <li>
-                <a class="govuk-link" href="{{ additionalLink.url }}">{{ additionalLink.description }}</a>
-              </li>
-            {% endfor %}
           </ul>
         </div>
       {% endif %}
 
-      {% if results.additionalLinks.findOutMoreAbout and results.additionalLinks.findOutMoreAbout.length %}
+      {% if results.additional_links and results.additional_links.length %}
         <div class="govuk-grid-row" id="find-out-more-about">
           <h3 class="govuk-heading-m">
             {{ findOutMoreAboutHeading }}:
           </h3>
           <ul class="govuk-list">
-            {% for additionalLink in results.additionalLinks.findOutMoreAbout %}
+            {% for additionalLink in results.additional_links %}
               <li>
                 <a class="govuk-link" href="{{ additionalLink.url }}">{{ additionalLink.description }}</a>
               </li>

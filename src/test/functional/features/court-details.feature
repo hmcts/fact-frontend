@@ -280,4 +280,4 @@ Feature: Court Name Know - Court Details
 
     Examples:
       | in_person_court                            | sidebar_entries       | page_title                                                | page_link           | index  |
-      | Birmingham Civil and Family Justice Centre | areas-of-law          | Money and property when you divorce or separate - GOV.UK  | Financial Remedy    | 14     |
+      | Birmingham Civil and Family Justice Centre | areas-of-law          | Money and property when you divorce or separate - GOV.UK  | Financial Remedy    | 9     |
