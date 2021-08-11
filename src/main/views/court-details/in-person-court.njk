@@ -225,7 +225,9 @@
                 {% if externalLink %}
                   <a class="govuk-link" href="{{ externalLink }}">{{ displayName }}</a>
                 {% else %}
-                  {{ displayName }}
+                  <p>
+                     {{displayName}}
+                  </p>
                 {% endif %}
               </li>
             {% endfor %}

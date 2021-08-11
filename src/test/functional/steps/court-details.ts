@@ -258,7 +258,12 @@ Given('That location sidebar includes {string}', async (sidebarEntry: string) =>
   expect(hasSidebarEntry).equal(true);
 });
 
-Then( 'I click the link {string} from {string} at index {int} and it takes me to the page{string}',async (pageLink: string, sidebarEntry: string, index: number, pageTitle: string) => {
+Then( 'I click the link {string} from {string} and it takes me to the page{string}',async (pageLink: string, sidebarEntry: string, pageTitle: string) => {
+  const areasOfLaw = (await I.getTextFromElements('#' + sidebarEntry + '> ul > li')) as string[];
+  let index = areasOfLaw.findIndex(aol => aol.toLowerCase() === pageLink.toLowerCase());
+
+  //adding 1 to 0 based array index to keep the index same for the selected element
+  index+=1;
   const element = await I.getElement('#'+ sidebarEntry +' > ul >li:nth-child('+ index +') > a');
   const isElementAnchor = await I.checkElementIsAnchor(element);
   expect(isElementAnchor).equal(true);
