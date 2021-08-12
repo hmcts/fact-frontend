@@ -43,8 +43,10 @@ Then('I can see courts list all start with {string}', async (alphabet: string) =
   for (let i = 0; i < courtHtmlElement.length; ++i) {
     if (courtHtmlElement[i] === sortedCourtNames[i])
       isEqual = true;
-    else
+    else {
       isEqual = false;
+      break;
+    }
   }
   expect(isEqual).equal(true);
 });
