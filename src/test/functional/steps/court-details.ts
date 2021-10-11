@@ -104,7 +104,7 @@ Given('that location entry includes additional information for that location', a
 Then('that additional information is presented to me on the profile page', async () => {
   const element = await I.getElement('#additional-info > h3');
   const text = await I.getElementText(element);
-  expect(text).equal('Coronavirus (COVID-19) Update');
+  expect(text).equal('Additional information');
 });
 
 Given('that location entry includes opening times for one or more services offered', async () => {
