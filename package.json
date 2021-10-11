@@ -15,7 +15,7 @@
     "test:coverage": "jest --coverage -c jest.coverage.config.js",
     "test:a11y": "echo 'nope' && exit 0",
     "test:pa11y": "NODE_TLS_REJECT_UNAUTHORIZED=0 jest -c jest.a11y.config.js --maxWorkers 15",
-    "test:cucumber": "NODE_TLS_REJECT_UNAUTHORIZED=0 cucumber-js --parallel=8 --retry 3",
+    "test:cucumber": "NODE_TLS_REJECT_UNAUTHORIZED=0 cucumber-js --parallel=6 --retry 3",
     "sonar-scan": "sonar-scanner",
     "test:smoke": "jest -c jest.smoke.config.js",
     "test:functional": "yarn test:cucumber && yarn test:pa11y",
