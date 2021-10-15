@@ -63,7 +63,7 @@
     "require-directory": "^2.1.1",
     "serve-favicon": "^2.5.0",
     "ts-node": "^10.3.0",
-    "tsconfig-paths": "^3.10.1",
+    "tsconfig-paths": "^3.11.0",
     "typescript": "^3.7.5"
   },
   "devDependencies": {
