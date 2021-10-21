@@ -1198,16 +1198,7 @@
     js-yaml "^3.8.4"
     superagent "5"
 
-"@hmcts/nodejs-logging@^3.0.0", "@hmcts/nodejs-logging@^3.0.1":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@hmcts/nodejs-logging/-/nodejs-logging-3.0.2.tgz#3327278e820c07fd075562932c6c56d637fc760a"
-  integrity sha512-NKkBxoUGDrqzwZxthkbk60l5P2D7XVfdddVxcOOT3I87JpiOrhOY0WgSS9gWUUKTZFnEETfOms9wwawdlHiMAg==
-  dependencies:
-    moment "^2.19.3"
-    on-finished "^2.3.0"
-    winston "^2.4.5"
-
-"@hmcts/nodejs-logging@^3.0.4":
+"@hmcts/nodejs-logging@^3.0.0", "@hmcts/nodejs-logging@^3.0.1", "@hmcts/nodejs-logging@^3.0.4":
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/@hmcts/nodejs-logging/-/nodejs-logging-3.0.4.tgz#82418571e85f0a275e021f53008195accc55e3b9"
   integrity sha512-42JgVVxxMI9JD+lnKkBcwIYAiJM/mIUlSLlqs8uVqnzHG/JdMhg1g6cYWqWc3UIhxl2KS+n8y4bh09nLC47nSA==
@@ -1216,10 +1207,10 @@
     on-finished "^2.3.0"
     winston "^2.4.5"
 
-"@hmcts/properties-volume@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@hmcts/properties-volume/-/properties-volume-0.0.9.tgz#1c2b29a563fcad9041231442476a4a3b7a8abf7d"
-  integrity sha512-qW6XDDnJT8wPfSrrFNFkoQXbtWS/KE55ifeRzXeHAXB8CB9r8e8H33jCql/3WYz/LX6PGQRlrZrU27mtQaNQ4g==
+"@hmcts/properties-volume@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@hmcts/properties-volume/-/properties-volume-0.0.11.tgz#0a06807c549d430fa39da28b1a02fe34354f0154"
+  integrity sha512-Nf+bUm6qd4NN7KegN2zPlxP533KNVJcocvrnR50c14au5UEjIMD/kR7JpUkd/SzgMFIF/Jrgp4rP7MKHxQ8F4w==
   dependencies:
     "@hmcts/nodejs-logging" "^3.0.0"
     lodash "^4.17.11"
