@@ -1847,10 +1847,10 @@
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.0.tgz#e486d0d97396d79beedd0a6e33f4534ff6b4973e"
   integrity sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA==
 
-"@types/nunjucks@^3.1.4":
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/@types/nunjucks/-/nunjucks-3.1.4.tgz#2f80e2fa5e7982b2131201d0b4474ab4d03d9de1"
-  integrity sha512-cR65PLlHKW/qxxj840dbNb3ICO+iAVQzaNKJ8TcKOVKFi+QcAkhw9SCY8VFAyU41SmJMs+2nrIN2JGhX+jYb7A==
+"@types/nunjucks@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@types/nunjucks/-/nunjucks-3.2.0.tgz#2303629c91cdd39de103af979046d4a8590351e4"
+  integrity sha512-1FM36Hm3EdidJmWlZZafkg/kZME0UZ/0vQ46JE8R7R0JqQafah0r+d4i6d/MJg5DnKxEeAOAeifEVkzo7fEvGg==
 
 "@types/prettier@^1.19.0":
   version "1.19.1"
