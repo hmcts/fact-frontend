@@ -3,7 +3,7 @@
   "title": "Beth yw eich cod post? - Dod o hyd i lys neu dribiwnlys - GOV.UK",
   "serviceName": "Dod o hyd i lys neu dribiwnlys",
   "question": "Beth yw eich cod post?",
-  "hint": "Byddwn yn defnyddio eich cod post i ddangos y llys neu’r tribiwnlys agosaf sy’n delio â {serviceArea} ichi.",
+  "hint": "Byddwn yn defnyddio'ch cod post i ddangos i chi'r llys neu'r tribiwnlys agosaf sy'n delio â {serviceArea}.",
   "noServiceHint": "Byddwn yn defnyddio eich cod post i ddangos pa lys neu dribiwnlys yw’r un agosaf atoch chi",
   "childcareHint": "Byddwn yn defnyddio cod post cartref eich plant i ddangos y llys neu’r tribiwnlys agosaf atyn nhw sy’n delio â threfniadau gofal plant.",
   "text": "Rhowch eich cod post",
