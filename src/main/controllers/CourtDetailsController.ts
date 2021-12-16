@@ -45,7 +45,7 @@ export class CourtDetailsController {
           };
 
           if (courtDetails['image_file']) {
-            courtDetails['image_file'] = config.get('services.image-store.url') + '/' + courtDetails['image_file'];
+            courtDetails['image_file'] = config.get('services.image-store.url') + courtDetails['image_file'];
           }
 
           viewData.seoMetadata = generatePlaceMetadata(courtDetails);
