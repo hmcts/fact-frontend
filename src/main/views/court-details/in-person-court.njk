@@ -57,7 +57,7 @@
       {% if results['urgent_message'] %}
         <div class="govuk-grid-row" id="urgent-message">
           {{ govukWarningText({
-            text: results['urgent_message'],
+            text: results['urgent_message'] | safe,
             iconFallbackText: "Warning"
           }) }}
         </div>
