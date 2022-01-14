@@ -92,7 +92,7 @@ Given('that location entry includes an urgent message for that location', async 
 });
 
 Then('that urgent notice is presented to me on the profile page', async () => {
-  const isCourtUrgentText = await I.checkElement('.govuk-warning-text');
+  const isCourtUrgentText = await I.checkElement('#urgent-message > div:nth-child(2) > strong');
   expect(isCourtUrgentText).equal(true);
 });
 
