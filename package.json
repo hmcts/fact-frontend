@@ -124,6 +124,6 @@
     "node-sass/node-gyp/tar": "^4.4.18",
     "webpack/watchpack/watchpack-chokidar2/chokidar/glob-parent": "^5.1.2",
     "axios/follow-redirects": "^1.14.7",
-    "http-proxy-middleware/http-proxy/follow-redirects": "^1.14.7"
+    "@types/http-proxy-middleware/http-proxy-middleware/http-proxy/follow-redirects": "^1.14.7"
   }
 }
