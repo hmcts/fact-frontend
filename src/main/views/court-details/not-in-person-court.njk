@@ -40,17 +40,15 @@
         </div>
 
         {% if results['urgent_message'] %}
-          <div id="urgent-message" class="govuk-grid-row" style="padding: 10px 0; margin: 0 0 30px">
-            <div class="warning-symbol" style="position: relative;">
+          <div class="urgent-message">
+            <div class="warning-symbol warning-symbol-div">
               <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             </div>
             <div>
-              <strong class="govuk-warning-text__text" style="padding-left: 45px;">{{ results['urgent_message'] | safe }}</strong>
+              <strong class="govuk-warning-text__text urgent-message-text">{{ results['urgent_message'] | safe }}</strong>
             </div>
           </div>
         {% endif %}
-
-
 
         {% if results.info %}
           <div class="govuk-grid-row" id="additional-info">
