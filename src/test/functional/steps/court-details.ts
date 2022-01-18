@@ -87,12 +87,12 @@ Then('both types of address are presented {string} on the profile page', async f
 });
 
 Given('that location entry includes an urgent message for that location', async () => {
-  const isCourtUrgent = await I.checkElement('#urgent-message');
+  const isCourtUrgent = await I.checkElement('#main-content > div > div > div.govuk-grid-column-two-thirds > div.urgent-message');
   expect(isCourtUrgent).equal(true);
 });
 
 Then('that urgent notice is presented to me on the profile page', async () => {
-  const isCourtUrgentText = await I.checkElement('#urgent-message > div:nth-child(2) > strong');
+  const isCourtUrgentText = await I.checkElement('#main-content > div > div > div.govuk-grid-column-two-thirds > div.urgent-message > div:nth-child(2) > strong');
   expect(isCourtUrgentText).equal(true);
 });
 
