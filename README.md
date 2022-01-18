@@ -65,6 +65,30 @@ Running the linting with auto fix:
 $ yarn lint --fix
 ```
 
+### Updating SCSS and JavaScript
+
+To compile changes made to SCSS files run:
+
+```bash
+$ yarn webpack
+```
+
+In the console scroll up to 'Entrypoint main' and copy css file name which will look something like this:
+
+```
+main.fbf607435accbb0a2ad6.css
+```
+
+Locate src/main/views/webpack/css.njk and replace the current href by pasting in the new file name,
+e.g.:
+
+```
+<link href="/main.fbf607435accbb0a2ad6.css" rel="stylesheet">
+```
+
+The SCSS changes should now compile in the browser. The same will need to be done for JavaScript updates, instead
+copying the JavaScript file name and replacing it in src/main/views/webpack/js.njk.
+
 ### Running the tests
 
 This template app uses [Jest](https://jestjs.io//) as the test engine. You can run unit tests by executing
