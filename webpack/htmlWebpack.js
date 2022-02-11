@@ -6,16 +6,18 @@ const jsPath= path.resolve(__dirname, '../src/main/views/webpack/js.njk');
 
 const cssWebPackPlugin = new HtmlWebpackPlugin({
   template:  cssPath,
-  filename: cssPath,
+  publicPath: '/',
+  filename: cssPath.replace('-template', ''),
   inject: false,
 });
 
 const jsWebPackPlugin = new HtmlWebpackPlugin({
   template: jsPath,
-  filename: jsPath,
+  publicPath: '/',
+  filename: jsPath.replace('-template', ''),
   inject: false,
 });
 
 module.exports = {
-  plugins: [cssWebPackPlugin,jsWebPackPlugin],
+  plugins: [cssWebPackPlugin, jsWebPackPlugin],
 };
