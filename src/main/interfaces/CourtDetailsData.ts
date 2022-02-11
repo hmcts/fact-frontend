@@ -38,6 +38,13 @@ export interface CourtDetailsResult {
   service_area: string[];
   in_person: boolean;
   additional_links: AdditionalLink[];
+  service_centre: ServiceCentre;
+}
+
+export interface ServiceCentre {
+  is_a_service_centre: boolean;
+  intro_paragraph: string;
+  intro_paragraph_cy: string;
 }
 
 export interface AdditionalLink {

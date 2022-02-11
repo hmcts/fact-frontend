@@ -18,9 +18,9 @@
       <div class="govuk-grid-column-two-thirds">
         <div class="govuk-grid-row">
           <div id="not-in-person">
-            <p class="govuk-body-m">
-              {{ notInPersonP1 }}
-            </p>
+            <div class="govuk-body-m">
+              {{ notInPersonP1|safe }}
+            </div>
             <h2 class="govuk-heading-l postal-address">
               {{ contactUsHeading }}
             </h2>
@@ -55,9 +55,9 @@
             <h3 class="govuk-heading-m">
               {{ additionalInfoHeading }}
             </h3>
-            <p class="govuk-body-m">
+            <div class="govuk-body-m">
               {{ results.info | safe }}
-            </p>
+            </div>
           </div>
         {% endif %}
 
@@ -201,6 +201,13 @@
                   {% if externalLink %}
                     <a class="govuk-link" href="{{ externalLink }}">{{ displayName }}</a>
                   {% endif %}
+                </li>
+
+              {% endfor %}
+
+              {% for additionalLink in results.additional_links %}
+                <li>
+                  <a class="govuk-link" href="{{ additionalLink.url }}">{{ additionalLink.description }}</a>
                 </li>
               {% endfor %}
             </ul>
