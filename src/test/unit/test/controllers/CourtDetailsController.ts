@@ -251,7 +251,7 @@ describe('CourtDetailsController', () => {
     req.params = {
       slug: 'Not-London'
     };
-    req.lng = 'cy';
+    req.lng = 'en';
     req.hostname = 'testHost';
     const res = mockResponse();
     await controller.get(req, res, nextFunction);
