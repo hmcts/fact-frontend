@@ -4,6 +4,7 @@ import {mockResponse} from '../../utils/mockResponse';
 import {CourtDetailsController} from '../../../../main/controllers/CourtDetailsController';
 
 const expectedCourtDetails = require('../../../resources/court-details-results.json');
+const expectedCourtDetailsClosed = require('../../../resources/court-details-results-closed.json');
 const expectedNotInPersonCourtDetails = require('../../../resources/not-in-person-court-details-results.json');
 const expectedNotInPersonCourtDetailsWithSCIntro = require('../../../resources/not-in-person-court-details-results_with_sc_intro.json');
 
@@ -16,6 +17,18 @@ const i18n = {
     },
     title: '',
     seoMetadataDescription: '{courtName}'
+  }
+};
+
+const i18nClosed = {
+  'closed-court': {
+    notInPersonP1: '',
+    catchmentArea: {
+      area1: '',
+      area2: ''
+    },
+    seoMetadataDescription: '{courtName}',
+    title: 'a court'
   }
 };
 
@@ -326,6 +339,25 @@ describe('CourtDetailsController', () => {
       'seoMetadataDescription': 'Not-London'
     };
     expect(res.render).toBeCalledWith('court-details/not-in-person-court', expectedData);
+  });
+
+  test('Should render the court details page for a closed court', async () => {
+    response.data = expectedCourtDetailsClosed;
+
+    const req = mockRequest(i18nClosed);
+    req.params = {
+      slug: 'Not-London'
+    };
+    req.lng = 'cy';
+    req.hostname = 'testHost';
+    const res = mockResponse();
+    await controller.get(req, res, nextFunction);
+    const expectedData: PageData = {
+      ...i18nClosed['closed-court'],
+      path: '/courts/Not-London',
+      'seoMetadataDescription': '{courtName}'
+    };
+    expect(res.render).toBeCalledWith('court-details/closed-court', expectedData);
   });
 
   test('Should render the court details page with no results for empty slug', async () => {
