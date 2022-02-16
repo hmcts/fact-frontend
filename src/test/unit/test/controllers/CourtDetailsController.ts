@@ -41,6 +41,23 @@ const i18nWithScIntro = {
   }
 };
 
+const i18nWithScIntroCy = {
+  'court-details': {
+    notInPersonP1: 'intro para cy',
+    catchmentArea: {
+      area1: '',
+      area2: ''
+    },
+    'service_centre': {
+      'is_a_service_centre': true,
+      'intro_paragraph': 'intro para',
+      'intro_paragraph_cy': 'intro para cy'
+    },
+    title: '',
+    seoMetadataDescription: '{courtName}'
+  }
+};
+
 describe('CourtDetailsController', () => {
   const response = {
     data: expectedCourtDetails
@@ -180,7 +197,49 @@ describe('CourtDetailsController', () => {
     req.params = {
       slug: 'Not-London'
     };
-    req.lng = 'en';
+    req.lng = 'cy';
+    req.hostname = 'testHost';
+    const res = mockResponse();
+    await controller.get(req, res, nextFunction);
+    const expectedData: PageData = {
+      ...i18nWithScIntro['court-details'],
+      path: '/courts/Not-London',
+      results: {
+        ...response.data,
+        enquiries: {
+          emails: [],
+          sendDocumentsEmail: [],
+          fax: [],
+          phone: [],
+          welshPhone: []
+        }
+      },
+      seoMetadata: {
+        '@context': 'https://schema.org',
+        '@id': 'http://localhost:3100/courts/Not-London',
+        '@type': 'GovernmentOffice',
+        'address': {
+          '@type': 'PostalAddress',
+          'addressCountry': 'GB',
+          'addressLocality': 'London',
+          'postalCode': 'B4 6DS',
+        },
+        'image': ['http://localhost:3100/public/assets/images/hmcts-logo.png',],
+        'name': 'Not-London'
+      },
+      'seoMetadataDescription': 'Not-London'
+    };
+    expect(res.render).toBeCalledWith('court-details/not-in-person-court', expectedData);
+  });
+
+  test('Should render the court details page for not in person with sc intro cy', async () => {
+    response.data = expectedNotInPersonCourtDetailsWithSCIntro;
+
+    const req = mockRequest(i18nWithScIntroCy);
+    req.params = {
+      slug: 'Not-London'
+    };
+    req.lng = 'cy';
     req.hostname = 'testHost';
     const res = mockResponse();
     await controller.get(req, res, nextFunction);
