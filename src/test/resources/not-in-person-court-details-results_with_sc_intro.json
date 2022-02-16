@@ -54,9 +54,9 @@
     }
   ],
   "service_centre": {
-    "is_a_service_centre": false,
-    "intro_paragraph": "",
-    "intro_paragraph_cy": ""
+    "is_a_service_centre": true,
+    "intro_paragraph": "intro para",
+    "intro_paragraph_cy": "intro para cy"
   },
   "gbs": null,
   "additional_links": []

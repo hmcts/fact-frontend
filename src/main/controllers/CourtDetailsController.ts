@@ -55,9 +55,18 @@ export class CourtDetailsController {
           if (courtDetails['in_person']) {
             return res.render('court-details/in-person-court', viewData);
           } else {
-            viewData.notInPersonP1 = viewData.notInPersonP1
-              .replace('{catchmentArea}', decideCatchmentArea(this.regionalCentre, viewData.catchmentArea))
-              .replace('{serviceArea}', formatAreasOfLaw(courtDetails['areas_of_law']));
+
+            if (courtDetails['service_centre']) {
+              viewData.notInPersonP1 = courtDetails.service_centre.intro_paragraph.length > 0 ? (req.lng == 'en'
+                ? courtDetails.service_centre.intro_paragraph : courtDetails.service_centre.intro_paragraph_cy) :
+                viewData.notInPersonP1
+                  .replace('{catchmentArea}', decideCatchmentArea(this.regionalCentre, viewData.catchmentArea))
+                  .replace('{serviceArea}', formatAreasOfLaw(courtDetails['areas_of_law']));
+            } else {
+              viewData.notInPersonP1 = viewData.notInPersonP1
+                .replace('{catchmentArea}', decideCatchmentArea(this.regionalCentre, viewData.catchmentArea))
+                .replace('{serviceArea}', formatAreasOfLaw(courtDetails['areas_of_law']));
+            }
 
             return res.render('court-details/not-in-person-court', viewData);
           }

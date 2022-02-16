@@ -33,5 +33,6 @@ Then('I am presented with an postcode error {string}', async(message: string) =>
   expect(elementExist).equal(true);
   const element = await I.getElement('#postcode-error');
   const errorMessage = await I.getElementText(element);
-  expect(errorMessage).equal('Error:\n' + message);
+  expect(errorMessage.includes('Error:')).equal(true);
+  expect(errorMessage.replace(/[\n\r]+/g, '').replace('Error:', '').trim()).equal(message.trim());
 });
