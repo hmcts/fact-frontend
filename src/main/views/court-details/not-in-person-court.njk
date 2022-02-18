@@ -185,35 +185,35 @@
             <h3 class="govuk-heading-m">
               {{ findOutMoreAboutHeading }}:
             </h3>
-          <ul class="govuk-list">
-            {% for area in results['areas_of_law'] | sort(attribute="name") %}
-              {% if area['display_name'] %}
-                {% set displayName = area['display_name'] %}
-              {% else %}
-                {% set displayName = area.name %}
-              {% endif %}
-              {% if area['display_external_link'] %}
-                {% set externalLink = area['display_external_link'] %}
-              {% else %}
-                {% set externalLink = area['external_link'] %}
-              {% endif %}
-              <li>
-                {% if externalLink %}
-                  <a class="govuk-link" href="{{ externalLink }}">{{ displayName }}</a>
+            <ul class="govuk-list">
+              {% for area in results['areas_of_law'] | sort(attribute="name") %}
+                {% if area['display_name'] %}
+                  {% set displayName = area['display_name'] %}
                 {% else %}
-                  <p>
-                     {{displayName}}
-                  </p>
+                  {% set displayName = area.name %}
                 {% endif %}
-              </li>
-            {% endfor %}
+                {% if area['display_external_link'] %}
+                  {% set externalLink = area['display_external_link'] %}
+                {% else %}
+                  {% set externalLink = area['external_link'] %}
+                {% endif %}
+                <li>
+                  {% if externalLink %}
+                    <a class="govuk-link" href="{{ externalLink }}">{{ displayName }}</a>
+                  {% else %}
+                    <p>
+                       {{displayName}}
+                    </p>
+                  {% endif %}
+                </li>
+              {% endfor %}
 
-            {% for additionalLink in results.additional_links %}
-              <li>
-                <a class="govuk-link" href="{{ additionalLink.url }}">{{ additionalLink.description }}</a>
-              </li>
-            {% endfor %}
-          </ul>
+              {% for additionalLink in results.additional_links %}
+                <li>
+                  <a class="govuk-link" href="{{ additionalLink.url }}">{{ additionalLink.description }}</a>
+                </li>
+              {% endfor %}
+            </ul>
           </div>
         {% endif %}
 
