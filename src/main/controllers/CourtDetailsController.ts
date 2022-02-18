@@ -65,6 +65,7 @@ export class CourtDetailsController {
               : viewData.notInPersonP1 = viewData.notInPersonP1
                 .replace('{catchmentArea}', decideCatchmentArea(this.regionalCentre, viewData.catchmentArea))
                 .replace('{serviceArea}', formatAreasOfLaw(courtDetails['areas_of_law']));
+
             return res.render('court-details/not-in-person-court', viewData);
           }
         } else {
