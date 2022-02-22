@@ -1,5 +1,5 @@
 import * as express from 'express';
-import helmet from 'helmet';
+import helmet = require('helmet');
 
 export interface HelmetConfig {
   referrerPolicy: string;
@@ -19,6 +19,8 @@ export class Helmet {
 
   public enableFor(app: express.Express): void {
     // include default helmet functions
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
     app.use(helmet());
 
     this.setContentSecurityPolicy(app);
