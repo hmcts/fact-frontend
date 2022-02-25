@@ -18,10 +18,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">
-      {{ question }}
-    </h1>
-    <span id="header-hint" class="govuk-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        {{ question }}
+      </h1>
+    </legend>
+
+    <div id="header-hint" class="govuk-hint">
       {% if serviceAreaIsChildcare %}
         {{ childcareHint }}
       {% else %}
@@ -31,7 +34,7 @@
           {{ hint }}
         {% endif %}
       {% endif %}
-    </span>
+    </div>
     <form method="GET" action="{{ actionUrl }}">
       {{ govukInput({
         label: {
