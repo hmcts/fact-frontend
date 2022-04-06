@@ -63,14 +63,8 @@ cookieManager.init({
       'optional': false,
       'cookies': [
         'i18next',
-        'fact-cookie-preferences'
-      ]
-    },
-    {
-      'category-name': 'demo',
-      'optional': true,
-      'cookies': [
-        '_oauth2_proxy',
+        'fact-cookie-preferences',
+        '_oauth2_proxy'
       ]
     },
     {
