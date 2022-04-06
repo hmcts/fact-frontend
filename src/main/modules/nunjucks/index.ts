@@ -33,7 +33,7 @@ export class Nunjucks {
     app.use((req, res, next) => {
       res.locals.pagePath = req.path;
 
-      if (!req.cookies || !req.cookies['fact-cookie-preferences']) {
+      if (!req.cookies || !req.cookies['fact-cookie-preferences'] || req.cookies['_oauth2_proxy']) {
         res.locals.showCookieBanner = true;
       } else {
         res.locals.showCookieBanner = false;
