@@ -37,7 +37,7 @@ app.use((req, res, next) => {
     'Cache-Control',
     'no-cache, max-age=0, must-revalidate, no-store',
   );
-  res.cookie('_oauth2_proxy',null ,{ expires: new Date(Date.now() + 900000), httpOnly: true });
+  res.cookie('_oauth2_proxy', null,{ expires: new Date(Date.now() + 900000), httpOnly: true })
   next();
 });
 
