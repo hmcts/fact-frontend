@@ -61,7 +61,11 @@ cookieManager.init({
     {
       'category-name': 'essential',
       'optional': false,
-      'cookies': ['i18next', 'fact-cookie-preferences', '_oauth2_proxy']
+      'cookies': [
+        'i18next',
+        'fact-cookie-preferences',
+        '_oauth2_proxy'
+      ]
     },
     {
       'category-name': 'analytics',
