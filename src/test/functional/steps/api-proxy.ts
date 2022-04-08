@@ -25,6 +25,5 @@ Then('I expect some header to be returned', async function() {
 
 Then('I expect response data contains slug {string}', async function (slug: string) {
   const response = await I.getTheJsonResponse();
-  console.log(response.data.slug);
   expect(response.data.slug).equal(slug);
 });
