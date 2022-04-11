@@ -120,6 +120,8 @@
     "uglifyjs-webpack-plugin/serialize-javascript": ">=3.1.0",
     "puppeteer/node-fetch": ">=2.6.7",
     "tsconfig-paths/minimist": ">=1.2.6 ",
-    "config/json5/minimist" : ">=1.2.6 "
+    "config/json5/minimist" : ">=1.2.6 ",
+    "@hmcts/nodejs-logging/moment" : ">=2.29.2",
+    "@hmcts/nodejs-healthcheck/@hmcts/nodejs-logging/moment" : ">=2.29.2"
   }
 }
