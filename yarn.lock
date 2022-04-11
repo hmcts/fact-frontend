@@ -1233,10 +1233,10 @@
   "resolved" "https://registry.npmjs.org/@gar/promisify/-/promisify-1.1.2.tgz"
   "version" "1.1.2"
 
-"@hmcts/cookie-manager@^0.0.4":
-  "integrity" "sha512-OScl6xMFmKyCR8b0ZJyJxYOp7pV8G492LencoTkLrw60Cd0uyKYbkR0ugffx0LyO28Tqo7yRM3aHUV9DjsErug=="
-  "resolved" "https://registry.npmjs.org/@hmcts/cookie-manager/-/cookie-manager-0.0.4.tgz"
-  "version" "0.0.4"
+"@hmcts/cookie-manager@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@hmcts/cookie-manager/-/cookie-manager-0.0.4.tgz#dc7381fffd03616863d0549ae1c0169d7b0348fd"
+  integrity sha512-OScl6xMFmKyCR8b0ZJyJxYOp7pV8G492LencoTkLrw60Cd0uyKYbkR0ugffx0LyO28Tqo7yRM3aHUV9DjsErug==
 
 "@hmcts/info-provider@^1.0.0":
   "integrity" "sha512-WH1SzCO4PTbkd+fe2GhZ+xblXZbrndocL91wGjw5m4SCqwE0YFGIPNVWyWSuwmSUorazAxKIHtdGNEFellGopw=="
