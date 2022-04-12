@@ -25,6 +25,8 @@ export default function(app: Application): void {
   app.get('/services/:service/:serviceArea/search-by-postcode', app.locals.container.cradle.servicePostcodeSearchController.get);
   app.get('/services/:service/:serviceArea/courts/near', app.locals.container.cradle.servicePostcodeResultsController.get);
   app.get('/not-found', app.locals.container.cradle.notFoundPageController.get);
+  app.get('/v2/proxy/search/postcode/:postcode/serviceArea/:serviceArea', app.locals.container.cradle.proxyController.getCourtsByPostcodeServiceArea);
+  app.get('/v2/proxy/search/slug/:slug', app.locals.container.cradle.proxyController.getCourtDetails);
 
   // legacy urls
   app.get('/search', (req, res) => res.redirect(301, '/search-option'));

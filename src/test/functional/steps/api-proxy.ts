@@ -16,3 +16,14 @@ Then('I expect some JSON to be returned', async function() {
   const response = await I.getTheJsonResponse();
   expect(response.headers['content-type']).equal('application/json');
 });
+
+Then('I expect some header to be returned', async function() {
+  const response = await I.getTheJsonResponse();
+  expect(response.headers['content-type']).equal('application/json; charset=utf-8');
+  expect(response.status).equal(200);
+});
+
+Then('I expect response data contains slug {string}', async function (slug: string) {
+  const response = await I.getTheJsonResponse();
+  expect(response.data.slug).equal(slug);
+});

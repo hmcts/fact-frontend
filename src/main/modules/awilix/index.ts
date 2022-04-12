@@ -20,6 +20,7 @@ import { AccessibilityStatementController } from '../../controllers/Accessibilit
 import { CookiesController } from '../../controllers/CookiesController';
 import { NotFoundPageController } from '../../controllers/NotFoundPageController';
 import {CourtPrefixSearchController} from '../../controllers/search/CourtPrefixSearchController';
+import {ProxyController} from '../../controllers/ProxyController';
 
 const { Logger } = require('@hmcts/nodejs-logging');
 const logger = Logger.getLogger('app');
@@ -47,7 +48,8 @@ export class Container {
       courtNameSearchController: asClass(CourtPrefixSearchController),
       servicePostcodeSearchController: asClass(ServicePostcodeSearchController),
       servicePostcodeResultsController: asClass(ServicePostcodeResultsController),
-      notFoundPageController:  asClass(NotFoundPageController)
+      notFoundPageController:  asClass(NotFoundPageController),
+      proxyController: asClass(ProxyController)
     });
   }
 }
