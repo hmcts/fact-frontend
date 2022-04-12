@@ -71,7 +71,7 @@
     "@babel/preset-env": "^7.15.8",
     "@types/chai-as-promised": "^7.1.5",
     "@types/copy-webpack-plugin": "^10.1.0",
-    "@types/cucumber": "^6.0.1",
+    "@types/cucumber": "^7.0.0",
     "@types/jest": "^27.4.1",
     "@types/mini-css-extract-plugin": "^2.0.1",
     "@types/puppeteer": "^3.0.2",
