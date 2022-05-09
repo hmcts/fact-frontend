@@ -6,5 +6,5 @@ home: https://github.com/hmcts/fact-frontend
 version: 0.0.24
 dependencies:
   - name: nodejs
-    version: 2.4.1
+    version: 2.4.3
     repository: '@hmctspublic'
