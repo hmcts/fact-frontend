@@ -3,12 +3,12 @@ import * as I from '../utlis/puppeteer.util';
 import { expect } from 'chai';
 
 Then('I can view the cookie options within the cookie banner', async () => {
-  const elementExist = await I.checkElement('.global-cookie-message');
+  const elementExist = await I.checkElement('.cookie-banner');
   expect(elementExist).equal(true);
 });
 
 When('I select that hyperlink in the cookie banner', async () => {
-  await I.click('.global-cookie-message a');
+  await I.click('.cookie-banner-message a');
 });
 
 Then('I am redirected and expect the page header to be {string}', async function(title: string) {

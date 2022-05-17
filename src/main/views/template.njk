@@ -12,12 +12,6 @@
   <script>
     dataLayer = window.dataLayer || [];
     dataLayer.push({"language": {{ language | dump | safe }}, "event": "Site language"})
-
-    const factCookie = document.cookie.match(new RegExp('(^| )' + 'fact-cookie-preferences' + '=([^;]+)'));
-    if(factCookie) {
-      const cookiePreferences = JSON.parse(decodeURIComponent(factCookie[2]));
-      dataLayer.push({'event': 'Cookie Preferences', 'cookiePreferences': cookiePreferences});
-    }
   </script>
 
   <meta name="google-site-verification" content="3glfkE1sBXj7EtEdO0ktOm5kyR9E14kR7yw_yJ6GH4U" />
@@ -30,59 +24,6 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-N7NMJDR');
   </script>
-
-    {% set html %}
-      <p class="govuk-body">{{ cookieBannerP1 | safe }}</p>
-      <p class="govuk-body">{{ cookieBannerP2 }}</p>
-    {% endset %}
-
-    {% set confirmationHtml %}
-      <p>You can <a href="/cookies">change your cookie settings</a> at any time.</p>
-    {% endset %}
-
-    <div class="global-cookie-message" id="cm-cookie-banner" hidden>
-      {{ govukCookieBanner({
-        ariaLabel: cookieBannerH1,
-        messages: [
-          {
-            headingText: cookieBannerH1,
-            html: html,
-            classes: "govuk-cookie-banner__decision",
-            actions: [
-            {
-              text: cookieBannerAcceptButton,
-              attributes: {
-                'data-cm-action': 'accept'
-              }
-            },
-            {
-              text: cookieBannerRejectButton,
-              attributes: {
-              'data-cm-action': 'reject'
-              }
-            },
-            {
-              text: cookieBannerViewCookies,
-              href: "/cookies"
-            }
-          ]
-          },
-          {
-            html: confirmationHtml,
-            role: "alert",
-            hidden: true,
-            classes: "govuk-cookie-banner__confirmation",
-            actions: [
-            {
-              text: cookieBannerHideButton,
-              attributes: {
-                'data-cm-action': 'hide'
-              }
-            }
-          ]
-          }
-        ]
-      }) }}
     </div>
 {% endblock %}
 
@@ -94,11 +35,77 @@
 {% endblock %}
 
 {% block header %}
-    {{ govukHeader({
-        containerClasses: "govuk-width-container",
-        serviceName: serviceName | safe,
-        serviceUrl: (globals.basePath if globals.basePath) + "/"
-    }) }}
+  {% set html %}
+    <p class="govuk-body">{{ cookieBannerP1 | safe }}</p>
+    <p class="govuk-body">{{ cookieBannerP2 }}</p>
+  {% endset %}
+
+  {% set acceptHtml %}
+    <p class="govuk-body">You’ve accepted additional cookies. You can <a class="govuk-link" href="/cookies">change your cookie settings</a> at any time.</p>
+  {% endset %}
+
+  {% set rejectHtml %}
+    <p class="govuk-body">You’ve rejected additional cookies. You can <a class="govuk-link" href="/cookies">change your cookie settings</a> at any time.</p>
+  {% endset %}
+
+  {{ govukCookieBanner({
+    classes: 'cookie-banner',
+    ariaLabel: cookieBannerH1,
+    hidden: true,
+    messages: [
+      {
+        classes: 'cookie-banner-message',
+        headingText: cookieBannerH1,
+        html: html,
+        actions: [
+        {
+          classes: 'cookie-banner-accept-button',
+          text: cookieBannerAcceptButton,
+          type: "button"
+        },
+        {
+          classes: 'cookie-banner-reject-button',
+          text: cookieBannerRejectButton,
+          type: "button"
+        },
+        {
+          text: cookieBannerViewCookies,
+          href: "/cookies"
+        }
+      ]
+      },
+      {
+        classes: 'cookie-banner-accept-message',
+        html: acceptHtml,
+        role: "alert",
+        hidden: true,
+        actions: [
+        {
+          classes: 'cookie-banner-hide-button',
+          text: cookieBannerHideButton
+        }
+      ]
+      },
+      {
+        classes: 'cookie-banner-reject-message',
+        html: rejectHtml,
+        role: "alert",
+        hidden: true,
+        actions: [
+        {
+          classes: 'cookie-banner-hide-button',
+          text: cookieBannerHideButton
+        }
+      ]
+      }
+    ]
+  }) }}
+
+  {{ govukHeader({
+      containerClasses: "govuk-width-container",
+      serviceName: serviceName | safe,
+      serviceUrl: (globals.basePath if globals.basePath) + "/"
+  }) }}
 {% endblock %}
 
 {% block beforeContent %}
