@@ -44,7 +44,7 @@
     "@types/serve-favicon": "^2.5.3",
     "applicationinsights": "^2.2.1",
     "autobind-decorator": "^2.4.0",
-    "awilix": "^4.2.6",
+    "awilix": "^7.0.3",
     "axios": "^0.26.0",
     "config": "^3.3.7",
     "cookie-parser": "^1.4.6",
