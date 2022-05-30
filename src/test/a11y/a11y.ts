@@ -20,20 +20,29 @@ const courtDetailsNoAreaOfLaw = '/courts/tax-chamber-first-tier-tribunal';
 const courtDetailsAdditionalInfo = '/courts/west-cumbria-courthouse';
 const unknownServicePage = '/services/service-not-found';
 const services = '/services/update';
+const serviceSearchAddress = '/search/address';
+const serviceSearchCourtCode = '/search/courtcode';
+const serviceSearchSpoe = '/search/spoe';
 const servicesMoney = '/services/money/service-areas/update';
 const servicesProbateDivorce = '/services/probate-divorce-or-ending-civil-partnerships/service-areas/update';
 const servicesChildcare = '/services/childcare-and-parenting/service-areas/update';
 const servicesHarmAbuse = '/services/harm-and-abuse/service-areas/update';
 const servicesCrime = '/services/crime/service-areas/update';
 const serviceSearchResultsMoneyClaims = '/services/money/money-claims/search-results';
+const serviceSearchByNearestCourt = '/services/money/service-areas/nearest';
+const serviceSearchByNearCourt = '/services/money/service-areas/courts/near';
 const servicePostcodeSearchTax = '/services/money/tax/search-by-postcode';
 const servicePostcodeResultsTax = '/services/money/tax/courts/near?postcode=E81DY';
 const servicePostcodeResultsDivorce = '/services/probate-divorce-or-ending-civil-partnerships/divorce/courts/near?postcode=E81DY';
 const servicePostcodeSearchMoneyClaims = '/services/money/money-claims/search-by-postcode';
 const serviceSearchResultsProbate = '/services/probate-divorce-or-ending-civil-partnerships/probate/search-results';
 const serviceSearchResultsMajorCriminalOffences = '/services/crime/major-criminal-offences/search-results';
+const servicesSearchByPrefix = '/services/search-by-prefix';
+const servicesSearchByPostcode = '/services/search-by-postcode';
 const accessibilityStatement = '/accessibility-statement';
 const cookies = '/cookies';
+const individualLocationPages = '/individual-location-pages/courts/north-west-regional-divorce-centre';
+
 
 class Pa11yResult {
   documentTitle: string;
@@ -141,4 +150,12 @@ describe('Accessibility', () => {
   testAccessibility(serviceSearchResultsMajorCriminalOffences);
   testAccessibility(accessibilityStatement);
   testAccessibility(cookies);
+  testAccessibility(individualLocationPages);
+  testAccessibility(servicesSearchByPrefix);
+  testAccessibility(servicesSearchByPostcode);
+  testAccessibility(serviceSearchByNearestCourt);
+  testAccessibility(serviceSearchByNearCourt);
+  testAccessibility(serviceSearchAddress);
+  testAccessibility(serviceSearchCourtCode);
+  testAccessibility(serviceSearchSpoe);
 });
