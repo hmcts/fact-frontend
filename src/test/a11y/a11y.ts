@@ -8,7 +8,6 @@ const pa11y = require('pa11y');
 const axios = Axios.create({ baseURL: config.TEST_URL });
 
 const startPage = '/';
-const pageNotFound = '/not-found';
 const searchOptionPage = '/search-option';
 const locationSearchPage = '/search-by-name';
 const serviceChooseActionPage = '/service-choose-action';
@@ -39,7 +38,7 @@ const servicePostcodeSearchMoneyClaims = '/services/money/money-claims/search-by
 const serviceSearchResultsProbate = '/services/probate-divorce-or-ending-civil-partnerships/probate/search-results';
 const serviceSearchResultsMajorCriminalOffences = '/services/crime/major-criminal-offences/search-results';
 const servicesSearchByPrefix = '/services/search-by-prefix';
-const servicesSearchByPostcode = 'services/search-by-postcode';
+const servicesSearchByPostcode = '/services/search-by-postcode';
 const accessibilityStatement = '/accessibility-statement';
 const cookies = '/cookies';
 const individualLocationPages = '/individual-location-pages/courts/north-west-regional-divorce-centre';
@@ -156,29 +155,7 @@ describe('Accessibility', () => {
   testAccessibility(servicesSearchByPostcode);
   testAccessibility(serviceSearchByNearestCourt);
   testAccessibility(serviceSearchByNearCourt);
-  testAccessibility(pageNotFound);
   testAccessibility(serviceSearchAddress);
   testAccessibility(serviceSearchCourtCode);
   testAccessibility(serviceSearchSpoe);
 });
-
-
-
-
-
-
-
-
-//app.get('/services/:service/:serviceArea/courts/near', app.locals.container.cradle.servicePostcodeResultsController.get);
-//app.get('/not-found', app.locals.container.cradle.notFoundPageController.get);
-// app.get('/v2/proxy/search/postcode/:postcode/serviceArea/:serviceArea', app.locals.container.cradle.proxyController.getCourtsByPostcodeServiceArea);
-// app.get('/v2/proxy/search/slug/:slug', app.locals.container.cradle.proxyController.getCourtDetails);
-
-// legacy urls
-// app.get('/search', (req, res) => res.redirect(301, '/search-option'));
-// app.get('/search/address', (req, res) => res.redirect(301, '/search-by-name'));
-// app.get('/search/courtcode', (req, res) => res.redirect(301, '/search-by-name'));
-//app.get('/search/aol', (req, res) => res.redirect(301, '/services'));
-// app.get('/search/spoe', (req, res) => res.redirect(301, '/service-choose-action'));
-// app.get('/search/postcode', (req, res)
-//#main-content > div.govuk-grid-row > div > form > button
