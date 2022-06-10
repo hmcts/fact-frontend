@@ -207,7 +207,7 @@
         {% if results['areas_of_law'] and results['areas_of_law'] |  selectattr("external_link") | length > 0 %}
           <div class="govuk-grid-row" id="areas-of-law">
             <h3 class="govuk-heading-m">
-              {{ findOutMoreAboutHeading }}:
+              {{ findOutMoreAboutHeading }}
             </h3>
             <ul class="govuk-list">
               {% for area in results['areas_of_law'] | sort(attribute="name") %}
@@ -243,7 +243,7 @@
 
         <div class="govuk-grid-row">
           <h3 class="govuk-heading-m">
-            {{ complaintHeading }}:
+            {{ complaintHeading }}
           </h3>
           <p class="govuk-body-m">
             <a class="govuk-link"
@@ -254,7 +254,7 @@
         {% if results.crown_location_code or results.county_location_code or results.magistrates_location_code or (results['dx_number'] and results['dx_number'].length > 0) %}
           <div class="govuk-grid-row" id="location-codes">
             <h3 class="govuk-heading-m">
-              {{ courtCodesHeading }}:
+              {{ courtCodesHeading }}
             </h3>
             {% if results.crown_location_code %}
               <p class="govuk-body-m">
