@@ -17,7 +17,7 @@ export class ProxyController {
 
 
   public async getCourtsByPostcodeServiceArea(req: FactRequest, res: Response): Promise<void> {
-    const results = await this.api.postcodeServiceAreaSearch(req.params.postcode, req.params.serviceArea, req.lng);
+    const results = await this.api.postcodeServiceAreaSearch(req.params.postcode, req.params.serviceArea, req.params.action, req.lng);
     res.send(results);
   }
 }
