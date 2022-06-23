@@ -227,7 +227,7 @@ describe('FactApi', () => {
 
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.postcodeServiceAreaSearch('AA9 9AA', 'aol', 'en')).resolves.toEqual(results.data);
+    await expect(api.postcodeServiceAreaSearch('AA9 9AA', 'aol', '','en')).resolves.toEqual(results.data);
   });
 
   test('Should return no courts and log error', async () => {
@@ -241,7 +241,7 @@ describe('FactApi', () => {
     const spy = jest.spyOn(mockLogger, 'error');
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.postcodeServiceAreaSearch('AA9 9AA', 'aol', 'en')).resolves.toEqual({ courts: [] });
+    await expect(api.postcodeServiceAreaSearch('AA9 9AA', 'aol', '','en')).resolves.toEqual({ courts: [] });
     await expect(spy).toBeCalled();
   });
 
