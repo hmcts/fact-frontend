@@ -242,7 +242,7 @@ Given('that location participates in the Professional users’ court and tribuna
 });
 
 Then('a link to learn about the scheme is included', async () => {
-  const element = await I.getElement('#access-scheme > a');
+  const element = await I.getElement('#access-scheme > p > a');
   const isElementAnchor = await I.checkElementIsAnchor(element);
   expect(isElementAnchor).equal(true);
 });
