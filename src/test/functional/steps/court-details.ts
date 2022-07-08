@@ -241,6 +241,12 @@ Given('that location participates in the Professional users’ court and tribuna
   expect(text).equal('This location participates in this scheme');
 });
 
+Given('that location participates in common platform scheme', async () => {
+  const element = await I.getElement('#common-platform > p');
+  const text = await I.getElementText(element);
+  expect(text).equal('This location participates in this scheme');
+});
+
 Then('a link to learn about the scheme is included', async () => {
   const element = await I.getElement('#access-scheme > p > a');
   const isElementAnchor = await I.checkElementIsAnchor(element);
