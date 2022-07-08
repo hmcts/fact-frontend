@@ -319,27 +319,16 @@
           </a></p>
         {% endif %}
       </div>
+      {% if results['common_flag'] %}
       <div class="govuk-grid-row" id="common-platform">
               <h3 class="govuk-heading-m">
                 {{ commonPlatformHeading }}
               </h3>
-              {% if results['common_flag'] %}
-                <p class="govuk-body-m">
+              <p class="govuk-body-m">
                   {{ registerACText }}
-                </p>
-                <a class="govuk-link govuk-body-m" href="https://www.gov.uk/guidance/hmcts-common-platform-participating-criminal-courts">
-                  {{ registerACLink }}
-                </a>
-              {% else %}
-                <p class="govuk-body-m">
-                  {{ learnACText }}
-                </p>
-                <a class="govuk-link govuk-body-m" href="https://www.gov.uk/guidance/hmcts-common-platform-participating-criminal-courts">
-                  {{ learnACLink }}
-                </a>
-              {% endif %}
-            </div>
-    </div>
+              </p>
+      </div>
+    {% endif %}
   </div>
 </div>
 {% endblock %}
