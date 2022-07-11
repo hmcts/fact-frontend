@@ -115,10 +115,8 @@
     "webpack-node-externals": "^3.0.0"
   },
   "resolutions": {
-    "cucumber/cli-table3/string-width/strip-ansi/ansi-regex": ">=3.0.1",
     "sass-lint/merge": ">=2.1.1",
     "sass-lint/eslint/shelljs": ">=0.8.5",
-    "sass-lint/eslint/table/string-width/strip-ansi/ansi-regex": ">=3.0.1",
     "sass-lint/gonzales-pe-sl/minimist": ">=1.2.6",
     "uglifyjs-webpack-plugin/serialize-javascript": ">=3.1.0",
     "node-sass/request/http-signatre/jsprim/json-schema": ">=0.4.0",
