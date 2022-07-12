@@ -22,8 +22,8 @@ export default function(app: Application): void {
   app.get('/services/:service/service-areas/:action', app.locals.container.cradle.chooseServiceAreaController.get);
   app.post('/services/:service/service-areas/:action', app.locals.container.cradle.chooseServiceAreaController.post);
   app.get('/services/:service/:serviceArea/search-results', app.locals.container.cradle.serviceSearchResultsController.get);
-  app.get('/services/:service/:serviceArea/search-by-postcode', app.locals.container.cradle.servicePostcodeSearchController.get);
-  app.get('/services/:service/:serviceArea/courts/near', app.locals.container.cradle.servicePostcodeResultsController.get);
+  app.get('/services/:service/:serviceArea/:action/search-by-postcode', app.locals.container.cradle.servicePostcodeSearchController.get);
+  app.get('/services/:service/:serviceArea/:action/courts/near', app.locals.container.cradle.servicePostcodeResultsController.get);
   app.get('/not-found', app.locals.container.cradle.notFoundPageController.get);
   app.get('/v2/proxy/search/postcode/:postcode/serviceArea/:serviceArea', app.locals.container.cradle.proxyController.getCourtsByPostcodeServiceArea);
   app.get('/v2/proxy/search/slug/:slug', app.locals.container.cradle.proxyController.getCourtDetails);
@@ -34,6 +34,7 @@ export default function(app: Application): void {
   app.get('/search/courtcode', (req, res) => res.redirect(301, '/search-by-name'));
   app.get('/search/aol', (req, res) => res.redirect(301, '/services'));
   app.get('/search/spoe', (req, res) => res.redirect(301, '/service-choose-action'));
+
 
   app.get('/search/postcode', (req, res) => {
     if (req.query.aol === 'Adoption') {
