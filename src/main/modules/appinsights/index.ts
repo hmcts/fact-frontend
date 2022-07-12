@@ -1,10 +1,9 @@
-import { Application } from 'express';
 import config from 'config';
 const appInsights = require('applicationinsights');
 
 export class AppInsights {
 
-  enableFor(server: Application): void {
+  enableFor(): void {
     if (config.get('appInsights.instrumentationKey')) {
       appInsights.setup(config.get('appInsights.instrumentationKey'))
         .setSendLiveMetrics(true)

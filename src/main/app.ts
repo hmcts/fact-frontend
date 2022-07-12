@@ -46,7 +46,7 @@ new Nunjucks(developmentMode).enableFor(app);
 new Helmet(config.get('app.security')).enableFor(app);
 new I18next().enableFor(app);
 new ProxyMiddleware().enableFor(app);
-new AppInsights().enableFor(app);
+new AppInsights().enableFor();
 
 setupDev(app,developmentMode);
 
