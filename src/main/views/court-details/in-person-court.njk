@@ -307,19 +307,28 @@
           <p class="govuk-body-m">
             {{ registerACText }}
           </p>
-          <a class="govuk-link govuk-body-m" href="https://www.gov.uk/guidance/professional-users-court-and-tribunal-access-scheme">
+          <p><a class="govuk-link govuk-body-m" href="https://www.gov.uk/guidance/professional-users-court-and-tribunal-access-scheme">
             {{ registerACLink }}
-          </a>
+          </a></p>
         {% else %}
           <p class="govuk-body-m">
             {{ learnACText }}
           </p>
-          <a class="govuk-link govuk-body-m" href="https://www.gov.uk/guidance/professional-users-court-and-tribunal-access-scheme">
+         <p><a class="govuk-link govuk-body-m" href="https://www.gov.uk/guidance/professional-users-court-and-tribunal-access-scheme">
             {{ learnACLink }}
-          </a>
+          </a></p>
         {% endif %}
       </div>
-    </div>
+      {% if results['common_flag'] %}
+      <div class="govuk-grid-row" id="common-platform">
+        <h3 class="govuk-heading-m">
+          {{ commonPlatformHeading }}
+        </h3>
+          <p class="govuk-body-m">
+            {{ registerACText }}
+          </p>
+      </div>
+    {% endif %}
   </div>
 </div>
 {% endblock %}
