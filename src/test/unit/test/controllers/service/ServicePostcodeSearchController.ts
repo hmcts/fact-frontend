@@ -47,14 +47,15 @@ describe('Service Postcode Search Controller', () => {
     };
     req.params = {
       service: 'money',
-      serviceArea: 'tax'
+      serviceArea: 'tax',
+      action: 'nearest'
     };
     const res = mockResponse();
     await controller.get(req, res);
     const expectedData: PageData = {
       ...i18n['postcode-search'],
       path: '/search-by-postcode',
-      actionUrl: '/services/money/tax/courts/near',
+      actionUrl: '/services/money/tax/nearest/courts/near',
       error: false,
       hasNoResults: false,
       serviceAreaIsChildcare: false,
@@ -70,7 +71,7 @@ describe('Service Postcode Search Controller', () => {
       error: 'blankPostcode',
     };
     req.params = {
-      postcode: 'ABC1234'
+      postcode: 'ABC1234',
     };
     const res = mockResponse();
     await controller.getCourtsByPostcodeOnly(req, res);
@@ -95,14 +96,15 @@ describe('Service Postcode Search Controller', () => {
     };
     req.params = {
       service: 'money',
-      serviceArea: 'tax'
+      serviceArea: 'tax',
+      action: 'nearest'
     };
     const res = mockResponse();
     await controller.get(req, res);
     const expectedData: PageData = {
       ...i18n['postcode-search'],
       path: '/search-by-postcode',
-      actionUrl: '/services/money/tax/courts/near',
+      actionUrl: '/services/money/tax/nearest/courts/near',
       error: true,
       errorType: 'blankPostcode',
       hasNoResults: false,
@@ -144,14 +146,15 @@ describe('Service Postcode Search Controller', () => {
     };
     req.params = {
       service: 'money',
-      serviceArea: 'tax'
+      serviceArea: 'tax',
+      action: 'nearest'
     };
     const res = mockResponse();
     await controller.get(req, res);
     const expectedData: PageData = {
       ...i18n['postcode-search'],
       path: '/search-by-postcode',
-      actionUrl: '/services/money/tax/courts/near',
+      actionUrl: '/services/money/tax/nearest/courts/near',
       error: true,
       errorType: 'invalidPostcode',
       hasNoResults: false,
@@ -193,14 +196,15 @@ describe('Service Postcode Search Controller', () => {
     };
     req.params = {
       service: 'money',
-      serviceArea: 'tax'
+      serviceArea: 'tax',
+      action: 'nearest'
     };
     const res = mockResponse();
     await controller.get(req, res);
     const expectedData: PageData = {
       ...i18n['postcode-search'],
       path: '/search-by-postcode',
-      actionUrl: '/services/money/tax/courts/near',
+      actionUrl: '/services/money/tax/nearest/courts/near',
       error: true,
       errorType: 'scottishPostcode',
       hasNoResults: false,
@@ -242,14 +246,15 @@ describe('Service Postcode Search Controller', () => {
     };
     req.params = {
       service: 'childcare-and-parenting',
-      serviceArea: 'childcare-arrangements'
+      serviceArea: 'childcare-arrangements',
+      action: 'nearest'
     };
     const res = mockResponse();
     await controller.get(req, res);
     const expectedData: PageData = {
       ...i18n['postcode-search'],
       path: '/search-by-postcode',
-      actionUrl: '/services/childcare-and-parenting/childcare-arrangements/courts/near',
+      actionUrl: '/services/childcare-and-parenting/childcare-arrangements/nearest/courts/near',
       error: true,
       errorType: 'scottishChildrenPostcode',
       hasNoResults: false,
@@ -291,14 +296,15 @@ describe('Service Postcode Search Controller', () => {
     };
     req.params = {
       service: 'money',
-      serviceArea: 'tax'
+      serviceArea: 'tax',
+      action: 'documents'
     };
     const res = mockResponse();
     await controller.get(req, res);
     const expectedData: PageData = {
       ...i18n['postcode-search'],
       path: '/search-by-postcode',
-      actionUrl: '/services/money/tax/courts/near',
+      actionUrl: '/services/money/tax/documents/courts/near',
       error: true,
       errorType: 'northernIrelandPostcode',
       hasNoResults: false,
@@ -341,14 +347,15 @@ describe('Service Postcode Search Controller', () => {
     };
     req.params = {
       service: 'money',
-      serviceArea: 'tax'
+      serviceArea: 'tax',
+      action: 'nearest'
     };
     const res = mockResponse();
     await controller.get(req, res);
     const expectedData: PageData = {
       ...i18n['postcode-search'],
       path: '/search-by-postcode',
-      actionUrl: '/services/money/tax/courts/near',
+      actionUrl: '/services/money/tax/nearest/courts/near',
       error: false,
       hasNoResults: true,
       serviceAreaIsChildcare: false,
