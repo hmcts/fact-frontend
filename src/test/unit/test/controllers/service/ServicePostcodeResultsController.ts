@@ -67,8 +67,8 @@ describe('Service Postcode Results Controller', () => {
       path: '/courts/near',
       errors: false,
       postcodeOnlySearch: true,
-      results: { 
-        'courts': postcodeSearchResponse 
+      results: {
+        'courts': postcodeSearchResponse
       }
     };
     const res = mockResponse();
@@ -115,11 +115,12 @@ describe('Service Postcode Results Controller', () => {
     };
     req.params = {
       service: 'money',
-      serviceArea: 'tax'
+      serviceArea: 'tax',
+      action: 'nearest'
     };
     const res = mockResponse();
     await controller.get(req, res);
-    expect(res.redirect).toBeCalledWith('/services/money/tax/search-by-postcode?error=blankPostcode');
+    expect(res.redirect).toBeCalledWith('/services/money/tax/nearest/search-by-postcode?error=blankPostcode');
   });
 
   test('Searching by postcode should redirect to the postcode search page with invalid postcode error', async () => {
@@ -139,11 +140,12 @@ describe('Service Postcode Results Controller', () => {
     };
     req.params = {
       service: 'money',
-      serviceArea: 'tax'
+      serviceArea: 'tax',
+      action: 'nearest'
     };
     const res = mockResponse();
     await controller.get(req, res);
-    expect(res.redirect).toBeCalledWith('/services/money/tax/search-by-postcode?error=invalidPostcode');
+    expect(res.redirect).toBeCalledWith('/services/money/tax/nearest/search-by-postcode?error=invalidPostcode');
   });
 
   test('Searching by postcode should redirect to the postcode search page with scottish postcode error', async () => {
@@ -163,11 +165,12 @@ describe('Service Postcode Results Controller', () => {
     };
     req.params = {
       service: 'money',
-      serviceArea: 'tax'
+      serviceArea: 'tax',
+      action: 'nearest'
     };
     const res = mockResponse();
     await controller.get(req, res);
-    expect(res.redirect).toBeCalledWith('/services/money/tax/search-by-postcode?error=scottishPostcode');
+    expect(res.redirect).toBeCalledWith('/services/money/tax/nearest/search-by-postcode?error=scottishPostcode');
   });
 
   test('Should redirect to the postcode search page with scottish children postcode error', async () => {
@@ -177,11 +180,12 @@ describe('Service Postcode Results Controller', () => {
     };
     req.params = {
       service: 'childcare-and-parenting',
-      serviceArea: 'childcare-arrangements'
+      serviceArea: 'childcare-arrangements',
+      action: 'nearest'
     };
     const res = mockResponse();
     await controller.get(req, res);
-    expect(res.redirect).toBeCalledWith('/services/childcare-and-parenting/childcare-arrangements/search-by-postcode?error=scottishChildrenPostcode');
+    expect(res.redirect).toBeCalledWith('/services/childcare-and-parenting/childcare-arrangements/nearest/search-by-postcode?error=scottishChildrenPostcode');
   });
 
   test('Searching by postcode should redirect to the postcode search page with NI postcode error', async () => {
@@ -201,13 +205,14 @@ describe('Service Postcode Results Controller', () => {
     };
     req.params = {
       service: 'money',
-      serviceArea: 'tax'
+      serviceArea: 'tax',
+      action: 'nearest'
     };
     const res = mockResponse();
     await controller.get(req, res);
-    expect(res.redirect).toBeCalledWith('/services/money/tax/search-by-postcode?error=northernIrelandPostcode');
+    expect(res.redirect).toBeCalledWith('/services/money/tax/nearest/search-by-postcode?error=northernIrelandPostcode');
   });
-  
+
   test('Searching by postcode should redirect to the service results page with no results info', async () => {
     const req = mockRequest(i18n);
     req.query = {
@@ -228,14 +233,15 @@ describe('Service Postcode Results Controller', () => {
     };
     req.params = {
       service: 'money',
-      serviceArea: 'tax'
+      serviceArea: 'tax',
+      action: 'nearest'
     };
     const res = mockResponse();
     api.postcodeServiceAreaSearch = async (): Promise<any> => {
       return { courts: [] };
     };
     await controller.get(req, res);
-    expect(res.redirect).toBeCalledWith('/services/money/tax/search-by-postcode?noResults=true&postcode=E8 1DY');
+    expect(res.redirect).toBeCalledWith('/services/money/tax/nearest/search-by-postcode?noResults=true&postcode=E8 1DY');
   });
 
   test('Searching by postcode should redirect to the service results page with no results info w/ no courts', async () => {
@@ -258,13 +264,14 @@ describe('Service Postcode Results Controller', () => {
     };
     req.params = {
       service: 'money',
-      serviceArea: 'tax'
+      serviceArea: 'tax',
+      action: 'nearest'
     };
     const res = mockResponse();
     api.postcodeServiceAreaSearch = async (): Promise<any> => {
       return { courts: null };
     };
     await controller.get(req, res);
-    expect(res.redirect).toBeCalledWith('/services/money/tax/search-by-postcode?noResults=true&postcode=E8 1DY');
+    expect(res.redirect).toBeCalledWith('/services/money/tax/nearest/search-by-postcode?noResults=true&postcode=E8 1DY');
   });
 });

@@ -46,7 +46,7 @@ export class ServicePostcodeResultsController {
     const serviceArea  = req.params.serviceArea;
     const action = req.params.action;
 
-    const baseUrl = `/services/${req.params.service}/${serviceArea}/search-by-postcode`;
+    const baseUrl = `/services/${req.params.service}/${serviceArea}/${action}/search-by-postcode`;
 
     const postcodeError = isPostcodeValid(postcode, serviceArea);
 
