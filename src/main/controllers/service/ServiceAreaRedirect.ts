@@ -19,7 +19,7 @@ export class ServiceAreaRedirect {
     if (preferredCourts[0] === Catchment.National) {
       return `/services/${service}/${serviceArea.slug}/search-results`;
     } else {
-      return `/services/${service}/${serviceArea.slug}/search-by-postcode`;
+      return `/services/${service}/${serviceArea.slug}/${action}/search-by-postcode`;
     }
   }
 

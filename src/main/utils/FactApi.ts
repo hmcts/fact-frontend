@@ -75,9 +75,9 @@ export class FactApi {
       });
   }
 
-  public postcodeServiceAreaSearch(postcode: string, serviceAreaSlug: string, lng: string): Promise<PostcodeSearchResultsData> {
+  public postcodeServiceAreaSearch(postcode: string, serviceAreaSlug: string, action: string, lng: string): Promise<PostcodeSearchResultsData> {
     return this.axios
-      .get(`search/results?postcode=${postcode}&serviceArea=${serviceAreaSlug}`, {  headers: {'Accept-Language': lng}})
+      .get(`search/results?postcode=${postcode}&serviceArea=${serviceAreaSlug}&action=${action}`, {  headers: {'Accept-Language': lng}})
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);

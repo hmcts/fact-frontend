@@ -56,3 +56,27 @@ Feature: Postcode Results Feature
       | document court  |  E8 1DY  | not-listed  |
       | update court  |  E8 1DY  | not-listed  |
       | a default option  |  E8 1DY  | not-listed  |
+
+  Scenario: nearest court search should return 10 nearest courts
+    Then I can select an "nearest court" option from the list displayed
+    Given I can continue having selected that option
+    When I select "#money" from the areas of law page and continue
+    Given I can select a "#money-claims" from the category area of law page and continue
+    Then I am presented with the "What is your postcode? - Find a Court or Tribunal - GOV.UK" page
+    When I continue having entered a postcode "RM19 1SR"
+    Then I can continue my user journey
+    Then I can see 10 nearest court result back
+
+  Scenario: court or tribunal search for sending documents should return 1 nearest court
+    Then I can select an "document court" option from the list displayed
+    Given I can continue having selected that option
+    When I select "#money" from the areas of law page and continue
+    Given I can select a "#money-claims" from the category area of law page and continue
+    Then I can see 1 nearest court result is back
+
+  Scenario: court or tribunal search for getting application update should return 1 nearest court
+    Then I can select an "update court" option from the list displayed
+    Given I can continue having selected that option
+    When I select "#money" from the areas of law page and continue
+    Given I can select a "#money-claims" from the category area of law page and continue
+    Then I can see 1 nearest court result is back

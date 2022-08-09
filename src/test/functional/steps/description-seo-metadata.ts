@@ -5,7 +5,7 @@ import {expect} from 'chai';
 
 Given('the postcode search page loads', async () => {
   await I.newPage();
-  await I.goTo(config.TEST_URL + '/services/crime/major-criminal-offences/search-by-postcode');
+  await I.goTo(config.TEST_URL + '/services/crime/major-criminal-offences/nearest/search-by-postcode');
 });
 
 Given('the search option page loads', async () => {
@@ -35,7 +35,7 @@ Given('the service results page loads', async () => {
 
 Given('the postcode search results page loads', async () => {
   await I.newPage();
-  await I.goTo(config.TEST_URL + '/services/money/money-claims/courts/near?postcode=GU1+4UW');
+  await I.goTo(config.TEST_URL + '/services/money/money-claims/nearest/courts/near?postcode=GU1+4UW');
 });
 
 Given('the service not found page loads', async () => {

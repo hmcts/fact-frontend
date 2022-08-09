@@ -9,6 +9,7 @@ describe('ProxyController', () => {
   const testLng = 'en';
   const testPostcode = 'PO5TC0D3';
   const testServiceArea = 'service-area';
+  const testAction = '';
   const response = { data: expectedCourtDetails };
   const api: any = {
     court: async () => response.data,
@@ -40,12 +41,13 @@ describe('ProxyController', () => {
     const res = mockResponse();
     req.params = {
       postcode: testPostcode,
-      serviceArea: testServiceArea
+      serviceArea: testServiceArea,
+      action: testAction
     };
     req.lng = testLng;
     await controller.getCourtsByPostcodeServiceArea(req, res);
 
-    expect(api.postcodeServiceAreaSearch).toBeCalledWith(req.params.postcode, req.params.serviceArea, req.lng);
+    expect(api.postcodeServiceAreaSearch).toBeCalledWith(req.params.postcode, req.params.serviceArea, req.params.action, req.lng);
     expect(res.send).toBeCalledWith(expectedCourtDetails);
   });
 });

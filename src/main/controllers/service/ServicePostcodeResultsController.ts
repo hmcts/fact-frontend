@@ -44,7 +44,9 @@ export class ServicePostcodeResultsController {
   public async get(req: FactRequest, res: Response): Promise<void> {
     const postcode  = req.query.postcode ? (req.query.postcode as string).toUpperCase() : '';
     const serviceArea  = req.params.serviceArea;
-    const baseUrl = `/services/${req.params.service}/${serviceArea}/search-by-postcode`;
+    const action = req.params.action;
+
+    const baseUrl = `/services/${req.params.service}/${serviceArea}/${action}/search-by-postcode`;
 
     const postcodeError = isPostcodeValid(postcode, serviceArea);
 
@@ -58,9 +60,9 @@ export class ServicePostcodeResultsController {
         errors: false,
         results: {},
         isDivorceOrCivil: isDivorceOrCivil,
-        serviceArea: serviceArea
+        serviceArea: serviceArea,
       };
-      const court = await this.api.postcodeServiceAreaSearch(postcode, serviceArea, req.lng);
+      const court = await this.api.postcodeServiceAreaSearch(postcode, serviceArea, action, req.lng);
       if (!court.courts || court.courts.length === 0) {
         return res.redirect(`${baseUrl}?noResults=true&postcode=${postcode}`);
       }
