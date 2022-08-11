@@ -161,13 +161,13 @@ Given('that location entry includes one or building facilities', async () => {
 Then('the name of each facility is presented on the profile page', async () => {
   const element = await I.getElement('#building-facilities > dl > div:nth-child(1) > dd.govuk-summary-list__key');
   const text = await I.getElementText(element);
-  expect(text).equal('Parking');
+  expect(text).equal('No parking');
 });
 
 Given('the description of each facility is presented to me on the profile page', async () => {
   const element = await I.getElement('#building-facilities > dl > div:nth-child(1) > dd.govuk-summary-list__value');
   const text = await I.getElementText(element);
-  expect(text).equal('Closest multi-story parking facilities are in Newton Street and Albert Street, approx 5 minutes walk away.');
+  expect(text).equal('There are no parking facilities at this building, however paid off site parking is available at the rear of the building on Hinson Street.');
 });
 
 Given('that location entry does not hide listings for areas of law offered by that location', async () => {
@@ -215,7 +215,7 @@ Then('each court type is presented on the profile page', async () => {
 Given('the court location code for each court type is presented to me on the profile page', async () => {
   const element = await I.getElement('#location-codes > p');
   const text = await I.getElementText(element);
-  expect(text).equal('County Court location code: 127');
+  expect(text).equal('County Court location code: 126');
 });
 
 Then('that location entry includes DX details', async () => {
@@ -226,7 +226,7 @@ Then('that location entry includes DX details', async () => {
 Given('the DX number is presented to me on the profile page', async () => {
   const element = await I.getElement('.dx-number');
   const text = await I.getElementText(element);
-  expect(text).equal('DX: 701987 Birmingham 7');
+  expect(text).equal('DX: 725000 Birkenhead 10');
 });
 
 Given('I can select the directions hyperlink for that location', async () => {

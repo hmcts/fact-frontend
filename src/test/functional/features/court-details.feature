@@ -15,7 +15,7 @@ Feature: Court Name Know - Court Details
 
     Examples:
       | in_person_court                             |
-      | Birmingham Civil and Family Justice Centre  |
+      | Birkenhead County Court  |
 
   Scenario Outline: Not in-person court or tribunal selection
     And I have entered "<not_in_person_court>" as search criteria
@@ -40,7 +40,7 @@ Feature: Court Name Know - Court Details
 
     Examples:
       | single_address_court                       |
-      | Birmingham Civil and Family Justice Centre |
+      | Birkenhead County Court |
 
   Scenario Outline: Court or tribunal two addresses
     And I have entered "<multiple_addresses_court>" as search criteria
@@ -91,7 +91,7 @@ Feature: Court Name Know - Court Details
 
     Examples:
       | opening_times_court                        |
-      | Birmingham Civil and Family Justice Centre |
+      | Birkenhead County Court |
 
   Scenario Outline: Court or tribunal telephone contact details
     And I have entered "<telephone_info_court>" as search criteria
@@ -104,7 +104,7 @@ Feature: Court Name Know - Court Details
 
     Examples:
       | telephone_info_court                       |
-      | Birmingham Civil and Family Justice Centre |
+      | Birkenhead County Court |
 
   Scenario Outline: Court or tribunal email contact details
     And I have entered "<email_info_court>" as search criteria
@@ -117,7 +117,7 @@ Feature: Court Name Know - Court Details
 
     Examples:
       | email_info_court                           |
-      | Birmingham Civil and Family Justice Centre |
+      | Birkenhead County Court |
 
   Scenario Outline: Court or tribunal building facilities
     And I have entered "<building_facilities_court>" as search criteria
@@ -131,7 +131,7 @@ Feature: Court Name Know - Court Details
 
     Examples:
       | building_facilities_court                  |
-      | Birmingham Civil and Family Justice Centre |
+      | Birkenhead County Court |
 
   Scenario Outline: Court or tribunal areas of law to be listed
     And I have entered "<area_of_law_court>" as search criteria
@@ -145,7 +145,7 @@ Feature: Court Name Know - Court Details
 
     Examples:
       | area_of_law_court                          |
-      | Birmingham Civil and Family Justice Centre |
+      | Birkenhead County Court |
 
   Scenario Outline: Court or tribunal areas of law not to be listed
     And I have entered "<no_area_of_law_court>" as search criteria
@@ -182,7 +182,7 @@ Feature: Court Name Know - Court Details
 
     Examples:
       | location_court                             |
-      | Birmingham Civil and Family Justice Centre |
+      | Birkenhead County Court |
 
   Scenario Outline: Court or tribunal court DX number
     And I have entered "<dx_number_court>" as search criteria
@@ -194,7 +194,7 @@ Feature: Court Name Know - Court Details
 
     Examples:
       | dx_number_court                            |
-      | Birmingham Civil and Family Justice Centre |
+      | Birkenhead County Court |
 
   Scenario Outline: In person court or tribunal location details
     And I have entered "<location_court>" as search criteria
@@ -206,7 +206,7 @@ Feature: Court Name Know - Court Details
 
     Examples:
       | location_court                             |
-      | Birmingham Civil and Family Justice Centre |
+      | Birkenhead County Court |
 
   Scenario Outline: Court or tribunal Access Scheme applicable
     And I have entered "<access_scheme_court>" as search criteria
