@@ -20,13 +20,44 @@
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-grid-row">
         {% for address in results.addresses %}
+
+          {% set descLabel = "" %}
+
+              {% for areaOfLaw in address.fields_of_law.areas_of_law %}
+
+                {% if loop.index == 1 %}
+                  {% set descLabel = descLabel + areaOfLaw %}
+                {% elif loop.index == (address.fields_of_law.areas_of_law.length) %}
+                  {% if address.fields_of_law.courts.length > 0 %}
+                    {% set descLabel = descLabel + ', ' +  areaOfLaw %}
+                  {% else %}
+                    {% set descLabel = descLabel + ' or' +  areaOfLaw %}
+                  {% endif %}
+                {% else %}
+                  {% set descLabel = descLabel + ', ' + areaOfLaw %}
+                {% endif %}
+
+              {% endfor %}
+
+              {% for courtType in address.fields_of_law.courts %}
+
+                {% if loop.index == (address.fields_of_law.courts.length) %}
+                    {% set descLabel = descLabel + ' or ' +  courtType %}
+                {% else %}
+                  {% set descLabel = descLabel + ', ' + courtType %}
+                {% endif %}
+
+              {% endfor %}
+
+           {% set descLabel = descLabel + ' cases' %}
+
           {% if results.addresses.length == 2 %}
             <div class="govuk-grid-column-one-half multiple-addresses">
               <h2 class="govuk-heading-l">
                 {{ address.type }}:
               </h2>
                <h2 class="govuk-heading-s">
-                {{ address.description }}
+                {{ descLabel }}
                </h2>
           {% elif results.addresses.length == 3 %}
                <div class="govuk-grid-column-one-third multiple-addresses">
@@ -34,7 +65,7 @@
                    {{ address.type }}:
                  </h2>
                  <h2 class="govuk-heading-s">
-                 {{ address.description }}
+                 {{ descLabel }}
                  </h2>
           {% else %}
             <h2 class="govuk-heading-l single-address">
