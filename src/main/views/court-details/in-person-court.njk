@@ -39,17 +39,23 @@
 
               {% endfor %}
 
+              {% if address.fields_of_law.courts.length == 0 %}
+                {% set descLabel = descLabel + ' cases' %}
+              {% endif %}
+
               {% for courtType in address.fields_of_law.courts %}
 
                 {% if loop.index == (address.fields_of_law.courts.length) %}
-                    {% set descLabel = descLabel + ' or ' +  courtType %}
+                    {% if address.fields_of_law.courts.length > 1 %}
+                      {% set descLabel = descLabel + ' or ' +  courtType + ' cases' %}
+                    {% else %}
+                      {% set descLabel = descLabel + courtType + ' cases' %}
+                    {% endif %}
                 {% else %}
                   {% set descLabel = descLabel + ', ' + courtType %}
                 {% endif %}
 
               {% endfor %}
-
-           {% set descLabel = descLabel + ' cases' %}
 
           {% if results.addresses.length == 2 %}
             <div class="govuk-grid-column-one-half multiple-addresses">
