@@ -28,39 +28,59 @@
 
           {% set descLabel = "" %}
 
-              {% for areaOfLaw in address.fields_of_law.areas_of_law %}
+          {% for areaOfLaw in address.fields_of_law.areas_of_law %}
 
-                {% if loop.index == 1 %}
-                  {% set descLabel = descLabel + areaOfLaw %}
-                {% elif loop.index == (address.fields_of_law.areas_of_law.length) %}
-                  {% if address.fields_of_law.courts.length > 0 %}
-                    {% set descLabel = descLabel + ', ' +  areaOfLaw %}
-                  {% else %}
-                    {% set descLabel = descLabel + ' or' +  areaOfLaw %}
-                  {% endif %}
-                {% else %}
-                  {% set descLabel = descLabel + ', ' + areaOfLaw %}
-                {% endif %}
+            {% if loop.index == 1 %}
 
-              {% endfor %}
-
-              {% if address.fields_of_law.courts.length == 0 %}
-                {% set descLabel = descLabel + ' cases' %}
+              {% if address.fields_of_law.courts.length > 0 and (address.fields_of_law.areas_of_law.length == 1)  %}
+                {% set descLabel = descLabel + areaOfLaw + ', ' %}
+              {% else %}
+                {% set descLabel = descLabel + areaOfLaw %}
               {% endif %}
 
-              {% for courtType in address.fields_of_law.courts %}
+            {% elif loop.index == (address.fields_of_law.areas_of_law.length) %}
 
-                {% if loop.index == (address.fields_of_law.courts.length) %}
-                    {% if address.fields_of_law.courts.length > 1 %}
-                      {% set descLabel = descLabel + ' or ' +  courtType + ' cases' %}
-                    {% else %}
-                      {% set descLabel = descLabel + courtType + ' cases' %}
-                    {% endif %}
-                {% else %}
+              {% if address.fields_of_law.courts.length > 0 %}
+                {% set descLabel = descLabel + ', ' +  areaOfLaw %}
+              {% else %}
+                {% set descLabel = descLabel + ' or ' +  areaOfLaw %}
+              {% endif %}
+
+            {% else %}
+              {% set descLabel = descLabel + ', ' + areaOfLaw %}
+            {% endif %}
+
+          {% endfor %}
+
+          {% if address.fields_of_law.courts.length == 0 %}
+            {% set descLabel = descLabel + ' cases' %}
+          {% endif %}
+
+          {% for courtType in address.fields_of_law.courts %}
+
+            {% if loop.index == 1 %}
+              {% if address.fields_of_law.courts.length == 1 and (address.fields_of_law.areas_of_law.length > 1) %}
+                {% set descLabel = descLabel + ' or ' + courtType + ' cases' %}
+              {% elif address.fields_of_law.courts.length == 1 and (address.fields_of_law.areas_of_law.length == 0) %}
+                {% set descLabel = descLabel + courtType + ' cases' %}
+              {% else %}
+                {% if address.fields_of_law.areas_of_law.length > 1 %}
                   {% set descLabel = descLabel + ', ' + courtType %}
+                {% else %}
+                  {% set descLabel = descLabel + courtType %}
                 {% endif %}
+              {% endif %}
+            {% elif loop.index == (address.fields_of_law.courts.length) %}
+              {% if address.fields_of_law.courts.length > 1 %}
+                {% set descLabel = descLabel + ' or ' +  courtType + ' cases' %}
+              {% else %}
+                {% set descLabel = descLabel + courtType + ' cases' %}
+              {% endif %}
+            {% else %}
+              {% set descLabel = descLabel + ', ' + courtType %}
+            {% endif %}
 
-              {% endfor %}
+          {% endfor %}
 
            {% set descLabel = descLabel + ' cases' %}
 
