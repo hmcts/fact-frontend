@@ -13,4 +13,9 @@ def component = "frontend"
 
 withNightlyPipeline(type, product, component) {
 
+  enableFortifyScan()
+
+  after('fortify-scan') {
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/Fortify Scan/**/*'
+  }
 }
