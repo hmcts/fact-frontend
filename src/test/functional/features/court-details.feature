@@ -55,18 +55,6 @@ Feature: Court Name Know - Court Details
       | multiple_addresses_court                      |
       | Darlington Magistrates' Court and Family Court |
 
-  Scenario Outline: Court or tribunal urgent notice
-    And I have entered "<urgent_message_court>" as search criteria
-    When I have selected to search for that court or tribunal name or address
-    Given results are returned
-    When I select a court or tribunal link
-    And that location entry includes an urgent message for that location
-    Then that urgent notice is presented to me on the profile page
-
-    Examples:
-      | urgent_message_court                  |
-      | Birmingham Civil and Family Justice Centre |
-
   Scenario Outline: Court or tribunal additional information
     And I have entered "<additional_info_court>" as search criteria
     When I have selected to search for that court or tribunal name or address
