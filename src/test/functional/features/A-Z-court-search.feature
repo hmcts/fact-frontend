@@ -11,10 +11,6 @@ Feature: A to Z Court Search
     When I click on the link Search for a court by prefix (A - Z)
     Then I am presented with the "Search By Prefix - Find a Court or Tribunal - GOV.UK" page
 
-  Scenario: Courts list display according to the alphabet selected
-    When I click on the letter "Y"
-    Then I can see courts list all start with "Y"
-
   Scenario: Letter with no court found
     When I click on the letter "X"
     Then I am presented with message that no court found
@@ -22,5 +18,6 @@ Feature: A to Z Court Search
 
   Scenario: Court Page Validation
     When I click on the letter "B"
+    Then I can see courts list all start with "B"
     And  I click on the first court in the results list
     Then I am presented with the "Bankruptcy Court (High Court) - Find a Court or Tribunal - GOV.UK" page
