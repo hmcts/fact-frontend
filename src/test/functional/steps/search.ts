@@ -20,7 +20,8 @@ Then('I can select the option to search for {string}', async (search: string) =>
 });
 
 Given('I have entered {string} as search criteria', async (search: string) => {
-  await I.fillField('#search', search);
+  //await I.fillField('#search', search);
+  await I.setInputField('#search', search);
 });
 
 When('I have selected to search for that court or tribunal name or address', async () => {
@@ -60,12 +61,6 @@ Given('those entries are listed in sorting rules order', async () => {
 Then('all courts and tribunals within that partial postcode location are listed', async () => {
   const elementExist = await I.checkElement('#search-results');
   expect(elementExist).equal(true);
-});
-
-Given('I have entered {string} that has no partial or full search matches', async (search: string) => {
-  const elementExist = await I.checkElement('#search');
-  expect(elementExist).equal(true);
-  await I.fillField('#search', search);
 });
 
 Given('I have not entered search content', async () => {

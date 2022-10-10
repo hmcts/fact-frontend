@@ -36,6 +36,13 @@ export const fillField = async (selector: string, value: string) => {
   await scope.page.type(selector, value);
 };
 
+export const setInputField = async (selector: string, value: string) => {
+  // Programatically set the value of the field, rather than typing
+  await scope.page.evaluate((selector: string, value: string) => {
+    (document.querySelector(selector) as HTMLInputElement).value = value;
+  }, selector, value);
+};
+
 export const checkElement = async (selector: string) => {
   try {
     await scope.page.waitForSelector(selector);
