@@ -39,7 +39,7 @@
     "@types/http-proxy-middleware": "^1.0.0",
     "@types/i18next": "^13.0.0",
     "@types/lodash": "^4.14.182",
-    "@types/node": "^18.0.6",
+    "@types/node": "^18.8.5",
     "@types/nunjucks": "^3.2.1",
     "@types/require-directory": "^2.1.2",
     "@types/serve-favicon": "^2.5.3",
