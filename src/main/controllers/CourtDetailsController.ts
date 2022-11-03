@@ -23,7 +23,7 @@ export class CourtDetailsController {
   ) { }
 
   public async get(req: FactRequest, res: Response, next: NextFunction) {
-    const slug: string = req.params.slug as string;
+    const slug: string = req.params.slug;
 
     if(!isEmpty(slug)) {
       const courtDetails: CourtDetailsResult = await this.api.court(slug, req.lng);
