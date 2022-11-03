@@ -16,7 +16,6 @@ import { generatePlaceMetadata } from '../utils/SEOMetadata';
 @autobind
 export class CourtDetailsController {
 
-  //TODO this comes into place when the user comes from a no name court search
   private regionalCentre = false;
 
   constructor(
