@@ -1,6 +1,6 @@
 const postcodeRegex = {
-  validPostcode: /^[A-Z]{1,2}[0-9]{1,2}[A-Z]{0,1} ?[0-9][A-Z]{2}$/i,
-  scottish: /^(ZE|KW|IV|HS|PH|AB|DD|PA|FK|G[0-9]|KY|KA|DG|TD|EH|ML)/i,
+  validPostcode: /^[A-Z]{1,2}\d{1,2}[A-Z]? ?\d[A-Z]{2}$/i,
+  scottish: /^(ZE|KW|IV|HS|PH|AB|DD|PA|FK|G\d|KY|KA|DG|TD|EH|ML)/i,
   ni: /^(BT)/i,
   channelIsland: /^(JE|GY)/i,
   isleOfMan: /^(IM)/i
