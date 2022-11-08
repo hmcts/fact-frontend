@@ -53,15 +53,7 @@ export class CourtDetailsController {
             return res.render('court-details/in-person-court', viewData);
           } else {
 
-            courtDetails['service_centre'] ?
-              viewData.notInPersonP1 = courtDetails.service_centre.intro_paragraph.length > 0 ? (req.lng == 'en'
-                ? courtDetails.service_centre.intro_paragraph : courtDetails.service_centre.intro_paragraph_cy) :
-                viewData.notInPersonP1
-                  .replace('{catchmentArea}', decideCatchmentArea(this.regionalCentre, viewData.catchmentArea))
-                  .replace('{serviceArea}', formatAreasOfLaw(courtDetails['areas_of_law']))
-              : viewData.notInPersonP1 = viewData.notInPersonP1
-                .replace('{catchmentArea}', decideCatchmentArea(this.regionalCentre, viewData.catchmentArea))
-                .replace('{serviceArea}', formatAreasOfLaw(courtDetails['areas_of_law']));
+            this.catchmentAndServiceHandler(courtDetails, viewData, req);
 
             return res.render('court-details/not-in-person-court', viewData);
           }
@@ -81,5 +73,17 @@ export class CourtDetailsController {
     if (courtDetails['image_file']) {
       courtDetails['image_file'] = config.get('services.image-store.url') + '/' + courtDetails['image_file'];
     }
+  }
+
+  private catchmentAndServiceHandler(courtDetails: CourtDetailsResult, viewData: CourtDetailsData, req: FactRequest): void {
+    courtDetails['service_centre'] ?
+      viewData.notInPersonP1 = courtDetails.service_centre.intro_paragraph.length > 0 ? (req.lng == 'en'
+          ? courtDetails.service_centre.intro_paragraph : courtDetails.service_centre.intro_paragraph_cy) :
+        viewData.notInPersonP1
+          .replace('{catchmentArea}', decideCatchmentArea(this.regionalCentre, viewData.catchmentArea))
+          .replace('{serviceArea}', formatAreasOfLaw(courtDetails['areas_of_law']))
+      : viewData.notInPersonP1 = viewData.notInPersonP1
+        .replace('{catchmentArea}', decideCatchmentArea(this.regionalCentre, viewData.catchmentArea))
+        .replace('{serviceArea}', formatAreasOfLaw(courtDetails['areas_of_law']));
   }
 }
