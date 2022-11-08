@@ -53,11 +53,7 @@ export class CourtDetailsController {
             return res.render('court-details/in-person-court', viewData);
           } else {
 
-            courtDetails['service_centre'] ?
-              viewData.notInPersonP1 = courtDetails.service_centre.intro_paragraph.length > 0 ?
-                this.getIntroParagraph(req, courtDetails) :
-                this.replaceCatchmentAndServiceArea(viewData, courtDetails)
-              : viewData.notInPersonP1 = this.replaceCatchmentAndServiceArea(viewData, courtDetails);
+            this.x(req, courtDetails, viewData);
 
             return res.render('court-details/not-in-person-court', viewData);
           }
@@ -87,5 +83,13 @@ export class CourtDetailsController {
     return viewData.notInPersonP1
       .replace('{catchmentArea}', decideCatchmentArea(this.regionalCentre, viewData.catchmentArea))
       .replace('{serviceArea}', formatAreasOfLaw(courtDetails['areas_of_law']));
+  }
+
+  private x(req: FactRequest, courtDetails: CourtDetailsResult, viewData: CourtDetailsData): void {
+    courtDetails['service_centre'] ?
+      viewData.notInPersonP1 = courtDetails.service_centre.intro_paragraph.length > 0 ?
+        this.getIntroParagraph(req, courtDetails) :
+        this.replaceCatchmentAndServiceArea(viewData, courtDetails)
+      : viewData.notInPersonP1 = this.replaceCatchmentAndServiceArea(viewData, courtDetails);
   }
 }
