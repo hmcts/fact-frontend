@@ -84,6 +84,6 @@ export class CourtDetailsController {
   }
 
   private getIntroParagraph(req: FactRequest, courtDetails: CourtDetailsResult): string {
-    return req.lng == 'en' ? courtDetails.service_centre.intro_paragraph : courtDetails.service_centre.intro_paragraph_cy
+    return req.lng == 'en' ? courtDetails.service_centre.intro_paragraph : courtDetails.service_centre.intro_paragraph_cy;
   }
 }
