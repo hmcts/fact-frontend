@@ -43,9 +43,7 @@ export class CourtDetailsController {
             sendDocumentsEmail: filterByDescription(courtDetails.emails, ['send documents', 'anfon dogfennau']),
           };
 
-          if (courtDetails['image_file']) {
-            courtDetails['image_file'] = config.get('services.image-store.url') + '/' + courtDetails['image_file'];
-          }
+          this.imageHandler(courtDetails);
 
           viewData.seoMetadata = generatePlaceMetadata(courtDetails);
           viewData.seoMetadataDescription = (viewData.seoMetadataDescription as string).replace('{courtName}', courtDetails.name);
@@ -77,5 +75,11 @@ export class CourtDetailsController {
       }
     }
     next();
+  }
+
+  private imageHandler(courtDetails: CourtDetailsResult): void {
+    if (courtDetails['image_file']) {
+      courtDetails['image_file'] = config.get('services.image-store.url') + '/' + courtDetails['image_file'];
+    }
   }
 }
