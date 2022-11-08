@@ -49,7 +49,18 @@ export class CourtDetailsController {
           viewData.seoMetadataDescription = (viewData.seoMetadataDescription as string).replace('{courtName}', courtDetails.name);
           viewData.results = {...courtDetails, enquiries};
 
-          this.handleRenders(req, res, viewData, courtDetails);
+          if (courtDetails['in_person']) {
+            return res.render('court-details/in-person-court', viewData);
+          } else {
+
+            courtDetails['service_centre'] ?
+              viewData.notInPersonP1 = courtDetails.service_centre.intro_paragraph.length > 0 ?
+                this.getIntroParagraph(req, courtDetails) :
+                this.replaceCatchmentAndServiceArea(viewData, courtDetails)
+              : viewData.notInPersonP1 = this.replaceCatchmentAndServiceArea(viewData, courtDetails);
+
+            return res.render('court-details/not-in-person-court', viewData);
+          }
         } else {
           const viewData: any = cloneDeep(req.i18n.getDataByLanguage(req.lng)['closed-court']);
           viewData.title = viewData.title.replace('{courtName}', courtDetails.name);
@@ -76,18 +87,5 @@ export class CourtDetailsController {
     return viewData.notInPersonP1
       .replace('{catchmentArea}', decideCatchmentArea(this.regionalCentre, viewData.catchmentArea))
       .replace('{serviceArea}', formatAreasOfLaw(courtDetails['areas_of_law']));
-  }
-
-  private handleRenders(req: FactRequest, res: Response, viewData: CourtDetailsData, courtDetails: CourtDetailsResult): void {
-    if (courtDetails['in_person']) {
-      return res.render('court-details/in-person-court', viewData);
-    } else {
-      courtDetails['service_centre'] ?
-        viewData.notInPersonP1 = courtDetails.service_centre.intro_paragraph.length > 0 ?
-          this.getIntroParagraph(req, courtDetails) :
-          this.replaceCatchmentAndServiceArea(viewData, courtDetails)
-        : viewData.notInPersonP1 = this.replaceCatchmentAndServiceArea(viewData, courtDetails);
-      return res.render('court-details/not-in-person-court', viewData);
-    }
   }
 }
