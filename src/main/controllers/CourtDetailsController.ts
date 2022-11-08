@@ -56,12 +56,8 @@ export class CourtDetailsController {
             courtDetails['service_centre'] ?
               viewData.notInPersonP1 = courtDetails.service_centre.intro_paragraph.length > 0 ?
                 this.getIntroParagraph(req, courtDetails) :
-                viewData.notInPersonP1
-                  .replace('{catchmentArea}', decideCatchmentArea(this.regionalCentre, viewData.catchmentArea))
-                  .replace('{serviceArea}', formatAreasOfLaw(courtDetails['areas_of_law']))
-              : viewData.notInPersonP1 = viewData.notInPersonP1
-                .replace('{catchmentArea}', decideCatchmentArea(this.regionalCentre, viewData.catchmentArea))
-                .replace('{serviceArea}', formatAreasOfLaw(courtDetails['areas_of_law']));
+                this.replaceCatchmentAndServiceArea(viewData, courtDetails)
+              : viewData.notInPersonP1 = this.replaceCatchmentAndServiceArea(viewData, courtDetails);
 
             return res.render('court-details/not-in-person-court', viewData);
           }
@@ -85,5 +81,11 @@ export class CourtDetailsController {
 
   private getIntroParagraph(req: FactRequest, courtDetails: CourtDetailsResult): string {
     return req.lng == 'en' ? courtDetails.service_centre.intro_paragraph : courtDetails.service_centre.intro_paragraph_cy;
+  }
+
+  private replaceCatchmentAndServiceArea(viewData: CourtDetailsData, courtDetails: CourtDetailsResult): string {
+    return viewData.notInPersonP1
+      .replace('{catchmentArea}', decideCatchmentArea(this.regionalCentre, viewData.catchmentArea))
+      .replace('{serviceArea}', formatAreasOfLaw(courtDetails['areas_of_law']));
   }
 }
