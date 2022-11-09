@@ -52,9 +52,7 @@ export class CourtDetailsController {
           if (courtDetails['in_person']) {
             return res.render('court-details/in-person-court', viewData);
           } else {
-
-            this.x(req, courtDetails, viewData);
-
+            this.setNotInPersonP1(req, courtDetails, viewData);
             return res.render('court-details/not-in-person-court', viewData);
           }
         } else {
@@ -85,7 +83,7 @@ export class CourtDetailsController {
       .replace('{serviceArea}', formatAreasOfLaw(courtDetails['areas_of_law']));
   }
 
-  private x(req: FactRequest, courtDetails: CourtDetailsResult, viewData: CourtDetailsData): void {
+  private setNotInPersonP1(req: FactRequest, courtDetails: CourtDetailsResult, viewData: CourtDetailsData): void {
     courtDetails['service_centre'] ?
       viewData.notInPersonP1 = courtDetails.service_centre.intro_paragraph.length > 0 ?
         this.getIntroParagraph(req, courtDetails) :
