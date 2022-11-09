@@ -84,10 +84,15 @@ export class CourtDetailsController {
   }
 
   private setNotInPersonP1(req: FactRequest, courtDetails: CourtDetailsResult, viewData: CourtDetailsData): void {
-    courtDetails['service_centre'] ?
-      viewData.notInPersonP1 = courtDetails.service_centre.intro_paragraph.length > 0 ?
-        this.getIntroParagraph(req, courtDetails) :
-        this.replaceCatchmentAndServiceArea(viewData, courtDetails)
-      : viewData.notInPersonP1 = this.replaceCatchmentAndServiceArea(viewData, courtDetails);
+    if(courtDetails['service_centre']){
+      if(courtDetails.service_centre.intro_paragraph.length > 0){
+        viewData.notInPersonP1 = this.getIntroParagraph(req, courtDetails);
+      }
+      else{
+        viewData.notInPersonP1 = this.replaceCatchmentAndServiceArea(viewData, courtDetails)
+      }
+    } else {
+      viewData.notInPersonP1 = this.replaceCatchmentAndServiceArea(viewData, courtDetails);
+    }
   }
 }
