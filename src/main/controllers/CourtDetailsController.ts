@@ -89,7 +89,7 @@ export class CourtDetailsController {
         viewData.notInPersonP1 = this.getIntroParagraph(req, courtDetails);
       }
       else{
-        viewData.notInPersonP1 = this.replaceCatchmentAndServiceArea(viewData, courtDetails)
+        viewData.notInPersonP1 = this.replaceCatchmentAndServiceArea(viewData, courtDetails);
       }
     } else {
       viewData.notInPersonP1 = this.replaceCatchmentAndServiceArea(viewData, courtDetails);
