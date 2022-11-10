@@ -2,6 +2,7 @@ import {PageData} from '../../../../main/interfaces/PageData';
 import {mockRequest} from '../../utils/mockRequest';
 import {mockResponse} from '../../utils/mockResponse';
 import {CourtDetailsController} from '../../../../main/controllers/CourtDetailsController';
+import {CourtDetailsData, CourtDetailsResult } from 'interfaces/CourtDetailsData';
 
 const expectedCourtDetails = require('../../../resources/court-details-results.json');
 const expectedCourtDetailsClosed = require('../../../resources/court-details-results-closed.json');
@@ -81,6 +82,53 @@ const i18nWithScIntroCy = {
     title: '',
     seoMetadataDescription: '{courtName}'
   }
+};
+
+const courtDetails: CourtDetailsResult = {
+  name: 'In Person Court',
+  'in_person': true,
+  slug: 'test-in-person-court',
+  'image_file': 'http://example.com/test-image.png',
+  addresses: [
+    {
+      'address_lines': ['1 Test Street'],
+      town: 'Test Town',
+      postcode: 'TE ST1'
+    }
+  ],
+  catchment: '',
+  info: '',
+  open: false,
+  directions: '',
+  lat: 0,
+  lon: 0,
+  urgent_message: '',
+  crown_location_code: 0,
+  county_location_code: 0,
+  magistrates_location_code: 0,
+  areas_of_law: [],
+  types: [],
+  emails: [],
+  contacts: [],
+  application_updates: [],
+  opening_times: [],
+  facilities: [],
+  gbs: '',
+  dx_number: [],
+  service_area: [],
+  additional_links: [],
+  service_centre: undefined
+};
+
+const viewData: CourtDetailsData = {
+  results: undefined,
+  notInPersonP1: '',
+  title: '',
+  catchmentArea: {
+    area1: '',
+    area2: ''
+  },
+  path: ''
 };
 
 describe('CourtDetailsController', () => {
@@ -213,6 +261,12 @@ describe('CourtDetailsController', () => {
       'seoMetadataDescription': 'Not-London'
     };
     expect(res.render).toBeCalledWith('court-details/not-in-person-court', expectedData);
+  });
+
+  test('Should cover notInPersonP1 with undefined service_centre', async () => {
+    const req = mockRequest(i18n);
+    controller.setNotInPersonP1(req, courtDetails, viewData);
+    expect(viewData.notInPersonP1).toEqual('');
   });
 
   test('Should render the court details page for not in person with sc intro where intro is empty', async () => {

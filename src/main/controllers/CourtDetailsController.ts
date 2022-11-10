@@ -83,7 +83,7 @@ export class CourtDetailsController {
       .replace('{serviceArea}', formatAreasOfLaw(courtDetails['areas_of_law']));
   }
 
-  private setNotInPersonP1(req: FactRequest, courtDetails: CourtDetailsResult, viewData: CourtDetailsData): void {
+  public setNotInPersonP1(req: FactRequest, courtDetails: CourtDetailsResult, viewData: CourtDetailsData): void {
     if (courtDetails['service_centre']) {
       if (courtDetails.service_centre.intro_paragraph.length > 0) {
         viewData.notInPersonP1 = this.getIntroParagraph(req, courtDetails);
