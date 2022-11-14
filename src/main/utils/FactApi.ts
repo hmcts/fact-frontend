@@ -2,10 +2,9 @@ import { Logger } from '../interfaces/Logger';
 import { AxiosInstance } from 'axios';
 import { SearchResult } from '../interfaces/SearchResultsData';
 import { CourtDetailsResult } from '../interfaces/CourtDetailsData';
-import { CourtWithDistance } from '../interfaces/PostcodeResultsData';
+import { CourtWithDistance, PostcodeSearchResultsData } from '../interfaces/PostcodeResultsData';
 import { ServiceResult } from '../interfaces/ServicesData';
 import { ServiceAreaResult } from '../interfaces/ServiceAreasData';
-import { PostcodeSearchResultsData } from '../interfaces/PostcodeResultsData';
 import {CourtReference} from '../interfaces/CourtResultsData';
 
 export class FactApi {

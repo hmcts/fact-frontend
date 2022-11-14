@@ -52,33 +52,32 @@ export class ServicePostcodeResultsController {
 
     if (postcodeError !== '') {
       return res.redirect(`${baseUrl}?error=${postcodeError}`);
-    } else {
-      const isDivorceOrCivil = serviceArea === 'divorce' || serviceArea === 'civil-partnership';
-      const data: PostcodeResultsData = {
-        ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['postcode-results']),
-        path: '/courts/near',
-        errors: false,
-        results: {},
-        isDivorceOrCivil: isDivorceOrCivil,
-        serviceArea: serviceArea,
-      };
-      const court = await this.api.postcodeServiceAreaSearch(postcode, serviceArea, action, req.lng);
-      if (!court.courts || court.courts.length === 0) {
-        return res.redirect(`${baseUrl}?noResults=true&postcode=${postcode}`);
-      }
-      data.results = court;
-      if (isDivorceOrCivil) {
-        data.secondHint = data.secondHint.replace('{postcode}', postcode);
-      } else {
-        data.multipleResultsHint = data.multipleResultsHint
-          .replace('{total}', court.courts.length.toString())
-          .replace('{serviceArea}', court.name ? court.name.toLowerCase() : court.name)
-          .replace('{postcode}', postcode);
-        data.singleResultsHint = data.singleResultsHint
-          .replace('{serviceArea}', court.name ? court.name.toLowerCase() : court.name)
-          .replace('{postcode}', postcode);
-      }
-      return res.render('postcode-results', data);
     }
+    const isDivorceOrCivil = ['divorce','civil-partnership'].includes(serviceArea);
+    const data: PostcodeResultsData = {
+      ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['postcode-results']),
+      path: '/courts/near',
+      errors: false,
+      results: {},
+      isDivorceOrCivil: isDivorceOrCivil,
+      serviceArea: serviceArea,
+    };
+    const court = await this.api.postcodeServiceAreaSearch(postcode, serviceArea, action, req.lng);
+    if (!court.courts || court.courts.length === 0) {
+      return res.redirect(`${baseUrl}?noResults=true&postcode=${postcode}`);
+    }
+    data.results = court;
+    if (isDivorceOrCivil) {
+      data.secondHint = data.secondHint.replace('{postcode}', postcode);
+    } else {
+      data.multipleResultsHint = data.multipleResultsHint
+        .replace('{total}', court.courts.length.toString())
+        .replace('{serviceArea}', court.name ? court.name.toLowerCase() : court.name)
+        .replace('{postcode}', postcode);
+      data.singleResultsHint = data.singleResultsHint
+        .replace('{serviceArea}', court.name ? court.name.toLowerCase() : court.name)
+        .replace('{postcode}', postcode);
+    }
+    return res.render('postcode-results', data);
   }
 }

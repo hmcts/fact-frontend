@@ -14,7 +14,7 @@ export class ChooseServiceController {
   ) { }
 
   private async getServices(req: FactRequest, hasErrors: boolean) {
-    const action: string = req.params.action as string;
+    const action: string = req.params.action;
     const data: ServicesData = {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng)['choose-service']),
       path: '/services' + action,
@@ -41,7 +41,7 @@ export class ChooseServiceController {
     } else if (req.body.chooseService === 'not-listed') {
       return res.redirect('/services/service-not-found');
     } else {
-      const action = req.params.action as string;
+      const action = req.params.action;
       const serviceChosen = req.body.chooseService;
       return res.redirect('/services/' + serviceChosen + '/service-areas/' + action);
     }

@@ -57,7 +57,7 @@ export class ChooseServiceAreaController {
     const action = req.params.action as Action;
 
     if (!hasProperty(req.body, 'serviceArea')) {
-      const serviceChosen = req.params.service as string;
+      const serviceChosen = req.params.service;
       const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
       const serviceData = await this.getServiceData(serviceChosen, action, serviceAreasPageData, true, req.lng);
 

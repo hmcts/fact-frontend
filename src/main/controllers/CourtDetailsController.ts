@@ -16,7 +16,6 @@ import { generatePlaceMetadata } from '../utils/SEOMetadata';
 @autobind
 export class CourtDetailsController {
 
-  //TODO this comes into place when the user comes from a no name court search
   private regionalCentre = false;
 
   constructor(
@@ -24,7 +23,7 @@ export class CourtDetailsController {
   ) { }
 
   public async get(req: FactRequest, res: Response, next: NextFunction) {
-    const slug: string = req.params.slug as string;
+    const slug: string = req.params.slug;
 
     if(!isEmpty(slug)) {
       const courtDetails: CourtDetailsResult = await this.api.court(slug, req.lng);
@@ -44,9 +43,7 @@ export class CourtDetailsController {
             sendDocumentsEmail: filterByDescription(courtDetails.emails, ['send documents', 'anfon dogfennau']),
           };
 
-          if (courtDetails['image_file']) {
-            courtDetails['image_file'] = config.get('services.image-store.url') + '/' + courtDetails['image_file'];
-          }
+          this.imageHandler(courtDetails);
 
           viewData.seoMetadata = generatePlaceMetadata(courtDetails);
           viewData.seoMetadataDescription = (viewData.seoMetadataDescription as string).replace('{courtName}', courtDetails.name);
@@ -55,17 +52,7 @@ export class CourtDetailsController {
           if (courtDetails['in_person']) {
             return res.render('court-details/in-person-court', viewData);
           } else {
-
-            courtDetails['service_centre'] ?
-              viewData.notInPersonP1 = courtDetails.service_centre.intro_paragraph.length > 0 ? (req.lng == 'en'
-                ? courtDetails.service_centre.intro_paragraph : courtDetails.service_centre.intro_paragraph_cy) :
-                viewData.notInPersonP1
-                  .replace('{catchmentArea}', decideCatchmentArea(this.regionalCentre, viewData.catchmentArea))
-                  .replace('{serviceArea}', formatAreasOfLaw(courtDetails['areas_of_law']))
-              : viewData.notInPersonP1 = viewData.notInPersonP1
-                .replace('{catchmentArea}', decideCatchmentArea(this.regionalCentre, viewData.catchmentArea))
-                .replace('{serviceArea}', formatAreasOfLaw(courtDetails['areas_of_law']));
-
+            this.setNotInPersonP1(req, courtDetails, viewData);
             return res.render('court-details/not-in-person-court', viewData);
           }
         } else {
@@ -78,5 +65,33 @@ export class CourtDetailsController {
       }
     }
     next();
+  }
+
+  private imageHandler(courtDetails: CourtDetailsResult): void {
+    if (courtDetails['image_file']) {
+      courtDetails['image_file'] = config.get('services.image-store.url') + '/' + courtDetails['image_file'];
+    }
+  }
+
+  private getIntroParagraph(req: FactRequest, courtDetails: CourtDetailsResult): string {
+    return req.lng == 'en' ? courtDetails.service_centre.intro_paragraph : courtDetails.service_centre.intro_paragraph_cy;
+  }
+
+  private replaceCatchmentAndServiceArea(viewData: CourtDetailsData, courtDetails: CourtDetailsResult): string {
+    return viewData.notInPersonP1
+      .replace('{catchmentArea}', decideCatchmentArea(this.regionalCentre, viewData.catchmentArea))
+      .replace('{serviceArea}', formatAreasOfLaw(courtDetails['areas_of_law']));
+  }
+
+  public setNotInPersonP1(req: FactRequest, courtDetails: CourtDetailsResult, viewData: CourtDetailsData): void {
+    if (courtDetails['service_centre']) {
+      if (courtDetails.service_centre.intro_paragraph.length > 0) {
+        viewData.notInPersonP1 = this.getIntroParagraph(req, courtDetails);
+      } else {
+        viewData.notInPersonP1 = this.replaceCatchmentAndServiceArea(viewData, courtDetails);
+      }
+    } else {
+      viewData.notInPersonP1 = this.replaceCatchmentAndServiceArea(viewData, courtDetails);
+    }
   }
 }
