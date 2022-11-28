@@ -31,6 +31,8 @@
   "crownCourtCodeText": "Crown Court location code",
   "countyCourtCodeText": "County Court location code",
   "magistratesCourtCodeText": "Magistrates' Court location code",
+  "familyCourtCodeText": "Family Court location code",
+  "tribunalCourtCodeText": "Tribunal location code",
   "catchmentArea": {
     "area1": "the South-East of England",
     "area2": "all of England and Wales"

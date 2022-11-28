@@ -25,6 +25,8 @@ export interface CourtDetailsResult {
   crown_location_code: number;
   county_location_code: number;
   magistrates_location_code: number;
+  family_location_code: number;
+  tribunal_location_code: number;
   areas_of_law: [];
   types: [];
   emails: [];

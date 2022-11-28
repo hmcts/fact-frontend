@@ -106,6 +106,8 @@ const courtDetails: CourtDetailsResult = {
   crown_location_code: 0,
   county_location_code: 0,
   magistrates_location_code: 0,
+  family_location_code: 0,
+  tribunal_location_code: 0,
   areas_of_law: [],
   types: [],
   emails: [],

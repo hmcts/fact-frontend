@@ -333,6 +333,16 @@
                   class="govuk-body-m">{{ results.magistrates_location_code }}</span>
               </p>
             {% endif %}
+            {% if results.family_location_code %}
+              <p class="govuk-body-m">
+                {{ familyCourtCodeText }}: <span class="govuk-body-m">{{ results.family_location_code }}</span>
+              </p>
+            {% endif %}
+            {% if results.tribunal_location_code %}
+              <p class="govuk-body-m">
+                {{ tribunalCourtCodeText }}: <span class="govuk-body-m">{{ results.tribunal_location_code }}</span>
+              </p>
+            {% endif %}
             {% if results['dx_number'] and results['dx_number'].length > 0 %}
               {% for dx in results['dx_number'] %}
                 <p class="govuk-body-m dx-number">
