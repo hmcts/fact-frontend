@@ -1,0 +1,18 @@
+{
+  "groupName": "all dependencies",
+  "separateMajorMinor": false,
+  "open-pull-requests-limit": 0,
+  "groupSlug": "all",
+  "packageRules": [
+    {
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "groupName": "all dependencies",
+      "groupSlug": "all"
+    }
+  ],
+  "lockFileMaintenance": {
+    "enabled": false
+  }
+}
