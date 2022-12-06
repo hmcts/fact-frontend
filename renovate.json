@@ -1,6 +1,7 @@
 {
   "groupName": "all dependencies",
   "separateMajorMinor": false,
+  "open-pull-requests-limit": 0,
   "groupSlug": "all",
   "packageRules": [
     {
