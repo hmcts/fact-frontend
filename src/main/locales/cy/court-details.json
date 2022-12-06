@@ -31,6 +31,8 @@
   "crownCourtCodeText": "Cod lleoliad Llys y Goron",
   "countyCourtCodeText": "Cod lleoliad Llys Sirol",
   "magistratesCourtCodeText": "Cod lleoliad Llys yr Ynadon",
+  "familyCourtCodeText": "Cod lleoliad y Llys Teulu",
+  "tribunalCourtCodeText": "Cod lleoliad tribiwnlys",
   "catchmentArea": {
     "area1": "De-ddwyrain Lloegr",
     "area2": "Cymru a Lloegr i gyd"
