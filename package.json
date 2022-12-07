@@ -127,6 +127,7 @@
     "request/http-signatre/jsprim/json-schema": ">=0.4.0",
     "webpack/terser-webpack-plugin/terser": ">=5.14.2",
     "@hmcts/nodejs-healthcheck/@hmcts/nodejs-logging/moment" : ">=2.29.4",
-    "@hmcts/nodejs-logging/moment" : ">=2.29.4"
+    "@hmcts/nodejs-logging/moment" : ">=2.29.4",
+    "@hmcts/nodejs-healthcheck/superagent/formidable/qs" : ">=6.9.7"
   }
 }
