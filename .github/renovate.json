@@ -9,7 +9,7 @@
   },
   "groupName": "all dependencies",
   "separateMajorMinor": false,
-  "open-pull-requests-limit": 0,
+  "open-pull-requests-limit": 3,
   "groupSlug": "all",
   "packageRules": [
     {
