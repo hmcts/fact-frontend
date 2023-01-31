@@ -5,15 +5,19 @@ import {ProxyController} from '../../../../main/controllers/ProxyController';
 describe('ProxyController', () => {
 
   const expectedCourtDetails = require('../../../resources/court-details-results.json');
+  const expectedCourtDetailsByCourtTypes = require('../../../resources/court-details-by-court-types-results.json');
   const testSlug = 'test-slug';
   const testLng = 'en';
   const testPostcode = 'PO5TC0D3';
   const testServiceArea = 'service-area';
   const testAction = '';
   const response = { data: expectedCourtDetails };
+  const courtTypesSearchResponse = expectedCourtDetailsByCourtTypes;
+  const testCourtTypes = 'family,county';
   const api: any = {
     court: async () => response.data,
-    postcodeServiceAreaSearch: async () => response.data
+    postcodeServiceAreaSearch: async () => response.data,
+    courtTypesSearch : async () => courtTypesSearchResponse
   };
   const data = {};
   const controller = new ProxyController(api);
@@ -21,6 +25,7 @@ describe('ProxyController', () => {
   beforeEach(() => {
     jest.spyOn(api, 'court');
     jest.spyOn(api, 'postcodeServiceAreaSearch');
+    jest.spyOn(api, 'courtTypesSearch');
   });
 
   test('Should return court details', async () => {
@@ -49,5 +54,17 @@ describe('ProxyController', () => {
 
     expect(api.postcodeServiceAreaSearch).toBeCalledWith(req.params.postcode, req.params.serviceArea, req.params.action, req.lng);
     expect(res.send).toBeCalledWith(expectedCourtDetails);
+  });
+
+  test('Should return court details by court types', async () => {
+    const req = mockRequest(data);
+    const res = mockResponse();
+    req.params = {
+      courtTypes: testCourtTypes
+    };
+    await controller.getCourtsByCourtTypes(req, res);
+
+    expect(api.courtTypesSearch).toBeCalledWith(req.params.courtTypes);
+    expect(res.send).toBeCalledWith(courtTypesSearchResponse);
   });
 });
