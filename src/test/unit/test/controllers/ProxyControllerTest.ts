@@ -12,12 +12,11 @@ describe('ProxyController', () => {
   const testServiceArea = 'service-area';
   const testAction = '';
   const response = { data: expectedCourtDetails };
-  const courtTypesSearchResponse = expectedCourtDetailsByCourtTypes;
   const testCourtTypes = 'family,county';
   const api: any = {
     court: async () => response.data,
     postcodeServiceAreaSearch: async () => response.data,
-    courtTypesSearch : async () => courtTypesSearchResponse
+    courtTypesSearch : async () => expectedCourtDetailsByCourtTypes
   };
   const data = {};
   const controller = new ProxyController(api);
@@ -65,6 +64,6 @@ describe('ProxyController', () => {
     await controller.getCourtsByCourtTypes(req, res);
 
     expect(api.courtTypesSearch).toBeCalledWith(req.params.courtTypes);
-    expect(res.send).toBeCalledWith(courtTypesSearchResponse);
+    expect(res.send).toBeCalledWith(expectedCourtDetailsByCourtTypes);
   });
 });
