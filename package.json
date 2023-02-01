@@ -64,7 +64,7 @@
     "require-directory": "^2.1.1",
     "serve-favicon": "^2.5.0",
     "ts-node": "^10.9.1",
-    "tsconfig-paths": "^4.0.0",
+    "tsconfig-paths": "^4.1.2",
     "typescript": "^4.7.4"
   },
   "devDependencies": {
@@ -130,7 +130,6 @@
     "@hmcts/nodejs-logging/moment" : ">=2.29.4",
     "@hmcts/nodejs-healthcheck/superagent/formidable/qs" : ">=6.9.7",
     "@hmcts/nodejs-healthcheck/superagent/cookiejar" : ">=2.1.4",
-    "json5": ">=2.2.2",
-    "tsconfig-paths/json5" : ">=2.2.2"
+    "json5": ">=2.2.2"
   }
 }
