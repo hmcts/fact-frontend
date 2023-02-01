@@ -15,7 +15,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'src/main/public/'),
-    filename: 'main.[contenthash].js',
+    filename: 'main.dev.js',
     publicPath: ''
   },
 };
