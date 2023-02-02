@@ -27,3 +27,14 @@ Then('I expect response data contains slug {string}', async function (slug: stri
   const response = await I.getTheJsonResponse();
   expect(response.data.slug).equal(slug);
 });
+
+Then('I expect response data contains types {string} {string}', async function (courtType1: string, courtType2: string) {
+  const response = await I.getTheJsonResponse();
+  const courts : [] = response.data;
+  const firstCourtsCourtTypes: string[] = response.data[0].types;
+  const lastCourtsCourtTypes: string[] = response.data[courts.length - 1].types;
+
+  expect((firstCourtsCourtTypes.filter(c => (c == courtType1 || c == courtType2))).length > 0).equal(true);
+  expect((lastCourtsCourtTypes.filter(c => (c == courtType1 || c == courtType2))).length > 0).equal(true);
+});
+
