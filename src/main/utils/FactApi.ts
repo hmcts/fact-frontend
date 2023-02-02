@@ -109,4 +109,17 @@ export class FactApi {
         };
       });
   }
+
+  public courtTypesSearch(courtTypes: string): Promise<Array<CourtDetailsResult>> {
+    return this.axios
+      .get(`courts/court-types/${courtTypes}`)
+      .then(results => results.data)
+      .catch(err => {
+        this.logger.error(err);
+        return {
+          courts: []
+        };
+      });
+  }
+
 }
