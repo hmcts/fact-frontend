@@ -19,6 +19,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'src/main/public/'),
     filename: filename,
-    publicPath: 'auto'
+    publicPath: ''
   },
 };
