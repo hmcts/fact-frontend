@@ -1,5 +1,6 @@
 {
   "name": "fact-frontend",
+  "packageManager": "yarn@3.4.1",
   "version": "0.0.1",
   "private": true,
   "engines": {
@@ -117,19 +118,8 @@
   },
   "resolutions": {
     "sass-lint/merge": ">=2.1.1",
-    "sass-lint/eslint/is-my-json-valid/jsonpointer": ">=5.0.0",
-    "sass-lint/eslint/shelljs": ">=0.8.5",
-    "sass-lint/eslint/table/ajv": ">=0.8.5",
-    "sass-lint/gonzales-pe-sl/minimist": ">=1.2.6",
-    "html-webpack-plugin/html-minifier-terser/terser": ">=5.14.2",
     "uglifyjs-webpack-plugin/serialize-javascript": ">=3.1.0",
-    "node-sass/request/http-signatre/jsprim/json-schema": ">=0.4.0",
-    "request/http-signatre/jsprim/json-schema": ">=0.4.0",
-    "webpack/terser-webpack-plugin/terser": ">=5.14.2",
-    "@hmcts/nodejs-healthcheck/@hmcts/nodejs-logging/moment" : ">=2.29.4",
-    "@hmcts/nodejs-logging/moment" : ">=2.29.4",
-    "@hmcts/nodejs-healthcheck/superagent/formidable/qs" : ">=6.9.7",
-    "@hmcts/nodejs-healthcheck/superagent/cookiejar" : ">=2.1.4",
+    "@hmcts/nodejs-logging/moment": ">=2.29.4",
     "json5": ">=2.2.2"
   }
 }
