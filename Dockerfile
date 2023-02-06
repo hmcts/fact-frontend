@@ -1,8 +1,6 @@
 # ---- Base image ----
 FROM hmctspublic.azurecr.io/base/node:14-alpine as base
 COPY --chown=hmcts:hmcts . .
-ENV YARN_VERSION 3.4.1
-RUN yarn policies set-version $YARN_VERSION \
 RUN yarn install --production \
   && yarn cache clean
 
