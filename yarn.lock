@@ -6154,7 +6154,7 @@ __metadata:
     express-nunjucks: ^2.2.5
     glob-parent: 6.0.2
     govuk-frontend: 4.5.0
-    helmet: ^4.6.0
+    helmet: ^6.0.1
     html-webpack-plugin: ^5.5.0
     http-proxy-middleware: ^2.0.6
     i18next: ^21.8.14
@@ -6963,10 +6963,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"helmet@npm:^4.6.0":
-  version: 4.6.0
-  resolution: "helmet@npm:4.6.0"
-  checksum: 139ad678d1cab207b043c206f50f6744eff2ef1f463e4626d36718b45b337485c77d10260ef9d89d292fa678da5153d86b08172b3b365cc8e680241015ed3a49
+"helmet@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "helmet@npm:6.0.1"
+  checksum: 1ca20d0b7888b6208130bbb50d183e68d53bb5fa0caead2106226d6d53216dfc893b4b5c07528304e342884f75d87702003b80884b065cb5dcbc705fb4a6ad52
   languageName: node
   linkType: hard
 
