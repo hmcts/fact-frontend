@@ -4,6 +4,7 @@ node_modules/
 *.css
 
 ./functional-output/*
+functional-output
 
 .idea/
 *.iml
