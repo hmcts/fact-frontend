@@ -9,7 +9,7 @@ export const config: CodeceptJS.MainConfig = {
   gherkin: testConfig.Gherkin,
   output: '../../../functional-output/functional/reports',
   helpers: testConfig.helpers,
-  tests: './src/test/functional',
+  tests: './src/test/functional/features-codecept-test',
   plugins: {
     allure: {
       enabled: true,
