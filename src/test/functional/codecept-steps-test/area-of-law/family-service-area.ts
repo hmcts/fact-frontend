@@ -1,3 +1,4 @@
+import { I } from '../codecept-utils'
 
 Then('I can select a {string} from the family area of law page', async (option: string) => {
   let element;

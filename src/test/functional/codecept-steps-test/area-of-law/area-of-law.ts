@@ -1,3 +1,4 @@
+import { I } from '../codecept-utils'
 
 Given('I continue having selected an {string} from that page', async (option: string) => {
   let element;

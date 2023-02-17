@@ -5,7 +5,7 @@ export const config = {
   WaitForTimeout: 10000,
   Gherkin: {
     features: './features-codecept-test/**/childcare-and-parenting-service-area.feature',
-    steps: ['./codecept-steps-test/**/**/*.ts','./codecept-steps-test/**/*.ts'],
+    steps: './codecept-steps-test/**/*.ts',
   },
   helpers: {}
 };

@@ -1,11 +1,10 @@
+import { I } from './codecept-utils'
 
 Given('I navigate to the Search Page', async () => {
-  const { I } = inject();
   await I.click('.continue');
 });
 
 When('I select {string}', async (option: string) => {
-  const { I } = inject();
   const element = option === 'I have the name' ? '#i-have-the-name' : '#i-do-not-have-the-name';
   await I.click(element);
   await I.click('.continue');

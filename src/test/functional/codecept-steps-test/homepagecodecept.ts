@@ -1,8 +1,6 @@
-
-
-const { I } = inject();
 import { config as testConfig } from '../../config';
 import { expect } from 'chai';
+import { I } from './codecept-utils'
 
 export const iAmOnPage = (text: string): void => {
   const url = new URL(text, testConfig.TEST_URL);

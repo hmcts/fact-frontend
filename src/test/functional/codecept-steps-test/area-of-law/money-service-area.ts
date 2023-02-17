@@ -1,4 +1,5 @@
-const { I } = inject();
+import { I } from '../codecept-utils'
+
 When('I select {string} from the areas of law page and continue', async (option: string) => {
   //const { I } = inject();
   const element = option;

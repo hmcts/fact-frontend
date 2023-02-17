@@ -1,5 +1,6 @@
 import {expect} from "chai";
-const { I } = inject();
+import { I } from './codecept-utils'
+
 Then('I am presented with the {string} page', async function(title: string) {
   const pageTitle = await I.grabTitle();
   expect(pageTitle).equal(title);
