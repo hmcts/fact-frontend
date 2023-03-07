@@ -1,4 +1,4 @@
-import { I } from '../codecept-utils'
+import { I } from '../../utlis/codecept-util'
 
 Then('I can select a {string} from the crime service area page', async (option: string) => {
   let element;

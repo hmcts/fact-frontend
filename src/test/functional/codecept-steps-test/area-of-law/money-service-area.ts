@@ -1,7 +1,6 @@
-import { I } from '../codecept-utils'
+import { I } from '../../utlis/codecept-util'
 
 When('I select {string} from the areas of law page and continue', async (option: string) => {
-  //const { I } = inject();
   const element = option;
   await I.click(element);
   await I.click('.continue');

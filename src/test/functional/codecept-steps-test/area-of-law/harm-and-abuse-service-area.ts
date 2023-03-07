@@ -1,4 +1,4 @@
-import { I } from '../codecept-utils'
+import { I } from '../../utlis/codecept-util'
 
 Then('I can select a {string} from the harm and abuse service area page', async (option: string) => {
   let element;
