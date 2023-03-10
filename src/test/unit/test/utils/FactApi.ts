@@ -317,4 +317,58 @@ describe('FactApi', () => {
     await expect(api.courtPrefixSearch('A')).resolves.toEqual({ results: [] });
     await expect(spy).toBeCalledTimes(1);
   });
+
+  test('Should return list of court from a court types search', async () => {
+
+    const results = {
+      data: [
+        {
+          name: 'London',
+          slug: 'London',
+          address: 'Address Street',
+          'townName': 'AAA',
+          postcode: 'AAA AAA',
+          types: [
+            'Family Court',
+            'County Court'
+          ]
+        },
+        {
+          name: 'Birmingham',
+          slug: 'Birmingham',
+          address: 'Address Street',
+          'townName': 'AAA',
+          postcode: 'AAA AAA',
+          types: [
+            'Family Court',
+            'County Court'
+          ]
+        }
+      ]
+    };
+
+    const mockAxios = { get: async () => results } as any;
+    const mockLogger = {} as any;
+
+    const api = new FactApi(mockAxios, mockLogger);
+
+    await expect(api.courtTypesSearch('family,county')).resolves.toEqual(results.data);
+  });
+
+  test('Should return no courts from a court types search and log error', async () => {
+    const mockAxios = { get: async () => {
+      throw new Error('Error');
+    }} as any;
+    const mockLogger = {
+      error: async ( message: string ) => console.log(message)
+    } as any;
+
+    const spy = jest.spyOn(mockLogger, 'error');
+    const api = new FactApi(mockAxios, mockLogger);
+
+    await expect(api.courtTypesSearch('')).resolves.toEqual({ courts: [] });
+    await expect(spy).toBeCalledTimes(1);
+  });
+
+
 });

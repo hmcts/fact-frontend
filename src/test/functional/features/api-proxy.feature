@@ -13,3 +13,6 @@ Feature: API Proxy
     When I make an API call to "/v2/proxy/search/slug/cardiff-social-security-and-child-support-tribunal"
     Then I expect some header to be returned
     Then I expect response data contains slug "cardiff-social-security-and-child-support-tribunal"
+    When I make an API call to "/v2/proxy/search/court-types/crown,family"
+    Then I expect some header to be returned
+    Then I expect response data contains types "Crown Court" "Family Court"
