@@ -1,4 +1,4 @@
-import { I } from '../../utlis/codecept-util'
+import { I } from '../../utlis/codecept-util';
 
 Given('I continue having selected an {string} from that page', async (option: string) => {
   let element;

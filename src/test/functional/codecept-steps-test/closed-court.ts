@@ -1,6 +1,6 @@
 import {config as testConfig} from '../../config';
 import { expect } from 'chai';
-import { I } from '../utlis/codecept-util'
+import { I } from '../utlis/codecept-util';
 
 export const iAmOnPage = (): void => {
   const url = new URL(testConfig.TEST_URL + '/courts/aberdare-county-court');
@@ -18,5 +18,5 @@ Then('I expect the page header to be {string}', async function(title: string) {
 });
 
 When('I can select the link', async () => {
-   I.clickLink('#homeLink');
+  I.clickLink('#homeLink');
 });

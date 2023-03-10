@@ -1,4 +1,4 @@
-import { I } from '../../utlis/codecept-util'
+import { I } from '../../utlis/codecept-util';
 
 Then('I can select a {string} from the family and children area of law page', async (option: string) => {
   const { I } = inject();

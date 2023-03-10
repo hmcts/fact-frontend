@@ -15,7 +15,7 @@ Given('I select I can not find what I am looking for', async function () {
 });
 
 When('I click on the link Search for a court by prefix \\(A - Z)', async function () {
-  await I.clickLink('#main-content > div > div > p:nth-child(6) > a');
+  I.click('#main-content > div > div > p:nth-child(6) > a');
 });
 
 When('I click on the letter {string}', async (character: string) => {
@@ -24,12 +24,10 @@ When('I click on the letter {string}', async (character: string) => {
 });
 
 Then('I can see courts list all start with {string}', async (alphabet: string) => {
-  //const courtHtmlElement: [string] = await I.getHtmlFromElements('#results-list > h2 > a');
-  // @ts-ignore
-  const courtHtmlElement: [string] = await I.grabTextFromAll('#results-list > h2 > a');
+  const courtHtmlElement = await I.grabTextFromAll('#results-list > h2 > a');
   expect(courtHtmlElement.length > 0).equal(true);
   courtHtmlElement.forEach(courtName => expect(courtName.startsWith(alphabet)).equal(true));
-  const sortedCourtNames: [string] = courtHtmlElement.sort();
+  const sortedCourtNames = courtHtmlElement.sort();
   let isEqual = true;
   for (let i = 0; i < courtHtmlElement.length; ++i) {
     if (courtHtmlElement[i] === sortedCourtNames[i])

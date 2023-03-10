@@ -14,8 +14,7 @@ Given("that location is an 'in-person' court or tribunal", async () => {
 });
 
 Given("that location is a 'not-in-person' court or tribunal", async () => {
-   I.seeElement('#not-in-person');
-
+  I.seeElement('#not-in-person');
 });
 
 Then("I am presented with the profile page for an 'in-person' court or tribunal", async function() {
@@ -42,7 +41,6 @@ Then('the type of address is presented to me on the profile page e.g. {string} o
 
 });
 
-
 Given('the address for that type is presented to me on the profile page', async () => {
   I.seeElement('.single-address');
 });
@@ -50,7 +48,6 @@ Given('the address for that type is presented to me on the profile page', async 
 Given('that location entry comprises a primary and secondary address', async () => {
   const elChildrenLength = await I.grabNumberOfVisibleElements('.multiple-addresses');
   expect(elChildrenLength).to.be.greaterThan(1);
-
 });
 
 Then('both types of address are presented to me on the profile page e.g. {string} and {string}', async function(type1: string, type2: string) {
@@ -209,7 +206,7 @@ Then( 'I click the link {string} from {string} and it takes me to the page{strin
 
   I.seeTextEquals(pageLink,'#'+ sidebarEntry +' > ul >li:nth-child('+ index +') > a');
   await I.click('#'+ sidebarEntry + '> ul > li:nth-child('+ index +') > a');
-  I.seeTitleEquals(pageTitle)
+  I.seeTitleEquals(pageTitle);
 
 });
 

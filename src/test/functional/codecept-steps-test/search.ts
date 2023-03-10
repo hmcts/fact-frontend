@@ -1,4 +1,4 @@
-import { I } from '../utlis/codecept-util'
+import { I } from '../utlis/codecept-util';
 import {expect} from 'chai';
 
 Given('I navigate to the Search Page', async () => {
@@ -12,7 +12,7 @@ When('I select {string}', async (option: string) => {
 });
 
 Then('I can select the option to search for {string}', async (search: string) => {
-   I.seeElement('#search');
+  I.seeElement('#search');
 });
 
 Given('I have entered {string} as search criteria', async (search: string) => {
@@ -56,7 +56,7 @@ Given('I have not entered search content', async () => {
 });
 
 Then('I am presented with an error', async () => {
-  I.seeElement('#search-error');
+  I.seeElementInDOM('#search-error');
 });
 
 Given('there are no matching results', async () => {

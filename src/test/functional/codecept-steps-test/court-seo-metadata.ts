@@ -1,6 +1,6 @@
 import { config as testConfig } from '../../config';
 import { expect } from 'chai';
-import { I } from '../utlis/codecept-util'
+import { I } from '../utlis/codecept-util';
 
 Given('a {string} page with the court slug {string} loads', async function (courtType: string, courtSlug: string) {
   I.amOnPage(testConfig.TEST_URL + '/courts/' + courtSlug);

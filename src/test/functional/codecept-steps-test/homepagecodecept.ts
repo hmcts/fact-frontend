@@ -1,6 +1,6 @@
 import { config as testConfig } from '../../config';
 import { expect } from 'chai';
-import { I } from '../utlis/codecept-util'
+import { I } from '../utlis/codecept-util';
 
 export const iAmOnPage = (text: string): void => {
   const url = new URL(text, testConfig.TEST_URL);

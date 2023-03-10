@@ -1,4 +1,4 @@
-import { I } from '../../utlis/codecept-util'
+import { I } from '../../utlis/codecept-util';
 
 When('I select {string} from the areas of law page and continue', async (option: string) => {
   const element = option;

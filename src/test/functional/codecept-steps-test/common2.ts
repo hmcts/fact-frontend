@@ -1,4 +1,4 @@
-import { I } from '../utlis/codecept-util'
+import { I } from '../utlis/codecept-util';
 
 Then('the page URL should be {string}', (url: string) => {
   I.waitInUrl(url);
