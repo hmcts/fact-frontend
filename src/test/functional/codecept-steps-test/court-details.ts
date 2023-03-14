@@ -117,7 +117,7 @@ Given('that location entry includes one or building facilities', async () => {
 });
 
 Then('the name of each facility is presented on the profile page', async () => {
-  I.seeTextEquals('Disabled access','#building-facilities > dl > div:nth-child(1) > dd.govuk-summary-list__key');
+  I.seeTextEquals('Parking','#building-facilities > dl > div:nth-child(1) > dd.govuk-summary-list__key');
 });
 
 Given('the description of each facility is presented to me on the profile page', async () => {
