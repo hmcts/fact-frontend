@@ -121,7 +121,7 @@ Then('the name of each facility is presented on the profile page', async () => {
 });
 
 Given('the description of each facility is presented to me on the profile page', async () => {
-  I.seeTextEquals('Wheelchair access in to the building, lifts to all floors. ','#building-facilities > dl > div:nth-child(1) > dd.govuk-summary-list__value');
+  I.seeTextEquals('Closest multi-story parking facilities are in Newton Street and Albert Street, approx 5 minutes walk away.','#building-facilities > dl > div:nth-child(1) > dd.govuk-summary-list__value');
 });
 
 Given('that location entry does not hide listings for areas of law offered by that location', async () => {
