@@ -4,7 +4,7 @@ export const config = {
   TestSlowMo: 300,
   WaitForTimeout: 10000,
   Gherkin: {
-    features: './features-codecept-test/homepagecodecept.feature',
+    features: './features-codecept-test/*.feature',
     steps: './codecept-steps-test/**/*.ts',
   },
   helpers: {}
