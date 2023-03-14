@@ -1,7 +1,7 @@
 export const config = {
   TEST_URL: process.env.TEST_URL || 'http://localhost:3100',
   TestHeadlessBrowser: true,
-  TestSlowMo: 300,
+  TestSlowMo: 180,
   WaitForTimeout: 10000,
   Gherkin: {
     features: './features-codecept-test/*.feature',
