@@ -1,6 +1,6 @@
 export const config = {
   TEST_URL: process.env.TEST_URL || 'http://localhost:3100',
-  TestHeadlessBrowser: false,
+  TestHeadlessBrowser: true,
   TestSlowMo: 300,
   WaitForTimeout: 10000,
   Gherkin: {
