@@ -9,12 +9,20 @@ Given('I navigate to the Search Page', async () => {
 
 When('I select {string}', async (option: string) => {
   let element;
-  if(option === 'I have the name')
-    element = '#i-have-the-name';
-  else if(option === 'I do not have the name')
-    element = '#i-do-not-have-the-name';
-  else
-    element = '#search-by-postcode';
+  switch(option) {
+    case 'I have the name': {
+      element = '#i-have-the-name';
+      break;
+    }
+    case 'I do not have the name': {
+      element = '#i-do-not-have-the-name';
+      break;
+    }
+    case 'search by postcode': {
+      element = '#search-by-postcode';
+      break;
+    }
+  }
   await I.click(element);
   await I.click('.continue');
 });
@@ -26,7 +34,6 @@ Then('I can select the option to search for {string}', async (search: string) =>
 });
 
 Given('I have entered {string} as search criteria', async (search: string) => {
-  //await I.fillField('#search', search);
   await I.setInputField('#search', search);
 });
 
