@@ -8,7 +8,13 @@ Given('I navigate to the Search Page', async () => {
 });
 
 When('I select {string}', async (option: string) => {
-  const element = option === 'I have the name' ? '#i-have-the-name' : '#i-do-not-have-the-name';
+  let element;
+  if(option === 'I have the name')
+    element = '#i-have-the-name';
+  else if(option === 'I do not have the name')
+    element = '#i-do-not-have-the-name';
+  else
+    element = '#search-by-postcode';
   await I.click(element);
   await I.click('.continue');
 });
