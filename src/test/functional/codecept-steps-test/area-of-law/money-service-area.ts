@@ -2,8 +2,8 @@ import { I } from '../../utlis/codecept-util';
 
 When('I select {string} from the areas of law page and continue', async (option: string) => {
   const element = option;
-  await I.click(element);
-  await I.click('.continue');
+  I.click(element);
+  I.click('.continue');
 });
 
 Then('I can select a {string} from the money area of law page', async (option: string) => {
@@ -46,11 +46,11 @@ Then('I can select a {string} from the money area of law page', async (option: s
       break;
     }
   }
-  await I.click(element);
+  I.click(element);
 });
 
 Given('I continue having not selected an money area of law option', async() => {
-  await I.click('.continue');
+  I.click('.continue');
 });
 
 Then('I am presented with an error message for service area', async() => {

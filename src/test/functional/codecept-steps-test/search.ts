@@ -2,13 +2,13 @@ import { I } from '../utlis/codecept-util';
 import {expect} from 'chai';
 
 Given('I navigate to the Search Page', async () => {
-  await I.click('.continue');
+  I.click('.continue');
 });
 
 When('I select {string}', async (option: string) => {
   const element = option === 'I have the name' ? '#i-have-the-name' : '#i-do-not-have-the-name';
-  await I.click(element);
-  await I.click('.continue');
+  I.click(element);
+  I.click('.continue');
 });
 
 Then('I can select the option to search for {string}', async (search: string) => {
@@ -16,11 +16,11 @@ Then('I can select the option to search for {string}', async (search: string) =>
 });
 
 Given('I have entered {string} as search criteria', async (search: string) => {
-  await I.fillField('#search', search);
+  I.fillField('#search', search);
 });
 
 When('I have selected to search for that court or tribunal name or address', async () => {
-  await I.click('.continue');
+  I.click('.continue');
 });
 
 Then('all courts and tribunals are listed in sorting rules order where the entered content is within any name or address field where partial search content is sufficient', async () => {
@@ -36,7 +36,7 @@ Then('all courts and tribunals are listed in sorting rules order where the enter
 });
 
 When('I have selected to search for that content', async () => {
-  await I.click('.continue');
+  I.click('.continue');
 });
 
 Then('all courts and tribunals within that full postcode location are listed', async () => {
@@ -74,7 +74,7 @@ Given('I can re-enter search content', async () => {
 
 Given('I can enter {string}', async (search: string) => {
   I.seeElement('#search');
-  await I.fillField('#search', search);
+  I.fillField('#search', search);
 });
 
 Given('I can select to search for that content', async () => {

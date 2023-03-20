@@ -20,6 +20,6 @@ Then('I can select a {string} from the crime service area page', async (option: 
 });
 
 Given('I continue having not selected a crime service area option', async() => {
-  await I.click('.continue');
+  I.click('.continue');
 });
 

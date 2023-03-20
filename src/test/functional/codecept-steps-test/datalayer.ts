@@ -3,7 +3,7 @@ import {expect} from 'chai';
 import {I} from '../utlis/codecept-util';
 
 Given('A page loads', async function () {
-  await I.amOnPage(testConfig.TEST_URL + '/');
+  I.amOnPage(testConfig.TEST_URL + '/');
 });
 
 Then('There is language object in the dataLayer', async () => {
@@ -14,7 +14,7 @@ Then('There is language object in the dataLayer', async () => {
 });
 
 When('I switch language', async () => {
-  await I.click('.fact-language');
+  I.click('.fact-language');
 });
 
 Then('The language object contains {string}', async (lang: string) => {

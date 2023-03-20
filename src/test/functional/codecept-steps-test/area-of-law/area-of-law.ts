@@ -36,11 +36,11 @@ Given('I continue having selected an {string} from that page', async (option: st
       break;
     }
   }
-  await I.click(element);
+  I.click(element);
 });
 
 Given('I continue having not selected an area of law option', async() => {
-  await I.click('.continue');
+  I.click('.continue');
 });
 
 Then('I am presented with an error message for services', async() => {

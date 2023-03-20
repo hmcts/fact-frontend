@@ -1,4 +1,3 @@
-import {expect} from 'chai';
 import { I } from '../utlis/codecept-util';
 
 Then('I can view the phase banner at the top of that page', async () => {

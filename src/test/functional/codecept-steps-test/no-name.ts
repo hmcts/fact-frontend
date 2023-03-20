@@ -26,15 +26,15 @@ Then('I can select an {string} option from the list displayed', async (option: s
       break;
     }
   }
-  await I.click(element);
+  I.click(element);
 });
 
 Given('I can continue having selected that option', async () => {
-  await I.click('.continue');
+  I.click('.continue');
 });
 
 Given('I continue having not selected a court option', async() => {
-  await I.click('.continue');
+  I.click('.continue');
 });
 
 Then('I am presented with an error message', async() => {

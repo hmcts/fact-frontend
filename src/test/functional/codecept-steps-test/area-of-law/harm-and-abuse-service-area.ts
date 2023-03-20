@@ -20,10 +20,10 @@ Then('I can select a {string} from the harm and abuse service area page', async 
       break;
     }
   }
-  await I.click(element);
+  I.click(element);
 });
 
 Given('I continue having not selected a harm and abuse service area option', async() => {
-  await I.click('.continue');
+  I.click('.continue');
 });
 
