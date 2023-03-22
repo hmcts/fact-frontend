@@ -39,6 +39,16 @@ describe('Search Option Controller', () => {
     expect(res.redirect).toHaveBeenCalledWith('/service-choose-action');
   });
 
+  test('Should redirect to the Search by postcode page', async () => {
+    const req = mockRequest(i18n);
+    req.body = {
+      knowLocation: 'postcode',
+    };
+    const res = mockResponse();
+    await controller.post(req, res);
+    expect(res.redirect).toHaveBeenCalledWith('/services/search-by-postcode');
+  });
+
   test('Should render search option if no data has been entered', async () => {
     const req = mockRequest(i18n);
     req.body = {};

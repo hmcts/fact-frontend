@@ -6,7 +6,8 @@
   "hint": "The name of the court or tribunal can be found on a letter, email or text from us.",
   "answers": {
     "a1": "I have the name",
-    "a2": "I do not have the name"
+    "a2": "I do not have the name",
+    "a3": "I want to find the nearest court or tribunal by postcode"
   },
   "button": "Continue",
   "error":{
