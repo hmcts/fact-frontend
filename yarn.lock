@@ -2923,10 +2923,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.0.6":
-  version: 18.0.6
-  resolution: "@types/node@npm:18.0.6"
-  checksum: 780f8885a6b6eb12f4c0246617747fdc37a451931b3c01ce8148d356c0903b705dcb16cc6a914de63d48b0dc1b002c7a3dfae681f580e1761aa551d3cd996813
+"@types/node@npm:^18.15.5":
+  version: 18.15.5
+  resolution: "@types/node@npm:18.15.5"
+  checksum: 5fbf3453bd5ce1402bb2964e55d928fc8a8a7de5451b1b0fe66587fecb8a3eb86854ca9cefa5076a5971e2cff00e1773ceeb5d872a54f6c6ddfbbc1064b4e91a
   languageName: node
   linkType: hard
 
@@ -6436,7 +6436,7 @@ __metadata:
     "@types/i18next": ^13.0.0
     "@types/jest": ^28.1.6
     "@types/lodash": ^4.14.182
-    "@types/node": ^18.0.6
+    "@types/node": ^18.15.5
     "@types/nunjucks": ^3.2.1
     "@types/require-directory": ^2.1.2
     "@types/serve-favicon": ^2.5.3
