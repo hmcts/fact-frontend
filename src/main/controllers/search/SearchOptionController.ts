@@ -23,7 +23,9 @@ export class SearchOptionController {
     if (knowLocation === 'yes') {
       return res.redirect('/search-by-name');
     }
-
-    return res.redirect('/service-choose-action');
+    else if (knowLocation === 'no') {
+      return res.redirect('/service-choose-action');
+    }
+    res.redirect('/services/search-by-postcode' );
   }
 }
