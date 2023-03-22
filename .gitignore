@@ -3,6 +3,9 @@ node_modules/
 .sass-cache
 *.css
 
+./functional-output/*
+functional-output
+
 .idea/
 *.iml
 

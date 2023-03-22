@@ -1,8 +1,7 @@
 Feature: Cookie Banner
 
   Background:
-    Given I am on new browser
-    Given I am on FACT homepage
+    Given I am on FACT homepage '/'
     Then I expect the page header to be "Find a Court or Tribunal - GOV.UK"
 
   Scenario: View cookie banner

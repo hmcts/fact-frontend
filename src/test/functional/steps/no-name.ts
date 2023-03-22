@@ -1,10 +1,8 @@
-import {Given, Then} from 'cucumber';
-import { expect } from 'chai';
-
-import * as I from '../utlis/puppeteer.util';
+import {expect} from 'chai';
+import { I } from '../utlis/codecept-util';
 
 Then('I am presented with the {string} page', async function(title: string) {
-  const pageTitle = await I.getPageTitle();
+  const pageTitle = await I.grabTitle();
   expect(pageTitle).equal(title);
 });
 
@@ -28,19 +26,18 @@ Then('I can select an {string} option from the list displayed', async (option: s
       break;
     }
   }
-  await I.click(element);
+  I.click(element);
 });
 
 Given('I can continue having selected that option', async () => {
-  await I.click('.continue');
+  I.click('.continue');
 });
 
 Given('I continue having not selected a court option', async() => {
-  await I.click('.continue');
+  I.click('.continue');
 });
 
 Then('I am presented with an error message', async() => {
-  const elementExist = await I.checkElement('#choose-action-error');
-  expect(elementExist).equal(true);
+  I.seeElement('#choose-action-error');
 });
 

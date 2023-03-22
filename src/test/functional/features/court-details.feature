@@ -1,7 +1,7 @@
 Feature: Court Name Know - Court Details
 
   Background:
-   Given I am on FACT homepage
+   Given I am on FACT homepage '/'
    And I navigate to the Search Page
    When I select "I have the name"
 
@@ -10,7 +10,7 @@ Feature: Court Name Know - Court Details
     When I have selected to search for that court or tribunal name or address
     Given results are returned
     When I select a court or tribunal link
-    And that location is an 'in-person' court or tribunal
+    And  that location is an 'in-person' court or tribunal
     Then I am presented with the profile page for an 'in-person' court or tribunal
 
     Examples:
@@ -223,6 +223,7 @@ Feature: Court Name Know - Court Details
       | Chancery Division      |
 
   Scenario: Validate the info display for the Court or tribunal using common platform scheme
+
     And I have entered "Harrow Crown Court" as search criteria
     When I have selected to search for that court or tribunal name or address
     Given results are returned

@@ -1,7 +1,4 @@
-import { Given, Then } from 'cucumber';
-
-import * as I from '../../utlis/puppeteer.util';
-import { expect } from 'chai';
+import { I } from '../../utlis/codecept-util';
 
 Given('I continue having selected an {string} from that page', async (option: string) => {
   let element;
@@ -39,14 +36,13 @@ Given('I continue having selected an {string} from that page', async (option: st
       break;
     }
   }
-  await I.click(element);
+  I.click(element);
 });
 
 Given('I continue having not selected an area of law option', async() => {
-  await I.click('.continue');
+  I.click('.continue');
 });
 
 Then('I am presented with an error message for services', async() => {
-  const elementExist = await I.checkElement('#choose-service-error');
-  expect(elementExist).equal(true);
+  I.seeElement('#choose-service-error');
 });

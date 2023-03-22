@@ -1,6 +1,6 @@
 Feature: Help and navigation
   Background:
-    Given I am on FACT homepage
+    Given I am on FACT homepage '/'
 
   Scenario: Beta phase banner
     Then I can view the phase banner at the top of that page
