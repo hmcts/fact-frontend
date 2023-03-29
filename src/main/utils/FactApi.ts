@@ -20,7 +20,10 @@ export class FactApi {
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
-        return [];
+        return {
+          null: [],
+          error: true
+        };
       });
   }
 
@@ -30,7 +33,10 @@ export class FactApi {
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
-        return {};
+        return {
+          null: [],
+          error: true
+        };
       });
   }
 
@@ -40,7 +46,10 @@ export class FactApi {
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
-        return [];
+        return {
+          null: [],
+          error: true
+        };
       });
   }
 
@@ -50,7 +59,10 @@ export class FactApi {
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
-        return {};
+        return {
+          null: {},
+          error: true
+        };
       });
   }
 
@@ -60,7 +72,10 @@ export class FactApi {
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
-        return [];
+        return {
+          null: [],
+          error: true
+        };
       });
   }
 
@@ -70,7 +85,10 @@ export class FactApi {
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
-        return [];
+        return {
+          null: [],
+          error: true
+        };
       });
   }
 
@@ -81,7 +99,8 @@ export class FactApi {
       .catch(err => {
         this.logger.error(err);
         return {
-          courts: []
+          courts: [],
+          error: true
         };
       });
   }
@@ -93,7 +112,8 @@ export class FactApi {
       .catch(err => {
         this.logger.error(err);
         return {
-          courts: []
+          courts: [],
+          error: true
         };
       });
   }
@@ -105,19 +125,21 @@ export class FactApi {
       .catch(err => {
         this.logger.error(err);
         return {
-          results: []
+          results: [],
+          error: true
         };
       });
   }
 
-  public courtTypesSearch(courtTypes: string): Promise<Array<CourtDetailsResult>> {
+  public courtTypesSearch(courtTypes: string): Promise<Array<CourtDetailsResult>>  {
     return this.axios
       .get(`courts/court-types/${courtTypes}`)
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
         return {
-          courts: []
+          courts: [],
+          error: true
         };
       });
   }

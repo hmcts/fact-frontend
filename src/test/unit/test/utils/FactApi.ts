@@ -32,7 +32,7 @@ describe('FactApi', () => {
     const spy = jest.spyOn(mockLogger, 'error');
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.search( null ,'en')).resolves.toEqual([]);
+    await expect(api.search( null ,'en')).resolves.toEqual({null: [], error: true});
     await expect(spy).toBeCalled();
 
   });
@@ -68,7 +68,7 @@ describe('FactApi', () => {
     const spy = jest.spyOn(mockLogger, 'error');
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.court( null , 'en')).resolves.toEqual({});
+    await expect(api.court( null , 'en')).resolves.toEqual({null: [], error: true});
     await expect(spy).toBeCalled();
 
   });
@@ -104,7 +104,7 @@ describe('FactApi', () => {
     const spy = jest.spyOn(mockLogger, 'error');
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.services('en')).resolves.toEqual([]);
+    await expect(api.services('en')).resolves.toEqual({null: [], error: true});
     await expect(spy).toBeCalled();
   });
 
@@ -138,7 +138,7 @@ describe('FactApi', () => {
     const spy = jest.spyOn(mockLogger, 'error');
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.getService('slug', 'en')).resolves.toEqual({});
+    await expect(api.getService('slug', 'en')).resolves.toEqual({null: {}, error: true});
     await expect(spy).toBeCalled();
   });
 
@@ -172,7 +172,7 @@ describe('FactApi', () => {
     const spy = jest.spyOn(mockLogger, 'error');
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.serviceAreas('Money','en')).resolves.toEqual([]);
+    await expect(api.serviceAreas('Money','en')).resolves.toEqual({null: [], error: true});
     await expect(spy).toBeCalled();
   });
 
@@ -206,8 +206,8 @@ describe('FactApi', () => {
     const spy = jest.spyOn(mockLogger, 'error');
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.court( null ,'en')).resolves.toEqual({});
-    await expect(api.getServiceArea('service-area' , 'en')).resolves.toEqual([]);
+    await expect(api.court( null ,'en')).resolves.toEqual({null: [], error: true});
+    await expect(api.getServiceArea('service-area' , 'en')).resolves.toEqual({null: [], error: true});
     await expect(spy).toBeCalled();
   });
 
@@ -241,7 +241,7 @@ describe('FactApi', () => {
     const spy = jest.spyOn(mockLogger, 'error');
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.postcodeServiceAreaSearch('AA9 9AA', 'aol', '','en')).resolves.toEqual({ courts: [] });
+    await expect(api.postcodeServiceAreaSearch('AA9 9AA', 'aol', '','en')).resolves.toEqual({ courts: [], error: true });
     await expect(spy).toBeCalled();
   });
 
@@ -275,7 +275,7 @@ describe('FactApi', () => {
     const spy = jest.spyOn(mockLogger, 'error');
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.postcodeAreaSearch('AA9 9AA', 'en')).resolves.toEqual({ courts: [] });
+    await expect(api.postcodeAreaSearch('AA9 9AA', 'en')).resolves.toEqual({ courts: [], error: true });
     await expect(spy).toBeCalledTimes(1);
   });
 
@@ -314,7 +314,7 @@ describe('FactApi', () => {
     const spy = jest.spyOn(mockLogger, 'error');
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.courtPrefixSearch('A')).resolves.toEqual({ results: [] });
+    await expect(api.courtPrefixSearch('A')).resolves.toEqual({ results: [], error: true });
     await expect(spy).toBeCalledTimes(1);
   });
 
@@ -366,7 +366,7 @@ describe('FactApi', () => {
     const spy = jest.spyOn(mockLogger, 'error');
     const api = new FactApi(mockAxios, mockLogger);
 
-    await expect(api.courtTypesSearch('')).resolves.toEqual({ courts: [] });
+    await expect(api.courtTypesSearch('')).resolves.toEqual({ courts: [], error: true});
     await expect(spy).toBeCalledTimes(1);
   });
 
