@@ -1,4 +1,6 @@
 import { I } from '../../utlis/codecept-util';
+//import {expect} from "@playwright/test";
+import {expect} from 'chai';
 
 Given('I continue having selected an {string} from that page', async (option: string) => {
   let element;
@@ -44,5 +46,6 @@ Given('I continue having not selected an area of law option', async() => {
 });
 
 Then('I am presented with an error message for services', async() => {
+  expect(true).equal(false);
   I.seeElement('#choose-service-error');
 });
