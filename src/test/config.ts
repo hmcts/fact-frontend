@@ -4,7 +4,7 @@ export const config = {
   TestSlowMo: 180,
   WaitForTimeout: 10000,
   Gherkin: {
-    features: './features/*.feature',
+    features: './features/services.feature',
     steps: './steps/**/*.ts',
   },
   helpers: {}

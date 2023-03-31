@@ -7,6 +7,7 @@ Then('I am presented with the {string} page', async function(title: string) {
 });
 
 Then('I can select an {string} option from the list displayed', async (option: string) => {
+  expect(true).equal(false);
   let element;
   switch(option) {
     case 'nearest court': {
