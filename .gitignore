@@ -3,6 +3,9 @@ node_modules/
 .sass-cache
 *.css
 
+./functional-output/*
+functional-output
+
 .idea/
 *.iml
 
@@ -30,4 +33,3 @@ public/
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-/functional-output/
