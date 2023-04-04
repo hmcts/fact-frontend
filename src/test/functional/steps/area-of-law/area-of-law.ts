@@ -1,4 +1,6 @@
 import { I } from '../../utlis/codecept-util';
+//import {expect} from "@playwright/test";
+import {expect} from 'chai';
 
 Given('I continue having selected an {string} from that page', async (option: string) => {
   let element;
