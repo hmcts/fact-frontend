@@ -18,8 +18,20 @@
     </h1>
 
     <div class="govuk-grid-column-two-thirds">
+
+      {% set addresses1to3 = [] %}
+      {% set addresses4to6 = [] %}
+
+      {% for address in results.addresses %}
+        {% if loop.index <= 3 %}
+          {% set addresses1to3 = (addresses1to3.push(address), addresses1to3) %}
+        {% else %}
+          {% set addresses4to6 = (addresses4to6.push(address), addresses4to6) %}
+        {% endif %}
+      {% endfor %}
+
       <div class="govuk-grid-row">
-        {% for address in results.addresses %}
+        {% for address in addresses1to3 %}
 
           {% set descLabel = "" %}
 
@@ -77,21 +89,119 @@
 
           {% endfor %}
 
-          {% if results.addresses.length == 2 %}
+          {% if addresses1to3.length == 1 %}
+            <h2 class="govuk-heading-l single-address">
+              {{ address.type }}:
+            </h2>
+            <h3 class="govuk-heading-m">
+              {{ addressHeading }}
+            </h3>
+          {% elif addresses1to3.length == 2 %}
             <div class="govuk-grid-column-one-half multiple-addresses">
               <h2 class="govuk-heading-l">
                 {{ address.type }}:
               </h2>
-               <h2 class="govuk-heading-s">
+              <h2 class="govuk-heading-s">
                 {{ descLabel }}
+              </h2>
+          {% elif addresses1to3.length == 3 %}
+             <div class="govuk-grid-column-one-third multiple-addresses">
+               <h2 class="govuk-heading-l">
+                 {{ address.type }}:
                </h2>
-          {% elif results.addresses.length == 3 %}
+               <h2 class="govuk-heading-s">
+                  {{ descLabel }}
+               </h2>
+          {% endif %}
+
+          <p class="govuk-body-m address">
+            {% for addressLine in address.address_lines %}
+              {{ addressLine }}<br>
+            {% endfor %}
+            {{ address.town }}<br>
+            {{ address.postcode }}
+          </p>
+
+          {% if results.addresses.length > 1 %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="govuk-grid-row">
+        {% for address in addresses4to6 %}
+
+          {% set descLabel = "" %}
+
+          {% for areaOfLaw in address.fields_of_law.areas_of_law %}
+
+            {% if loop.index == 1 %}
+
+              {% if address.fields_of_law.courts.length > 0 and (address.fields_of_law.areas_of_law.length == 1)  %}
+                {% set descLabel = descLabel + areaOfLaw + ', ' %}
+              {% else %}
+                {% set descLabel = descLabel + areaOfLaw %}
+              {% endif %}
+
+            {% elif loop.index == (address.fields_of_law.areas_of_law.length) %}
+
+              {% if address.fields_of_law.courts.length > 0 %}
+                {% set descLabel = descLabel + ', ' +  areaOfLaw %}
+              {% else %}
+                {% set descLabel = descLabel + ' or ' +  areaOfLaw %}
+              {% endif %}
+
+            {% else %}
+              {% set descLabel = descLabel + ', ' + areaOfLaw %}
+            {% endif %}
+
+          {% endfor %}
+
+          {% if address.fields_of_law.courts.length == 0 %}
+            {% set descLabel = descLabel + ' cases' %}
+          {% endif %}
+
+          {% for courtType in address.fields_of_law.courts %}
+
+            {% if loop.index == 1 %}
+              {% if address.fields_of_law.courts.length == 1 and (address.fields_of_law.areas_of_law.length > 1) %}
+                {% set descLabel = descLabel + ' or ' + courtType + ' cases' %}
+              {% elif address.fields_of_law.courts.length == 1 and (address.fields_of_law.areas_of_law.length == 0) %}
+                {% set descLabel = descLabel + courtType + ' cases' %}
+              {% else %}
+                {% if address.fields_of_law.areas_of_law.length > 1 %}
+                  {% set descLabel = descLabel + ', ' + courtType %}
+                {% else %}
+                  {% set descLabel = descLabel + courtType %}
+                {% endif %}
+              {% endif %}
+            {% elif loop.index == (address.fields_of_law.courts.length) %}
+              {% if address.fields_of_law.courts.length > 1 %}
+                {% set descLabel = descLabel + ' or ' +  courtType + ' cases' %}
+              {% else %}
+                {% set descLabel = descLabel + courtType + ' cases' %}
+              {% endif %}
+            {% else %}
+              {% set descLabel = descLabel + ', ' + courtType %}
+            {% endif %}
+
+          {% endfor %}
+
+          {% if addresses4to6.length == 2 %}
+            <div class="govuk-grid-column-one-half multiple-addresses">
+              <h2 class="govuk-heading-l">
+                {{ address.type }}:
+              </h2>
+              <h2 class="govuk-heading-s">
+                {{ descLabel }}
+              </h2>
+          {% elif addresses4to6.length == 3 %}
                <div class="govuk-grid-column-one-third multiple-addresses">
                  <h2 class="govuk-heading-l">
                    {{ address.type }}:
                  </h2>
                  <h2 class="govuk-heading-s">
-                 {{ descLabel }}
+                   {{ descLabel }}
                  </h2>
           {% else %}
             <h2 class="govuk-heading-l single-address">
@@ -100,19 +210,20 @@
             <h3 class="govuk-heading-m">
               {{ addressHeading }}
             </h3>
-          {% endif %}
-            <p class="govuk-body-m address">
-              {% for addressLine in address.address_lines %}
-                {{ addressLine }}<br>
-              {% endfor %}
-              {{ address.town }}<br>
-              {{ address.postcode }}
-            </p>
+         {% endif %}
+          <p class="govuk-body-m address">
+            {% for addressLine in address.address_lines %}
+              {{ addressLine }}<br>
+            {% endfor %}
+            {{ address.town }}<br>
+            {{ address.postcode }}
+          </p>
           {% if results.addresses.length > 1 %}
             </div>
           {% endif %}
         {% endfor %}
       </div>
+
 
       <div class="govuk-grid-row">
         <p class="govuk-body-m" id="direction-map">
