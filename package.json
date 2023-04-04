@@ -87,7 +87,7 @@
     "allure-commandline": "^2.21.0",
     "allure-playwright": "^2.1.0",
     "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.2.5",
+    "babel-loader": "^9.1.2",
     "chai": "^4.3.6",
     "chai-as-promised": "^7.1.1",
     "copy-webpack-plugin": "^11.0.0",
