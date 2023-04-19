@@ -15,7 +15,7 @@ When('I make an API call to {string} and expect some JSON to be returned', async
 
 When('I make an API call to {string} and expect some header and slug {string} to be returned', async function(path: string,slug: string) {
   const response =  await Axios.get(testConfig.TEST_URL + path);
-  expect(response.headers['content-type']).equal('application/json; charset=utf-8');
+  expect(response.headers['content-type']).equal('application/json');
   expect(response.status).equal(200);
   expect(response.data.slug).equal(slug);
 });

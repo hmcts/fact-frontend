@@ -44,7 +44,3 @@ export const isPostcodeValid = (postcode: string, serviceArea: string): string =
   }
   return '';
 };
-
-export const hasErrors = (obj: {}): boolean => {
-  return hasProperty(obj, 'error');
-};
