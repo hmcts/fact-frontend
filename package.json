@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
   "scripts": {
     "start": "NODE_ENV=production ./node_modules/.bin/ts-node -r tsconfig-paths/register src/main/server.ts",
@@ -28,7 +28,7 @@
     "@codeceptjs/configure": "^0.10.0",
     "@hmcts/cookie-manager": "1.0.0",
     "@hmcts/info-provider": "^1.1.0",
-    "@hmcts/nodejs-healthcheck": "^1.8.0",
+    "@hmcts/nodejs-healthcheck": "^1.7.3",
     "@hmcts/nodejs-logging": "^4.0.4",
     "@hmcts/properties-volume": "^0.0.14",
     "@types/config": "^0.0.41",
