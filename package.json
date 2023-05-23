@@ -88,7 +88,6 @@
     "allure-playwright": "^2.1.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^9.1.2",
-    "body-parser": "^1.20.2",
     "chai": "^4.3.6",
     "chai-as-promised": "^7.1.1",
     "copy-webpack-plugin": "^11.0.0",
@@ -118,14 +117,18 @@
     "webpack": "^5.75.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-middleware": "^5.3.3",
-    "webpack-node-externals": "^3.0.0"
+    "webpack-node-externals": "^3.0.0",
+    "body-parser": "^1.20.2"
   },
   "resolutions": {
     "sass-lint/merge": ">=2.1.1",
     "uglifyjs-webpack-plugin/serialize-javascript": ">=3.1.0",
     "@hmcts/nodejs-logging/moment": ">=2.29.4",
     "qs": ">=6.5.3",
-    "json5": ">=2.2.2"
+    "json5": ">=2.2.2",
+    "tsconfig-paths/json5": ">=2.2.2",
+    "express/debug": ">=3.1.0",
+    "body-parser/debug": ">=3.1.0"
   },
   "packageManager": "yarn@3.4.1"
 }
