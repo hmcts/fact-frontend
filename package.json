@@ -126,9 +126,6 @@
     "@hmcts/nodejs-logging/moment": ">=2.29.4",
     "qs": ">=6.5.3",
     "json5": ">=2.2.2",
-    "tsconfig-paths/json5": ">=2.2.2",
-    "express/debug": ">=3.1.0",
-    "body-parser/debug": ">=3.1.0"
   },
   "packageManager": "yarn@3.4.1"
 }
