@@ -2,7 +2,9 @@
   "name": "fact-frontend",
   "version": "0.0.1",
   "private": true,
-
+  "engines": {
+    "node": ">=14.0.0 >=16.0.0"
+  },
   "scripts": {
     "start": "NODE_ENV=production ./node_modules/.bin/ts-node -r tsconfig-paths/register src/main/server.ts",
     "start:dev": "nodemon --config nodemon.json",
