@@ -125,7 +125,7 @@
     "uglifyjs-webpack-plugin/serialize-javascript": ">=3.1.0",
     "@hmcts/nodejs-logging/moment": ">=2.29.4",
     "qs": ">=6.5.3",
-    "json5": ">=2.2.2",
+    "json5": ">=2.2.2"
   },
   "packageManager": "yarn@3.4.1"
 }
