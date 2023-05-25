@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
   "scripts": {
     "start": "NODE_ENV=production ./node_modules/.bin/ts-node -r tsconfig-paths/register src/main/server.ts",
@@ -27,8 +27,8 @@
   "dependencies": {
     "@codeceptjs/configure": "^0.10.0",
     "@hmcts/cookie-manager": "1.0.0",
-    "@hmcts/info-provider": "^1.0.0",
-    "@hmcts/nodejs-healthcheck": "^1.8.0",
+    "@hmcts/info-provider": "^1.1.0",
+    "@hmcts/nodejs-healthcheck": "^1.7.3",
     "@hmcts/nodejs-logging": "^4.0.4",
     "@hmcts/properties-volume": "^0.0.14",
     "@types/config": "^0.0.41",
@@ -63,12 +63,12 @@
     "i18next-http-middleware": "^3.2.1",
     "jquery": "^3.6.0",
     "lodash": "^4.17.21",
-    "nunjucks": "^3.2.3",
+    "nunjucks": ">=3.2.4",
     "playwright": "^1.30.0",
     "require-directory": "^2.1.1",
     "serve-favicon": "^2.5.0",
     "ts-node": "^10.9.1",
-    "tsconfig-paths": "^4.1.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^4.7.4"
   },
   "devDependencies": {
@@ -87,7 +87,7 @@
     "allure-commandline": "^2.21.0",
     "allure-playwright": "^2.1.0",
     "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.2.5",
+    "babel-loader": "^9.1.2",
     "chai": "^4.3.6",
     "chai-as-promised": "^7.1.1",
     "copy-webpack-plugin": "^11.0.0",
@@ -123,12 +123,8 @@
     "sass-lint/merge": ">=2.1.1",
     "uglifyjs-webpack-plugin/serialize-javascript": ">=3.1.0",
     "@hmcts/nodejs-logging/moment": ">=2.29.4",
-    "babel-loader/loader-utils": ">=2.0.4",
-    "@hmcts/info-provider/express": ">=4.17.3",
     "qs": ">=6.5.3",
     "json5": ">=2.2.2",
-    "tsconfig-paths/json5": ">=2.2.2",
-    "express/debug": ">=3.1.0",
     "body-parser/debug": ">=3.1.0"
   },
   "packageManager": "yarn@3.4.1"
