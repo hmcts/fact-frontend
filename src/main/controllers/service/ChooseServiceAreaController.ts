@@ -15,7 +15,10 @@ export class ChooseServiceAreaController {
     private readonly api: FactApi,
     private readonly serviceAreaRedirect: ServiceAreaRedirect
   ) { }
-
+  /**
+   * GET /services/:serviceChosen/service-areas/:action
+   * get the service area data
+   */
   private async getServiceData(serviceChosen: string, action: string, serviceAreasPageData: ServiceAreasData, hasErrors: boolean, lng: string) {
     const data: ServiceAreasData = {
       ...cloneDeep(serviceAreasPageData),
@@ -40,7 +43,10 @@ export class ChooseServiceAreaController {
     }
     return data;
   }
-
+  /**
+   * GET /services/:serviceChosen/service-areas/:action
+   * renders the chosen service area page
+   */
   public async get(req: FactRequest, res: Response) {
     const {service, action} = req.params;
     const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;

@@ -12,7 +12,10 @@ export class ChooseServiceController {
   constructor(
     private readonly api: FactApi
   ) { }
-
+  /**
+   * GET /services
+   * gets the service area data
+   */
   private async getServices(req: FactRequest, hasErrors: boolean) {
     const action: string = req.params.action;
     const data: ServicesData = {
@@ -28,12 +31,18 @@ export class ChooseServiceController {
     }
     return data;
   }
-
+  /**
+   * GET /services
+   * renders the service area page
+   */
   public async get(req: FactRequest, res: Response) {
     const data = await this.getServices(req, false);
     res.render('choose-service', data);
   }
-
+  /**
+   * PUT /services
+   * updates the service area data
+   */
   public async post(req: FactRequest, res: Response) {
     if (!hasProperty(req.body, 'chooseService')) {
       const data = await this.getServices(req, true);

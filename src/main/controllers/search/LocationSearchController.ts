@@ -4,7 +4,10 @@ import { PageData } from '../../interfaces/PageData';
 import { cloneDeep } from 'lodash';
 
 export class LocationSearchController {
-
+  /**
+ * GET /search-by-name
+ * renders the location search page
+ */
   public get(req: FactRequest, res: Response): void {
     const data: PageData = {
       ...cloneDeep(req.i18n.getDataByLanguage(req.lng).search.location),
