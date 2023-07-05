@@ -12,7 +12,11 @@ export class ServicePostcodeResultsController {
   constructor(
     private readonly api: FactApi
   ) { }
-
+  /**
+   * GET /getCourtResultsByPostcode
+   * redirect to postcode service results page.
+   * @query postcode String,
+   */
   public async getCourtResultsByPostcode(req: FactRequest, res: Response): Promise<void> {
     const postcode  = req.query.postcode ? (req.query.postcode as string).toLowerCase() : '';
     const postcodeError = isPostcodeValid(postcode, '');
@@ -40,7 +44,12 @@ export class ServicePostcodeResultsController {
       .replace('{postcode}', postcode);
     return res.render('postcode-results', data);
   }
-
+  /**
+   * GET /get
+   * redirects to the service results page
+   * @params serviceArea string, action string
+   * @query postcode String,
+   */
   public async get(req: FactRequest, res: Response): Promise<void> {
     const postcode  = req.query.postcode ? (req.query.postcode as string).toUpperCase() : '';
     const serviceArea  = req.params.serviceArea;

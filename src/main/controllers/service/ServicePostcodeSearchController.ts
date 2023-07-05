@@ -11,7 +11,11 @@ export class ServicePostcodeSearchController {
   constructor(
     private readonly api: FactApi,
   ) { }
-
+  /**
+   * GET /getCourtsByPostcodeOnly
+   * redirect to postcode service results page.
+   * @query postcode string,
+   */
   public async getCourtsByPostcodeOnly(req: FactRequest, res: Response) {
     const { error, postcode, noResults }  = req.query as PostcodeSearchQuery;
     const hasError = !isEmpty(error);

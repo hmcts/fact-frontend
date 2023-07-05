@@ -12,7 +12,11 @@ export class ServiceSearchResultsController {
   constructor(
     private readonly api: FactApi
   ) { }
-
+  /**
+   * GET /get
+   * redirects to the search for service page with results.
+   * @params serviceArea,
+   */
   public async get(req: FactRequest, res: Response) {
 
     const data: ServiceSearchResults = {
