@@ -24,7 +24,7 @@ export class CourtDetailsController {
   /**
    * GET /get
    * redirects to the court details page.
-   * @params slug string,
+   * @param {string} slug
    */
   public async get(req: FactRequest, res: Response, next: NextFunction) {
     const slug: string = req.params.slug;

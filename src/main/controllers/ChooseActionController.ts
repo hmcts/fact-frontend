@@ -7,15 +7,15 @@ import { cloneDeep } from 'lodash';
 export class ChooseActionController {
   /**
    * GET /get
-   * redirects to the choose action page.
+   * @returns redirects to the choose action page.
    */
   public get(req: FactRequest, res: Response): void {
     res.render('choose-action', req.i18n.getDataByLanguage(req.lng)['choose-action']);
   }
   /**
    * POST /post
-   * redirects to the service page for the selected action
-   * @params action string,
+   * @returns redirects to the service page for the selected action
+   * @param {string} req.body.chooseAction
    */
   public post(req: FactRequest, res: Response): void {
     const action = req.body.chooseAction;

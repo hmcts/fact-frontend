@@ -6,7 +6,7 @@ import { cloneDeep } from 'lodash';
 export class LocationSearchController {
   /**
  * GET /search-by-name
- * renders the location search page
+ * @returns renders the location search page
  */
   public get(req: FactRequest, res: Response): void {
     const data: PageData = {

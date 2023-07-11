@@ -7,14 +7,14 @@ import { cloneDeep } from 'lodash';
 export class SearchOptionController {
   /**
    * GET /search-option
-   * renders the search option page
+   * @returns renders the search option page
    */
   public get(req: FactRequest, res: Response): void {
     res.render('search/option', req.i18n.getDataByLanguage(req.lng).search.option);
   }
   /**
    * POST /search-option
-   * renders the search option page
+   * @returns renders the search option page
    */
   public post(req: FactRequest, res: Response): void {
     if (!hasProperty(req.body, 'knowLocation')) {

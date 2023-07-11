@@ -13,7 +13,7 @@ export class SearchResultsController {
   ) { }
   /**
    * GET /courts
-   * renders the search results page if results found otherwise renders search location page
+   * @returns renders the search results page if results found otherwise renders search location page
    */
   public async get(req: FactRequest, res: Response): Promise<void> {
     const query = req.query.search as string;

@@ -12,8 +12,10 @@ export class ServiceAreaRedirect {
   };
   /**
    * GET /getUrl/:service/:serviceArea/:action
-   * redirect a service area to the correct page.
-   * @params service String, serviceArea ServiceAreaResult, action Action
+   * @returns redirect a service area to the correct page.
+   * @param {string} service
+   * @param {ServiceAreaResult}serviceArea
+   * @param {Action} action
    */
   public getUrl(service: string, serviceArea: ServiceAreaResult, action: Action): string {
     const serviceAreaCatchments = serviceArea.serviceAreaCourts.map(c => c.catchmentType);
@@ -28,8 +30,8 @@ export class ServiceAreaRedirect {
   }
   /**
    * GET /getSortForAction/:action
-   * redirect a service area to the correct page.
-   * @params action Action
+   * @returns redirect a service area to the correct page.
+   * @param {Action} action
    */
   private getSortForAction(action: Action) {
     return (a: Catchment, b: Catchment) => {

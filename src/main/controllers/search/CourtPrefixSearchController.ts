@@ -15,7 +15,7 @@ export class CourtPrefixSearchController {
   }
   /**
    * GET search/prefix-search
-   * renders the court prefix search page when searching with prefix
+   * @returns renders the court prefix search page when searching with prefix
    */
   public async get(req: FactRequest, res: Response) {
     const { error, prefix, noResults }  = req.query as CourtSearchQuery;

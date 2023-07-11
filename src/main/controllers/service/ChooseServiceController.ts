@@ -14,8 +14,8 @@ export class ChooseServiceController {
   ) { }
   /**
    * GET /services
-   * gets the service area data.
-   * @params action String
+   * @returns gets the service area data.
+   * @param {string} action
    */
   private async getServices(req: FactRequest, hasErrors: boolean) {
     const action: string = req.params.action;
@@ -34,7 +34,7 @@ export class ChooseServiceController {
   }
   /**
    * GET /services
-   * renders the service area page
+   * @returns renders the service area page
    */
   public async get(req: FactRequest, res: Response) {
     const data = await this.getServices(req, false);
@@ -42,7 +42,7 @@ export class ChooseServiceController {
   }
   /**
    * PUT /services
-   * updates the service area data
+   * @returns updates the service area data
    */
   public async post(req: FactRequest, res: Response) {
     if (!hasProperty(req.body, 'chooseService')) {

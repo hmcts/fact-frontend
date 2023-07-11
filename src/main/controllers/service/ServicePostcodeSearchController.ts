@@ -13,8 +13,8 @@ export class ServicePostcodeSearchController {
   ) { }
   /**
    * GET /getCourtsByPostcodeOnly
-   * redirect to postcode service results page.
-   * @query postcode string,
+   * @returns redirect to postcode service results page.
+   * @param {PostcodeSearchQuery} req.query
    */
   public async getCourtsByPostcodeOnly(req: FactRequest, res: Response) {
     const { error, postcode, noResults }  = req.query as PostcodeSearchQuery;
@@ -34,7 +34,11 @@ export class ServicePostcodeSearchController {
     }
     res.render('postcode-search', data);
   }
-
+  /**
+   * GET /get
+   * @returns redirect to postcode search page.
+   * @param {PostcodeSearchQuery} req.query
+   */
   public async get(req: FactRequest, res: Response) {
     const { error, postcode, noResults }  = req.query as PostcodeSearchQuery;
     const hasError = !isEmpty(error);

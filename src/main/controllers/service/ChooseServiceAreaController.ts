@@ -46,8 +46,9 @@ export class ChooseServiceAreaController {
   }
   /**
    * GET /services/:serviceChosen/service-areas/:action
-   * renders the chosen service area page
-   * @params service string, action: string
+   * @returns renders the chosen service area page
+   * @param {string} service
+   * @param {string} action
    */
   public async get(req: FactRequest, res: Response) {
     const {service, action} = req.params;
@@ -62,8 +63,9 @@ export class ChooseServiceAreaController {
   }
   /**
    * POST /services/:serviceChosen/service-areas/:action
-   * re-render the chosen service area page
-   * @params serviceArea string, action string
+   * @returns re-render the chosen service area page
+   * @param {string} serviceArea
+   * @param {string} action
    */
   public async post(req: FactRequest, res: Response) {
     const action = req.params.action as Action;

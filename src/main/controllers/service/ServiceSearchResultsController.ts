@@ -14,8 +14,9 @@ export class ServiceSearchResultsController {
   ) { }
   /**
    * GET /get
-   * redirects to the search for service page with results.
-   * @params serviceArea,
+   * @returns redirects to the search for service page with results.
+   * @param {string} req.params.serviceArea
+   * @param {string} req.lng
    */
   public async get(req: FactRequest, res: Response) {
 
