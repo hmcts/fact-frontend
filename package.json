@@ -125,7 +125,9 @@
     "@hmcts/nodejs-logging/moment": ">=2.29.4",
     "qs": ">=6.5.3",
     "json5": ">=2.2.2",
-    "body-parser/debug": ">=3.1.0"
+    "body-parser/debug": ">=3.1.0",
+    "minimist": ">=1.2.6",
+    "semver": ">=7.5.2"
   },
   "packageManager": "yarn@3.4.1"
 }
