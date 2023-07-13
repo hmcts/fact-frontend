@@ -14,7 +14,7 @@ export class ServiceAreaRedirect {
    * GET /getUrl/:service/:serviceArea/:action
    * @returns redirect a service area to the correct page.
    * @param {string} service
-   * @param {ServiceAreaResult}serviceArea
+   * @param {ServiceAreaResult} serviceArea
    * @param {Action} action
    */
   public getUrl(service: string, serviceArea: ServiceAreaResult, action: Action): string {

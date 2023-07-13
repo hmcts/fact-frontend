@@ -15,7 +15,7 @@ export class ChooseActionController {
   /**
    * POST /post
    * @returns redirects to the service page for the selected action
-   * @param {string} req.body.chooseAction
+   * @type {string} req.body.chooseAction
    */
   public post(req: FactRequest, res: Response): void {
     const action = req.body.chooseAction;

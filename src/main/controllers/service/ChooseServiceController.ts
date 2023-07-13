@@ -15,7 +15,7 @@ export class ChooseServiceController {
   /**
    * GET /services
    * @returns gets the service area data.
-   * @param {string} action
+   * @type {string} action
    */
   private async getServices(req: FactRequest, hasErrors: boolean) {
     const action: string = req.params.action;

@@ -18,7 +18,8 @@ export class ChooseServiceAreaController {
   /**
    * GET /services/:serviceChosen/service-areas/:action
    * gets and returns the service area data
-   * @params serviceChosen string, action string
+   @param {string} service
+   @param {string} action
    */
   private async getServiceData(serviceChosen: string, action: string, serviceAreasPageData: ServiceAreasData, hasErrors: boolean, lng: string) {
     const data: ServiceAreasData = {

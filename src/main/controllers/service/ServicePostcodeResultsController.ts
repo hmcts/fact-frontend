@@ -15,7 +15,7 @@ export class ServicePostcodeResultsController {
   /**
    * GET /getCourtResultsByPostcode
    * @returns redirect to postcode service results page.
-   * @param {string} req.query.postcode
+   * @type {string} req.query.postcode
    */
   public async getCourtResultsByPostcode(req: FactRequest, res: Response): Promise<void> {
     const postcode  = req.query.postcode ? (req.query.postcode as string).toLowerCase() : '';
@@ -47,7 +47,8 @@ export class ServicePostcodeResultsController {
   /**
    * GET /get
    * redirects to the service results page
-   * @params serviceArea string, action string
+   * @param {string} serviceArea
+   * @param {string} action
    * @query postcode String,
    */
   public async get(req: FactRequest, res: Response): Promise<void> {
