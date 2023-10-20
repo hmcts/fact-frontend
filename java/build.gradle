@@ -11,11 +11,11 @@ java {
 
 // tag::repositories[]
 repositories {
-  mavenLocal()
-  mavenCentral()
-  maven {
-    url 'https://jitpack.io'
-  }
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url 'https://jitpack.io'
+    }
 }
 // end::repositories[]
 
