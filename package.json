@@ -6,7 +6,7 @@
     "node": ">=16.0.0"
   },
   "scripts": {
-    "start": "NODE_ENV=production ./node_modules/.bin/ts-node -r tsconfig-paths/register src/main/server.ts",
+    "start": "NODE_ENV=production ts-node -r tsconfig-paths/register src/main/server.ts",
     "start:dev": "nodemon --config nodemon.json",
     "lint": "sass-lint -v -q && eslint . --ext .js,.jsx,.ts,.tsx",
     "build": "yarn webpack --config webpack.config.js",
@@ -60,6 +60,7 @@
     "i18next": "^21.8.14",
     "i18next-http-middleware": "^3.2.1",
     "jquery": "^3.6.0",
+    "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
     "nunjucks": ">=3.2.4",
     "require-directory": "^2.1.1",
@@ -87,6 +88,7 @@
     "babel-loader": "^9.1.2",
     "chai": "^4.3.6",
     "chai-as-promised": "^7.1.1",
+    "chokidar": "^3.5.3",
     "codeceptjs": "^3.5.6",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
@@ -123,7 +125,6 @@
     "@hmcts/nodejs-logging/moment": ">=2.29.4",
     "qs": ">=6.5.3",
     "json5": ">=2.2.2",
-    "body-parser/debug": ">=3.1.0",
     "minimist": ">=1.2.6",
     "semver": ">=7.5.2"
   },
