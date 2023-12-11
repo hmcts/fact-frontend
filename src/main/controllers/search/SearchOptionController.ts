@@ -5,11 +5,17 @@ import { hasProperty } from '../../utils/validation';
 import { cloneDeep } from 'lodash';
 
 export class SearchOptionController {
-
+  /**
+   * GET /search-option
+   * @returns renders the search option page
+   */
   public get(req: FactRequest, res: Response): void {
     res.render('search/option', req.i18n.getDataByLanguage(req.lng).search.option);
   }
-
+  /**
+   * POST /search-option
+   * @returns renders the search option page
+   */
   public post(req: FactRequest, res: Response): void {
     if (!hasProperty(req.body, 'knowLocation')) {
       const data: PageData = {
@@ -23,7 +29,9 @@ export class SearchOptionController {
     if (knowLocation === 'yes') {
       return res.redirect('/search-by-name');
     }
-
-    return res.redirect('/service-choose-action');
+    else if (knowLocation === 'no') {
+      return res.redirect('/service-choose-action');
+    }
+    res.redirect('/services/search-by-postcode' );
   }
 }

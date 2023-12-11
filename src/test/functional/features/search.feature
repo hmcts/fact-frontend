@@ -1,6 +1,6 @@
 Feature: Search
   Background:
-    Given I am on FACT homepage
+    Given I am on FACT homepage '/'
     And I navigate to the Search Page
     When I select "I have the name"
 

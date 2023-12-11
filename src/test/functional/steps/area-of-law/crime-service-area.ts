@@ -1,5 +1,4 @@
-import { Given, Then } from 'cucumber';
-import * as I from '../../utlis/puppeteer.util';
+import { I } from '../../utlis/codecept-util';
 
 Then('I can select a {string} from the crime service area page', async (option: string) => {
   let element;
@@ -21,6 +20,6 @@ Then('I can select a {string} from the crime service area page', async (option: 
 });
 
 Given('I continue having not selected a crime service area option', async() => {
-  await I.click('.continue');
+  I.click('.continue');
 });
 

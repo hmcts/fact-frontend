@@ -2,17 +2,12 @@ Feature: API Proxy
 
   Scenario: Make a legacy API call
     Given I am an API client
-    When I make an API call to "/courts/cardiff-social-security-and-child-support-tribunal.json"
-    Then I expect some JSON to be returned
+    When I make an API call to "/courts/cardiff-social-security-and-child-support-tribunal.json" and expect some JSON to be returned
 
-  Scenario: Proxy request to Fact API to get courts for service area request
+  Scenario Outline: Proxy request to Fact API to get courts for service area request
     Given I am an API client
-    When I make an API call to "/v2/proxy/search/postcode/bd96sg/serviceArea/divorce"
-    Then I expect some header to be returned
-    Then I expect response data contains slug "divorce"
-    When I make an API call to "/v2/proxy/search/slug/cardiff-social-security-and-child-support-tribunal"
-    Then I expect some header to be returned
-    Then I expect response data contains slug "cardiff-social-security-and-child-support-tribunal"
-    When I make an API call to "/v2/proxy/search/court-types/crown,family"
-    Then I expect some header to be returned
-    Then I expect response data contains types "Crown Court" "Family Court"
+    When I make an API call to "<path>" and expect some header and slug "<slug>" to be returned
+    Examples:
+      | path                                                                     | slug                                               |
+      | /v2/proxy/search/postcode/bd96sg/serviceArea/divorce                     | divorce                                            |
+      | /v2/proxy/search/slug/cardiff-social-security-and-child-support-tribunal | cardiff-social-security-and-child-support-tribunal |

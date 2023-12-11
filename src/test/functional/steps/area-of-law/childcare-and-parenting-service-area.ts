@@ -1,7 +1,7 @@
-import { Given, Then } from 'cucumber';
-import * as I from '../../utlis/puppeteer.util';
+import { I } from '../../utlis/codecept-util';
 
 Then('I can select a {string} from the family and children area of law page', async (option: string) => {
+  const { I } = inject();
   let element;
   switch(option) {
     case 'childcare': {
@@ -21,6 +21,6 @@ Then('I can select a {string} from the family and children area of law page', as
 });
 
 Given('I continue having not selected a family and children area of law option', async() => {
-  await I.click('.continue');
+  I.click('.continue');
 });
 

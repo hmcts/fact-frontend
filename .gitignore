@@ -3,6 +3,9 @@ node_modules/
 .sass-cache
 *.css
 
+./functional-output/*
+functional-output
+
 .idea/
 *.iml
 
@@ -13,6 +16,7 @@ node_modules/
 src/main/public/img/lib/*
 src/main/public/js/lib/**/*.js
 src/main/public/stylesheets/lib/*
+src/main/views/govuk
 
 node-rpm-packaging/
 mochawesome-report/
@@ -23,3 +27,15 @@ npm-debug.log.*
 dist/
 public/
 /coverage/
+
+# yarn v2
+ .yarn/*
+ .yarn/build-state.yml
+ /.yarn/install-state.gz
+ .pnp.*
+
+ # yarn v2 zero-install
+ !.pnp.cjs
+ !.yarn/unplugged
+ !.yarn/plugins
+ !.yarn/cache

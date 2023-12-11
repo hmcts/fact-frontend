@@ -1,30 +1,24 @@
-import { Given, Then } from 'cucumber';
-import { expect } from 'chai';
-
-import * as I from '../utlis/puppeteer.util';
+import {expect} from 'chai';
+import { I } from '../utlis/codecept-util';
 
 Given('the results are displayed with distance', async () => {
-  const elementExist = await I.checkElement('.distance');
-  expect(elementExist).equal(true);
+  I.seeElement('.distance');
 });
 
 Given('any listed court entry can be selected via a hyperlink', async () => {
-  const element = await I.getElement('#search-results div > h2 > a');
-  const elementExist = await I.checkElementIsAnchor(element);
-  expect(elementExist).equal(true);
+  I.seeElement('#search-results div > h2 > a');
 });
 
 Given('I can re-enter the postcode', async () => {
-  const elementExist = await I.checkElement('#postcode');
-  expect(elementExist).equal(true);
+  I.seeElement('#postcode');
 });
 
 Then('I can see 10 nearest court result back', async () => {
-  const courtHtmlElement: [string] = await I.getHtmlFromElements('#search-results > div > div > h2 > a');
-  expect(courtHtmlElement.length).equal(10);
+  const courts = await I.grabNumberOfVisibleElements('#search-results > div > div > h2 > a');
+  expect(courts).equal(10);
 });
 
 Then('I can see 1 nearest court result is back', async () => {
-  const courtHtmlElement: [string] = await I.getHtmlFromElements('#search-result > h2 > a');
-  expect(courtHtmlElement.length).equal(1);
+  const courts = await I.grabNumberOfVisibleElements('#search-result > h2 > a');
+  expect(courts).equal(1);
 });

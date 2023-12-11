@@ -1,22 +1,22 @@
-import {Given, Then, When} from 'cucumber';
+import {config as testConfig} from '../../config';
 import { expect } from 'chai';
+import { I } from '../utlis/codecept-util';
 
-import { config } from '../../config';
-import * as I from '../utlis/puppeteer.util';
+export const iAmOnPage = (): void => {
+  const url = new URL(testConfig.TEST_URL + '/courts/aberdare-county-court');
+  if (!url.searchParams.has('lng')) {
+    url.searchParams.set('lng', 'en');
+  }
+  I.amOnPage(url.toString());
+};
 
-Given('I am on closed-court page', async function() {
-  await I.newPage();
-  await I.goTo(config.TEST_URL + '/courts/aberdare-county-court');
-});
+Given('I am on FACT closed-court page', iAmOnPage);
 
-Then('I expect the closed-court page header to be {string}', async function(title: string) {
-  const pageTitle = await I.getPageTitle();
+Then('I expect the page header to be {string}', async function(title: string) {
+  const pageTitle = await I.grabTitle();
   expect(pageTitle).equal(title);
 });
 
 When('I can select the link', async () => {
-  const elementExist = await I.checkElement('#homeLink');
-  expect(elementExist).equal(true);
-  await I.click('#homeLink');
+  I.clickLink('#homeLink');
 });
-

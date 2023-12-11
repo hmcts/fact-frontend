@@ -1,15 +1,12 @@
-import { Given, Then } from 'cucumber';
+import { config as testConfig } from '../../config';
 import { expect } from 'chai';
-
-import { config } from '../../config';
-import * as I from '../utlis/puppeteer.util';
+import { I } from '../utlis/codecept-util';
 
 Given('I am on service-not-found page', async function() {
-  await I.newPage();
-  await I.goTo(config.TEST_URL + '/services/service-not-found');
+  await I.amOnPage(testConfig.TEST_URL + '/services/service-not-found');
 });
 
 Then('I expect the service-not-found page header to be {string}', async function(title: string) {
-  const pageTitle = await I.getPageTitle();
+  const pageTitle = await I.grabTitle();
   expect(pageTitle).equal(title);
 });

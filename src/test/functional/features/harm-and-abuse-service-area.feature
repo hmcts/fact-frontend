@@ -1,6 +1,6 @@
 Feature: Harm and abuse area of law
   Background:
-    Given I am on FACT homepage
+    Given I am on FACT homepage '/'
     And I navigate to the Search Page
     When I select "I do not have the name"
     Then I am presented with the "Find or contact a court - Find a Court or Tribunal - GOV.UK" page

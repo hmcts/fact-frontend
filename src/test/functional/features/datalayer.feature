@@ -1,7 +1,7 @@
 Feature: GA dataLayer
 
   Scenario: Page language
-    Given A page loads
+    Given I am on FACT homepage '/'
     Then There is language object in the dataLayer
     When I switch language
     Then The language object contains "cy"
