@@ -13,7 +13,10 @@ export class CourtPrefixSearchController {
     private readonly api: FactApi
   ) {
   }
-
+  /**
+   * GET search/prefix-search
+   * @returns renders the court prefix search page when searching with prefix
+   */
   public async get(req: FactRequest, res: Response) {
     const { error, prefix, noResults }  = req.query as CourtSearchQuery;
     const hasError = !isEmpty(error);

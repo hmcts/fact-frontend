@@ -1,4 +1,3 @@
-import * as bodyParser from 'body-parser';
 import config from 'config';
 import cookieParser from 'cookie-parser';
 import express from 'express';
@@ -28,8 +27,8 @@ export const app = express();
 app.locals.ENV = env;
 
 app.use(favicon(path.join(__dirname, '/public/assets/images/favicon.ico')));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use((req, res, next) => {

@@ -21,7 +21,11 @@ export class CourtDetailsController {
   constructor(
       private readonly api: FactApi
   ) { }
-
+  /**
+   * GET /get
+   * redirects to the court details page.
+   * @param {string} slug
+   */
   public async get(req: FactRequest, res: Response, next: NextFunction) {
     const slug: string = req.params.slug;
 
@@ -66,23 +70,39 @@ export class CourtDetailsController {
     }
     next();
   }
-
+  /**
+   * GET /imageHandler
+   * retrieves the court image.
+   * @params courtDetails CourtDetailsResult,
+   */
   private imageHandler(courtDetails: CourtDetailsResult): void {
     if (courtDetails['image_file']) {
       courtDetails['image_file'] = config.get('services.image-store.url') + '/' + courtDetails['image_file'];
     }
   }
-
+  /**
+   * getIntroParagraph
+   * retrieves the court image.
+   * @params courtDetails CourtDetailsResult,
+   */
   private getIntroParagraph(req: FactRequest, courtDetails: CourtDetailsResult): string {
     return req.lng == 'en' ? courtDetails.service_centre.intro_paragraph : courtDetails.service_centre.intro_paragraph_cy;
   }
-
+  /**
+   * replaceCatchmentAndServiceArea
+   * replaces the catchmentArea and serviceArea with the relevant types.
+   * @params viewData CourtDetailsData, courtDetails CourtDetailsResult,
+   */
   private replaceCatchmentAndServiceArea(viewData: CourtDetailsData, courtDetails: CourtDetailsResult): string {
     return viewData.notInPersonP1
       .replace('{catchmentArea}', decideCatchmentArea(this.regionalCentre, viewData.catchmentArea))
       .replace('{serviceArea}', formatAreasOfLaw(courtDetails['areas_of_law']));
   }
-
+  /**
+   * setNotInPersonP1
+   * set the relevant not in person flags for the court.
+   * @params viewData CourtDetailsData, courtDetails CourtDetailsResult,
+   */
   public setNotInPersonP1(req: FactRequest, courtDetails: CourtDetailsResult, viewData: CourtDetailsData): void {
     if (courtDetails['service_centre']) {
       if (courtDetails.service_centre.intro_paragraph.length > 0) {
