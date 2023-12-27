@@ -25,6 +25,7 @@
     "cichecks": "yarn && yarn build && yarn lint && yarn test"
   },
   "dependencies": {
+    "@cucumber/cucumber": "^10.1.0",
     "@hmcts/cookie-manager": "1.0.0",
     "@hmcts/info-provider": "^1.1.0",
     "@hmcts/nodejs-healthcheck": "^1.7.3",
@@ -77,7 +78,6 @@
     "@codeceptjs/configure": "^0.10.0",
     "@playwright/test": "^1.32.1",
     "@types/chai-as-promised": "^7.1.5",
-    "@types/cucumber": "^6.0.1",
     "@types/jest": "^29.5.6",
     "@types/supertest": "^2.0.12",
     "@types/webpack-dev-middleware": "^5.3.0",
@@ -93,7 +93,6 @@
     "codeceptjs": "^3.5.6",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
-    "cucumber": "^6.0.7",
     "debug": "^4.3.4",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
@@ -109,7 +108,7 @@
     "sass": "^1.69.4",
     "sass-lint": "^1.13.1",
     "sass-loader": "^13.0.2",
-    "sinon": "^14.0.0",
+    "sinon": "^16.1.1",
     "sinon-chai": "^3.7.0",
     "sonar-scanner": "^3.1.0",
     "style-loader": "^3.3.1",
