@@ -29,12 +29,12 @@ export class Helmet {
     app.use(
       helmet.contentSecurityPolicy({
         directives: {
-          connectSrc: [self, googleAnalyticsDomain, doubleclick],
+          connectSrc: [self, googleAnalyticsDomain, doubleclick, 'https://*.dynatrace.com'],
           defaultSrc: ["'none'"],
           fontSrc: [self, 'data:', 'https://fonts.gstatic.com'],
-          imgSrc: [self, azureBlob, ...tagManager, googleAnalyticsDomain, 'data:', 'https://ssl.gstatic.com', 'https://www.gstatic.com'],
+          imgSrc: [self, azureBlob, ...tagManager, googleAnalyticsDomain, 'data:', 'https://ssl.gstatic.com', 'https://www.gstatic.com', 'https://*.dynatrace.com'],
           objectSrc: [self],
-          scriptSrc: [self, ...tagManager, googleAnalyticsDomain, "'unsafe-inline'", "'unsafe-eval'"],
+          scriptSrc: [self, ...tagManager, googleAnalyticsDomain, "'unsafe-inline'", "'unsafe-eval'", 'https://*.dynatrace.com'],
           styleSrc: [self, ...tagManager, "'unsafe-inline'", 'https://fonts.googleapis.com'],
         },
       }),
