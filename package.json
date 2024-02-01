@@ -129,7 +129,7 @@
     "json5": ">=2.2.2",
     "minimist": ">=1.2.6",
     "semver": ">=7.5.2",
-    "follow-redirects": ">=1.15.4"
+    "follow-redirects": ">=1.15.5"
   },
   "packageManager": "yarn@3.4.1"
 }
