@@ -2564,10 +2564,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.0.6":
-  version: 18.16.14
-  resolution: "@types/node@npm:18.16.14"
-  checksum: c11cb3c787236414efe58240ae71854971592554d82ff9d201876ce7cafd51c37aaa001c63602d002e8238614d7331bd6d48ac4c1c0caa826799980b6846fb08
+"@types/node@npm:^18.15.11":
+  version: 18.19.13
+  resolution: "@types/node@npm:18.19.13"
+  dependencies:
+    undici-types: ~5.26.4
+  checksum: 40b34bde2e868276234dd5456be6506f75eaa1da8a030b2071fdac6c64b9862ea484794bca5d78bf67d8d3d526007b03d3c57dcdf0f8a3c58678ab7e248f17ee
   languageName: node
   linkType: hard
 
@@ -6103,7 +6105,7 @@ __metadata:
     "@types/i18next": ^13.0.0
     "@types/jest": ^29.5.6
     "@types/lodash": ^4.14.182
-    "@types/node": ^18.0.6
+    "@types/node": ^18.15.11
     "@types/nunjucks": ^3.2.1
     "@types/require-directory": ^2.1.2
     "@types/serve-favicon": ^2.5.3
@@ -12408,6 +12410,13 @@ __metadata:
   version: 2.0.5
   resolution: "undefsafe@npm:2.0.5"
   checksum: f42ab3b5770fedd4ada175fc1b2eb775b78f609156f7c389106aafd231bfc210813ee49f54483d7191d7b76e483bc7f537b5d92d19ded27156baf57592eb02cc
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~5.26.4":
+  version: 5.26.5
+  resolution: "undici-types@npm:5.26.5"
+  checksum: 3192ef6f3fd5df652f2dc1cd782b49d6ff14dc98e5dced492aa8a8c65425227da5da6aafe22523c67f035a272c599bb89cfe803c1db6311e44bed3042fc25487
   languageName: node
   linkType: hard
 
