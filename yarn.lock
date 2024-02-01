@@ -6173,7 +6173,7 @@ __metadata:
     applicationinsights: ^2.3.3
     autobind-decorator: ^2.4.0
     awilix: ^7.0.3
-    axios: ^1.6.5
+    axios: 1.6.5
     babel-eslint: ^10.1.0
     babel-loader: ^9.1.2
     chai: ^4.3.6
