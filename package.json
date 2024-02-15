@@ -131,7 +131,9 @@
     "semver": ">=7.5.2",
     "follow-redirects": ">=1.15.4",
     "word-wrap": ">=1.2.4",
-    "axios>follow-redirects": ">=1.15.4"
+    "axios>follow-redirects": ">=1.15.4",
+    "http-proxy-middleware>http-proxy>follow-redirects": ">=1.15.4",
+    "@types/http-proxy-middleware>http-proxy-middleware>http-proxy>follow-redirects": ">=1.15.4"
   },
   "packageManager": "yarn@3.6.4"
 }
