@@ -83,7 +83,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["express", "npm:4.18.2"],\
             ["express-nunjucks", "npm:2.2.5"],\
             ["glob-parent", "npm:6.0.2"],\
-            ["govuk-frontend", "npm:5.1.0"],\
+            ["govuk-frontend", "npm:4.8.0"],\
             ["helmet", "npm:4.6.0"],\
             ["html-webpack-plugin", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:5.5.1"],\
             ["http-proxy-middleware", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.0.6"],\
@@ -8520,7 +8520,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["express", "npm:4.18.2"],\
             ["express-nunjucks", "npm:2.2.5"],\
             ["glob-parent", "npm:6.0.2"],\
-            ["govuk-frontend", "npm:5.1.0"],\
+            ["govuk-frontend", "npm:4.8.0"],\
             ["helmet", "npm:4.6.0"],\
             ["html-webpack-plugin", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:5.5.1"],\
             ["http-proxy-middleware", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.0.6"],\
@@ -9361,10 +9361,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["govuk-frontend", [\
-        ["npm:5.1.0", {\
-          "packageLocation": "./.yarn/cache/govuk-frontend-npm-5.1.0-6932aa0d93-8bc32fa2f2.zip/node_modules/govuk-frontend/",\
+        ["npm:4.8.0", {\
+          "packageLocation": "./.yarn/cache/govuk-frontend-npm-4.8.0-48d4f1031d-e255f924f3.zip/node_modules/govuk-frontend/",\
           "packageDependencies": [\
-            ["govuk-frontend", "npm:5.1.0"]\
+            ["govuk-frontend", "npm:4.8.0"]\
           ],\
           "linkType": "HARD"\
         }]\
