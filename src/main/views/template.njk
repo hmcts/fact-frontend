@@ -11,6 +11,7 @@
   {% include "webpack/css.njk" %}
   <script>
     dataLayer = window.dataLayer || [];
+    dataLayer.push({"lang": {{ language | dump | safe }}, "event": "Site language"})
     document.documentElement.setAttribute("lang", {{ language | dump | safe }});
   </script>
 
