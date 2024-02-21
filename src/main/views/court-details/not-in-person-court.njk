@@ -199,15 +199,15 @@
             </dl>
 
             <p class="govuk-body-m">
-              <a class="govuk-link" href="https://www.gov.uk/call-charges">
-                {{ callCharges }}
+              <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="https://www.gov.uk/call-charges">
+                {{ callCharges }} (opens in new tab)
               </a>
             </p>
             {% if results.slug === 'county-court-business-centre-ccbc' or results.slug ==='county-court-money-claims-centre-ccmcc' %}
               <p class="govuk-body-m">
-                <a class="govuk-link"
+                <a class="govuk-link" rel="noreferrer noopener" target="_blank"
                    href="https://www.gov.uk/guidance/hmcts-civil-business-centres-performance-information">
-                  {{ processingTimes }}
+                  {{ processingTimes }} (opens in new tab)
                 </a>
               </p>
             {% endif %}
@@ -229,7 +229,7 @@
                     {% if applicationUpdate.email %}
                       <a class="govuk-link" href="mailto:{{ applicationUpdate.email }}">{{ applicationUpdate.email }}</a>
                     {% else %}
-                      <a class="govuk-link" href="{{ applicationUpdate.external_link }}">{{ applicationUpdate.external_link_description }}</a>
+                      <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="{{ applicationUpdate.external_link }}">{{ applicationUpdate.external_link_description }}<span class="govuk-visually-hidden"> (opens in new tab)</span></a>
                     {% endif %}
                   </dd>
                 </div>
@@ -282,7 +282,7 @@
                 {% endif %}
                 <li>
                   {% if externalLink %}
-                    <a class="govuk-link" href="{{ externalLink }}">{{ displayName }}</a>
+                    <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="{{ externalLink }}">{{ displayName }}<span class="govuk-visually-hidden"> (opens in new tab)</span></a>
                   {% else %}
                     <p>
                       {{displayName}}
@@ -302,7 +302,7 @@
             <ul class="govuk-list">
               {% for additionalLink in results.additional_links %}
                 <li>
-                  <a class="govuk-link" href="{{ additionalLink.url }}">{{ additionalLink.description }}</a>
+                  <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="{{ additionalLink.url }}">{{ additionalLink.description }}<span class="govuk-visually-hidden"> (opens in new tab)</span></a>
                 </li>
               {% endfor %}
             </ul>
@@ -314,8 +314,8 @@
             {{ complaintHeading }}
           </h3>
           <p class="govuk-body-m">
-            <a class="govuk-link"
-               href="https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service/about/complaints-procedure">{{ complaintText }}</a>
+            <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+               href="https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service/about/complaints-procedure">{{ complaintText }}<span class="govuk-visually-hidden"> (opens in new tab)</span></a>
           </p>
         </div>
 
