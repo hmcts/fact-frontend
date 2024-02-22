@@ -130,7 +130,9 @@
     "minimist": ">=1.2.6",
     "semver": ">=7.5.2",
     "follow-redirects": ">=1.15.5",
-    "word-wrap": ">=1.2.4"
+    "word-wrap": ">=1.2.4",
+    "ip": ">=2.0.1",
+    "axios": ">=0.28.0"
   },
   "packageManager": "yarn@3.6.4"
 }
