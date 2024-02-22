@@ -207,6 +207,7 @@ Then( 'I click the link {string} from {string} and it takes me to the page{strin
 
   I.seeTextEquals(pageLink,'#'+ sidebarEntry +' > ul >li:nth-child('+ index +') > a');
   I.click('#'+ sidebarEntry + '> ul > li:nth-child('+ index +') > a');
+  I.switchToNextTab();
   I.seeTitleEquals(pageTitle);
 
 });

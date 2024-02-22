@@ -275,5 +275,5 @@ Feature: Court Name Know - Court Details
     Then I click the link "<page_link>" from "<sidebar_entries>" and it takes me to the page"<page_title>"
 
     Examples:
-      | in_person_court                                         | sidebar_entries       | page_title                                                                               | page_link                             |
+      | in_person_court                                         | sidebar_entries       | page_title                                                                               | page_link                           |
       | manchester-civil-justice-centre-civil-and-family-courts | areas-of-law          | Money and property when you divorce or separate: Getting a financial agreement - GOV.UK  | Financial Remedy (opens in new tab) |
