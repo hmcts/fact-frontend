@@ -252,7 +252,7 @@ Feature: Court Name Know - Court Details
 
     Examples:
       | Find_out_more_about_court  | sidebar_entries       | page_title             | page_link                                                      |
-      | West London Family Court   | find-out-more-about   | Support Through Court  | Support Through Court (Independent charity)\n(opens in new tab) |
+      | West London Family Court   | find-out-more-about   | Support Through Court  | Support Through Court (Independent charity) (opens in new tab) |
 
   Scenario Outline: Not-in-person Court - Find out more about: Financial Remedy
     And I have entered "<not_in_person_court>" as search criteria
@@ -264,7 +264,7 @@ Feature: Court Name Know - Court Details
 
     Examples:
       | not_in_person_court        | sidebar_entries       | page_title                                                                               | page_link                                                                                                                                                   |
-      | Divorce Service Centre     | areas-of-law          | Money and property when you divorce or separate: Getting a financial agreement - GOV.UK  | If you are making an application to settle your finances following a divorce (Financial Remedy), please refer to the guidance found here\n(opens in new tab) |
+      | Divorce Service Centre     | areas-of-law          | Money and property when you divorce or separate: Getting a financial agreement - GOV.UK  | If you are making an application to settle your finances following a divorce (Financial Remedy), please refer to the guidance found here (opens in new tab) |
 
   Scenario Outline: In-person Court - This location handles: Financial Remedy
     And I have entered "<in_person_court>" as search criteria
@@ -276,4 +276,4 @@ Feature: Court Name Know - Court Details
 
     Examples:
       | in_person_court                                         | sidebar_entries       | page_title                                                                               | page_link                             |
-      | manchester-civil-justice-centre-civil-and-family-courts | areas-of-law          | Money and property when you divorce or separate: Getting a financial agreement - GOV.UK  | Financial Remedy\n(opens in new tab) |
+      | manchester-civil-justice-centre-civil-and-family-courts | areas-of-law          | Money and property when you divorce or separate: Getting a financial agreement - GOV.UK  | Financial Remedy (opens in new tab) |
