@@ -251,8 +251,8 @@ Feature: Court Name Know - Court Details
     Then I click the link "<page_link>" from "<sidebar_entries>" and it takes me to the page"<page_title>"
 
     Examples:
-      | Find_out_more_about_court  | sidebar_entries       | page_title             | page_link                                   |
-      | West London Family Court   | find-out-more-about   | Support Through Court  | Support Through Court (Independent charity) |
+      | Find_out_more_about_court  | sidebar_entries       | page_title             | page_link                                    |
+      | West London Family Court   | find-out-more-about   | Support Through Court  | Support Through Court (Independent charity)  |
 
   Scenario Outline: Not-in-person Court - Find out more about: Financial Remedy
     And I have entered "<not_in_person_court>" as search criteria
@@ -275,5 +275,5 @@ Feature: Court Name Know - Court Details
     Then I click the link "<page_link>" from "<sidebar_entries>" and it takes me to the page"<page_title>"
 
     Examples:
-      | in_person_court                                         | sidebar_entries       | page_title                                                                               | page_link        |
-      | manchester-civil-justice-centre-civil-and-family-courts | areas-of-law          | Money and property when you divorce or separate: Getting a financial agreement - GOV.UK  | Financial Remedy |
+      | in_person_court                                         | sidebar_entries       | page_title                                                                               | page_link           |
+      | manchester-civil-justice-centre-civil-and-family-courts | areas-of-law          | Money and property when you divorce or separate: Getting a financial agreement - GOV.UK  | Financial Remedy    |
