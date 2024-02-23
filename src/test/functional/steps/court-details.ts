@@ -197,7 +197,7 @@ Given('That location sidebar includes {string}', async (sidebarEntry: string) =>
 });
 
 Then( 'I click the link {string} from {string} and it takes me to the page{string}',async (pageLink: string, sidebarEntry: string, pageTitle: string) => {
-  const areasOfLaw = (await I.grabTextFromAll('#' + sidebarEntry + '> ul > li')) as string[];
+  const areasOfLaw = (await I.grabTextFromAll('#' + sidebarEntry + '> ul > li > a')) as string[];
   //areasOfLaw = areasOfLaw.map(function(x){return x.replace('\n', ' ');});
   let index = areasOfLaw.findIndex(aol => aol.trim().toLowerCase() === pageLink.toLowerCase());
 
