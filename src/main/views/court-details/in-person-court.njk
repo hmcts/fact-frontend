@@ -291,7 +291,7 @@
               {% endif %}
               <li>
                 {% if externalLink %}
-                  <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="{{ externalLink }}">{{ displayName }}<span class="govuk-visually-hidden"> (opens in new tab)</span></a>
+                  <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="{{ externalLink }}">{{ displayName }}</a><span class="govuk-visually-hidden"> (opens in new tab)</span>
                 {% else %}
                   <p>
                      {{displayName}}
@@ -311,7 +311,7 @@
           <ul class="govuk-list">
             {% for additionalLink in results.additional_links %}
               <li>
-                <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="{{ additionalLink.url }}">{{ additionalLink.description }}<span class="govuk-visually-hidden"> (opens in new tab)</span></a>
+                <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="{{ additionalLink.url }}">{{ additionalLink.description }}</a><span class="govuk-visually-hidden"> (opens in new tab)</span>
               </li>
             {% endfor %}
           </ul>
@@ -323,7 +323,7 @@
           {{ complaintHeading }}
         </h3>
         <p class="govuk-body-m">
-          <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service/about/complaints-procedure">{{ complaintText }}<span class="govuk-visually-hidden"> (opens in new tab)</span></a>
+          <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service/about/complaints-procedure">{{ complaintText }}</a><span class="govuk-visually-hidden"> (opens in new tab)</span>
         </p>
       </div>
 
@@ -375,15 +375,15 @@
             {{ registerACText }}
           </p>
           <p><a class="govuk-link govuk-body-m" rel="noreferrer noopener" target="_blank" href="https://www.gov.uk/guidance/professional-users-court-and-tribunal-access-scheme">
-            {{ registerACLink }}<span class="govuk-visually-hidden"> (opens in new tab)</span>
-          </a></p>
+            {{ registerACLink }}
+          </a><span class="govuk-visually-hidden"> (opens in new tab)</span></p>
         {% else %}
           <p class="govuk-body-m">
             {{ learnACText }}
           </p>
          <p><a class="govuk-link govuk-body-m" rel="noreferrer noopener" target="_blank" href="https://www.gov.uk/guidance/professional-users-court-and-tribunal-access-scheme">
-            {{ learnACLink }}<span class="govuk-visually-hidden"> (opens in new tab)</span>
-          </a></p>
+            {{ learnACLink }}
+          </a><span class="govuk-visually-hidden"> (opens in new tab)</span></p>
         {% endif %}
       </div>
       {% if results['common_flag'] %}

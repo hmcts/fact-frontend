@@ -197,8 +197,8 @@ Given('That location sidebar includes {string}', async (sidebarEntry: string) =>
 });
 
 Then( 'I click the link {string} from {string} and it takes me to the page{string}',async (pageLink: string, sidebarEntry: string, pageTitle: string) => {
-  let areasOfLaw = (await I.grabTextFromAll('#' + sidebarEntry + '> ul > li')) as string[];
-  areasOfLaw = areasOfLaw.map(function(x){return x.replace('\n', ' ');});
+  const areasOfLaw = (await I.grabTextFromAll('#' + sidebarEntry + '> ul > li')) as string[];
+  //areasOfLaw = areasOfLaw.map(function(x){return x.replace('\n', ' ');});
   let index = areasOfLaw.findIndex(aol => aol.trim().toLowerCase() === pageLink.toLowerCase());
 
   //adding 1 to 0 based array index to keep the index same for the selected element
@@ -207,7 +207,6 @@ Then( 'I click the link {string} from {string} and it takes me to the page{strin
 
   I.seeTextEquals(pageLink,'#'+ sidebarEntry +' > ul >li:nth-child('+ index +') > a');
   I.click('#'+ sidebarEntry + '> ul > li:nth-child('+ index +') > a');
-  I.switchToNextTab();
   I.seeTitleEquals(pageTitle);
 
 });
