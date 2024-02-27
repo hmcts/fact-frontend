@@ -104,7 +104,8 @@
   {{ govukHeader({
       containerClasses: "govuk-width-container",
       serviceName: serviceName | safe,
-      serviceUrl: (globals.basePath if globals.basePath) + "/"
+      serviceUrl: (globals.basePath if globals.basePath) + "/",
+      useTudorCrown: true
   }) }}
 {% endblock %}
 
