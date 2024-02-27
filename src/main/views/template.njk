@@ -12,7 +12,6 @@
   <script>
     dataLayer = window.dataLayer || [];
     dataLayer.push({"language": {{ language | dump | safe }}, "event": "Site language"});
-    document.documentElement.setAttribute("lang", {{ language | dump | safe }});
   </script>
 
   <meta name="google-site-verification" content="3glfkE1sBXj7EtEdO0ktOm5kyR9E14kR7yw_yJ6GH4U" />
@@ -179,6 +178,7 @@
       }
     }
   }
+  document.documentElement.setAttribute("lang", {{ language | dump | safe }});
   </script>
   {# Run JavaScript at end of the <body>, to avoid blocking the initial render. #}
   {% include "webpack/js.njk" %}
