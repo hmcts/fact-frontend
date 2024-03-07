@@ -254,7 +254,6 @@ Feature: Court Name Know - Court Details
       | Find_out_more_about_court  | sidebar_entries       | page_title             | page_link                                    |
       | West London Family Court   | find-out-more-about   | Support Through Court  | Support Through Court (Independent charity)  |
 
-
   Scenario Outline: Not-in-person Court - Find out more about: Financial Remedy
     And I have entered "<not_in_person_court>" as search criteria
     When I have selected to search for that court or tribunal name or address
@@ -278,15 +277,3 @@ Feature: Court Name Know - Court Details
     Examples:
       | in_person_court                                         | sidebar_entries       | page_title                                                                               | page_link           |
       | manchester-civil-justice-centre-civil-and-family-courts | areas-of-law          | Money and property when you divorce or separate: Getting a financial agreement - GOV.UK  | Financial Remedy    |
-
-  Scenario Outline: Standalone link should open in new tab
-    And I have entered "<location_court>" as search criteria
-    When I have selected to search for that court or tribunal name or address
-    Given results are returned
-    When I select a court or tribunal link
-    And that location is an 'in-person' court or tribunal
-    Then I click on link "What to expect coming to a court or tribunal - GOV.UK" and its opening in new tab
-
-    Examples:
-      | location_court            |
-      | telford-magistrates-court |

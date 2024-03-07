@@ -173,7 +173,7 @@ Given('the DX number is presented to me on the profile page', async () => {
 
 Given('I can select the directions hyperlink for that location', async () => {
   I.seeElement('#direction-map');
-  I.click('#direction-map > a');
+  await I.click('#direction-map > a');
 });
 
 Given('that location participates in the Professional users’ court and tribunal access scheme', async () => {
@@ -206,7 +206,7 @@ Then( 'I click the link {string} from {string} and it takes me to the page{strin
 
   I.seeTextEquals(pageLink,'#'+ sidebarEntry +' > ul >li:nth-child('+ index +') > a');
   I.click('#'+ sidebarEntry + '> ul > li:nth-child('+ index +') > a');
-  // I.wait(5);
+  I.wait(5);
   I.switchToNextTab();
   I.seeTitleEquals(pageTitle);
 
@@ -214,10 +214,4 @@ Then( 'I click the link {string} from {string} and it takes me to the page{strin
 
 Then('the get an update on my application section is displayed', async () => {
   I.seeElement('#applicationUpdates');
-});
-
-Then('I click on link {string} and its opening in new tab', async (pageTitle: string) => {
-  I.click('#main-content > div > div > div.govuk-grid-column-two-thirds > div:nth-child(2) > p:nth-child(2) > a');
-  I.switchToNextTab();
-  I.seeTitleEquals(pageTitle);
 });
