@@ -206,7 +206,6 @@ Then( 'I click the link {string} from {string} and it takes me to the page{strin
 
   I.seeTextEquals(pageLink,'#'+ sidebarEntry +' > ul >li:nth-child('+ index +') > a');
   I.click('#'+ sidebarEntry + '> ul > li:nth-child('+ index +') > a');
-  I.wait(5);
   I.switchToNextTab();
   I.seeTitleEquals(pageTitle);
 
@@ -214,4 +213,10 @@ Then( 'I click the link {string} from {string} and it takes me to the page{strin
 
 Then('the get an update on my application section is displayed', async () => {
   I.seeElement('#applicationUpdates');
+});
+
+Then('I click on link {string} and its opening in new tab', async (pageTitle: string) => {
+  I.click('#main-content > div > div > div.govuk-grid-column-two-thirds > div:nth-child(2) > p:nth-child(2) > a');
+  I.switchToNextTab();
+  I.seeTitleEquals(pageTitle);
 });
