@@ -23,7 +23,7 @@
       <a class="govuk-link" href="/">{{ homePageLink }}</a>
     </div>
   </div>
-  <p class="govuk-body-m">{{ p1 }}</p>
+  <p class="govuk-body-m">{{ p1 | safe }}</p>
   <p class="govuk-body-m">{{ p2 }}</p>
   <ul class="govuk-list govuk-list--bullet">
     {% for bullet in bullets %}
@@ -34,7 +34,7 @@
     {{ h2 }}
   </h2>
   <h3 class="govuk-heading-m">
-    {{ language.header }}
+    {{ language_.header }}
   </h3>
 
   {{ govukTable({
@@ -60,10 +60,10 @@
           text: 'i18next'
         },
         {
-          text: language.i18nDescription
+          text: language_.i18nDescription
         },
         {
-          text: language.i18nDuration
+          text: language_.i18nDuration
         }
       ]
     ]
