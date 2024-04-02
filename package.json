@@ -51,7 +51,7 @@
     "config": "^3.3.7",
     "cookie-parser": "^1.4.6",
     "csurf": "^1.11.0",
-    "express": "^4.18.1",
+    "express": "^4.19.2",
     "express-nunjucks": "^2.2.5",
     "glob-parent": "6.0.2",
     "govuk-frontend": "^4.8.0",
