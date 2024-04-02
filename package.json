@@ -135,7 +135,8 @@
     "axios": ">=0.28.0",
     "axios>follow-redirects": ">=1.15.4",
     "http-proxy-middleware>http-proxy>follow-redirects": ">=1.15.4",
-    "@types/http-proxy-middleware>http-proxy-middleware>http-proxy>follow-redirects": ">=1.15.4"
+    "@types/http-proxy-middleware>http-proxy-middleware>http-proxy>follow-redirects": ">=1.15.4",
+    "express": ">=4.19.2"
   },
   "packageManager": "yarn@3.6.4"
 }
