@@ -11,7 +11,7 @@
   {% include "webpack/css.njk" %}
   <script>
     dataLayer = window.dataLayer || [];
-    dataLayer.push({"language": {{ language | dump | safe }}, "event": "Site language"})
+    dataLayer.push({"language": {{ language | dump | safe }}, "event": "Site language"});
   </script>
 
   <meta name="google-site-verification" content="3glfkE1sBXj7EtEdO0ktOm5kyR9E14kR7yw_yJ6GH4U" />
@@ -104,7 +104,8 @@
   {{ govukHeader({
       containerClasses: "govuk-width-container",
       serviceName: serviceName | safe,
-      serviceUrl: (globals.basePath if globals.basePath) + "/"
+      serviceUrl: (globals.basePath if globals.basePath) + "/",
+      useTudorCrown: true
   }) }}
 {% endblock %}
 
@@ -178,6 +179,7 @@
       }
     }
   }
+  document.documentElement.setAttribute("lang", {{ language | dump | safe }});
   </script>
   {# Run JavaScript at end of the <body>, to avoid blocking the initial render. #}
   {% include "webpack/js.njk" %}
