@@ -5,6 +5,7 @@
   "bullets": ["address", "contact details", "opening times", "building information e.g. disabled access or parking", "to help me get an update"],
   "button": "Start now",
   "h2": "Before you search",
+  "p_fee_advice": "You cannot use this service to pay court fees.",
   "p1_text": "The online service is also available in ",
   "p1_link": "/?lng=cy",
   "p1_link_text": "Welsh (Cymraeg)",
