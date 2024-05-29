@@ -22,6 +22,7 @@ export class SearchResultsController {
       path: '/courts',
       results: [],
       search: query,
+      courtHistoryFlag: true, //placeholder for feature flag
     };
 
     if (query === '') {
@@ -42,6 +43,12 @@ export class SearchResultsController {
           .replace('{search}', data.search);
       }
     }
+
+
+    //const previousSearch = await this.api.searchCourtNameHistory(query, req.lng);
+    //make sure its only 1 court
+    //data.courtHistory = previousSearch;
+    data.courtHistoryCourt = data.results[0]; //currently just the first result
 
     res.render('search/location', data);
   }

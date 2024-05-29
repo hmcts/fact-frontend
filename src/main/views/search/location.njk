@@ -1,5 +1,6 @@
 {% from "govuk/components/input/macro.njk" import govukInput %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 {% from "macros/error-summary.njk" import errorSummary %}
 
 {% extends "template.njk" %}
@@ -22,6 +23,19 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+    {% if courtHistoryFlag %}
+      {% set courtHistory %}
+        <p class="govuk-notification-banner__heading">
+          {{ courtHistoryText }}
+          <a class="govuk-notification-banner__link" href="/courts/{{ courtHistoryCourt.slug }}">{{ courtHistoryCourt.name }}</a>.
+        </p>
+      {% endset %}
+
+      {{ govukNotificationBanner({
+        html: courtHistory
+      }) }}
+    {% endif %}
 
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
