@@ -27,6 +27,19 @@ export class FactApi {
       });
   }
 
+  public searchCourtNameHistory(query: string, lng: string): Promise<SearchResult> {
+    return this.axios
+      .get(`/courtNameHistory?q=${query}`, {  headers: {'Accept-Language': lng}})
+      .then(results => results.data)
+      .catch(err => {
+        this.logger.error(err);
+        return {
+          null: [],
+          error: true
+        };
+      });
+  }
+
   public court(slug: string, lng: string): Promise<CourtDetailsResult> {
     return this.axios
       .get(`/courts/${slug}`,{  headers: {'Accept-Language': lng}})
