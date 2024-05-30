@@ -45,10 +45,10 @@ export class SearchResultsController {
     }
 
 
-    //const previousSearch = await this.api.searchCourtNameHistory(query, req.lng);
+    const historicalSearch = await this.api.searchCourtNameHistory(query, req.lng);
     //make sure its only 1 court
-    //data.courtHistory = previousSearch;
-    data.courtHistoryCourt = data.results[0]; //currently just the first result
+    //if more than 1 court found, then we should not show the court history
+    data.courtHistory = historicalSearch;
 
     res.render('search/location', data);
   }

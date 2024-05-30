@@ -29,7 +29,7 @@ export class FactApi {
 
   public searchCourtNameHistory(query: string, lng: string): Promise<SearchResult> {
     return this.axios
-      .get(`/courtNameHistory?q=${query}`, {  headers: {'Accept-Language': lng}})
+      .get(`/courts/court-history/search?q=${query}`, {  headers: {'Accept-Language': lng}})
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
