@@ -28,7 +28,7 @@
       {% set courtHistory %}
         <p class="govuk-notification-banner__heading">
           {{ courtHistoryText }}
-          <a class="govuk-notification-banner__link" href="/courts/{{ courtHistory.slug }}">{{ courtHistory.name }}</a>
+          <a class="govuk-notification-banner__link" href="/courts/{{ courtHistory.slug }}">{{ courtHistory.historicalName }}</a>
           {{ to }}
           <a class="govuk-notification-banner__link" href="/courts/{{ courtHistory.slug }}">{{ courtHistory.name }}</a>.
         </p>
