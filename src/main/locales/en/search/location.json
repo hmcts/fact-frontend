@@ -5,7 +5,7 @@
   "serviceName": "Find a Court or Tribunal",
   "question": "What is the name or address of the court or tribunal?",
   "hint": "The name of the court or tribunal can be found on a letter, email or text from us.",
-  "courtHistoryText": "The court or tribunal you are searching for may have been renamed from ",
+  "courtHistoryText": "This location has been renamed from ",
   "to": " to ",
   "text": "Enter a court name, address, town or city",
   "textExample": "For example, Blackburn Family Court. ",
