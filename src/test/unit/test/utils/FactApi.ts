@@ -40,11 +40,9 @@ describe('FactApi', () => {
   test('Should return results from get request for old court name', async () => {
     const results = {
       data: {
-        name: 'SOME_NEW_COURT_NAME_BASE_DON_OLD_ONE',
-        slug: 'SOME_NEW_COURT_NAME_BASE_DON_OLD_ONE',
-        address: 'Address Street',
-        'townName': 'AAA',
-        postcode: 'AAA AAA',
+        name: 'CURRENT_COURT_NAME',
+        slug: 'CURRENT_COURT_NAME_SLUG',
+        hisoricalName: 'SOME_OLD_COURT_NAME',
       },
     };
 
