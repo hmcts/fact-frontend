@@ -22,7 +22,10 @@ const i18n = {
 
 describe('SearchResultsController', () => {
   const response: any = { data: [] };
-  const api: any = { search: async () => response.data };
+  const api: any = {
+    search: async () => response.data ,
+    searchCourtNameHistory: async () => response.data
+  };
   const controller = new SearchResultsController(api);
 
   test('Should render the location search page if not data was entered', async () => {
