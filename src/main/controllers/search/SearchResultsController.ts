@@ -2,7 +2,7 @@ import { FactRequest } from '../../interfaces/FactRequest';
 import { Response } from 'express';
 import { FactApi } from '../../utils/FactApi';
 import autobind from 'autobind-decorator';
-import { SearchResultsData } from '../../interfaces/SearchResultsData';
+import { SearchCourtHistoryResult, SearchResultsData } from '../../interfaces/SearchResultsData';
 import { cloneDeep } from 'lodash';
 
 @autobind
@@ -42,10 +42,12 @@ export class SearchResultsController {
         data.foundResult = data.foundResult
           .replace('{search}', data.search);
       }
+
+      const courtHistory: SearchCourtHistoryResult = await this.api.searchCourtNameHistory(query, req.lng);
+      if (courtHistory.slug) {
+        data.courtHistory = courtHistory;
+      }
     }
-
-    data.courtHistory = await this.api.searchCourtNameHistory(query, req.lng);
-
     res.render('search/location', data);
   }
 
