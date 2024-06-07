@@ -43,10 +43,7 @@ export class SearchResultsController {
           .replace('{search}', data.search);
       }
 
-      const courtHistory: SearchCourtHistoryResult = await this.api.searchCourtNameHistory(query, req.lng);
-      if (courtHistory.slug) {
-        data.courtHistory = courtHistory;
-      }
+      data.courtHistory = await this.api.searchCourtNameHistory(query, req.lng);
     }
     res.render('search/location', data);
   }
