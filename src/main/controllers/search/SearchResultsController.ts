@@ -2,7 +2,7 @@ import { FactRequest } from '../../interfaces/FactRequest';
 import { Response } from 'express';
 import { FactApi } from '../../utils/FactApi';
 import autobind from 'autobind-decorator';
-import { SearchCourtHistoryResult, SearchResultsData } from '../../interfaces/SearchResultsData';
+import { SearchResultsData } from '../../interfaces/SearchResultsData';
 import { cloneDeep } from 'lodash';
 
 @autobind
