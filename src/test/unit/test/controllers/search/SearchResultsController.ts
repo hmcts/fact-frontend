@@ -40,8 +40,7 @@ describe('SearchResultsController', () => {
       results: [],
       error: i18n.search.location.errorBlank,
       search: '',
-      courtHistoryFlag: true,
-      courtHistory: []
+      courtHistoryFlag: true
     };
     expect(res.render).toBeCalledWith('search/location', expectedData);
   });
@@ -57,8 +56,7 @@ describe('SearchResultsController', () => {
       results: [],
       error: i18n.search.location.errorTooShort,
       search: 'lo',
-      courtHistoryFlag: true,
-      courtHistory: []
+      courtHistoryFlag: true
     };
     expect(res.render).toBeCalledWith('search/location', expectedData);
   });
@@ -76,8 +74,7 @@ describe('SearchResultsController', () => {
       path: '/courts',
       search: req.query.search,
       results: [],
-      courtHistoryFlag: true,
-      courtHistory: []
+      courtHistoryFlag: true
     };
     expect(res.render).toBeCalledWith('search/location', expectedData);
   });
@@ -101,8 +98,7 @@ describe('SearchResultsController', () => {
       path: '/courts',
       search: req.query.search,
       results: response.data,
-      courtHistoryFlag: true,
-      courtHistory: searchCourtNameHistoryResponse.data
+      courtHistoryFlag: true
     };
     expect(res.render).toBeCalledWith('search/location', expectedData);
   });
