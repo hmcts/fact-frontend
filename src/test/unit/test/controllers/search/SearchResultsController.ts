@@ -74,7 +74,8 @@ describe('SearchResultsController', () => {
       path: '/courts',
       search: req.query.search,
       results: [],
-      courtHistoryFlag: true
+      courtHistoryFlag: true,
+      courtHistory: searchCourtNameHistoryResponse.data
     };
     expect(res.render).toBeCalledWith('search/location', expectedData);
   });
@@ -98,7 +99,8 @@ describe('SearchResultsController', () => {
       path: '/courts',
       search: req.query.search,
       results: response.data,
-      courtHistoryFlag: true
+      courtHistoryFlag: true,
+      courtHistory: searchCourtNameHistoryResponse.data,
     };
     expect(res.render).toBeCalledWith('search/location', expectedData);
   });
