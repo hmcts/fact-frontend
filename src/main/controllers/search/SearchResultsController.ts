@@ -43,7 +43,8 @@ export class SearchResultsController {
           .replace('{search}', data.search);
       }
 
-      data.courtHistory = await this.api.searchCourtNameHistory(query, req.lng);
+      data.courtHistory = await this.api.searchCourtNameHistory(query, 'en');
+      //forcing english (en) because we will not always have welsh history in db
     }
     res.render('search/location', data);
   }
