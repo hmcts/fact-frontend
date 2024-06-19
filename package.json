@@ -137,7 +137,8 @@
     "http-proxy-middleware>http-proxy>follow-redirects": ">=1.15.4",
     "@types/http-proxy-middleware>http-proxy-middleware>http-proxy>follow-redirects": ">=1.15.4",
     "express": ">=4.19.2",
-    "tar": ">=6.2.1"
+    "tar": ">=6.2.1",
+    "braces": ">=3.0.3"
   },
   "packageManager": "yarn@3.6.4"
 }
