@@ -4,7 +4,7 @@ Website to find a court or tribunal.
 
 ## Table of Contents
 
-* [Getting Started](#setting-started)
+* [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Running the application](#running-the-application)
   * [Running with Docker](#running-with-docker)
