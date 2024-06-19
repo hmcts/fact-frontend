@@ -2,9 +2,25 @@
 
 Website to find a court or tribunal.
 
-## Getting Started..
+## Table of Contents
 
-### Prerequisites.
+* [Getting Started](#setting-started)
+  * [Prerequisites](#prerequisites)
+  * [Running the application](#running-the-application)
+  * [Running with Docker](#running-with-docker)
+* [Developing](#developing)
+  * [Code style](#code-style)
+  * [Updating SCSS and JavaScript](#updating-scss-and-javascript)
+  * [Running the tests](#running-the-tests)
+  * [Security](#security)
+    * [CSRF prevention](#csrf-prevention)
+    * [Helmet](#helmet)
+  * [Healthcheck](#healthcheck)
+* [License](#license)
+
+## Getting Started
+
+### Prerequisites
 
 Running the application requires the following tools to be installed in your environment:
 
