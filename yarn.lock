@@ -6564,7 +6564,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"codeceptjs@npm:^3.6.4":
+"codeceptjs@npm:^3.5.15":
   version: 3.6.4
   resolution: "codeceptjs@npm:3.6.4"
   dependencies:
@@ -8706,7 +8706,7 @@ __metadata:
     chai: ^4.3.6
     chai-as-promised: ^7.1.1
     chokidar: ^3.6.0
-    codeceptjs: ^3.6.4
+    codeceptjs: ^3.5.15
     config: ^3.3.7
     cookie-parser: ^1.4.6
     copy-webpack-plugin: ^11.0.0
