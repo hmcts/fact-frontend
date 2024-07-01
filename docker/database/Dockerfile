@@ -1,2 +1,2 @@
-FROM postgres:11.9-alpine
+FROM postgres:16.3-alpine
 COPY create-multiple-postgresql-databases.sh /docker-entrypoint-initdb.d/
