@@ -22,7 +22,11 @@ const i18n = {
 
 describe('SearchResultsController', () => {
   const response: any = { data: [] };
-  const api: any = { search: async () => response.data };
+  const searchCourtNameHistoryResponse: any = { data: [] };
+  const api: any = {
+    search: async () => response.data ,
+    searchCourtNameHistory: async () => searchCourtNameHistoryResponse.data
+  };
   const controller = new SearchResultsController(api);
 
   test('Should render the location search page if not data was entered', async () => {
@@ -35,7 +39,8 @@ describe('SearchResultsController', () => {
       path: '/courts',
       results: [],
       error: i18n.search.location.errorBlank,
-      search: ''
+      search: '',
+      courtHistoryFlag: true
     };
     expect(res.render).toBeCalledWith('search/location', expectedData);
   });
@@ -50,7 +55,8 @@ describe('SearchResultsController', () => {
       path: '/courts',
       results: [],
       error: i18n.search.location.errorTooShort,
-      search: 'lo'
+      search: 'lo',
+      courtHistoryFlag: true
     };
     expect(res.render).toBeCalledWith('search/location', expectedData);
   });
@@ -67,7 +73,9 @@ describe('SearchResultsController', () => {
       ...i18n.search.location,
       path: '/courts',
       search: req.query.search,
-      results: []
+      results: [],
+      courtHistoryFlag: true,
+      courtHistory: searchCourtNameHistoryResponse.data
     };
     expect(res.render).toBeCalledWith('search/location', expectedData);
   });
@@ -90,7 +98,9 @@ describe('SearchResultsController', () => {
       ...i18n.search.location,
       path: '/courts',
       search: req.query.search,
-      results: response.data
+      results: response.data,
+      courtHistoryFlag: true,
+      courtHistory: searchCourtNameHistoryResponse.data,
     };
     expect(res.render).toBeCalledWith('search/location', expectedData);
   });
