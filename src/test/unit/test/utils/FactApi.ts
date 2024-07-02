@@ -37,6 +37,40 @@ describe('FactApi', () => {
 
   });
 
+  test('Should return results from get request for old court name', async () => {
+    const results = {
+      data: {
+        name: 'CURRENT_COURT_NAME',
+        slug: 'CURRENT_COURT_NAME_SLUG',
+        hisoricalName: 'SOME_OLD_COURT_NAME',
+      },
+    };
+
+    const mockAxios = { get: async () => results } as any;
+    const mockLogger = {} as any;
+
+    const api = new FactApi(mockAxios, mockLogger);
+
+    await expect(api.searchCourtNameHistory('SOME_OLD_COURT_NAME' ,'en')).resolves.toEqual(results.data);
+  });
+
+  test('Should return no result and log error from get request for old court name', async () => {
+
+    const mockAxios = { get: async () => {
+      throw new Error('Error');
+    }} as any;
+    const mockLogger = {
+      error: async ( message: string ) => console.log(message)
+    } as any;
+
+    const spy = jest.spyOn(mockLogger, 'error');
+    const api = new FactApi(mockAxios, mockLogger);
+
+    await expect(api.searchCourtNameHistory( null ,'en')).resolves.toEqual({null: [], error: true});
+    await expect(spy).toBeCalled();
+
+  });
+
   test('Should return court details result', async () => {
     const results = {
       data: [{

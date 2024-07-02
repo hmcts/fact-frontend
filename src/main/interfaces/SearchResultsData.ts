@@ -14,3 +14,9 @@ export interface SearchResult {
   slug: string;
   townName: string;
 }
+
+export interface SearchCourtHistoryResult {
+  name: string;
+  slug: string;
+  historicalName: string;
+}

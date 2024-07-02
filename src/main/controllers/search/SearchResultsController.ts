@@ -22,6 +22,7 @@ export class SearchResultsController {
       path: '/courts',
       results: [],
       search: query,
+      courtHistoryFlag: true, //placeholder for feature flag
     };
 
     if (query === '') {
@@ -41,8 +42,10 @@ export class SearchResultsController {
         data.foundResult = data.foundResult
           .replace('{search}', data.search);
       }
-    }
 
+      data.courtHistory = await this.api.searchCourtNameHistory(query, 'en');
+      //forcing english (en) because we will not always have welsh history in db
+    }
     res.render('search/location', data);
   }
 
