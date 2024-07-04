@@ -10,7 +10,7 @@ Feature: Harm and abuse area of law
     Given I can continue having selected that option
     Then I am presented with the "Why do you need a court? - Find a Court or Tribunal - GOV.UK" page
     When I select "#harm-and-abuse" from the areas of law page and continue
-    Then I am presented with the "Harm and abuse cases - Find a Court or Tribunal - GOV.UK" page
+    Then I am presented with the "Error: Harm and abuse cases - Find a Court or Tribunal - GOV.UK" page
     Given I can select a "<harm and abuse category>" from the harm and abuse service area page
     Then I can continue having selected that option
     Examples:
