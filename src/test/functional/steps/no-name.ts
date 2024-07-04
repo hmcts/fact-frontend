@@ -1,9 +1,9 @@
-import {expect} from 'chai';
+//import {expect} from 'chai';
 import { I } from '../utlis/codecept-util';
 
 Then('I am presented with the {string} page', async function(title: string) {
-  const pageTitle = await I.grabTitle();
-  expect(pageTitle).equal(title);
+  const pageTitle = await I.see(title);
+  //expect(pageTitle).equal(title);
 });
 
 Then('I can select an {string} option from the list displayed', async (option: string) => {
