@@ -8,7 +8,7 @@ Feature: Family and children area of law
   Scenario Outline: Select family and children area of law or I can't find what I'm looking for
     Then I can select an "<options>" option from the list displayed
     Given I can continue having selected that option
-    Then I am presented with the "Why do you need a court? - Find a Court or Tribunal - GOV.UK" page
+    Then I am presented with the "Error: Why do you need a court? - Find a Court or Tribunal - GOV.UK" page
     When I select "#childcare-and-parenting" from the areas of law page and continue
     Then I am presented with the "Childcare and parenting cases - Find a Court or Tribunal - GOV.UK" page
     Given I can select a "<family and children category>" from the family and children area of law page
