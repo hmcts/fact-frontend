@@ -62,7 +62,7 @@ Feature: Postcode Results Feature
     Given I can continue having selected that option
     When I select "#money" from the areas of law page and continue
     Given I can select a "#money-claims" from the category area of law page and continue
-    Then I am presented with the "Error: What is your postcode? - Find a Court or Tribunal - GOV.UK" page
+    Then I am presented with the "What is your postcode? - Find a Court or Tribunal - GOV.UK" page
     When I continue having entered a postcode "RM19 1SR"
     Then I can continue my user journey
     Then I can see 10 nearest court result back
