@@ -25,7 +25,7 @@ Feature: Crime area of law
     Given I can continue having selected that option
     Then I am presented with the "Why do you need a court? - Find a Court or Tribunal - GOV.UK" page
     When I select "#crime" from the areas of law page and continue
-    Then I am presented with the "Error: Crime cases - Find a Court or Tribunal - GOV.UK" page
+    Then I am presented with the "Crime cases - Find a Court or Tribunal - GOV.UK" page
     And I continue having not selected a crime service area option
     Then I am presented with an error message for service area
     Given I can select a "<crime category>" from the crime service area page

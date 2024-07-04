@@ -30,7 +30,7 @@ Feature: Money area of law
     Given I can continue having selected that option
     Then I am presented with the "Why do you need a court? - Find a Court or Tribunal - GOV.UK" page
     When I select "#money" from the areas of law page and continue
-    Then I am presented with the "Error: Money cases - Find a Court or Tribunal - GOV.UK" page
+    Then I am presented with the "Money cases - Find a Court or Tribunal - GOV.UK" page
     And I continue having not selected an money area of law option
     Then I am presented with an error message for service area
     Given I can select a "<money category>" from the money area of law page
