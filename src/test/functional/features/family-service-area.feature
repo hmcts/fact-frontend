@@ -24,7 +24,7 @@ Feature: Family area of law
   Scenario Outline: Do not select family area of law or I can't find what I'm looking for
     Then I can select an "<options>" option from the list displayed
     Given I can continue having selected that option
-    Then I am presented with the "Why do you need a court? - Find a Court or Tribunal - GOV.UK" page
+    Then I am presented with the "Error: Why do you need a court? - Find a Court or Tribunal - GOV.UK" page
     When I select "#probate-divorce-or-ending-civil-partnerships" from the areas of law page and continue
     Then I am presented with the "Probate, divorce or ending civil partnerships cases - Find a Court or Tribunal - GOV.UK" page
     And I continue having not selected a family area of law option
