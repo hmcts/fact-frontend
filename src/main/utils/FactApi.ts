@@ -1,6 +1,6 @@
 import { Logger } from '../interfaces/Logger';
 import { AxiosInstance } from 'axios';
-import { SearchResult } from '../interfaces/SearchResultsData';
+import { SearchCourtHistoryResult, SearchResult } from '../interfaces/SearchResultsData';
 import { CourtDetailsResult } from '../interfaces/CourtDetailsData';
 import { CourtWithDistance, PostcodeSearchResultsData } from '../interfaces/PostcodeResultsData';
 import { ServiceResult } from '../interfaces/ServicesData';
@@ -17,6 +17,19 @@ export class FactApi {
   public search(query: string, lng: string): Promise<SearchResult[]> {
     return this.axios
       .get(`/courts?q=${query}`, {  headers: {'Accept-Language': lng}})
+      .then(results => results.data)
+      .catch(err => {
+        this.logger.error(err);
+        return {
+          null: [],
+          error: true
+        };
+      });
+  }
+
+  public searchCourtNameHistory(query: string, lng: string): Promise<SearchCourtHistoryResult> {
+    return this.axios
+      .get(`/courts/court-history/search?q=${query}`, { headers: {'Accept-Language': lng}})
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
