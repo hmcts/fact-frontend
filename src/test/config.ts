@@ -20,5 +20,6 @@ config.helpers = {
     waitForAction: 1000,
     waitForNavigation: 'networkidle0',
     ignoreHTTPSErrors: true,
+    timeout: 20000
   }
 };
