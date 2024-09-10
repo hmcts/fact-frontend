@@ -47,7 +47,7 @@
     "applicationinsights": "^2.3.3",
     "autobind-decorator": "^2.4.0",
     "awilix": "^7.0.3",
-    "axios": "1.7.3",
+    "axios": "1.7.7",
     "config": "^3.3.7",
     "cookie-parser": "^1.4.6",
     "csurf": "^1.11.0",
@@ -138,7 +138,10 @@
     "@types/http-proxy-middleware>http-proxy-middleware>http-proxy>follow-redirects": ">=1.15.4",
     "express": ">=4.19.2",
     "tar": ">=6.2.1",
-    "braces": ">=3.0.3"
+    "braces": ">=3.0.3",
+    "ip": ">=2.0.1",
+    "micromatch": ">=4.0.8",
+    "path-to-regexp": ">=0.1.10"
   },
   "packageManager": "yarn@3.6.4"
 }
