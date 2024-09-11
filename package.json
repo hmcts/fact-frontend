@@ -51,7 +51,7 @@
     "config": "^3.3.7",
     "cookie-parser": "^1.4.6",
     "csurf": "^1.11.0",
-    "express": "^4.19.2",
+    "express": "^4.20.0",
     "express-nunjucks": "^2.2.5",
     "glob-parent": "6.0.2",
     "govuk-frontend": "^4.8.0",
@@ -140,6 +140,9 @@
     "tar": ">=6.2.1",
     "braces": ">=3.0.3",
     "micromatch": ">=4.0.8",
+    "send": ">=0.19.0",
+    "serve-static": ">=1.15.0",
+    "body-parser": ">=1.20.2",
     "path-to-regexp": ">=0.1.10"
   },
   "packageManager": "yarn@3.6.4"
