@@ -33,7 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@codeceptjs/allure-legacy", "npm:1.0.2"],\
             ["@codeceptjs/configure", "virtual:5c085887fb64748b4da9030ead95ed658b4e6003085f56b21b3cbdc8aea6485e31a52993d02b96a7bb78cfde531fe3eeefcc5095e1be32c3d34ad8bdf46e37a8#npm:0.10.0"],\
             ["@hmcts/cookie-manager", "npm:1.0.0"],\
-            ["@hmcts/info-provider", "npm:1.2.1"],\
+            ["@hmcts/info-provider", "npm:1.1.0"],\
             ["@hmcts/nodejs-healthcheck", "npm:1.8.5"],\
             ["@hmcts/nodejs-logging", "npm:4.0.4"],\
             ["@hmcts/properties-volume", "npm:0.0.14"],\
@@ -65,7 +65,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["applicationinsights", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.6.0"],\
             ["autobind-decorator", "npm:2.4.0"],\
             ["awilix", "npm:7.0.3"],\
-            ["axios", "npm:1.7.7"],\
+            ["axios", "npm:1.6.7"],\
             ["babel-eslint", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:10.1.0"],\
             ["babel-loader", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:9.1.3"],\
             ["chai", "npm:4.3.7"],\
@@ -2825,10 +2825,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@hmcts/info-provider", [\
-        ["npm:1.2.1", {\
-          "packageLocation": "./.yarn/cache/@hmcts-info-provider-npm-1.2.1-0c905c3d08-ec2f55f056.zip/node_modules/@hmcts/info-provider/",\
+        ["npm:1.1.0", {\
+          "packageLocation": "./.yarn/cache/@hmcts-info-provider-npm-1.1.0-ff33fd10d2-e1ddca0e05.zip/node_modules/@hmcts/info-provider/",\
           "packageDependencies": [\
-            ["@hmcts/info-provider", "npm:1.2.1"],\
+            ["@hmcts/info-provider", "npm:1.1.0"],\
             ["express", "npm:4.19.2"],\
             ["js-yaml", "npm:4.1.0"]\
           ],\
@@ -5606,10 +5606,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["axios", [\
-        ["npm:1.7.7", {\
-          "packageLocation": "./.yarn/cache/axios-npm-1.7.7-cfbedc233d-882d4fe0ec.zip/node_modules/axios/",\
+        ["npm:1.6.7", {\
+          "packageLocation": "./.yarn/cache/axios-npm-1.6.7-d7b9974d1b-87d4d42992.zip/node_modules/axios/",\
           "packageDependencies": [\
-            ["axios", "npm:1.7.7"],\
+            ["axios", "npm:1.6.7"],\
             ["follow-redirects", "virtual:a313c479c5c7e54d9ec8fbeeea69ff640f56b8989ea2dff42351a3fa5c4061fb80a52d8ede0f0826a181a216820c2d2c3f15da881e7fdf31cef1c446e42f0c45#npm:1.15.6"],\
             ["form-data", "npm:4.0.0"],\
             ["proxy-from-env", "npm:1.1.0"]\
@@ -6686,7 +6686,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@xmldom/xmldom", "npm:0.8.10"],\
             ["acorn", "npm:8.10.0"],\
             ["arrify", "npm:2.0.1"],\
-            ["axios", "npm:1.7.7"],\
+            ["axios", "npm:1.6.7"],\
             ["chai", "npm:4.3.8"],\
             ["chai-deep-match", "virtual:5c085887fb64748b4da9030ead95ed658b4e6003085f56b21b3cbdc8aea6485e31a52993d02b96a7bb78cfde531fe3eeefcc5095e1be32c3d34ad8bdf46e37a8#npm:1.2.1"],\
             ["chalk", "npm:4.1.2"],\
@@ -8593,7 +8593,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@codeceptjs/allure-legacy", "npm:1.0.2"],\
             ["@codeceptjs/configure", "virtual:5c085887fb64748b4da9030ead95ed658b4e6003085f56b21b3cbdc8aea6485e31a52993d02b96a7bb78cfde531fe3eeefcc5095e1be32c3d34ad8bdf46e37a8#npm:0.10.0"],\
             ["@hmcts/cookie-manager", "npm:1.0.0"],\
-            ["@hmcts/info-provider", "npm:1.2.1"],\
+            ["@hmcts/info-provider", "npm:1.1.0"],\
             ["@hmcts/nodejs-healthcheck", "npm:1.8.5"],\
             ["@hmcts/nodejs-logging", "npm:4.0.4"],\
             ["@hmcts/properties-volume", "npm:0.0.14"],\
@@ -8625,7 +8625,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["applicationinsights", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.6.0"],\
             ["autobind-decorator", "npm:2.4.0"],\
             ["awilix", "npm:7.0.3"],\
-            ["axios", "npm:1.7.7"],\
+            ["axios", "npm:1.6.7"],\
             ["babel-eslint", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:10.1.0"],\
             ["babel-loader", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:9.1.3"],\
             ["chai", "npm:4.3.7"],\
@@ -12805,7 +12805,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/openai-npm-3.2.1-8bb9cccf51-ef3942e9b5.zip/node_modules/openai/",\
           "packageDependencies": [\
             ["openai", "npm:3.2.1"],\
-            ["axios", "npm:1.7.7"],\
+            ["axios", "npm:1.6.7"],\
             ["form-data", "npm:4.0.0"]\
           ],\
           "linkType": "HARD"\
