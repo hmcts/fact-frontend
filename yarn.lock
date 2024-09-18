@@ -6388,7 +6388,7 @@ __metadata:
     cucumber: ^6.0.7
     debug: ^4.3.4
     eslint: ^8.57.0
-    express: ^4.19.2
+    express: ^4.20.0
     express-nunjucks: ^2.2.5
     glob-parent: 6.0.2
     govuk-frontend: ^4.8.0
