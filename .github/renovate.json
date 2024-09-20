@@ -4,9 +4,9 @@
     "github>hmcts/.github//renovate/automerge-minor",
     "local>hmcts/.github:renovate-config"
   ],
-  "automerge": true,
+  "automerge": false,
   "groupName": "all dependencies",
-  "separateMajorMinor": false,
+  "separateMajorMinor": true,
   "groupSlug": "all",
   "packageRules": [
     {
