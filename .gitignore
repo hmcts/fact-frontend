@@ -1,0 +1,6 @@
+crash.log
+.swp
+.DS_Store
+*.lock.hcl
+.idea/
+*.iml
