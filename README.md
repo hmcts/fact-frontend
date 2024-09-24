@@ -1,14 +1,25 @@
-## Contributing
 
-We use pre-commit hooks for validating the terraform format and maintaining the documentation automatically.
-Install it with:
+## TCoE Playwright Example Repo
 
-```shell
-$ brew install pre-commit
-$ pre-commit install
-```
+This repository serves as an example for teams looking to integrate Playwright into their own projects. It provides a basic setup and configuration to help you get started with end-to-end testing using Playwright.
 
-If you add a new hook make sure to run it against all files:
-```shell
-$ pre-commit run --all-files --show-diff-on-failure
-```
+### Getting Started
+
+1. **Run Playwright**  
+   You can run Playwright tests using the following command:
+   ```bash
+   yarn playwright test
+   ```
+
+### Folder Structure
+
+- `playwright-e2e/tests/` – contains example test cases.
+- `playwright.config.js` – Playwright configuration file for test settings.
+- `package.json` – includes dependencies and scripts for Playwright.
+
+
+
+### Learn More
+
+For more detailed documentation, visit the [Playwright documentation](https://playwright.dev/docs/intro).
+
