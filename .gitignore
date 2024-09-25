@@ -4,3 +4,8 @@ crash.log
 *.lock.hcl
 .idea/
 *.iml
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

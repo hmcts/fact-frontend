@@ -1,0 +1,14 @@
+{
+  "name": "tcoe-playwright-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/hmcts/tcoe-playwright-example.git",
+  "author": "abigailflorence97 <abigail.smith@hmcts.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.47.2",
+    "@types/node": "^22.6.1",
+    "axe-core": "^4.10.0"
+  },
+  "scripts": {}
+}
