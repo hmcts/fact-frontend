@@ -33,6 +33,8 @@ The repository follows a **Page Object Model (POM)** design pattern, ensuring th
 ### Fixtures
 Playwright’s [fixtures](https://playwright.dev/docs/test-fixtures) are used for managing setup and teardown processes, ensuring that tests are isolated and reusable.
 
+TCoE Best Practices can be found in the [playwright-e2e/readme.md](https://github.com/hmcts/tcoe-playwright-example/blob/master/playwright-e2e/README.md).
+
 ## Getting Started
 
 ### Prerequisites
