@@ -25,15 +25,7 @@ The repository follows a **Page Object Model (POM)** design pattern, ensuring th
 ├── reports/                # Generated test reports
 ```
 
-### Page Object Model
-- **Elements**: Individual raw HTML elements (e.g., `input`, `button`).
-- **Components**: Reusable UI components (e.g., cookie banners, headers).
-- **Pages**: Full page objects, which may include elements and components.
-
-### Fixtures
-Playwright’s [fixtures](https://playwright.dev/docs/test-fixtures) are used for managing setup and teardown processes, ensuring that tests are isolated and reusable.
-
-TCoE Best Practices can be found in the [playwright-e2e/readme.md](https://github.com/hmcts/tcoe-playwright-example/blob/master/playwright-e2e/README.md).
+TCoE Best Practices for setting up playwright in your service can be found in the [playwright-e2e/readme.md](https://github.com/hmcts/tcoe-playwright-example/blob/master/playwright-e2e/README.md).
 
 ## Getting Started
 
@@ -92,35 +84,6 @@ Run accessibility checks as part of your tests using Axe Core:
 ```bash
 npx playwright test --grep @a11y
 ```
-
-## Configuration
-All test configurations are located in `playwright.config.ts`. Here, you can set browser options, viewports, timeouts, retries, etc.
-
-### Sample Configuration
-```ts
-// playwright.config.ts
-module.exports = {
-  use: {
-    headless: false,             // Run tests in headless mode
-    viewport: { width: 1280, height: 720 }, // Default viewport size
-    trace: 'on',                 // Enable tracing for debugging
-    video: 'on',                 // Record videos of test runs
-  },
-  projects: [
-    { name: 'Chromium', use: { browserName: 'chromium' }},
-    { name: 'Firefox', use: { browserName: 'firefox' }},
-    { name: 'WebKit', use: { browserName: 'webkit' }},
-  ],
-  retries: 1,                    // Number of retries on test failure
-};
-```
-
-## CI/CD Integration
-This template includes a sample `Jenkinsfile` for CI integration:
-
-- **Build**: Builds the project and runs Playwright tests.
-- **Nightly Tests**: Includes a pipeline for running tests on a nightly schedule.
-- **Test Reporting**: Automatically generates test reports and retains artifacts like screenshots and videos.
 
 ### Running in CI
 To run tests in CI, ensure that the Playwright dependencies are installed in the CI environment:
