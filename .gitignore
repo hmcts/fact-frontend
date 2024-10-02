@@ -9,3 +9,7 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+.pnp.cjs
+.pnp.loader.mjs
+.yarn/*
+.vscode/*
