@@ -37,12 +37,21 @@ export default defineConfig({
   /* Configure projects for major browsers. See https://playwright.dev/docs/browsers */
   projects: [
     {
+      name: 'setup db',
+      testMatch: /global\.setup\.ts/,
+    },
+    {
+      name: 'cleanup db',
+      testMatch: /global\.teardown\.ts/,
+    },
+    {
       name: "chrome",
       use: {
         ...devices["Desktop Chrome"],
         channel: "chrome",
         viewport: DEFAULT_VIEWPORT,
       },
+      dependencies: ['setup db'],
     },
     {
       name: "edge",
@@ -51,6 +60,7 @@ export default defineConfig({
         channel: "msedge",
         viewport: DEFAULT_VIEWPORT,
       },
+      dependencies: ['setup db'],
     },
     {
       name: "firefox",
