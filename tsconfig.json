@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "module": "commonjs",
+    "moduleResolution": "node",
     "target": "es2022",
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
@@ -10,5 +11,8 @@
     "noEmit": true,
     "allowJs": true,
     "outDir": "dist",
-  }
+  },
+  "include":[
+      "**/*.ts"
+   ],
 }
