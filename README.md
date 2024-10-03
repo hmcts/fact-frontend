@@ -1,11 +1,11 @@
 Here's a more general README template for a Playwright-based project repository:
 
-
 # Playwright Project Template
 
 This repository serves as a template for UI test automation using [Playwright](https://playwright.dev). It is designed to work across multiple browsers and environments, providing flexibility in writing, running, and debugging tests.
 
 ## Features
+
 - **Cross-browser testing**: Supports Chromium, Firefox, and WebKit.
 - **Responsive testing**: Test on different viewports (mobile, tablet, desktop).
 - **Parallel test execution**: Run tests concurrently for faster feedback.
@@ -14,6 +14,7 @@ This repository serves as a template for UI test automation using [Playwright](h
 - **Test tagging**: Use tags like `@a11y` for accessibility, `@smoke` for smoke tests, and more.
 
 ## Project Structure
+
 The repository follows a **Page Object Model (POM)** design pattern, ensuring that locators and actions are well-organized and reusable.
 
 ```sh
@@ -30,11 +31,14 @@ TCoE Best Practices for setting up playwright in your service can be found in th
 ## Getting Started
 
 ### Prerequisites
+
 Ensure you have the following installed on your machine:
+
 - Node.js (v14+)
-- yarn
+- Yarn
 
 ### Installation
+
 Clone the repository and install the dependencies:
 
 ```bash
@@ -44,6 +48,7 @@ yarn install
 ```
 
 ### Running Tests
+
 Run all tests using the Playwright test runner:
 
 ```bash
@@ -65,6 +70,7 @@ yarn playwright test --project=webkit
 ```
 
 ### Test Tagging
+
 You can use tags to group tests, for example:
 
 ```bash
@@ -72,6 +78,7 @@ yarn playwright test --grep @smoke
 ```
 
 ### Debugging Tests
+
 To run tests with tracing, screenshots, and video recording for debugging purposes:
 
 ```bash
@@ -79,6 +86,7 @@ yarn playwright test --trace on --video on --screenshot on
 ```
 
 ### Accessibility Tests
+
 Run accessibility checks as part of your tests using Axe Core:
 
 ```bash
@@ -86,6 +94,7 @@ yarn playwright test --grep @a11y
 ```
 
 ### Running in CI
+
 To run tests in CI, ensure that the Playwright dependencies are installed in the CI environment:
 
 ```bash
