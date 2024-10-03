@@ -65,18 +65,22 @@ export default defineConfig({
     {
       name: "firefox",
       use: { ...devices["Desktop Firefox"], viewport: DEFAULT_VIEWPORT },
+      dependencies: ['setup db'],
     },
     {
       name: "webkit",
       use: { ...devices["Desktop Safari"], viewport: DEFAULT_VIEWPORT },
+      dependencies: ['setup db'],
     },
     {
       name: "mobilechrome",
       use: { ...devices["Pixel 5"] },
+      dependencies: ['setup db'],
     },
     {
       name: "mobilesafari",
       use: { ...devices["iPhone 12"] },
+      dependencies: ['setup db'],
     },
   ],
 });
