@@ -139,7 +139,8 @@
     "express": "4.21.0",
     "micromatch": ">=4.0.8",
     "tar": ">=6.2.1",
-    "braces": ">=3.0.3"
+    "braces": ">=3.0.3",
+    "cookie": ">=0.7.0"
   },
   "packageManager": "yarn@3.6.4"
 }
