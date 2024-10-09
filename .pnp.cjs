@@ -6975,24 +6975,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["cookie", [\
-        ["npm:0.4.0", {\
-          "packageLocation": "./.yarn/cache/cookie-npm-0.4.0-4b3d629e45-760384ba0a.zip/node_modules/cookie/",\
+        ["npm:0.7.2", {\
+          "packageLocation": "./.yarn/cache/cookie-npm-0.7.2-6ea9ee4231-9bf8555e33.zip/node_modules/cookie/",\
           "packageDependencies": [\
-            ["cookie", "npm:0.4.0"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["npm:0.4.1", {\
-          "packageLocation": "./.yarn/cache/cookie-npm-0.4.1-cc5e2ebb42-bd7c47f5d9.zip/node_modules/cookie/",\
-          "packageDependencies": [\
-            ["cookie", "npm:0.4.1"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["npm:0.6.0", {\
-          "packageLocation": "./.yarn/cache/cookie-npm-0.6.0-362d6a2e45-f56a7d32a0.zip/node_modules/cookie/",\
-          "packageDependencies": [\
-            ["cookie", "npm:0.6.0"]\
+            ["cookie", "npm:0.7.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7002,7 +6988,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/cookie-parser-npm-1.4.6-a68f84d02a-1e5a63aa82.zip/node_modules/cookie-parser/",\
           "packageDependencies": [\
             ["cookie-parser", "npm:1.4.6"],\
-            ["cookie", "npm:0.4.1"],\
+            ["cookie", "npm:0.7.2"],\
             ["cookie-signature", "npm:1.0.6"]\
           ],\
           "linkType": "HARD"\
@@ -7212,7 +7198,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/csurf-npm-1.11.0-c1b9cbb35b-c41a1ec593.zip/node_modules/csurf/",\
           "packageDependencies": [\
             ["csurf", "npm:1.11.0"],\
-            ["cookie", "npm:0.4.0"],\
+            ["cookie", "npm:0.7.2"],\
             ["cookie-signature", "npm:1.0.6"],\
             ["csrf", "npm:3.1.0"],\
             ["http-errors", "npm:1.7.3"]\
@@ -8480,7 +8466,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["body-parser", "npm:1.20.3"],\
             ["content-disposition", "npm:0.5.4"],\
             ["content-type", "npm:1.0.5"],\
-            ["cookie", "npm:0.6.0"],\
+            ["cookie", "npm:0.7.2"],\
             ["cookie-signature", "npm:1.0.6"],\
             ["debug", "virtual:c7b184cd14c02e3ce555ab1875e60cf5033c617e17d82c4c02ea822101d3c817f48bf25a766b4d4335742dc5c9c14c2e88a57ed955a56c4ad0613899f82f5618#npm:2.6.9"],\
             ["depd", "npm:2.0.0"],\
