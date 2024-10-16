@@ -1,4 +1,19 @@
 import { defineConfig, devices } from "@playwright/test";
+import path from "path";
+
+// TODO: Make this more reusable
+export const config = {
+  sessionStoragePath: path.join(__dirname, ".sessions/"),
+  users: {
+    exui: {
+      username: process.env.EXUI_USERNAME!,
+      password: process.env.EXUI_PASSWORD!,
+    },
+  },
+  urls: {
+    manageCaseBaseUrl: process.env.MANAGE_CASES_BASE_URL!,
+  },
+};
 
 const DEFAULT_VIEWPORT = { width: 1920, height: 1080 };
 
@@ -16,11 +31,11 @@ export default defineConfig({
   /* This timeout should match whatever your longest test takes with slight leeway for app performance */
   timeout: 2 * 60 * 1000,
   /* The default timeout for assertions is 5s, it's not advised to increase this massively.
-  If you need to, you can add a timeout to a specific assertion e.g. await page.goto('https://playwright.dev', { timeout: 30000 }); */
+     If you need to, you can add a timeout to a specific assertion e.g. await page.goto('https://playwright.dev', { timeout: 30000 }); */
   expect: { timeout: 10000 },
   /* As we're using shared environments, it's not suggested to raise worker numbers above 4. */
   // TODO: Number for CI should be set to the jenkins param
-  workers: process.env.CI ? 4 : 4,
+  workers: process.env.CI ? process.env.FUNCTIONAL_TESTS_WORKERS : 4,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: process.env.CI ? [["html"], ["list"]] : [["list"]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. - can also be applied per project */
@@ -37,11 +52,13 @@ export default defineConfig({
   /* Configure projects for major browsers. See https://playwright.dev/docs/browsers */
   projects: [
     {
-      name: 'setup db',
+      name: "setup",
+      testDir: "./",
       testMatch: /global\.setup\.ts/,
     },
     {
-      name: 'cleanup db',
+      name: "teardown",
+      testDir: "./",
       testMatch: /global\.teardown\.ts/,
     },
     {
@@ -51,7 +68,7 @@ export default defineConfig({
         channel: "chrome",
         viewport: DEFAULT_VIEWPORT,
       },
-      dependencies: ['setup db'],
+      dependencies: ["setup"],
     },
     {
       name: "edge",
@@ -60,27 +77,27 @@ export default defineConfig({
         channel: "msedge",
         viewport: DEFAULT_VIEWPORT,
       },
-      dependencies: ['setup db'],
+      dependencies: ["setup"],
     },
     {
       name: "firefox",
       use: { ...devices["Desktop Firefox"], viewport: DEFAULT_VIEWPORT },
-      dependencies: ['setup db'],
+      dependencies: ["setup"],
     },
     {
       name: "webkit",
       use: { ...devices["Desktop Safari"], viewport: DEFAULT_VIEWPORT },
-      dependencies: ['setup db'],
+      dependencies: ["setup"],
     },
     {
       name: "mobilechrome",
       use: { ...devices["Pixel 5"] },
-      dependencies: ['setup db'],
+      dependencies: ["setup"],
     },
     {
       name: "mobilesafari",
       use: { ...devices["iPhone 12"] },
-      dependencies: ['setup db'],
+      dependencies: ["setup"],
     },
   ],
 });
