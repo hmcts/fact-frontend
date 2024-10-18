@@ -9,9 +9,14 @@ export const config = {
       username: process.env.EXUI_USERNAME!,
       password: process.env.EXUI_PASSWORD!,
     },
+    citizen: {
+      username: process.env.CITIZEN_USERNAME!,
+      password: process.env.CITIZEN_PASSWORD!,
+    },
   },
   urls: {
     manageCaseBaseUrl: process.env.MANAGE_CASES_BASE_URL!,
+    citizenUrl: process.env.CITIZEN_FRONTEND_BASE_URL!,
   },
 };
 
@@ -29,7 +34,7 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* This timeout should match whatever your longest test takes with slight leeway for app performance */
-  timeout: 2 * 60 * 1000,
+  timeout: 3 * 60 * 1000,
   /* The default timeout for assertions is 5s, it's not advised to increase this massively.
      If you need to, you can add a timeout to a specific assertion e.g. await page.goto('https://playwright.dev', { timeout: 30000 }); */
   expect: { timeout: 10000 },
@@ -86,7 +91,13 @@ export default defineConfig({
     },
     {
       name: "webkit",
-      use: { ...devices["Desktop Safari"], viewport: DEFAULT_VIEWPORT },
+      use: {
+        ...devices["Desktop Safari"],
+        viewport: DEFAULT_VIEWPORT,
+        // Disable video & trace for webkit due to slowness
+        trace: "off",
+        video: "off",
+      },
       dependencies: ["setup"],
     },
     {
