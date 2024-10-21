@@ -1,8 +1,8 @@
 import { Page } from "@playwright/test";
-import { WaitUtils } from "../../utils/wait.utils";
-import { Base } from "../base";
+import { WaitUtils } from "../../../utils";
+import { Base } from "../../base";
 
-export class SpinnerComponent extends Base {
+export class ExuiSpinnerComponent extends Base {
   readonly spinner = this.page.locator("xuilib-loading-spinner");
   private waitUtils = new WaitUtils();
 

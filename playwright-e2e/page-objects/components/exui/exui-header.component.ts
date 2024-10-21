@@ -1,8 +1,8 @@
 import { expect, Locator, Page } from "@playwright/test";
-import { WaitUtils } from "../../utils/wait.utils";
-import { Base } from "../base";
+import { WaitUtils } from "../../../utils";
+import { Base } from "../../base";
 
-export class ExUiHeaderComponent extends Base {
+export class ExuiHeaderComponent extends Base {
   readonly exuiHeader = this.root.locator("exui-header");
   readonly results = this.root.locator("ccd-search-result");
   private waitUtils = new WaitUtils();
@@ -14,7 +14,6 @@ export class ExUiHeaderComponent extends Base {
   public async checkIsVisible(): Promise<void> {
     await this.waitUtils.waitForLocatorVisibility(this.results, {
       shouldBeVisible: true,
-      delay: 5000,
     });
     await expect(this.exuiHeader).toBeVisible();
   }
