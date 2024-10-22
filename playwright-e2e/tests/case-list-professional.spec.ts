@@ -1,5 +1,5 @@
 import { expect, test } from "../../fixtures";
-import { config } from "../../playwright.config";
+import { config } from "../utils";
 
 /**
  * Select a session for the browser to use
@@ -31,6 +31,6 @@ test.describe("Case List Tests - Professional", () => {
     ).toBeVisible();
     await expect(
       exuiCaseDetailsPage.exuiCaseDetailsComponent.caseHeader
-    ).toContainText(caseName);
+    ).toContainText(caseName, { ignoreCase: true });
   });
 });

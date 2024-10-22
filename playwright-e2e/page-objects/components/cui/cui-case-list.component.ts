@@ -17,15 +17,27 @@ export class cuiCaseListComponent extends Base {
     super(page);
   }
 
+  async getDraftTable() {
+    return await new TableUtils().mapTable(this.draftCases.locator("table"));
+  }
+
   async validateDraftTable() {
-    const table = await new TableUtils().mapTable(
-      this.draftCases.locator("table")
-    );
-    table.forEach((row) => {
+    const draftTable = await this.getDraftTable();
+    draftTable.forEach((row) => {
       this.validator.validateCaseNumber(row["Case number"]);
       this.validator.validateCaseType(row["Case type"]);
       this.validator.validateStatus(row["Status"]);
       this.validator.validateDate(row["Created date"]);
+    });
+  }
+
+  async validateWelshDraftTable() {
+    const draftTable = await this.getDraftTable();
+    draftTable.forEach((row) => {
+      this.validator.validateCaseNumber(row["Rhif yr achos"]);
+      this.validator.validateCaseType(row["Math o achos"]);
+      this.validator.validateStatus(row["Statws"]);
+      this.validator.validateDate(row["Dyddiad creu"]);
     });
   }
 }

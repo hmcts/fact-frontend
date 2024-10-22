@@ -1,6 +1,5 @@
-import { test as setup } from "@playwright/test";
+import { test as setup } from "./fixtures";
 import { IdamPage } from "./playwright-e2e/page-objects/pages/idam.po";
-import { config } from "./playwright.config";
 
 /*
  * Log in user the exui/solicitor user
@@ -10,7 +9,7 @@ import { config } from "./playwright.config";
  * If the user is logged out manually, it will invalidate the session data
  * Currently, the session is valid for 8 hours
  */
-setup("Setup exui user", async ({ page }) => {
+setup("Setup exui user", async ({ page, config }) => {
   await page.goto(config.urls.manageCaseBaseUrl);
   await new IdamPage(page).login(
     config.users.exui.username,
@@ -18,7 +17,7 @@ setup("Setup exui user", async ({ page }) => {
   );
 });
 
-setup("Setup citizen user", async ({ page }) => {
+setup("Setup citizen user", async ({ page, config }) => {
   await page.goto(config.urls.citizenUrl);
   await new IdamPage(page).login(
     config.users.citizen.username,
