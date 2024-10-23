@@ -4,7 +4,7 @@ properties([
   // Currently, we run this pipeline on the first monday of every month (for resources sake)
   // If you want to run this nightly, uncomment the below line
   // pipelineTriggers([cron('H 8 * * 1-5')]),
-  pipelineTriggers([cron('H 8 1-7 * 1')])
+  pipelineTriggers([cron('H 8 1-7 * 1')]),
   disableConcurrentBuilds(),
   parameters([
     string(
