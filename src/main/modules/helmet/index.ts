@@ -34,7 +34,7 @@ export class Helmet {
           fontSrc: [self, 'data:'],
           imgSrc: [self, azureBlob, ...tagManager, googleAnalyticsDomain, 'data:', 'https://*.dynatrace.com'],
           objectSrc: [self],
-          scriptSrc: [self, ...tagManager, googleAnalyticsDomain, "'unsafe-inline'", "'unsafe-eval'", 'https://*.dynatrace.com'],
+          scriptSrc: [self, ...tagManager, googleAnalyticsDomain, "'unsafe-inline'", 'https://*.dynatrace.com'],
           styleSrc: [self, ...tagManager, "'unsafe-inline'", 'https://fonts.googleapis.com'],
         },
       }),
