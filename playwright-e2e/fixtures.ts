@@ -1,9 +1,6 @@
 import { test as baseTest } from "@playwright/test";
-import {
-  PageFixtures,
-  pageFixtures,
-} from "./playwright-e2e/page-objects/pages";
-import { UtilsFixtures, utilsFixtures } from "./playwright-e2e/utils";
+import { PageFixtures, pageFixtures } from "./page-objects/pages";
+import { UtilsFixtures, utilsFixtures } from "./utils";
 
 // Gather all fixture types into a common type
 export type CustomFixtures = PageFixtures & UtilsFixtures;

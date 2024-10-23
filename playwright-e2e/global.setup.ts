@@ -1,5 +1,5 @@
 import { test as setup } from "./fixtures";
-import { IdamPage } from "./playwright-e2e/page-objects/pages/idam.po";
+import { IdamPage } from "./page-objects/pages/idam.po";
 
 /*
  * Log in user the exui/solicitor user
