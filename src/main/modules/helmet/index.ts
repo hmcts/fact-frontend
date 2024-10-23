@@ -22,6 +22,7 @@ export class Helmet {
     app.use(helmet({crossOriginEmbedderPolicy: false}));
 
     this.setContentSecurityPolicy(app);
+
     this.setReferrerPolicy(app, this.config.referrerPolicy);
   }
 
