@@ -89,19 +89,22 @@ withNightlyPipeline(type, product, component, 600) {
       }
     }
     if (!TAGS_TO_RUN.isEmpty()) {
-      try {
-        yarnBuilder.yarn(buildPlaywrightCommand(TAGS_TO_RUN))
-      } catch (Error) {
-        unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
-      } finally {
-        publishHTML([
-          allowMissing: true,
-          alwaysLinkToLastBuild: true,
-          keepAll: true,
-          reportDir: "playwright-report",
-          reportFiles: 'index.html',
-          reportName: "${TAGS_TO_RUN} E2E Tests"
-        ])
+      stage("${TAGS_TO_RUN} E2E Tests") {
+        try {
+          currentBuild.displayName = "${TAGS_TO_RUN} E2E Tests"
+          yarnBuilder.yarn(buildPlaywrightCommand(TAGS_TO_RUN))
+        } catch (Error) {
+          unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
+        } finally {
+          publishHTML([
+            allowMissing: true,
+            alwaysLinkToLastBuild: true,
+            keepAll: true,
+            reportDir: "playwright-report",
+            reportFiles: 'index.html',
+            reportName: "${TAGS_TO_RUN} E2E Tests"
+          ])
+        }
       }
     } else {
       stage('Chrome E2E Tests') {
