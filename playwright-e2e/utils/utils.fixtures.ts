@@ -1,9 +1,13 @@
+import { config, ConfigFixture } from "./config.utils";
 import { TableUtils } from "./table.utils";
 import { ValidatorUtils } from "./validator.utils";
 import { WaitUtils } from "./wait.utils";
 
 export interface UtilsFixtures {
   validatorUtils: ValidatorUtils;
+  waitUtils: WaitUtils;
+  tableUtils: TableUtils;
+  config: ConfigFixture;
 }
 
 export const utilsFixtures = {
@@ -15,5 +19,8 @@ export const utilsFixtures = {
   },
   validatorUtils: async ({}, use) => {
     await use(new ValidatorUtils());
+  },
+  config: async ({}, use) => {
+    await use(config);
   },
 };

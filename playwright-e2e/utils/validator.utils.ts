@@ -31,7 +31,12 @@ export class ValidatorUtils {
    *
    */
   public validateStatus(status: string) {
-    const validStatuses = ["Draft", "Application submitted"];
+    const validStatuses = [
+      "Draft",
+      "Application submitted",
+      "Drafft",
+      "Cyflwynwyd y cais",
+    ];
     expect(validStatuses.includes(status)).toBeTruthy();
   }
 

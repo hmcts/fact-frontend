@@ -1,24 +1,4 @@
 import { defineConfig, devices } from "@playwright/test";
-import path from "path";
-
-// TODO: Make this more reusable
-export const config = {
-  sessionStoragePath: path.join(__dirname, ".sessions/"),
-  users: {
-    exui: {
-      username: process.env.EXUI_USERNAME!,
-      password: process.env.EXUI_PASSWORD!,
-    },
-    citizen: {
-      username: process.env.CITIZEN_USERNAME!,
-      password: process.env.CITIZEN_PASSWORD!,
-    },
-  },
-  urls: {
-    manageCaseBaseUrl: process.env.MANAGE_CASES_BASE_URL!,
-    citizenUrl: process.env.CITIZEN_FRONTEND_BASE_URL!,
-  },
-};
 
 const DEFAULT_VIEWPORT = { width: 1920, height: 1080 };
 

@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test";
-import { config } from "../../../../playwright.config";
+import { config } from "../../../utils";
 import { Base } from "../../base";
 import { ExuiCaseListComponent, ExuiHeaderComponent } from "../../components/";
 
