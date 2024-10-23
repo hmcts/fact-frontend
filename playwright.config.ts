@@ -26,9 +26,6 @@ export default defineConfig({
   reporter: process.env.CI ? [["html"], ["list"]] : [["list"]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. - can also be applied per project */
   use: {
-    // TODO: Set the below
-    // baseURL: 'http://127.0.0.1:3000',
-
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "retain-on-failure",
     video: "retain-on-failure",
