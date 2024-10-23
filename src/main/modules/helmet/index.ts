@@ -22,7 +22,6 @@ export class Helmet {
     app.use(helmet({crossOriginEmbedderPolicy: false}));
 
     this.setContentSecurityPolicy(app);
-
     this.setReferrerPolicy(app, this.config.referrerPolicy);
   }
 
@@ -35,7 +34,7 @@ export class Helmet {
           fontSrc: [self, 'data:'],
           imgSrc: [self, azureBlob, ...tagManager, googleAnalyticsDomain, 'data:', 'https://*.dynatrace.com'],
           objectSrc: [self],
-          scriptSrc: [self, ...tagManager, googleAnalyticsDomain, "'unsafe-inline'", 'https://*.dynatrace.com'],
+          scriptSrc: [self, ...tagManager, googleAnalyticsDomain, "'unsafe-inline'", "'unsafe-eval'", 'https://*.dynatrace.com'],
           styleSrc: [self, ...tagManager, "'unsafe-inline'", 'https://fonts.googleapis.com'],
         },
       }),
