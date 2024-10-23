@@ -107,6 +107,7 @@ withNightlyPipeline(type, product, component, 600) {
         }
       }
     } else {
+      currentBuild.displayName = "All E2E Tests"
       stage('Chrome E2E Tests') {
         try {
           yarnBuilder.yarn('test:chrome')
