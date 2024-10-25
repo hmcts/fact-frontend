@@ -86,7 +86,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["govuk-frontend", "npm:4.8.0"],\
             ["helmet", "npm:4.6.0"],\
             ["html-webpack-plugin", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:5.6.0"],\
-            ["http-proxy-middleware", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.0.6"],\
+            ["http-proxy-middleware", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.0.7"],\
             ["i18next", "npm:21.10.0"],\
             ["i18next-http-middleware", "npm:3.3.0"],\
             ["jest", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:28.1.3"],\
@@ -3975,6 +3975,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:20.2.3"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:1.17.15", {\
+          "packageLocation": "./.yarn/cache/@types-http-proxy-npm-1.17.15-0a436e1ffb-d96eaf4e22.zip/node_modules/@types/http-proxy/",\
+          "packageDependencies": [\
+            ["@types/http-proxy", "npm:1.17.15"],\
+            ["@types/node", "npm:20.2.3"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["@types/http-proxy-middleware", [\
@@ -3982,7 +3990,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-http-proxy-middleware-npm-1.0.0-f6450a4a4c-643ce3ec3b.zip/node_modules/@types/http-proxy-middleware/",\
           "packageDependencies": [\
             ["@types/http-proxy-middleware", "npm:1.0.0"],\
-            ["http-proxy-middleware", "virtual:f6450a4a4c4bb577c69ae2707b4362d49d7387d945878a44fb77152547fdcc50158822155bffc23618629078f8e9aa67f33d2dc02119c0eefac23e0156b25738#npm:2.0.6"]\
+            ["http-proxy-middleware", "npm:3.0.3"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7321,6 +7329,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
+        ["npm:4.3.7", {\
+          "packageLocation": "./.yarn/cache/debug-npm-4.3.7-385645adf9-822d74e209.zip/node_modules/debug/",\
+          "packageDependencies": [\
+            ["debug", "npm:4.3.7"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
         ["virtual:1ca322a4d66c7a41fb1e112226317c5a21fb69ea7d45c9d09b748ed5b9f833c84750b4efbc0ff288a6bf112667942c8baf99cbcdf6d047bbf8cc131896c14fd5#npm:4.3.4", {\
           "packageLocation": "./.yarn/__virtual__/debug-virtual-2eaddcf3b9/0/cache/debug-npm-4.3.4-4513954577-3dbad3f94e.zip/node_modules/debug/",\
           "packageDependencies": [\
@@ -7342,6 +7357,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/supports-color", null],\
             ["ms", "npm:2.1.3"],\
             ["supports-color", "npm:5.5.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/supports-color",\
+            "supports-color"\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["virtual:377ea8a4019970e87112c3642ec956872d07341099d7c7b6a56a00c84217520735bbc46a944c04f16f70ead250ed36da87b08023594176924aa4cb3ec42931d1#npm:4.3.7", {\
+          "packageLocation": "./.yarn/__virtual__/debug-virtual-7d3564822d/0/cache/debug-npm-4.3.7-385645adf9-822d74e209.zip/node_modules/debug/",\
+          "packageDependencies": [\
+            ["debug", "virtual:377ea8a4019970e87112c3642ec956872d07341099d7c7b6a56a00c84217520735bbc46a944c04f16f70ead250ed36da87b08023594176924aa4cb3ec42931d1#npm:4.3.7"],\
+            ["@types/supports-color", null],\
+            ["ms", "npm:2.1.3"],\
+            ["supports-color", null]\
           ],\
           "packagePeers": [\
             "@types/supports-color",\
@@ -8639,7 +8668,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["govuk-frontend", "npm:4.8.0"],\
             ["helmet", "npm:4.6.0"],\
             ["html-webpack-plugin", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:5.6.0"],\
-            ["http-proxy-middleware", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.0.6"],\
+            ["http-proxy-middleware", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.0.7"],\
             ["i18next", "npm:21.10.0"],\
             ["i18next-http-middleware", "npm:3.3.0"],\
             ["jest", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:28.1.3"],\
@@ -9864,34 +9893,31 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["http-proxy-middleware", [\
-        ["npm:2.0.6", {\
-          "packageLocation": "./.yarn/cache/http-proxy-middleware-npm-2.0.6-3bb17658ee-2ee85bc878.zip/node_modules/http-proxy-middleware/",\
+        ["npm:2.0.7", {\
+          "packageLocation": "./.yarn/cache/http-proxy-middleware-npm-2.0.7-886a673e85-18caa21145.zip/node_modules/http-proxy-middleware/",\
           "packageDependencies": [\
-            ["http-proxy-middleware", "npm:2.0.6"]\
+            ["http-proxy-middleware", "npm:2.0.7"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.0.6", {\
-          "packageLocation": "./.yarn/__virtual__/http-proxy-middleware-virtual-544ed41240/0/cache/http-proxy-middleware-npm-2.0.6-3bb17658ee-2ee85bc878.zip/node_modules/http-proxy-middleware/",\
+        ["npm:3.0.3", {\
+          "packageLocation": "./.yarn/cache/http-proxy-middleware-npm-3.0.3-377ea8a401-7486cd36f8.zip/node_modules/http-proxy-middleware/",\
           "packageDependencies": [\
-            ["http-proxy-middleware", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.0.6"],\
-            ["@types/express", "npm:4.17.21"],\
-            ["@types/http-proxy", "npm:1.17.11"],\
+            ["http-proxy-middleware", "npm:3.0.3"],\
+            ["@types/http-proxy", "npm:1.17.15"],\
+            ["debug", "virtual:377ea8a4019970e87112c3642ec956872d07341099d7c7b6a56a00c84217520735bbc46a944c04f16f70ead250ed36da87b08023594176924aa4cb3ec42931d1#npm:4.3.7"],\
             ["http-proxy", "npm:1.18.1"],\
             ["is-glob", "npm:4.0.3"],\
-            ["is-plain-obj", "npm:3.0.0"],\
+            ["is-plain-object", "npm:5.0.0"],\
             ["micromatch", "npm:4.0.8"]\
-          ],\
-          "packagePeers": [\
-            "@types/express"\
           ],\
           "linkType": "HARD"\
         }],\
-        ["virtual:f6450a4a4c4bb577c69ae2707b4362d49d7387d945878a44fb77152547fdcc50158822155bffc23618629078f8e9aa67f33d2dc02119c0eefac23e0156b25738#npm:2.0.6", {\
-          "packageLocation": "./.yarn/__virtual__/http-proxy-middleware-virtual-8eb3416f0b/0/cache/http-proxy-middleware-npm-2.0.6-3bb17658ee-2ee85bc878.zip/node_modules/http-proxy-middleware/",\
+        ["virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.0.7", {\
+          "packageLocation": "./.yarn/__virtual__/http-proxy-middleware-virtual-e667352ead/0/cache/http-proxy-middleware-npm-2.0.7-886a673e85-18caa21145.zip/node_modules/http-proxy-middleware/",\
           "packageDependencies": [\
-            ["http-proxy-middleware", "virtual:f6450a4a4c4bb577c69ae2707b4362d49d7387d945878a44fb77152547fdcc50158822155bffc23618629078f8e9aa67f33d2dc02119c0eefac23e0156b25738#npm:2.0.6"],\
-            ["@types/express", null],\
+            ["http-proxy-middleware", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.0.7"],\
+            ["@types/express", "npm:4.17.21"],\
             ["@types/http-proxy", "npm:1.17.11"],\
             ["http-proxy", "npm:1.18.1"],\
             ["is-glob", "npm:4.0.3"],\
@@ -10473,6 +10499,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["is-plain-object", "npm:2.0.4"],\
             ["isobject", "npm:3.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:5.0.0", {\
+          "packageLocation": "./.yarn/cache/is-plain-object-npm-5.0.0-285b70faa3-e32d27061e.zip/node_modules/is-plain-object/",\
+          "packageDependencies": [\
+            ["is-plain-object", "npm:5.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
