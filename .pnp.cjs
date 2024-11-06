@@ -49,9 +49,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/helmet", "npm:0.0.48"],\
             ["@types/http-proxy-middleware", "npm:1.0.0"],\
             ["@types/i18next", "npm:13.0.0"],\
-            ["@types/jest", "npm:29.5.12"],\
-            ["@types/lodash", "npm:4.14.194"],\
-            ["@types/node", "npm:18.19.13"],\
+            ["@types/jest", "npm:29.5.14"],\
+            ["@types/lodash", "npm:4.17.13"],\
+            ["@types/node", "npm:18.19.64"],\
             ["@types/nunjucks", "npm:3.2.6"],\
             ["@types/require-directory", "npm:2.1.6"],\
             ["@types/serve-favicon", "npm:2.5.7"],\
@@ -4370,10 +4370,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/jest", [\
-        ["npm:29.5.12", {\
-          "packageLocation": "./.yarn/cache/@types-jest-npm-29.5.12-6459b9d012-19b1efdeed.zip/node_modules/@types/jest/",\
+        ["npm:29.5.14", {\
+          "packageLocation": "./.yarn/cache/@types-jest-npm-29.5.14-506446c38e-18dba4623f.zip/node_modules/@types/jest/",\
           "packageDependencies": [\
-            ["@types/jest", "npm:29.5.12"],\
+            ["@types/jest", "npm:29.5.14"],\
             ["expect", "npm:29.7.0"],\
             ["pretty-format", "npm:29.7.0"]\
           ],\
@@ -4390,10 +4390,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/lodash", [\
-        ["npm:4.14.194", {\
-          "packageLocation": "./.yarn/cache/@types-lodash-npm-4.14.194-f099c0742e-113f34831c.zip/node_modules/@types/lodash/",\
+        ["npm:4.17.13", {\
+          "packageLocation": "./.yarn/cache/@types-lodash-npm-4.17.13-ec44e3530a-d0bf8fbd95.zip/node_modules/@types/lodash/",\
           "packageDependencies": [\
-            ["@types/lodash", "npm:4.14.194"]\
+            ["@types/lodash", "npm:4.17.13"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4424,10 +4424,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/node", [\
-        ["npm:18.19.13", {\
-          "packageLocation": "./.yarn/cache/@types-node-npm-18.19.13-e76cd221e3-40b34bde2e.zip/node_modules/@types/node/",\
+        ["npm:18.19.64", {\
+          "packageLocation": "./.yarn/cache/@types-node-npm-18.19.64-2bf88f0be4-e7680215b0.zip/node_modules/@types/node/",\
           "packageDependencies": [\
-            ["@types/node", "npm:18.19.13"],\
+            ["@types/node", "npm:18.19.64"],\
             ["undici-types", "npm:5.26.5"]\
           ],\
           "linkType": "HARD"\
@@ -8984,9 +8984,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/helmet", "npm:0.0.48"],\
             ["@types/http-proxy-middleware", "npm:1.0.0"],\
             ["@types/i18next", "npm:13.0.0"],\
-            ["@types/jest", "npm:29.5.12"],\
-            ["@types/lodash", "npm:4.14.194"],\
-            ["@types/node", "npm:18.19.13"],\
+            ["@types/jest", "npm:29.5.14"],\
+            ["@types/lodash", "npm:4.17.13"],\
+            ["@types/node", "npm:18.19.64"],\
             ["@types/nunjucks", "npm:3.2.6"],\
             ["@types/require-directory", "npm:2.1.6"],\
             ["@types/serve-favicon", "npm:2.5.7"],\
@@ -16038,7 +16038,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/babel-jest", null],\
             ["@types/babel__core", null],\
             ["@types/esbuild", null],\
-            ["@types/jest", "npm:29.5.12"],\
+            ["@types/jest", "npm:29.5.14"],\
             ["@types/jest__types", null],\
             ["@types/typescript", null],\
             ["babel-jest", null],\
@@ -16120,7 +16120,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tsconfig/node12", "npm:1.0.11"],\
             ["@tsconfig/node14", "npm:1.0.3"],\
             ["@tsconfig/node16", "npm:1.0.4"],\
-            ["@types/node", "npm:18.19.13"],\
+            ["@types/node", "npm:18.19.64"],\
             ["@types/swc__core", null],\
             ["@types/swc__wasm", null],\
             ["@types/typescript", null],\
