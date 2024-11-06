@@ -45,13 +45,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/cucumber", "npm:6.0.1"],\
             ["@types/es6-promisify", "npm:6.0.4"],\
             ["@types/express", "npm:4.17.21"],\
-            ["@types/glob", "npm:7.2.0"],\
+            ["@types/glob", "npm:8.1.0"],\
             ["@types/helmet", "npm:0.0.48"],\
             ["@types/http-proxy-middleware", "npm:1.0.0"],\
             ["@types/i18next", "npm:13.0.0"],\
             ["@types/jest", "npm:29.5.14"],\
             ["@types/lodash", "npm:4.17.13"],\
-            ["@types/node", "npm:18.19.13"],\
+            ["@types/node", "npm:18.19.64"],\
             ["@types/nunjucks", "npm:3.2.6"],\
             ["@types/require-directory", "npm:2.1.6"],\
             ["@types/serve-favicon", "npm:2.5.7"],\
@@ -4484,10 +4484,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/glob", [\
-        ["npm:7.2.0", {\
-          "packageLocation": "./.yarn/cache/@types-glob-npm-7.2.0-772334bf9a-6ae717fedf.zip/node_modules/@types/glob/",\
+        ["npm:8.1.0", {\
+          "packageLocation": "./.yarn/cache/@types-glob-npm-8.1.0-bdb9d0520c-9101f3a906.zip/node_modules/@types/glob/",\
           "packageDependencies": [\
-            ["@types/glob", "npm:7.2.0"],\
+            ["@types/glob", "npm:8.1.0"],\
             ["@types/minimatch", "npm:5.1.2"],\
             ["@types/node", "npm:20.2.3"]\
           ],\
@@ -4637,10 +4637,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/node", [\
-        ["npm:18.19.13", {\
-          "packageLocation": "./.yarn/cache/@types-node-npm-18.19.13-e76cd221e3-40b34bde2e.zip/node_modules/@types/node/",\
+        ["npm:18.19.64", {\
+          "packageLocation": "./.yarn/cache/@types-node-npm-18.19.64-2bf88f0be4-e7680215b0.zip/node_modules/@types/node/",\
           "packageDependencies": [\
-            ["@types/node", "npm:18.19.13"],\
+            ["@types/node", "npm:18.19.64"],\
             ["undici-types", "npm:5.26.5"]\
           ],\
           "linkType": "HARD"\
@@ -9287,13 +9287,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/cucumber", "npm:6.0.1"],\
             ["@types/es6-promisify", "npm:6.0.4"],\
             ["@types/express", "npm:4.17.21"],\
-            ["@types/glob", "npm:7.2.0"],\
+            ["@types/glob", "npm:8.1.0"],\
             ["@types/helmet", "npm:0.0.48"],\
             ["@types/http-proxy-middleware", "npm:1.0.0"],\
             ["@types/i18next", "npm:13.0.0"],\
             ["@types/jest", "npm:29.5.14"],\
             ["@types/lodash", "npm:4.17.13"],\
-            ["@types/node", "npm:18.19.13"],\
+            ["@types/node", "npm:18.19.64"],\
             ["@types/nunjucks", "npm:3.2.6"],\
             ["@types/require-directory", "npm:2.1.6"],\
             ["@types/serve-favicon", "npm:2.5.7"],\
@@ -16646,7 +16646,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tsconfig/node12", "npm:1.0.11"],\
             ["@tsconfig/node14", "npm:1.0.3"],\
             ["@tsconfig/node16", "npm:1.0.4"],\
-            ["@types/node", "npm:18.19.13"],\
+            ["@types/node", "npm:18.19.64"],\
             ["@types/swc__core", null],\
             ["@types/swc__wasm", null],\
             ["@types/typescript", null],\
