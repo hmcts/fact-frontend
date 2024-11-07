@@ -1,7 +1,7 @@
 import { Locator } from "@playwright/test";
 
 interface WaitOptions {
-  shouldBeVisible: boolean;
+  visibility: boolean;
   delay?: number;
   timeout?: number;
 }
@@ -31,7 +31,7 @@ export class WaitUtils {
     const timeout = options.timeout ? options.timeout : this.DEFAULT_TIMEOUT;
     const startTime = Date.now();
 
-    while ((await locator.isVisible()) !== options.shouldBeVisible) {
+    while ((await locator.isVisible()) !== options.visibility) {
       const elapsedTime = Date.now() - startTime;
       await this.wait(delay);
       if (elapsedTime > timeout) {
