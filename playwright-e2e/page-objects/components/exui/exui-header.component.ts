@@ -13,7 +13,7 @@ export class ExuiHeaderComponent extends Base {
 
   public async checkIsVisible(): Promise<void> {
     await this.waitUtils.waitForLocatorVisibility(this.results, {
-      shouldBeVisible: true,
+      visibility: true,
     });
     await expect(this.exuiHeader).toBeVisible();
   }
