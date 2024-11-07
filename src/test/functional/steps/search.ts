@@ -16,10 +16,10 @@ When('I select {string}', async (option: string) => {
       element = '#i-do-not-have-the-name';
       break;
     }
-    case 'search by postcode': {
-      element = '#search-by-postcode';
-      break;
-    }
+    // case 'search by postcode': {
+    //   element = '#search-by-postcode';
+    //   break;
+    // }
   }
   await I.click(element);
   await I.click('.continue');
