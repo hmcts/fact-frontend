@@ -12,7 +12,7 @@ export class ExuiSpinnerComponent extends Base {
 
   async wait() {
     await this.waitUtils.waitForLocatorVisibility(this.spinner, {
-      shouldBeVisible: false,
+      visibility: false,
     });
   }
 }
