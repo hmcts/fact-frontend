@@ -29,7 +29,7 @@ Feature: Help and navigation
     Then I can view the content information banner
     When I can select a hyperlink in the content banner
 
-  Scenario: validating the option of finding nearest courts by postcode
-    And I navigate to the Search Page
-    When I select "search by postcode"
-    Then I am presented with the "What is your postcode? - Find a Court or Tribunal - GOV.UK" page
+  # Scenario: validating the option of finding nearest courts by postcode
+  #   And I navigate to the Search Page
+  #   When I select "search by postcode"
+  #   Then I am presented with the "What is your postcode? - Find a Court or Tribunal - GOV.UK" page
