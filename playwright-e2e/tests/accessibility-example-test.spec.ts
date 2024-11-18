@@ -1,5 +1,9 @@
 import { expect, test } from "../fixtures"; // Import from the centralized fixtures.ts
 
+test.use({
+  storageState: config.users.citizen.sessionFile,
+});
+
 test("Accessibility example using custom fixture @a11y", async ({
   cuiCaseListPage,
   axeUtils,
