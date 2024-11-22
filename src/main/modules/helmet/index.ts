@@ -68,10 +68,11 @@ export class Helmet {
         'Access-Control-Allow-Origin',
         'https://www.find-court-tribunal.service.gov.uk',
       );
-      // Disabling below until all browsers supported:
+      // Not using credentialless below until all browsers supported:
       // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy?utm_source=chatgpt.com
       // OR until PlatOps have configured CORS rules across Storage Accounts
       // res.setHeader('Cross-Origin-Embedder-Policy', 'credentialless');
+      res.setHeader('Cross-Origin-Embedder-Policy', 'unsafe-none');
 
       // Removed as per OWASP recommendations
       res.removeHeader('Expect-CT');
