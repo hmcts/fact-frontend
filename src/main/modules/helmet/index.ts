@@ -63,12 +63,16 @@ export class Helmet {
     // Custom headers not natively supported by Helmet
     app.use((_req, res, next) => {
       res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
-      res.setHeader('Cross-Origin-Embedder-Policy', 'credentialless');
       res.setHeader('Cross-Origin-Resource-Policy', 'same-site');
       res.setHeader(
         'Access-Control-Allow-Origin',
         'https://www.find-court-tribunal.service.gov.uk',
       );
+      // Disabling below until all browsers supported:
+      // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy?utm_source=chatgpt.com
+      // OR until PlatOps have configured CORS rules across Storage Accounts
+      // res.setHeader('Cross-Origin-Embedder-Policy', 'credentialless');
+
       // Removed as per OWASP recommendations
       res.removeHeader('Expect-CT');
 
