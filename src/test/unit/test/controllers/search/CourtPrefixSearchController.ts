@@ -36,6 +36,8 @@ describe('Court Prefix Search Controller', () => {
       prefix: 'Y'
     };
     const res = mockResponse();
+    api.courtPrefixSearch = jest.fn();
+    when(api.courtPrefixSearch as jest.Mock).calledWith('Y').mockReturnValue(response.data);
     await controller.get(req, res);
     const expectedData: PageData = {
       ...i18n.search['prefix-search'],
@@ -46,6 +48,7 @@ describe('Court Prefix Search Controller', () => {
       results: response.data
     };
     expect(res.render).toBeCalledWith('search/prefix-search', expectedData);
+    expect(api.courtPrefixSearch).toBeCalledWith('Y');
   });
 
   test('Should render the court prefix search page but not call API when not searching with prefix/prefix undefined', async () => {
