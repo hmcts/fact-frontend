@@ -50,6 +50,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/http-proxy-middleware", "npm:1.0.0"],\
             ["@types/i18next", "npm:13.0.0"],\
             ["@types/jest", "npm:29.5.14"],\
+            ["@types/jest-when", "npm:3.5.5"],\
             ["@types/lodash", "npm:4.17.13"],\
             ["@types/node", "npm:18.19.64"],\
             ["@types/nunjucks", "npm:3.2.6"],\
@@ -90,6 +91,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["i18next", "npm:21.10.0"],\
             ["i18next-http-middleware", "npm:3.6.0"],\
             ["jest", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:29.7.0"],\
+            ["jest-when", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:3.6.0"],\
             ["jquery", "npm:3.7.1"],\
             ["js-yaml", "npm:4.1.0"],\
             ["lodash", "npm:4.17.21"],\
@@ -4959,6 +4961,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/jest-when", [\
+        ["npm:3.5.5", {\
+          "packageLocation": "./.yarn/cache/@types-jest-when-npm-3.5.5-fec5b768da-816c1ed555.zip/node_modules/@types/jest-when/",\
+          "packageDependencies": [\
+            ["@types/jest-when", "npm:3.5.5"],\
+            ["@types/jest", "npm:29.5.14"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/json-schema", [\
         ["npm:7.0.11", {\
           "packageLocation": "./.yarn/cache/@types-json-schema-npm-7.0.11-79462ae5ca-527bddfe62.zip/node_modules/@types/json-schema/",\
@@ -9619,6 +9631,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/http-proxy-middleware", "npm:1.0.0"],\
             ["@types/i18next", "npm:13.0.0"],\
             ["@types/jest", "npm:29.5.14"],\
+            ["@types/jest-when", "npm:3.5.5"],\
             ["@types/lodash", "npm:4.17.13"],\
             ["@types/node", "npm:18.19.64"],\
             ["@types/nunjucks", "npm:3.2.6"],\
@@ -9659,6 +9672,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["i18next", "npm:21.10.0"],\
             ["i18next-http-middleware", "npm:3.6.0"],\
             ["jest", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:29.7.0"],\
+            ["jest-when", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:3.6.0"],\
             ["jquery", "npm:3.7.1"],\
             ["js-yaml", "npm:4.1.0"],\
             ["lodash", "npm:4.17.21"],\
@@ -12410,6 +12424,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["emittery", "npm:0.13.1"],\
             ["jest-util", "npm:29.7.0"],\
             ["string-length", "npm:4.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["jest-when", [\
+        ["npm:3.6.0", {\
+          "packageLocation": "./.yarn/cache/jest-when-npm-3.6.0-4ff7c62f0d-ed32ed84e5.zip/node_modules/jest-when/",\
+          "packageDependencies": [\
+            ["jest-when", "npm:3.6.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:3.6.0", {\
+          "packageLocation": "./.yarn/__virtual__/jest-when-virtual-702aa45231/0/cache/jest-when-npm-3.6.0-4ff7c62f0d-ed32ed84e5.zip/node_modules/jest-when/",\
+          "packageDependencies": [\
+            ["jest-when", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:3.6.0"],\
+            ["@types/jest", "npm:29.5.14"],\
+            ["jest", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:29.7.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/jest",\
+            "jest"\
           ],\
           "linkType": "HARD"\
         }]\

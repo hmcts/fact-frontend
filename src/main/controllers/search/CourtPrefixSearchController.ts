@@ -32,7 +32,7 @@ export class CourtPrefixSearchController {
     if (hasError) {
       data.errorType = error;
     }
-    data.results = await this.api.courtPrefixSearch(prefix);
+    data.results = prefix && prefix.length == 1 ? await this.api.courtPrefixSearch(prefix): [];
     res.render('search/prefix-search', data);
   }
 }
