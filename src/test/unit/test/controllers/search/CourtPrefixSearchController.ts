@@ -1,5 +1,6 @@
 import { mockRequest } from '../../../utils/mockRequest';
 import { mockResponse } from '../../../utils/mockResponse';
+import { when } from 'jest-when';
 import { PageData } from '../../../../../main/interfaces/PageData';
 import {CourtPrefixSearchController} from '../../../../../main/controllers/search/CourtPrefixSearchController';
 
@@ -47,7 +48,7 @@ describe('Court Prefix Search Controller', () => {
     expect(res.render).toBeCalledWith('search/prefix-search', expectedData);
   });
 
-  test('Should render the court prefix search page when not searching with prefix', async () => {
+  test('Should render the court prefix search page but not call API when not searching with prefix/prefix undefined', async () => {
     const response: any = { data: []};
     const api: any = {
       courtPrefixSearch: async () => response.data,
@@ -58,6 +59,7 @@ describe('Court Prefix Search Controller', () => {
     req.query = {
     };
     const res = mockResponse();
+    api.courtPrefixSearch = jest.fn();
     await controller.get(req, res);
     const expectedData: PageData = {
       ...i18n.search['prefix-search'],
@@ -68,20 +70,24 @@ describe('Court Prefix Search Controller', () => {
       results: []
     };
     expect(res.render).toBeCalledWith('search/prefix-search', expectedData);
+    expect(api.courtPrefixSearch).not.toBeCalled();
   });
 
-  test('Should render the court prefix search page when searching with prefix with no results', async () => {
+  test('Should render the court prefix search page when searching with prefix returns no results', async () => {
     const response: any = { data: []};
     const api: any = {
       courtPrefixSearch: async () => response.data,
     };
     const controller = new CourtPrefixSearchController(api);
-
+    api.courtPrefixSearch = jest.fn();
     const req = mockRequest(i18n);
     req.query = {
       prefix: 'X'
     };
     const res = mockResponse();
+
+    when(api.courtPrefixSearch as jest.Mock).calledWith('X').mockReturnValue([]);
+
     await controller.get(req, res);
     const expectedData: PageData = {
       ...i18n.search['prefix-search'],
@@ -92,5 +98,58 @@ describe('Court Prefix Search Controller', () => {
       results: []
     };
     expect(res.render).toBeCalledWith('search/prefix-search', expectedData);
+    expect(api.courtPrefixSearch).toBeCalledWith('X');
+  });
+
+  test('Should render the court prefix search page but not call API when prefix has more than 1 character', async () => {
+    const response: any = { data: []};
+    const api: any = {
+      courtPrefixSearch: async () => response.data,
+    };
+    const controller = new CourtPrefixSearchController(api);
+    api.courtPrefixSearch = jest.fn();
+    const req = mockRequest(i18n);
+    req.query = {
+      prefix: 'XY'
+    };
+    const res = mockResponse();
+
+    await controller.get(req, res);
+    const expectedData: PageData = {
+      ...i18n.search['prefix-search'],
+      path: '/search-by-prefix',
+      error: false,
+      hasNoResults: false,
+      prefix: 'XY',
+      results: []
+    };
+    expect(res.render).toBeCalledWith('search/prefix-search', expectedData);
+    expect(api.courtPrefixSearch).not.toBeCalled();
+  });
+
+  test('Should render the court prefix search page but not call API when prefix has less than 1 character', async () => {
+    const response: any = { data: []};
+    const api: any = {
+      courtPrefixSearch: async () => response.data,
+    };
+    const controller = new CourtPrefixSearchController(api);
+    api.courtPrefixSearch = jest.fn();
+    const req = mockRequest(i18n);
+    req.query = {
+      prefix: ''
+    };
+    const res = mockResponse();
+
+    await controller.get(req, res);
+    const expectedData: PageData = {
+      ...i18n.search['prefix-search'],
+      path: '/search-by-prefix',
+      error: false,
+      hasNoResults: false,
+      prefix: '',
+      results: []
+    };
+    expect(res.render).toBeCalledWith('search/prefix-search', expectedData);
+    expect(api.courtPrefixSearch).not.toBeCalled();
   });
 });
