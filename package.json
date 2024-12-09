@@ -51,7 +51,7 @@
     "config": "^3.3.12",
     "cookie-parser": "^1.4.7",
     "csurf": "^1.11.0",
-    "express": "4.21.1",
+    "express": "4.21.2",
     "express-nunjucks": "^3.1.2",
     "glob-parent": "6.0.2",
     "govuk-frontend": "^4.9.0",
@@ -78,6 +78,7 @@
     "@types/chai-as-promised": "^8.0.1",
     "@types/cucumber": "^7.0.3",
     "@types/jest": "^29.5.14",
+    "@types/jest-when": "^3.5.5",
     "@types/supertest": "^2.0.16",
     "@types/webpack-dev-middleware": "^5.3.0",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
@@ -98,6 +99,7 @@
     "eslint": "^8.57.1",
     "html-webpack-plugin": "^5.6.3",
     "jest": "^29.7.0",
+    "jest-when": "^3.6.0",
     "mini-css-extract-plugin": "^2.9.2",
     "nock": "^13.5.5",
     "nodemon": "^2.0.22",
@@ -136,11 +138,12 @@
     "axios>follow-redirects": ">=1.15.4",
     "http-proxy-middleware>http-proxy>follow-redirects": ">=1.15.4",
     "@types/http-proxy-middleware>http-proxy-middleware>http-proxy>follow-redirects": ">=1.15.4",
-    "express": "4.21.0",
+    "express": "4.21.2",
     "micromatch": ">=4.0.8",
     "tar": ">=6.2.1",
     "braces": ">=3.0.3",
-    "cookie": ">=0.7.0"
+    "cookie": ">=0.7.0",
+    "@hmcts/info-provider/path-to-regexp": "0.1.12"
   },
   "packageManager": "yarn@3.6.4"
 }
