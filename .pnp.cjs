@@ -13786,7 +13786,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@sinonjs/fake-timers", "npm:13.0.5"],\
             ["@sinonjs/text-encoding", "npm:0.7.3"],\
             ["just-extend", "npm:6.2.0"],\
-            ["path-to-regexp", "npm:0.1.12"]\
+            ["path-to-regexp", "npm:8.2.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -14553,6 +14553,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/path-to-regexp-npm-0.1.12-a9bf1de212-ab237858be.zip/node_modules/path-to-regexp/",\
           "packageDependencies": [\
             ["path-to-regexp", "npm:0.1.12"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:8.2.0", {\
+          "packageLocation": "./.yarn/cache/path-to-regexp-npm-8.2.0-71c92fc0c6-56e13e4596.zip/node_modules/path-to-regexp/",\
+          "packageDependencies": [\
+            ["path-to-regexp", "npm:8.2.0"]\
           ],\
           "linkType": "HARD"\
         }]\
