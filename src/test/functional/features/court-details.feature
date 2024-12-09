@@ -242,17 +242,17 @@ Feature: Court Name Know - Court Details
       | centre_that_should_allow_update_on_application     |
       | County Court Money Claims Centre (CCMCC)           |
 
-#  Scenario Outline: Court or tribunal Find out more about
-#    And I have entered "<Find_out_more_about_court>" as search criteria
-#    When I have selected to search for that court or tribunal name or address
-#    Given results are returned
-#    When I select a court or tribunal link
-#    And That location sidebar includes "<sidebar_entries>"
-#    Then I click the link "<page_link>" from "<sidebar_entries>" and it takes me to the page"<page_title>"
-#
-#    Examples:
-#      | Find_out_more_about_court  | sidebar_entries       | page_title                    | page_link                                    |
-#      | West London Family Court   | find-out-more-about   | Home - Support Through Court  | Support Through Court (Independent charity)  |
+  Scenario Outline: Court or tribunal Find out more about
+    And I have entered "<Find_out_more_about_court>" as search criteria
+    When I have selected to search for that court or tribunal name or address
+    Given results are returned
+    When I select a court or tribunal link
+    And That location sidebar includes "<sidebar_entries>"
+    Then I click the link "<page_link>" from "<sidebar_entries>" and it takes me to the page"<page_title>"
+
+    Examples:
+      | Find_out_more_about_court  | sidebar_entries       | page_title                    | page_link                                    |
+      | West London Family Court   | find-out-more-about   | Home - Support Through Court  | Support Through Court (Independent charity)  |
 
   Scenario Outline: Not-in-person Court - Find out more about: Financial Remedy
     And I have entered "<not_in_person_court>" as search criteria
