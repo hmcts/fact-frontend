@@ -142,7 +142,8 @@
     "micromatch": ">=4.0.8",
     "tar": ">=6.2.1",
     "braces": ">=3.0.3",
-    "cookie": ">=0.7.0"
+    "cookie": ">=0.7.0",
+    "express/path-to-regxp": ">=0.1.12"
   },
   "packageManager": "yarn@3.6.4"
 }
