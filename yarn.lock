@@ -2921,14 +2921,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@playwright/test@npm:^1.48.2":
-  version: 1.48.2
-  resolution: "@playwright/test@npm:1.48.2"
+"@playwright/test@npm:^1.49.1":
+  version: 1.49.1
+  resolution: "@playwright/test@npm:1.49.1"
   dependencies:
-    playwright: 1.48.2
+    playwright: 1.49.1
   bin:
     playwright: cli.js
-  checksum: 926e9411c800bbbf188271fe399f93d2abb1e50aac7844a44a698b3c6dae6f874a3715b1bf6d2f367dd53adb87d9f5d80d03ef71060901a59b6e227d8ed23826
+  checksum: cdbd16df3d773dc8e522d79b4b961e25c2e1b1d4f3ec45eb711078ab5d11bca47caafe833e2be2f923328fbd012405a9ee31d9b449d184077598546a36847e69
   languageName: node
   linkType: hard
 
@@ -7217,7 +7217,7 @@ __metadata:
     "@hmcts/nodejs-healthcheck": ^1.8.5
     "@hmcts/nodejs-logging": ^4.0.4
     "@hmcts/properties-volume": ^1.2.0
-    "@playwright/test": ^1.48.2
+    "@playwright/test": ^1.49.1
     "@types/chai-as-promised": ^8.0.1
     "@types/config": ^3.3.5
     "@types/cookie-parser": ^1.4.8
@@ -7279,9 +7279,9 @@ __metadata:
     nock: ^13.5.6
     nodemon: ^2.0.22
     npm-run-all: ^4.1.5
-    nunjucks: ">=3.2.4"
+    nunjucks: ^3.2.4
     pa11y: ^6.2.3
-    playwright: 1.30.0
+    playwright: 1.49.1
     request: ^2.88.2
     require-directory: ^2.1.1
     sass: ^1.82.0
@@ -11189,7 +11189,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nunjucks@npm:>=3.2.4":
+"nunjucks@npm:^3.2.4":
   version: 3.2.4
   resolution: "nunjucks@npm:3.2.4"
   dependencies:
@@ -11759,47 +11759,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright-core@npm:1.30.0":
-  version: 1.30.0
-  resolution: "playwright-core@npm:1.30.0"
-  bin:
-    playwright: cli.js
-  checksum: 4c5693f27245a1168f94708ecd8e1eb0d200de435b25cc07cfa25b97a094633818954dc00baf24e0ff551825f672050b83d1309362c1f97213fe8ebd2a147ed9
-  languageName: node
-  linkType: hard
-
-"playwright-core@npm:1.48.2":
-  version: 1.48.2
-  resolution: "playwright-core@npm:1.48.2"
+"playwright-core@npm:1.49.1":
+  version: 1.49.1
+  resolution: "playwright-core@npm:1.49.1"
   bin:
     playwright-core: cli.js
-  checksum: a73ecea379f13f757ec38299871256a130d4abec5688369969a6b1ef6104c67f731a27c9a503a988c3e5b1141048552a3ed8c4d061cb631ff2ebab606835c10a
+  checksum: a940f4b10ff1de033b4b8594b5104b02849a892d9adda0d42330a872cd3d8d287ffd2b01fc33f33ccd34f8904bb8ae8220b878b62e899f3d9bcd1b0945ab45c7
   languageName: node
   linkType: hard
 
-"playwright@npm:1.30.0":
-  version: 1.30.0
-  resolution: "playwright@npm:1.30.0"
-  dependencies:
-    playwright-core: 1.30.0
-  bin:
-    playwright: cli.js
-  checksum: 1987446ed07e25c0c6dedce8314209b49536eb4c7fa82e57e7fea9bd8128bacd08e49f9e89af30a647839bf2603b8c8321f50e23e334a11c1c29eedb838a81a3
-  languageName: node
-  linkType: hard
-
-"playwright@npm:1.48.2":
-  version: 1.48.2
-  resolution: "playwright@npm:1.48.2"
+"playwright@npm:1.49.1":
+  version: 1.49.1
+  resolution: "playwright@npm:1.49.1"
   dependencies:
     fsevents: 2.3.2
-    playwright-core: 1.48.2
+    playwright-core: 1.49.1
   dependenciesMeta:
     fsevents:
       optional: true
   bin:
     playwright: cli.js
-  checksum: 69ffb28b5a94fc21a9bd3439feb363ffebb21c6b00e6d08ffc225787be49005d6b57072ebb043e78378252850f2b7712f8478e6685138a8e445d6fda94a31e28
+  checksum: c136d42d625e32614f90e5228a165dc8be48c5bfb52aca9210c6ff04161a409dbe42fe5ae4f05a2653f6a1b836876a04d3b0f24bcbbc053d1509c1d605b7c8d5
   languageName: node
   linkType: hard
 
