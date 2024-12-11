@@ -14,7 +14,7 @@ def component = "frontend"
 
 withNightlyPipeline(type, product, component) {
 
-  afterSuccess('build') {
+  before('fullFunctionalTest') {
     yarnBuilder.yarn('playwright install')
   }
 //  enableFortifyScan()
