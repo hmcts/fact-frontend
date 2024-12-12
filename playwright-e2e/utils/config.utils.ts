@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import * as fs from "fs";
 import path from "path";
+import { Cookie } from "playwright-core";
 import { fileURLToPath } from "url";
 
 // This needs to be placed somewhere before attempting to access any environment variables
@@ -10,6 +11,7 @@ export interface UserCredentials {
   username: string;
   password: string;
   sessionFile: string;
+  cookieName?: string;
 }
 
 interface Urls {
@@ -33,6 +35,7 @@ export const config: Config = {
       sessionFile:
         path.join(fileURLToPath(import.meta.url), "../../.sessions/") +
         `${getEnvVar("EXUI_USERNAME")}.json`,
+      cookieName: "xui-webapp",
     },
     citizen: {
       username: getEnvVar("CITIZEN_USERNAME"),
@@ -59,4 +62,19 @@ function getEnvVar(name: string): string {
 export function getCookies(filepath: string) {
   const data = fs.readFileSync(filepath, "utf8");
   return JSON.parse(data).cookies;
+}
+
+export function isSessionValid(path: string, cookieName: string): boolean {
+  // consider the cookie valid if there's at least 2 hours left on the session
+  const expiryTime = 2 * 60 * 60 * 1000;
+  try {
+    const data = JSON.parse(fs.readFileSync(path, "utf-8"));
+    const cookie = data.cookies.find(
+      (cookie: Cookie) => cookie.name === cookieName
+    );
+    const expiry = new Date(cookie.expires * 1000);
+    return expiry.getTime() - Date.now() > expiryTime;
+  } catch (error) {
+    throw new Error(`Could not read session data: ${error} for ${path}`);
+  }
 }
