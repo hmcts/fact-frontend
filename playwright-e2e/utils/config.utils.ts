@@ -67,6 +67,10 @@ export function getCookies(filepath: string) {
 export function isSessionValid(path: string, cookieName: string): boolean {
   // consider the cookie valid if there's at least 2 hours left on the session
   const expiryTime = 2 * 60 * 60 * 1000;
+
+  // In the case the file doesn't exist, it should attempt to login
+  if (!fs.existsSync(path)) return false;
+
   try {
     const data = JSON.parse(fs.readFileSync(path, "utf-8"));
     const cookie = data.cookies.find(
