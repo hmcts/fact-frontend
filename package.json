@@ -48,6 +48,7 @@
     "autobind-decorator": "^2.4.0",
     "awilix": "^7.0.3",
     "axios": "1.7.9",
+    "cacache": "^19.0.1",
     "config": "^3.3.12",
     "cookie-parser": "^1.4.7",
     "csurf": "^1.11.0",
