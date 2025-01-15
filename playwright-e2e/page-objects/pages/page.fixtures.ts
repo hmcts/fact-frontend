@@ -1,4 +1,5 @@
 import { Page } from "@playwright/test";
+import { ActivateCasePinPage } from "./cui/activate-case-pin.po";
 import { CuiCaseListPage } from "./cui/cui-case-list.po";
 import { ExuiCaseDetailsPage } from "./exui/exui-case-details.po";
 import { ExuiCaseListPage } from "./exui/exui-case-list.po";
@@ -9,6 +10,7 @@ export interface PageFixtures {
   exuiCaseDetailsPage: ExuiCaseDetailsPage;
   exuiCaseListPage: ExuiCaseListPage;
   cuiCaseListPage: CuiCaseListPage;
+  activateCasePinPage: ActivateCasePinPage;
   idamPage: IdamPage;
 }
 
@@ -37,6 +39,11 @@ export const pageFixtures = {
     const cuiCaseListPage = new CuiCaseListPage(determinePage);
     await cuiCaseListPage.goto();
     await use(cuiCaseListPage);
+  },
+  activateCasePinPage: async ({ determinePage }, use) => {
+    const activateCasePinPage = new ActivateCasePinPage(determinePage);
+    await activateCasePinPage.goto();
+    await use(activateCasePinPage);
   },
   idamPage: async ({ determinePage }, use) => {
     await use(new IdamPage(determinePage));
