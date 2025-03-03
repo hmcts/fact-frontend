@@ -139,7 +139,7 @@
             {{ additionalInfoHeading }}
           </h3>
           <div class="govuk-body-m">
-            {{ results.info | safe }}
+            {{ results.info | warningAppender | safe }}
           </div>
         </div>
       {% endif %}
