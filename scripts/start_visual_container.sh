@@ -3,7 +3,7 @@
 # Starts the playwright container used for visual testing
 # Ensure your docker daemon is running
 
-PW_VERSION=v1.49.1-noble
+PW_VERSION=v1.51.0-noble
 DOCKER_PW_IMAGE="mcr.microsoft.com/playwright:${PW_VERSION}"
 
 docker run --rm \
