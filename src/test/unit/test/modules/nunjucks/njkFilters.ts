@@ -10,37 +10,37 @@ describe('njkFilters', () => {
     createFilters(env);
   });
 
-  describe('Test the filter that appends warning to links that open new tabs', () => {
-    test('should add (opens new tab) text to link that contains target="_blank"', () => {
+  describe('Test the filter that appends a hidden warning to links that open new tabs', () => {
+    test('should add hidden "opens in a new tab" text to link that contains target="_blank"', () => {
       const warningAppenderFilter = env.getFilter('warningAppender');
       const input = '<a href="https://www.gov.uk/government/news/scammers-using-hmcts-telephone-numbers" ' +
         'target="_blank">Hello</a>';
       const expectedOutput
         = '<a href="https://www.gov.uk/government/news/scammers-using-hmcts-telephone-numbers" ' +
-        'target="_blank">Hello (opens in new tab)</a>';
+        'target="_blank">Hello<span class=govuk-visually-hidden> - opens in a new tab</span></a>';
 
       expect(warningAppenderFilter(input)).toEqual(expectedOutput);
     });
 
-    test('should add (opens new tab) text to link that contains target="_blank" and other attributes', () => {
+    test('should add hidden "opens in a new tab" text to link that contains target="_blank" plus other attributes', () => {
       const warningAppenderFilter = env.getFilter('warningAppender');
       const input = '<a href="https://www.gov.uk/government/news" target="_blank" rel="noopener">I open in a new tab</a>';
       const expectedOutput
-        = '<a href="https://www.gov.uk/government/news" target="_blank" rel="noopener">I open in a new tab (opens in new tab)</a>';
+        = '<a href="https://www.gov.uk/government/news" target="_blank" rel="noopener">I open in a new tab<span class=govuk-visually-hidden> - opens in a new tab</span></a>';
 
       expect(warningAppenderFilter(input)).toEqual(expectedOutput);
     });
 
-    test.each(['\'_blank\'', '\'_new\''])('should add (opens new tab) text to link text where the target value is wrapped in single quotes', (targetValue) => {
+    test.each(['\'_blank\'', '\'_new\''])('should add hidden "opens in a new tab" text to link text where the target value is wrapped in single quotes', (targetValue) => {
       const warningAppenderFilter = env.getFilter('warningAppender');
       const input = '<a href="https://www.gov.uk/government/news" title="link" target=' + targetValue + ' rel="noopener">I open in a new tab</a>';
       const expectedOutput
-        = '<a href="https://www.gov.uk/government/news" title="link" target=' + targetValue + ' rel="noopener">I open in a new tab (opens in new tab)</a>';
+        = '<a href="https://www.gov.uk/government/news" title="link" target=' + targetValue + ' rel="noopener">I open in a new tab<span class=govuk-visually-hidden> - opens in a new tab</span></a>';
 
       expect(warningAppenderFilter(input)).toEqual(expectedOutput);
     });
 
-    test('should not add (opens in new tab) text when link does not open in a new tab', () => {
+    test('should not add hidden "opens in a new tab" text when link does not open in a new tab', () => {
       const warningAppenderFilter = env.getFilter('warningAppender');
       const input
         = '<a href="https://www.gov.uk/government/news" rel="noopener">I stay in the same tab</a>';
@@ -60,7 +60,7 @@ describe('njkFilters', () => {
       expect(warningAppenderFilter(input)).toEqual(expectedOutput);
     });
 
-    test('should not add (opens in new tab) text when string is not a link', () => {
+    test('should not add hidden "opens in a new tab" text when string is not a link', () => {
       const warningAppenderFilter = env.getFilter('warningAppender');
       const input
         = '<p target="_blank>" This is not a link</p>';
@@ -70,7 +70,7 @@ describe('njkFilters', () => {
       expect(warningAppenderFilter(input)).toEqual(expectedOutput);
     });
 
-    test.each(['"_blank"', '"_new"'])('should add (opens in new tab) to link text ' +
+    test.each(['"_blank"', '"_new"'])('should add hidden "opens in a new tab" to link text ' +
       'when target value is %j and link is surrounded by other text', (targetValue) => {
       const warningAppenderFilter = env.getFilter('warningAppender');
       const input
@@ -78,12 +78,12 @@ describe('njkFilters', () => {
         'rel="noopener" target=' + targetValue + '>Gov UK</a>. It has a lot of stuff to learn about';
       const expectedOutput
         = 'Please make sure to visit this site to learn new information -> <a href="https://www.gov.uk/government/news" ' +
-        'rel="noopener" target=' + targetValue + '>Gov UK (opens in new tab)</a>. It has a lot of stuff to learn about';
+        'rel="noopener" target=' + targetValue + '>Gov UK<span class=govuk-visually-hidden> - opens in a new tab</span></a>. It has a lot of stuff to learn about';
 
       expect(warningAppenderFilter(input)).toEqual(expectedOutput);
     });
 
-    test.each(['"_blank"', '"_new"'])('should add (opens in new tab) to each link text ' +
+    test.each(['"_blank"', '"_new"'])('should add hidden "opens in a new tab" to each link text ' +
       'when there are multiple links that open new tabs', (targetValue) => {
       const warningAppenderFilter = env.getFilter('warningAppender');
       const input
@@ -93,14 +93,14 @@ describe('njkFilters', () => {
         'rel="noopener" target=' + targetValue + '>Gov UK Info</a>';
       const expectedOutput
         = 'Please make sure to visit this site to learn new information -> <a href="https://www.gov.uk/government/news" ' +
-        'rel="noopener" target=' + targetValue + '>Gov UK (opens in new tab)</a>. It has a lot of stuff to learn about. Please also take a ' +
+        'rel="noopener" target=' + targetValue + '>Gov UK<span class=govuk-visually-hidden> - opens in a new tab</span></a>. It has a lot of stuff to learn about. Please also take a ' +
         'look at this site as well <a href="https://www.gov.uk/government/news/information" ' +
-        'rel="noopener" target=' + targetValue + '>Gov UK Info (opens in new tab)</a>';
+        'rel="noopener" target=' + targetValue + '>Gov UK Info<span class=govuk-visually-hidden> - opens in a new tab</span></a>';
 
       expect(warningAppenderFilter(input)).toEqual(expectedOutput);
     });
 
-    test.each(['"_blank"', '"_new"'])('should add (opens in new tab) to link text ' +
+    test.each(['"_blank"', '"_new"'])('should add hidden "opens in a new tab" to link text ' +
       'when link text contains special characters', (targetValue) => {
       const warningAppenderFilter = env.getFilter('warningAppender');
       const input
@@ -108,12 +108,12 @@ describe('njkFilters', () => {
         'rel="noopener" target=' + targetValue + '><strong>Gov<strong> UK &amp;</a>.';
       const expectedOutput
         = '<a href="https://www.gov.uk/government/news" ' +
-        'rel="noopener" target=' + targetValue + '><strong>Gov<strong> UK &amp; (opens in new tab)</a>.';
+        'rel="noopener" target=' + targetValue + '><strong>Gov<strong> UK &amp;<span class=govuk-visually-hidden> - opens in a new tab</span></a>.';
 
       expect(warningAppenderFilter(input)).toEqual(expectedOutput);
     });
 
-    test.each(['"_blank"', '"_new"'])('should add (opens in new tab) to link text ' +
+    test.each(['"_blank"', '"_new"'])('should add hidden "opens in a new tab" to link text ' +
       'even if text already contains a new tab warning', (targetValue) => {
       const warningAppenderFilter = env.getFilter('warningAppender');
       const input
@@ -121,7 +121,7 @@ describe('njkFilters', () => {
         'rel="noopener" target=' + targetValue + '>Gov UK (opens in a new tab)</a>.';
       const expectedOutput
         = '<a href="https://www.gov.uk/government/news" ' +
-        'rel="noopener" target=' + targetValue + '>Gov UK (opens in a new tab) (opens in new tab)</a>.';
+        'rel="noopener" target=' + targetValue + '>Gov UK (opens in a new tab)<span class=govuk-visually-hidden> - opens in a new tab</span></a>.';
 
       expect(warningAppenderFilter(input)).toEqual(expectedOutput);
     });
