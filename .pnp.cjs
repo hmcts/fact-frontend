@@ -64,7 +64,7 @@ const RAW_RUNTIME_STATE =
           ["applicationinsights", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.9.6"],\
           ["autobind-decorator", "npm:2.4.0"],\
           ["awilix", "npm:7.0.3"],\
-          ["axios", "npm:1.7.9"],\
+          ["axios", "npm:1.8.2"],\
           ["babel-eslint", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:10.1.0"],\
           ["babel-loader", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:9.2.1"],\
           ["cacache", "npm:19.0.1"],\
@@ -6416,10 +6416,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["axios", [\
-      ["npm:1.7.9", {\
-        "packageLocation": "./.yarn/cache/axios-npm-1.7.9-3c98466f87-b7a5f660ea.zip/node_modules/axios/",\
+      ["npm:1.8.2", {\
+        "packageLocation": "./.yarn/cache/axios-npm-1.8.2-55671cda10-d432875812.zip/node_modules/axios/",\
         "packageDependencies": [\
-          ["axios", "npm:1.7.9"],\
+          ["axios", "npm:1.8.2"],\
           ["follow-redirects", "virtual:a313c479c5c7e54d9ec8fbeeea69ff640f56b8989ea2dff42351a3fa5c4061fb80a52d8ede0f0826a181a216820c2d2c3f15da881e7fdf31cef1c446e42f0c45#npm:1.15.9"],\
           ["form-data", "npm:4.0.0"],\
           ["proxy-from-env", "npm:1.1.0"]\
@@ -7543,7 +7543,7 @@ const RAW_RUNTIME_STATE =
           ["@xmldom/xmldom", "npm:0.8.10"],\
           ["acorn", "npm:8.10.0"],\
           ["arrify", "npm:2.0.1"],\
-          ["axios", "npm:1.7.9"],\
+          ["axios", "npm:1.8.2"],\
           ["chai", "npm:4.3.8"],\
           ["chai-deep-match", "virtual:5c085887fb64748b4da9030ead95ed658b4e6003085f56b21b3cbdc8aea6485e31a52993d02b96a7bb78cfde531fe3eeefcc5095e1be32c3d34ad8bdf46e37a8#npm:1.2.1"],\
           ["chalk", "npm:4.1.2"],\
@@ -9639,7 +9639,7 @@ const RAW_RUNTIME_STATE =
           ["applicationinsights", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.9.6"],\
           ["autobind-decorator", "npm:2.4.0"],\
           ["awilix", "npm:7.0.3"],\
-          ["axios", "npm:1.7.9"],\
+          ["axios", "npm:1.8.2"],\
           ["babel-eslint", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:10.1.0"],\
           ["babel-loader", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:9.2.1"],\
           ["cacache", "npm:19.0.1"],\
@@ -14248,7 +14248,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/openai-npm-3.2.1-8bb9cccf51-a4caf667ea.zip/node_modules/openai/",\
         "packageDependencies": [\
           ["openai", "npm:3.2.1"],\
-          ["axios", "npm:1.7.9"],\
+          ["axios", "npm:1.8.2"],\
           ["form-data", "npm:4.0.0"]\
         ],\
         "linkType": "HARD"\
