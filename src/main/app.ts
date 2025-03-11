@@ -41,7 +41,7 @@ app.use((req, res, next) => {
 
 new PropertiesVolume().enableFor(app);
 new Container().enableFor(app);
-new Nunjucks().enableFor(app);
+new Nunjucks(true).enableFor(app);
 new Helmet(config.get('app.security')).enableFor(app);
 new I18next().enableFor(app);
 new ProxyMiddleware().enableFor(app);
