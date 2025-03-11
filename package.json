@@ -137,7 +137,7 @@
     "follow-redirects": "^1.15.6",
     "word-wrap": "^1.2.4",
     "ip": "https://registry.npmjs.org/neoip/-/neoip-2.1.0.tgz",
-    "axios": "^1.7.7",
+    "axios": "^1.8.2",
     "axios>follow-redirects": "^1.15.4",
     "http-proxy-middleware>http-proxy>follow-redirects": "^1.15.4",
     "@types/http-proxy-middleware>http-proxy-middleware>http-proxy>follow-redirects": "^1.15.4",
