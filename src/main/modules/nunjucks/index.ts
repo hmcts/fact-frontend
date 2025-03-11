@@ -1,6 +1,7 @@
 import * as path from 'path';
 import * as express from 'express';
 import * as nunjucks from 'nunjucks';
+import createFilters from './njkFilters';
 
 export class Nunjucks {
 
@@ -11,7 +12,7 @@ export class Nunjucks {
 
   enableFor(app: express.Express): void {
     app.set('view engine', 'njk');
-    nunjucks.configure(
+    const env = nunjucks.configure(
       [path.join(__dirname, '..', '..', 'views')],
       {
         autoescape: true,
@@ -31,5 +32,7 @@ export class Nunjucks {
 
       next();
     });
+
+    createFilters(env);
   }
 }
