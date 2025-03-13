@@ -1,0 +1,1 @@
+{"value":"csurf","children":{"ID":"csurf (deprecation)","Issue":"Please use another csrf package","Severity":"moderate","Vulnerable Versions":"1.11.0","Tree Versions":["1.11.0"],"Dependents":["fact-frontend@workspace:."]}}
