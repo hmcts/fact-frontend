@@ -67,34 +67,53 @@ function ensurePageCallWillSucceed(url: string): Promise<void> {
   return axios.get(url);
 }
 
-function runPallyWith(url: string, actions: string[]): Pa11yResult {
-  return pa11y(config.TEST_URL + url, {
+async function runPallyWith(url: string, actions: string[]): Promise<Pa11yResult> {
+  const result = await pa11y(config.TEST_URL + url, {
     hideElements: '.govuk-footer__licence-logo, .govuk-header__logotype-crown',
     actions: actions
   });
+
+  // Extract only what we need to avoid circular references
+  return {
+    documentTitle: result.documentTitle,
+    pageUrl: result.pageUrl,
+    issues: result.issues.map((issue: PallyIssue) => ({
+      code: issue.code,
+      context: issue.context,
+      message: issue.message,
+      selector: issue.selector,
+      type: issue.type,
+      typeCode: issue.typeCode
+    }))
+  };
 }
 
-function expectNoErrors(messages: PallyIssue[]): void {
-  const errors = messages.filter(m => m.type === 'error');
+function expectNoErrors(issues: PallyIssue[]): void {
+  const errors = issues.filter(m => m.type === 'error');
+
   if (errors.length > 0) {
-    const errorsAsJson = `${JSON.stringify(errors, null, 2)}`;
+    // Only extract the information we need
+    const simplifiedErrors = errors.map(error => ({
+      code: error.code,
+      message: error.message,
+      context: error.context,
+      selector: error.selector,
+      type: error.type
+    }));
+
+    const errorsAsJson = `${JSON.stringify(simplifiedErrors, null, 2)}`;
     fail(`There are accessibility issues: \n${errorsAsJson}\n`);
   }
 }
 
 function testAccessibilityWithActions(url: string, actions: string[]): void {
   describe(`Page ${url}`, () => {
-    test('should have no accessibility errors', done => {
-      ensurePageCallWillSucceed(url)
-        .then(() => runPallyWith(url, actions))
-        .then((result: Pa11yResult) => {
-          expectNoErrors(result.issues);
-          done();
-        })
-        .catch((err: Error) => done(err));
+    test('should have no accessibility errors', async () => {
+      await ensurePageCallWillSucceed(url);
+      const result = await runPallyWith(url, actions);
+      expectNoErrors(result.issues);
     });
   });
-
 }
 
 function testAccessibility(url: string): void {
