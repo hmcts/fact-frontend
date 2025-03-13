@@ -46,7 +46,6 @@ const RAW_RUNTIME_STATE =
           ["@types/express", "npm:5.0.0"],\
           ["@types/glob", "npm:8.1.0"],\
           ["@types/helmet", "npm:0.0.48"],\
-          ["@types/http-proxy-middleware", "npm:1.0.0"],\
           ["@types/i18next", "npm:13.0.0"],\
           ["@types/jest", "npm:29.5.14"],\
           ["@types/jest-when", "npm:3.5.5"],\
@@ -4882,16 +4881,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["@types/http-proxy-middleware", [\
-      ["npm:1.0.0", {\
-        "packageLocation": "./.yarn/cache/@types-http-proxy-middleware-npm-1.0.0-f6450a4a4c-643ce3ec3b.zip/node_modules/@types/http-proxy-middleware/",\
-        "packageDependencies": [\
-          ["@types/http-proxy-middleware", "npm:1.0.0"],\
-          ["http-proxy-middleware", "virtual:f6450a4a4c4bb577c69ae2707b4362d49d7387d945878a44fb77152547fdcc50158822155bffc23618629078f8e9aa67f33d2dc02119c0eefac23e0156b25738#npm:2.0.6"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["@types/i18next", [\
       ["npm:13.0.0", {\
         "packageLocation": "./.yarn/cache/@types-i18next-npm-13.0.0-06648bc897-da3e56065d.zip/node_modules/@types/i18next/",\
@@ -6464,7 +6453,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/axios-npm-1.7.7-cfbedc233d-7f875ea13b.zip/node_modules/axios/",\
         "packageDependencies": [\
           ["axios", "npm:1.7.7"],\
-          ["follow-redirects", "virtual:a313c479c5c7e54d9ec8fbeeea69ff640f56b8989ea2dff42351a3fa5c4061fb80a52d8ede0f0826a181a216820c2d2c3f15da881e7fdf31cef1c446e42f0c45#npm:1.15.6"],\
+          ["follow-redirects", "virtual:cfbedc233d4c16068d815547ad303dec1092fdb3b8bb4ec9ab9c56bdd55b4e87650c7a525a88805756f4d2819c03abfd96a9983cfa927fedf995d1b8b879db38#npm:1.15.6"],\
           ["form-data", "npm:4.0.0"],\
           ["proxy-from-env", "npm:1.1.0"]\
         ],\
@@ -9647,7 +9636,6 @@ const RAW_RUNTIME_STATE =
           ["@types/express", "npm:5.0.0"],\
           ["@types/glob", "npm:8.1.0"],\
           ["@types/helmet", "npm:0.0.48"],\
-          ["@types/http-proxy-middleware", "npm:1.0.0"],\
           ["@types/i18next", "npm:13.0.0"],\
           ["@types/jest", "npm:29.5.14"],\
           ["@types/jest-when", "npm:3.5.5"],\
@@ -10023,10 +10011,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:a313c479c5c7e54d9ec8fbeeea69ff640f56b8989ea2dff42351a3fa5c4061fb80a52d8ede0f0826a181a216820c2d2c3f15da881e7fdf31cef1c446e42f0c45#npm:1.15.6", {\
-        "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-23ff1601e1/0/cache/follow-redirects-npm-1.15.6-50635fe51d-70c7612c4c.zip/node_modules/follow-redirects/",\
+      ["virtual:cfbedc233d4c16068d815547ad303dec1092fdb3b8bb4ec9ab9c56bdd55b4e87650c7a525a88805756f4d2819c03abfd96a9983cfa927fedf995d1b8b879db38#npm:1.15.6", {\
+        "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-ccbb070eb1/0/cache/follow-redirects-npm-1.15.6-50635fe51d-70c7612c4c.zip/node_modules/follow-redirects/",\
         "packageDependencies": [\
-          ["follow-redirects", "virtual:a313c479c5c7e54d9ec8fbeeea69ff640f56b8989ea2dff42351a3fa5c4061fb80a52d8ede0f0826a181a216820c2d2c3f15da881e7fdf31cef1c446e42f0c45#npm:1.15.6"],\
+          ["follow-redirects", "virtual:cfbedc233d4c16068d815547ad303dec1092fdb3b8bb4ec9ab9c56bdd55b4e87650c7a525a88805756f4d2819c03abfd96a9983cfa927fedf995d1b8b879db38#npm:1.15.6"],\
           ["@types/debug", null],\
           ["debug", null]\
         ],\
@@ -10961,7 +10949,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["http-proxy", "npm:1.18.1"],\
           ["eventemitter3", "npm:4.0.7"],\
-          ["follow-redirects", "virtual:a313c479c5c7e54d9ec8fbeeea69ff640f56b8989ea2dff42351a3fa5c4061fb80a52d8ede0f0826a181a216820c2d2c3f15da881e7fdf31cef1c446e42f0c45#npm:1.15.6"],\
+          ["follow-redirects", "virtual:cfbedc233d4c16068d815547ad303dec1092fdb3b8bb4ec9ab9c56bdd55b4e87650c7a525a88805756f4d2819c03abfd96a9983cfa927fedf995d1b8b879db38#npm:1.15.6"],\
           ["requires-port", "npm:1.0.0"]\
         ],\
         "linkType": "HARD"\
@@ -10989,13 +10977,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["http-proxy-middleware", [\
-      ["npm:2.0.6", {\
-        "packageLocation": "./.yarn/cache/http-proxy-middleware-npm-2.0.6-3bb17658ee-768e7ae5a4.zip/node_modules/http-proxy-middleware/",\
-        "packageDependencies": [\
-          ["http-proxy-middleware", "npm:2.0.6"]\
-        ],\
-        "linkType": "SOFT"\
-      }],\
       ["npm:2.0.7", {\
         "packageLocation": "./.yarn/cache/http-proxy-middleware-npm-2.0.7-886a673e85-4a51bf612b.zip/node_modules/http-proxy-middleware/",\
         "packageDependencies": [\
@@ -11008,22 +10989,6 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["http-proxy-middleware", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.0.7"],\
           ["@types/express", "npm:5.0.0"],\
-          ["@types/http-proxy", "npm:1.17.11"],\
-          ["http-proxy", "npm:1.18.1"],\
-          ["is-glob", "npm:4.0.3"],\
-          ["is-plain-obj", "npm:3.0.0"],\
-          ["micromatch", "npm:4.0.8"]\
-        ],\
-        "packagePeers": [\
-          "@types/express"\
-        ],\
-        "linkType": "HARD"\
-      }],\
-      ["virtual:f6450a4a4c4bb577c69ae2707b4362d49d7387d945878a44fb77152547fdcc50158822155bffc23618629078f8e9aa67f33d2dc02119c0eefac23e0156b25738#npm:2.0.6", {\
-        "packageLocation": "./.yarn/__virtual__/http-proxy-middleware-virtual-8eb3416f0b/0/cache/http-proxy-middleware-npm-2.0.6-3bb17658ee-768e7ae5a4.zip/node_modules/http-proxy-middleware/",\
-        "packageDependencies": [\
-          ["http-proxy-middleware", "virtual:f6450a4a4c4bb577c69ae2707b4362d49d7387d945878a44fb77152547fdcc50158822155bffc23618629078f8e9aa67f33d2dc02119c0eefac23e0156b25738#npm:2.0.6"],\
-          ["@types/express", null],\
           ["@types/http-proxy", "npm:1.17.11"],\
           ["http-proxy", "npm:1.18.1"],\
           ["is-glob", "npm:4.0.3"],\

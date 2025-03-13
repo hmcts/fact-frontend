@@ -37,7 +37,6 @@
     "@types/express": "^5.0.0",
     "@types/glob": "^8.1.0",
     "@types/helmet": "^0.0.48",
-    "@types/http-proxy-middleware": "^1.0.0",
     "@types/i18next": "^13.0.0",
     "@types/lodash": "^4.17.16",
     "@types/node": "^18.19.80",
