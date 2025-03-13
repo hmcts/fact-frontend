@@ -2144,13 +2144,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hmcts/info-provider@npm:^1.2.2":
-  version: 1.2.2
-  resolution: "@hmcts/info-provider@npm:1.2.2"
+"@hmcts/info-provider@npm:^1.2.3":
+  version: 1.2.3
+  resolution: "@hmcts/info-provider@npm:1.2.3"
   dependencies:
-    express: ^4.19.2
+    express: ^4.21.2
     js-yaml: ^4.1.0
-  checksum: 2d9dc7bb58ff4c078307c3267ce5ac6ca7b174b97667bcb3a841cbca64d35fe39ec821b1a11f4e4d7bd42d802af112df979528d5ec17aa49810ce15c8a0a797e
+  checksum: cc712b89bb7021e2d30e885dd303609b74bcf5f98463651b9078d634e3ca5a0bf94fbf913eab7f9a8002b919e22a989c80dbd542a3d4578d3b154b4b2fc0ba07
   languageName: node
   linkType: hard
 
@@ -3093,12 +3093,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/chai-as-promised@npm:^8.0.1":
-  version: 8.0.1
-  resolution: "@types/chai-as-promised@npm:8.0.1"
+"@types/chai-as-promised@npm:^8.0.2":
+  version: 8.0.2
+  resolution: "@types/chai-as-promised@npm:8.0.2"
   dependencies:
     "@types/chai": "*"
-  checksum: 7b298bab0cc16e244f9402de25eed8d626e803d328b67241487e3296bf68e95792f572491a2995ba409288263344fdc0da380064c5b6562a2a4d69bf78624d74
+  checksum: a65d360915471d5d2ea3471e8afc69884151b19c7b92494a4faabf95fcd7bb1059f32f5518f17115e2c9835afb7c0b933f9944bbb60d2ebe0a6fd3b61b1e031c
   languageName: node
   linkType: hard
 
@@ -3361,10 +3361,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.17.13":
-  version: 4.17.13
-  resolution: "@types/lodash@npm:4.17.13"
-  checksum: d0bf8fbd950be71946e0076b30fd40d492293baea75f05931b6b5b906fd62583708c6229abdb95b30205ad24ce1ed2f48bc9d419364f682320edd03405cc0c7e
+"@types/lodash@npm:^4.17.16":
+  version: 4.17.16
+  resolution: "@types/lodash@npm:4.17.16"
+  checksum: 915618c5735b10007e0ed7d06fdce6b344f88fc721d492b189a69064bfd046d2382e1ba61d683eeb61cad60ca0286cd110e6fe0fa4ab2e99066a40478376831d
   languageName: node
   linkType: hard
 
@@ -3396,12 +3396,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.19.67":
-  version: 18.19.67
-  resolution: "@types/node@npm:18.19.67"
+"@types/node@npm:^18.19.80":
+  version: 18.19.80
+  resolution: "@types/node@npm:18.19.80"
   dependencies:
     undici-types: ~5.26.4
-  checksum: 700f92c6a0b63352ce6327286392adab30bb17623c2a788811e9cf092c4dc2fb5e36ca4727247a981b3f44185fdceef20950a3b7a8ab72721e514ac037022a08
+  checksum: 08f5be60721d6b37c96dbef9124caf1a27ae1059d7cb1029d9da7d93be25b985106b6bd27af5f65550e20b481aa1985e3d47a63ae6b178b93ac9be5272a12907
   languageName: node
   linkType: hard
 
@@ -7201,12 +7201,12 @@ __metadata:
     "@codeceptjs/allure-legacy": ^1.0.2
     "@codeceptjs/configure": ^0.10.0
     "@hmcts/cookie-manager": 1.0.0
-    "@hmcts/info-provider": ^1.2.2
+    "@hmcts/info-provider": ^1.2.3
     "@hmcts/nodejs-healthcheck": ^1.8.5
     "@hmcts/nodejs-logging": ^4.0.4
     "@hmcts/properties-volume": ^1.2.0
     "@playwright/test": ^1.49.1
-    "@types/chai-as-promised": ^8.0.1
+    "@types/chai-as-promised": ^8.0.2
     "@types/config": ^3.3.5
     "@types/cookie-parser": ^1.4.8
     "@types/csurf": ^1.11.5
@@ -7219,8 +7219,8 @@ __metadata:
     "@types/i18next": ^13.0.0
     "@types/jest": ^29.5.14
     "@types/jest-when": ^3.5.5
-    "@types/lodash": ^4.17.13
-    "@types/node": ^18.19.67
+    "@types/lodash": ^4.17.16
+    "@types/node": ^18.19.80
     "@types/nunjucks": ^3.2.6
     "@types/require-directory": ^2.1.6
     "@types/serve-favicon": ^2.5.7
@@ -7257,7 +7257,7 @@ __metadata:
     html-webpack-plugin: ^5.6.3
     http-proxy-middleware: ^2.0.7
     i18next: ^21.10.0
-    i18next-http-middleware: ^3.7.0
+    i18next-http-middleware: ^3.7.1
     jest: ^29.7.0
     jest-when: ^3.7.0
     jquery: ^3.7.1
@@ -7274,15 +7274,15 @@ __metadata:
     require-directory: ^2.1.1
     sass: ^1.82.0
     sass-lint: ^1.13.1
-    sass-loader: ^16.0.4
+    sass-loader: ^16.0.5
     serve-favicon: ^2.5.0
     sinon: ^19.0.2
     sinon-chai: ^4.0.0
     sonar-scanner: ^3.1.0
     style-loader: ^4.0.0
     superagent: ^10.1.1
-    ts-jest: ^29.2.5
-    ts-loader: ^9.5.1
+    ts-jest: ^29.2.6
+    ts-loader: ^9.5.2
     ts-node: ^10.9.2
     tsconfig-paths: ^4.2.0
     tslint: ^6.1.3
@@ -8535,10 +8535,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next-http-middleware@npm:^3.7.0":
-  version: 3.7.0
-  resolution: "i18next-http-middleware@npm:3.7.0"
-  checksum: c6f7b64a5433e4ed3d44cb3a0b9b88efba6352762ee216a4a3b458aae26602b9131e0a444b96e99ab9b3ef8ff0f9629b88e4ea72d883aa0077b0b915bb1864ce
+"i18next-http-middleware@npm:^3.7.1":
+  version: 3.7.1
+  resolution: "i18next-http-middleware@npm:3.7.1"
+  checksum: 2927abbfc34404c6eba45e76afa76905288bcb5ce4d585df75067703d027fab63dc75f9d6b7500ed339bba579fb8c19cec5e13e9aac02d1f033dcc2b4aa56266
   languageName: node
   linkType: hard
 
@@ -12749,9 +12749,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass-loader@npm:^16.0.4":
-  version: 16.0.4
-  resolution: "sass-loader@npm:16.0.4"
+"sass-loader@npm:^16.0.5":
+  version: 16.0.5
+  resolution: "sass-loader@npm:16.0.5"
   dependencies:
     neo-async: ^2.6.2
   peerDependencies:
@@ -12771,7 +12771,7 @@ __metadata:
       optional: true
     webpack:
       optional: true
-  checksum: 91abdbb8285e8241ec2938e4237675dc2792a51149878cae0489b292cfea6afa2867a601fbed4b8cb7c4a6a12185e437ad7441651b562ffae1703b08cbbca919
+  checksum: ede9659200011e4dea51de16446a45f11e570bbca66be6cd94dc0b2b73ab17dcdc88dde3247a1869d94a5793c2d1bc07650bada15103e3351eef13a70f2b1f07
   languageName: node
   linkType: hard
 
@@ -13928,9 +13928,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:^29.2.5":
-  version: 29.2.5
-  resolution: "ts-jest@npm:29.2.5"
+"ts-jest@npm:^29.2.6":
+  version: 29.2.6
+  resolution: "ts-jest@npm:29.2.6"
   dependencies:
     bs-logger: ^0.2.6
     ejs: ^3.1.10
@@ -13939,7 +13939,7 @@ __metadata:
     json5: ^2.2.3
     lodash.memoize: ^4.1.2
     make-error: ^1.3.6
-    semver: ^7.6.3
+    semver: ^7.7.1
     yargs-parser: ^21.1.1
   peerDependencies:
     "@babel/core": ">=7.0.0-beta.0 <8"
@@ -13961,13 +13961,13 @@ __metadata:
       optional: true
   bin:
     ts-jest: cli.js
-  checksum: d60d1e1d80936f6002b1bb27f7e062408bc733141b9d666565503f023c340a3196d506c836a4316c5793af81a5f910ab49bb9c13f66e2dc66de4e0f03851dbca
+  checksum: ff71b27e997e4c5e6bcf2d38804b188eb1c7eec78570329f058f434ba1bd112a4806cdc4e7baac0e0e834bd20ca3be16e03d5c546304aa28e5cfeaccca82139e
   languageName: node
   linkType: hard
 
-"ts-loader@npm:^9.5.1":
-  version: 9.5.1
-  resolution: "ts-loader@npm:9.5.1"
+"ts-loader@npm:^9.5.2":
+  version: 9.5.2
+  resolution: "ts-loader@npm:9.5.2"
   dependencies:
     chalk: ^4.1.0
     enhanced-resolve: ^5.0.0
@@ -13977,7 +13977,7 @@ __metadata:
   peerDependencies:
     typescript: "*"
     webpack: ^5.0.0
-  checksum: 7cf396e656d905388ea2a9b5e82f16d3c955fda8d3df2fbf219f4bee16ff50a3c995c44ae3e584634e9443f056cec70bb3151add3917ffb4588ecd7394bac0ec
+  checksum: f4c117042e25434e733c4b70873adaa9a79b14c2b3d8e5db53bbfd42060289f8a3eb97cfff64c83123b735d954f0eaa0f60f093afb0682cd2d1d7fa17f81e223
   languageName: node
   linkType: hard
 
