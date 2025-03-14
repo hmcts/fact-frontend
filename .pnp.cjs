@@ -3056,11 +3056,11 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@babel/runtime", [\
-      ["npm:7.21.5", {\
-        "packageLocation": "./.yarn/cache/@babel-runtime-npm-7.21.5-7d058028a3-7cd4f9be85.zip/node_modules/@babel/runtime/",\
+      ["npm:7.26.10", {\
+        "packageLocation": "./.yarn/cache/@babel-runtime-npm-7.26.10-d01a90d446-9d7ff8e96a.zip/node_modules/@babel/runtime/",\
         "packageDependencies": [\
-          ["@babel/runtime", "npm:7.21.5"],\
-          ["regenerator-runtime", "npm:0.13.11"]\
+          ["@babel/runtime", "npm:7.26.10"],\
+          ["regenerator-runtime", "npm:0.14.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -11107,7 +11107,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/i18next-npm-21.10.0-59fe054c36-f0d2ab8886.zip/node_modules/i18next/",\
         "packageDependencies": [\
           ["i18next", "npm:21.10.0"],\
-          ["@babel/runtime", "npm:7.21.5"]\
+          ["@babel/runtime", "npm:7.26.10"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -15336,6 +15336,13 @@ const RAW_RUNTIME_STATE =
           ["regenerator-runtime", "npm:0.13.11"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:0.14.1", {\
+        "packageLocation": "./.yarn/cache/regenerator-runtime-npm-0.14.1-a6c97c609a-5db3161abb.zip/node_modules/regenerator-runtime/",\
+        "packageDependencies": [\
+          ["regenerator-runtime", "npm:0.14.1"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["regenerator-transform", [\
@@ -15343,7 +15350,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/regenerator-transform-npm-0.15.2-109e57a69f-c4fdcb46d1.zip/node_modules/regenerator-transform/",\
         "packageDependencies": [\
           ["regenerator-transform", "npm:0.15.2"],\
-          ["@babel/runtime", "npm:7.21.5"]\
+          ["@babel/runtime", "npm:7.26.10"]\
         ],\
         "linkType": "HARD"\
       }]\
