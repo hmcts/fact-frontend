@@ -129,7 +129,7 @@
   "resolutions": {
     "@babel/runtime": "7.26.10",
     "sass-lint/merge": "^2.1.1",
-    "uglifyjs-webpack-plugin/serialize-javascript": "^3.1.0",
+    "uglifyjs-webpack-plugin/serialize-javascript": "^6.0.2",
     "@hmcts/nodejs-logging/moment": "^2.29.4",
     "qs": "^6.5.3",
     "json5": "^2.2.2",
