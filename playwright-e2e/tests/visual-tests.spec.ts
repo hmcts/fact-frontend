@@ -5,7 +5,7 @@ import { config } from "../utils";
 
 /*
   To update screenshots for these tests, run the below in order from root:
-  - ./scripts/start_visual_container.sh
+  - npm run build-container && npm run start-container
   - yarn test:update-snapshots
   - commit the new snapshots to the remote repo
 */
