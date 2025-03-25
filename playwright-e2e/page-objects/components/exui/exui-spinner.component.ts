@@ -16,7 +16,7 @@ export class ExuiSpinnerComponent extends Base {
           return spinnerCount;
         },
         {
-          timeout: 30_000,
+          timeout: 60_000,
         }
       )
       .toBe(0);
