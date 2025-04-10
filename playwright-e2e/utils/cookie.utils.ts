@@ -4,6 +4,10 @@ import fs from "fs";
 
 export class CookieUtils {
   public async addAnalyticsCookie(user: UserCredentials): Promise<void> {
+    /*
+    note: cookie names and values can be different between services to check for your service you can accept the
+    analytics cookies manually and then check the added cookie under Application -> Cookies in developer tools
+     */
     if (user === config.users.citizen) {
       await this.addCitizenAnalyticsCookie(user.sessionFile);
     } else {
