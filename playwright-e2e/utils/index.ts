@@ -5,3 +5,4 @@ export * from "./table.utils";
 export * from "./utils.fixtures";
 export * from "./validator.utils";
 export * from "./wait.utils";
+export * from "./cookie.utils.ts";

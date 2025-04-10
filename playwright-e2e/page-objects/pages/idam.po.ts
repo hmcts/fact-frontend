@@ -1,7 +1,6 @@
 import { Page } from "@playwright/test";
-import { UserCredentials } from "../../utils/";
+import { UserCredentials, CookieUtils } from "../../utils/";
 import { Base } from "../base";
-import {CookieUtils} from "../../utils/cookie.utils.ts";
 
 export class IdamPage extends Base {
   readonly heading = this.page.getByRole("heading", {
