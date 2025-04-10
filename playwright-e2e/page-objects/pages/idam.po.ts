@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test";
-import { UserCredentials } from "../../utils/";
+import { UserCredentials, CookieUtils } from "../../utils/";
 import { Base } from "../base";
 
 export class IdamPage extends Base {
@@ -9,6 +9,7 @@ export class IdamPage extends Base {
   readonly usernameInput = this.page.locator("#username");
   readonly passwordInput = this.page.locator("#password");
   readonly submitBtn = this.page.locator('[name="save"]');
+  private cookieUtils = new CookieUtils();
 
   constructor(page: Page) {
     super(page);
@@ -23,5 +24,6 @@ export class IdamPage extends Base {
 
   private async saveSession(user: UserCredentials) {
     await this.page.context().storageState({ path: user.sessionFile });
+    await this.cookieUtils.addAnalyticsCookie(user);
   }
 }
