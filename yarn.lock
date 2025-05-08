@@ -3539,12 +3539,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.19.98":
-  version: 18.19.98
-  resolution: "@types/node@npm:18.19.98"
+"@types/node@npm:^18.19.99":
+  version: 18.19.99
+  resolution: "@types/node@npm:18.19.99"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10/00a891077a47c31f7bee2a8a8a84755bb391d11788241957577814c78c1bc4fe300f90bb280d7f6c06443f124b11328d4d1e5f87d3d7e0d7fbed19fd8942851d
+  checksum: 10/1707c7ba81d3c3e40c40f453d4b9153b1bf071f4652ff538c5e79edc0d72a24d969092290cab68220dcd076b8d80de70c33862a7d673e303a5d66d21431f0e09
   languageName: node
   linkType: hard
 
@@ -7865,7 +7865,7 @@ __metadata:
     "@types/jest": "npm:^29.5.14"
     "@types/jest-when": "npm:^3.5.5"
     "@types/lodash": "npm:^4.17.16"
-    "@types/node": "npm:^18.19.98"
+    "@types/node": "npm:^18.19.99"
     "@types/nunjucks": "npm:^3.2.6"
     "@types/require-directory": "npm:^2.1.6"
     "@types/serve-favicon": "npm:^2.5.7"
@@ -7898,7 +7898,7 @@ __metadata:
     express: "npm:4.21.2"
     express-nunjucks: "npm:^3.1.2"
     glob-parent: "npm:6.0.2"
-    govuk-frontend: "npm:^4.9.0"
+    govuk-frontend: "npm:^5.10.0"
     helmet: "npm:^4.6.0"
     html-webpack-plugin: "npm:^5.6.3"
     http-proxy-middleware: "npm:^2.0.9"
@@ -8837,10 +8837,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"govuk-frontend@npm:^4.9.0":
-  version: 4.9.0
-  resolution: "govuk-frontend@npm:4.9.0"
-  checksum: 10/03bae503b0c5aabcfb2724409f55f2221101a60f5334488319c9911408637efaa6737b733d4774436a520e9a79bf52bd9ae9a9e60f61a929c529b8125c0d5e29
+"govuk-frontend@npm:^5.10.0":
+  version: 5.10.0
+  resolution: "govuk-frontend@npm:5.10.0"
+  checksum: 10/6da3a76b807a8c5517e18f03c7eac5825b2e524aa6c7b26cb19b3b3934c9883bd9535c6f54e1856e5316d2fef0f00f7d89dded5745c7b54f293d3c4b3c25dcb2
   languageName: node
   linkType: hard
 
