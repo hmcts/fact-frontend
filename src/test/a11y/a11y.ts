@@ -70,8 +70,6 @@ function ensurePageCallWillSucceed(url: string): Promise<void> {
 function runPallyWith(url: string, actions: string[]): Pa11yResult {
   return pa11y(config.TEST_URL + url, {
     hideElements: '.govuk-footer__licence-logo, .govuk-header__logotype-crown',
-    // timeout: 30000,
-    // wait: 1000,
     actions: actions
   });
 }
@@ -86,7 +84,6 @@ function expectNoErrors(messages: PallyIssue[]): void {
 
 function testAccessibilityWithActions(url: string, actions: string[]): void {
   describe(`Page ${url}`, () => {
-    // jest.setTimeout(60000);
     test('should have no accessibility errors', done => {
       ensurePageCallWillSucceed(url)
         .then(() => runPallyWith(url, actions))
