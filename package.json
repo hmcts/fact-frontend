@@ -53,7 +53,7 @@
     "express": "4.21.2",
     "express-nunjucks": "^3.1.2",
     "glob-parent": "6.0.2",
-    "govuk-frontend": "^5.10.0",
+    "govuk-frontend": "^4.9.0",
     "helmet": "^4.6.0",
     "http-proxy-middleware": "^2.0.9",
     "i18next": "^21.10.0",
