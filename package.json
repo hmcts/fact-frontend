@@ -148,5 +148,5 @@
     "@hmcts/info-provider/path-to-regexp": "0.1.12",
     "@npmcli/fs": "^4.0.0"
   },
-  "packageManager": "yarn@4.6.0"
+  "packageManager": "yarn@4.9.1"
 }
