@@ -87,6 +87,7 @@ export class Helmet {
         directives: {
           connectSrc: [self, googleAnalyticsDomain, doubleclick, 'https://*.dynatrace.com'],
           defaultSrc: ["'none'"],
+          manifestSrc: [self],
           fontSrc: [self, 'data:', 'https://fonts.gstatic.com'],
           imgSrc: [
             self,
