@@ -1,20 +1,26 @@
+import {
+  AxeUtils,
+  BrowserUtils,
+  LighthouseUtils,
+  SessionUtils,
+  TableUtils,
+  WaitUtils,
+} from "@hmcts/playwright-common";
 import os from "os";
 import path from "path";
 import { chromium, Page } from "playwright/test";
-import { AxeUtils } from "./axe.utils";
-import { BrowserUtils } from "./browser.utils";
-import { config, Config, getCookies } from "./config.utils";
-import { LighthouseUtils } from "./lighthouse.utils";
-import { TableUtils } from "./table.utils";
+import { config, Config } from "./config.utils";
+import { CookieUtils } from "./cookie.utils";
 import { ValidatorUtils } from "./validator.utils";
-import { WaitUtils } from "./wait.utils";
 
 export interface UtilsFixtures {
   config: Config;
+  cookieUtils: CookieUtils;
   validatorUtils: ValidatorUtils;
   waitUtils: WaitUtils;
   tableUtils: TableUtils;
   axeUtils: AxeUtils;
+  SessionUtils: typeof SessionUtils;
   browserUtils: BrowserUtils;
   lighthouseUtils: LighthouseUtils;
   lighthousePage: Page;
@@ -23,6 +29,9 @@ export interface UtilsFixtures {
 export const utilsFixtures = {
   config: async ({}, use) => {
     await use(config);
+  },
+  cookieUtils: async ({}, use) => {
+    await use(new CookieUtils());
   },
   waitUtils: async ({}, use) => {
     await use(new WaitUtils());
@@ -39,6 +48,9 @@ export const utilsFixtures = {
   axeUtils: async ({ page }, use) => {
     await use(new AxeUtils(page));
   },
+  SessionUtils: async ({}, use) => {
+    await use(SessionUtils);
+  },
   browserUtils: async ({ browser }, use) => {
     await use(new BrowserUtils(browser));
   },
@@ -52,7 +64,9 @@ export const utilsFixtures = {
         args: [`--remote-debugging-port=${lighthousePort}`],
       });
       // Using the cookies from global setup, inject to the new browser
-      await context.addCookies(getCookies(config.users.citizen.sessionFile));
+      await context.addCookies(
+        SessionUtils.getCookies(config.users.citizen.sessionFile)
+      );
       // Provide the page to the test
       await use(context.pages()[0]);
       await context.close();

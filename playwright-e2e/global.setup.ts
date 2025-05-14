@@ -1,6 +1,4 @@
 import { test as setup } from "./fixtures";
-import { IdamPage } from "./page-objects/pages/idam.po";
-import { isSessionValid } from "./utils";
 
 /*
  * Logs in as all users and saves the session data
@@ -10,28 +8,41 @@ import { isSessionValid } from "./utils";
  * Currently, the session is valid for 8 hours (for exui users)
  */
 
-setup("Setup citizen user", async ({ page, config }) => {
+setup("Setup citizen user", async ({ page, config, idamPage, cookieUtils }) => {
   await page.goto(config.urls.citizenUrl);
-  await new IdamPage(page).login(config.users.citizen);
+  await idamPage.login(config.users.citizen);
+  await cookieUtils.addAnalyticsCookie(config.users.citizen);
 });
 
-setup("Setup solicitor user", async ({ page, config }) => {
-  const user = config.users.solicitor;
-  if (isSessionValid(user.sessionFile, user.cookieName!)) return;
-  await page.goto(config.urls.manageCaseBaseUrl);
-  await new IdamPage(page).login(user);
-});
+setup(
+  "Setup solicitor user",
+  async ({ page, config, idamPage, SessionUtils, cookieUtils }) => {
+    const user = config.users.solicitor;
+    if (SessionUtils.isSessionValid(user.sessionFile, user.cookieName!)) return;
+    await page.goto(config.urls.manageCaseBaseUrl);
+    await idamPage.login(user);
+    await cookieUtils.addAnalyticsCookie(config.users.solicitor);
+  }
+);
 
-setup("Setup case manager user", async ({ page, config }) => {
-  const user = config.users.caseManager;
-  if (isSessionValid(user.sessionFile, user.cookieName!)) return;
-  await page.goto(config.urls.manageCaseBaseUrl);
-  await new IdamPage(page).login(user);
-});
+setup(
+  "Setup case manager user",
+  async ({ page, config, idamPage, SessionUtils, cookieUtils }) => {
+    const user = config.users.caseManager;
+    if (SessionUtils.isSessionValid(user.sessionFile, user.cookieName!)) return;
+    await page.goto(config.urls.manageCaseBaseUrl);
+    await idamPage.login(user);
+    await cookieUtils.addAnalyticsCookie(config.users.caseManager);
+  }
+);
 
-setup("Setup judge user", async ({ page, config }) => {
-  const user = config.users.judge;
-  if (isSessionValid(user.sessionFile, user.cookieName!)) return;
-  await page.goto(config.urls.manageCaseBaseUrl);
-  await new IdamPage(page).login(user);
-});
+setup(
+  "Setup judge user",
+  async ({ page, config, idamPage, SessionUtils, cookieUtils }) => {
+    const user = config.users.judge;
+    if (SessionUtils.isSessionValid(user.sessionFile, user.cookieName!)) return;
+    await page.goto(config.urls.manageCaseBaseUrl);
+    await idamPage.login(user);
+    await cookieUtils.addAnalyticsCookie(config.users.judge);
+  }
+);
