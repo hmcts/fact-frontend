@@ -6,7 +6,7 @@ import { config } from "../utils";
  * Use test.use({ storageState: { cookies: [], origins: [] } }); to override if required
  */
 test.use({
-  storageState: config.users.solicitor.sessionFile,
+  storageState: config.users.caseManager.sessionFile,
 });
 
 // test.describe() is used to group a suite of tests
@@ -34,19 +34,21 @@ test.describe("Case List Tests - Professional @exui", () => {
 });
 
 // Data driven parameterized tests
-[{ state: "Draft" }, { state: "Submitted" }, { state: "Pending" }].forEach(
-  ({ state }) => {
-    test(`Search for a case with state: ${state}`, async ({
-      exuiCaseListPage,
-      tableUtils,
-    }) => {
-      await exuiCaseListPage.exuiCaseListComponent.searchByCaseState(state);
-      const table = await tableUtils.mapExuiTable(
-        exuiCaseListPage.exuiCaseListComponent.caseListTable
-      );
-      table.forEach((row) => {
-        expect(row["State"]).toEqual(state);
-      });
+[
+  { state: "Case Issued" },
+  { state: "Submitted" },
+  { state: "Pending" },
+].forEach(({ state }) => {
+  test(`Search for a case with state: ${state}`, async ({
+    exuiCaseListPage,
+    tableUtils,
+  }) => {
+    await exuiCaseListPage.exuiCaseListComponent.searchByCaseState(state);
+    const table = await tableUtils.mapExuiTable(
+      exuiCaseListPage.exuiCaseListComponent.caseListTable
+    );
+    table.forEach((row) => {
+      expect(row["State"]).toEqual(state);
     });
-  }
-);
+  });
+});

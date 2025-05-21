@@ -19,7 +19,6 @@ interface Urls {
 
 export interface Config {
   users: {
-    solicitor: UserCredentials;
     caseManager: UserCredentials;
     judge: UserCredentials;
     citizen: UserCredentials;
@@ -29,14 +28,6 @@ export interface Config {
 
 export const config: Config = {
   users: {
-    solicitor: {
-      username: getEnvVar("SOLICITOR_USERNAME"),
-      password: getEnvVar("SOLICITOR_PASSWORD"),
-      sessionFile:
-        path.join(fileURLToPath(import.meta.url), "../../.sessions/") +
-        `${getEnvVar("SOLICITOR_USERNAME")}.json`,
-      cookieName: "xui-webapp",
-    },
     caseManager: {
       username: getEnvVar("CASEMANAGER_USERNAME"),
       password: getEnvVar("CASEMANAGER_PASSWORD"),

@@ -15,17 +15,6 @@ setup("Setup citizen user", async ({ page, config, idamPage, cookieUtils }) => {
 });
 
 setup(
-  "Setup solicitor user",
-  async ({ page, config, idamPage, SessionUtils, cookieUtils }) => {
-    const user = config.users.solicitor;
-    if (SessionUtils.isSessionValid(user.sessionFile, user.cookieName!)) return;
-    await page.goto(config.urls.manageCaseBaseUrl);
-    await idamPage.login(user);
-    await cookieUtils.addAnalyticsCookie(config.users.solicitor);
-  }
-);
-
-setup(
   "Setup case manager user",
   async ({ page, config, idamPage, SessionUtils, cookieUtils }) => {
     const user = config.users.caseManager;
