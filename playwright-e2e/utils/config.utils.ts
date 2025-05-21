@@ -13,6 +13,7 @@ export interface UserCredentials {
 }
 
 interface Urls {
+  exuiDefaultUrl: string;
   manageCaseBaseUrl: string;
   citizenUrl: string;
 }
@@ -53,6 +54,7 @@ export const config: Config = {
     },
   },
   urls: {
+    exuiDefaultUrl: "https://manage-case.aat.platform.hmcts.net",
     manageCaseBaseUrl:
       process.env.MANAGE_CASES_BASE_URL ||
       "https://manage-case.aat.platform.hmcts.net/cases",

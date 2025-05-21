@@ -1,6 +1,6 @@
-import {config, UserCredentials} from "./config.utils.ts";
-import {Cookie} from "playwright-core";
 import fs from "fs";
+import { Cookie } from "playwright-core";
+import { config, UserCredentials } from "./config.utils.ts";
 
 export class CookieUtils {
   public async addAnalyticsCookie(user: UserCredentials): Promise<void> {
@@ -17,14 +17,11 @@ export class CookieUtils {
 
   private async addCitizenAnalyticsCookie(sessionPath: string): Promise<void> {
     try {
-      const domain = (config.urls.citizenUrl as string).replace(
-        "https://",
-        "",
-      );
+      const domain = (config.urls.citizenUrl as string).replace("https://", "");
       const state = JSON.parse(fs.readFileSync(sessionPath, "utf-8"));
       state.cookies.push({
         name: `prl-cookie-preferences`,
-        value: JSON.stringify({"analytics": "on", "apm": "on"}),
+        value: JSON.stringify({ analytics: "on", apm: "on" }),
         domain: `${domain}`,
         path: "/",
         expires: -1,
@@ -38,15 +35,17 @@ export class CookieUtils {
     }
   }
 
-  private async addManageCasesAnalyticsCookie(sessionPath: string): Promise<void> {
+  private async addManageCasesAnalyticsCookie(
+    sessionPath: string
+  ): Promise<void> {
     try {
-      const domain = (config.urls.manageCaseBaseUrl as string).replace(
+      const domain = (config.urls.exuiDefaultUrl as string).replace(
         "https://",
-        "",
+        ""
       );
       const state = JSON.parse(fs.readFileSync(sessionPath, "utf-8"));
       const userId = state.cookies.find(
-        (cookie: Cookie) => cookie.name === "__userid__",
+        (cookie: Cookie) => cookie.name === "__userid__"
       )?.value;
       state.cookies.push({
         name: `hmcts-exui-cookies-${userId}-mc-accepted`,
