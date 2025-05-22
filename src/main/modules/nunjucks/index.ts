@@ -20,6 +20,7 @@ export class Nunjucks {
         express: app,
       },
     );
+    env.addGlobal('govukRebrand', true);
 
     app.use((req, res, next) => {
       res.locals.pagePath = req.path;
