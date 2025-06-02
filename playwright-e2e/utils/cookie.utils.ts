@@ -17,7 +17,9 @@ export class CookieUtils {
 
   private async addCitizenAnalyticsCookie(sessionPath: string): Promise<void> {
     try {
-      const domain = (config.urls.citizenUrl as string).replace("https://", "");
+      const domain = (config.urls.citizenUrl as string)
+        .replace("https://", "")
+        .replace("/", "");
       const state = JSON.parse(fs.readFileSync(sessionPath, "utf-8"));
       state.cookies.push({
         name: `prl-cookie-preferences`,
