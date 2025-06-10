@@ -14,6 +14,14 @@ withPipeline(type, product, component) {
     yarnBuilder.yarn('build')
   }
 
+  before('smoketest:preview') {
+    sh 'yarn playwright install'
+  }
+
+  before('smoketest:aat') {
+    sh 'yarn playwright install'
+  }
+
   afterAlways('functionalTest') {
     publishHTML target: [
       allowMissing         : true,
