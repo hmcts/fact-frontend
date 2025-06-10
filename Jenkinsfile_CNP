@@ -2,19 +2,26 @@
 
 @Library("Infrastructure")
 
+def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
+
 def type = "nodejs"
 def product = "fact"
 def component = "frontend"
 
-def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
-
-
 withPipeline(type, product, component) {
   disableLegacyDeployment()
-
-  afterSuccess('build') {
+  afterAlways('build') {
     yarnBuilder.yarn('build')
-    yarnBuilder.yarn('playwright install')
   }
 
+  afterAlways('functionalTest') {
+    publishHTML target: [
+      allowMissing         : true,
+      alwaysLinkToLastBuild: true,
+      keepAll              : true,
+      reportDir            : "functional-output/functional/allure",
+      reportFiles          : "index.html",
+      reportName           : "Functional Test Report"
+    ]
+  }
 }
