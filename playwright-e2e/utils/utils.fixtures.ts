@@ -5,6 +5,7 @@ import {
   SessionUtils,
   TableUtils,
   WaitUtils,
+  IdamUtils,
 } from "@hmcts/playwright-common";
 import os from "os";
 import path from "path";
@@ -24,6 +25,7 @@ export interface UtilsFixtures {
   browserUtils: BrowserUtils;
   lighthouseUtils: LighthouseUtils;
   lighthousePage: Page;
+  idamUtils: IdamUtils;
 }
 
 export const utilsFixtures = {
@@ -54,6 +56,9 @@ export const utilsFixtures = {
   browserUtils: async ({ browser }, use) => {
     await use(new BrowserUtils(browser));
   },
+  idamUtils: async ({}, use) => {
+    await use(new IdamUtils());
+  },  
   lighthousePage: async ({ lighthousePort, page }, use, testInfo) => {
     // Prevent creating performance page if not needed
     if (testInfo.tags.includes("@performance")) {
