@@ -15,16 +15,17 @@ setup.describe("Set up users and retrieve tokens", () => {
    * This token is used to authorise user creation and is stored as an 
    * environment variable (`CREATE_USER_BEARER_TOKEN`) for reuse across the test suite.
    */
-  setup.beforeAll("Retrieve IDAM token for user creation", async ({ idamUtils }) => {
-    const token = await idamUtils.generateIdamToken(
-      "client_credentials",
-      "prl-cos-api",
-      process.env.IDAM_SECRET as string, //make sure your client seceret is being pulled from azure key vault
-      "profile roles"
-    );
+  setup.beforeAll("Retrieve IDAM token for citizen user creation", async ({ idamUtils }) => {
+    const token = await idamUtils.generateIdamToken({
+      grantType: "client_credentials",
+      clientId: "prl-cos-api",
+      clientSecret: process.env.IDAM_SECRET as string, // Make sure your client secret is pulled correctly
+      scope: "profile roles"
+    });
+  
     process.env.CREATE_USER_BEARER_TOKEN = token;
   });
-
+  
   /**
    * Signs in as a citizen user and sets the required cookies.
    */
