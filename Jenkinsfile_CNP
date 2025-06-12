@@ -12,7 +12,7 @@ def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
 withPipeline(type, product, component) {
   disableLegacyDeployment()
 
-  afterSuccess('build') {
+  afterSuccess('akschartsinstall') {
     yarnBuilder.yarn('playwright install')
     yarnBuilder.yarn('build')
   }
