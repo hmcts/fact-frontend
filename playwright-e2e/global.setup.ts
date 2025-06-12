@@ -54,7 +54,7 @@ setup.describe("Set up users and retrieve tokens", () => {
   setup("Set up judge user", async ({ page, config, idamPage, SessionUtils, cookieUtils }) => {
     const user = config.users.judge;
     if (SessionUtils.isSessionValid(user.sessionFile, user.cookieName!)) return;
-    await page.goto(config.urls.manageCaseBaseUrl); // Assuming this is correct
+    await page.goto(config.urls.manageCaseBaseUrl);
     await idamPage.login(user);
     await cookieUtils.addAnalyticsCookie(user);
   });
