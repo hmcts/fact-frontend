@@ -146,7 +146,8 @@
     "cross-spawn": ">=7.0.5",
     "@hmcts/info-provider/path-to-regexp": "0.1.12",
     "@npmcli/fs": "^4.0.0",
-    "formidable": "3.5.4"
+    "formidable": "3.5.4",
+    "brace-expansion": "4.0.1"
   },
   "packageManager": "yarn@4.9.1"
 }
