@@ -13,8 +13,7 @@ withPipeline(type, product, component) {
   disableLegacyDeployment()
 
   afterSuccess('build') {
-    yarnBuilder.yarn('build')
     yarnBuilder.yarn('playwright install')
+    yarnBuilder.yarn('build')
   }
-
 }
