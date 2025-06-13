@@ -25,15 +25,6 @@ setup.describe("Set up users and retrieve tokens", () => {
   
     process.env.CREATE_USER_BEARER_TOKEN = token;
   });
-  
-  /**
-   * Signs in as a citizen user and sets the required cookies.
-   */
-  setup("Set up citizen user", async ({ page, config, idamPage, cookieUtils }) => {
-    await page.goto(config.urls.citizenUrl);
-    await idamPage.login(config.users.citizen);
-    await cookieUtils.addAnalyticsCookie(config.users.citizen);
-  });
 
   /**
    * Signs in as a case manager and stores session data.

@@ -13,6 +13,7 @@ import { chromium, Page } from "playwright/test";
 import { config, Config } from "./config.utils";
 import { CookieUtils } from "./cookie.utils";
 import { ValidatorUtils } from "./validator.utils";
+import { CitizenUserUtils } from "./citizen-user.utils";
 
 export interface UtilsFixtures {
   config: Config;
@@ -26,6 +27,7 @@ export interface UtilsFixtures {
   lighthouseUtils: LighthouseUtils;
   lighthousePage: Page;
   idamUtils: IdamUtils;
+  citizenUserUtils: CitizenUserUtils;
 }
 
 export const utilsFixtures = {
@@ -58,8 +60,11 @@ export const utilsFixtures = {
   },
   idamUtils: async ({}, use) => {
     await use(new IdamUtils());
-  },  
-  lighthousePage: async ({ lighthousePort, page }, use, testInfo) => {
+  },
+  citizenUserUtils: async ({}, use) => {
+    await use(CitizenUserUtils);
+  },
+  lighthousePage: async ({ lighthousePort, page, SessionUtils }, use, testInfo) => {
     // Prevent creating performance page if not needed
     if (testInfo.tags.includes("@performance")) {
       // Lighthouse opens a new page and as playwright doesn't share context we need to
@@ -70,7 +75,7 @@ export const utilsFixtures = {
       });
       // Using the cookies from global setup, inject to the new browser
       await context.addCookies(
-        SessionUtils.getCookies(config.users.citizen.sessionFile)
+        SessionUtils.getCookies(config.users.caseManager.sessionFile)
       );
       // Provide the page to the test
       await use(context.pages()[0]);
@@ -78,5 +83,5 @@ export const utilsFixtures = {
     } else {
       await use(page);
     }
-  },
+  }
 };
