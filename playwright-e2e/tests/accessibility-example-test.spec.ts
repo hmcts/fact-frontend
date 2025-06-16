@@ -1,7 +1,6 @@
 import { expect, test } from "../fixtures"; // Import from the centralized fixtures.ts
 
-
-test.describe("Case List Tests - Citizen @cui", () => {
+test.describe("Accessibility Tests - Citizen @cui", () => {
   test.beforeEach(async ({ page, config, citizenUserUtils, idamUtils, idamPage }) => {
     const user = await citizenUserUtils.createUser({ idamUtils });
     await page.goto(config.urls.citizenUrl);

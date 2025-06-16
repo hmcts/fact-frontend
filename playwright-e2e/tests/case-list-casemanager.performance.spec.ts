@@ -1,4 +1,4 @@
-import { expect, test } from "../fixtures";
+import { test } from "../fixtures";
 
 /* Because lighthouse has to use a new page to run its tests
  * the new page has to be passed to the test via a fixture (lighthousePage)

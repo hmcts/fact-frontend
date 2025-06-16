@@ -1,21 +1,21 @@
 import fs from "fs";
 import { Cookie } from "playwright-core";
-import { config, UserCredentials } from "./config.utils.ts";
+import { config} from "./config.utils.ts";
 
 export class CookieUtils {
-  public async addAnalyticsCookie(user: UserCredentials): Promise<void> {
-    /*
-    note: cookie names and values can be different between services to check for your service you can accept the
-    analytics cookies manually and then check the added cookie under Application -> Cookies in developer tools
-     */
-    if (user === config.users.citizen) {
-      await this.addCitizenAnalyticsCookie(user.sessionFile);
-    } else {
-      await this.addManageCasesAnalyticsCookie(user.sessionFile);
-    }
-  }
+  // public async addAnalyticsCookie(user: UserCredentials): Promise<void> {
+  //   /*
+  //   note: cookie names and values can be different between services to check for your service you can accept the
+  //   analytics cookies manually and then check the added cookie under Application -> Cookies in developer tools
+  //    */
+  //   if (user === config.users.citizen) {
+  //     await this.addCitizenAnalyticsCookie(user.sessionFile);
+  //   } else {
+  //     await this.addManageCasesAnalyticsCookie(user.sessionFile);
+  //   }
+  // }
 
-  private async addCitizenAnalyticsCookie(sessionPath: string): Promise<void> {
+  public async addCitizenAnalyticsCookie(sessionPath: string): Promise<void> {
     try {
       const domain = (config.urls.citizenUrl as string)
         .replace("https://", "")
@@ -37,7 +37,7 @@ export class CookieUtils {
     }
   }
 
-  private async addManageCasesAnalyticsCookie(
+  public async addManageCasesAnalyticsCookie(
     sessionPath: string
   ): Promise<void> {
     try {
