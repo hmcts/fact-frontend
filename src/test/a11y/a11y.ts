@@ -69,7 +69,7 @@ function ensurePageCallWillSucceed(url: string): Promise<void> {
 
 function runPallyWith(url: string, actions: string[]): Pa11yResult {
   return pa11y(config.TEST_URL + url, {
-    hideElements: '.govuk-footer__licence-logo, .govuk-header__logotype-crown',
+    hideElements: '.govuk-footer__licence-logo, .govuk-header__logotype, .govuk-footer__crown',
     actions: actions
   });
 }
