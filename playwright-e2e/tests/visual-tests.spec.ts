@@ -11,8 +11,8 @@ import { config } from "../utils";
 */
 
 test.describe("Visual Tests (citizen user) @visual", () => {
-  test.beforeEach(async ({ page, config, citizenUserUtils, idamUtils, idamPage }) => {
-    const user = await citizenUserUtils.createUser({ idamUtils });
+  test.beforeEach(async ({ page, config, citizenUserUtils, idamPage }) => {
+    const user = await citizenUserUtils.createUser();
     await page.goto(config.urls.citizenUrl);
     await idamPage.login({
       username: user.email,

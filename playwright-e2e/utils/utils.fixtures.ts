@@ -61,9 +61,9 @@ export const utilsFixtures = {
   idamUtils: async ({}, use) => {
     await use(new IdamUtils());
   },
-  citizenUserUtils: async ({}, use) => {
-    await use(new CitizenUserUtils());
-  },
+  citizenUserUtils: async ({ idamUtils }, use) => {
+    await use(new CitizenUserUtils(idamUtils));
+  },  
   lighthousePage: async ({ lighthousePort, page, SessionUtils }, use, testInfo) => {
     // Prevent creating performance page if not needed
     if (testInfo.tags.includes("@performance")) {

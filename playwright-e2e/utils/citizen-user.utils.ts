@@ -1,3 +1,4 @@
+import { IdamUtils } from "@hmcts/playwright-common";
 import { v4 as uuidv4 } from "uuid";
 
 type UserInfo = {
@@ -9,18 +10,22 @@ type UserInfo = {
 };
 
 export class CitizenUserUtils {
-  public async createUser({ idamUtils }): Promise<UserInfo> {
-    const token = process.env.CREATE_USER_BEARER_TOKEN as string; // Bearer token was generated in global.setup.ts and is pulled via environment variable.
-    const password = process.env.IDAM_CITIZEN_USER_PASSWORD as string; // Password is securely pulled from Azure Key Vault via environment variable.
+  private idamUtils: IdamUtils;
+
+  constructor(idamUtils: IdamUtils) {
+    this.idamUtils = idamUtils;
+  }
+
+  public async createUser(): Promise<UserInfo> {
+    const token = process.env.CREATE_USER_BEARER_TOKEN as string;
+    const password = process.env.IDAM_CITIZEN_USER_PASSWORD as string;
     const uniqueId = uuidv4();
-    // You can change these user details (email, forename, surname, etc.) to suit your needs.
-    // The uniqueId ensures each user is distinct, minimising overlap when creating multiple test users.
+
     const email = `TEST_PRL_USER_citizen.${uniqueId}@test.local`;
     const forename = "fn_" + uniqueId.split("-")[0];
     const surname = "sn_" + uniqueId.split("-")[1];
-  
-    //Create a citizen user using IdamUtils fixture in playwright common library
-    const user = await idamUtils.createUser({
+
+    const user = await this.idamUtils.createUser({
       bearerToken: token,
       password,
       user: {
