@@ -10,11 +10,7 @@ type UserInfo = {
 };
 
 export class CitizenUserUtils {
-  private idamUtils: IdamUtils;
-
-  constructor(idamUtils: IdamUtils) {
-    this.idamUtils = idamUtils;
-  }
+  constructor(private idamUtils: IdamUtils) {}
 
   public async createUser(): Promise<UserInfo> {
     const token = process.env.CREATE_USER_BEARER_TOKEN as string;
