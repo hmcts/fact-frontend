@@ -26,7 +26,7 @@ const logger = Logger.getLogger('app');
 export const app = express();
 app.locals.ENV = env;
 
-app.use(favicon(path.join(__dirname, '/public/assets/images/favicon.ico')));
+app.use(favicon(path.join(__dirname, '/public/assets/rebrand/images/favicon.ico')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
