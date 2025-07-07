@@ -85,7 +85,7 @@
     "@typescript-eslint/parser": "^5.62.0",
     "allure-commandline": "^2.34.0",
     "allure-playwright": "^2.15.1",
-    "babel-eslint": "^10.1.0",
+    "@babel/eslint-parser": "^7.11.0",
     "babel-loader": "^9.2.1",
     "brace-expansion": "4.0.1",
     "chai": "^4.5.0",
