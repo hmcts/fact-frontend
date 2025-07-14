@@ -1,41 +1,56 @@
+# Node modules and build output
 node_modules/
+dist/
+public/
+coverage/
 .nyc_output
 .sass-cache
 *.css
 
-./functional-output/*
-functional-output
-
+# Editor and IDE files
 .idea/
 *.iml
-
-*swp
-*log
+.project
+.settings/
+.vscode/*
 .DS_Store
+*.swp
+*.log
+*.lock.hcl
+.sessions/
 
+# Test and report output
+functional-output/
+functional-output/*
+mochawesome-report/
+npm-debug.log.*
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+crash.log
+
+# Yarn v2
+.yarn/*
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Yarn v2 zero-install (keep these)
+!.pnp.cjs
+!.yarn/unplugged
+!.yarn/plugins
+!.yarn/cache
+!.yarn/releases
+
+# Environment
+.env
+
+# Frontend static assets
 src/main/public/img/lib/*
 src/main/public/js/lib/**/*.js
 src/main/public/stylesheets/lib/*
 src/main/views/govuk
 
+# Node RPM packaging
 node-rpm-packaging/
-mochawesome-report/
-npm-debug.log.*
-
-.project
-.settings/
-dist/
-public/
-/coverage/
-
-# yarn v2
- .yarn/*
- .yarn/build-state.yml
- .yarn/install-state.gz
- .pnp.*
-
- # yarn v2 zero-install
- !.pnp.cjs
- !.yarn/unplugged
- !.yarn/plugins
- !.yarn/cache
