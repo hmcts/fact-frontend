@@ -1,7 +1,6 @@
 import {
   AxeUtils,
   BrowserUtils,
-  IdamUtils,
   LighthouseUtils,
   LocaleUtils,
   SessionUtils,
@@ -11,7 +10,6 @@ import {
 import os from "os";
 import path from "path";
 import { chromium, Page } from "playwright/test";
-import { CitizenUserUtils } from "./citizen-user.utils";
 import { config, Config } from "./config.utils";
 import { CookieUtils } from "./cookie.utils";
 import { ValidatorUtils } from "./validator.utils";
@@ -27,8 +25,6 @@ export interface UtilsFixtures {
   browserUtils: BrowserUtils;
   lighthouseUtils: LighthouseUtils;
   lighthousePage: Page;
-  idamUtils: IdamUtils;
-  citizenUserUtils: CitizenUserUtils;
   localeUtils: LocaleUtils;
 }
 
@@ -59,16 +55,6 @@ export const utilsFixtures = {
   },
   browserUtils: async ({ browser }, use) => {
     await use(new BrowserUtils(browser));
-  },
-  idamUtils: async ({ config }, use) => {
-    // Set required env vars for IDAM
-    process.env.IDAM_WEB_URL = config.urls.idamWebUrl;
-    process.env.IDAM_TESTING_SUPPORT_URL = config.urls.idamTestingSupportUrl;
-
-    await use(new IdamUtils());
-  },
-  citizenUserUtils: async ({ idamUtils }, use) => {
-    await use(new CitizenUserUtils(idamUtils));
   },
   localeUtils: async ({ page }, use) => {
     await use(new LocaleUtils(page));
