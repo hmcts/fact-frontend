@@ -1,11 +1,9 @@
 import { expect, test } from "../fixtures";
-import { cookiesHeader } from "../page-objects/components/cookies.header";
 
 test.describe("Find a Court or Tribunal Landing Page", () => {
-  test.beforeEach(async ({ page, config }) => {
+  test.beforeEach(async ({ page, config, cookieUtils }) => {
     await page.goto(config.urls.testUrl);
-    const cookies = new cookiesHeader(page.locator('.govuk-cookie-banner__message'), page);
-    await cookies.acceptCookies();
+    await cookieUtils.acceptCookies(page);
   });
 
   test("Click Start Now button", async ({ factLandingPage }) => {
