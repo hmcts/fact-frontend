@@ -7,7 +7,7 @@ export interface UtilsFixtures {
   cookieUtils: CookiesUtils;
   lighthousePage: Page;
 }
-
+// eslint-disable-next-line no-empty-pattern
 export const utilsFixtures = {
   config: async ({}, use) => {
     await use(config);
