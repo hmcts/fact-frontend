@@ -1,5 +1,5 @@
-import { Page, expect } from "@playwright/test";
-import { Base } from "../base";
+import { Page, expect } from '@playwright/test';
+import { Base } from '../base';
 
 export class FactLandingOPage extends Base {
   //home landing page

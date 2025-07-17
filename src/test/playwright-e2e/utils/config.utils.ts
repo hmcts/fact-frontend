@@ -1,5 +1,5 @@
-import path from "path";
-import { fileURLToPath } from "url";
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 // This needs to be placed somewhere before attempting to access any environment variables
 
@@ -20,7 +20,7 @@ export interface Config {
 
 export const config: Config = {
   urls: {
-    testUrl: process.env.TEST_URL || "https://fact.aat.platform.hmcts.net/",
+    testUrl: process.env.TEST_URL || 'https://fact.aat.platform.hmcts.net/',
   },
 };
 

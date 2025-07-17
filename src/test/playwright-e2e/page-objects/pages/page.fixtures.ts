@@ -1,4 +1,4 @@
-import { FactLandingOPage } from "./landing-page.po";
+import { FactLandingOPage } from './landing-page.po';
 
 export interface PageFixtures {
   factLandingPage: FactLandingOPage;

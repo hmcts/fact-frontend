@@ -1,13 +1,13 @@
-import { Locator, Page } from "@playwright/test";
-import { expect } from "../../fixtures.ts";
+import { Locator, Page } from '@playwright/test';
+import { expect } from '../../fixtures.ts';
 
 export class cookiesHeader {
   readonly acceptCookiesButton = this.root.locator(
-    "button.cookie-banner-accept-button",
-    { hasText: "Accept additional cookies" },
+    'button.cookie-banner-accept-button',
+    { hasText: 'Accept additional cookies' },
   );
-  readonly hideMessageButton = this.root.getByRole("button", {
-    name: "Hide this message",
+  readonly hideMessageButton = this.root.getByRole('button', {
+    name: 'Hide this message',
   });
 
   constructor(
