@@ -39,3 +39,9 @@ public/
  !.yarn/unplugged
  !.yarn/plugins
  !.yarn/cache
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
