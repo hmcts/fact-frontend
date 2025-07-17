@@ -8,11 +8,11 @@ export interface UtilsFixtures {
   lighthousePage: Page;
 }
 export const utilsFixtures = {
-// eslint-disable-next-line no-empty-pattern
+  // eslint-disable-next-line no-empty-pattern
   config: async ({}, use) => {
     await use(config);
   },
-// eslint-disable-next-line no-empty-pattern
+  // eslint-disable-next-line no-empty-pattern
   cookieUtils: async ({}, use) => {
     await use(new CookiesUtils());
   },
