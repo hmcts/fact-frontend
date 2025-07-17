@@ -12,4 +12,3 @@ test.describe("Find a Court or Tribunal Landing Page", () => {
     await expect(factLandingPage.continueButton).toBeVisible();
   });
 });
-

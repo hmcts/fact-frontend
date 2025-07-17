@@ -14,5 +14,5 @@ export const utilsFixtures = {
   },
   cookieUtils: async ({}, use) => {
     await use(new CookiesUtils());
-  }
+  },
 };
