@@ -12,7 +12,7 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './src/test/playwright-e2e',
+  testDir: './',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -35,18 +35,25 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
+      name: 'smoke',
+      testMatch: ['src/test/smoke/*'],
+    },
+    {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+      testMatch: 'src/test/playwright-e2e/**/*.spec.ts',
     },
 
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
+      testMatch: 'src/test/playwright-e2e/**/*.spec.ts',
     },
 
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
+      testMatch: 'src/test/playwright-e2e/**/*.spec.ts',
     },
 
     /* Test against mobile viewports. */
