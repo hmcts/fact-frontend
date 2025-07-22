@@ -9,7 +9,7 @@ export class cookiesHeader {
     name: 'Hide this message',
   });
 
-  constructor(private root: Locator, private page: Page) {}
+  constructor(private root: Locator) {}
 
   async acceptCookies() {
     if (await this.acceptCookiesButton.isVisible()) {
