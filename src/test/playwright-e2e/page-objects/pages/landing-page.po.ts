@@ -1,5 +1,6 @@
 import { Page } from '@playwright/test';
 import { Base } from '../base';
+import { ContinueButtonComponent } from '../components/continue-button.component';
 
 export class FactLandingOPage extends Base {
   //home landing page
@@ -9,7 +10,7 @@ export class FactLandingOPage extends Base {
 
   //page option elements
   //'Do you know the name of the court or tribunal?'
-  readonly continueButton = this.page.locator('button.govuk-button:has-text("Continue")');
+  readonly continueButton = new ContinueButtonComponent(this.page);
 
   constructor(page: Page) {
     super(page);

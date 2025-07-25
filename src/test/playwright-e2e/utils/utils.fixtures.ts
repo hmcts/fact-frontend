@@ -1,4 +1,4 @@
-import { Page } from 'playwright/test';
+import { Page } from '@playwright/test';
 import { config, Config } from './config.utils';
 import { CookiesUtils } from './cookies.utils';
 

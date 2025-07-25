@@ -9,6 +9,6 @@ test.describe('Find a Court or Tribunal Landing Page', () => {
   test('Click Start Now button', async ({ factLandingPage }) => {
     await expect(factLandingPage.startNowButton).toBeVisible();
     await factLandingPage.startNowButton.click();
-    await expect(factLandingPage.continueButton).toBeVisible();
+    await factLandingPage.continueButton.assertVisible();
   });
 });
