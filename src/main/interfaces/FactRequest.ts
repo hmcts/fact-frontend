@@ -17,7 +17,9 @@ export interface FactRequest extends Request {
         'prefix-search': CourtResultsData;
         results: {};
       };
-      home: {};
+      home: {
+        feedbackSubmitted: boolean;
+      };
       'choose-action': {};
       template: {};
       'court-details': CourtDetailsData;

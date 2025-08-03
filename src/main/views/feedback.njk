@@ -12,14 +12,32 @@
 
 {% block content %}
 
-{% if errors %}
-  {{ govukErrorSummary({
-    titleText: "There is a problem",
-    errorList: [
-      { text: errorMessage, href: "#message" }
-    ]
-  }) }}
-{% endif %}
+  {% set messageError = null %}
+  {% set errorList = [] %}
+
+  {% if errors.message %}
+    {% set messageError = { text: errors.message } %}
+  {% endif %}
+
+  {% if messageError and emailError %}
+    {% set errorList = [
+      { text: messageError.text, href: "#message" },
+      { text: emailError.text, href: "#follow_up_email" }
+    ] %}
+  {% elif messageError %}
+    {% set errorList = [
+      { text: messageError.text, href: "#message" }
+    ] %}
+  {% else %}
+    {% set errorList = [] %}
+  {% endif %}
+
+  {% if errorList.length > 0 %}
+    {{ govukErrorSummary({
+      titleText: "There are one or more problems:",
+      errorList: errorList
+    }) }}
+  {% endif %}
 
 <form action="/feedback" method="post" novalidate>
   <div class="govuk-grid-row">
@@ -65,11 +83,7 @@
         ]
       }) }}
 
-      {% if errors and errorMessage %}
-        {% set messageError = { text: errorMessage } %}
-      {% else %}
-        {% set messageError = undefined %}
-      {% endif %}
+{# Safely define messageError if needed #}
 
       {{ govukTextarea({
         name: "message",
@@ -88,7 +102,8 @@
         id: "follow_up_email",
         name: "follow_up_email",
         type: "email",
-        autocomplete: "email"
+        autocomplete: "email",
+        value: formValues.follow_up_email
       }) }}
 
       {{ govukButton({
