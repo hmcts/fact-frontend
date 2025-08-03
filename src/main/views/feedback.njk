@@ -1,0 +1,101 @@
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% extends "template.njk" %}
+
+{% block pageTitle %}
+  Feedback
+{% endblock %}
+
+{% block content %}
+
+{% if errors %}
+  {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      { text: errorMessage, href: "#message" }
+    ]
+  }) }}
+{% endif %}
+
+<form action="/feedback" method="post" novalidate>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Tell us what you think!</h1>
+
+      <p class="govuk-body">
+        We'd really appreciate your feedback, but please note, we will not be able to respond to any specific comments or queries.
+      </p>
+      <p class="govuk-body">
+        If you have any queries about your case, please contact the service you require directly.
+      </p>
+
+      {{ govukRadios({
+        name: "user_type",
+        fieldset: {
+          legend: { text: "Are you:", isPageHeading: false, classes: "govuk-fieldset__legend--m" }
+        },
+        items: [
+          { value: "Member of public", text: "Member of public", checked: true },
+          { value: "Legal professional", text: "Legal professional" },
+          { value: "MoJ / HMCTS member of staff", text: "MoJ / HMCTS member of staff" },
+          { value: "Other", text: "Other (please specify)", conditional: {
+              html: govukInput({
+                id: "user_type_other",
+                name: "user_type_other",
+                type: "text",
+                classes: "govuk-!-width-two-thirds"
+              })
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        name: "found_info",
+        fieldset: {
+          legend: { text: "Did you find what you were looking for?", isPageHeading: false, classes: "govuk-fieldset__legend--m" }
+        },
+        items: [
+          { value: "true", text: "Yes", checked: true },
+          { value: "false", text: "No" }
+        ]
+      }) }}
+
+      {% if errors and errorMessage %}
+        {% set messageError = { text: errorMessage } %}
+      {% else %}
+        {% set messageError = undefined %}
+      {% endif %}
+
+      {{ govukTextarea({
+        name: "message",
+        id: "message",
+        label: { text: "Feedback message" },
+        hint: {
+          text: "If you have any feedback on how we could improve this service, please use the text box below. (Please make sure you do not include any personal or financial details)."
+        },
+        rows: 5,
+        errorMessage: messageError,
+        value: formValues.message
+      }) }}
+
+      {{ govukInput({
+        label: { text: "Email address (optional)" },
+        id: "follow_up_email",
+        name: "follow_up_email",
+        type: "email",
+        autocomplete: "email"
+      }) }}
+
+      {{ govukButton({
+        text: "Submit"
+      }) }}
+
+    </div>
+  </div>
+</form>
+{% endblock %}

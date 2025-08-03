@@ -20,6 +20,7 @@ import { AccessibilityStatementController } from '../../controllers/Accessibilit
 import { CookiesController } from '../../controllers/CookiesController';
 import { NotFoundPageController } from '../../controllers/NotFoundPageController';
 import {CourtPrefixSearchController} from '../../controllers/search/CourtPrefixSearchController';
+import {FeedbackController} from "../../controllers/FeedbackController";
 
 const { Logger } = require('@hmcts/nodejs-logging');
 const logger = Logger.getLogger('app');
@@ -33,6 +34,7 @@ export class Container {
       api: asClass(FactApi),
       serviceAreaRedirect: asClass(ServiceAreaRedirect),
       homeController: asClass(HomeController),
+      feedbackController: asClass(FeedbackController),
       accessibilityStatementController: asClass(AccessibilityStatementController),
       cookiesController: asClass(CookiesController),
       searchOptionController: asClass(SearchOptionController),
