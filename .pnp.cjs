@@ -8235,16 +8235,6 @@ const RAW_RUNTIME_STATE =
           ["proxy-from-env", "npm:1.1.0"]\
         ],\
         "linkType": "HARD"\
-      }],\
-      ["npm:1.8.3", {\
-        "packageLocation": "./.yarn/cache/axios-npm-1.8.3-b472059d00-050f911cad.zip/node_modules/axios/",\
-        "packageDependencies": [\
-          ["axios", "npm:1.8.3"],\
-          ["follow-redirects", "virtual:64966324acb1c9e829d59ac6bca19b45b43dc1234d7283c5d2bb20566c18be5fa16a88d38b39ab3c3bd238b9a4c2a56d68914ca1163a12899a78f10804e91e91#npm:1.15.9"],\
-          ["form-data", "npm:4.0.2"],\
-          ["proxy-from-env", "npm:1.1.0"]\
-        ],\
-        "linkType": "HARD"\
       }]\
     ]],\
     ["b4a", [\
@@ -9695,7 +9685,7 @@ const RAW_RUNTIME_STATE =
           ["@xmldom/xmldom", "npm:0.9.8"],\
           ["acorn", "npm:8.14.1"],\
           ["arrify", "npm:3.0.0"],\
-          ["axios", "npm:1.8.3"],\
+          ["axios", "npm:1.11.0"],\
           ["chalk", "npm:4.1.2"],\
           ["cheerio", "npm:1.0.0"],\
           ["codeceptjs", "npm:3.7.3"],\
