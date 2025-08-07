@@ -12,8 +12,25 @@
 
 {% block content %}
 
+  {% if errors.general %}
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+        {
+          text: "There has been a problem submitting your feedback. Please try again at a later point. " +
+            "The administration team has been made aware of this problem."
+        }
+      ]
+    }) }}
+  {% endif %}
+
   {% set messageError = null %}
+  {% set emailError = null %}
   {% set errorList = [] %}
+
+  {% if errors.email %}
+    {% set emailError = { text: errors.email } %}
+  {% endif %}
 
   {% if errors.message %}
     {% set messageError = { text: errors.message } %}
@@ -27,6 +44,10 @@
   {% elif messageError %}
     {% set errorList = [
       { text: messageError.text, href: "#message" }
+    ] %}
+  {% elif emailError %}
+    {% set errorList = [
+      { text: emailError.text, href: "#follow_up_email" }
     ] %}
   {% else %}
     {% set errorList = [] %}
@@ -103,6 +124,7 @@
         name: "follow_up_email",
         type: "email",
         autocomplete: "email",
+        errorMessage: emailError,
         value: formValues.follow_up_email
       }) }}
 

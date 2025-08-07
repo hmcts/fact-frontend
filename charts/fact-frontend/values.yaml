@@ -10,9 +10,11 @@ nodejs:
       resourceGroup: fact
       secrets:
         - AppInsightsInstrumentationKey
+        - feedback-api-key
   ingressHost: fact.{{ .Values.global.environment }}.platform.hmcts.net
   image: 'hmctspublic.azurecr.io/fact/frontend:latest'
   environment:
+    FEEDBACK_URL: "https://notify-feedback-processor.azurewebsites.net"
     FRONTEND_URL: "https://fact.{{ .Values.global.environment }}.platform.hmcts.net"
     FACT_API_URL: "http://fact-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal"
     IMAGE_BASE_URL: "https://fact{{ .Values.global.environment }}.blob.core.windows.net/images"
