@@ -20,7 +20,7 @@ import { AccessibilityStatementController } from '../../controllers/Accessibilit
 import { CookiesController } from '../../controllers/CookiesController';
 import { NotFoundPageController } from '../../controllers/NotFoundPageController';
 import {CourtPrefixSearchController} from '../../controllers/search/CourtPrefixSearchController';
-import {FeedbackController} from "../../controllers/FeedbackController";
+import {FeedbackController} from '../../controllers/FeedbackController';
 
 const { Logger } = require('@hmcts/nodejs-logging');
 const logger = Logger.getLogger('app');
