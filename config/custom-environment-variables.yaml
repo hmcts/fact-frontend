@@ -1,9 +1,14 @@
 services:
+  feedback:
+    url: FEEDBACK_URL
   frontend:
     url: FRONTEND_URL
   api:
     url: FACT_API_URL
   image-store:
     url: IMAGE_BASE_URL
+feedback:
+  api:
+    key: FEEDBACK_API_KEY
 appInsights:
   instrumentationKey: APPINSIGHTS_KEY
