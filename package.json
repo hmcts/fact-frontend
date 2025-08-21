@@ -124,7 +124,7 @@
     "webpack-node-externals": "^3.0.0"
   },
   "resolutions": {
-    "@babel/runtime": "7.28.2",
+    "@babel/runtime": "7.28.3",
     "sass-lint/merge": "2.1.1",
     "uglifyjs-webpack-plugin/serialize-javascript": "3.1.0",
     "@hmcts/nodejs-logging/moment": ">=2.29.4",
