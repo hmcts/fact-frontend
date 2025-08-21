@@ -1,24 +1,21 @@
-import {FactApi} from '../../utils/FactApi';
-import {FactRequest} from '../../interfaces/FactRequest';
-import {Response} from 'express';
-import {isEmpty} from '../../utils/validation';
-import {cloneDeep} from 'lodash';
+import { FactApi } from '../../utils/FactApi';
+import { FactRequest } from '../../interfaces/FactRequest';
+import { Response } from 'express';
+import { isEmpty } from '../../utils/validation';
+import { cloneDeep } from 'lodash';
 import autobind from 'autobind-decorator';
-import {CourtSearchQuery} from '../../interfaces/CourtSearchData';
-import {CourtResultsData} from '../../interfaces/CourtResultsData';
+import { CourtSearchQuery } from '../../interfaces/CourtSearchData';
+import { CourtResultsData } from '../../interfaces/CourtResultsData';
 
 @autobind
 export class CourtPrefixSearchController {
-  constructor(
-    private readonly api: FactApi
-  ) {
-  }
+  constructor(private readonly api: FactApi) {}
   /**
    * GET search/prefix-search
    * @returns renders the court prefix search page when searching with prefix
    */
   public async get(req: FactRequest, res: Response) {
-    const { error, prefix, noResults }  = req.query as CourtSearchQuery;
+    const { error, prefix, noResults } = req.query as CourtSearchQuery;
     const hasError = !isEmpty(error);
     const hasNoResults: boolean = noResults === 'true';
     const data: CourtResultsData = {
@@ -27,12 +24,15 @@ export class CourtPrefixSearchController {
       prefix: prefix,
       error: hasError,
       hasNoResults: hasNoResults,
-      results: []
+      results: [],
     };
     if (hasError) {
       data.errorType = error;
     }
-    data.results = prefix && prefix.length == 1 ? await this.api.courtPrefixSearch(prefix): [];
+    data.results =
+      prefix && prefix.length == 1
+        ? await this.api.courtPrefixSearch(prefix)
+        : [];
     res.render('search/prefix-search', data);
   }
 }

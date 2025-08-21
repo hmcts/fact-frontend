@@ -9,4 +9,4 @@ export type PostcodeSearchQuery = {
   error: string;
   postcode: string;
   noResults: string;
-}
+};

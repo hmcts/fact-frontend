@@ -6,12 +6,12 @@ import { PageData } from '../../../../../main/interfaces/PageData';
 const i18n = {
   'postcode-search': {
     hint: '{serviceArea}',
-    errorType: ''
-  }
+    errorType: '',
+  },
 };
 
 describe('Service Postcode Search Controller', () => {
-  const response: any = { ServiceAreaResult: { name: 'serviceAreaName'} };
+  const response: any = { ServiceAreaResult: { name: 'serviceAreaName' } };
   const api: any = {
     getServiceArea: async () => response.ServiceAreaResult,
   };
@@ -20,10 +20,10 @@ describe('Service Postcode Search Controller', () => {
   test('Should render the postcode search page when searching with postcode only', async () => {
     const req = mockRequest(i18n);
     req.query = {
-      error: ''
+      error: '',
     };
     req.params = {
-      postcode: 'ABC1234'
+      postcode: 'ABC1234',
     };
     const res = mockResponse();
     await controller.getCourtsByPostcodeOnly(req, res);
@@ -43,12 +43,12 @@ describe('Service Postcode Search Controller', () => {
   test('Should render the postcode search page', async () => {
     const req = mockRequest(i18n);
     req.query = {
-      error: ''
+      error: '',
     };
     req.params = {
       service: 'money',
       serviceArea: 'tax',
-      action: 'nearest'
+      action: 'nearest',
     };
     const res = mockResponse();
     await controller.get(req, res);
@@ -60,7 +60,7 @@ describe('Service Postcode Search Controller', () => {
       hasNoResults: false,
       serviceAreaIsChildcare: false,
       postcode: undefined,
-      hint: 'serviceareaname'
+      hint: 'serviceareaname',
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
@@ -97,7 +97,7 @@ describe('Service Postcode Search Controller', () => {
     req.params = {
       service: 'money',
       serviceArea: 'tax',
-      action: 'nearest'
+      action: 'nearest',
     };
     const res = mockResponse();
     await controller.get(req, res);
@@ -110,7 +110,7 @@ describe('Service Postcode Search Controller', () => {
       hasNoResults: false,
       serviceAreaIsChildcare: false,
       postcode: undefined,
-      hint: 'serviceareaname'
+      hint: 'serviceareaname',
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
@@ -118,10 +118,10 @@ describe('Service Postcode Search Controller', () => {
   test('Should render the postcode search page with invalid postcode error when searching by postcode', async () => {
     const req = mockRequest(i18n);
     req.query = {
-      error: 'invalidPostcode'
+      error: 'invalidPostcode',
     };
     req.params = {
-      postcode: 'ABC1234'
+      postcode: 'ABC1234',
     };
     const res = mockResponse();
     await controller.getCourtsByPostcodeOnly(req, res);
@@ -142,12 +142,12 @@ describe('Service Postcode Search Controller', () => {
   test('Should render the postcode search page with invalid postcode error', async () => {
     const req = mockRequest(i18n);
     req.query = {
-      error: 'invalidPostcode'
+      error: 'invalidPostcode',
     };
     req.params = {
       service: 'money',
       serviceArea: 'tax',
-      action: 'nearest'
+      action: 'nearest',
     };
     const res = mockResponse();
     await controller.get(req, res);
@@ -160,7 +160,7 @@ describe('Service Postcode Search Controller', () => {
       hasNoResults: false,
       serviceAreaIsChildcare: false,
       postcode: undefined,
-      hint: 'serviceareaname'
+      hint: 'serviceareaname',
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
@@ -168,10 +168,10 @@ describe('Service Postcode Search Controller', () => {
   test('Should render the postcode search page with scottish postcode error when searching by postcode', async () => {
     const req = mockRequest(i18n);
     req.query = {
-      error: 'scottishPostcode'
+      error: 'scottishPostcode',
     };
     req.params = {
-      postcode: 'ABC1234'
+      postcode: 'ABC1234',
     };
     const res = mockResponse();
     await controller.getCourtsByPostcodeOnly(req, res);
@@ -192,12 +192,12 @@ describe('Service Postcode Search Controller', () => {
   test('Should render the postcode search page with scottish postcode error', async () => {
     const req = mockRequest(i18n);
     req.query = {
-      error: 'scottishPostcode'
+      error: 'scottishPostcode',
     };
     req.params = {
       service: 'money',
       serviceArea: 'tax',
-      action: 'nearest'
+      action: 'nearest',
     };
     const res = mockResponse();
     await controller.get(req, res);
@@ -210,7 +210,7 @@ describe('Service Postcode Search Controller', () => {
       hasNoResults: false,
       serviceAreaIsChildcare: false,
       postcode: undefined,
-      hint: 'serviceareaname'
+      hint: 'serviceareaname',
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
@@ -218,10 +218,10 @@ describe('Service Postcode Search Controller', () => {
   test('Should render the postcode search page with scottish children postcode error when searching by postcode', async () => {
     const req = mockRequest(i18n);
     req.query = {
-      error: 'scottishChildrenPostcode'
+      error: 'scottishChildrenPostcode',
     };
     req.params = {
-      postcode: 'ABC1234'
+      postcode: 'ABC1234',
     };
     const res = mockResponse();
     await controller.getCourtsByPostcodeOnly(req, res);
@@ -242,25 +242,26 @@ describe('Service Postcode Search Controller', () => {
   test('Should render the postcode search page with scottish children postcode error', async () => {
     const req = mockRequest(i18n);
     req.query = {
-      error: 'scottishChildrenPostcode'
+      error: 'scottishChildrenPostcode',
     };
     req.params = {
       service: 'childcare-and-parenting',
       serviceArea: 'childcare-arrangements',
-      action: 'nearest'
+      action: 'nearest',
     };
     const res = mockResponse();
     await controller.get(req, res);
     const expectedData: PageData = {
       ...i18n['postcode-search'],
       path: '/search-by-postcode',
-      actionUrl: '/services/childcare-and-parenting/childcare-arrangements/nearest/courts/near',
+      actionUrl:
+        '/services/childcare-and-parenting/childcare-arrangements/nearest/courts/near',
       error: true,
       errorType: 'scottishChildrenPostcode',
       hasNoResults: false,
       serviceAreaIsChildcare: true,
       postcode: undefined,
-      hint: 'serviceareaname'
+      hint: 'serviceareaname',
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
@@ -268,10 +269,10 @@ describe('Service Postcode Search Controller', () => {
   test('Should render the postcode search page with northern ireland postcode error when searching by postcode', async () => {
     const req = mockRequest(i18n);
     req.query = {
-      error: 'northernIrelandPostcode'
+      error: 'northernIrelandPostcode',
     };
     req.params = {
-      postcode: 'ABC1234'
+      postcode: 'ABC1234',
     };
     const res = mockResponse();
     await controller.getCourtsByPostcodeOnly(req, res);
@@ -292,12 +293,12 @@ describe('Service Postcode Search Controller', () => {
   test('Should render the postcode search page with northern ireland postcode error', async () => {
     const req = mockRequest(i18n);
     req.query = {
-      error: 'northernIrelandPostcode'
+      error: 'northernIrelandPostcode',
     };
     req.params = {
       service: 'money',
       serviceArea: 'tax',
-      action: 'documents'
+      action: 'documents',
     };
     const res = mockResponse();
     await controller.get(req, res);
@@ -310,7 +311,7 @@ describe('Service Postcode Search Controller', () => {
       hasNoResults: false,
       serviceAreaIsChildcare: false,
       postcode: undefined,
-      hint: 'serviceareaname'
+      hint: 'serviceareaname',
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });
@@ -319,7 +320,7 @@ describe('Service Postcode Search Controller', () => {
     const req = mockRequest(i18n);
     req.query = {
       postcode: 'E1 8DY',
-      noResults: 'true'
+      noResults: 'true',
     };
     req.params = {
       postcode: 'E1 8DY',
@@ -343,12 +344,12 @@ describe('Service Postcode Search Controller', () => {
     const req = mockRequest(i18n);
     req.query = {
       postcode: 'E1 8DY',
-      noResults: 'true'
+      noResults: 'true',
     };
     req.params = {
       service: 'money',
       serviceArea: 'tax',
-      action: 'nearest'
+      action: 'nearest',
     };
     const res = mockResponse();
     await controller.get(req, res);
@@ -360,7 +361,7 @@ describe('Service Postcode Search Controller', () => {
       hasNoResults: true,
       serviceAreaIsChildcare: false,
       postcode: 'E1 8DY',
-      hint: 'serviceareaname'
+      hint: 'serviceareaname',
     };
     expect(res.render).toBeCalledWith('postcode-search', expectedData);
   });

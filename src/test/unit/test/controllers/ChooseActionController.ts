@@ -24,7 +24,9 @@ describe('Choose Action Controller', () => {
     };
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services/' + req.body.chooseAction);
+    expect(res.redirect).toHaveBeenCalledWith(
+      '/services/' + req.body.chooseAction,
+    );
   });
 
   test('Should redirect to the Choose Area of Law page when document-court is selected', async () => {
@@ -34,7 +36,9 @@ describe('Choose Action Controller', () => {
     };
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services/' + req.body.chooseAction);
+    expect(res.redirect).toHaveBeenCalledWith(
+      '/services/' + req.body.chooseAction,
+    );
   });
 
   test('Should redirect to the Choose Area of Law page when update-court is selected', async () => {
@@ -44,7 +48,9 @@ describe('Choose Action Controller', () => {
     };
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services/' + req.body.chooseAction);
+    expect(res.redirect).toHaveBeenCalledWith(
+      '/services/' + req.body.chooseAction,
+    );
   });
 
   test('Should redirect to the Choose Area of Law page when not-listed is selected', async () => {
@@ -54,7 +60,9 @@ describe('Choose Action Controller', () => {
     };
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services/' + req.body.chooseAction);
+    expect(res.redirect).toHaveBeenCalledWith(
+      '/services/' + req.body.chooseAction,
+    );
   });
 
   test('Should render Choose Action page with errors if no data has been entered', async () => {

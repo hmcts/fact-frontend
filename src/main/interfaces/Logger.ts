@@ -1,4 +1,3 @@
-
 export interface Logger {
   silly(arg: any): void;
   debug(arg: any): void;
@@ -11,4 +10,3 @@ export interface Logger {
     message: any;
   }): void;
 }
-

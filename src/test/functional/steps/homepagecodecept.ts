@@ -12,7 +12,7 @@ export const iAmOnPage = (text: string): void => {
 
 Given('I am on FACT homepage {string}', iAmOnPage);
 
-Then('I expect the page header to be {string}', async function(title: string) {
+Then('I expect the page header to be {string}', async function (title: string) {
   const pageTitle = await I.grabTitle();
   expect(pageTitle).equal(title);
 });

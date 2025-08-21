@@ -13,7 +13,7 @@
     "build:prod": "NODE_ENV=production yarn webpack --mode production --config webpack.config.js",
     "test": "jest",
     "test:coverage": "jest --coverage -c jest.coverage.config.js",
-    "test:a11y": "echo 'nope' && exit 0",
+    "test:a11y": "TS_NODE_TRANSPILE_ONLY=1 node -r ts-node/register -r tsconfig-paths/register src/test/a11y-axecore/gen-routes.ts && playwright test a11y-axecore/a11y-routes-manifest.spec.ts",
     "test:pa11y": "NODE_TLS_REJECT_UNAUTHORIZED=0 jest -c jest.a11y.config.js --maxWorkers 15",
     "sonar-scan": "sonar-scanner",
     "fortifyScan": "./java/gradlew -p java fortifyScan",
@@ -45,6 +45,7 @@
     "applicationinsights": "^2.9.7",
     "autobind-decorator": "^2.4.0",
     "awilix": "^7.0.3",
+    "axe-html-reporter": "^2.2.11",
     "axios": "1.11.0",
     "cacache": "^19.0.1",
     "config": "^3.3.12",
@@ -69,6 +70,7 @@
     "typescript": "^4.9.5"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
     "@babel/core": "^7.27.1",
     "@babel/eslint-parser": "^7.11.0",
     "@babel/preset-env": "^7.27.2",

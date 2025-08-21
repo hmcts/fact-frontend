@@ -8,10 +8,7 @@ import { cloneDeep } from 'lodash';
 
 @autobind
 export class ChooseServiceController {
-
-  constructor(
-    private readonly api: FactApi
-  ) { }
+  constructor(private readonly api: FactApi) {}
   /**
    * GET /services
    * @returns gets the service area data.
@@ -53,7 +50,9 @@ export class ChooseServiceController {
     } else {
       const action = req.params.action;
       const serviceChosen = req.body.chooseService;
-      return res.redirect('/services/' + serviceChosen + '/service-areas/' + action);
+      return res.redirect(
+        '/services/' + serviceChosen + '/service-areas/' + action,
+      );
     }
   }
 }

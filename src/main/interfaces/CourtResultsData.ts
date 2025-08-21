@@ -1,4 +1,4 @@
-import {PageData} from './PageData';
+import { PageData } from './PageData';
 
 export interface CourtResultsData extends PageData {
   results: CourtReference[] | [];

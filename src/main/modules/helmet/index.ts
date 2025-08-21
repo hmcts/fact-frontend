@@ -85,7 +85,12 @@ export class Helmet {
     app.use(
       helmet.contentSecurityPolicy({
         directives: {
-          connectSrc: [self, googleAnalyticsDomain, doubleclick, 'https://*.dynatrace.com'],
+          connectSrc: [
+            self,
+            googleAnalyticsDomain,
+            doubleclick,
+            'https://*.dynatrace.com',
+          ],
           defaultSrc: ["'none'"],
           manifestSrc: [self],
           fontSrc: [self, 'data:', 'https://fonts.gstatic.com'],
@@ -108,7 +113,12 @@ export class Helmet {
             "'unsafe-eval'",
             'https://*.dynatrace.com',
           ],
-          styleSrc: [self, ...tagManager, "'unsafe-inline'", 'https://fonts.googleapis.com'],
+          styleSrc: [
+            self,
+            ...tagManager,
+            "'unsafe-inline'",
+            'https://fonts.googleapis.com',
+          ],
         },
       }),
     );

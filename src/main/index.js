@@ -1,20 +1,26 @@
 import './assets/scss/main.scss';
-import {initAll} from 'govuk-frontend';
+import { initAll } from 'govuk-frontend';
 import cookieManager from '@hmcts/cookie-manager';
 
 cookieManager.on('UserPreferencesLoaded', (preferences) => {
   const dataLayer = window.dataLayer || [];
-  dataLayer.push({'event': 'Cookie Preferences', 'cookiePreferences': preferences});
+  dataLayer.push({
+    event: 'Cookie Preferences',
+    cookiePreferences: preferences,
+  });
 });
 
 cookieManager.on('UserPreferencesSaved', (preferences) => {
   const dataLayer = window.dataLayer || [];
   const dtrum = window.dtrum;
 
-  dataLayer.push({'event': 'Cookie Preferences', 'cookiePreferences': preferences});
+  dataLayer.push({
+    event: 'Cookie Preferences',
+    cookiePreferences: preferences,
+  });
 
-  if(dtrum !== undefined) {
-    if(preferences.apm === 'on') {
+  if (dtrum !== undefined) {
+    if (preferences.apm === 'on') {
       dtrum.enable();
       dtrum.enableSessionReplay();
     } else {
@@ -39,31 +45,16 @@ cookieManager.init({
     {
       categoryName: 'essential',
       optional: false,
-      cookies: [
-        'i18next',
-        'fact-cookie-preferences',
-        '_oauth2_proxy'
-      ]
+      cookies: ['i18next', 'fact-cookie-preferences', '_oauth2_proxy'],
     },
     {
       categoryName: 'analytics',
-      cookies: [
-        '_ga',
-        '_gid',
-        '_gat_UA-'
-      ]
+      cookies: ['_ga', '_gid', '_gat_UA-'],
     },
     {
       categoryName: 'apm',
-      cookies: [
-        'dtCookie',
-        'dtLatC',
-        'dtPC',
-        'dtSa',
-        'rxVisitor',
-        'rxvt'
-      ]
-    }
-  ]
+      cookies: ['dtCookie', 'dtLatC', 'dtPC', 'dtSa', 'rxVisitor', 'rxvt'],
+    },
+  ],
 });
 initAll();

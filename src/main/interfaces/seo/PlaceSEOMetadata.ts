@@ -2,16 +2,16 @@ export interface ThingSEOMetadata {
   '@context': string;
   '@type': string;
   '@id': string;
-  'name': string;
+  name: string;
 }
 
 export interface PlaceSEOMetadata extends ThingSEOMetadata {
-  'image': string[];
-  'address': {
+  image: string[];
+  address: {
     '@type': string;
-    'streetAddress': string;
-    'addressLocality': string;
-    'postalCode': string;
-    'addressCountry': string;
+    streetAddress: string;
+    addressLocality: string;
+    postalCode: string;
+    addressCountry: string;
   };
 }

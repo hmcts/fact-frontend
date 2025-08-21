@@ -1,6 +1,6 @@
 import { PlaceSEOMetadata } from '../interfaces/seo/PlaceSEOMetadata';
 import { CourtDetailsResult } from '../interfaces/CourtDetailsData';
-import {hasProperty, isEmpty} from './validation';
+import { hasProperty, isEmpty } from './validation';
 import config from 'config';
 
 /**
@@ -10,18 +10,18 @@ import config from 'config';
 const generateAddressStruct = (address: any): any => {
   const addressStruct: any = {
     '@type': 'PostalAddress',
-    addressCountry: 'GB'
+    addressCountry: 'GB',
   };
 
-  if(hasProperty(address, 'address_lines')) {
+  if (hasProperty(address, 'address_lines')) {
     addressStruct.streetAddress = address.address_lines.join(', ');
   }
 
-  if(hasProperty(address, 'town')) {
+  if (hasProperty(address, 'town')) {
     addressStruct.addressLocality = address.town;
   }
 
-  if(hasProperty(address, 'postcode')) {
+  if (hasProperty(address, 'postcode')) {
     addressStruct.postalCode = address.postcode;
   }
 
@@ -33,36 +33,44 @@ const generateAddressStruct = (address: any): any => {
  * Only incorporates fields required by common SEO engines.
  * @param court - Court to generate schema object for.
  */
-export const generatePlaceMetadata = (court: CourtDetailsResult): PlaceSEOMetadata | {} => {
+export const generatePlaceMetadata = (
+  court: CourtDetailsResult,
+): PlaceSEOMetadata | {} => {
   const placeStruct: any = {
     '@context': 'https://schema.org',
-    '@type': 'GovernmentOffice'
+    '@type': 'GovernmentOffice',
   };
 
-
-  if(hasProperty(court, 'name')) {
+  if (hasProperty(court, 'name')) {
     placeStruct.name = court.name;
   } else {
     return {};
   }
 
-  if(hasProperty(court, 'slug')) {
-    placeStruct['@id'] = config.get('services.frontend.url') + '/courts/' + court.slug;
+  if (hasProperty(court, 'slug')) {
+    placeStruct['@id'] =
+      config.get('services.frontend.url') + '/courts/' + court.slug;
   } else {
     return {};
   }
 
-  if(court.in_person === true && hasProperty(court, 'image_file') && !isEmpty(court.image_file) && court.image_file !== null) {
-    placeStruct.image = [ court.image_file ] ;
+  if (
+    court.in_person === true &&
+    hasProperty(court, 'image_file') &&
+    !isEmpty(court.image_file) &&
+    court.image_file !== null
+  ) {
+    placeStruct.image = [court.image_file];
   } else {
-    placeStruct.image = [ config.get('services.frontend.url') + '/public/assets/images/hmcts-logo.png' ];
+    placeStruct.image = [
+      config.get('services.frontend.url') +
+        '/public/assets/images/hmcts-logo.png',
+    ];
   }
 
-  if(hasProperty(court, 'addresses')) {
+  if (hasProperty(court, 'addresses')) {
     placeStruct.address = generateAddressStruct(court.addresses[0]);
   }
 
   return placeStruct;
 };
-
-

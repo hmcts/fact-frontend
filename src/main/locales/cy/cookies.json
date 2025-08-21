@@ -4,11 +4,15 @@
   "h1": "Cwcis",
   "p1": "Ffeiliau sy'n cael eu cadw ar eich ffôn symudol, tabled neu gyfrifiadur yw cwcis. Mae angen cwcis ar y rhan fwyaf o wefannau iddynt weithio'n iawn.",
   "p2": "Mae'r wefan hon yn defnyddio cwcis i:",
-  "bullets":  ["storio eich dewis iaith", "storio eich dewisiadau cwcis", "mesur sut ydych chi'n defnyddio'r gwasanaeth fel y gellir ei wella"],
+  "bullets": [
+    "storio eich dewis iaith",
+    "storio eich dewisiadau cwcis",
+    "mesur sut ydych chi'n defnyddio'r gwasanaeth fel y gellir ei wella"
+  ],
   "h2": "Sut mae'r gwasanaeth hwn yn defnyddio cwcis",
   "caption": "Manylion y cwci",
   "name": "Enw",
-  "purpose":"Pwrpas",
+  "purpose": "Pwrpas",
   "expires": "Dod i ben",
   "saved": "Cafodd eich gosodiadau cwcis eu cadw",
   "additionalCookies": "Gall gwasanaethau'r llywodraeth osod cwcis ychwanegol ac, os felly, bydd ganddynt bolisi a baner cwcis eu hunain.",

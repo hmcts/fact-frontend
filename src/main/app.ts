@@ -26,16 +26,15 @@ const logger = Logger.getLogger('app');
 export const app = express();
 app.locals.ENV = env;
 
-app.use(favicon(path.join(__dirname, '/public/assets/rebrand/images/favicon.ico')));
+app.use(
+  favicon(path.join(__dirname, '/public/assets/rebrand/images/favicon.ico')),
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use((req, res, next) => {
-  res.setHeader(
-    'Cache-Control',
-    'no-cache, max-age=0, must-revalidate',
-  );
+  res.setHeader('Cache-Control', 'no-cache, max-age=0, must-revalidate');
   next();
 });
 
@@ -47,7 +46,7 @@ new I18next().enableFor(app);
 new ProxyMiddleware().enableFor(app);
 new AppInsights().enableFor();
 
-setupDev(app,developmentMode);
+setupDev(app, developmentMode);
 
 // info
 app.get(
@@ -58,15 +57,21 @@ app.get(
       name: 'expressjs-template',
       uptime: process.uptime(),
     },
-    info: { },
+    info: {},
   }),
 );
 
 // health
 const healthCheckConfig = {
   checks: {
-    'fact-api': healthcheck.web(`${config.get('services.api.url')}/health`, healthOptions),
-    'mapit-api': healthcheck.web(`${config.get('services.mapit.url')}/quota`, healthOptions)
+    'fact-api': healthcheck.web(
+      `${config.get('services.api.url')}/health`,
+      healthOptions,
+    ),
+    'mapit-api': healthcheck.web(
+      `${config.get('services.mapit.url')}/quota`,
+      healthOptions,
+    ),
   },
   buildInfo: {
     name: config.get('services.frontend.name'),
@@ -98,4 +103,3 @@ app.use((err: HTTPError, req: any, res: express.Response) => {
   const data = req.i18n.getDataByLanguage(req.lng).error;
   res.render('error', data);
 });
-

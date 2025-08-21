@@ -7,9 +7,9 @@ function createFilters(env: nunjucks.Environment): void {
     //tab to the link text.
     return infoWithLinks.replace(
       /(<a\s+[^>]*target=['"]?(?:_blank|_new)['"]?[^>]*>)(.*?)(<\/a>)/gi, // Match anchor tags with target="_blank"
-      (match: any, openingTag: any, linkText: any, closingTag) => `${openingTag}${linkText}<span class=govuk-visually-hidden> - opens in a new tab</span>${closingTag}`
+      (match: any, openingTag: any, linkText: any, closingTag) =>
+        `${openingTag}${linkText}<span class=govuk-visually-hidden> - opens in a new tab</span>${closingTag}`,
     );
-
   });
 }
 

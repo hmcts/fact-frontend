@@ -19,21 +19,24 @@ import { ServiceAreaRedirect } from '../../controllers/service/ServiceAreaRedire
 import { AccessibilityStatementController } from '../../controllers/AccessibilityStatementController';
 import { CookiesController } from '../../controllers/CookiesController';
 import { NotFoundPageController } from '../../controllers/NotFoundPageController';
-import {CourtPrefixSearchController} from '../../controllers/search/CourtPrefixSearchController';
+import { CourtPrefixSearchController } from '../../controllers/search/CourtPrefixSearchController';
 
 const { Logger } = require('@hmcts/nodejs-logging');
 const logger = Logger.getLogger('app');
 
 export class Container {
-
   public enableFor(app: Application) {
-    app.locals.container = createContainer({ injectionMode: InjectionMode.CLASSIC }).register({
+    app.locals.container = createContainer({
+      injectionMode: InjectionMode.CLASSIC,
+    }).register({
       logger: asValue(logger),
       axios: asValue(Axios.create({ baseURL: config.get('services.api.url') })),
       api: asClass(FactApi),
       serviceAreaRedirect: asClass(ServiceAreaRedirect),
       homeController: asClass(HomeController),
-      accessibilityStatementController: asClass(AccessibilityStatementController),
+      accessibilityStatementController: asClass(
+        AccessibilityStatementController,
+      ),
       cookiesController: asClass(CookiesController),
       searchOptionController: asClass(SearchOptionController),
       locationSearchController: asClass(LocationSearchController),
@@ -46,9 +49,10 @@ export class Container {
       serviceSearchResultsController: asClass(ServiceSearchResultsController),
       courtNameSearchController: asClass(CourtPrefixSearchController),
       servicePostcodeSearchController: asClass(ServicePostcodeSearchController),
-      servicePostcodeResultsController: asClass(ServicePostcodeResultsController),
-      notFoundPageController:  asClass(NotFoundPageController),
+      servicePostcodeResultsController: asClass(
+        ServicePostcodeResultsController,
+      ),
+      notFoundPageController: asClass(NotFoundPageController),
     });
   }
 }
-

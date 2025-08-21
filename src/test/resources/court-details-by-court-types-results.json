@@ -1,92 +1,80 @@
 [
   {
-  "name": "London",
-  "slug": "London",
-  "in_person": true,
-  "dx_number": "701987 London 7",
-  "info": "London",
-  "open": true,
-  "directions": null,
-  "image_file": "London",
-  "lat": 52.4816515396297,
-  "lon": -1.89566151163058,
-  "crown_location_code": 123,
-  "county_location_code": 127,
-  "magistrates_location_code": 123,
-  "areas_of_law": [],
-  "types": [
-    "Family Court",
-    "County Court"
-  ],
-  "emails": [
-    {
-      "address": "london@justice.gov.uk",
-      "description": "London",
-      "explanation": null
-    }
-  ],
-  "contacts": [
-    {
-      "number": "0121 681 4441",
-      "description": "London",
-      "explanation": ""
-    }
-  ],
-  "opening_times": [
-    {
-      "description": "Court building open",
-      "hours": "Monday to Friday 9am to 5pm"
-    }
-  ],
-  "facilities": [
-    {
-      "description": "Court/hearing room video facilities and prison to court video link facilities are available by prior arrangement. Please contact the court by telephone or email to let us know of your requirements.",
-      "name": "Video facilities"
-    }
-  ],
-  "addresses": [
-    {
-      "type": "Visit or contact us",
-      "address": [
-        "London",
-        "London Street"
-      ],
-      "town": "London",
-      "postcode": "B4 6DS"
-    },
-    {
-      "type": "Write to us",
-      "description": "Birmingham",
-      "address": [
-        "Birmingham",
-        "Broad Street"
-      ],
-      "town": "Birmingham",
-      "postcode": "B1 1DD"
-    },
-    {
-      "type": "Write to us",
-      "description": "Leeds",
-      "address": [
-        "Leeds",
-        "Leeds Street"
-      ],
-      "town": "Leeds",
-      "postcode": "LS8 2ST"
-    }
-  ],
-  "gbs": null,
-  "additional_links": [
-    {
-      "url": "https://www.gov.uk/money-property-when-relationship-ends",
-      "description": "Financial Remedy",
-      "location": "This location handles"
-    },
-    {
-      "url": "https://www.supportthroughcourt.org",
-     "description": "Support Through Court (Independent charity)",
-     "location": "Find out more about"
-    }
-  ]
+    "name": "London",
+    "slug": "London",
+    "in_person": true,
+    "dx_number": "701987 London 7",
+    "info": "London",
+    "open": true,
+    "directions": null,
+    "image_file": "London",
+    "lat": 52.4816515396297,
+    "lon": -1.89566151163058,
+    "crown_location_code": 123,
+    "county_location_code": 127,
+    "magistrates_location_code": 123,
+    "areas_of_law": [],
+    "types": ["Family Court", "County Court"],
+    "emails": [
+      {
+        "address": "london@justice.gov.uk",
+        "description": "London",
+        "explanation": null
+      }
+    ],
+    "contacts": [
+      {
+        "number": "0121 681 4441",
+        "description": "London",
+        "explanation": ""
+      }
+    ],
+    "opening_times": [
+      {
+        "description": "Court building open",
+        "hours": "Monday to Friday 9am to 5pm"
+      }
+    ],
+    "facilities": [
+      {
+        "description": "Court/hearing room video facilities and prison to court video link facilities are available by prior arrangement. Please contact the court by telephone or email to let us know of your requirements.",
+        "name": "Video facilities"
+      }
+    ],
+    "addresses": [
+      {
+        "type": "Visit or contact us",
+        "address": ["London", "London Street"],
+        "town": "London",
+        "postcode": "B4 6DS"
+      },
+      {
+        "type": "Write to us",
+        "description": "Birmingham",
+        "address": ["Birmingham", "Broad Street"],
+        "town": "Birmingham",
+        "postcode": "B1 1DD"
+      },
+      {
+        "type": "Write to us",
+        "description": "Leeds",
+        "address": ["Leeds", "Leeds Street"],
+        "town": "Leeds",
+        "postcode": "LS8 2ST"
+      }
+    ],
+    "gbs": null,
+    "additional_links": [
+      {
+        "url": "https://www.gov.uk/money-property-when-relationship-ends",
+        "description": "Financial Remedy",
+        "location": "This location handles"
+      },
+      {
+        "url": "https://www.supportthroughcourt.org",
+        "description": "Support Through Court (Independent charity)",
+        "location": "Find out more about"
+      }
+    ]
   }
 ]

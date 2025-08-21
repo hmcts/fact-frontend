@@ -7,7 +7,7 @@ export const config = {
     features: './features/*.feature',
     steps: './steps/**/*.ts',
   },
-  helpers: {}
+  helpers: {},
 };
 
 config.helpers = {
@@ -20,6 +20,6 @@ config.helpers = {
     waitForAction: 1000,
     waitForNavigation: 'networkidle0',
     ignoreHTTPSErrors: true,
-    timeout: 20000
-  }
+    timeout: 20000,
+  },
 };

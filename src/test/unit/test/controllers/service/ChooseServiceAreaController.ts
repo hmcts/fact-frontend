@@ -12,9 +12,9 @@ const i18n = {
     title: '',
     question: '',
     error: {
-      text: ''
+      text: '',
     },
-    courtsManaging: 'Courts managing '
+    courtsManaging: 'Courts managing ',
   },
 };
 
@@ -25,17 +25,21 @@ describe('Choose service area controller', () => {
     getService: async () => response.serviceData,
     getServiceArea: async () => response.serviceAreaResults,
   };
-  const controller = new ChooseServiceAreaController(api, new ServiceAreaRedirect());
+  const controller = new ChooseServiceAreaController(
+    api,
+    new ServiceAreaRedirect(),
+  );
 
   test('Should render a service areas page', async () => {
-    response.data = [{
-      name: 'Service area',
-      description: 'service area description',
-    },
-    {
-      name: 'Service area 2',
-      description: 'service area 2 description',
-    }
+    response.data = [
+      {
+        name: 'Service area',
+        description: 'service area description',
+      },
+      {
+        name: 'Service area 2',
+        description: 'service area 2 description',
+      },
     ];
 
     response.serviceData = {
@@ -53,19 +57,25 @@ describe('Choose service area controller', () => {
     await controller.get(req, res);
     const expectedData: PageData = {
       ...cloneDeep(i18n.service),
-      path: '/services/' + req.params.service + '/service-areas/' +req.params.action ,
+      path:
+        '/services/' +
+        req.params.service +
+        '/service-areas/' +
+        req.params.action,
       results: response.data,
       errors: false,
-      seoMetadataDescription: 'Courts managing service description'
+      seoMetadataDescription: 'Courts managing service description',
     };
     expect(res.render).toBeCalledWith('service', expectedData);
   });
 
   test('Should render a service area page with errors if no data has been entered', async () => {
-    response.data = [{
-      name: 'Service area',
-      description: 'service area description',
-    }];
+    response.data = [
+      {
+        name: 'Service area',
+        description: 'service area description',
+      },
+    ];
 
     response.serviceData = {
       name: 'Service',
@@ -84,20 +94,26 @@ describe('Choose service area controller', () => {
 
     const expectedData: PageData = {
       ...cloneDeep(i18n.service),
-      path: '/services/' + req.params.service + '/service-areas/' +req.params.action,
+      path:
+        '/services/' +
+        req.params.service +
+        '/service-areas/' +
+        req.params.action,
       results: response.data,
       errors: true,
-      seoMetadataDescription: 'Courts managing service description'
+      seoMetadataDescription: 'Courts managing service description',
     };
     expect(res.render).toBeCalledWith('service', expectedData);
   });
 
   test('Should redirect to single service page if service contains one service area', async () => {
-    response.data = [{
-      name: 'Service area',
-      description: 'service area description',
-      slug: 'service-area-slug'
-    }];
+    response.data = [
+      {
+        name: 'Service area',
+        description: 'service area description',
+        slug: 'service-area-slug',
+      },
+    ];
 
     response.serviceData = {
       name: 'Service',
@@ -121,14 +137,20 @@ describe('Choose service area controller', () => {
         {
           name: 'court',
           slug: 'court',
-          catchmentType: 'national'
-        }
-      ]
+          catchmentType: 'national',
+        },
+      ],
     };
 
     const res = mockResponse();
     await controller.get(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
+    expect(res.redirect).toHaveBeenCalledWith(
+      '/services/' +
+        req.params.service +
+        '/' +
+        req.body.serviceArea +
+        '/search-results',
+    );
   });
 
   test('Should render a service area page with errors if a service area does not exist', async () => {
@@ -144,9 +166,13 @@ describe('Choose service area controller', () => {
 
     const expectedData: PageData = {
       ...cloneDeep(i18n.service),
-      path: '/services/' + req.params.service + '/service-areas/' +req.params.action,
+      path:
+        '/services/' +
+        req.params.service +
+        '/service-areas/' +
+        req.params.action,
       results: response.data,
-      errors: true
+      errors: true,
     };
     expect(res.render).toBeCalledWith('service', expectedData);
   });
@@ -155,15 +181,14 @@ describe('Choose service area controller', () => {
     const req = mockRequest(i18n);
     req.params = {
       service: 'service',
-      action: 'update'
+      action: 'update',
     };
     req.body = {
-      serviceArea: 'not-listed'
+      serviceArea: 'not-listed',
     };
 
     const res = mockResponse();
     await controller.post(req, res);
     expect(res.redirect).toHaveBeenCalledWith('/services/update');
   });
-
 });

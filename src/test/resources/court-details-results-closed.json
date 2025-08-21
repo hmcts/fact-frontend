@@ -12,10 +12,7 @@
   "county_location_code": 127,
   "magistrates_location_code": 123,
   "areas_of_law": [],
-  "types": [
-    "Family Court",
-    "County Court"
-  ],
+  "types": ["Family Court", "County Court"],
   "emails": [
     {
       "address": "london@justice.gov.uk",
@@ -45,10 +42,7 @@
   "addresses": [
     {
       "type": "Visit or contact us",
-      "address": [
-        "London",
-        "London Street"
-      ],
+      "address": ["London", "London Street"],
       "town": "London",
       "postcode": "B4 6DS"
     }

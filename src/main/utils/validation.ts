@@ -3,7 +3,7 @@ const postcodeRegex = {
   scottish: /^(ZE|KW|IV|HS|PH|AB|DD|PA|FK|G\d|KY|KA|DG|TD|EH|ML)/i,
   ni: /^(BT)/i,
   channelIsland: /^(JE|GY)/i,
-  isleOfMan: /^(IM)/i
+  isleOfMan: /^(IM)/i,
 };
 
 export const hasProperty = (actual: {}, expected: string): boolean => {
@@ -26,17 +26,26 @@ const testPostcodeValidation = (postcode: string, regex: RegExp): boolean => {
   return regex.test(postcode);
 };
 
-export const isPostcodeValid = (postcode: string, serviceArea: string): string => {
-  if (isEmpty(postcode)){
+export const isPostcodeValid = (
+  postcode: string,
+  serviceArea: string,
+): string => {
+  if (isEmpty(postcode)) {
     return 'blankPostcode';
-  } else if (!testPostcodeValidation(postcode, postcodeRegex.validPostcode)
-    || testPostcodeValidation(postcode, postcodeRegex.isleOfMan)
-    || testPostcodeValidation(postcode, postcodeRegex.channelIsland)) {
+  } else if (
+    !testPostcodeValidation(postcode, postcodeRegex.validPostcode) ||
+    testPostcodeValidation(postcode, postcodeRegex.isleOfMan) ||
+    testPostcodeValidation(postcode, postcodeRegex.channelIsland)
+  ) {
     return 'invalidPostcode';
   } else if (testPostcodeValidation(postcode, postcodeRegex.scottish)) {
     if (serviceArea === 'childcare-arrangements') {
       return 'scottishChildrenPostcode';
-    } else if (!(['immigration','benefits','claims-against-employers'].includes(serviceArea))) {
+    } else if (
+      !['immigration', 'benefits', 'claims-against-employers'].includes(
+        serviceArea,
+      )
+    ) {
       return 'scottishPostcode';
     }
   } else if (testPostcodeValidation(postcode, postcodeRegex.ni)) {

@@ -1,10 +1,12 @@
-
 import { config as testConfig } from '../../config';
 import { expect } from 'chai';
 import { I } from '../utlis/codecept-util';
 
 Given('the postcode search page loads', async () => {
-  I.amOnPage(testConfig.TEST_URL + '/services/crime/major-criminal-offences/nearest/search-by-postcode');
+  I.amOnPage(
+    testConfig.TEST_URL +
+      '/services/crime/major-criminal-offences/nearest/search-by-postcode',
+  );
 });
 
 Given('the search option page loads', async () => {
@@ -24,11 +26,17 @@ Given('the choose service page loads', async () => {
 });
 
 Given('the service results page loads', async () => {
-  I.amOnPage(testConfig.TEST_URL + '/services/crime/minor-criminal-offences/search-results');
+  I.amOnPage(
+    testConfig.TEST_URL +
+      '/services/crime/minor-criminal-offences/search-results',
+  );
 });
 
 Given('the postcode search results page loads', async () => {
-  I.amOnPage(testConfig.TEST_URL + '/services/money/money-claims/nearest/courts/near?postcode=GU1+4UW');
+  I.amOnPage(
+    testConfig.TEST_URL +
+      '/services/money/money-claims/nearest/courts/near?postcode=GU1+4UW',
+  );
 });
 
 Given('the service not found page loads', async () => {
@@ -36,15 +44,21 @@ Given('the service not found page loads', async () => {
 });
 
 Given('the service areas page loads', async () => {
-  await I.amOnPage(testConfig.TEST_URL + '/services/money/service-areas/nearest');
+  await I.amOnPage(
+    testConfig.TEST_URL + '/services/money/service-areas/nearest',
+  );
 });
 
 Given('an in-person court page loads', async () => {
-  await I.amOnPage(testConfig.TEST_URL + '/courts/birmingham-civil-and-family-justice-centre');
+  await I.amOnPage(
+    testConfig.TEST_URL + '/courts/birmingham-civil-and-family-justice-centre',
+  );
 });
 
 Given('an not-in-person court page loads', async () => {
-  await I.amOnPage(testConfig.TEST_URL + '/courts/county-court-money-claims-centre-ccmcc');
+  await I.amOnPage(
+    testConfig.TEST_URL + '/courts/county-court-money-claims-centre-ccmcc',
+  );
 });
 
 Then('it contains a metadata description tag', async () => {

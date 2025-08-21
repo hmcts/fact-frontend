@@ -10,7 +10,10 @@ export class SearchOptionController {
    * @returns renders the search option page
    */
   public get(req: FactRequest, res: Response): void {
-    res.render('search/option', req.i18n.getDataByLanguage(req.lng).search.option);
+    res.render(
+      'search/option',
+      req.i18n.getDataByLanguage(req.lng).search.option,
+    );
   }
   /**
    * POST /search-option
@@ -28,10 +31,9 @@ export class SearchOptionController {
     const knowLocation = req.body.knowLocation as string;
     if (knowLocation === 'yes') {
       return res.redirect('/search-by-name');
-    }
-    else if (knowLocation === 'no') {
+    } else if (knowLocation === 'no') {
       return res.redirect('/service-choose-action');
     }
-    res.redirect('/services/search-by-postcode' );
+    res.redirect('/services/search-by-postcode');
   }
 }

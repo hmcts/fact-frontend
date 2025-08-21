@@ -7,8 +7,7 @@
   "resultsHint": " canlyniadau chwilio ar gyfer llysoedd neu dribiwnlysoedd sy’n cychwyn efo ",
   "noResultsHint": "Ni ddarganfuwyd unrhyw ganlyniadau ar gyfer llysoedd neu dribiwnlysoedd yn dechrau ",
   "summary": "Chwilio yn ôl enw llys neu dribiwnlys. Dewiswch lythyren gyntaf enw’r llys.",
-  "errorText":{
+  "errorText": {
     "title": "Mae problem, ceisiwch eto yn fuan neu cysylltwch â ni trwy'r dudalen adborth"
   }
 }
-

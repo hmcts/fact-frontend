@@ -10,7 +10,10 @@ export class ChooseActionController {
    * @returns redirects to the choose action page.
    */
   public get(req: FactRequest, res: Response): void {
-    res.render('choose-action', req.i18n.getDataByLanguage(req.lng)['choose-action']);
+    res.render(
+      'choose-action',
+      req.i18n.getDataByLanguage(req.lng)['choose-action'],
+    );
   }
   /**
    * POST /post

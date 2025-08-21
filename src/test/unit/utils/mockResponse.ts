@@ -1,4 +1,3 @@
-
 export const mockResponse = () => {
   const res: any = {};
   res.redirect = jest.fn().mockReturnValue(res);

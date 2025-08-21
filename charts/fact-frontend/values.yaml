@@ -2,7 +2,7 @@ nodejs:
   applicationPort: 3100
   cpuLimits: 500m
   cpuRequests: 100m
-  memoryRequests:   256Mi
+  memoryRequests: 256Mi
   memoryLimits: 1024Mi
   aadIdentityName: fact
   keyVaults:
@@ -13,12 +13,12 @@ nodejs:
   ingressHost: fact.{{ .Values.global.environment }}.platform.hmcts.net
   image: 'hmctspublic.azurecr.io/fact/frontend:latest'
   environment:
-    FRONTEND_URL: "https://fact.{{ .Values.global.environment }}.platform.hmcts.net"
-    FACT_API_URL: "http://fact-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal"
-    IMAGE_BASE_URL: "https://fact{{ .Values.global.environment }}.blob.core.windows.net/images"
+    FRONTEND_URL: 'https://fact.{{ .Values.global.environment }}.platform.hmcts.net'
+    FACT_API_URL: 'http://fact-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal'
+    IMAGE_BASE_URL: 'https://fact{{ .Values.global.environment }}.blob.core.windows.net/images'
     TEST: 7
-  autoscaling:        # Default is false
+  autoscaling: # Default is false
     enabled: true
-    maxReplicas: 14    # Required setting
+    maxReplicas: 14 # Required setting
     targetCPUUtilizationPercentage: 80 # Default is 80% target CPU utilization
 

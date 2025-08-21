@@ -28,6 +28,7 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@axe-core/playwright", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:4.10.2"],\
           ["@babel/core", "npm:7.28.0"],\
           ["@babel/eslint-parser", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.28.0"],\
           ["@babel/preset-env", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.28.0"],\
@@ -66,6 +67,7 @@ const RAW_RUNTIME_STATE =
           ["applicationinsights", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.9.8"],\
           ["autobind-decorator", "npm:2.4.0"],\
           ["awilix", "npm:7.0.3"],\
+          ["axe-html-reporter", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.2.11"],\
           ["axios", "npm:1.11.0"],\
           ["babel-loader", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:9.2.1"],\
           ["brace-expansion", "npm:4.0.1"],\
@@ -135,6 +137,29 @@ const RAW_RUNTIME_STATE =
           ["@ampproject/remapping", "npm:2.3.0"],\
           ["@jridgewell/gen-mapping", "npm:0.3.8"],\
           ["@jridgewell/trace-mapping", "npm:0.3.25"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@axe-core/playwright", [\
+      ["npm:4.10.2", {\
+        "packageLocation": "./.yarn/cache/@axe-core-playwright-npm-4.10.2-0e2e87ce54-f951762031.zip/node_modules/@axe-core/playwright/",\
+        "packageDependencies": [\
+          ["@axe-core/playwright", "npm:4.10.2"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:4.10.2", {\
+        "packageLocation": "./.yarn/__virtual__/@axe-core-playwright-virtual-dca2431b34/0/cache/@axe-core-playwright-npm-4.10.2-0e2e87ce54-f951762031.zip/node_modules/@axe-core/playwright/",\
+        "packageDependencies": [\
+          ["@axe-core/playwright", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:4.10.2"],\
+          ["@types/playwright-core", null],\
+          ["axe-core", "npm:4.10.3"],\
+          ["playwright-core", null]\
+        ],\
+        "packagePeers": [\
+          "@types/playwright-core",\
+          "playwright-core"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -8399,10 +8424,40 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["axe-core", [\
+      ["npm:4.10.3", {\
+        "packageLocation": "./.yarn/cache/axe-core-npm-4.10.3-3534c4324b-9ff51ad0fd.zip/node_modules/axe-core/",\
+        "packageDependencies": [\
+          ["axe-core", "npm:4.10.3"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["npm:4.8.4", {\
         "packageLocation": "./.yarn/cache/axe-core-npm-4.8.4-27f3e5418e-c8b3972b17.zip/node_modules/axe-core/",\
         "packageDependencies": [\
           ["axe-core", "npm:4.8.4"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["axe-html-reporter", [\
+      ["npm:2.2.11", {\
+        "packageLocation": "./.yarn/cache/axe-html-reporter-npm-2.2.11-6d2126508e-489a904c62.zip/node_modules/axe-html-reporter/",\
+        "packageDependencies": [\
+          ["axe-html-reporter", "npm:2.2.11"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.2.11", {\
+        "packageLocation": "./.yarn/__virtual__/axe-html-reporter-virtual-40629e383f/0/cache/axe-html-reporter-npm-2.2.11-6d2126508e-489a904c62.zip/node_modules/axe-html-reporter/",\
+        "packageDependencies": [\
+          ["@types/axe-core", null],\
+          ["axe-core", null],\
+          ["axe-html-reporter", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.2.11"],\
+          ["mustache", "npm:4.2.0"]\
+        ],\
+        "packagePeers": [\
+          "@types/axe-core",\
+          "axe-core"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -12145,6 +12200,7 @@ const RAW_RUNTIME_STATE =
       ["workspace:.", {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@axe-core/playwright", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:4.10.2"],\
           ["@babel/core", "npm:7.28.0"],\
           ["@babel/eslint-parser", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.28.0"],\
           ["@babel/preset-env", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.28.0"],\
@@ -12183,6 +12239,7 @@ const RAW_RUNTIME_STATE =
           ["applicationinsights", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.9.8"],\
           ["autobind-decorator", "npm:2.4.0"],\
           ["awilix", "npm:7.0.3"],\
+          ["axe-html-reporter", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.2.11"],\
           ["axios", "npm:1.11.0"],\
           ["babel-loader", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:9.2.1"],\
           ["brace-expansion", "npm:4.0.1"],\

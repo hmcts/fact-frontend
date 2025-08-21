@@ -4,8 +4,6 @@ import * as nunjucks from 'nunjucks';
 import createFilters from './njkFilters';
 
 export class Nunjucks {
-
-
   constructor(public developmentMode: boolean) {
     this.developmentMode = developmentMode;
   }

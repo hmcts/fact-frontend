@@ -4,7 +4,13 @@
   "h1": "Datganiad hygyrchedd ar gyfer y gwasanaeth ‘Dod o hyd i lys neu dribiwnlys’",
   "p1": "Mae’r datganiad hygyrchedd hwn yn berthnasol i gynnwys a gyhoeddir ar <a class=\"govuk-link\" href=\"http://www.find-court-tribunal.service.gov.uk/?lng=cy\">www.find-court-tribunal.service.gov.uk/?lng=cy</a>",
   "p2": "Gwasanaeth Llysoedd a Thribiwnlysoedd EM sy’n gyfrifol am y wefan hon. Rydym eisiau i gymaint o bobl â phosibl allu defnyddio'r wefan hon, felly rydym wedi ceisio ei gwneud mor hygyrch â phosibl. Er enghraifft, golyga hyn y dylech allu:",
-  "bullets": ["newid y lliwiau, y lefelau cyferbyniad a’r ffontiau neu gosodiadau’r dyfais", "gwneud y testun hyd at 400% yn fwy heb iddo ddiflannu oddi ar y sgrin", "mynd drwy’r rhan fwyaf o'r wefan gan ddefnyddio bysellfwrdd yn unig", "mynd drwy’r rhan fwyaf o'r wefan gan ddefnyddio meddalwedd adnabod llais", "gwrando ar y rhan fwyaf o'r wefan gan ddefnyddio darllenydd sgrin (gan gynnwys fersiynau diweddaraf JAWS, NVDA a VoiceOver)"],
+  "bullets": [
+    "newid y lliwiau, y lefelau cyferbyniad a’r ffontiau neu gosodiadau’r dyfais",
+    "gwneud y testun hyd at 400% yn fwy heb iddo ddiflannu oddi ar y sgrin",
+    "mynd drwy’r rhan fwyaf o'r wefan gan ddefnyddio bysellfwrdd yn unig",
+    "mynd drwy’r rhan fwyaf o'r wefan gan ddefnyddio meddalwedd adnabod llais",
+    "gwrando ar y rhan fwyaf o'r wefan gan ddefnyddio darllenydd sgrin (gan gynnwys fersiynau diweddaraf JAWS, NVDA a VoiceOver)"
+  ],
   "p3": "Rydym hefyd wedi sicrhau ein bod wedi defnyddio iaith syml ar y wefan.",
   "p4": "Mae gan <a class=\"govuk-link\" href=\"https://mcmw.abilitynet.org.uk/\">AbilityNet</a> gyngor ynghylch gwneud eich dyfais yn haws i’w defnyddio os oes gennych anabledd.",
   "h13": "Pa mor hygyrch yw'r wefan hon",
@@ -18,7 +24,7 @@
   "h5": "Y Weithdrefn Orfodi",
   "p9": "Y Comisiwn Cydraddoldeb a Hawliau Dynol (EHRC) sy’n gyfrifol am orfodi Rheoliadau Hygyrchedd Cyrff y Sector Cyhoeddus (Gwefannau a Rhaglenni Symudol) (Rhif 2) 2018 (y ‘rheoliadau hygyrchedd’). Os ydych yn anhapus â’r ffordd rydym yn ymateb i’ch cwyn, <a class=\"govuk-link\" href=\"https://www.equalityadvisoryservice.com/\">cysylltwch â’r Gwasanaeth Cynghori a Chefnogi Cydraddoldeb (EASS) (yn agor mewn ffenest newydd)</a>.",
   "h6": "Cysylltu â ni dros y ffôn neu ymweld â ni’n bersonol",
-  "p22" : "Gellir dod o hyd i fanylion cyswllt yr holl lysoedd a thribiwnlysoedd trwy’r gwasanaeth <a class=\"govuk-link\" href=\"https://www.gov.uk/chwilio-am-lys-neu-dribiwnlys\">Dod o hyd i lys neu dribiwnlys</a>.",
+  "p22": "Gellir dod o hyd i fanylion cyswllt yr holl lysoedd a thribiwnlysoedd trwy’r gwasanaeth <a class=\"govuk-link\" href=\"https://www.gov.uk/chwilio-am-lys-neu-dribiwnlys\">Dod o hyd i lys neu dribiwnlys</a>.",
   "p11": "Rydym yn darparu gwasanaeth cyfnewid negeseuon testun ar gyfer pobl fyddar, pobl sydd â nam ar eu clyw a phobl sydd â nam ar eu lleferydd.",
   "p12": "Mae yna ddolenni sain yn ein llysoedd a’n tribiwnlysoedd, neu os byddwch yn cysylltu â ni cyn eich ymweliad, gallwn drefnu cyfieithydd Iaith Arwyddion Prydain (BSL) ar eich cyfer.",
   "h7": "Gwybodaeth dechnegol am hygyrchedd y wefan hon",

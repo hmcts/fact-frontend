@@ -17,7 +17,7 @@
       "li3": "searching for something less specific"
     }
   },
-  "errorText":{
+  "errorText": {
     "title": "There is a problem",
     "invalidPostcode": "Enter a valid postcode format",
     "blankPostcode": "Enter a postcode",

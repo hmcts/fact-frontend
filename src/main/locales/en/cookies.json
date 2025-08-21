@@ -4,11 +4,15 @@
   "h1": "Cookies",
   "p1": "Cookies are files saved on your phone, tablet or computer when you visit a website. Most websites need cookies to work properly.",
   "p2": "This service uses cookies to:",
-  "bullets": ["store your language selection", "store your cookie preferences", "measure how you use the service so it can be improved"],
+  "bullets": [
+    "store your language selection",
+    "store your cookie preferences",
+    "measure how you use the service so it can be improved"
+  ],
   "h2": "How cookies are used in this service",
   "caption": "Cookie details",
   "name": "Name",
-  "purpose":"Purpose",
+  "purpose": "Purpose",
   "expires": "Expires",
   "cookiePreferences": "Your cookie preferences",
   "saved": "Your cookie settings were saved",

@@ -34,14 +34,14 @@ describe('service search results controller', () => {
         {
           name: 'court 1',
           slug: 'court-1',
-          catchmentType: 'national'
+          catchmentType: 'national',
         },
         {
           name: 'court 2',
           slug: 'court-2',
-          catchmentType: 'local'
-        }
-      ]
+          catchmentType: 'local',
+        },
+      ],
     };
 
     const req = mockRequest(i18n);
@@ -52,18 +52,18 @@ describe('service search results controller', () => {
       onlineText: '{applyOnline}',
       onlineUrl: '{applyOnlineUrl}',
       service: 'service',
-      serviceArea: 'service-area'
+      serviceArea: 'service-area',
     };
     const res = mockResponse();
     await controller.get(req, res);
     const expectedData = {
-      ...cloneDeep(i18n['service-results'])
+      ...cloneDeep(i18n['service-results']),
     };
 
     expectedData.results = {
       name: 'court 1',
       slug: 'court-1',
-      catchmentType: 'national'
+      catchmentType: 'national',
     };
 
     expect(res.render).toBeCalledWith('service-results', expectedData);

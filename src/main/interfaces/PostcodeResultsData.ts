@@ -26,7 +26,7 @@ export interface CourtWithDistanceResultsData extends PageData {
   results: CourtData | {};
 }
 
-export interface CourtData { 
+export interface CourtData {
   courts: CourtWithDistance[];
 }
 
