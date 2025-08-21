@@ -1,4 +1,9 @@
-import {hasProperty, isArrayEmpty, isEmpty, isPostcodeValid} from '../../../../main/utils/validation';
+import {
+  hasProperty,
+  isArrayEmpty,
+  isEmpty,
+  isPostcodeValid,
+} from '../../../../main/utils/validation';
 
 describe('validation', () => {
   describe('hasProperty', () => {

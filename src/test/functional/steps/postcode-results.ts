@@ -1,4 +1,4 @@
-import {expect} from 'chai';
+import { expect } from 'chai';
 import { I } from '../utlis/codecept-util';
 
 Given('the results are displayed with distance', async () => {
@@ -14,7 +14,9 @@ Given('I can re-enter the postcode', async () => {
 });
 
 Then('I can see 10 nearest court result back', async () => {
-  const courts = await I.grabNumberOfVisibleElements('#search-results > div > div > h2 > a');
+  const courts = await I.grabNumberOfVisibleElements(
+    '#search-results > div > div > h2 > a',
+  );
   expect(courts).equal(10);
 });
 

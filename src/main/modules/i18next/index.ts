@@ -5,18 +5,19 @@ import { NextFunction, Response } from 'express';
 import { FactRequest } from '../../interfaces/FactRequest';
 
 const requireDir = require('require-directory');
-const resources = requireDir(module, '../../', {include: /locales/}).locales;
+const resources = requireDir(module, '../../', { include: /locales/ }).locales;
 
 export class I18next {
-
   constructor() {
-    const options = {preload: ['en', 'cy'], resources, fallbackLng: 'en', supportedLngs:['en','cy'],
-      detection: {order: ['querystring', 'cookie'],  caches: ['cookie']
-      }};
+    const options = {
+      preload: ['en', 'cy'],
+      resources,
+      fallbackLng: 'en',
+      supportedLngs: ['en', 'cy'],
+      detection: { order: ['querystring', 'cookie'], caches: ['cookie'] },
+    };
 
-    i18next
-      .use(i18nextMiddleware.LanguageDetector)
-      .init(options);
+    i18next.use(i18nextMiddleware.LanguageDetector).init(options);
   }
 
   public enableFor(app: express.Express): void {
@@ -26,5 +27,4 @@ export class I18next {
       next();
     });
   }
-
 }

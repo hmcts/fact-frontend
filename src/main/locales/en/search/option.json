@@ -10,7 +10,7 @@
     "a3": "I want to find the nearest court or tribunal by postcode"
   },
   "button": "Continue",
-  "error":{
+  "error": {
     "title": "There is a problem",
     "text": "Select if you have the name or not"
   },

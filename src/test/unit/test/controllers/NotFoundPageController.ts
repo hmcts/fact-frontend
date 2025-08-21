@@ -1,6 +1,6 @@
 import { mockRequest } from '../../utils/mockRequest';
 import { mockResponse } from '../../utils/mockResponse';
-import {NotFoundPageController} from '../../../../main/controllers/NotFoundPageController';
+import { NotFoundPageController } from '../../../../main/controllers/NotFoundPageController';
 
 const i18n = {
   notFound: {},
@@ -12,6 +12,6 @@ describe('Not found page Controller', () => {
     const req = mockRequest(i18n);
     const res = mockResponse();
     await controller.get(req, res);
-    expect(res.render).toBeCalledWith( 'not-found', i18n.notFound);
+    expect(res.render).toBeCalledWith('not-found', i18n.notFound);
   });
 });

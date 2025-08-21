@@ -1,4 +1,4 @@
-import {config as testConfig} from '../../config';
+import { config as testConfig } from '../../config';
 import { expect } from 'chai';
 import { I } from '../utlis/codecept-util';
 
@@ -12,7 +12,7 @@ export const iAmOnPage = (): void => {
 
 Given('I am on FACT closed-court page', iAmOnPage);
 
-Then('I expect the page header to be {string}', async function(title: string) {
+Then('I expect the page header to be {string}', async function (title: string) {
   const pageTitle = await I.grabTitle();
   expect(pageTitle).equal(title);
 });

@@ -1,43 +1,45 @@
-import {expect} from 'chai';
+import { expect } from 'chai';
 import { I } from '../utlis/codecept-util';
 
-Then('I am presented with the {string} page', async function(title: string) {
+Then('I am presented with the {string} page', async function (title: string) {
   const pageTitle = await I.grabTitle();
   expect(pageTitle).to.include(title);
 });
 
-Then('I can select an {string} option from the list displayed', async (option: string) => {
-  let element;
-  switch(option) {
-    case 'nearest court': {
-      element = '#nearest-court';
-      break;
+Then(
+  'I can select an {string} option from the list displayed',
+  async (option: string) => {
+    let element;
+    switch (option) {
+      case 'nearest court': {
+        element = '#nearest-court';
+        break;
+      }
+      case 'document court': {
+        element = '#document-court';
+        break;
+      }
+      case 'update court': {
+        element = '#update-court';
+        break;
+      }
+      default: {
+        element = '#not-listed';
+        break;
+      }
     }
-    case 'document court': {
-      element = '#document-court';
-      break;
-    }
-    case 'update court': {
-      element = '#update-court';
-      break;
-    }
-    default: {
-      element = '#not-listed';
-      break;
-    }
-  }
-  I.click(element);
-});
+    I.click(element);
+  },
+);
 
 Given('I can continue having selected that option', async () => {
   I.click('.continue');
 });
 
-Given('I continue having not selected a court option', async() => {
+Given('I continue having not selected a court option', async () => {
   I.click('.continue');
 });
 
-Then('I am presented with an error message', async() => {
+Then('I am presented with an error message', async () => {
   I.seeElement('#choose-action-error');
 });
-

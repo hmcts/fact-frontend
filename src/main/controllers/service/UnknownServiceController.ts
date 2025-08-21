@@ -9,7 +9,7 @@ export class UnknownServiceController {
    */
   public get(req: FactRequest, res: Response): void {
     const data = {
-      ...cloneDeep(req.i18n.getDataByLanguage(req.lng).unknownService)
+      ...cloneDeep(req.i18n.getDataByLanguage(req.lng).unknownService),
     };
     res.render('unknown-service', data);
   }

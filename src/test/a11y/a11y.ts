@@ -12,10 +12,13 @@ const searchOptionPage = '/search-option';
 const locationSearchPage = '/search-by-name';
 const serviceChooseActionPage = '/service-choose-action';
 const searchLocationLondon = '/courts?search=London';
-const courtDetailsInPerson = '/courts/birmingham-civil-and-family-justice-centre';
-const courtDetailsMultipleAddress = '/courts/aylesbury-magistrates-court-and-family-court';
+const courtDetailsInPerson =
+  '/courts/birmingham-civil-and-family-justice-centre';
+const courtDetailsMultipleAddress =
+  '/courts/aylesbury-magistrates-court-and-family-court';
 const courtDetailsNotInPerson = '/courts/north-west-regional-divorce-centre';
-const courtDetailsUrgentMessage = '/courts/telford-county-court-and-family-court';
+const courtDetailsUrgentMessage =
+  '/courts/telford-county-court-and-family-court';
 const courtDetailsNoAreaOfLaw = '/courts/tax-chamber-first-tier-tribunal';
 const courtDetailsAdditionalInfo = '/courts/west-cumbria-courthouse';
 const unknownServicePage = '/services/service-not-found';
@@ -24,25 +27,35 @@ const serviceSearchAddress = '/search/address';
 const serviceSearchCourtCode = '/search/courtcode';
 const serviceSearchSpoe = '/search/spoe';
 const servicesMoney = '/services/money/service-areas/update';
-const servicesProbateDivorce = '/services/probate-divorce-or-ending-civil-partnerships/service-areas/update';
-const servicesChildcare = '/services/childcare-and-parenting/service-areas/update';
+const servicesProbateDivorce =
+  '/services/probate-divorce-or-ending-civil-partnerships/service-areas/update';
+const servicesChildcare =
+  '/services/childcare-and-parenting/service-areas/update';
 const servicesHarmAbuse = '/services/harm-and-abuse/service-areas/update';
 const servicesCrime = '/services/crime/service-areas/update';
-const serviceSearchResultsMoneyClaims = '/services/money/money-claims/search-results';
+const serviceSearchResultsMoneyClaims =
+  '/services/money/money-claims/search-results';
 const serviceSearchByNearestCourt = '/services/money/service-areas/nearest';
-const serviceSearchByNearCourt = '/services/money/service-areas/nearest/courts/near';
-const servicePostcodeSearchTax = '/services/money/tax/nearest/search-by-postcode';
-const servicePostcodeResultsTax = '/services/money/tax/nearest/courts/near?postcode=E81DY';
-const servicePostcodeResultsDivorce = '/services/probate-divorce-or-ending-civil-partnerships/divorce/nearest/courts/near?postcode=E81DY';
-const servicePostcodeSearchMoneyClaims = '/services/money/money-claims/nearest/search-by-postcode';
-const serviceSearchResultsProbate = '/services/probate-divorce-or-ending-civil-partnerships/probate/search-results';
-const serviceSearchResultsMajorCriminalOffences = '/services/crime/major-criminal-offences/search-results';
+const serviceSearchByNearCourt =
+  '/services/money/service-areas/nearest/courts/near';
+const servicePostcodeSearchTax =
+  '/services/money/tax/nearest/search-by-postcode';
+const servicePostcodeResultsTax =
+  '/services/money/tax/nearest/courts/near?postcode=E81DY';
+const servicePostcodeResultsDivorce =
+  '/services/probate-divorce-or-ending-civil-partnerships/divorce/nearest/courts/near?postcode=E81DY';
+const servicePostcodeSearchMoneyClaims =
+  '/services/money/money-claims/nearest/search-by-postcode';
+const serviceSearchResultsProbate =
+  '/services/probate-divorce-or-ending-civil-partnerships/probate/search-results';
+const serviceSearchResultsMajorCriminalOffences =
+  '/services/crime/major-criminal-offences/search-results';
 const servicesSearchByPrefix = '/services/search-by-prefix';
 const servicesSearchByPostcode = '/services/search-by-postcode';
 const accessibilityStatement = '/accessibility-statement';
 const cookies = '/cookies';
-const individualLocationPages = '/individual-location-pages/courts/north-west-regional-divorce-centre';
-
+const individualLocationPages =
+  '/individual-location-pages/courts/north-west-regional-divorce-centre';
 
 class Pa11yResult {
   documentTitle: string;
@@ -69,13 +82,14 @@ function ensurePageCallWillSucceed(url: string): Promise<void> {
 
 function runPallyWith(url: string, actions: string[]): Pa11yResult {
   return pa11y(config.TEST_URL + url, {
-    hideElements: '.govuk-footer__licence-logo, .govuk-header__logotype, .govuk-footer__crown',
-    actions: actions
+    hideElements:
+      '.govuk-footer__licence-logo, .govuk-header__logotype, .govuk-footer__crown',
+    actions: actions,
   });
 }
 
 function expectNoErrors(messages: PallyIssue[]): void {
-  const errors = messages.filter(m => m.type === 'error');
+  const errors = messages.filter((m) => m.type === 'error');
   if (errors.length > 0) {
     const errorsAsJson = `${JSON.stringify(errors, null, 2)}`;
     fail(`There are accessibility issues: \n${errorsAsJson}\n`);
@@ -84,7 +98,7 @@ function expectNoErrors(messages: PallyIssue[]): void {
 
 function testAccessibilityWithActions(url: string, actions: string[]): void {
   describe(`Page ${url}`, () => {
-    test('should have no accessibility errors', done => {
+    test('should have no accessibility errors', (done) => {
       ensurePageCallWillSucceed(url)
         .then(() => runPallyWith(url, actions))
         .then((result: Pa11yResult) => {
@@ -94,7 +108,6 @@ function testAccessibilityWithActions(url: string, actions: string[]): void {
         .catch((err: Error) => done(err));
     });
   });
-
 }
 
 function testAccessibility(url: string): void {
@@ -102,9 +115,7 @@ function testAccessibility(url: string): void {
 }
 
 function testAccessibilityOfFormError(url: string) {
-  testAccessibilityWithActions(url, [
-    'click element .govuk-button'
-  ]);
+  testAccessibilityWithActions(url, ['click element .govuk-button']);
 }
 
 describe('Accessibility', () => {

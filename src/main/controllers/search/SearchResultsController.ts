@@ -7,10 +7,7 @@ import { cloneDeep } from 'lodash';
 
 @autobind
 export class SearchResultsController {
-
-  constructor(
-    private readonly api: FactApi
-  ) { }
+  constructor(private readonly api: FactApi) {}
   /**
    * GET /courts
    * @returns renders the search results page if results found otherwise renders search location page
@@ -27,11 +24,9 @@ export class SearchResultsController {
 
     if (query === '') {
       data.error = data.errorBlank;
-    }
-    else if (query && query.length < 3) {
+    } else if (query && query.length < 3) {
       data.error = data.errorTooShort;
-    }
-    else {
+    } else {
       const courts = await this.api.search(query, req.lng);
 
       if (courts.length > 0) {
@@ -39,8 +34,7 @@ export class SearchResultsController {
         data.foundResults = data.foundResults
           .replace('{total}', data.results.length.toString())
           .replace('{search}', data.search);
-        data.foundResult = data.foundResult
-          .replace('{search}', data.search);
+        data.foundResult = data.foundResult.replace('{search}', data.search);
       }
 
       data.courtHistory = await this.api.searchCourtNameHistory(query, 'en');
@@ -48,5 +42,4 @@ export class SearchResultsController {
     }
     res.render('search/location', data);
   }
-
 }

@@ -48,7 +48,7 @@ describe('Choose service controller', () => {
       ...cloneDeep(i18n['choose-service']),
       path: '/services' + req.params.action,
       results: response.data,
-      errors: true
+      errors: true,
     };
     expect(res.render).toBeCalledWith('choose-service', expectedData);
   });
@@ -67,7 +67,7 @@ describe('Choose service controller', () => {
       ...cloneDeep(i18n['choose-service']),
       path: '/services' + req.params.action,
       results: response.data,
-      errors: true
+      errors: true,
     };
     expect(res.render).toBeCalledWith('choose-service', expectedData);
   });
@@ -82,7 +82,8 @@ describe('Choose service controller', () => {
     };
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services/chosen-service/service-areas/' + req.params.action);
+    expect(res.redirect).toHaveBeenCalledWith(
+      '/services/chosen-service/service-areas/' + req.params.action,
+    );
   });
-
 });

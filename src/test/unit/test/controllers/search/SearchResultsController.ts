@@ -10,12 +10,12 @@ const i18n = {
       foundResult: '',
       errorBlank: {
         title: 'There is a problem',
-        text: 'Enter a court name, address, town or city'
+        text: 'Enter a court name, address, town or city',
       },
       errorTooShort: {
         title: 'There is a problem',
-        text: 'Search must be 3 characters or more'
-      }
+        text: 'Search must be 3 characters or more',
+      },
     },
   },
 };
@@ -24,8 +24,8 @@ describe('SearchResultsController', () => {
   const response: any = { data: [] };
   const searchCourtNameHistoryResponse: any = { data: [] };
   const api: any = {
-    search: async () => response.data ,
-    searchCourtNameHistory: async () => searchCourtNameHistoryResponse.data
+    search: async () => response.data,
+    searchCourtNameHistory: async () => searchCourtNameHistoryResponse.data,
   };
   const controller = new SearchResultsController(api);
 
@@ -40,7 +40,7 @@ describe('SearchResultsController', () => {
       results: [],
       error: i18n.search.location.errorBlank,
       search: '',
-      courtHistoryFlag: true
+      courtHistoryFlag: true,
     };
     expect(res.render).toBeCalledWith('search/location', expectedData);
   });
@@ -56,7 +56,7 @@ describe('SearchResultsController', () => {
       results: [],
       error: i18n.search.location.errorTooShort,
       search: 'lo',
-      courtHistoryFlag: true
+      courtHistoryFlag: true,
     };
     expect(res.render).toBeCalledWith('search/location', expectedData);
   });
@@ -75,19 +75,21 @@ describe('SearchResultsController', () => {
       search: req.query.search,
       results: [],
       courtHistoryFlag: true,
-      courtHistory: searchCourtNameHistoryResponse.data
+      courtHistory: searchCourtNameHistoryResponse.data,
     };
     expect(res.render).toBeCalledWith('search/location', expectedData);
   });
 
   test('Should render the search for location page with results', async () => {
-    response.data = [{
-      name: 'London',
-      slug: 'London',
-      address: 'Address Street',
-      'townName': 'AAA',
-      postcode: 'AAA AAA',
-    }];
+    response.data = [
+      {
+        name: 'London',
+        slug: 'London',
+        address: 'Address Street',
+        townName: 'AAA',
+        postcode: 'AAA AAA',
+      },
+    ];
     const req = mockRequest(i18n);
     req.query = {
       search: 'london',

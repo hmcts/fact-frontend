@@ -10,18 +10,23 @@ import { Action } from '../../utils/Action';
 
 @autobind
 export class ChooseServiceAreaController {
-
   constructor(
     private readonly api: FactApi,
-    private readonly serviceAreaRedirect: ServiceAreaRedirect
-  ) { }
+    private readonly serviceAreaRedirect: ServiceAreaRedirect,
+  ) {}
   /**
    * GET /services/:serviceChosen/service-areas/:action
    * gets and returns the service area data
    @param {string} service
    @param {string} action
    */
-  private async getServiceData(serviceChosen: string, action: string, serviceAreasPageData: ServiceAreasData, hasErrors: boolean, lng: string) {
+  private async getServiceData(
+    serviceChosen: string,
+    action: string,
+    serviceAreasPageData: ServiceAreasData,
+    hasErrors: boolean,
+    lng: string,
+  ) {
     const data: ServiceAreasData = {
       ...cloneDeep(serviceAreasPageData),
       path: '/services/' + serviceChosen + '/service-areas/' + action,
@@ -33,14 +38,22 @@ export class ChooseServiceAreaController {
     if (!isObjectEmpty(serviceAreasData)) {
       const serviceData = await this.api.getService(serviceChosen, lng);
       data.results = serviceAreasData;
-      data.title = data.title
-        .replace('{serviceChosen}', serviceData.name.charAt(0).toUpperCase() + serviceData.name.slice(1).toLowerCase());
-      data.question = data.question
-        .replace('{serviceChosen}', serviceData.name.toLowerCase());
-      data.seoMetadataDescription = data.courtsManaging + serviceData.description.toLowerCase();
+      data.title = data.title.replace(
+        '{serviceChosen}',
+        serviceData.name.charAt(0).toUpperCase() +
+          serviceData.name.slice(1).toLowerCase(),
+      );
+      data.question = data.question.replace(
+        '{serviceChosen}',
+        serviceData.name.toLowerCase(),
+      );
+      data.seoMetadataDescription =
+        data.courtsManaging + serviceData.description.toLowerCase();
       if (hasErrors) {
-        data.error.text = data.error.text
-          .replace('{serviceChosen}', serviceData.name.toLowerCase());
+        data.error.text = data.error.text.replace(
+          '{serviceChosen}',
+          serviceData.name.toLowerCase(),
+        );
       }
     }
     return data;
@@ -52,10 +65,16 @@ export class ChooseServiceAreaController {
    * @param {string} action
    */
   public async get(req: FactRequest, res: Response) {
-    const {service, action} = req.params;
+    const { service, action } = req.params;
     const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
-    const data = await this.getServiceData(service, action, serviceAreasPageData,false, req.lng);
-    if(data.results.length === 1){
+    const data = await this.getServiceData(
+      service,
+      action,
+      serviceAreasPageData,
+      false,
+      req.lng,
+    );
+    if (data.results.length === 1) {
       req.body.serviceArea = data.results[0].slug;
       await this.post(req, res);
     } else {
@@ -74,14 +93,27 @@ export class ChooseServiceAreaController {
     if (!hasProperty(req.body, 'serviceArea')) {
       const serviceChosen = req.params.service;
       const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
-      const serviceData = await this.getServiceData(serviceChosen, action, serviceAreasPageData, true, req.lng);
+      const serviceData = await this.getServiceData(
+        serviceChosen,
+        action,
+        serviceAreasPageData,
+        true,
+        req.lng,
+      );
 
       res.render('service', serviceData);
     } else if (req.body.serviceArea === 'not-listed') {
       res.redirect('/services/' + action);
     } else {
-      const serviceArea = await this.api.getServiceArea(req.body.serviceArea, req.lng);
-      const url = this.serviceAreaRedirect.getUrl(req.params.service, serviceArea, action);
+      const serviceArea = await this.api.getServiceArea(
+        req.body.serviceArea,
+        req.lng,
+      );
+      const url = this.serviceAreaRedirect.getUrl(
+        req.params.service,
+        serviceArea,
+        action,
+      );
 
       res.redirect(url);
     }

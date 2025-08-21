@@ -1,8 +1,11 @@
-import {PageData} from '../../../../main/interfaces/PageData';
-import {mockRequest} from '../../utils/mockRequest';
-import {mockResponse} from '../../utils/mockResponse';
-import {CourtDetailsController} from '../../../../main/controllers/CourtDetailsController';
-import {CourtDetailsData, CourtDetailsResult } from 'interfaces/CourtDetailsData';
+import { PageData } from '../../../../main/interfaces/PageData';
+import { mockRequest } from '../../utils/mockRequest';
+import { mockResponse } from '../../utils/mockResponse';
+import { CourtDetailsController } from '../../../../main/controllers/CourtDetailsController';
+import {
+  CourtDetailsData,
+  CourtDetailsResult,
+} from 'interfaces/CourtDetailsData';
 
 const expectedCourtDetails = require('../../../resources/court-details-results.json');
 const expectedCourtDetailsClosed = require('../../../resources/court-details-results-closed.json');
@@ -14,11 +17,11 @@ const i18n = {
     notInPersonP1: '',
     catchmentArea: {
       area1: '',
-      area2: ''
+      area2: '',
     },
     title: '',
-    seoMetadataDescription: '{courtName}'
-  }
+    seoMetadataDescription: '{courtName}',
+  },
 };
 
 const i18nClosed = {
@@ -26,11 +29,11 @@ const i18nClosed = {
     notInPersonP1: '',
     catchmentArea: {
       area1: '',
-      area2: ''
+      area2: '',
     },
     seoMetadataDescription: '{courtName}',
-    title: 'a court'
-  }
+    title: 'a court',
+  },
 };
 
 const i18nWithNoScIntro = {
@@ -38,16 +41,16 @@ const i18nWithNoScIntro = {
     notInPersonP1: 'intro para',
     catchmentArea: {
       area1: '',
-      area2: ''
+      area2: '',
     },
-    'service_centre': {
-      'is_a_service_centre': true,
-      'intro_paragraph': '',
-      'intro_paragraph_cy': ''
+    service_centre: {
+      is_a_service_centre: true,
+      intro_paragraph: '',
+      intro_paragraph_cy: '',
     },
     title: '',
-    seoMetadataDescription: '{courtName}'
-  }
+    seoMetadataDescription: '{courtName}',
+  },
 };
 
 const i18nWithScIntro = {
@@ -55,16 +58,16 @@ const i18nWithScIntro = {
     notInPersonP1: 'intro para',
     catchmentArea: {
       area1: '',
-      area2: ''
+      area2: '',
     },
-    'service_centre': {
-      'is_a_service_centre': true,
-      'intro_paragraph': 'intro para',
-      'intro_paragraph_cy': 'intro para cy'
+    service_centre: {
+      is_a_service_centre: true,
+      intro_paragraph: 'intro para',
+      intro_paragraph_cy: 'intro para cy',
     },
     title: '',
-    seoMetadataDescription: '{courtName}'
-  }
+    seoMetadataDescription: '{courtName}',
+  },
 };
 
 const i18nWithScIntroCy = {
@@ -72,29 +75,29 @@ const i18nWithScIntroCy = {
     notInPersonP1: 'intro para cy',
     catchmentArea: {
       area1: '',
-      area2: ''
+      area2: '',
     },
-    'service_centre': {
-      'is_a_service_centre': true,
-      'intro_paragraph': 'intro para',
-      'intro_paragraph_cy': 'intro para cy'
+    service_centre: {
+      is_a_service_centre: true,
+      intro_paragraph: 'intro para',
+      intro_paragraph_cy: 'intro para cy',
     },
     title: '',
-    seoMetadataDescription: '{courtName}'
-  }
+    seoMetadataDescription: '{courtName}',
+  },
 };
 
 const courtDetails: CourtDetailsResult = {
   name: 'In Person Court',
-  'in_person': true,
+  in_person: true,
   slug: 'test-in-person-court',
-  'image_file': 'http://example.com/test-image.png',
+  image_file: 'http://example.com/test-image.png',
   addresses: [
     {
-      'address_lines': ['1 Test Street'],
+      address_lines: ['1 Test Street'],
       town: 'Test Town',
-      postcode: 'TE ST1'
-    }
+      postcode: 'TE ST1',
+    },
   ],
   catchment: '',
   info: '',
@@ -119,7 +122,7 @@ const courtDetails: CourtDetailsResult = {
   dx_number: [],
   service_area: [],
   additional_links: [],
-  service_centre: undefined
+  service_centre: undefined,
 };
 
 const viewData: CourtDetailsData = {
@@ -128,23 +131,23 @@ const viewData: CourtDetailsData = {
   title: '',
   catchmentArea: {
     area1: '',
-    area2: ''
+    area2: '',
   },
-  path: ''
+  path: '',
 };
 
 describe('CourtDetailsController', () => {
   const response = {
-    data: expectedCourtDetails
+    data: expectedCourtDetails,
   };
-  const api: any = {court: async () => response.data};
+  const api: any = { court: async () => response.data };
   const controller = new CourtDetailsController(api);
   const nextFunction = jest.fn();
 
   test('Should render the court details page with results', async () => {
     const req = mockRequest(i18n);
     req.params = {
-      slug: 'London'
+      slug: 'London',
     };
     req.hostname = 'testHost';
     const res = mockResponse();
@@ -159,33 +162,34 @@ describe('CourtDetailsController', () => {
           sendDocumentsEmail: [],
           fax: [],
           phone: [],
-          welshPhone: []
-        }
+          welshPhone: [],
+        },
       },
       seoMetadata: {
         '@context': 'https://schema.org',
         '@id': 'http://localhost:3100/courts/London',
         '@type': 'GovernmentOffice',
-        'address': {
+        address: {
           '@type': 'PostalAddress',
-          'addressCountry': 'GB',
-          'addressLocality': 'London',
-          'postalCode': 'B4 6DS',
+          addressCountry: 'GB',
+          addressLocality: 'London',
+          postalCode: 'B4 6DS',
         },
-        'image': [
-          'https://factaat.blob.core.windows.net/images/London',
-        ],
-        'name': 'London',
+        image: ['https://factaat.blob.core.windows.net/images/London'],
+        name: 'London',
       },
-      'seoMetadataDescription': 'London'
+      seoMetadataDescription: 'London',
     };
-    expect(res.render).toBeCalledWith('court-details/in-person-court', expectedData);
+    expect(res.render).toBeCalledWith(
+      'court-details/in-person-court',
+      expectedData,
+    );
   });
 
   test('Should render the court details page with results with no imageurl', async () => {
     const req = mockRequest(i18n);
     req.params = {
-      slug: 'London'
+      slug: 'London',
     };
     req.hostname = 'testHost';
     const res = mockResponse();
@@ -196,40 +200,41 @@ describe('CourtDetailsController', () => {
       path: '/courts/London',
       results: {
         ...response.data,
-        'image_file': null,
+        image_file: null,
         enquiries: {
           emails: [],
           sendDocumentsEmail: [],
           fax: [],
           phone: [],
-          welshPhone: []
-        }
+          welshPhone: [],
+        },
       },
       seoMetadata: {
         '@context': 'https://schema.org',
         '@id': 'http://localhost:3100/courts/London',
         '@type': 'GovernmentOffice',
-        'address': {
+        address: {
           '@type': 'PostalAddress',
-          'addressCountry': 'GB',
-          'addressLocality': 'London',
-          'postalCode': 'B4 6DS',
+          addressCountry: 'GB',
+          addressLocality: 'London',
+          postalCode: 'B4 6DS',
         },
-        'image': [
-          'http://localhost:3100/public/assets/images/hmcts-logo.png',
-        ],
-        'name': 'London'
+        image: ['http://localhost:3100/public/assets/images/hmcts-logo.png'],
+        name: 'London',
       },
-      'seoMetadataDescription': 'London'
+      seoMetadataDescription: 'London',
     };
-    expect(res.render).toBeCalledWith('court-details/in-person-court', expectedData);
+    expect(res.render).toBeCalledWith(
+      'court-details/in-person-court',
+      expectedData,
+    );
   });
 
   test('Should render the court details page for not in person', async () => {
     response.data = expectedNotInPersonCourtDetails;
     const req = mockRequest(i18n);
     req.params = {
-      slug: 'Not-London'
+      slug: 'Not-London',
     };
     req.hostname = 'testHost';
     const res = mockResponse();
@@ -244,25 +249,28 @@ describe('CourtDetailsController', () => {
           sendDocumentsEmail: [],
           fax: [],
           phone: [],
-          welshPhone: []
-        }
+          welshPhone: [],
+        },
       },
       seoMetadata: {
         '@context': 'https://schema.org',
         '@id': 'http://localhost:3100/courts/Not-London',
         '@type': 'GovernmentOffice',
-        'address': {
+        address: {
           '@type': 'PostalAddress',
-          'addressCountry': 'GB',
-          'addressLocality': 'London',
-          'postalCode': 'B4 6DS',
+          addressCountry: 'GB',
+          addressLocality: 'London',
+          postalCode: 'B4 6DS',
         },
-        'image': ['http://localhost:3100/public/assets/images/hmcts-logo.png',],
-        'name': 'Not-London'
+        image: ['http://localhost:3100/public/assets/images/hmcts-logo.png'],
+        name: 'Not-London',
       },
-      'seoMetadataDescription': 'Not-London'
+      seoMetadataDescription: 'Not-London',
     };
-    expect(res.render).toBeCalledWith('court-details/not-in-person-court', expectedData);
+    expect(res.render).toBeCalledWith(
+      'court-details/not-in-person-court',
+      expectedData,
+    );
   });
 
   test('Should cover notInPersonP1 with undefined service_centre', async () => {
@@ -276,7 +284,7 @@ describe('CourtDetailsController', () => {
 
     const req = mockRequest(i18nWithNoScIntro);
     req.params = {
-      slug: 'Not-London'
+      slug: 'Not-London',
     };
     req.lng = 'en';
     req.hostname = 'testHost';
@@ -292,25 +300,28 @@ describe('CourtDetailsController', () => {
           sendDocumentsEmail: [],
           fax: [],
           phone: [],
-          welshPhone: []
-        }
+          welshPhone: [],
+        },
       },
       seoMetadata: {
         '@context': 'https://schema.org',
         '@id': 'http://localhost:3100/courts/Not-London',
         '@type': 'GovernmentOffice',
-        'address': {
+        address: {
           '@type': 'PostalAddress',
-          'addressCountry': 'GB',
-          'addressLocality': 'London',
-          'postalCode': 'B4 6DS',
+          addressCountry: 'GB',
+          addressLocality: 'London',
+          postalCode: 'B4 6DS',
         },
-        'image': ['http://localhost:3100/public/assets/images/hmcts-logo.png',],
-        'name': 'Not-London'
+        image: ['http://localhost:3100/public/assets/images/hmcts-logo.png'],
+        name: 'Not-London',
       },
-      'seoMetadataDescription': 'Not-London'
+      seoMetadataDescription: 'Not-London',
     };
-    expect(res.render).toBeCalledWith('court-details/not-in-person-court', expectedData);
+    expect(res.render).toBeCalledWith(
+      'court-details/not-in-person-court',
+      expectedData,
+    );
   });
 
   test('Should render the court details page for not in person with sc intro', async () => {
@@ -318,7 +329,7 @@ describe('CourtDetailsController', () => {
 
     const req = mockRequest(i18nWithScIntro);
     req.params = {
-      slug: 'Not-London'
+      slug: 'Not-London',
     };
     req.lng = 'en';
     req.hostname = 'testHost';
@@ -334,25 +345,28 @@ describe('CourtDetailsController', () => {
           sendDocumentsEmail: [],
           fax: [],
           phone: [],
-          welshPhone: []
-        }
+          welshPhone: [],
+        },
       },
       seoMetadata: {
         '@context': 'https://schema.org',
         '@id': 'http://localhost:3100/courts/Not-London',
         '@type': 'GovernmentOffice',
-        'address': {
+        address: {
           '@type': 'PostalAddress',
-          'addressCountry': 'GB',
-          'addressLocality': 'London',
-          'postalCode': 'B4 6DS',
+          addressCountry: 'GB',
+          addressLocality: 'London',
+          postalCode: 'B4 6DS',
         },
-        'image': ['http://localhost:3100/public/assets/images/hmcts-logo.png',],
-        'name': 'Not-London'
+        image: ['http://localhost:3100/public/assets/images/hmcts-logo.png'],
+        name: 'Not-London',
       },
-      'seoMetadataDescription': 'Not-London'
+      seoMetadataDescription: 'Not-London',
     };
-    expect(res.render).toBeCalledWith('court-details/not-in-person-court', expectedData);
+    expect(res.render).toBeCalledWith(
+      'court-details/not-in-person-court',
+      expectedData,
+    );
   });
 
   test('Should render the court details page for not in person with sc intro cy', async () => {
@@ -360,7 +374,7 @@ describe('CourtDetailsController', () => {
 
     const req = mockRequest(i18nWithScIntroCy);
     req.params = {
-      slug: 'Not-London'
+      slug: 'Not-London',
     };
     req.lng = 'cy';
     req.hostname = 'testHost';
@@ -376,25 +390,28 @@ describe('CourtDetailsController', () => {
           sendDocumentsEmail: [],
           fax: [],
           phone: [],
-          welshPhone: []
-        }
+          welshPhone: [],
+        },
       },
       seoMetadata: {
         '@context': 'https://schema.org',
         '@id': 'http://localhost:3100/courts/Not-London',
         '@type': 'GovernmentOffice',
-        'address': {
+        address: {
           '@type': 'PostalAddress',
-          'addressCountry': 'GB',
-          'addressLocality': 'London',
-          'postalCode': 'B4 6DS',
+          addressCountry: 'GB',
+          addressLocality: 'London',
+          postalCode: 'B4 6DS',
         },
-        'image': ['http://localhost:3100/public/assets/images/hmcts-logo.png',],
-        'name': 'Not-London'
+        image: ['http://localhost:3100/public/assets/images/hmcts-logo.png'],
+        name: 'Not-London',
       },
-      'seoMetadataDescription': 'Not-London'
+      seoMetadataDescription: 'Not-London',
     };
-    expect(res.render).toBeCalledWith('court-details/not-in-person-court', expectedData);
+    expect(res.render).toBeCalledWith(
+      'court-details/not-in-person-court',
+      expectedData,
+    );
   });
 
   test('Should render the court details page for a closed court', async () => {
@@ -402,7 +419,7 @@ describe('CourtDetailsController', () => {
 
     const req = mockRequest(i18nClosed);
     req.params = {
-      slug: 'Not-London'
+      slug: 'Not-London',
     };
     req.lng = 'cy';
     req.hostname = 'testHost';
@@ -411,15 +428,18 @@ describe('CourtDetailsController', () => {
     const expectedData: PageData = {
       ...i18nClosed['closed-court'],
       path: '/courts/Not-London',
-      'seoMetadataDescription': '{courtName}'
+      seoMetadataDescription: '{courtName}',
     };
-    expect(res.render).toBeCalledWith('court-details/closed-court', expectedData);
+    expect(res.render).toBeCalledWith(
+      'court-details/closed-court',
+      expectedData,
+    );
   });
 
   test('Should render the court details page with no results for empty slug', async () => {
     const req = mockRequest(i18n);
     req.params = {
-      slug: ''
+      slug: '',
     };
     const res = mockResponse();
     await controller.get(req, res, nextFunction);
@@ -430,7 +450,7 @@ describe('CourtDetailsController', () => {
     response.data = '';
     const req = mockRequest(i18n);
     req.params = {
-      slug: 'somewhere'
+      slug: 'somewhere',
     };
     const res = mockResponse();
     await controller.get(req, res, nextFunction);

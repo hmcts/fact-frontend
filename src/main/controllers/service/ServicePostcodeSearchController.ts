@@ -1,23 +1,24 @@
 import { FactRequest } from '../../interfaces/FactRequest';
 import { Response } from 'express';
 import { cloneDeep } from 'lodash';
-import { PostcodeSearchData, PostcodeSearchQuery } from '../../interfaces/PostcodeSearchData';
+import {
+  PostcodeSearchData,
+  PostcodeSearchQuery,
+} from '../../interfaces/PostcodeSearchData';
 import { isEmpty } from '../../utils/validation';
 import { FactApi } from '../../utils/FactApi';
 import autobind from 'autobind-decorator';
 
 @autobind
 export class ServicePostcodeSearchController {
-  constructor(
-    private readonly api: FactApi,
-  ) { }
+  constructor(private readonly api: FactApi) {}
   /**
    * GET /getCourtsByPostcodeOnly
    * @returns redirect to postcode service results page.
    * @param {PostcodeSearchQuery} req.query
    */
   public async getCourtsByPostcodeOnly(req: FactRequest, res: Response) {
-    const { error, postcode, noResults }  = req.query as PostcodeSearchQuery;
+    const { error, postcode, noResults } = req.query as PostcodeSearchQuery;
     const hasError = !isEmpty(error);
     const hasNoResults: boolean = noResults === 'true';
     const data: PostcodeSearchData = {
@@ -27,7 +28,7 @@ export class ServicePostcodeSearchController {
       noServiceSearch: true,
       error: hasError,
       hasNoResults: hasNoResults,
-      postcode: postcode
+      postcode: postcode,
     };
     if (hasError) {
       data.errorType = error;
@@ -40,7 +41,7 @@ export class ServicePostcodeSearchController {
    * @param {PostcodeSearchQuery} req.query
    */
   public async get(req: FactRequest, res: Response) {
-    const { error, postcode, noResults }  = req.query as PostcodeSearchQuery;
+    const { error, postcode, noResults } = req.query as PostcodeSearchQuery;
     const hasError = !isEmpty(error);
     const hasNoResults: boolean = noResults === 'true';
     const data: PostcodeSearchData = {
@@ -49,14 +50,21 @@ export class ServicePostcodeSearchController {
       actionUrl: `/services/${req.params.service}/${req.params.serviceArea}/${req.params.action}/courts/near`,
       error: hasError,
       hasNoResults: hasNoResults,
-      serviceAreaIsChildcare: req.params.serviceArea === 'childcare-arrangements',
+      serviceAreaIsChildcare:
+        req.params.serviceArea === 'childcare-arrangements',
       postcode: postcode,
     };
     if (hasError) {
       data.errorType = error;
     }
-    const serviceArea = await this.api.getServiceArea(req.params.serviceArea, req.lng);
-    data.hint = data.hint.replace('{serviceArea}', serviceArea.name ? serviceArea.name.toLowerCase() : serviceArea.name);
+    const serviceArea = await this.api.getServiceArea(
+      req.params.serviceArea,
+      req.lng,
+    );
+    data.hint = data.hint.replace(
+      '{serviceArea}',
+      serviceArea.name ? serviceArea.name.toLowerCase() : serviceArea.name,
+    );
     res.render('postcode-search', data);
   }
 }

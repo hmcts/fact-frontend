@@ -4,7 +4,13 @@
   "h1": "Accessibility statement for the ‘Find a Court or Tribunal’ service",
   "p1": "This accessibility statement applies to content published on <a class=\"govuk-link\" href=\"http://www.find-court-tribunal.service.gov.uk\">www.find-court-tribunal.service.gov.uk</a>",
   "p2": "This website is run by HM Courts and Tribunals. We want as many people as possible to be able to use this website, so we have designed it to be accessible. For example, that means you should be able to:",
-  "bullets": ["change colours, contrast levels and fonts using browser or device settings", "zoom in up to 400% without the text spilling off the screen", "navigate most of the website using just a keyboard", "navigate most of the website using speech recognition software", "listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)"],
+  "bullets": [
+    "change colours, contrast levels and fonts using browser or device settings",
+    "zoom in up to 400% without the text spilling off the screen",
+    "navigate most of the website using just a keyboard",
+    "navigate most of the website using speech recognition software",
+    "listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)"
+  ],
   "p3": "We’ve also made the website text as simple as possible to understand.",
   "p4": "<a class=\"govuk-link\" href=\"https://mcmw.abilitynet.org.uk/\">AbilityNet</a> has advice on making your device easier to use if you have a disability.",
   "h13": "How accessible this website is",
@@ -18,7 +24,7 @@
   "h5": "Enforcement procedure",
   "p9": "The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the ‘accessibility regulations’). If you’re not happy with how we respond to your complaint, <a class=\"govuk-link\" href=\"https://www.equalityadvisoryservice.com/\">contact the Equality Advisory and Support Service (EASS) (opens in a new window)</a>.",
   "h6": "Contacting us by phone or visiting us in person",
-  "p22" : "Contact information for all courts and tribunals can be found through the <a class=\"govuk-link\" href=\"http://www.find-court-tribunal.service.gov.uk\">Find a court or tribunal service</a>.",
+  "p22": "Contact information for all courts and tribunals can be found through the <a class=\"govuk-link\" href=\"http://www.find-court-tribunal.service.gov.uk\">Find a court or tribunal service</a>.",
   "p11": "We provide a text relay service for people who are D/deaf, hearing impaired or have a speech impediment.",
   "p12": "Our courts and tribunals have audio induction loops, or if you contact us before your visit we can arrange a British Sign Language (BSL) interpreter.",
   "h7": "Technical information about this website’s accessibility",

@@ -9,9 +9,15 @@ export class PropertiesVolume {
     if (!app.locals.developmentMode) {
       propertiesVolume.addTo(config);
 
-      this.setSecret('secrets.fact.AppInsightsInstrumentationKey', 'appInsights.instrumentationKey');
+      this.setSecret(
+        'secrets.fact.AppInsightsInstrumentationKey',
+        'appInsights.instrumentationKey',
+      );
     } else {
-      this.setLocalSecret('AppInsightsInstrumentationKey', 'appInsights.instrumentationKey');
+      this.setLocalSecret(
+        'AppInsightsInstrumentationKey',
+        'appInsights.instrumentationKey',
+      );
     }
   }
 
@@ -23,7 +29,23 @@ export class PropertiesVolume {
 
   private setLocalSecret(secret: string, toPath: string): void {
     // Load a secret from the AAT vault using azure cli
-    const result = spawnSync('az', ['keyvault', 'secret', 'show', '--vault-name', 'fact-aat', '-o', 'tsv', '--query', 'value', '--name', secret], {encoding: 'utf8'});
+    const result = spawnSync(
+      'az',
+      [
+        'keyvault',
+        'secret',
+        'show',
+        '--vault-name',
+        'fact-aat',
+        '-o',
+        'tsv',
+        '--query',
+        'value',
+        '--name',
+        secret,
+      ],
+      { encoding: 'utf8' },
+    );
     set(config, toPath, encodeURI(result.stdout.replace('\n', '')));
   }
 }

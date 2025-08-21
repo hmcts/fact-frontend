@@ -23,10 +23,12 @@ app.get('/courts', (req: Request, res: Response) => {
   const query: string = (req.query.q as string).toUpperCase();
   const courts = data;
   const filteredDocs = courts.filter((court: any) => {
-    if (court['postcode'].toUpperCase().indexOf(query) >= 0 ||
-        court['address'].toUpperCase().indexOf(query) >= 0 ||
-        court['townName'].toUpperCase().indexOf(query) >= 0 ||
-        court['name'].toUpperCase().indexOf(query) >= 0) {
+    if (
+      court['postcode'].toUpperCase().indexOf(query) >= 0 ||
+      court['address'].toUpperCase().indexOf(query) >= 0 ||
+      court['townName'].toUpperCase().indexOf(query) >= 0 ||
+      court['name'].toUpperCase().indexOf(query) >= 0
+    ) {
       return true;
     }
   });
@@ -35,7 +37,9 @@ app.get('/courts', (req: Request, res: Response) => {
 
 app.get('/courts/:slug', (req: Request, res: Response) => {
   const slug: string = (req.params.slug as string).toLowerCase();
-  const court = courtDetails.find((court: any) => court.slug.toLowerCase() === slug);
+  const court = courtDetails.find(
+    (court: any) => court.slug.toLowerCase() === slug,
+  );
   res.json(court);
 });
 
@@ -51,16 +55,22 @@ app.get('/services/money', (req: Request, res: Response) => {
   res.json(moneyServiceData);
 });
 
-app.get('/services/probate-divorce-ending-civil-partnerships/service-areas', (req: Request, res: Response) => {
-  res.json(familyServiceAreasData);
-});
+app.get(
+  '/services/probate-divorce-ending-civil-partnerships/service-areas',
+  (req: Request, res: Response) => {
+    res.json(familyServiceAreasData);
+  },
+);
 
-app.get('/services/childcare-and-parenting/service-areas', (req: Request, res: Response) => {
-  res.json(childcareAndParentingServiceAreasData);
-});
+app.get(
+  '/services/childcare-and-parenting/service-areas',
+  (req: Request, res: Response) => {
+    res.json(childcareAndParentingServiceAreasData);
+  },
+);
 
 app.get('/service-areas/:serviceArea', (req: Request, res: Response) => {
-  const serviceArea: string = (req.params.serviceArea as string);
+  const serviceArea: string = req.params.serviceArea as string;
   const serviceAreaObj = getServiceArea(serviceArea);
   res.json(serviceAreaObj);
 });
@@ -73,20 +83,22 @@ app.get('/search/results', (req: Request, res: Response) => {
   const lon = 1;
   const courts = [...courtDetails];
   const distanceSortedCourt = courts.sort((court, court2) => {
-    return calculateDistance(lan, lon, court) - calculateDistance(lan, lon, court2);
+    return (
+      calculateDistance(lan, lon, court) - calculateDistance(lan, lon, court2)
+    );
   });
-  const filteredDocs = distanceSortedCourt.filter(court => {
+  const filteredDocs = distanceSortedCourt.filter((court) => {
     for (const areaOfLaw of court['areas_of_law']) {
       if (areaOfLaw.name === serviceAreaObj.areaOfLawName) {
         return court;
       }
     }
   });
-  const mappedCourts = filteredDocs.slice(0, 10).map(courts => {
+  const mappedCourts = filteredDocs.slice(0, 10).map((courts) => {
     return {
       name: courts.name,
       slug: courts.slug,
-      distance: courts.distance
+      distance: courts.distance,
     };
   });
 
@@ -94,7 +106,7 @@ app.get('/search/results', (req: Request, res: Response) => {
     name: serviceAreaObj.name,
     onlineText: serviceAreaObj.onlineText,
     onlineUrl: serviceAreaObj.onlineUrl,
-    courts: mappedCourts
+    courts: mappedCourts,
   };
   res.json(results);
 });

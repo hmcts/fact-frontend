@@ -98,10 +98,7 @@
         "display_name": "Benefits"
       }
     ],
-    "types": [
-      "Family Court",
-      "County Court"
-    ],
+    "types": ["Family Court", "County Court"],
     "emails": [
       {
         "address": "bailiffs.birmingham.countycourt@justice.gov.uk",
@@ -287,19 +284,14 @@
     ],
     "addresses": [
       {
-        "address_lines": [
-          "Priory Courts",
-          "33 Bull Street"
-        ],
+        "address_lines": ["Priory Courts", "33 Bull Street"],
         "postcode": "B4 6DS",
         "town": "Birmingham",
         "type": "Visit or contact us"
       }
     ],
     "gbs": null,
-    "dx_number": [
-      "701987 Birmingham 7"
-    ],
+    "dx_number": ["701987 Birmingham 7"],
     "service_area": "divorce",
     "in_person": true
   },
@@ -399,10 +391,7 @@
     ],
     "addresses": [
       {
-        "address_lines": [
-          "Liverpool Civil & Family Court",
-          "35 Vernon Street"
-        ],
+        "address_lines": ["Liverpool Civil & Family Court", "35 Vernon Street"],
         "postcode": "L2 2BX",
         "town": "Liverpool",
         "type": "Write to us"
@@ -434,9 +423,7 @@
         "external_link_desc": "Information about making a court claim for money"
       }
     ],
-    "types": [
-      "County Court"
-    ],
+    "types": ["County Court"],
     "emails": [
       {
         "address": "ccmcce-filing@justice.gov.uk",
@@ -475,19 +462,14 @@
     "facilities": [],
     "addresses": [
       {
-        "address_lines": [
-          "County Court Money Claims Centre",
-          "PO Box 527"
-        ],
+        "address_lines": ["County Court Money Claims Centre", "PO Box 527"],
         "postcode": "M5 0BY",
         "town": "Salford",
         "type": "Write to us"
       }
     ],
     "gbs": null,
-    "dx_number": [
-      "702634 Salford 5"
-    ],
+    "dx_number": ["702634 Salford 5"],
     "service_area": null,
     "in_person": null
   },
@@ -540,10 +522,7 @@
         "display_name": "Domestic abuse"
       }
     ],
-    "types": [
-      "Magistrates' Court",
-      "Family Court"
-    ],
+    "types": ["Magistrates' Court", "Family Court"],
     "emails": [],
     "contacts": [
       {
@@ -610,9 +589,7 @@
     ],
     "addresses": [
       {
-        "address_lines": [
-          "Walton Street"
-        ],
+        "address_lines": ["Walton Street"],
         "postcode": "HP21 7QZ",
         "town": "Aylesbury",
         "type": "Visit us"
@@ -629,9 +606,7 @@
       }
     ],
     "gbs": null,
-    "dx_number": [
-      "149920 Aylesbury 10"
-    ],
+    "dx_number": ["149920 Aylesbury 10"],
     "service_area": null,
     "in_person": true
   },
@@ -712,10 +687,7 @@
         "external_link_desc": "Information about making a court claim for money"
       }
     ],
-    "types": [
-      "Family Court",
-      "County Court"
-    ],
+    "types": ["Family Court", "County Court"],
     "emails": [
       {
         "address": "hearings.stoke.countycourt@justice.gov.uk",
@@ -809,9 +781,7 @@
       }
     ],
     "gbs": null,
-    "dx_number": [
-      "701976 Telford 3"
-    ],
+    "dx_number": ["701976 Telford 3"],
     "service_area": null,
     "in_person": null
   },
@@ -897,11 +867,7 @@
         "external_link_desc": "Information about the Social Security and Child Support Tribunal"
       }
     ],
-    "types": [
-      "Magistrates' Court",
-      "Family Court",
-      "County Court"
-    ],
+    "types": ["Magistrates' Court", "Family Court", "County Court"],
     "emails": [
       {
         "address": "sscsa-liverpool@justice.gov.uk",
@@ -983,19 +949,14 @@
     ],
     "addresses": [
       {
-        "address_lines": [
-          "Hall Park",
-          "Ramsay Brow"
-        ],
+        "address_lines": ["Hall Park", "Ramsay Brow"],
         "postcode": "CA14 4AS",
         "town": "Workington",
         "type": "Visit us"
       }
     ],
     "gbs": null,
-    "dx_number": [
-      "743420 Workington 5"
-    ],
+    "dx_number": ["743420 Workington 5"],
     "service_area": null,
     "in_person": null
   },
@@ -1013,9 +974,7 @@
     "county_location_code": null,
     "magistrates_location_code": null,
     "areas_of_law": [],
-    "types": [
-      "Tribunal"
-    ],
+    "types": ["Tribunal"],
     "emails": [
       {
         "address": "taxappeals@hmcts.gsi.gov.uk",
@@ -1039,9 +998,7 @@
     "facilities": [],
     "addresses": [
       {
-        "address_lines": [
-          "PO Box 16972"
-        ],
+        "address_lines": ["PO Box 16972"],
         "postcode": "B16 6TZ",
         "town": "Birmingham",
         "type": "Write to us"
@@ -1102,9 +1059,7 @@
         "display_name": null
       }
     ],
-    "types": [
-      "Family Court"
-    ],
+    "types": ["Family Court"],
     "emails": [
       {
         "address": "cfc.privatelaw@Justice.gov.uk",
@@ -1196,19 +1151,14 @@
     ],
     "addresses": [
       {
-        "address_lines": [
-          "First Avenue House",
-          "42-49 High Holborn"
-        ],
+        "address_lines": ["First Avenue House", "42-49 High Holborn"],
         "postcode": "WC1V 6NP",
         "town": "London",
         "type": "Visit or contact us"
       }
     ],
     "gbs": null,
-    "dx_number": [
-      "160010 Kingsway 7"
-    ],
+    "dx_number": ["160010 Kingsway 7"],
     "service_area": [],
     "in_person": true,
     "access_scheme": true
@@ -1336,9 +1286,7 @@
       }
     ],
     "gbs": null,
-    "dx_number": [
-      "160040 Strand 4"
-    ],
+    "dx_number": ["160040 Strand 4"],
     "service_area": [],
     "in_person": true,
     "access_scheme": false
@@ -1372,9 +1320,7 @@
         "display_name": "Tax"
       }
     ],
-    "types": [
-      "Tribunal"
-    ],
+    "types": ["Tribunal"],
     "emails": [
       {
         "address": "i.f.a.taylorhouse@justice.gov.uk",
@@ -1427,10 +1373,7 @@
     ],
     "addresses": [
       {
-        "address_lines": [
-          "Taylor House",
-          "88 Rosebery Avenue"
-        ],
+        "address_lines": ["Taylor House", "88 Rosebery Avenue"],
         "postcode": "EC1R 4QU",
         "town": "London",
         "type": "Visit or contact us"
@@ -1471,9 +1414,7 @@
         "display_name": "Tax"
       }
     ],
-    "types": [
-      "Tribunal"
-    ],
+    "types": ["Tribunal"],
     "emails": [
       {
         "address": "midlandswestet@justice.gov.uk",
@@ -1535,11 +1476,7 @@
     ],
     "addresses": [
       {
-        "address_lines": [
-          "Centre City Tower",
-          "13th Floor",
-          "5-7 Hill Street"
-        ],
+        "address_lines": ["Centre City Tower", "13th Floor", "5-7 Hill Street"],
         "postcode": "B5 4UU",
         "town": "Birmingham",
         "type": "Visit us"

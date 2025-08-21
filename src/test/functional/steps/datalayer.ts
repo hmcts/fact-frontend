@@ -1,6 +1,6 @@
-import {config as testConfig} from '../../config';
-import {expect} from 'chai';
-import {I} from '../utlis/codecept-util';
+import { config as testConfig } from '../../config';
+import { expect } from 'chai';
+import { I } from '../utlis/codecept-util';
 
 Given('A page loads', async function () {
   I.amOnPage(testConfig.TEST_URL + '/');
@@ -21,7 +21,11 @@ Then('The language object contains {string}', async (lang: string) => {
   const dataLayer = await I.executeScript(function () {
     return dataLayer;
   });
-  expect(dataLayer.filter((o: { language: any }) => o.language).map((o: { language: any }) => o.language)).eql([lang]);
+  expect(
+    dataLayer
+      .filter((o: { language: any }) => o.language)
+      .map((o: { language: any }) => o.language),
+  ).eql([lang]);
 });
 
 Given('A page renders an error', async function () {
