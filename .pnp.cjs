@@ -105,7 +105,7 @@ const RAW_RUNTIME_STATE =
           ["playwright", "npm:1.52.0"],\
           ["request", "npm:2.88.2"],\
           ["require-directory", "npm:2.1.1"],\
-          ["sass", "npm:1.88.0"],\
+          ["sass", "npm:1.90.0"],\
           ["sass-lint", "npm:1.13.1"],\
           ["sass-loader", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:16.0.5"],\
           ["serve-favicon", "npm:2.5.1"],\
@@ -12283,7 +12283,7 @@ const RAW_RUNTIME_STATE =
           ["playwright", "npm:1.52.0"],\
           ["request", "npm:2.88.2"],\
           ["require-directory", "npm:2.1.1"],\
-          ["sass", "npm:1.88.0"],\
+          ["sass", "npm:1.90.0"],\
           ["sass-lint", "npm:1.13.1"],\
           ["sass-loader", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:16.0.5"],\
           ["serve-favicon", "npm:2.5.1"],\
@@ -18968,13 +18968,13 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["sass", [\
-      ["npm:1.88.0", {\
-        "packageLocation": "./.yarn/cache/sass-npm-1.88.0-ab12725694-dfe4aec194.zip/node_modules/sass/",\
+      ["npm:1.90.0", {\
+        "packageLocation": "./.yarn/cache/sass-npm-1.90.0-50f57f9a39-409236ad97.zip/node_modules/sass/",\
         "packageDependencies": [\
           ["@parcel/watcher", "npm:2.5.1"],\
           ["chokidar", "npm:4.0.3"],\
           ["immutable", "npm:5.1.1"],\
-          ["sass", "npm:1.88.0"],\
+          ["sass", "npm:1.90.0"],\
           ["source-map-js", "npm:1.2.1"]\
         ],\
         "linkType": "HARD"\
@@ -19022,7 +19022,7 @@ const RAW_RUNTIME_STATE =
           ["@types/webpack", null],\
           ["neo-async", "npm:2.6.2"],\
           ["node-sass", null],\
-          ["sass", "npm:1.88.0"],\
+          ["sass", "npm:1.90.0"],\
           ["sass-embedded", null],\
           ["sass-loader", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:16.0.5"],\
           ["webpack", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:5.99.8"]\
