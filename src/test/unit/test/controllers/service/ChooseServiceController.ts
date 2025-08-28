@@ -82,7 +82,7 @@ describe('Choose service controller', () => {
     };
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services/chosen-service/service-areas/' + req.params.action);
+    expect(res.redirect).toBeCalledWith('/services/chosen-service/service-areas/' + req.params.action);
   });
 
 });

@@ -26,7 +26,7 @@ describe('Search Option Controller', () => {
     };
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/search-by-name');
+    expect(res.redirect).toBeCalledWith('/search-by-name');
   });
 
   test('Should redirect to the Choose Action page', async () => {
@@ -36,7 +36,7 @@ describe('Search Option Controller', () => {
     };
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/service-choose-action');
+    expect(res.redirect).toBeCalledWith('/service-choose-action');
   });
 
   test('Should redirect to the Search by postcode page', async () => {
@@ -46,7 +46,7 @@ describe('Search Option Controller', () => {
     };
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services/search-by-postcode');
+    expect(res.redirect).toBeCalledWith('/services/search-by-postcode');
   });
 
   test('Should render search option if no data has been entered', async () => {

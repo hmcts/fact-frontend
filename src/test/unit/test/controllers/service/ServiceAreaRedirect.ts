@@ -135,7 +135,7 @@ describe('ServiceAreaRedirect', () => {
     const result = redirect.getUrl('some-service', serviceArea, invalidAction);
 
     expect(result).toBe('/not-found');
-    expect(mockLogger.error).toHaveBeenCalledWith(
+    expect(mockLogger.error).toBeCalledWith(
       "Invalid action 'invalid-action' found in ServiceAreaRedirect getURL."
     );
   });

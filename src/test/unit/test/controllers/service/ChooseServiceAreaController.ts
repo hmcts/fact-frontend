@@ -67,7 +67,7 @@ describe('Choose service area controller', () => {
       errors: false,
       seoMetadataDescription: 'Courts managing service description'
     };
-    expect(res.render).toHaveBeenCalledWith('service', expectedData);
+    expect(res.render).toBeCalledWith('service', expectedData);
   });
 
   test('Should render a service area page with errors if no data has been entered', async () => {
@@ -136,7 +136,7 @@ describe('Choose service area controller', () => {
 
     const res = mockResponse();
     await controller.get(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
+    expect(res.redirect).toBeCalledWith('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
   });
 
   test('Should redirect to error page if a service area does not exist', async () => {
@@ -150,7 +150,7 @@ describe('Choose service area controller', () => {
     const res = mockResponse();
     await controller.post(req, res);
 
-    expect(res.redirect).toHaveBeenCalledWith('/not-found');
+    expect(res.redirect).toBeCalledWith('/not-found');
   });
 
   test('Should redirect to service not found if service area selected is not listed', async () => {
@@ -165,7 +165,7 @@ describe('Choose service area controller', () => {
 
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services/update');
+    expect(res.redirect).toBeCalledWith('/services/update');
   });
 
   test('Should redirect to /not-found if GET action is bad', async () => {
@@ -178,8 +178,8 @@ describe('Choose service area controller', () => {
 
     await controller.get(req, res);
 
-    expect(res.redirect).toHaveBeenCalledWith('/not-found');
-    expect(mockLogger.error).toHaveBeenCalledWith(
+    expect(res.redirect).toBeCalledWith('/not-found');
+    expect(mockLogger.error).toBeCalledWith(
       "Invalid action 'bad-action' found in ChooseServiceAreaController GET."
     );
   });
@@ -205,8 +205,8 @@ describe('Choose service area controller', () => {
 
     await failingController.post(req, res);
 
-    expect(res.redirect).toHaveBeenCalledWith('/not-found');
-    expect(mockLogger.error).toHaveBeenCalledWith(
+    expect(res.redirect).toBeCalledWith('/not-found');
+    expect(mockLogger.error).toBeCalledWith(
       "Invalid serviceChosen 'invalid-service' found in ChooseServiceAreaController POST."
     );
   });
