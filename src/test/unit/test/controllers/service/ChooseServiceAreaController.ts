@@ -168,4 +168,48 @@ describe('Choose service area controller', () => {
     expect(res.redirect).toHaveBeenCalledWith('/services/update');
   });
 
+  test('Should redirect to /not-found if GET action is bad', async () => {
+    const req = mockRequest(i18n);
+    req.params = {
+      service: 'chosen-service',
+      action: 'bad-action'
+    };
+    const res = mockResponse();
+
+    await controller.get(req, res);
+
+    expect(res.redirect).toHaveBeenCalledWith('/not-found');
+    expect(mockLogger.error).toHaveBeenCalledWith(
+      "Invalid action 'bad-action' found in ChooseServiceAreaController GET."
+    );
+  });
+
+  test('Should redirect to /not-found and log error if getServiceData fails due to bad url', async () => {
+    const failingApi = {
+      serviceAreas: jest.fn().mockRejectedValue(new Error('API failure')),
+      getService: jest.fn(),
+      getServiceArea: jest.fn()
+    } as any;
+
+    const failingController =
+      new ChooseServiceAreaController(failingApi, mockLogger, new ServiceAreaRedirect(mockLogger));
+
+    const req = mockRequest(i18n);
+    req.params = {
+      service: 'invalid-service',
+      action: 'documents'
+    };
+    req.body = {};
+
+    const res = mockResponse();
+
+    await failingController.post(req, res);
+
+    expect(res.redirect).toHaveBeenCalledWith('/not-found');
+    expect(mockLogger.error).toHaveBeenCalledWith(
+      "Invalid serviceChosen 'invalid-service' found in ChooseServiceAreaController POST."
+    );
+  });
+
+
 });

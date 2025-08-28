@@ -2,6 +2,7 @@ import { ServiceAreaResult } from '../../../../../main/interfaces/ServiceAreasDa
 import { Catchment } from '../../../../../main/utils/Catchment';
 import { ServiceAreaRedirect } from '../../../../../main/controllers/service/ServiceAreaRedirect';
 import { Action } from '../../../../../main/utils/Action';
+import { Logger } from '../../../../../main/interfaces/Logger';
 
 describe('ServiceAreaRedirect', () => {
   const mockLogger = {} as any;
@@ -116,5 +117,28 @@ describe('ServiceAreaRedirect', () => {
     expect(redirect.getUrl('adoption', serviceArea, Action.Update)).toBe('/services/adoption/adoption/update/search-by-postcode');
     expect(redirect.getUrl('adoption', serviceArea, Action.NotListed)).toBe('/services/adoption/adoption/not-listed/search-by-postcode');
   });
+
+  test('Should return /not-found and log an error for an invalid action', () => {
+    const mockLogger = { error: jest.fn() } as unknown as Logger;
+    const redirect = new ServiceAreaRedirect(mockLogger);
+
+    const serviceArea: ServiceAreaResult = {
+      slug: 'some-area',
+      areaOfLawName: 'SomeAol',
+      serviceAreaCourts: [
+        { catchmentType: Catchment.Local, slug: 'some-court' }
+      ]
+    } as any;
+
+    const invalidAction = 'invalid-action' as any;
+
+    const result = redirect.getUrl('some-service', serviceArea, invalidAction);
+
+    expect(result).toBe('/not-found');
+    expect(mockLogger.error).toHaveBeenCalledWith(
+      "Invalid action 'invalid-action' found in ServiceAreaRedirect getURL."
+    );
+  });
+
 
 });
