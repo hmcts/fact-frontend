@@ -7,12 +7,14 @@ import { ServiceAreasData } from '../../interfaces/ServiceAreasData';
 import { cloneDeep } from 'lodash';
 import { ServiceAreaRedirect } from './ServiceAreaRedirect';
 import { Action } from '../../utils/Action';
+import { Logger } from '../../interfaces/Logger';
 
 @autobind
 export class ChooseServiceAreaController {
 
   constructor(
     private readonly api: FactApi,
+    private readonly logger: Logger,
     private readonly serviceAreaRedirect: ServiceAreaRedirect
   ) { }
   /**
@@ -53,8 +55,17 @@ export class ChooseServiceAreaController {
    */
   public async get(req: FactRequest, res: Response) {
     const {service, action} = req.params;
+    if (!this.isValidAction(action)) {
+      this.logger.error(`Invalid action '${action}' found in ChooseServiceAreaController GET.`);
+      return res.redirect('/not-found');
+    }
     const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
-    const data = await this.getServiceData(service, action, serviceAreasPageData,false, req.lng);
+    let data;
+    try {
+      data = await this.getServiceData(service, action, serviceAreasPageData, false, req.lng);
+    } catch (error) {
+      return res.redirect('/not-found');
+    }
     if(data.results.length === 1){
       req.body.serviceArea = data.results[0].slug;
       await this.post(req, res);
@@ -70,11 +81,20 @@ export class ChooseServiceAreaController {
    */
   public async post(req: FactRequest, res: Response) {
     const action = req.params.action as Action;
-
+    if (!this.isValidAction(action)) {
+      this.logger.error(`Invalid action '${action}' found in ChooseServiceAreaController POST.`);
+      return res.redirect('/not-found');
+    }
     if (!hasProperty(req.body, 'serviceArea')) {
       const serviceChosen = req.params.service;
       const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
-      const serviceData = await this.getServiceData(serviceChosen, action, serviceAreasPageData, true, req.lng);
+      let serviceData;
+      try {
+        serviceData = await this.getServiceData(serviceChosen, action, serviceAreasPageData, false, req.lng);
+      } catch (error) {
+        this.logger.error(`Invalid serviceChosen '${serviceChosen}' found in ChooseServiceAreaController POST.`);
+        return res.redirect('/not-found');
+      }
 
       res.render('service', serviceData);
     } else if (req.body.serviceArea === 'not-listed') {
@@ -85,5 +105,19 @@ export class ChooseServiceAreaController {
 
       res.redirect(url);
     }
+  }
+
+  /**
+   * Checks if the action is valid according to the Action enum
+   * @param {string} action
+   * @returns {boolean} if action is valid
+   */
+  private isValidAction(action: string): boolean {
+    for (const validAction of Object.values(Action)) {
+      if (action === validAction) {
+        return true;
+      }
+    }
+    return false;
   }
 }
