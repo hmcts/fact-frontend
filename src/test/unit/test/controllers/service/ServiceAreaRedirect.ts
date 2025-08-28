@@ -4,7 +4,10 @@ import { ServiceAreaRedirect } from '../../../../../main/controllers/service/Ser
 import { Action } from '../../../../../main/utils/Action';
 
 describe('ServiceAreaRedirect', () => {
-  const redirect = new ServiceAreaRedirect();
+  const mockLogger = {} as any;
+  const redirect = new ServiceAreaRedirect(
+    mockLogger
+  );
 
   test('Should redirect an area with all types to the correct endpoints', async () => {
     const serviceArea: ServiceAreaResult = {

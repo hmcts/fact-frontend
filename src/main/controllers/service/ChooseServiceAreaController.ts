@@ -90,7 +90,7 @@ export class ChooseServiceAreaController {
       const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
       let serviceData;
       try {
-        serviceData = await this.getServiceData(serviceChosen, action, serviceAreasPageData, false, req.lng);
+        serviceData = await this.getServiceData(serviceChosen, action, serviceAreasPageData, true, req.lng);
       } catch (error) {
         this.logger.error(`Invalid serviceChosen '${serviceChosen}' found in ChooseServiceAreaController POST.`);
         return res.redirect('/not-found');
