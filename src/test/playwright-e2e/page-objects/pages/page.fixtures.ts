@@ -5,6 +5,9 @@ import { ServiceChooseActionOPage } from './service-choose-action-page.po';
 import { ReasonNeededOPage } from './reason-needed-page.po';
 import { ServiceNotFoundOPage } from './service-not-found-page.po';
 import { SearchByPrefixOPage } from './search-by-prefix-page.po';
+import { SearchByNameOPage } from './search-by-name-page.po';
+import { MoneySearchOPage } from './money-option-page.po';
+import { SearchByPostcodeOPage } from './search-by-postcode-page.po';
 
 export interface PageFixtures {
   factLandingPage: FactLandingOPage;
@@ -13,6 +16,9 @@ export interface PageFixtures {
   reasonNeededPage: ReasonNeededOPage;
   serviceNotFoundPage: ServiceNotFoundOPage;
   searchByPrefixPage: SearchByPrefixOPage;
+  searchByNamePage: SearchByNameOPage;
+  moneySearchPage: MoneySearchOPage;
+  searchByPostcodePage: SearchByPostcodeOPage;
 }
 
 /* Instantiates pages and provides page to the test via use()
@@ -56,5 +62,23 @@ export const pageFixtures = {
     use: (page: SearchByPrefixOPage) => Promise<void>
   ) => {
     await use(new SearchByPrefixOPage(page));
+  },
+  searchByNamePage: async (
+    { page }: { page: Page },
+    use: (page: SearchByNameOPage) => Promise<void>
+  ) => {
+    await use(new SearchByNameOPage(page));
+  },
+  moneySearchPage: async (
+    { page }: { page: Page },
+    use: (page: MoneySearchOPage) => Promise<void>
+  ) => {
+    await use(new MoneySearchOPage(page));
+  },
+  searchByPostcodePage: async (
+    { page }: { page: Page },
+    use: (page: SearchByPostcodeOPage) => Promise<void>
+  ) => {
+    await use(new SearchByPostcodeOPage(page));
   },
 };
