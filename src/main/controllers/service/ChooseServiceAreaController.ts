@@ -57,15 +57,14 @@ export class ChooseServiceAreaController {
       return res.redirect('/not-found');
     }
     const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
-    const data = await this.tryGetServiceData(service, action, serviceAreasPageData, false, req.lng, res);
-    if (!data) return;
-
-    res.render('service', data);
-    if(data.results.length === 1){
-      req.body.serviceArea = data.results[0].slug;
-      await this.post(req, res);
-    } else {
-      res.render('service', data);
+    const data = await this.safeGetServiceData(service, action, serviceAreasPageData, false, req.lng, res);
+    if(data) {
+      if (data.results.length === 1) {
+        req.body.serviceArea = data.results[0].slug;
+        await this.post(req, res);
+      } else {
+        res.render('service', data);
+      }
     }
   }
   /**
@@ -82,10 +81,12 @@ export class ChooseServiceAreaController {
     if (!hasProperty(req.body, 'serviceArea')) {
       const serviceChosen = req.params.service;
       const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
-      const serviceData = await this.tryGetServiceData(serviceChosen, action, serviceAreasPageData, true, req.lng, res);
-      if (!serviceData) return;
 
-      res.render('service', serviceData);
+      const serviceData =
+        await this.safeGetServiceData(serviceChosen, action, serviceAreasPageData, true, req.lng, res);
+      if(serviceData) {
+        res.render('service', serviceData);
+      }
     } else if (req.body.serviceArea === 'not-listed') {
       res.redirect('/services/' + action);
     } else {
@@ -110,17 +111,26 @@ export class ChooseServiceAreaController {
     return false;
   }
 
-  private async tryGetServiceData(
+  /**
+   *
+   * @param serviceChosen the chosen service
+   * @param action action
+   * @param serviceAreasPageData current service area page data
+   * @param hasErrors errors
+   * @param lng language
+   * @param res required so it can error out
+   */
+  private async safeGetServiceData(
     serviceChosen: string,
     action: string,
     serviceAreasPageData: ServiceAreasData,
     hasErrors: boolean,
     lng: string,
     res: Response
-  ) {
+  ): Promise<ServiceAreasData | null> {
     try {
       return await this.getServiceData(serviceChosen, action, serviceAreasPageData, hasErrors, lng);
-    } catch (error) {
+    } catch {
       res.redirect('/not-found');
       return null;
     }
