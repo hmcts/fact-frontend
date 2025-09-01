@@ -197,4 +197,33 @@ describe('Choose service area controller', () => {
   });
 
 
+  test('Should redirect to /not-found if getServiceData fails for GET', async () => {
+    jest.spyOn(api, 'serviceAreas').mockRejectedValueOnce(new Error('API error'));
+
+    const req = mockRequest(i18n);
+    req.params = {
+      service: 'bad-service',
+      action: 'documents'
+    };
+    const res = mockResponse();
+
+    await controller.get(req, res);
+
+    expect(res.redirect).toBeCalledWith('/not-found');
+  });
+
+  test('Should redirect to /not-found if getServiceData fails for POST', async () => {
+    jest.spyOn(api, 'serviceAreas').mockRejectedValueOnce(new Error('API error'));
+
+    const req = mockRequest(i18n);
+    req.params = {
+      service: 'bad-service',
+      action: 'documents'
+    };
+    const res = mockResponse();
+
+    await controller.post(req, res);
+
+    expect(res.redirect).toBeCalledWith('/not-found');
+  });
 });
