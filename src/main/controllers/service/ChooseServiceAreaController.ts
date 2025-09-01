@@ -7,14 +7,12 @@ import { ServiceAreasData } from '../../interfaces/ServiceAreasData';
 import { cloneDeep } from 'lodash';
 import { ServiceAreaRedirect } from './ServiceAreaRedirect';
 import { Action } from '../../utils/Action';
-import { Logger } from '../../interfaces/Logger';
 
 @autobind
 export class ChooseServiceAreaController {
 
   constructor(
     private readonly api: FactApi,
-    private readonly logger: Logger,
     private readonly serviceAreaRedirect: ServiceAreaRedirect
   ) { }
   /**
@@ -56,7 +54,6 @@ export class ChooseServiceAreaController {
   public async get(req: FactRequest, res: Response) {
     const {service, action} = req.params;
     if (!this.isValidAction(action)) {
-      this.logger.error(`Invalid action '${action}' found in ChooseServiceAreaController GET.`);
       return res.redirect('/not-found');
     }
     const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
@@ -82,7 +79,6 @@ export class ChooseServiceAreaController {
   public async post(req: FactRequest, res: Response) {
     const action = req.params.action as Action;
     if (!this.isValidAction(action)) {
-      this.logger.error(`Invalid action '${action}' found in ChooseServiceAreaController POST.`);
       return res.redirect('/not-found');
     }
     if (!hasProperty(req.body, 'serviceArea')) {
@@ -92,7 +88,6 @@ export class ChooseServiceAreaController {
       try {
         serviceData = await this.getServiceData(serviceChosen, action, serviceAreasPageData, true, req.lng);
       } catch (error) {
-        this.logger.error(`Invalid serviceChosen '${serviceChosen}' found in ChooseServiceAreaController POST.`);
         return res.redirect('/not-found');
       }
 

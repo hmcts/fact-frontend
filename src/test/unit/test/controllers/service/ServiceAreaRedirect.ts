@@ -2,13 +2,9 @@ import { ServiceAreaResult } from '../../../../../main/interfaces/ServiceAreasDa
 import { Catchment } from '../../../../../main/utils/Catchment';
 import { ServiceAreaRedirect } from '../../../../../main/controllers/service/ServiceAreaRedirect';
 import { Action } from '../../../../../main/utils/Action';
-import { Logger } from '../../../../../main/interfaces/Logger';
 
 describe('ServiceAreaRedirect', () => {
-  const mockLogger = {} as any;
-  const redirect = new ServiceAreaRedirect(
-    mockLogger
-  );
+  const redirect = new ServiceAreaRedirect();
 
   test('Should redirect an area with all types to the correct endpoints', async () => {
     const serviceArea: ServiceAreaResult = {
@@ -119,9 +115,7 @@ describe('ServiceAreaRedirect', () => {
   });
 
   test('Should return /not-found and log an error for an invalid action', () => {
-    const mockLogger = { error: jest.fn() } as unknown as Logger;
-    const redirect = new ServiceAreaRedirect(mockLogger);
-
+    const redirect = new ServiceAreaRedirect();
     const serviceArea: ServiceAreaResult = {
       slug: 'some-area',
       areaOfLawName: 'SomeAol',
@@ -135,9 +129,6 @@ describe('ServiceAreaRedirect', () => {
     const result = redirect.getUrl('some-service', serviceArea, invalidAction);
 
     expect(result).toBe('/not-found');
-    expect(mockLogger.error).toBeCalledWith(
-      "Invalid action 'invalid-action' found in ServiceAreaRedirect getURL."
-    );
   });
 
 

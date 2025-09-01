@@ -20,21 +20,12 @@ const i18n = {
 
 describe('Choose service area controller', () => {
   const response: any = { data: {}, serviceData: {}, serviceAreaResults: {} };
-  const mockLogger = {
-    error: jest.fn(),
-    info: jest.fn(),
-    silly: jest.fn(),
-    debug: jest.fn(),
-    verbose: jest.fn(),
-    warn: jest.fn(),
-    log: jest.fn()
-  };
   const api: any = {
     serviceAreas: async () => response.data,
     getService: async () => response.serviceData,
     getServiceArea: async () => response.serviceAreaResults,
   };
-  const controller = new ChooseServiceAreaController(api, mockLogger, new ServiceAreaRedirect(mockLogger));
+  const controller = new ChooseServiceAreaController(api, new ServiceAreaRedirect());
 
   test('Should render a service areas page', async () => {
     response.data = [{
@@ -179,9 +170,6 @@ describe('Choose service area controller', () => {
     await controller.get(req, res);
 
     expect(res.redirect).toBeCalledWith('/not-found');
-    expect(mockLogger.error).toBeCalledWith(
-      "Invalid action 'bad-action' found in ChooseServiceAreaController GET."
-    );
   });
 
   test('Should redirect to /not-found and log error if getServiceData fails due to bad url', async () => {
@@ -192,7 +180,7 @@ describe('Choose service area controller', () => {
     } as any;
 
     const failingController =
-      new ChooseServiceAreaController(failingApi, mockLogger, new ServiceAreaRedirect(mockLogger));
+      new ChooseServiceAreaController(failingApi, new ServiceAreaRedirect());
 
     const req = mockRequest(i18n);
     req.params = {
@@ -206,9 +194,6 @@ describe('Choose service area controller', () => {
     await failingController.post(req, res);
 
     expect(res.redirect).toBeCalledWith('/not-found');
-    expect(mockLogger.error).toBeCalledWith(
-      "Invalid serviceChosen 'invalid-service' found in ChooseServiceAreaController POST."
-    );
   });
 
 

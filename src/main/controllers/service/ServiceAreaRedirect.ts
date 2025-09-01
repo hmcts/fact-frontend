@@ -1,14 +1,8 @@
 import { ServiceAreaResult } from '../../interfaces/ServiceAreasData';
 import { Action } from '../../utils/Action';
 import { Catchment } from '../../utils/Catchment';
-import { Logger } from '../../interfaces/Logger';
 
 export class ServiceAreaRedirect {
-
-  constructor(
-    private readonly logger: Logger
-  ) {
-  }
 
   private readonly actionOrdering = {
     [Action.Nearest]:       [Catchment.Local, Catchment.Regional, Catchment.National],
@@ -27,7 +21,6 @@ export class ServiceAreaRedirect {
     const serviceAreaCatchments = serviceArea.serviceAreaCourts.map(c => c.catchmentType);
 
     if (!this.actionOrdering[action]) {
-      this.logger.error(`Invalid action '${action}' found in ServiceAreaRedirect getURL.`);
       return '/not-found';
     }
     const sortFunction = this.getSortForAction(action);
