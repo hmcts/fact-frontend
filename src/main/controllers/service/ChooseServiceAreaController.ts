@@ -57,12 +57,10 @@ export class ChooseServiceAreaController {
       return res.redirect('/not-found');
     }
     const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
-    let data;
-    try {
-      data = await this.getServiceData(service, action, serviceAreasPageData, false, req.lng);
-    } catch (error) {
-      return res.redirect('/not-found');
-    }
+    const data = await this.tryGetServiceData(service, action, serviceAreasPageData, false, req.lng, res);
+    if (!data) return;
+
+    res.render('service', data);
     if(data.results.length === 1){
       req.body.serviceArea = data.results[0].slug;
       await this.post(req, res);
@@ -84,12 +82,8 @@ export class ChooseServiceAreaController {
     if (!hasProperty(req.body, 'serviceArea')) {
       const serviceChosen = req.params.service;
       const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
-      let serviceData;
-      try {
-        serviceData = await this.getServiceData(serviceChosen, action, serviceAreasPageData, true, req.lng);
-      } catch (error) {
-        return res.redirect('/not-found');
-      }
+      const serviceData = await this.tryGetServiceData(serviceChosen, action, serviceAreasPageData, true, req.lng, res);
+      if (!serviceData) return;
 
       res.render('service', serviceData);
     } else if (req.body.serviceArea === 'not-listed') {
@@ -115,4 +109,21 @@ export class ChooseServiceAreaController {
     }
     return false;
   }
+
+  private async tryGetServiceData(
+    serviceChosen: string,
+    action: string,
+    serviceAreasPageData: ServiceAreasData,
+    hasErrors: boolean,
+    lng: string,
+    res: Response
+  ) {
+    try {
+      return await this.getServiceData(serviceChosen, action, serviceAreasPageData, hasErrors, lng);
+    } catch (error) {
+      res.redirect('/not-found');
+      return null;
+    }
+  }
+
 }
