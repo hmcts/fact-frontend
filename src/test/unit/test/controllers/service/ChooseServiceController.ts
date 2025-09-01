@@ -84,5 +84,4 @@ describe('Choose service controller', () => {
     await controller.post(req, res);
     expect(res.redirect).toBeCalledWith('/services/chosen-service/service-areas/' + req.params.action);
   });
-
 });
