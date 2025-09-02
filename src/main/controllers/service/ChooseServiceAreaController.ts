@@ -1,5 +1,5 @@
 import { FactRequest } from '../../interfaces/FactRequest';
-import { hasProperty, isObjectEmpty } from '../../utils/validation';
+import { hasProperty, isObjectEmpty, isValidAction } from '../../utils/validation';
 import { Response } from 'express';
 import { FactApi } from '../../utils/FactApi';
 import autobind from 'autobind-decorator';
@@ -54,7 +54,7 @@ export class ChooseServiceAreaController {
    */
   public async get(req: FactRequest, res: Response) {
     const {service, action} = req.params;
-    if (!this.isValidAction(action)) {
+    if (!isValidAction(action, Action)) {
       return res.redirect('/not-found');
     }
     const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
@@ -77,7 +77,7 @@ export class ChooseServiceAreaController {
    */
   public async post(req: FactRequest, res: Response) {
     const action = req.params.action as Action;
-    if (!this.isValidAction(action)) {
+    if (!isValidAction(action, Action)) {
       return res.redirect('/not-found');
     }
     if (!hasProperty(req.body, 'serviceArea')) {
@@ -100,20 +100,6 @@ export class ChooseServiceAreaController {
   }
 
   /**
-   * Checks if the action is valid according to the Action enum
-   * @param {string} action
-   * @returns {boolean} if action is valid
-   */
-  private isValidAction(action: string): boolean {
-    for (const validAction of Object.values(Action)) {
-      if (action === validAction) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  /**
    * Tries to get the service data a user has chosen.
    * Depending on what was chosen a serviceChosen may not return data
    * in which case catch will redirect to not found page
@@ -122,7 +108,7 @@ export class ChooseServiceAreaController {
    * @param serviceAreasPageData current service area page data
    * @param hasErrors errors
    * @param lng language
-   * @param res required so it can error out
+   * @param res used to redirect to not-found page
    */
   private async safeGetServiceData(
     serviceChosen: string,

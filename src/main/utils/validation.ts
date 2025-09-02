@@ -44,3 +44,17 @@ export const isPostcodeValid = (postcode: string, serviceArea: string): string =
   }
   return '';
 };
+
+/**
+ * Checks if the action is valid according to the Action enum
+ * @param {string} action
+ * @returns {boolean} if action is valid
+ */
+export function isValidAction(action: string, ActionEnum: any): boolean {
+  for (const validAction of Object.values(ActionEnum)) {
+    if (action === validAction) {
+      return true;
+    }
+  }
+  return false;
+}
