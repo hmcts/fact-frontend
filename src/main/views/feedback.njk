@@ -1,0 +1,138 @@
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% extends "template.njk" %}
+
+{% block pageTitle %}
+  Feedback
+{% endblock %}
+
+{% block content %}
+
+  {% if errors.general %}
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+        {
+          text: "There has been a problem submitting your feedback. Please try again at a later point. " +
+            "The administration team has been made aware of this problem."
+        }
+      ]
+    }) }}
+  {% endif %}
+
+  {% set messageError = null %}
+  {% set emailError = null %}
+  {% set errorList = [] %}
+
+  {% if errors.email %}
+    {% set emailError = { text: errors.email } %}
+  {% endif %}
+
+  {% if errors.message %}
+    {% set messageError = { text: errors.message } %}
+  {% endif %}
+
+  {% if messageError and emailError %}
+    {% set errorList = [
+      { text: messageError.text, href: "#message" },
+      { text: emailError.text, href: "#follow_up_email" }
+    ] %}
+  {% elif messageError %}
+    {% set errorList = [
+      { text: messageError.text, href: "#message" }
+    ] %}
+  {% elif emailError %}
+    {% set errorList = [
+      { text: emailError.text, href: "#follow_up_email" }
+    ] %}
+  {% else %}
+    {% set errorList = [] %}
+  {% endif %}
+
+  {% if errorList.length > 0 %}
+    {{ govukErrorSummary({
+      titleText: "There are one or more problems:",
+      errorList: errorList
+    }) }}
+  {% endif %}
+
+<form action="/feedback" method="post" novalidate>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Tell us what you think!</h1>
+
+      <p class="govuk-body">
+        We'd really appreciate your feedback, but please note, we will not be able to respond to any specific comments or queries.
+      </p>
+      <p class="govuk-body">
+        If you have any queries about your case, please contact the service you require directly.
+      </p>
+
+      {{ govukRadios({
+        name: "user_type",
+        fieldset: {
+          legend: { text: "Are you:", isPageHeading: false, classes: "govuk-fieldset__legend--m" }
+        },
+        items: [
+          { value: "Member of public", text: "Member of public", checked: true },
+          { value: "Legal professional", text: "Legal professional" },
+          { value: "MoJ / HMCTS member of staff", text: "MoJ / HMCTS member of staff" },
+          { value: "Other", text: "Other (please specify)", conditional: {
+              html: govukInput({
+                id: "user_type_other",
+                name: "user_type_other",
+                type: "text",
+                classes: "govuk-!-width-two-thirds"
+              })
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        name: "found_info",
+        fieldset: {
+          legend: { text: "Did you find what you were looking for?", isPageHeading: false, classes: "govuk-fieldset__legend--m" }
+        },
+        items: [
+          { value: "true", text: "Yes", checked: true },
+          { value: "false", text: "No" }
+        ]
+      }) }}
+
+{# Safely define messageError if needed #}
+
+      {{ govukTextarea({
+        name: "message",
+        id: "message",
+        label: { text: "Feedback message" },
+        hint: {
+          text: "If you have any feedback on how we could improve this service, please use the text box below. (Please make sure you do not include any personal or financial details)."
+        },
+        rows: 5,
+        errorMessage: messageError,
+        value: formValues.message
+      }) }}
+
+      {{ govukInput({
+        label: { text: "Email address (optional)" },
+        id: "follow_up_email",
+        name: "follow_up_email",
+        type: "email",
+        autocomplete: "email",
+        errorMessage: emailError,
+        value: formValues.follow_up_email
+      }) }}
+
+      {{ govukButton({
+        text: "Submit"
+      }) }}
+
+    </div>
+  </div>
+</form>
+{% endblock %}

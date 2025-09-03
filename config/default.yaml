@@ -3,6 +3,9 @@ app:
   security:
     referrerPolicy: 'origin'
 services:
+  feedback:
+    name: 'FACT Feedback'
+    url: 'http://localhost:7071'
   frontend:
     name: 'FACT Frontend'
     url: 'http://localhost:3100'
