@@ -110,7 +110,7 @@ const RAW_RUNTIME_STATE =
           ["sass-loader", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:16.0.5"],\
           ["serve-favicon", "npm:2.5.1"],\
           ["sinon", "npm:19.0.5"],\
-          ["sinon-chai", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:4.0.0"],\
+          ["sinon-chai", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:4.0.1"],\
           ["sonar-scanner", "npm:3.1.0"],\
           ["style-loader", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:4.0.0"],\
           ["superagent", "npm:10.2.3"],\
@@ -12288,7 +12288,7 @@ const RAW_RUNTIME_STATE =
           ["sass-loader", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:16.0.5"],\
           ["serve-favicon", "npm:2.5.1"],\
           ["sinon", "npm:19.0.5"],\
-          ["sinon-chai", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:4.0.0"],\
+          ["sinon-chai", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:4.0.1"],\
           ["sonar-scanner", "npm:3.1.0"],\
           ["style-loader", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:4.0.0"],\
           ["superagent", "npm:10.2.3"],\
@@ -19364,21 +19364,21 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["sinon-chai", [\
-      ["npm:4.0.0", {\
-        "packageLocation": "./.yarn/cache/sinon-chai-npm-4.0.0-62a4c869d9-6eb3e6f9da.zip/node_modules/sinon-chai/",\
+      ["npm:4.0.1", {\
+        "packageLocation": "./.yarn/cache/sinon-chai-npm-4.0.1-931bd14bd4-cc417d1961.zip/node_modules/sinon-chai/",\
         "packageDependencies": [\
-          ["sinon-chai", "npm:4.0.0"]\
+          ["sinon-chai", "npm:4.0.1"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:4.0.0", {\
-        "packageLocation": "./.yarn/__virtual__/sinon-chai-virtual-663c778010/0/cache/sinon-chai-npm-4.0.0-62a4c869d9-6eb3e6f9da.zip/node_modules/sinon-chai/",\
+      ["virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:4.0.1", {\
+        "packageLocation": "./.yarn/__virtual__/sinon-chai-virtual-b31bd1e979/0/cache/sinon-chai-npm-4.0.1-931bd14bd4-cc417d1961.zip/node_modules/sinon-chai/",\
         "packageDependencies": [\
           ["@types/chai", null],\
           ["@types/sinon", null],\
           ["chai", "npm:4.5.0"],\
           ["sinon", "npm:19.0.5"],\
-          ["sinon-chai", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:4.0.0"]\
+          ["sinon-chai", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:4.0.1"]\
         ],\
         "packagePeers": [\
           "@types/chai",\
