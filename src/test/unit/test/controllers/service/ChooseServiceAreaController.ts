@@ -47,7 +47,7 @@ describe('Choose service area controller', () => {
     const req = mockRequest(i18n);
     req.params = {
       service: 'chosen-service',
-      action: 'action',
+      action: 'documents',
     };
     const res = mockResponse();
     await controller.get(req, res);
@@ -76,15 +76,14 @@ describe('Choose service area controller', () => {
     const req = mockRequest(i18n);
     req.params = {
       service: 'chosen-service',
-      action: 'action',
+      action: 'documents',
     };
     req.body = {};
     const res = mockResponse();
     await controller.post(req, res);
-
     const expectedData: PageData = {
       ...cloneDeep(i18n.service),
-      path: '/services/' + req.params.service + '/service-areas/' +req.params.action,
+      path: '/services/' + req.params.service + '/service-areas/' + req.params.action,
       results: response.data,
       errors: true,
       seoMetadataDescription: 'Courts managing service description'
@@ -128,10 +127,10 @@ describe('Choose service area controller', () => {
 
     const res = mockResponse();
     await controller.get(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
+    expect(res.redirect).toBeCalledWith('/services/' + req.params.service + '/' + req.body.serviceArea + '/search-results');
   });
 
-  test('Should render a service area page with errors if a service area does not exist', async () => {
+  test('Should redirect to error page if a service area does not exist', async () => {
     response.data = [];
     const req = mockRequest(i18n);
     req.params = {
@@ -142,13 +141,7 @@ describe('Choose service area controller', () => {
     const res = mockResponse();
     await controller.post(req, res);
 
-    const expectedData: PageData = {
-      ...cloneDeep(i18n.service),
-      path: '/services/' + req.params.service + '/service-areas/' +req.params.action,
-      results: response.data,
-      errors: true
-    };
-    expect(res.render).toBeCalledWith('service', expectedData);
+    expect(res.redirect).toBeCalledWith('/not-found');
   });
 
   test('Should redirect to service not found if service area selected is not listed', async () => {
@@ -163,7 +156,74 @@ describe('Choose service area controller', () => {
 
     const res = mockResponse();
     await controller.post(req, res);
-    expect(res.redirect).toHaveBeenCalledWith('/services/update');
+    expect(res.redirect).toBeCalledWith('/services/update');
   });
 
+  test('Should redirect to /not-found if GET action is bad', async () => {
+    const req = mockRequest(i18n);
+    req.params = {
+      service: 'chosen-service',
+      action: 'bad-action'
+    };
+    const res = mockResponse();
+
+    await controller.get(req, res);
+
+    expect(res.redirect).toBeCalledWith('/not-found');
+  });
+
+  test('Should redirect to /not-found and log error if getServiceData fails due to bad url', async () => {
+    const failingApi = {
+      serviceAreas: jest.fn().mockRejectedValue(new Error('API failure')),
+      getService: jest.fn(),
+      getServiceArea: jest.fn()
+    } as any;
+
+    const failingController =
+      new ChooseServiceAreaController(failingApi, new ServiceAreaRedirect());
+
+    const req = mockRequest(i18n);
+    req.params = {
+      service: 'invalid-service',
+      action: 'documents'
+    };
+    req.body = {};
+
+    const res = mockResponse();
+
+    await failingController.post(req, res);
+
+    expect(res.redirect).toBeCalledWith('/not-found');
+  });
+
+
+  test('Should redirect to /not-found if getServiceData fails for GET', async () => {
+    jest.spyOn(api, 'serviceAreas').mockRejectedValueOnce(new Error('API error'));
+
+    const req = mockRequest(i18n);
+    req.params = {
+      service: 'bad-service',
+      action: 'documents'
+    };
+    const res = mockResponse();
+
+    await controller.get(req, res);
+
+    expect(res.redirect).toBeCalledWith('/not-found');
+  });
+
+  test('Should redirect to /not-found if getServiceData fails for POST', async () => {
+    jest.spyOn(api, 'serviceAreas').mockRejectedValueOnce(new Error('API error'));
+
+    const req = mockRequest(i18n);
+    req.params = {
+      service: 'bad-service',
+      action: 'documents'
+    };
+    const res = mockResponse();
+
+    await controller.post(req, res);
+
+    expect(res.redirect).toBeCalledWith('/not-found');
+  });
 });

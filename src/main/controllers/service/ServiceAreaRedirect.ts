@@ -19,6 +19,10 @@ export class ServiceAreaRedirect {
    */
   public getUrl(service: string, serviceArea: ServiceAreaResult, action: Action): string {
     const serviceAreaCatchments = serviceArea.serviceAreaCourts.map(c => c.catchmentType);
+
+    if (!this.actionOrdering[action]) {
+      return '/not-found';
+    }
     const sortFunction = this.getSortForAction(action);
     const preferredCourts = [...serviceAreaCatchments].sort(sortFunction);
 

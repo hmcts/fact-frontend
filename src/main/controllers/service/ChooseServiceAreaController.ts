@@ -1,5 +1,5 @@
 import { FactRequest } from '../../interfaces/FactRequest';
-import { hasProperty, isObjectEmpty } from '../../utils/validation';
+import { hasProperty, isObjectEmpty, isValidAction } from '../../utils/validation';
 import { Response } from 'express';
 import { FactApi } from '../../utils/FactApi';
 import autobind from 'autobind-decorator';
@@ -45,6 +45,7 @@ export class ChooseServiceAreaController {
     }
     return data;
   }
+
   /**
    * GET /services/:serviceChosen/service-areas/:action
    * @returns renders the chosen service area page
@@ -53,15 +54,21 @@ export class ChooseServiceAreaController {
    */
   public async get(req: FactRequest, res: Response) {
     const {service, action} = req.params;
+    if (!isValidAction(action, Action)) {
+      return res.redirect('/not-found');
+    }
     const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
-    const data = await this.getServiceData(service, action, serviceAreasPageData,false, req.lng);
-    if(data.results.length === 1){
-      req.body.serviceArea = data.results[0].slug;
-      await this.post(req, res);
-    } else {
-      res.render('service', data);
+    const data = await this.safeGetServiceData(service, action, serviceAreasPageData, false, req.lng, res);
+    if (data) {
+      if (data.results.length === 1) {
+        req.body.serviceArea = data.results[0].slug;
+        await this.post(req, res);
+      } else {
+        res.render('service', data);
+      }
     }
   }
+
   /**
    * POST /services/:serviceChosen/service-areas/:action
    * @returns re-render the chosen service area page
@@ -70,13 +77,18 @@ export class ChooseServiceAreaController {
    */
   public async post(req: FactRequest, res: Response) {
     const action = req.params.action as Action;
-
+    if (!isValidAction(action, Action)) {
+      return res.redirect('/not-found');
+    }
     if (!hasProperty(req.body, 'serviceArea')) {
       const serviceChosen = req.params.service;
       const serviceAreasPageData = req.i18n.getDataByLanguage(req.lng).service;
-      const serviceData = await this.getServiceData(serviceChosen, action, serviceAreasPageData, true, req.lng);
 
-      res.render('service', serviceData);
+      const serviceData =
+        await this.safeGetServiceData(serviceChosen, action, serviceAreasPageData, true, req.lng, res);
+      if(serviceData) {
+        res.render('service', serviceData);
+      }
     } else if (req.body.serviceArea === 'not-listed') {
       res.redirect('/services/' + action);
     } else {
@@ -84,6 +96,32 @@ export class ChooseServiceAreaController {
       const url = this.serviceAreaRedirect.getUrl(req.params.service, serviceArea, action);
 
       res.redirect(url);
+    }
+  }
+
+  /**
+   * Tries to get the service data a user has chosen.
+   * Depending on what was chosen a serviceChosen may not return data
+   * in which case catch will redirect to not found page
+   * @param serviceChosen the chosen service
+   * @param action action (nearest, documents, update, not-listed)
+   * @param serviceAreasPageData current service area page data
+   * @param hasErrors errors
+   * @param lng language
+   * @param res used to redirect to not-found page
+   */
+  private async safeGetServiceData(
+    serviceChosen: string,
+    action: string,
+    serviceAreasPageData: ServiceAreasData,
+    hasErrors: boolean,
+    lng: string,
+    res: Response
+  ): Promise<ServiceAreasData> {
+    try {
+      return await this.getServiceData(serviceChosen, action, serviceAreasPageData, hasErrors, lng);
+    } catch {
+      res.redirect('/not-found');
     }
   }
 }

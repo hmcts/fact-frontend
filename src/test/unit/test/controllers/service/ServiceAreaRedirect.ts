@@ -114,4 +114,22 @@ describe('ServiceAreaRedirect', () => {
     expect(redirect.getUrl('adoption', serviceArea, Action.NotListed)).toBe('/services/adoption/adoption/not-listed/search-by-postcode');
   });
 
+  test('Should return /not-found and log an error for an invalid action', () => {
+    const redirect = new ServiceAreaRedirect();
+    const serviceArea: ServiceAreaResult = {
+      slug: 'some-area',
+      areaOfLawName: 'SomeAol',
+      serviceAreaCourts: [
+        { catchmentType: Catchment.Local, slug: 'some-court' }
+      ]
+    } as any;
+
+    const invalidAction = 'invalid-action' as any;
+
+    const result = redirect.getUrl('some-service', serviceArea, invalidAction);
+
+    expect(result).toBe('/not-found');
+  });
+
+
 });
