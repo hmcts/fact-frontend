@@ -1,9 +1,4 @@
 nodejs:
-  keyVaults:
-    fact:
-      resourceGroup: fact
-      secrets:
-        - AppInsightsInstrumentationKey-ai
   # Don't modify below here
   image: ${IMAGE_NAME}
   ingressHost: ${SERVICE_FQDN}
