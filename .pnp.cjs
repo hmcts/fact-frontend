@@ -66,7 +66,7 @@ const RAW_RUNTIME_STATE =
           ["applicationinsights", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.9.8"],\
           ["autobind-decorator", "npm:2.4.0"],\
           ["awilix", "npm:7.0.3"],\
-          ["axios", "npm:1.11.0"],\
+          ["axios", "npm:1.12.0"],\
           ["babel-loader", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:9.2.1"],\
           ["brace-expansion", "npm:4.0.1"],\
           ["cacache", "npm:19.0.1"],\
@@ -8500,11 +8500,11 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["axios", [\
-      ["npm:1.11.0", {\
-        "packageLocation": "./.yarn/cache/axios-npm-1.11.0-64966324ac-232df4af7a.zip/node_modules/axios/",\
+      ["npm:1.12.0", {\
+        "packageLocation": "./.yarn/cache/axios-npm-1.12.0-58e24ac59e-6c45e294b6.zip/node_modules/axios/",\
         "packageDependencies": [\
-          ["axios", "npm:1.11.0"],\
-          ["follow-redirects", "virtual:64966324acb1c9e829d59ac6bca19b45b43dc1234d7283c5d2bb20566c18be5fa16a88d38b39ab3c3bd238b9a4c2a56d68914ca1163a12899a78f10804e91e91#npm:1.15.11"],\
+          ["axios", "npm:1.12.0"],\
+          ["follow-redirects", "virtual:58e24ac59ed4f801797831333a65a5df3bd85bc9be6bf725983a68b2c9bd36659e4c9c86f006b9d10f4d981a7dca8d7192659cd30e0d542a39db8b9e42cbb40a#npm:1.15.11"],\
           ["form-data", "npm:4.0.4"],\
           ["proxy-from-env", "npm:1.1.0"]\
         ],\
@@ -9998,7 +9998,7 @@ const RAW_RUNTIME_STATE =
           ["@xmldom/xmldom", "npm:0.9.8"],\
           ["acorn", "npm:8.14.1"],\
           ["arrify", "npm:3.0.0"],\
-          ["axios", "npm:1.11.0"],\
+          ["axios", "npm:1.12.0"],\
           ["chalk", "npm:4.1.2"],\
           ["cheerio", "npm:1.0.0"],\
           ["codeceptjs", "npm:3.7.4"],\
@@ -12275,7 +12275,7 @@ const RAW_RUNTIME_STATE =
           ["applicationinsights", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.9.8"],\
           ["autobind-decorator", "npm:2.4.0"],\
           ["awilix", "npm:7.0.3"],\
-          ["axios", "npm:1.11.0"],\
+          ["axios", "npm:1.12.0"],\
           ["babel-loader", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:9.2.1"],\
           ["brace-expansion", "npm:4.0.1"],\
           ["cacache", "npm:19.0.1"],\
@@ -12731,12 +12731,12 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:64966324acb1c9e829d59ac6bca19b45b43dc1234d7283c5d2bb20566c18be5fa16a88d38b39ab3c3bd238b9a4c2a56d68914ca1163a12899a78f10804e91e91#npm:1.15.11", {\
-        "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-2a4fb7a6cc/0/cache/follow-redirects-npm-1.15.11-ae7b2db266-07372fd74b.zip/node_modules/follow-redirects/",\
+      ["virtual:58e24ac59ed4f801797831333a65a5df3bd85bc9be6bf725983a68b2c9bd36659e4c9c86f006b9d10f4d981a7dca8d7192659cd30e0d542a39db8b9e42cbb40a#npm:1.15.11", {\
+        "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-0cdb153e46/0/cache/follow-redirects-npm-1.15.11-ae7b2db266-07372fd74b.zip/node_modules/follow-redirects/",\
         "packageDependencies": [\
           ["@types/debug", null],\
           ["debug", null],\
-          ["follow-redirects", "virtual:64966324acb1c9e829d59ac6bca19b45b43dc1234d7283c5d2bb20566c18be5fa16a88d38b39ab3c3bd238b9a4c2a56d68914ca1163a12899a78f10804e91e91#npm:1.15.11"]\
+          ["follow-redirects", "virtual:58e24ac59ed4f801797831333a65a5df3bd85bc9be6bf725983a68b2c9bd36659e4c9c86f006b9d10f4d981a7dca8d7192659cd30e0d542a39db8b9e42cbb40a#npm:1.15.11"]\
         ],\
         "packagePeers": [\
           "@types/debug",\
@@ -13561,7 +13561,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/http-proxy-npm-1.18.1-a313c479c5-2489e98aba.zip/node_modules/http-proxy/",\
         "packageDependencies": [\
           ["eventemitter3", "npm:4.0.7"],\
-          ["follow-redirects", "virtual:64966324acb1c9e829d59ac6bca19b45b43dc1234d7283c5d2bb20566c18be5fa16a88d38b39ab3c3bd238b9a4c2a56d68914ca1163a12899a78f10804e91e91#npm:1.15.11"],\
+          ["follow-redirects", "virtual:58e24ac59ed4f801797831333a65a5df3bd85bc9be6bf725983a68b2c9bd36659e4c9c86f006b9d10f4d981a7dca8d7192659cd30e0d542a39db8b9e42cbb40a#npm:1.15.11"],\
           ["http-proxy", "npm:1.18.1"],\
           ["requires-port", "npm:1.0.0"]\
         ],\
