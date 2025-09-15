@@ -4,6 +4,7 @@ const appInsights = require('applicationinsights');
 export class AppInsights {
 
   enableFor(): void {
+    console.log('TEMP LINE: ' + config.get('appInsights.instrumentationKey'))
     if (config.get('appInsights.instrumentationKey')) {
       appInsights.setup(config.get('appInsights.instrumentationKey'))
         .setSendLiveMetrics(true)

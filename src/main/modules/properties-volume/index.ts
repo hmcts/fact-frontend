@@ -8,9 +8,15 @@ export class PropertiesVolume {
   enableFor(app: Application): void {
     if (!app.locals.developmentMode) {
       propertiesVolume.addTo(config);
+      
+      console.log("First IF: " + app.locals.developmentMode);
 
       this.setSecret('secrets.fact.AppInsightsInstrumentationKey', 'appInsights.instrumentationKey');
     } else {
+
+      console.log("Second IF: " + app.locals.developmentMode);
+
+
       this.setLocalSecret('AppInsightsInstrumentationKey', 'appInsights.instrumentationKey');
     }
   }
