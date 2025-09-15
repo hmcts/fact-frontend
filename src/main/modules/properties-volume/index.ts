@@ -5,15 +5,15 @@ import { Application } from 'express';
 import { get, set } from 'lodash';
 
 export class PropertiesVolume {
-  enableFor(app: Application): void {
-    if (!app.locals.developmentMode) {
+  enableFor(server: Application): void {
+    if (server.locals.ENV !== 'development') {
       propertiesVolume.addTo(config);
       
-      console.log('First IF: ' + app.locals.developmentMode);
+      console.log('First IF: ' + server.locals.ENV);
 
       this.setSecret('secrets.fact.AppInsightsInstrumentationKey-ai', 'appInsights.instrumentationKey');
     } else {
-      console.log('Second IF: ' + app.locals.developmentMode);
+      console.log('Second IF: ' + server.locals.ENV);
       
       this.setLocalSecret('AppInsightsInstrumentationKey-ai', 'appInsights.instrumentationKey');
     }
