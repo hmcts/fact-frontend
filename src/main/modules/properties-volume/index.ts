@@ -9,9 +9,9 @@ export class PropertiesVolume {
     if (!app.locals.developmentMode) {
       propertiesVolume.addTo(config);
 
-      this.setSecret('secrets.fact.AppInsightsInstrumentationKey-ai', 'appInsights.instrumentationKey');
+      this.setSecret('secrets.fact.AppInsightsInstrumentationKey', 'appInsights.instrumentationKey');
     } else {
-      this.setLocalSecret('AppInsightsInstrumentationKey-ai', 'appInsights.instrumentationKey');
+      this.setLocalSecret('AppInsightsInstrumentationKey', 'appInsights.instrumentationKey');
     }
   }
 
