@@ -11,7 +11,7 @@ export class PropertiesVolume {
       
       console.log('First IF: ' + app.locals.developmentMode);
 
-      this.setSecret('secrets.fact.AppInsightsInstrumentationKey', 'appInsights.instrumentationKey');
+      this.setSecret('secrets.fact.AppInsightsInstrumentationKey-ai', 'appInsights.instrumentationKey');
     } else {
       console.log('Second IF: ' + app.locals.developmentMode);
       
