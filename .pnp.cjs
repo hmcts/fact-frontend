@@ -34,7 +34,7 @@ const RAW_RUNTIME_STATE =
           ["@codeceptjs/allure-legacy", "npm:1.0.2"],\
           ["@codeceptjs/configure", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:0.10.0"],\
           ["@cucumber/cucumber", "npm:7.3.2"],\
-          ["@hmcts/cookie-manager", "npm:1.0.0"],\
+          ["@hmcts/cookie-manager", "npm:1.1.0"],\
           ["@hmcts/info-provider", "npm:1.2.3"],\
           ["@hmcts/nodejs-healthcheck", "npm:1.8.6"],\
           ["@hmcts/nodejs-logging", "npm:4.0.4"],\
@@ -5225,10 +5225,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@hmcts/cookie-manager", [\
-      ["npm:1.0.0", {\
-        "packageLocation": "./.yarn/cache/@hmcts-cookie-manager-npm-1.0.0-f7ac279484-8ea2c9e9f8.zip/node_modules/@hmcts/cookie-manager/",\
+      ["npm:1.1.0", {\
+        "packageLocation": "./.yarn/cache/@hmcts-cookie-manager-npm-1.1.0-b7df48a726-f480f04fc9.zip/node_modules/@hmcts/cookie-manager/",\
         "packageDependencies": [\
-          ["@hmcts/cookie-manager", "npm:1.0.0"]\
+          ["@hmcts/cookie-manager", "npm:1.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -12222,7 +12222,7 @@ const RAW_RUNTIME_STATE =
           ["@codeceptjs/allure-legacy", "npm:1.0.2"],\
           ["@codeceptjs/configure", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:0.10.0"],\
           ["@cucumber/cucumber", "npm:7.3.2"],\
-          ["@hmcts/cookie-manager", "npm:1.0.0"],\
+          ["@hmcts/cookie-manager", "npm:1.1.0"],\
           ["@hmcts/info-provider", "npm:1.2.3"],\
           ["@hmcts/nodejs-healthcheck", "npm:1.8.6"],\
           ["@hmcts/nodejs-logging", "npm:4.0.4"],\
