@@ -145,7 +145,7 @@
     "braces": ">=3.0.3",
     "cookie": ">=0.7.0",
     "cross-spawn": ">=7.0.5",
-    "@hmcts/info-provider/path-to-regexp": "0.1.12",
+    "@hmcts/info-provider/path-to-regexp": "0.2.5",
     "@npmcli/fs": "^4.0.0",
     "formidable": "3.5.4",
     "form-data": ">=4.0.4"
