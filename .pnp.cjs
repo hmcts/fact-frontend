@@ -85,7 +85,7 @@ const RAW_RUNTIME_STATE =
           ["express-nunjucks", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:3.1.2"],\
           ["fact-frontend", "workspace:."],\
           ["glob-parent", "npm:6.0.2"],\
-          ["govuk-frontend", "npm:5.11.2"],\
+          ["govuk-frontend", "npm:5.12.0"],\
           ["helmet", "npm:4.6.0"],\
           ["html-webpack-plugin", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:5.6.4"],\
           ["http-proxy-middleware", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.0.9"],\
@@ -12398,7 +12398,7 @@ const RAW_RUNTIME_STATE =
           ["express-nunjucks", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:3.1.2"],\
           ["fact-frontend", "workspace:."],\
           ["glob-parent", "npm:6.0.2"],\
-          ["govuk-frontend", "npm:5.11.2"],\
+          ["govuk-frontend", "npm:5.12.0"],\
           ["helmet", "npm:4.6.0"],\
           ["html-webpack-plugin", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:5.6.4"],\
           ["http-proxy-middleware", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.0.9"],\
@@ -13365,10 +13365,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["govuk-frontend", [\
-      ["npm:5.11.2", {\
-        "packageLocation": "./.yarn/cache/govuk-frontend-npm-5.11.2-cc92be2c38-e376ab5754.zip/node_modules/govuk-frontend/",\
+      ["npm:5.12.0", {\
+        "packageLocation": "./.yarn/cache/govuk-frontend-npm-5.12.0-98a82f2494-966974213f.zip/node_modules/govuk-frontend/",\
         "packageDependencies": [\
-          ["govuk-frontend", "npm:5.11.2"]\
+          ["govuk-frontend", "npm:5.12.0"]\
         ],\
         "linkType": "HARD"\
       }]\
