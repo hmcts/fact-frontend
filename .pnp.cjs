@@ -105,7 +105,7 @@ const RAW_RUNTIME_STATE =
           ["playwright", "npm:1.56.1"],\
           ["request", "npm:2.88.2"],\
           ["require-directory", "npm:2.1.1"],\
-          ["sass", "npm:1.92.1"],\
+          ["sass", "npm:1.93.2"],\
           ["sass-lint", "npm:1.13.1"],\
           ["sass-loader", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:16.0.5"],\
           ["serve-favicon", "npm:2.5.1"],\
@@ -12418,7 +12418,7 @@ const RAW_RUNTIME_STATE =
           ["playwright", "npm:1.56.1"],\
           ["request", "npm:2.88.2"],\
           ["require-directory", "npm:2.1.1"],\
-          ["sass", "npm:1.92.1"],\
+          ["sass", "npm:1.93.2"],\
           ["sass-lint", "npm:1.13.1"],\
           ["sass-loader", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:16.0.5"],\
           ["serve-favicon", "npm:2.5.1"],\
@@ -19123,13 +19123,13 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["sass", [\
-      ["npm:1.92.1", {\
-        "packageLocation": "./.yarn/cache/sass-npm-1.92.1-a62a885e34-ded47fd238.zip/node_modules/sass/",\
+      ["npm:1.93.2", {\
+        "packageLocation": "./.yarn/cache/sass-npm-1.93.2-b5109840d8-2fc0dcafdf.zip/node_modules/sass/",\
         "packageDependencies": [\
           ["@parcel/watcher", "npm:2.5.1"],\
           ["chokidar", "npm:4.0.3"],\
           ["immutable", "npm:5.1.1"],\
-          ["sass", "npm:1.92.1"],\
+          ["sass", "npm:1.93.2"],\
           ["source-map-js", "npm:1.2.1"]\
         ],\
         "linkType": "HARD"\
@@ -19177,7 +19177,7 @@ const RAW_RUNTIME_STATE =
           ["@types/webpack", null],\
           ["neo-async", "npm:2.6.2"],\
           ["node-sass", null],\
-          ["sass", "npm:1.92.1"],\
+          ["sass", "npm:1.93.2"],\
           ["sass-embedded", null],\
           ["sass-loader", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:16.0.5"],\
           ["webpack", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:5.101.3"]\
@@ -27318,7 +27318,8 @@ class ZipFS extends BasePortableFakeFS {
         const entries = Array.from(directoryListing, (name) => {
           return Object.assign(this.statImpl(`lstat`, ppath.join(p, name)), {
             name,
-            path: PortablePath.dot
+            path: PortablePath.dot,
+            parentPath: PortablePath.dot
           });
         });
         for (const entry of entries) {
@@ -27329,7 +27330,8 @@ class ZipFS extends BasePortableFakeFS {
           for (const child of subListing) {
             entries.push(Object.assign(this.statImpl(`lstat`, ppath.join(p, subPath, child)), {
               name: child,
-              path: subPath
+              path: subPath,
+              parentPath: subPath
             }));
           }
         }
@@ -27350,7 +27352,8 @@ class ZipFS extends BasePortableFakeFS {
       return Array.from(directoryListing, (name) => {
         return Object.assign(this.statImpl(`lstat`, ppath.join(p, name)), {
           name,
-          path: void 0
+          path: void 0,
+          parentPath: void 0
         });
       });
     } else {
