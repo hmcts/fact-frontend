@@ -32,7 +32,7 @@ const RAW_RUNTIME_STATE =
           ["@babel/eslint-parser", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.28.4"],\
           ["@babel/preset-env", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.28.3"],\
           ["@codeceptjs/allure-legacy", "npm:1.0.2"],\
-          ["@codeceptjs/configure", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:0.10.0"],\
+          ["@codeceptjs/configure", "virtual:d5a2c22947a81b5901b038429ffbd1409a6d694ce565634dad60e7ed3db9a53a9cae7f975db5a321911ef17b33d7b2727e0cdc63cda4663600d95e3cd1455513#npm:1.0.6"],\
           ["@cucumber/cucumber", "npm:12.2.0"],\
           ["@hmcts/cookie-manager", "npm:1.1.0"],\
           ["@hmcts/info-provider", "npm:1.2.3"],\
@@ -4620,34 +4620,12 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@codeceptjs/configure", [\
-      ["npm:0.10.0", {\
-        "packageLocation": "./.yarn/cache/@codeceptjs-configure-npm-0.10.0-ba73c0a5e7-afd4512fee.zip/node_modules/@codeceptjs/configure/",\
-        "packageDependencies": [\
-          ["@codeceptjs/configure", "npm:0.10.0"]\
-        ],\
-        "linkType": "SOFT"\
-      }],\
       ["npm:1.0.6", {\
         "packageLocation": "./.yarn/cache/@codeceptjs-configure-npm-1.0.6-1497b1f8dc-43a95fb85f.zip/node_modules/@codeceptjs/configure/",\
         "packageDependencies": [\
           ["@codeceptjs/configure", "npm:1.0.6"]\
         ],\
         "linkType": "SOFT"\
-      }],\
-      ["virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:0.10.0", {\
-        "packageLocation": "./.yarn/__virtual__/@codeceptjs-configure-virtual-d2e9600aeb/0/cache/@codeceptjs-configure-npm-0.10.0-ba73c0a5e7-afd4512fee.zip/node_modules/@codeceptjs/configure/",\
-        "packageDependencies": [\
-          ["@codeceptjs/configure", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:0.10.0"],\
-          ["@types/codeceptjs", null],\
-          ["codeceptjs", "npm:3.7.4"],\
-          ["lodash.merge", "npm:4.6.2"],\
-          ["lodash.mergewith", "npm:4.6.2"]\
-        ],\
-        "packagePeers": [\
-          "@types/codeceptjs",\
-          "codeceptjs"\
-        ],\
-        "linkType": "HARD"\
       }],\
       ["virtual:d5a2c22947a81b5901b038429ffbd1409a6d694ce565634dad60e7ed3db9a53a9cae7f975db5a321911ef17b33d7b2727e0cdc63cda4663600d95e3cd1455513#npm:1.0.6", {\
         "packageLocation": "./.yarn/__virtual__/@codeceptjs-configure-virtual-bdd12ce720/0/cache/@codeceptjs-configure-npm-1.0.6-1497b1f8dc-43a95fb85f.zip/node_modules/@codeceptjs/configure/",\
@@ -12345,7 +12323,7 @@ const RAW_RUNTIME_STATE =
           ["@babel/eslint-parser", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.28.4"],\
           ["@babel/preset-env", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.28.3"],\
           ["@codeceptjs/allure-legacy", "npm:1.0.2"],\
-          ["@codeceptjs/configure", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:0.10.0"],\
+          ["@codeceptjs/configure", "virtual:d5a2c22947a81b5901b038429ffbd1409a6d694ce565634dad60e7ed3db9a53a9cae7f975db5a321911ef17b33d7b2727e0cdc63cda4663600d95e3cd1455513#npm:1.0.6"],\
           ["@cucumber/cucumber", "npm:12.2.0"],\
           ["@hmcts/cookie-manager", "npm:1.1.0"],\
           ["@hmcts/info-provider", "npm:1.2.3"],\
