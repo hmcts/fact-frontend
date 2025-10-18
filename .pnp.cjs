@@ -56,7 +56,7 @@ const RAW_RUNTIME_STATE =
           ["@types/nunjucks", "npm:3.2.6"],\
           ["@types/require-directory", "npm:2.1.6"],\
           ["@types/serve-favicon", "npm:2.5.7"],\
-          ["@types/supertest", "npm:2.0.16"],\
+          ["@types/supertest", "npm:6.0.3"],\
           ["@types/webpack-dev-middleware", "npm:5.3.0"],\
           ["@typescript-eslint/eslint-plugin", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:5.62.0"],\
           ["@typescript-eslint/eslint-plugin-tslint", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:5.62.0"],\
@@ -7262,11 +7262,12 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@types/supertest", [\
-      ["npm:2.0.16", {\
-        "packageLocation": "./.yarn/cache/@types-supertest-npm-2.0.16-2ccc258659-2fc998ea69.zip/node_modules/@types/supertest/",\
+      ["npm:6.0.3", {\
+        "packageLocation": "./.yarn/cache/@types-supertest-npm-6.0.3-0d43ae5953-6ec05eb591.zip/node_modules/@types/supertest/",\
         "packageDependencies": [\
+          ["@types/methods", "npm:1.1.4"],\
           ["@types/superagent", "npm:8.1.9"],\
-          ["@types/supertest", "npm:2.0.16"]\
+          ["@types/supertest", "npm:6.0.3"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -12347,7 +12348,7 @@ const RAW_RUNTIME_STATE =
           ["@types/nunjucks", "npm:3.2.6"],\
           ["@types/require-directory", "npm:2.1.6"],\
           ["@types/serve-favicon", "npm:2.5.7"],\
-          ["@types/supertest", "npm:2.0.16"],\
+          ["@types/supertest", "npm:6.0.3"],\
           ["@types/webpack-dev-middleware", "npm:5.3.0"],\
           ["@typescript-eslint/eslint-plugin", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:5.62.0"],\
           ["@typescript-eslint/eslint-plugin-tslint", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:5.62.0"],\
