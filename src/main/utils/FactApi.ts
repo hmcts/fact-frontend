@@ -1,22 +1,55 @@
-import { Logger } from '../interfaces/Logger';
-import { AxiosInstance } from 'axios';
-import { SearchCourtHistoryResult, SearchResult } from '../interfaces/SearchResultsData';
-import { CourtDetailsResult } from '../interfaces/CourtDetailsData';
-import { CourtWithDistance, PostcodeSearchResultsData } from '../interfaces/PostcodeResultsData';
-import { ServiceResult } from '../interfaces/ServicesData';
-import { ServiceAreaResult } from '../interfaces/ServiceAreasData';
+import {Logger} from '../interfaces/Logger';
+import {AxiosInstance} from 'axios';
+import {SearchCourtHistoryResult, SearchResult} from '../interfaces/SearchResultsData';
+import {CourtDetailsResult} from '../interfaces/CourtDetailsData';
+import {CourtWithDistance, PostcodeSearchResultsData} from '../interfaces/PostcodeResultsData';
+import {ServiceResult} from '../interfaces/ServicesData';
+import {ServiceAreaResult} from '../interfaces/ServiceAreasData';
 import {CourtReference} from '../interfaces/CourtResultsData';
+import {AuthGen} from './AuthGen';
 
 export class FactApi {
 
   constructor(
     private readonly axios: AxiosInstance,
-    private readonly logger: Logger
-  ) { }
+    private readonly logger: Logger,
+    private readonly auth: AuthGen
+  ) {
+  }
+
+
+  public async secureCallTestMI(): Promise<string> {
+    const jwt = await this.auth.generateTokenFromMI();
+    return this.axios
+      .get('/secure/admin', {headers: {'Authorization': `Bearer ${jwt}`}})
+      .then(result => result.data)
+      .catch(err => {
+        this.logger.error(err);
+        return {
+          null: {},
+          error: true
+        };
+      });
+  }
+
+  public async secureCallTestCS(): Promise<string> {
+    const jwt = await this.auth.generateTokenFromClientSecret();
+    return this.axios
+      .get('/secure/admin', {headers: {'Authorization': `Bearer ${jwt}`}})
+      .then(result => result.data)
+      .catch(err => {
+        this.logger.error(err);
+        return {
+          null: {},
+          error: true
+        };
+      });
+  }
+
 
   public search(query: string, lng: string): Promise<SearchResult[]> {
     return this.axios
-      .get(`/courts?q=${query}`, {  headers: {'Accept-Language': lng}})
+      .get(`/courts?q=${query}`, {headers: {'Accept-Language': lng}})
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
@@ -29,7 +62,7 @@ export class FactApi {
 
   public searchCourtNameHistory(query: string, lng: string): Promise<SearchCourtHistoryResult> {
     return this.axios
-      .get(`/courts/court-history/search?q=${query}`, { headers: {'Accept-Language': lng}})
+      .get(`/courts/court-history/search?q=${query}`, {headers: {'Accept-Language': lng}})
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
@@ -42,7 +75,7 @@ export class FactApi {
 
   public court(slug: string, lng: string): Promise<CourtDetailsResult> {
     return this.axios
-      .get(`/courts/${slug}`,{  headers: {'Accept-Language': lng}})
+      .get(`/courts/${slug}`, {headers: {'Accept-Language': lng}})
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
@@ -55,7 +88,7 @@ export class FactApi {
 
   public services(lng: string): Promise<ServiceResult[]> {
     return this.axios
-      .get('/services', {  headers: {'Accept-Language': lng}})
+      .get('/services', {headers: {'Accept-Language': lng}})
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
@@ -68,7 +101,7 @@ export class FactApi {
 
   public getService(slug: string, lng: string): Promise<ServiceResult> {
     return this.axios
-      .get(`/services/${slug}`, {  headers: {'Accept-Language': lng}})
+      .get(`/services/${slug}`, {headers: {'Accept-Language': lng}})
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
@@ -81,7 +114,7 @@ export class FactApi {
 
   public serviceAreas(service: string, lng: string): Promise<ServiceAreaResult[]> {
     return this.axios
-      .get(`/services/${service}/service-areas`, {  headers: {'Accept-Language': lng}})
+      .get(`/services/${service}/service-areas`, {headers: {'Accept-Language': lng}})
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
@@ -94,7 +127,7 @@ export class FactApi {
 
   public getServiceArea(serviceArea: string, lng: string): Promise<ServiceAreaResult> {
     return this.axios
-      .get(`/service-areas/${serviceArea}`, {  headers: {'Accept-Language': lng}})
+      .get(`/service-areas/${serviceArea}`, {headers: {'Accept-Language': lng}})
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
@@ -107,7 +140,7 @@ export class FactApi {
 
   public postcodeServiceAreaSearch(postcode: string, serviceAreaSlug: string, action: string, lng: string): Promise<PostcodeSearchResultsData> {
     return this.axios
-      .get(`search/results?postcode=${postcode}&serviceArea=${serviceAreaSlug}&action=${action}`, {  headers: {'Accept-Language': lng}})
+      .get(`search/results?postcode=${postcode}&serviceArea=${serviceAreaSlug}&action=${action}`, {headers: {'Accept-Language': lng}})
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);
@@ -120,7 +153,7 @@ export class FactApi {
 
   public postcodeAreaSearch(postcode: string, lng: string): Promise<Array<CourtWithDistance>> {
     return this.axios
-      .get(`search/results/${postcode}`, {  headers: {'Accept-Language': lng}})
+      .get(`search/results/${postcode}`, {headers: {'Accept-Language': lng}})
       .then(results => results.data)
       .catch(err => {
         this.logger.error(err);

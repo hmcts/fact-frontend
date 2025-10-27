@@ -210,6 +210,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@azure/msal-common@npm:15.13.0, @azure/msal-common@npm:^15.13.0":
+  version: 15.13.0
+  resolution: "@azure/msal-common@npm:15.13.0"
+  checksum: 10/e1e55fd2533ab2ab6ceaf19bb69f3cd2c3bb8227efc0b96b1a4877a60d7ad43ca4024e4651655d8e6b2df42dcaada71880754295c41a28f5c20e62ef2b46f685
+  languageName: node
+  linkType: hard
+
 "@azure/msal-common@npm:15.5.0":
   version: 15.5.0
   resolution: "@azure/msal-common@npm:15.5.0"
@@ -225,6 +232,17 @@ __metadata:
     jsonwebtoken: "npm:^9.0.0"
     uuid: "npm:^8.3.0"
   checksum: 10/2b373531c4e1e8cf4813b69ddcf760f3ef806e9958f46fd8a64f6f1fbb3efbed152cf87393f49d56258f25223d3ca2f5ad3ab7eb0a83e2c9aed7ca9c357516ab
+  languageName: node
+  linkType: hard
+
+"@azure/msal-node@npm:^3.8.0":
+  version: 3.8.0
+  resolution: "@azure/msal-node@npm:3.8.0"
+  dependencies:
+    "@azure/msal-common": "npm:15.13.0"
+    jsonwebtoken: "npm:^9.0.0"
+    uuid: "npm:^8.3.0"
+  checksum: 10/d37f45d9647c07c3032ecdb99f0edbcd83a070fe14ce23a7f42bfb5f281c70aff60cab4d70f5a254ba9fb44e00163468113b76f375975209f2823536948b567d
   languageName: node
   linkType: hard
 
@@ -8709,6 +8727,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "fact-frontend@workspace:."
   dependencies:
+    "@azure/msal-common": "npm:^15.13.0"
+    "@azure/msal-node": "npm:^3.8.0"
     "@babel/core": "npm:^7.27.1"
     "@babel/eslint-parser": "npm:^7.11.0"
     "@babel/preset-env": "npm:^7.27.2"

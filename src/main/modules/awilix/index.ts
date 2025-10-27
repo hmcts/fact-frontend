@@ -20,6 +20,8 @@ import { AccessibilityStatementController } from '../../controllers/Accessibilit
 import { CookiesController } from '../../controllers/CookiesController';
 import { NotFoundPageController } from '../../controllers/NotFoundPageController';
 import {CourtPrefixSearchController} from '../../controllers/search/CourtPrefixSearchController';
+import {TestAuthController} from '../../controllers/TestAuthController';
+import {AuthGen} from '../../utils/AuthGen';
 
 const { Logger } = require('@hmcts/nodejs-logging');
 const logger = Logger.getLogger('app');
@@ -31,6 +33,7 @@ export class Container {
       logger: asValue(logger),
       axios: asValue(Axios.create({ baseURL: config.get('services.api.url') })),
       api: asClass(FactApi),
+      auth: asClass(AuthGen),
       serviceAreaRedirect: asClass(ServiceAreaRedirect),
       homeController: asClass(HomeController),
       accessibilityStatementController: asClass(AccessibilityStatementController),
@@ -48,6 +51,7 @@ export class Container {
       servicePostcodeSearchController: asClass(ServicePostcodeSearchController),
       servicePostcodeResultsController: asClass(ServicePostcodeResultsController),
       notFoundPageController:  asClass(NotFoundPageController),
+      testAuthController: asClass(TestAuthController),
     });
   }
 }

@@ -28,6 +28,8 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@azure/msal-common", "npm:15.13.0"],\
+          ["@azure/msal-node", "npm:3.8.0"],\
           ["@babel/core", "npm:7.28.4"],\
           ["@babel/eslint-parser", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.28.4"],\
           ["@babel/preset-env", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.28.3"],\
@@ -346,6 +348,13 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@azure/msal-common", [\
+      ["npm:15.13.0", {\
+        "packageLocation": "./.yarn/cache/@azure-msal-common-npm-15.13.0-76f62ddce3-e1e55fd253.zip/node_modules/@azure/msal-common/",\
+        "packageDependencies": [\
+          ["@azure/msal-common", "npm:15.13.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["npm:15.5.0", {\
         "packageLocation": "./.yarn/cache/@azure-msal-common-npm-15.5.0-38aac0f933-f76d4004c0.zip/node_modules/@azure/msal-common/",\
         "packageDependencies": [\
@@ -360,6 +369,16 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@azure/msal-common", "npm:15.5.0"],\
           ["@azure/msal-node", "npm:3.5.0"],\
+          ["jsonwebtoken", "npm:9.0.2"],\
+          ["uuid", "npm:8.3.2"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:3.8.0", {\
+        "packageLocation": "./.yarn/cache/@azure-msal-node-npm-3.8.0-9d09a27901-d37f45d964.zip/node_modules/@azure/msal-node/",\
+        "packageDependencies": [\
+          ["@azure/msal-common", "npm:15.13.0"],\
+          ["@azure/msal-node", "npm:3.8.0"],\
           ["jsonwebtoken", "npm:9.0.2"],\
           ["uuid", "npm:8.3.2"]\
         ],\
@@ -12320,6 +12339,8 @@ const RAW_RUNTIME_STATE =
       ["workspace:.", {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@azure/msal-common", "npm:15.13.0"],\
+          ["@azure/msal-node", "npm:3.8.0"],\
           ["@babel/core", "npm:7.28.4"],\
           ["@babel/eslint-parser", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.28.4"],\
           ["@babel/preset-env", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.28.3"],\
