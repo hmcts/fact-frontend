@@ -1,0 +1,41 @@
+import {Response} from 'express';
+import {FactRequest} from '../interfaces/FactRequest';
+import {AuthTestData} from '../interfaces/AuthTestData';
+import {FactApi} from '../utils/FactApi';
+import autobind from 'autobind-decorator';
+
+@autobind
+export class TestAuthController {
+
+  constructor(
+    private readonly api: FactApi
+  ) {
+  }
+
+  /**
+   * GET /get
+   * @returns renders the test page.
+   */
+  public async get(req: FactRequest, res: Response) {
+    let miResult;
+    let csResult;
+    try {
+      miResult = await this.api.secureCallTestMI();
+    } catch(e) {
+      console.log(e);
+    }
+
+    try {
+      csResult = await this.api.secureCallTestCS();
+    } catch(e) {
+      console.log(e);
+    }
+
+    const data: AuthTestData = {
+      path: '/make-auth-call',
+      miAuthResult: miResult,
+      csAuthResult: csResult
+    };
+    res.render('response', data);
+  }
+}
