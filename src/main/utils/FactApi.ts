@@ -12,14 +12,13 @@ export class FactApi {
 
   constructor(
     private readonly axios: AxiosInstance,
-    private readonly logger: Logger,
-    private readonly auth: AuthGen
+    private readonly logger: Logger
   ) {
   }
 
 
-  public async secureCallTestMI(): Promise<string> {
-    const jwt = await this.auth.generateTokenFromMI();
+  public async secureCallTestMI(auth: AuthGen): Promise<string> {
+    const jwt = await auth.generateTokenFromMI();
     return this.axios
       .get('/secure/admin', {headers: {'Authorization': `Bearer ${jwt}`}})
       .then(result => result.data)
@@ -32,8 +31,8 @@ export class FactApi {
       });
   }
 
-  public async secureCallTestCS(): Promise<string> {
-    const jwt = await this.auth.generateTokenFromClientSecret();
+  public async secureCallTestCS(auth: AuthGen): Promise<string> {
+    const jwt = await auth.generateTokenFromClientSecret();
     return this.axios
       .get('/secure/admin', {headers: {'Authorization': `Bearer ${jwt}`}})
       .then(result => result.data)

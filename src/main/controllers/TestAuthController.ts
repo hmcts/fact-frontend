@@ -3,12 +3,14 @@ import {FactRequest} from '../interfaces/FactRequest';
 import {AuthTestData} from '../interfaces/AuthTestData';
 import {FactApi} from '../utils/FactApi';
 import autobind from 'autobind-decorator';
+import {AuthGen} from '../utils/AuthGen';
 
 @autobind
 export class TestAuthController {
 
   constructor(
-    private readonly api: FactApi
+    private readonly api: FactApi,
+    private readonly auth: AuthGen
   ) {
   }
 
@@ -20,13 +22,13 @@ export class TestAuthController {
     let miResult;
     let csResult;
     try {
-      miResult = await this.api.secureCallTestMI();
+      miResult = await this.api.secureCallTestMI(this.auth);
     } catch(e) {
       console.log(e);
     }
 
     try {
-      csResult = await this.api.secureCallTestCS();
+      csResult = await this.api.secureCallTestCS(this.auth);
     } catch(e) {
       console.log(e);
     }
