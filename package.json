@@ -25,6 +25,7 @@
     "cichecks": "yarn && yarn build && yarn lint && yarn test"
   },
   "dependencies": {
+    "@azure/identity": "^4.13.0",
     "@azure/msal-common": "^15.13.0",
     "@azure/msal-node": "^3.8.0",
     "@hmcts/cookie-manager": "1.1.0",

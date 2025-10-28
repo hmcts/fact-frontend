@@ -12,6 +12,7 @@ import {
   NodeSystemOptions
 } from '@azure/msal-node';
 import {LoggerOptions} from '@azure/msal-common';
+import {DefaultAzureCredential} from '@azure/identity';
 
 
 export class AuthGen {
@@ -27,6 +28,12 @@ export class AuthGen {
   private clientAppRegId: string = config.get('poc.clientAppRegId');
   // fact-admin-frontend-non-prod app reg secret
   // private clientAppSecret: string = config.get('poc.clientAppSecret');
+
+  public async generateTokenUsingDefaultAzureCredential(): Promise<string> {
+    const cred = new DefaultAzureCredential();
+    const token = await cred.getToken(`api://${this.serviceAppRegId}/.default`);
+    return token.token;
+  }
 
   public async generateTokenFromMI(): Promise<string> {
     const config: Configuration = await this.createConfig();

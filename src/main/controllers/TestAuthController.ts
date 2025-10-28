@@ -22,10 +22,20 @@ export class TestAuthController {
    */
   public async get(req: FactRequest, res: Response) {
     let miResult;
-    const csResult = 'not performed';
+    let csResult;
     this.logger.info('/get in test controller');
     try {
       miResult = await this.api.secureCallTestMI(this.auth);
+      this.logger.info('MI Result: ' + miResult);
+    } catch(e) {
+      // disable for now as it's filling the log
+      // console.log(e);
+      this.logger.error(e);
+    }
+
+    try {
+      csResult = await this.api.secureCallTestDefaultAzure(this.auth);
+      this.logger.info('DAC Result: ' + csResult);
     } catch(e) {
       // disable for now as it's filling the log
       // console.log(e);

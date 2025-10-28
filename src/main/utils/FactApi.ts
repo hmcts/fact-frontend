@@ -52,6 +52,23 @@ export class FactApi {
       });
   }
 
+  public async secureCallTestDefaultAzure(auth: AuthGen): Promise<string> {
+    this.logger.info('generating JWT from defaultAzureCredential');
+    const jwt = await auth.generateTokenUsingDefaultAzureCredential();
+    this.logger.info(`aud: ${this.jwtDecode(jwt).aud}`);
+    return this.axios
+      .get('/secure/admin', {headers: {'Authorization': `Bearer ${jwt}`}})
+      .then(result => result.data)
+      .catch(err => {
+        this.logger.error(err);
+        return {
+          null: {},
+          error: true
+        };
+      });
+  }
+
+
   // public async secureCallTestCS(auth: AuthGen): Promise<string> {
   //   const jwt = await auth.generateTokenFromClientSecret();
   //   return this.axios
