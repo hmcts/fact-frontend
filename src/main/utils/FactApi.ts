@@ -30,14 +30,16 @@ export class FactApi {
 
       return JSON.parse(jsonPayload);
     } catch (error) {
-      console.error('Invalid JWT token', error);
+      this.logger.error('Invalid JWT token');
+      this.logger.error(error);
       return {aud: 'failed'};
     }
   }
 
   public async secureCallTestMI(auth: AuthGen): Promise<string> {
+    this.logger.info('generating JWT from MI');
     const jwt = await auth.generateTokenFromMI();
-    console.log(`aud: ${this.jwtDecode(jwt).aud}`);
+    this.logger.info(`aud: ${this.jwtDecode(jwt).aud}`);
     return this.axios
       .get('/secure/admin', {headers: {'Authorization': `Bearer ${jwt}`}})
       .then(result => result.data)
