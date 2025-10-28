@@ -26,7 +26,7 @@ export class AuthGen {
   // fact-admin-frontend-non-prod app reg id
   private clientAppRegId: string = config.get('poc.clientAppRegId');
   // fact-admin-frontend-non-prod app reg secret
-  private clientAppSecret: string = config.get('poc.clientAppSecret');
+  // private clientAppSecret: string = config.get('poc.clientAppSecret');
 
   public async generateTokenFromMI(): Promise<string> {
     const config: Configuration = await this.createConfig();
@@ -35,12 +35,11 @@ export class AuthGen {
     );
 
     const request: ClientCredentialRequest = {
-      scopes: [`app://${this.serviceAppRegId}/.default`]/*,
+      scopes: [`api://${this.serviceAppRegId}/.default`]/*,
       azureRegion: AZURE_REGION,*/
     };
 
     // ---------- get token response ----------
-
     const token = await this.getAccessTokenForServiceApp(
       confidentialClientApplication,
       request
@@ -50,38 +49,38 @@ export class AuthGen {
   }
 
 
-  public async generateTokenFromClientSecret(): Promise<string> {
-    const confidentialClientApplication = new ConfidentialClientApplication({
-      auth: {
-        clientId: this.clientAppRegId,
-        authority: `https://login.microsoftonline.com/${this.azureTenantId}`,
-        clientSecret: this.clientAppSecret
-      }, system: {
-        loggerOptions: {
-          loggerCallback(loglevel, message, containsPii) {
-            if (!containsPii) {
-              console.log(message);
-            }
-          },
-          piiLoggingEnabled: false,
-          logLevel: LogLevel.Verbose
-        }
-      }
-    });
-
-    const request: ClientCredentialRequest = {
-      scopes: [`api://${this.serviceAppRegId}/.default`]/*,
-      azureRegion: AZURE_REGION,*/
-    };
-
-
-    // ---------- get token response ----------
-
-    const token = await confidentialClientApplication
-      .acquireTokenByClientCredential(request);
-
-    return token.accessToken;
-  }
+  // public async generateTokenFromClientSecret(): Promise<string> {
+  //   const confidentialClientApplication = new ConfidentialClientApplication({
+  //     auth: {
+  //       clientId: this.clientAppRegId,
+  //       authority: `https://login.microsoftonline.com/${this.azureTenantId}`,
+  //       clientSecret: this.clientAppSecret
+  //     }, system: {
+  //       loggerOptions: {
+  //         loggerCallback(loglevel, message, containsPii) {
+  //           if (!containsPii) {
+  //             console.log(message);
+  //           }
+  //         },
+  //         piiLoggingEnabled: false,
+  //         logLevel: LogLevel.Verbose
+  //       }
+  //     }
+  //   });
+  //
+  //   const request: ClientCredentialRequest = {
+  //     scopes: [`api://${this.serviceAppRegId}/.default`]/*,
+  //     azureRegion: AZURE_REGION,*/
+  //   };
+  //
+  //
+  //   // ---------- get token response ----------
+  //
+  //   const token = await confidentialClientApplication
+  //     .acquireTokenByClientCredential(request);
+  //
+  //   return token.accessToken;
+  // }
 
 
   private async createConfig(): Promise<Configuration> {

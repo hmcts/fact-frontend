@@ -16,9 +16,28 @@ export class FactApi {
   ) {
   }
 
+  private jwtDecode(token: string) {
+    try {
+      const base64Url = token.split('.')[1];
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const jsonPayload = decodeURIComponent(
+        window
+          .atob(base64)
+          .split('')
+          .map((c) => `%${`00${c.charCodeAt(0).toString(16)}`.slice(-2)}`)
+          .join('')
+      );
+
+      return JSON.parse(jsonPayload);
+    } catch (error) {
+      console.error('Invalid JWT token', error);
+      return {aud: 'failed'};
+    }
+  }
 
   public async secureCallTestMI(auth: AuthGen): Promise<string> {
     const jwt = await auth.generateTokenFromMI();
+    console.log(`aud: ${this.jwtDecode(jwt).aud}`);
     return this.axios
       .get('/secure/admin', {headers: {'Authorization': `Bearer ${jwt}`}})
       .then(result => result.data)
@@ -31,19 +50,19 @@ export class FactApi {
       });
   }
 
-  public async secureCallTestCS(auth: AuthGen): Promise<string> {
-    const jwt = await auth.generateTokenFromClientSecret();
-    return this.axios
-      .get('/secure/admin', {headers: {'Authorization': `Bearer ${jwt}`}})
-      .then(result => result.data)
-      .catch(err => {
-        this.logger.error(err);
-        return {
-          null: {},
-          error: true
-        };
-      });
-  }
+  // public async secureCallTestCS(auth: AuthGen): Promise<string> {
+  //   const jwt = await auth.generateTokenFromClientSecret();
+  //   return this.axios
+  //     .get('/secure/admin', {headers: {'Authorization': `Bearer ${jwt}`}})
+  //     .then(result => result.data)
+  //     .catch(err => {
+  //       this.logger.error(err);
+  //       return {
+  //         null: {},
+  //         error: true
+  //       };
+  //     });
+  // }
 
 
   public search(query: string, lng: string): Promise<SearchResult[]> {

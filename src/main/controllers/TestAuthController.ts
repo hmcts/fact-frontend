@@ -20,19 +20,13 @@ export class TestAuthController {
    */
   public async get(req: FactRequest, res: Response) {
     let miResult;
-    let csResult;
+    const csResult = 'not performed';
     try {
       miResult = await this.api.secureCallTestMI(this.auth);
     } catch(e) {
-      console.log(e);
+      // disable for now as it's filling the log
+      // console.log(e);
     }
-
-    try {
-      csResult = await this.api.secureCallTestCS(this.auth);
-    } catch(e) {
-      console.log(e);
-    }
-
     const data: AuthTestData = {
       path: '/make-auth-call',
       miAuthResult: miResult,
