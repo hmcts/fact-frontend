@@ -39,7 +39,7 @@ export class FactApi {
   public async secureCallTestMI(auth: AuthGen): Promise<string> {
     this.logger.info('generating JWT from MI');
     const jwt = await auth.generateTokenFromMI();
-    console.log('JWT should be: ' + jwt)
+    console.log('JWT should be: ' + jwt);
     this.logger.info(`aud: ${this.jwtDecode(jwt).aud}`);
     return this.axios
       .get('/secure/admin', {headers: {'Authorization': `Bearer ${jwt}`}})
