@@ -10,5 +10,6 @@ const port: number = parseInt(process.env.PORT, 10) || 3100;
 process.env.AZURE_CLIENT_ID = config.get('poc.clientAppRegId');
 
 app.listen(port, () => {
+  logger.info('I am latest');
   logger.info(`Application started: http://localhost:${port}`);
 });
