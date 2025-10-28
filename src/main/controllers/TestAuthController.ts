@@ -21,7 +21,7 @@ export class TestAuthController {
    * @returns renders the test page.
    */
   public async get(req: FactRequest, res: Response) {
-    let miResult = '';
+    const miResult = '';
     let csResult;
     this.logger.info('/get in test controller');
     // try {
