@@ -21,17 +21,17 @@ export class TestAuthController {
    * @returns renders the test page.
    */
   public async get(req: FactRequest, res: Response) {
-    let miResult;
+    let miResult = '';
     let csResult;
     this.logger.info('/get in test controller');
-    try {
-      miResult = await this.api.secureCallTestMI(this.auth);
-      this.logger.info('MI Result: ' + miResult);
-    } catch(e) {
-      // disable for now as it's filling the log
-      // console.log(e);
-      this.logger.error(e);
-    }
+    // try {
+    //   miResult = await this.api.secureCallTestMI(this.auth);
+    //   this.logger.info('MI Result: ' + miResult);
+    // } catch(e) {
+    //   // disable for now as it's filling the log
+    //   // console.log(e);
+    //   this.logger.error(e);
+    // }
 
     try {
       csResult = await this.api.secureCallTestDefaultAzure(this.auth);
