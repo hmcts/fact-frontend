@@ -16,30 +16,10 @@ export class FactApi {
   ) {
   }
 
-  private jwtDecode(token: string) {
-    try {
-      const base64Url = token.split('.')[1];
-      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-      const jsonPayload = decodeURIComponent(
-        window
-          .atob(base64)
-          .split('')
-          .map((c) => `%${`00${c.charCodeAt(0).toString(16)}`.slice(-2)}`)
-          .join('')
-      );
-
-      return JSON.parse(jsonPayload);
-    } catch (error) {
-      this.logger.error('Invalid JWT token');
-      this.logger.error(error);
-      return {aud: 'failed'};
-    }
-  }
-
   public async secureCallTestDefaultAzure(auth: AuthGen): Promise<string> {
     this.logger.info('generating JWT from defaultAzureCredential');
     const jwt = await auth.generateTokenUsingDefaultAzureCredential();
-    this.logger.info(`aud: ${this.jwtDecode(jwt).aud}`);
+    console.log('The JWT IS: ' + jwt)
     return this.axios
       .get('/secure/admin', {headers: {'Authorization': `Bearer ${jwt}`}})
       .then(result => result.data)
