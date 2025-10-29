@@ -19,7 +19,7 @@ export class FactApi {
   public async secureCallTestDefaultAzure(auth: AuthGen): Promise<string> {
     this.logger.info('generating JWT from defaultAzureCredential');
     const jwt = await auth.generateTokenUsingDefaultAzureCredential();
-    console.log('The JWT IS: ' + jwt)
+    console.log('The JWT IS: ' + jwt);
     return this.axios
       .get('/secure/admin', {headers: {'Authorization': `Bearer ${jwt}`}})
       .then(result => result.data)
