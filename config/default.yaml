@@ -23,4 +23,3 @@ appInsights:
 poc:
   serviceAppRegId:
   clientAppRegId:
-  clientAppSecret:

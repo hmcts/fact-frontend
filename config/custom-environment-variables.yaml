@@ -10,4 +10,3 @@ appInsights:
 poc:
   serviceAppRegId: POC_SERVICE_APP_REG_ID
   clientAppRegId: POC_CLIENT_APP_REG_ID
-  clientAppSecret: POC_CLIENT_APP_SECRET

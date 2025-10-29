@@ -11,13 +11,11 @@ export class PropertiesVolume {
       this.setSecret('secrets.fact.AppInsightsInstrumentationKey-ai', 'appInsights.instrumentationKey');
       this.setSecret('secrets.fact.poc-service-app-reg-id', 'poc.serviceAppRegId');
       this.setSecret('secrets.fact.poc-client-app-reg-id', 'poc.clientAppRegId');
-      this.setSecret('secrets.fact.poc-client-app-secret', 'poc.clientAppSecret');
     } else {
       this.setLocalSecret('AppInsightsInstrumentationKey-ai', 'appInsights.instrumentationKey');
       // a custom env should be able to set this stuff up rather than polluting aat with secrets
       // this.setLocalSecret('poc-service-app-reg-id', 'poc.serviceAppRegId');
       // this.setLocalSecret('poc-client-app-reg-id', 'poc.clientAppRegId');
-      // this.setLocalSecret('poc-client-app-secret', 'poc.clientAppSecret');
     }
   }
 
