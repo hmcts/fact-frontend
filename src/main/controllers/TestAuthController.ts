@@ -21,17 +21,8 @@ export class TestAuthController {
    * @returns renders the test page.
    */
   public async get(req: FactRequest, res: Response) {
-    const miResult = '';
     let csResult;
     this.logger.info('/get in test controller');
-    // try {
-    //   miResult = await this.api.secureCallTestMI(this.auth);
-    //   this.logger.info('MI Result: ' + miResult);
-    // } catch(e) {
-    //   // disable for now as it's filling the log
-    //   // console.log(e);
-    //   this.logger.error(e);
-    // }
 
     try {
       csResult = await this.api.secureCallTestDefaultAzure(this.auth);
@@ -44,7 +35,6 @@ export class TestAuthController {
     this.logger.info('rendering test page');
     const data: AuthTestData = {
       path: '/make-auth-call',
-      miAuthResult: miResult,
       csAuthResult: csResult
     };
     res.render('response', data);
