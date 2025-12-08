@@ -46,20 +46,20 @@
     "autobind-decorator": "^2.4.0",
     "awilix": "^7.0.3",
     "axios": "1.12.2",
-    "cacache": "^19.0.1",
+    "cacache": "^20.0.3",
     "config": "^3.3.12",
     "cookie-parser": "^1.4.7",
     "csrf-csrf": "^3.2.2",
     "express": "4.21.2",
     "express-nunjucks": "^3.1.2",
-    "glob-parent": "6.0.2",
+    "glob-parent": "^6.0.2",
     "govuk-frontend": "^5.10.2",
     "helmet": "^4.6.0",
     "http-proxy-middleware": "^2.0.9",
     "i18next": "^21.10.0",
     "i18next-http-middleware": "^3.7.4",
     "jquery": "^3.7.1",
-    "js-yaml": "^4.1.0",
+    "js-yaml": "^4.1.1",
     "lodash": "^4.17.21",
     "nunjucks": "^3.2.4",
     "require-directory": "^2.1.1",
@@ -115,6 +115,11 @@
     "webpack-cli": "^6.0.1",
     "webpack-dev-middleware": "^7.4.5",
     "webpack-node-externals": "^3.0.0"
+  },
+  "resolutions": {
+    "glob": "13.0.0",
+    "jsonwebtoken": "^9.0.3",
+    "jws": "4.0.1"
   },
   "packageManager": "yarn@4.12.0"
 }
