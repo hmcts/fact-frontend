@@ -119,6 +119,7 @@
   "resolutions": {
     "glob": "13.0.0",
     "jsonwebtoken": "^9.0.3",
+    "js-yaml": "^4.1.1",
     "jws": "4.0.1"
   },
   "packageManager": "yarn@4.12.0"
