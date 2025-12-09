@@ -74,6 +74,7 @@ const RAW_RUNTIME_STATE =
           ["copy-webpack-plugin", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:12.0.2"],\
           ["csrf-csrf", "npm:3.2.2"],\
           ["css-loader", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.1.2"],\
+          ["debug", "virtual:e8b673973be83035c0975cc23c92ced526f1d4e19827a9bada8a5863c75e1630f449b1c8c4b0f77630c1d42717714f0ff4fe7d3c88ef4746465631f0924695ae#npm:4.4.3"],\
           ["eslint", "npm:8.57.1"],\
           ["express", "npm:4.22.1"],\
           ["express-nunjucks", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:3.1.2"],\
@@ -10629,6 +10630,7 @@ const RAW_RUNTIME_STATE =
           ["copy-webpack-plugin", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:12.0.2"],\
           ["csrf-csrf", "npm:3.2.2"],\
           ["css-loader", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.1.2"],\
+          ["debug", "virtual:e8b673973be83035c0975cc23c92ced526f1d4e19827a9bada8a5863c75e1630f449b1c8c4b0f77630c1d42717714f0ff4fe7d3c88ef4746465631f0924695ae#npm:4.4.3"],\
           ["eslint", "npm:8.57.1"],\
           ["express", "npm:4.22.1"],\
           ["express-nunjucks", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:3.1.2"],\
