@@ -117,7 +117,6 @@
     "webpack-node-externals": "^3.0.0"
   },
   "resolutions": {
-    "glob": "10.4.5",
     "jsonwebtoken": "^9.0.3",
     "js-yaml": "^3.14.2",
     "jws": "4.0.1"
