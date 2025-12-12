@@ -36,7 +36,7 @@
     "@types/es6-promisify": "^6.0.4",
     "@types/express": "^5.0.1",
     "@types/glob": "^8.1.0",
-    "@types/helmet": "^0.0.48",
+    "@types/helmet": "^4.0.0",
     "@types/lodash": "^4.17.17",
     "@types/node": "^18.19.99",
     "@types/nunjucks": "^3.2.6",
