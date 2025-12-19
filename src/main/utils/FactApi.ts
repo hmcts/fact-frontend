@@ -21,7 +21,7 @@ export class FactApi {
     const jwt = await auth.generateTokenUsingDefaultAzureCredential();
     console.log('The JWT IS: ' + jwt);
     return this.axios
-      .get('/secure/admin', {headers: {'Authorization': `Bearer ${jwt}`}})
+      .get('/', {headers: {'Authorization': `Bearer ${jwt}`}})
       .then(result => result.data)
       .catch(err => {
         this.logger.error(err);

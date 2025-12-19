@@ -3,10 +3,8 @@ services:
     url: FRONTEND_URL
   api:
     url: FACT_API_URL
+    app-id: SERVICE_APP_ID
   image-store:
     url: IMAGE_BASE_URL
 appInsights:
   instrumentationKey: APPINSIGHTS_KEY
-poc:
-  serviceAppRegId: POC_SERVICE_APP_REG_ID
-  clientAppRegId: POC_CLIENT_APP_REG_ID

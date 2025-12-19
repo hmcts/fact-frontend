@@ -2,6 +2,7 @@ app:
   useCSRFProtection: 'true'
   security:
     referrerPolicy: 'origin'
+  client-id:
 services:
   frontend:
     name: 'FACT Frontend'
@@ -9,6 +10,7 @@ services:
   api:
     name: 'FACT API'
     url: 'http://localhost:8989'
+    app-id:
   image-store:
     name: 'Image Store'
     url: 'https://factaat.blob.core.windows.net/images'
@@ -20,6 +22,3 @@ health:
   deadline: 15000
 appInsights:
   instrumentationKey:
-poc:
-  serviceAppRegId:
-  clientAppRegId:
