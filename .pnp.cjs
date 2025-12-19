@@ -85,7 +85,7 @@ const RAW_RUNTIME_STATE =
           ["html-webpack-plugin", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:5.6.5"],\
           ["http-proxy-middleware", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.0.9"],\
           ["i18next", "npm:21.10.0"],\
-          ["i18next-http-middleware", "npm:3.8.1"],\
+          ["i18next-http-middleware", "npm:3.9.1"],\
           ["jest", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:29.7.0"],\
           ["jest-when", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:3.7.0"],\
           ["jquery", "npm:3.7.1"],\
@@ -10433,7 +10433,7 @@ const RAW_RUNTIME_STATE =
           ["html-webpack-plugin", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:5.6.5"],\
           ["http-proxy-middleware", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.0.9"],\
           ["i18next", "npm:21.10.0"],\
-          ["i18next-http-middleware", "npm:3.8.1"],\
+          ["i18next-http-middleware", "npm:3.9.1"],\
           ["jest", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:29.7.0"],\
           ["jest-when", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:3.7.0"],\
           ["jquery", "npm:3.7.1"],\
@@ -11816,10 +11816,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["i18next-http-middleware", [\
-      ["npm:3.8.1", {\
-        "packageLocation": "./.yarn/cache/i18next-http-middleware-npm-3.8.1-cab2301882-1a97eb8b56.zip/node_modules/i18next-http-middleware/",\
+      ["npm:3.9.1", {\
+        "packageLocation": "./.yarn/cache/i18next-http-middleware-npm-3.9.1-49fd48c4c9-823dc8c926.zip/node_modules/i18next-http-middleware/",\
         "packageDependencies": [\
-          ["i18next-http-middleware", "npm:3.8.1"]\
+          ["i18next-http-middleware", "npm:3.9.1"]\
         ],\
         "linkType": "HARD"\
       }]\
