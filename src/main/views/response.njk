@@ -8,28 +8,22 @@
 
 {% block beforeContent %}
   {{ govukPhaseBanner({
-      tag: {
-        text: "beta"
-      },
-      html: feedback + languageToggle
-    })
-  }}
+    tag: {
+      text: "beta"
+    },
+    html: feedback + languageToggle
+  }) }}
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
+  <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">
       {% if serviceName %} {{ serviceName }} {% endif %}
     </h1>
 
-    {{ govukButton({
-      text: button,
-      href: "/make-auth-call",
-      classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8 continue",
-      isStartButton: true
-    }) }}
+    <p class="govuk-body-m">CS: {{ csAuthResult }}</p>
 
   </div>
-</div>{% endblock %}
+  </div>{% endblock %}

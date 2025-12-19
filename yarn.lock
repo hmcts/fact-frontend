@@ -134,6 +134,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@azure/identity@npm:^4.13.0":
+  version: 4.13.0
+  resolution: "@azure/identity@npm:4.13.0"
+  dependencies:
+    "@azure/abort-controller": "npm:^2.0.0"
+    "@azure/core-auth": "npm:^1.9.0"
+    "@azure/core-client": "npm:^1.9.2"
+    "@azure/core-rest-pipeline": "npm:^1.17.0"
+    "@azure/core-tracing": "npm:^1.0.0"
+    "@azure/core-util": "npm:^1.11.0"
+    "@azure/logger": "npm:^1.0.0"
+    "@azure/msal-browser": "npm:^4.2.0"
+    "@azure/msal-node": "npm:^3.5.0"
+    open: "npm:^10.1.0"
+    tslib: "npm:^2.2.0"
+  checksum: 10/8b97154ac85bb33abc0216ac7f45f41ccebaa8516db2173fbe029bbdd6c4dd227a83d7a6da6bb51c28b9189944a26cf6322bc52d79cbe4e75389e74266abc4b0
+  languageName: node
+  linkType: hard
+
 "@azure/identity@npm:^4.2.1":
   version: 4.8.0
   resolution: "@azure/identity@npm:4.8.0"
@@ -210,6 +229,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@azure/msal-common@npm:15.13.3, @azure/msal-common@npm:^15.13.0":
+  version: 15.13.3
+  resolution: "@azure/msal-common@npm:15.13.3"
+  checksum: 10/7d438e09f0216a282efaeafad88fa683c92719771a5c21b1f16c524a5a5667fb15014e41a69426c177a598405b606065a41de3151f331393a577eac5540934dd
+  languageName: node
+  linkType: hard
+
 "@azure/msal-common@npm:15.5.0":
   version: 15.5.0
   resolution: "@azure/msal-common@npm:15.5.0"
@@ -225,6 +251,17 @@ __metadata:
     jsonwebtoken: "npm:^9.0.0"
     uuid: "npm:^8.3.0"
   checksum: 10/2b373531c4e1e8cf4813b69ddcf760f3ef806e9958f46fd8a64f6f1fbb3efbed152cf87393f49d56258f25223d3ca2f5ad3ab7eb0a83e2c9aed7ca9c357516ab
+  languageName: node
+  linkType: hard
+
+"@azure/msal-node@npm:^3.5.0, @azure/msal-node@npm:^3.8.0":
+  version: 3.8.4
+  resolution: "@azure/msal-node@npm:3.8.4"
+  dependencies:
+    "@azure/msal-common": "npm:15.13.3"
+    jsonwebtoken: "npm:^9.0.0"
+    uuid: "npm:^8.3.0"
+  checksum: 10/183c52f21d8c6d68e0b3e1a9364efd16eb0d0cbfd3897424990dd72f3e5751f422b1874cb0c0d44dfaf0f03d4df32f6b57549b496833f466c25744946614ef08
   languageName: node
   linkType: hard
 
@@ -7586,6 +7623,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "fact-frontend@workspace:."
   dependencies:
+    "@azure/identity": "npm:^4.13.0"
+    "@azure/msal-common": "npm:^15.13.0"
+    "@azure/msal-node": "npm:^3.8.0"
     "@babel/eslint-parser": "npm:^7.28.5"
     "@codeceptjs/allure-legacy": "npm:^1.0.2"
     "@codeceptjs/configure": "npm:^1.0.0"

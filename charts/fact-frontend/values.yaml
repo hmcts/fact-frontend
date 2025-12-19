@@ -14,7 +14,7 @@ nodejs:
   image: 'hmctspublic.azurecr.io/fact/frontend:latest'
   environment:
     FRONTEND_URL: "https://fact.{{ .Values.global.environment }}.platform.hmcts.net"
-    FACT_API_URL: "http://fact-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal"
+    FACT_API_URL: "https://fact-data-api.{{ .Values.global.environment }}.platform.hmcts.net"
     IMAGE_BASE_URL: "https://fact{{ .Values.global.environment }}.blob.core.windows.net/images"
     TEST: 7
   autoscaling:        # Default is false

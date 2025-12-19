@@ -3,6 +3,7 @@ services:
     url: FRONTEND_URL
   api:
     url: FACT_API_URL
+    app-id: SERVICE_APP_ID
   image-store:
     url: IMAGE_BASE_URL
 appInsights:
