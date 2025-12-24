@@ -4187,14 +4187,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"allure-js-commons@npm:2.15.1":
-  version: 2.15.1
-  resolution: "allure-js-commons@npm:2.15.1"
+"allure-js-commons@npm:3.4.3":
+  version: 3.4.3
+  resolution: "allure-js-commons@npm:3.4.3"
   dependencies:
     md5: "npm:^2.3.0"
-    properties: "npm:^1.2.1"
-    strip-ansi: "npm:^5.2.0"
-  checksum: 10/ceade5bf806b454cab4d5de4bb21d8ec08514d27fe2a24ad76c566ea2f76214fc25fd2d9c86291bfada52e867587dcb68335719b8089a8dea83bbace9a8b91b9
+  peerDependencies:
+    allure-playwright: 3.4.3
+  peerDependenciesMeta:
+    allure-playwright:
+      optional: true
+  checksum: 10/b648be19c2e3191bec870ab02a69c4c40fe796cec0d25bb26a05e066bed3ec292077a28efb322131b5e7cf7d4d0498f47e2918eb4dfcac977f10344e148f3350
   languageName: node
   linkType: hard
 
@@ -4212,12 +4215,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"allure-playwright@npm:^2.15.1":
-  version: 2.15.1
-  resolution: "allure-playwright@npm:2.15.1"
+"allure-playwright@npm:^3.0.0":
+  version: 3.4.3
+  resolution: "allure-playwright@npm:3.4.3"
   dependencies:
-    allure-js-commons: "npm:2.15.1"
-  checksum: 10/b8148cb55b7f0f8d5ef831c8383eea729baa261e405975d8d837cf784912a57618bad5be58c4057ecc7c6873a6b7d6aafcd87f2b4199db6a1bf06d0f9987a9e3
+    allure-js-commons: "npm:3.4.3"
+  peerDependencies:
+    "@playwright/test": ">=1.53.0"
+  checksum: 10/9ec7313e0fc18973b111f2b4e8497fda434b0335a280b4bfab5051d87f0b35ec8cfd8abe2f156b1fc89bafe592e5a09f3fb04366e6d55e723373453bf0cb4251
   languageName: node
   linkType: hard
 
@@ -7618,7 +7623,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin-tslint": "npm:^5.62.0"
     "@typescript-eslint/parser": "npm:^5.62.0"
     allure-commandline: "npm:^2.34.0"
-    allure-playwright: "npm:^2.15.1"
+    allure-playwright: "npm:^3.0.0"
     applicationinsights: "npm:^2.9.8"
     autobind-decorator: "npm:^2.4.0"
     awilix: "npm:^12.0.0"
@@ -12746,13 +12751,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"properties@npm:^1.2.1":
-  version: 1.2.1
-  resolution: "properties@npm:1.2.1"
-  checksum: 10/f8a4b4210a834e45a4b1af493b87955af8aff1245721a1806bb12e17c7bee0cff4ab5e8d2f96714379d156dce4e89f6ed23d685fb8f53a869a433166e3f12fd6
-  languageName: node
-  linkType: hard
-
 "property-expr@npm:^2.0.5":
   version: 2.0.6
   resolution: "property-expr@npm:2.0.6"
@@ -14385,15 +14383,6 @@ __metadata:
   dependencies:
     ansi-regex: "npm:^3.0.0"
   checksum: 10/d9186e6c0cf78f25274f6750ee5e4a5725fb91b70fdd79aa5fe648eab092a0ec5b9621b22d69d4534a56319f75d8944efbd84e3afa8d4ad1b9a9491f12c84eca
-  languageName: node
-  linkType: hard
-
-"strip-ansi@npm:^5.2.0":
-  version: 5.2.0
-  resolution: "strip-ansi@npm:5.2.0"
-  dependencies:
-    ansi-regex: "npm:^4.1.0"
-  checksum: 10/bdb5f76ade97062bd88e7723aa019adbfacdcba42223b19ccb528ffb9fb0b89a5be442c663c4a3fb25268eaa3f6ea19c7c3fbae830bd1562d55adccae1fcec46
   languageName: node
   linkType: hard
 
