@@ -66,7 +66,7 @@ const RAW_RUNTIME_STATE =
           ["axios", "npm:1.13.5"],\
           ["cacache", "npm:20.0.3"],\
           ["chai", "npm:4.5.0"],\
-          ["chai-as-promised", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.1.2"],\
+          ["chai-as-promised", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:8.0.2"],\
           ["chokidar", "npm:3.6.0"],\
           ["codeceptjs", "npm:3.7.6"],\
           ["config", "npm:3.3.12"],\
@@ -6337,20 +6337,20 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["chai-as-promised", [\
-      ["npm:7.1.2", {\
-        "packageLocation": "./.yarn/cache/chai-as-promised-npm-7.1.2-ee0dcf9f07-be372540da.zip/node_modules/chai-as-promised/",\
+      ["npm:8.0.2", {\
+        "packageLocation": "./.yarn/cache/chai-as-promised-npm-8.0.2-84997b3017-9723b6cda3.zip/node_modules/chai-as-promised/",\
         "packageDependencies": [\
-          ["chai-as-promised", "npm:7.1.2"]\
+          ["chai-as-promised", "npm:8.0.2"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.1.2", {\
-        "packageLocation": "./.yarn/__virtual__/chai-as-promised-virtual-93e3188413/0/cache/chai-as-promised-npm-7.1.2-ee0dcf9f07-be372540da.zip/node_modules/chai-as-promised/",\
+      ["virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:8.0.2", {\
+        "packageLocation": "./.yarn/__virtual__/chai-as-promised-virtual-7f1bf269fb/0/cache/chai-as-promised-npm-8.0.2-84997b3017-9723b6cda3.zip/node_modules/chai-as-promised/",\
         "packageDependencies": [\
           ["@types/chai", null],\
           ["chai", "npm:4.5.0"],\
-          ["chai-as-promised", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.1.2"],\
-          ["check-error", "npm:1.0.3"]\
+          ["chai-as-promised", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:8.0.2"],\
+          ["check-error", "npm:2.1.3"]\
         ],\
         "packagePeers": [\
           "@types/chai",\
@@ -6425,6 +6425,13 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["check-error", "npm:1.0.3"],\
           ["get-func-name", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:2.1.3", {\
+        "packageLocation": "./.yarn/cache/check-error-npm-2.1.3-e17bcf3ed8-f1868d3db6.zip/node_modules/check-error/",\
+        "packageDependencies": [\
+          ["check-error", "npm:2.1.3"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -8950,7 +8957,7 @@ const RAW_RUNTIME_STATE =
           ["axios", "npm:1.13.5"],\
           ["cacache", "npm:20.0.3"],\
           ["chai", "npm:4.5.0"],\
-          ["chai-as-promised", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.1.2"],\
+          ["chai-as-promised", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:8.0.2"],\
           ["chokidar", "npm:3.6.0"],\
           ["codeceptjs", "npm:3.7.6"],\
           ["config", "npm:3.3.12"],\
