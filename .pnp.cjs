@@ -46,7 +46,7 @@ const RAW_RUNTIME_STATE =
           ["@types/es6-promisify", "npm:6.0.4"],\
           ["@types/express", "npm:5.0.6"],\
           ["@types/glob", "npm:8.1.0"],\
-          ["@types/helmet", "npm:0.0.48"],\
+          ["@types/helmet", "npm:4.0.0"],\
           ["@types/jest", "npm:29.5.14"],\
           ["@types/jest-when", "npm:3.5.5"],\
           ["@types/lodash", "npm:4.17.21"],\
@@ -3820,11 +3820,11 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@types/helmet", [\
-      ["npm:0.0.48", {\
-        "packageLocation": "./.yarn/cache/@types-helmet-npm-0.0.48-a7e2aaa159-3481ac73e5.zip/node_modules/@types/helmet/",\
+      ["npm:4.0.0", {\
+        "packageLocation": "./.yarn/cache/@types-helmet-npm-4.0.0-48d8baa6ce-ded60d8d99.zip/node_modules/@types/helmet/",\
         "packageDependencies": [\
-          ["@types/express", "npm:5.0.6"],\
-          ["@types/helmet", "npm:0.0.48"]\
+          ["@types/helmet", "npm:4.0.0"],\
+          ["helmet", "npm:8.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -8930,7 +8930,7 @@ const RAW_RUNTIME_STATE =
           ["@types/es6-promisify", "npm:6.0.4"],\
           ["@types/express", "npm:5.0.6"],\
           ["@types/glob", "npm:8.1.0"],\
-          ["@types/helmet", "npm:0.0.48"],\
+          ["@types/helmet", "npm:4.0.0"],\
           ["@types/jest", "npm:29.5.14"],\
           ["@types/jest-when", "npm:3.5.5"],\
           ["@types/lodash", "npm:4.17.21"],\
@@ -10046,6 +10046,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/helmet-npm-4.6.0-f244fd965c-47129c540d.zip/node_modules/helmet/",\
         "packageDependencies": [\
           ["helmet", "npm:4.6.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:8.1.0", {\
+        "packageLocation": "./.yarn/cache/helmet-npm-8.1.0-a2193b660c-262e678d34.zip/node_modules/helmet/",\
+        "packageDependencies": [\
+          ["helmet", "npm:8.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\

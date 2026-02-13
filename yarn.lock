@@ -2572,12 +2572,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/helmet@npm:^0.0.48":
-  version: 0.0.48
-  resolution: "@types/helmet@npm:0.0.48"
+"@types/helmet@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@types/helmet@npm:4.0.0"
   dependencies:
-    "@types/express": "npm:*"
-  checksum: 10/3481ac73e59364518975ac1db4c46931f74ed0932009f7b98c2a8ffb577db04f2d442ebe8b656ff4e1466c800e61e04520ac5622fccacb66a7a09463374cdaa4
+    helmet: "npm:*"
+  checksum: 10/ded60d8d9960edbae4d10603511dca9b9c50a9937f49e0d2b14bc096302e85a038acd443889a132dab60bc950bfd0e47337bdca485d75bbb7b6224f74fc50ab7
   languageName: node
   linkType: hard
 
@@ -6736,7 +6736,7 @@ __metadata:
     "@types/es6-promisify": "npm:^6.0.4"
     "@types/express": "npm:^5.0.1"
     "@types/glob": "npm:^8.1.0"
-    "@types/helmet": "npm:^0.0.48"
+    "@types/helmet": "npm:^4.0.0"
     "@types/jest": "npm:^29.5.14"
     "@types/jest-when": "npm:^3.5.5"
     "@types/lodash": "npm:^4.17.17"
@@ -7749,6 +7749,13 @@ __metadata:
   bin:
     he: bin/he
   checksum: 10/d09b2243da4e23f53336e8de3093e5c43d2c39f8d0d18817abfa32ce3e9355391b2edb4bb5edc376aea5d4b0b59d6a0482aab4c52bc02ef95751e4b818e847f1
+  languageName: node
+  linkType: hard
+
+"helmet@npm:*":
+  version: 8.1.0
+  resolution: "helmet@npm:8.1.0"
+  checksum: 10/262e678d340bb102158f4e6ba1469a7cda1643329a50863f8fe704d5b60d9ebe6ea1e7793ed51224ae464f197dedf2fe8035df278c042e32ebc95b237fa41ad0
   languageName: node
   linkType: hard
 
