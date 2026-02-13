@@ -38,7 +38,7 @@ const RAW_RUNTIME_STATE =
           ["@hmcts/nodejs-logging", "npm:4.0.4"],\
           ["@hmcts/properties-volume", "npm:1.2.0"],\
           ["@npmcli/fs", "npm:5.0.0"],\
-          ["@playwright/test", "npm:1.56.1"],\
+          ["@playwright/test", "npm:1.58.2"],\
           ["@types/chai-as-promised", "npm:8.0.2"],\
           ["@types/config", "npm:3.3.5"],\
           ["@types/cookie-parser", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:1.4.10"],\
@@ -96,7 +96,7 @@ const RAW_RUNTIME_STATE =
           ["npm-run-all2", "npm:5.0.2"],\
           ["nunjucks", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:3.2.4"],\
           ["pa11y", "npm:8.0.0"],\
-          ["playwright", "npm:1.56.1"],\
+          ["playwright", "npm:1.58.2"],\
           ["request", "npm:2.88.2"],\
           ["require-directory", "npm:2.1.1"],\
           ["sass", "npm:1.97.1"],\
@@ -4475,11 +4475,11 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@playwright/test", [\
-      ["npm:1.56.1", {\
-        "packageLocation": "./.yarn/cache/@playwright-test-npm-1.56.1-74bef72ba3-9933fa9f8e.zip/node_modules/@playwright/test/",\
+      ["npm:1.58.2", {\
+        "packageLocation": "./.yarn/cache/@playwright-test-npm-1.58.2-03a96deb3c-58bf901392.zip/node_modules/@playwright/test/",\
         "packageDependencies": [\
-          ["@playwright/test", "npm:1.56.1"],\
-          ["playwright", "npm:1.56.1"]\
+          ["@playwright/test", "npm:1.58.2"],\
+          ["playwright", "npm:1.58.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -6397,7 +6397,7 @@ const RAW_RUNTIME_STATE =
       ["virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:3.4.3", {\
         "packageLocation": "./.yarn/__virtual__/allure-playwright-virtual-15b71dfdbd/0/cache/allure-playwright-npm-3.4.3-6b78ec1c17-9ec7313e0f.zip/node_modules/allure-playwright/",\
         "packageDependencies": [\
-          ["@playwright/test", "npm:1.56.1"],\
+          ["@playwright/test", "npm:1.58.2"],\
           ["@types/playwright__test", null],\
           ["allure-js-commons", "virtual:15b71dfdbd13ec361c8fdd1c5b28ac2a60f716e92ad2f7b18ccf808c8aeb6dc3824ddbb4f0afa67bf007f6e804b4e5a789de70ad45c7025986657dce37fc458b#npm:3.4.3"],\
           ["allure-playwright", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:3.4.3"]\
@@ -10388,7 +10388,7 @@ const RAW_RUNTIME_STATE =
           ["@hmcts/nodejs-logging", "npm:4.0.4"],\
           ["@hmcts/properties-volume", "npm:1.2.0"],\
           ["@npmcli/fs", "npm:5.0.0"],\
-          ["@playwright/test", "npm:1.56.1"],\
+          ["@playwright/test", "npm:1.58.2"],\
           ["@types/chai-as-promised", "npm:8.0.2"],\
           ["@types/config", "npm:3.3.5"],\
           ["@types/cookie-parser", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:1.4.10"],\
@@ -10446,7 +10446,7 @@ const RAW_RUNTIME_STATE =
           ["npm-run-all2", "npm:5.0.2"],\
           ["nunjucks", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:3.2.4"],\
           ["pa11y", "npm:8.0.0"],\
-          ["playwright", "npm:1.56.1"],\
+          ["playwright", "npm:1.58.2"],\
           ["request", "npm:2.88.2"],\
           ["require-directory", "npm:2.1.1"],\
           ["sass", "npm:1.97.1"],\
@@ -15910,21 +15910,21 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["playwright", [\
-      ["npm:1.56.1", {\
-        "packageLocation": "./.yarn/cache/playwright-npm-1.56.1-a3ae71eaf6-f1743f93b2.zip/node_modules/playwright/",\
+      ["npm:1.58.2", {\
+        "packageLocation": "./.yarn/cache/playwright-npm-1.58.2-0c12daad27-d89d6c8a32.zip/node_modules/playwright/",\
         "packageDependencies": [\
           ["fsevents", "patch:fsevents@npm%3A2.3.2#optional!builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"],\
-          ["playwright", "npm:1.56.1"],\
-          ["playwright-core", "npm:1.56.1"]\
+          ["playwright", "npm:1.58.2"],\
+          ["playwright-core", "npm:1.58.2"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["playwright-core", [\
-      ["npm:1.56.1", {\
-        "packageLocation": "./.yarn/cache/playwright-core-npm-1.56.1-3f4e0b135f-df785eb3b3.zip/node_modules/playwright-core/",\
+      ["npm:1.58.2", {\
+        "packageLocation": "./.yarn/cache/playwright-core-npm-1.58.2-7d85ddc78a-8a98fcf122.zip/node_modules/playwright-core/",\
         "packageDependencies": [\
-          ["playwright-core", "npm:1.56.1"]\
+          ["playwright-core", "npm:1.58.2"]\
         ],\
         "linkType": "HARD"\
       }]\
