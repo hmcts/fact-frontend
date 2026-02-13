@@ -45,7 +45,7 @@
     "applicationinsights": "^2.9.8",
     "autobind-decorator": "^2.4.0",
     "awilix": "^12.0.0",
-    "axios": "1.13.2",
+    "axios": "1.13.5",
     "cacache": "^20.0.3",
     "config": "^3.3.12",
     "cookie-parser": "^1.4.7",
@@ -118,13 +118,14 @@
     "webpack-node-externals": "^3.0.0"
   },
   "resolutions": {
+    "@isaacs/brace-expansion": "5.0.1",
     "jsonwebtoken": "^9.0.3",
     "js-yaml": "^3.14.2",
     "jws": "4.0.1",
     "lodash": "^4.17.23",
-    "tar": "7.5.7",
     "diff": "8.0.3",
-    "qs": "6.14.1"
+    "qs": "6.14.2",
+    "tar": "7.5.7"
   },
   "packageManager": "yarn@4.12.0"
 }
