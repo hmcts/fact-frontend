@@ -3,6 +3,7 @@
 {% from "govuk/components/header/macro.njk" import govukHeader %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
 {% block head %}
   {% if seoMetadataDescription %}
@@ -107,10 +108,14 @@
 
   {{ govukHeader({
       containerClasses: "govuk-width-container",
-      serviceName: serviceName | safe,
-      serviceUrl: (globals.basePath if globals.basePath) + "/",
       useTudorCrown: true
   }) }}
+
+  {{ govukServiceNavigation({
+    serviceName: serviceName | safe,
+    serviceUrl: (globals.basePath if globals.basePath) + "/"
+  }) }}
+
 {% endblock %}
 
 {% block beforeContent %}
