@@ -28,7 +28,7 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
-          ["@babel/eslint-parser", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.28.5"],\
+          ["@babel/eslint-parser", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.28.6"],\
           ["@codeceptjs/allure-legacy", "npm:1.0.2"],\
           ["@codeceptjs/configure", "virtual:46cee4d60d6c18ae693933817dc6c475ee95f6df75adc0da7ae946dd66238e02e946f9df6c136d53c0a3323eb3d7fdd557567f7c0884b7059b6c15b52a20c5ed#npm:1.0.6"],\
           ["@cucumber/cucumber", "npm:12.4.0"],\
@@ -431,18 +431,18 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@babel/eslint-parser", [\
-      ["npm:7.28.5", {\
-        "packageLocation": "./.yarn/cache/@babel-eslint-parser-npm-7.28.5-8ec05c7754-ec8eb061f3.zip/node_modules/@babel/eslint-parser/",\
+      ["npm:7.28.6", {\
+        "packageLocation": "./.yarn/cache/@babel-eslint-parser-npm-7.28.6-837cc7921d-15c0c9c78a.zip/node_modules/@babel/eslint-parser/",\
         "packageDependencies": [\
-          ["@babel/eslint-parser", "npm:7.28.5"]\
+          ["@babel/eslint-parser", "npm:7.28.6"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.28.5", {\
-        "packageLocation": "./.yarn/__virtual__/@babel-eslint-parser-virtual-6dbef362e2/0/cache/@babel-eslint-parser-npm-7.28.5-8ec05c7754-ec8eb061f3.zip/node_modules/@babel/eslint-parser/",\
+      ["virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.28.6", {\
+        "packageLocation": "./.yarn/__virtual__/@babel-eslint-parser-virtual-e784b3c24a/0/cache/@babel-eslint-parser-npm-7.28.6-837cc7921d-15c0c9c78a.zip/node_modules/@babel/eslint-parser/",\
         "packageDependencies": [\
           ["@babel/core", null],\
-          ["@babel/eslint-parser", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.28.5"],\
+          ["@babel/eslint-parser", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.28.6"],\
           ["@nicolo-ribaudo/eslint-scope-5-internals", "npm:5.1.1-v1"],\
           ["@types/babel__core", null],\
           ["@types/eslint", null],\
@@ -8912,7 +8912,7 @@ const RAW_RUNTIME_STATE =
       ["workspace:.", {\
         "packageLocation": "./",\
         "packageDependencies": [\
-          ["@babel/eslint-parser", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.28.5"],\
+          ["@babel/eslint-parser", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:7.28.6"],\
           ["@codeceptjs/allure-legacy", "npm:1.0.2"],\
           ["@codeceptjs/configure", "virtual:46cee4d60d6c18ae693933817dc6c475ee95f6df75adc0da7ae946dd66238e02e946f9df6c136d53c0a3323eb3d7fdd557567f7c0884b7059b6c15b52a20c5ed#npm:1.0.6"],\
           ["@cucumber/cucumber", "npm:12.4.0"],\
