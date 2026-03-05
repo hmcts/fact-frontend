@@ -267,18 +267,18 @@
       name: 'analytics',
       fieldset: {
         legend: {
-          text: "Allow cookies that measure website use?",
+          text: cookie-preferences-form.analyticsQuestion,
           classes: "govuk-fieldset__legend--s"
         }
       },
       items: [
         {
           value: 'on',
-          text: 'Use cookies that measure my website use'
+          text: cookie-preferences-form.analyticsAllow
         },
         {
           value: 'off',
-          text: 'Do not use cookies that measure my website use',
+          text: cookie-preferences-form.analyticsDeny,
           checked: true
         }
       ]
@@ -289,24 +289,24 @@
       name: 'apm',
       fieldset: {
         legend: {
-          text: "Allow cookies that measure website application performance monitoring?",
+          text: cookie-preferences-form.apmQuestion,
           classes: "govuk-fieldset__legend--s"
         }
       },
       items: [
         {
           value: 'on',
-          text: 'Use cookies that measure website application performance monitoring'
+          text: cookie-preferences-form.apmAllow
         },
         {
           value: 'off',
-          text: 'Do not use cookies that measure website application performance monitoring',
+          text: cookie-preferences-form.apmDeny,
           checked: true
         }
       ]
     }) }}
     {{ govukButton({
-      text: 'Save'
+      text: cookie-preferences-form.save
     }) }}
   </form>
 

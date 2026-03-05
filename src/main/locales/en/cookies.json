@@ -52,5 +52,14 @@
     "rxVisitorDuration": "1 year",
     "rxvtDescription": "Session timeout",
     "rxvtDuration": "Session end"
+  },
+  "cookie-preferences-form": {
+    "analyticsQuestion": "Allow cookies that measure website use?",
+    "apmQuestion": "Allow cookies that measure website application performance monitoring?",
+    "analyticsAllow": "Use cookies that measure my website use",
+    "analyticsDeny": "Do not use cookies that measure my website use",
+    "apmAllow": "Use cookies that measure website application performance monitoring",
+    "apmDeny": "Do not cookies that measure website application performance monitoring",
+    "save": "Save"
   }
 }

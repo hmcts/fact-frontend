@@ -35,21 +35,30 @@
     "gatDuration": "1 munud"
   },
   "apm": {
-    "header": "4. To measure application performance",
-    "p1": "We use Dynatrace Software Intelligence Platform to provide an Application Performance Monitoring Service to collect information about how you use HMCTS services. We do this to monitor HMCTS services in order to resolve issues within our services as well as collect data on how our services can be improved. HMCTS store information about:",
-    "bullets": ["Site performance", "Website usage", "User behaviour"],
-    "p2": "Information is presented within the Application Performance Monitoring service for the purposes detailed above. We do not use or share the information for any other purpose. We do not allow Dynatrace to use or share the information for any other purposes.",
-    "dtCookieDescription": "Tracks a visit across multiple request",
-    "dtCookieDuration": "Session end",
-    "dtLatCDescription": "Measures server latency for performance monitoring",
-    "dtLatCDuration": "Session end",
-    "dtPCDescription": "Required to identify proper endpoints for beacon transmission; includes session ID for correlation",
-    "dtPCDuration": "Session end",
-    "dtSaDescription": "Intermediate store for page-spanning actions",
-    "dtSaDuration": "Session end",
-    "rxVisitorDescription": "Visitor ID to correlate sessions",
-    "rxVisitorDuration": "1 year",
-    "rxvtDescription": "Session timeout",
-    "rxvtDuration": "Session end"
+    "header": "4. I fesur perfformiad y rhaglen",
+    "p1": "Rydym yn defnyddio Llwyfan Gwybodaeth Meddalwedd Dynatrace i ddarparu Gwasanaeth Monitro Perfformiad i gasglu gwybodaeth am sut rydych chi'n defnyddio gwasanaethau GLlTEF. Rydym yn gwneud hyn i fonitro gwasanaethau GLlTEF er mwyn datrys materion o fewn ein gwasanaethau yn ogystal â chasglu data ar sut y gellir gwella ein gwasanaethau. Mae GLlTEF yn cadw gwybodaeth am y canlynol:",
+    "bullets": ["Perfformiad y wefan", "Defnydd o'r wefan", "Ymddygiad defnyddwyr"],
+    "p2": "Cyflwynir gwybodaeth o fewn y gwasanaeth Monitro Perfformiad Ceisiadau at y dibenion y manylir arnynt uchod. Nid ydym yn defnyddio nac yn rhannu'r wybodaeth at unrhyw ddiben arall. Nid ydym yn caniatáu i Dynatrace ddefnyddio na rhannu'r wybodaeth at unrhyw ddibenion eraill.",
+    "dtCookieDescription": "Tracio ymweliadau ar draws sawl cais",
+    "dtCookieDuration": "Diwedd y sesiwn",
+    "dtLatCDescription": "Mesurau segurdod gweinydd ar gyfer monitro perfformiad",
+    "dtLatCDuration": "Diwedd y sesiwn",
+    "dtPCDescription": "Er mwyn canfod pwyntiau terfyn priodol ar gyfer trosglwyddo tywysydd; mae’n cynnwys rhif adnabod y sesiwn at ddibenion cydberthyniad",
+    "dtPCDuration": "Diwedd y sesiwn",
+    "dtSaDescription": "Storfa ganolradd ar gyfer gweithredoedd sy'n rhychwantu tudalennau",
+    "dtSaDuration": "Diwedd y sesiwn",
+    "rxVisitorDescription": "ID Ymwelwyr i sesiynau cydberthynol",
+    "rxVisitorDuration": "1 blwyddyn",
+    "rxvtDescription": "Terfyn amser y sesiwn",
+    "rxvtDuration": "Diwedd y sesiwn"
+  },
+  "cookie-preferences-form": {
+    "analyticsQuestion": "Caniatáu cwcis sy’n mesur y defnydd o’r wefan?",
+    "apmQuestion": "Caniatáu cwcis sy'n mesur monitro perfformiad ceisiadau gwefannau?",
+    "analyticsAllow": "Defnyddio cwcis sy’n mesur fy nefnydd i o’r wefan",
+    "analyticsDeny": "Peidio â defnyddio cwcis sy’n mesur fy nefnydd i o’r wefan",
+    "apmAllow": "Defnyddio cwcis sy'n mesur monitro perfformiad ceisiadau gwefan",
+    "apmDeny": "Peidio defnyddio cwcis sy'n mesur monitro perfformiad ceisiadau gwefannau",
+    "save": "Cadw"
   }
 }
