@@ -52,13 +52,27 @@
     "rxvtDescription": "Terfyn amser y sesiwn",
     "rxvtDuration": "Diwedd y sesiwn"
   },
-  "cookie-preferences-form": {
-    "analyticsQuestion": "Caniatáu cwcis sy’n mesur y defnydd o’r wefan?",
-    "apmQuestion": "Caniatáu cwcis sy'n mesur monitro perfformiad ceisiadau gwefannau?",
-    "analyticsAllow": "Defnyddio cwcis sy’n mesur fy nefnydd i o’r wefan",
-    "analyticsDeny": "Peidio â defnyddio cwcis sy’n mesur fy nefnydd i o’r wefan",
-    "apmAllow": "Defnyddio cwcis sy'n mesur monitro perfformiad ceisiadau gwefan",
-    "apmDeny": "Peidio defnyddio cwcis sy'n mesur monitro perfformiad ceisiadau gwefannau",
-    "save": "Cadw"
-  }
+  "optionsHeader1": "Caniatáu cwcis sy’n mesur y defnydd o’r wefan?",
+  "optionsHeader2": "Caniatáu cwcis sy'n mesur monitro perfformiad ceisiadau gwefannau?",
+  "analyticsCookieOptions": [
+    {
+      "value": "on",
+      "text": "Defnyddio cwcis sy’n mesur fy nefnydd i o’r wefan"
+    },
+    {
+      "value": "off",
+      "text": "Peidio â defnyddio cwcis sy’n mesur fy nefnydd i o’r wefan"
+    }
+  ],
+  "performanceCookieOptions": [
+    {
+      "value": "on",
+      "text": "Defnyddio cwcis sy'n mesur monitro perfformiad ceisiadau gwefan"
+    },
+    {
+      "value": "off",
+      "text": "Peidio defnyddio cwcis sy'n mesur monitro perfformiad ceisiadau gwefannau"
+    }
+  ],
+  "saveText": "Cadw"
 }

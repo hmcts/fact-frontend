@@ -267,21 +267,11 @@
       name: 'analytics',
       fieldset: {
         legend: {
-          text: cookie-preferences-form.analyticsQuestion,
+          text: optionsHeader1,
           classes: "govuk-fieldset__legend--s"
         }
       },
-      items: [
-        {
-          value: 'on',
-          text: cookie-preferences-form.analyticsAllow
-        },
-        {
-          value: 'off',
-          text: cookie-preferences-form.analyticsDeny,
-          checked: true
-        }
-      ]
+      items: analyticsCookieOptions
     }) }}
     {{ govukRadios({
       classes: 'govuk-radios',
@@ -289,24 +279,14 @@
       name: 'apm',
       fieldset: {
         legend: {
-          text: cookie-preferences-form.apmQuestion,
+          text: optionsHeader2,
           classes: "govuk-fieldset__legend--s"
         }
       },
-      items: [
-        {
-          value: 'on',
-          text: cookie-preferences-form.apmAllow
-        },
-        {
-          value: 'off',
-          text: cookie-preferences-form.apmDeny,
-          checked: true
-        }
-      ]
+      items: performanceCookieOptions
     }) }}
     {{ govukButton({
-      text: cookie-preferences-form.save
+      text: saveText
     }) }}
   </form>
 
