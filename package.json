@@ -48,7 +48,7 @@
     "applicationinsights": "^2.9.8",
     "autobind-decorator": "^2.4.0",
     "awilix": "^7.0.3",
-    "axios": "1.13.2",
+    "axios": "1.13.5",
     "cacache": "^20.0.3",
     "config": "^3.3.12",
     "cookie-parser": "^1.4.7",
@@ -128,7 +128,7 @@
     "lodash": "^4.17.23",
     "diff": "8.0.3",
     "qs": "6.14.2",
-    "tar": "7.5.7"
+    "tar": "7.5.10"
   },
   "packageManager": "yarn@4.12.0"
 }
