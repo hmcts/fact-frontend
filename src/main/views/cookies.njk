@@ -267,21 +267,11 @@
       name: 'analytics',
       fieldset: {
         legend: {
-          text: "Allow cookies that measure website use?",
+          text: optionsHeader1,
           classes: "govuk-fieldset__legend--s"
         }
       },
-      items: [
-        {
-          value: 'on',
-          text: 'Use cookies that measure my website use'
-        },
-        {
-          value: 'off',
-          text: 'Do not use cookies that measure my website use',
-          checked: true
-        }
-      ]
+      items: analyticsCookieOptions
     }) }}
     {{ govukRadios({
       classes: 'govuk-radios',
@@ -289,24 +279,14 @@
       name: 'apm',
       fieldset: {
         legend: {
-          text: "Allow cookies that measure website application performance monitoring?",
+          text: optionsHeader2,
           classes: "govuk-fieldset__legend--s"
         }
       },
-      items: [
-        {
-          value: 'on',
-          text: 'Use cookies that measure website application performance monitoring'
-        },
-        {
-          value: 'off',
-          text: 'Do not use cookies that measure website application performance monitoring',
-          checked: true
-        }
-      ]
+      items: performanceCookieOptions
     }) }}
     {{ govukButton({
-      text: 'Save'
+      text: saveText
     }) }}
   </form>
 

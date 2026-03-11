@@ -52,5 +52,22 @@
     "rxVisitorDuration": "1 year",
     "rxvtDescription": "Session timeout",
     "rxvtDuration": "Session end"
-  }
+  },
+  "optionsHeader1": "Allow cookies that measure website use?",
+  "optionsHeader2": "Allow cookies that measure website application performance monitoring?",
+  "analyticsCookieOptions": [
+    { "value": "on", "text": "Use cookies that measure my website use" },
+    { "value": "off", "text": "Do not use cookies that measure my website use" }
+  ],
+  "performanceCookieOptions": [
+    {
+      "value": "on",
+      "text": "Use cookies that measure website application performance monitoring"
+    },
+    {
+      "value": "off",
+      "text": "Do not cookies that measure website application performance monitoring"
+    }
+  ],
+  "saveText": "Save"
 }
