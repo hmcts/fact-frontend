@@ -29,9 +29,21 @@ describe('Service Postcode Results Controller', () => {
       'slug': 'test-central-finance-unit',
       'distance': 10.1
     }];
+  const accuratePostcodeSearchResponse: Record<string, any> = [
+    {
+      'id': 1,
+      'name': 'Accurate Combined Court',
+      'slug': 'accurate-combined-court',
+      'lat': 51.5,
+      'lon': -0.1,
+      'distanceMiles': 9.5,
+      'travelTimeMinutes': 25
+    }
+  ];
   const api: any = {
     postcodeServiceAreaSearch: async () => response.CourtDetailsWithDistanceResult,
-    postcodeAreaSearch: async () => postcodeSearchResponse
+    postcodeAreaSearch: async () => postcodeSearchResponse,
+    postcodeAccurateAreaSearch: async () => accuratePostcodeSearchResponse
   };
   const controller = new ServicePostcodeResultsController(api);
 
@@ -69,6 +81,9 @@ describe('Service Postcode Results Controller', () => {
       postcodeOnlySearch: true,
       results: {
         'courts': postcodeSearchResponse
+      },
+      newResults: {
+        'courts': accuratePostcodeSearchResponse
       }
     };
     const res = mockResponse();

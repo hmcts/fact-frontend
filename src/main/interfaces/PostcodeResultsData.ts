@@ -24,14 +24,29 @@ export interface CourtWithDistanceResultsData extends PageData {
   postcodeSearchResultsHint: string;
   postcodeOnlySearch: boolean;
   results: CourtData | {};
+  newResults?: CourtData | CourtByRoadDistanceData | {};
 }
 
-export interface CourtData { 
+export interface CourtData {
   courts: CourtWithDistance[];
+}
+
+export interface CourtByRoadDistanceData {
+  courts: CourtByRoadDistance[];
 }
 
 export interface CourtWithDistance {
   name: string;
   slug: string;
   distance: number;
+}
+
+export interface CourtByRoadDistance {
+  id: number;
+  name: string;
+  slug: string;
+  lat: number;
+  lon: number;
+  distanceMiles: number;
+  travelTimeMinutes: number;
 }

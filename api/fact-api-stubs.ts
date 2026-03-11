@@ -99,6 +99,32 @@ app.get('/search/results', (req: Request, res: Response) => {
   res.json(results);
 });
 
+
+app.get('/search/results/accurate/:postcode', (req: Request, res: Response) => {
+  const lan = 1;
+  const lon = 1;
+  const courts = [...courtDetails];
+  const results = courts
+    .map((court: any, index: number) => {
+      const distanceInKm = calculateDistance(lan, lon, court);
+      const distanceMiles = distanceInKm / 1.609344;
+      const averageSpeedMph = 30;
+      const travelTimeMinutes = Math.round((distanceMiles / averageSpeedMph) * 60);
+      return {
+        id: court.id || index,
+        name: court.name,
+        slug: court.slug,
+        lat: court.lat,
+        lon: court.lon,
+        distanceMiles,
+        travelTimeMinutes
+      };
+    })
+    .sort((a, b) => a.distanceMiles - b.distanceMiles)
+    .slice(0, 10);
+  res.json(results);
+});
+
 app.listen(port, () => {
   console.log(`Application started: http://localhost:${port}`);
 });

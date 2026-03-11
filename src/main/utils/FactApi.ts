@@ -2,7 +2,7 @@ import { Logger } from '../interfaces/Logger';
 import { AxiosInstance } from 'axios';
 import { SearchCourtHistoryResult, SearchResult } from '../interfaces/SearchResultsData';
 import { CourtDetailsResult } from '../interfaces/CourtDetailsData';
-import { CourtWithDistance, PostcodeSearchResultsData } from '../interfaces/PostcodeResultsData';
+import { CourtWithDistance, PostcodeSearchResultsData, CourtByRoadDistance } from '../interfaces/PostcodeResultsData';
 import { ServiceResult } from '../interfaces/ServicesData';
 import { ServiceAreaResult } from '../interfaces/ServiceAreasData';
 import {CourtReference} from '../interfaces/CourtResultsData';
@@ -128,6 +128,16 @@ export class FactApi {
           courts: [],
           error: true
         };
+      });
+  }
+
+  public postcodeAccurateAreaSearch(postcode: string, lng: string): Promise<Array<CourtByRoadDistance>> {
+    return this.axios
+      .get(`search/results/accurate/${postcode}`, {  headers: {'Accept-Language': lng}})
+      .then(results => results.data)
+      .catch(err => {
+        this.logger.error(err);
+        return [];
       });
   }
 

@@ -4,7 +4,7 @@ import { cloneDeep } from 'lodash';
 import { isPostcodeValid } from '../../utils/validation';
 import { FactApi } from '../../utils/FactApi';
 import autobind from 'autobind-decorator';
-import { PostcodeResultsData, CourtWithDistanceResultsData } from '../../interfaces/PostcodeResultsData';
+import { PostcodeResultsData, CourtWithDistanceResultsData, CourtData, CourtWithDistance, CourtByRoadDistance, CourtByRoadDistanceData } from '../../interfaces/PostcodeResultsData';
 
 @autobind
 export class ServicePostcodeResultsController {
@@ -25,8 +25,33 @@ export class ServicePostcodeResultsController {
     if (postcodeError !== '')
       return res.redirect(`${baseUrl}?error=${postcodeError}`);
 
-    const courts = await this.api.postcodeAreaSearch(postcode, req.lng);
-    if (!courts?.length)
+    type CourtsApiResponse = CourtWithDistance[] | CourtData | undefined;
+    type AccurateCourtsApiResponse = CourtByRoadDistance[] | CourtByRoadDistanceData | undefined;
+    const [courtsResponseRaw, accurateCourtsResponseRaw] = await Promise.all([
+      this.api.postcodeAreaSearch(postcode, req.lng),
+      this.api.postcodeAccurateAreaSearch(postcode, req.lng)
+    ]);
+    const courtsResponse = courtsResponseRaw as unknown as CourtsApiResponse;
+    const accurateCourtsResponse = accurateCourtsResponseRaw as unknown as AccurateCourtsApiResponse;
+
+    const normaliseCourts = (result: CourtsApiResponse): CourtWithDistance[] => {
+      if (Array.isArray(result)) {
+        return result;
+      }
+      return result?.courts || [];
+    };
+
+    const normaliseAccurateCourts = (result: AccurateCourtsApiResponse): CourtByRoadDistance[] => {
+      if (Array.isArray(result)) {
+        return result;
+      }
+      return result?.courts || [];
+    };
+
+    const courts = normaliseCourts(courtsResponse);
+    const accurateCourts = normaliseAccurateCourts(accurateCourtsResponse);
+
+    if (!courts.length)
       return res.redirect(`${baseUrl}?noResults=true&postcode=${postcode}`);
 
     const data: CourtWithDistanceResultsData = {
@@ -36,6 +61,9 @@ export class ServicePostcodeResultsController {
       postcodeOnlySearch: true,
       results: {
         'courts': courts
+      },
+      newResults: {
+        'courts': accurateCourts
       }
     };
 

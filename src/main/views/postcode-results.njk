@@ -46,22 +46,86 @@
             {% endif %}
 
           </div>
-          <div id="search-results">
-            {% for court in results.courts %}
-            <div class="govuk-grid-row">
-              <div class="govuk-grid-column-three-quarters">
-                <h2 class="govuk-heading-m">
-                  <a class="govuk-link" href="/courts/{{ court.slug }}">{{ court.name }}</a>
-                </h2>
+          {% if postcodeOnlySearch %}
+            {% set currentCourts = results.courts or [] %}
+            {% set accurateCourts = (newResults and newResults.courts) or [] %}
+            <div class="govuk-tabs" data-module="govuk-tabs">
+              <h2 class="govuk-tabs__title">Results view</h2>
+              <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                  <a class="govuk-tabs__tab" href="#tab-current">Current</a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                  <a class="govuk-tabs__tab" href="#tab-new">New</a>
+                </li>
+              </ul>
+              <div class="govuk-tabs__panel" id="tab-current">
+                <div id="search-results">
+                  {% for court in currentCourts %}
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-three-quarters">
+                      <h2 class="govuk-heading-m">
+                        <a class="govuk-link" href="/courts/{{ court.slug }}">{{ court.name }}</a>
+                      </h2>
+                    </div>
+                    <div class="govuk-grid-column-one-quarter distance">
+                      <p class="govuk-body-m">
+                        {% if court.distanceMiles is defined %}
+                          {{ court.distanceMiles.toFixed(1) }} {{ unit }}
+                        {% elseif court.distance is defined %}
+                          {{ court.distance.toFixed(1) }} {{ unit }}
+                        {% endif %}
+                      </p>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
               </div>
-              <div class="govuk-grid-column-one-quarter distance">
-                <p class="govuk-body-m">
-                  {{ court.distance.toFixed(1) }} {{ unit }}
-                </p>
+              <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tab-new">
+                <div id="search-results-new">
+                  {% for court in accurateCourts %}
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-three-quarters">
+                      <h2 class="govuk-heading-m">
+                        <a class="govuk-link" href="/courts/{{ court.slug }}">{{ court.name }}</a>
+                      </h2>
+                    </div>
+                    <div class="govuk-grid-column-one-quarter distance">
+                      <p class="govuk-body-m">
+                        {% if court.distanceMiles is defined %}
+                          {{ court.distanceMiles.toFixed(1) }} {{ unit }}
+                        {% elseif court.distance is defined %}
+                          {{ court.distance.toFixed(1) }} {{ unit }}
+                        {% endif %}
+                      </p>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
               </div>
             </div>
-            {% endfor %}
-          </div>
+          {% else %}
+            <div id="search-results">
+              {% for court in results.courts %}
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+                  <h2 class="govuk-heading-m">
+                    <a class="govuk-link" href="/courts/{{ court.slug }}">{{ court.name }}</a>
+                  </h2>
+                </div>
+                <div class="govuk-grid-column-one-quarter distance">
+                  <p class="govuk-body-m">
+                    {% if court.distanceMiles is defined %}
+                      {{ court.distanceMiles.toFixed(1) }} {{ unit }}
+                    {% elseif court.distance is defined %}
+                      {{ court.distance.toFixed(1) }} {{ unit }}
+                    {% endif %}
+                  </p>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          {% endif %}
         {% endif %}
       </div>
     </div>
