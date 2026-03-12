@@ -85,7 +85,7 @@
     "allure-commandline": "^2.34.0",
     "allure-playwright": "^3.0.0",
     "chai": "^4.5.0",
-    "chai-as-promised": "^7.1.2",
+    "chai-as-promised": "^8.0.0",
     "chokidar": "^3.6.0",
     "codeceptjs": "^3.7.3",
     "copy-webpack-plugin": "^12.0.2",
