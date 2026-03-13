@@ -7,8 +7,23 @@
   "bullets": ["newid y lliwiau, y lefelau cyferbyniad a’r ffontiau neu gosodiadau’r dyfais", "gwneud y testun hyd at 400% yn fwy heb iddo ddiflannu oddi ar y sgrin", "mynd drwy’r rhan fwyaf o'r wefan gan ddefnyddio bysellfwrdd yn unig", "mynd drwy’r rhan fwyaf o'r wefan gan ddefnyddio meddalwedd adnabod llais", "gwrando ar y rhan fwyaf o'r wefan gan ddefnyddio darllenydd sgrin (gan gynnwys fersiynau diweddaraf JAWS, NVDA a VoiceOver)"],
   "p3": "Rydym hefyd wedi sicrhau ein bod wedi defnyddio iaith syml ar y wefan.",
   "p4": "Mae gan <a class=\"govuk-link\" href=\"https://mcmw.abilitynet.org.uk/\">AbilityNet</a> gyngor ynghylch gwneud eich dyfais yn haws i’w defnyddio os oes gennych anabledd.",
-  "h13": "Pa mor hygyrch yw'r wefan hon",
-  "p21": "Mae’r gwasanaeth yn defnyddio arddulliau, patrymau a chydrannau cyffredin o System Ddylunio GOV.UK sy'n cael eu hystyried yn hygyrch.",
+  "accessibility_details": {
+    "heading": "Pa mor hygyrch yw'r wefan hon",
+    "intro": "The service is using common styles, patterns and components from the GOV.UK Design System which are widely regarded as accessible.",
+    "sub_heading": "URLs referenced in plain text are not interactive links",
+    "main_content": {
+      "p1": "Some pages display web addresses as plain text within the content of pages rather than as clickable interactive links. This can make navigation more difficult for some user groups.",
+      "p2": {
+        "content": "While it is possible to copy and paste URL text into a search bar using a keyboard, it requires multiple shortcuts that not all users may know or be able to perform easily - particularly those with:",
+        "bullets": [
+          "Motor impairments (fine control over Shift + arrow selection)",
+          "Screen reader users (who may not be able to accurately “select” text they can’t see)",
+          "Cognitive impairments (remembering multiple keyboard steps)"
+        ]
+      },
+      "p3": "We recognise this disproportionately reduces usability for some groups and plan to resolve this in an upcoming frontend update that will contain only fully interactive links."
+    }
+  },
   "h3": "Adborth a gwybodaeth gyswllt",
   "p6": "Os ydych angen gwybodaeth sydd ar y wefan hon mewn fformat arall megis ar ffurf PDF hygyrch, print bras, fformat hawdd ei ddarllen neu recordiad sain neu Braille:",
   "bullet1": "e-bost <a class=\"govuk-link\" href=\"mailto:hmctsfinderfeedback@justice.gov.uk\">hmctsfinderfeedback@justice.gov.uk</a>",

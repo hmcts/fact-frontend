@@ -21,9 +21,19 @@
   <p class="govuk-body-m">{{ p4 | safe }}</p>
 
   <h2 class="govuk-heading-l">
-    {{ h13 }}
+    {{ accessibility_details.heading }}
   </h2>
-  <p class="govuk-body-m">{{ p21 }}</p>
+  <p class="govuk-body-m">{{ accessibility_details.intro }}</p>
+  <h3 class="govuk-heading-m">{{ accessibility_details.sub_heading }}</h3>
+  <p class="govuk-body-m">{{ accessibility_details.main_content.p1 }}</p>
+  <p class="govuk-body-m">{{ accessibility_details.main_content.p2.content }}
+  <ul class="govuk-list govuk-list--bullet">
+    {% for bullet in accessibility_details.main_content.p2.bullets %}
+      <li>{{ bullet }}</li>
+    {% endfor %}
+  </ul>
+  </p>
+  <p class="govuk-body-m">{{ accessibility_details.main_content.p3 }}</p>
 
   <h2 class="govuk-heading-l">
     {{ h3 }}
