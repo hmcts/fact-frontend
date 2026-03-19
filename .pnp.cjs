@@ -64,7 +64,7 @@ const RAW_RUNTIME_STATE =
           ["autobind-decorator", "npm:2.4.0"],\
           ["awilix", "npm:12.0.5"],\
           ["axios", "npm:1.13.6"],\
-          ["cacache", "npm:20.0.3"],\
+          ["cacache", "npm:20.0.4"],\
           ["chai", "npm:4.5.0"],\
           ["chai-as-promised", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:8.0.2"],\
           ["chokidar", "npm:3.6.0"],\
@@ -6147,11 +6147,11 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["cacache", [\
-      ["npm:20.0.3", {\
-        "packageLocation": "./.yarn/cache/cacache-npm-20.0.3-5f244d5bdd-388a016997.zip/node_modules/cacache/",\
+      ["npm:20.0.4", {\
+        "packageLocation": "./.yarn/cache/cacache-npm-20.0.4-8b821558c9-02c1b4c57d.zip/node_modules/cacache/",\
         "packageDependencies": [\
           ["@npmcli/fs", "npm:5.0.0"],\
-          ["cacache", "npm:20.0.3"],\
+          ["cacache", "npm:20.0.4"],\
           ["fs-minipass", "npm:3.0.3"],\
           ["glob", "npm:13.0.0"],\
           ["lru-cache", "npm:11.2.4"],\
@@ -6160,8 +6160,7 @@ const RAW_RUNTIME_STATE =
           ["minipass-flush", "npm:1.0.5"],\
           ["minipass-pipeline", "npm:1.2.4"],\
           ["p-map", "npm:7.0.3"],\
-          ["ssri", "npm:13.0.0"],\
-          ["unique-filename", "npm:5.0.0"]\
+          ["ssri", "npm:13.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -8935,7 +8934,7 @@ const RAW_RUNTIME_STATE =
           ["autobind-decorator", "npm:2.4.0"],\
           ["awilix", "npm:12.0.5"],\
           ["axios", "npm:1.13.6"],\
-          ["cacache", "npm:20.0.3"],\
+          ["cacache", "npm:20.0.4"],\
           ["chai", "npm:4.5.0"],\
           ["chai-as-promised", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:8.0.2"],\
           ["chokidar", "npm:3.6.0"],\
@@ -12478,7 +12477,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/make-fetch-happen-npm-15.0.3-10a832fcad-78da4fc1df.zip/node_modules/make-fetch-happen/",\
         "packageDependencies": [\
           ["@npmcli/agent", "npm:4.0.0"],\
-          ["cacache", "npm:20.0.3"],\
+          ["cacache", "npm:20.0.4"],\
           ["http-cache-semantics", "npm:4.1.1"],\
           ["make-fetch-happen", "npm:15.0.3"],\
           ["minipass", "npm:7.1.2"],\
@@ -17247,26 +17246,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/unicorn-magic-npm-0.3.0-4d15f393a4-bdd7d7c522.zip/node_modules/unicorn-magic/",\
         "packageDependencies": [\
           ["unicorn-magic", "npm:0.3.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["unique-filename", [\
-      ["npm:5.0.0", {\
-        "packageLocation": "./.yarn/cache/unique-filename-npm-5.0.0-605f54f18e-a5f67085ca.zip/node_modules/unique-filename/",\
-        "packageDependencies": [\
-          ["unique-filename", "npm:5.0.0"],\
-          ["unique-slug", "npm:6.0.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["unique-slug", [\
-      ["npm:6.0.0", {\
-        "packageLocation": "./.yarn/cache/unique-slug-npm-6.0.0-f26b186e99-b78ed9d5b0.zip/node_modules/unique-slug/",\
-        "packageDependencies": [\
-          ["imurmurhash", "npm:0.1.4"],\
-          ["unique-slug", "npm:6.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
