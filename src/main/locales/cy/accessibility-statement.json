@@ -9,19 +9,19 @@
   "p4": "Mae gan <a class=\"govuk-link\" href=\"https://mcmw.abilitynet.org.uk/\">AbilityNet</a> gyngor ynghylch gwneud eich dyfais yn haws i’w defnyddio os oes gennych anabledd.",
   "accessibility_details": {
     "heading": "Pa mor hygyrch yw'r wefan hon",
-    "intro": "The service is using common styles, patterns and components from the GOV.UK Design System which are widely regarded as accessible.",
-    "sub_heading": "URLs referenced in plain text are not interactive links",
+    "intro": "Mae'r gwasanaeth yn defnyddio arddulliau, patrymau ac elfennau cyffredin o System Ddylunio GOV.UK, sy'n cael eu hystyried yn gyffredinol fel bod yn hygyrch.",
+    "sub_heading": "Nid yw cyfeiriadau URL mewn testun plaen yn ddolenni rhyngweithiol",
     "main_content": {
-      "p1": "Some pages display web addresses as plain text within the content of pages rather than as clickable interactive links. This can make navigation more difficult for some user groups.",
+      "p1": "Mae rhai tudalennau yn dangos cyfeiriadau gwe fel testun plaen o fewn tudalennau yn hytrach na fel dolenni rhyngweithiol y gellir clicio arnynt. Gall hyn ei gwneud hi'n anoddach i rai grwpiau o ddefnyddwyr lywio tudalennau.",
       "p2": {
-        "content": "While it is possible to copy and paste URL text into a search bar using a keyboard, it requires multiple shortcuts that not all users may know or be able to perform easily - particularly those with:",
+        "content": "Er bod posib copïo a gludo testun URL i mewn i far chwilio trwy ddefnyddio bysellfwrdd, mae'n golygu defnyddio sawl llwybr byr na fydd efallai pob defnyddiwr yn gyfarwydd â nhw neu'n gallu eu defnyddio'n hawdd - yn enwedig unigolion gyda:",
         "bullets": [
-          "Motor impairments (fine control over Shift + arrow selection)",
-          "Screen reader users (who may not be able to accurately “select” text they can’t see)",
-          "Cognitive impairments (remembering multiple keyboard steps)"
+          "Namau motor (rheolaeth fanwl dros Shift + saethau)",
+          "Defnyddwyr darllenydd sgrin (efallai na fyddant yn gallu “dewis” testun nad ydynt yn gallu gweld)",
+          "Namau gwybyddol (methu cofio sawl cam wrth ddefnyddio bysellfwrdd)"
         ]
       },
-      "p3": "We recognise this disproportionately reduces usability for some groups and plan to resolve this in an upcoming frontend update that will contain only fully interactive links."
+      "p3": "Rydym yn cydnabod bod hyn yn lleihau'n anghymesur gallu rhai defnyddwyr i gyrchu'r dudalen. Rydym yn cynllunio i ddatrys y broblem hon mewn diweddariad sydd ar y gweill - bydd hwn ond yn cynnwys dolenni sy'n gwbl rhyngweithiol."
     }
   },
   "h3": "Adborth a gwybodaeth gyswllt",
