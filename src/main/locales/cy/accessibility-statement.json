@@ -7,8 +7,23 @@
   "bullets": ["newid y lliwiau, y lefelau cyferbyniad a’r ffontiau neu gosodiadau’r dyfais", "gwneud y testun hyd at 400% yn fwy heb iddo ddiflannu oddi ar y sgrin", "mynd drwy’r rhan fwyaf o'r wefan gan ddefnyddio bysellfwrdd yn unig", "mynd drwy’r rhan fwyaf o'r wefan gan ddefnyddio meddalwedd adnabod llais", "gwrando ar y rhan fwyaf o'r wefan gan ddefnyddio darllenydd sgrin (gan gynnwys fersiynau diweddaraf JAWS, NVDA a VoiceOver)"],
   "p3": "Rydym hefyd wedi sicrhau ein bod wedi defnyddio iaith syml ar y wefan.",
   "p4": "Mae gan <a class=\"govuk-link\" href=\"https://mcmw.abilitynet.org.uk/\">AbilityNet</a> gyngor ynghylch gwneud eich dyfais yn haws i’w defnyddio os oes gennych anabledd.",
-  "h13": "Pa mor hygyrch yw'r wefan hon",
-  "p21": "Mae’r gwasanaeth yn defnyddio arddulliau, patrymau a chydrannau cyffredin o System Ddylunio GOV.UK sy'n cael eu hystyried yn hygyrch.",
+  "accessibility_details": {
+    "heading": "Pa mor hygyrch yw'r wefan hon",
+    "intro": "Mae'r gwasanaeth yn defnyddio arddulliau, patrymau ac elfennau cyffredin o System Ddylunio GOV.UK, sy'n cael eu hystyried yn gyffredinol fel bod yn hygyrch.",
+    "sub_heading": "Nid yw cyfeiriadau URL mewn testun plaen yn ddolenni rhyngweithiol",
+    "main_content": {
+      "p1": "Mae rhai tudalennau yn dangos cyfeiriadau gwe fel testun plaen o fewn tudalennau yn hytrach na fel dolenni rhyngweithiol y gellir clicio arnynt. Gall hyn ei gwneud hi'n anoddach i rai grwpiau o ddefnyddwyr lywio tudalennau.",
+      "p2": {
+        "content": "Er bod posib copïo a gludo testun URL i mewn i far chwilio trwy ddefnyddio bysellfwrdd, mae'n golygu defnyddio sawl llwybr byr na fydd efallai pob defnyddiwr yn gyfarwydd â nhw neu'n gallu eu defnyddio'n hawdd - yn enwedig unigolion gyda:",
+        "bullets": [
+          "Namau motor (rheolaeth fanwl dros Shift + saethau)",
+          "Defnyddwyr darllenydd sgrin (efallai na fyddant yn gallu “dewis” testun nad ydynt yn gallu gweld)",
+          "Namau gwybyddol (methu cofio sawl cam wrth ddefnyddio bysellfwrdd)"
+        ]
+      },
+      "p3": "Rydym yn cydnabod bod hyn yn lleihau'n anghymesur gallu rhai defnyddwyr i gyrchu'r dudalen. Rydym yn cynllunio i ddatrys y broblem hon mewn diweddariad sydd ar y gweill - bydd hwn ond yn cynnwys dolenni sy'n gwbl rhyngweithiol."
+    }
+  },
   "h3": "Adborth a gwybodaeth gyswllt",
   "p6": "Os ydych angen gwybodaeth sydd ar y wefan hon mewn fformat arall megis ar ffurf PDF hygyrch, print bras, fformat hawdd ei ddarllen neu recordiad sain neu Braille:",
   "bullet1": "e-bost <a class=\"govuk-link\" href=\"mailto:hmctsfinderfeedback@justice.gov.uk\">hmctsfinderfeedback@justice.gov.uk</a>",
