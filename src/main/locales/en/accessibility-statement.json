@@ -7,8 +7,23 @@
   "bullets": ["change colours, contrast levels and fonts using browser or device settings", "zoom in up to 400% without the text spilling off the screen", "navigate most of the website using just a keyboard", "navigate most of the website using speech recognition software", "listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)"],
   "p3": "We’ve also made the website text as simple as possible to understand.",
   "p4": "<a class=\"govuk-link\" href=\"https://mcmw.abilitynet.org.uk/\">AbilityNet</a> has advice on making your device easier to use if you have a disability.",
-  "h13": "How accessible this website is",
-  "p21": "The service is using common styles, patterns and components from the GOV.UK Design System which are widely regarded as accessible.",
+  "accessibility_details": {
+    "heading": "How accessible this website is",
+    "intro": "The service is using common styles, patterns and components from the GOV.UK Design System which are widely regarded as accessible.",
+    "sub_heading": "URLs referenced in plain text are not interactive links",
+    "main_content": {
+      "p1": "Some pages display web addresses as plain text within the content of pages rather than as clickable interactive links. This can make navigation more difficult for some user groups.",
+      "p2": {
+        "content": "While it is possible to copy and paste URL text into a search bar using a keyboard, it requires multiple shortcuts that not all users may know or be able to perform easily - particularly those with:",
+        "bullets": [
+          "Motor impairments (fine control over Shift + arrow selection)",
+          "Screen reader users (who may not be able to accurately “select” text they can’t see)",
+          "Cognitive impairments (remembering multiple keyboard steps)"
+        ]
+      },
+      "p3": "We recognise this disproportionately reduces usability for some groups and plan to resolve this in an upcoming frontend update that will contain only fully interactive links."
+    }
+  },
   "h3": "Feedback and contact information",
   "p6": "If you need information on this website in a different format like accessible PDF, large print, easy read or audio recording or braille:",
   "bullet1": "email <a class=\"govuk-link\" href=\"mailto:hmctsfinderfeedback@justice.gov.uk\">hmctsfinderfeedback@justice.gov.uk</a>",
