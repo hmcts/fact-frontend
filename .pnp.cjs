@@ -5341,7 +5341,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/assertion-error-formatter-npm-3.0.0-13cc1330f6-b7afe82546.zip/node_modules/assertion-error-formatter/",\
         "packageDependencies": [\
           ["assertion-error-formatter", "npm:3.0.0"],\
-          ["diff", "npm:8.0.3"],\
+          ["diff", "npm:8.0.4"],\
           ["pad-right", "npm:0.2.2"],\
           ["repeat-string", "npm:1.6.1"]\
         ],\
@@ -7758,10 +7758,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["diff", [\
-      ["npm:8.0.3", {\
-        "packageLocation": "./.yarn/cache/diff-npm-8.0.3-6f5c127138-52f957e1fa.zip/node_modules/diff/",\
+      ["npm:8.0.4", {\
+        "packageLocation": "./.yarn/cache/diff-npm-8.0.4-88b039fd53-b4036ceda0.zip/node_modules/diff/",\
         "packageDependencies": [\
-          ["diff", "npm:8.0.3"]\
+          ["diff", "npm:8.0.4"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -13112,7 +13112,7 @@ const RAW_RUNTIME_STATE =
           ["browser-stdout", "npm:1.3.1"],\
           ["chokidar", "npm:4.0.3"],\
           ["debug", "virtual:ab078ad397cd30739c3652c6993aafcb763edd6b4eef086be9dfe3260af44002b54c33a7379423fae233b95018b05a9cca60b78e0109feab88dc78dd035cbe97#npm:4.4.3"],\
-          ["diff", "npm:8.0.3"],\
+          ["diff", "npm:8.0.4"],\
           ["escape-string-regexp", "npm:4.0.0"],\
           ["find-up", "npm:5.0.0"],\
           ["glob", "npm:10.5.0"],\
@@ -15745,7 +15745,7 @@ const RAW_RUNTIME_STATE =
           ["@sinonjs/commons", "npm:3.0.1"],\
           ["@sinonjs/fake-timers", "npm:13.0.5"],\
           ["@sinonjs/samsam", "npm:8.0.2"],\
-          ["diff", "npm:8.0.3"],\
+          ["diff", "npm:8.0.4"],\
           ["nise", "npm:6.1.1"],\
           ["sinon", "npm:19.0.5"],\
           ["supports-color", "npm:7.2.0"]\
@@ -16890,7 +16890,7 @@ const RAW_RUNTIME_STATE =
           ["acorn-walk", "npm:8.3.4"],\
           ["arg", "npm:4.1.3"],\
           ["create-require", "npm:1.1.1"],\
-          ["diff", "npm:8.0.3"],\
+          ["diff", "npm:8.0.4"],\
           ["make-error", "npm:1.3.6"],\
           ["ts-node", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:10.9.2"],\
           ["typescript", "patch:typescript@npm%3A4.9.5#optional!builtin<compat/typescript>::version=4.9.5&hash=289587"],\
@@ -16953,7 +16953,7 @@ const RAW_RUNTIME_STATE =
           ["builtin-modules", "npm:1.1.1"],\
           ["chalk", "npm:2.4.2"],\
           ["commander", "npm:2.20.3"],\
-          ["diff", "npm:8.0.3"],\
+          ["diff", "npm:8.0.4"],\
           ["glob", "npm:7.2.3"],\
           ["js-yaml", "npm:3.14.2"],\
           ["minimatch", "npm:3.1.5"],\
