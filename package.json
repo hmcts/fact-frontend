@@ -117,5 +117,8 @@
     "webpack-dev-middleware": "^7.4.5",
     "webpack-node-externals": "^3.0.0"
   },
+  "resolutions": {
+    "follow-redirects": "1.16.0"
+  },
   "packageManager": "yarn@4.12.0"
 }
