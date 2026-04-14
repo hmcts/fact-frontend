@@ -45,7 +45,7 @@
     "applicationinsights": "^2.9.8",
     "autobind-decorator": "^2.4.0",
     "awilix": "^12.0.0",
-    "axios": "1.13.6",
+    "axios": "1.15.0",
     "cacache": "^20.0.3",
     "config": "^3.3.12",
     "cookie-parser": "^1.4.7",
@@ -60,7 +60,7 @@
     "i18next-http-middleware": "^3.7.4",
     "jquery": "^3.7.1",
     "js-yaml": "^3.14.2",
-    "lodash": "^4.17.21",
+    "lodash": "^4.18.1",
     "nunjucks": "^3.2.4",
     "require-directory": "^2.1.1",
     "serve-favicon": "^2.5.1",
@@ -116,17 +116,6 @@
     "webpack-cli": "^6.0.1",
     "webpack-dev-middleware": "^7.4.5",
     "webpack-node-externals": "^3.0.0"
-  },
-  "resolutions": {
-    "@isaacs/brace-expansion": "5.0.1",
-    "jsonwebtoken": "^9.0.3",
-    "js-yaml": "^3.14.2",
-    "jws": "4.0.1",
-    "lodash": "^4.17.23",
-    "diff": "8.0.3",
-    "qs": "6.14.2",
-    "tar": "7.5.11",
-    "minimatch": "3.1.5"
   },
   "packageManager": "yarn@4.12.0"
 }
