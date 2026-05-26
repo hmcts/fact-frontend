@@ -17,6 +17,9 @@ withNightlyPipeline(type, product, component) {
   before('fullFunctionalTest') {
     yarnBuilder.yarn('playwright install')
   }
+
+  enableSecurityScan()
+
 //  enableFortifyScan()
 //
 //  afterSuccess('fortify-scan') {
