@@ -13,6 +13,7 @@ def component = "frontend"
 
 
 withNightlyPipeline(type, product, component) {
+  env.TEST_URL = 'https://fact.aat.platform.hmcts.net'
 
   before('fullFunctionalTest') {
     yarnBuilder.yarn('playwright install')
