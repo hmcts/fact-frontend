@@ -92,7 +92,7 @@ const RAW_RUNTIME_STATE =
           ["js-yaml", "npm:3.14.2"],\
           ["lodash", "npm:4.18.1"],\
           ["mini-css-extract-plugin", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.9.4"],\
-          ["mocha", "npm:11.7.5"],\
+          ["mocha", "npm:11.7.6"],\
           ["nodemon", "npm:2.0.22"],\
           ["npm-run-all2", "npm:5.0.2"],\
           ["nunjucks", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:3.2.4"],\
@@ -8946,7 +8946,7 @@ const RAW_RUNTIME_STATE =
           ["js-yaml", "npm:3.14.2"],\
           ["lodash", "npm:4.18.1"],\
           ["mini-css-extract-plugin", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:2.9.4"],\
-          ["mocha", "npm:11.7.5"],\
+          ["mocha", "npm:11.7.6"],\
           ["nodemon", "npm:2.0.22"],\
           ["npm-run-all2", "npm:5.0.2"],\
           ["nunjucks", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:3.2.4"],\
@@ -13015,6 +13015,34 @@ const RAW_RUNTIME_STATE =
           ["log-symbols", "npm:4.1.0"],\
           ["minimatch", "npm:9.0.9"],\
           ["mocha", "npm:11.7.5"],\
+          ["ms", "npm:2.1.3"],\
+          ["picocolors", "npm:1.1.1"],\
+          ["serialize-javascript", "npm:6.0.2"],\
+          ["strip-json-comments", "npm:3.1.1"],\
+          ["supports-color", "npm:8.1.1"],\
+          ["workerpool", "npm:9.3.3"],\
+          ["yargs", "npm:17.7.2"],\
+          ["yargs-parser", "npm:21.1.1"],\
+          ["yargs-unparser", "npm:2.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:11.7.6", {\
+        "packageLocation": "./.yarn/cache/mocha-npm-11.7.6-4a91363d4e-a083a65d4a.zip/node_modules/mocha/",\
+        "packageDependencies": [\
+          ["browser-stdout", "npm:1.3.1"],\
+          ["chokidar", "npm:4.0.3"],\
+          ["debug", "virtual:9aef2a5b66f0c86d74b13f0c750a8c6e3021ab465058429fec83fb799e5091d2674f1789c39470784ae5953ccf6045ba7fd453c163b828aa6328a6430394ecc2#npm:4.4.3"],\
+          ["diff", "npm:7.0.0"],\
+          ["escape-string-regexp", "npm:4.0.0"],\
+          ["find-up", "npm:5.0.0"],\
+          ["glob", "npm:10.5.0"],\
+          ["he", "npm:1.2.0"],\
+          ["is-path-inside", "npm:3.0.3"],\
+          ["js-yaml", "npm:4.1.1"],\
+          ["log-symbols", "npm:4.1.0"],\
+          ["minimatch", "npm:9.0.9"],\
+          ["mocha", "npm:11.7.6"],\
           ["ms", "npm:2.1.3"],\
           ["picocolors", "npm:1.1.1"],\
           ["serialize-javascript", "npm:6.0.2"],\
