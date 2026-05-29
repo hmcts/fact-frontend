@@ -6737,7 +6737,7 @@ __metadata:
     html-webpack-plugin: "npm:^5.6.5"
     http-proxy-middleware: "npm:^2.0.9"
     i18next: "npm:^21.10.0"
-    i18next-http-middleware: "npm:3.9.3"
+    i18next-http-middleware: "npm:3.9.7"
     jest: "npm:^29.7.0"
     jest-when: "npm:^3.7.0"
     jquery: "npm:^3.7.1"
@@ -7923,10 +7923,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next-http-middleware@npm:3.9.3":
-  version: 3.9.3
-  resolution: "i18next-http-middleware@npm:3.9.3"
-  checksum: 10/88f4cd162681fde44fcc5f73bebe5080b99ae8ce75e468f06247217d2549b05826d002d4b174d6bb926991086bf5b20fd0b14bfc8512dec76ab530d0b9ccf620
+"i18next-http-middleware@npm:3.9.7":
+  version: 3.9.7
+  resolution: "i18next-http-middleware@npm:3.9.7"
+  checksum: 10/b698193d196a136d75565d5fef4842b532fdfafd13d42733674604c7ebf89fae31309196654456aa369c5d00708c00229c41c0ae82ccb1be7a52cabfd5ef2d1d
   languageName: node
   linkType: hard
 
