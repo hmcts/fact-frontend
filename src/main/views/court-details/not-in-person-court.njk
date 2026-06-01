@@ -123,14 +123,9 @@
         </div>
 
         {% if results['urgent_message'] %}
-          <div class="urgent-message">
-            <div class="warning-symbol warning-symbol-div">
-              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-            </div>
-            <div>
-              <strong class="govuk-warning-text__text urgent-message-text">{{ results['urgent_message'] | safe }}</strong>
-            </div>
-          </div>
+          {{ govukWarningText({
+            html: results['urgent_message'] | safe
+          }) }}
         {% endif %}
 
         {% if results.info %}
@@ -308,16 +303,6 @@
             </ul>
           </div>
         {% endif %}
-
-        <div class="govuk-grid-row">
-          <h3 class="govuk-heading-m">
-            {{ complaintHeading }}
-          </h3>
-          <p class="govuk-body-m">
-            <a class="govuk-link" rel="noreferrer noopener" target="_blank"
-               href="https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service/about/complaints-procedure">{{ complaintText }}</a><span class="govuk-visually-hidden"> (opens in new tab)</span>
-          </p>
-        </div>
 
         {% if results.crown_location_code or results.county_location_code or results.magistrates_location_code or (results['dx_number'] and results['dx_number'].length > 0) %}
           <div class="govuk-grid-row" id="location-codes">
