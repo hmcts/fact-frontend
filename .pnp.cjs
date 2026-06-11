@@ -35,7 +35,7 @@ const RAW_RUNTIME_STATE =
           ["@hmcts/info-provider", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:1.3.0"],\
           ["@hmcts/nodejs-healthcheck", "npm:1.8.6"],\
           ["@hmcts/nodejs-logging", "npm:4.0.4"],\
-          ["@hmcts/properties-volume", "npm:1.2.0"],\
+          ["@hmcts/properties-volume", "npm:1.4.0"],\
           ["@npmcli/fs", "npm:5.0.0"],\
           ["@playwright/test", "npm:1.58.2"],\
           ["@types/chai-as-promised", "npm:8.0.2"],\
@@ -122,6 +122,21 @@ const RAW_RUNTIME_STATE =
         "linkType": "SOFT"\
       }]\
     ]],\
+    ["@azure-rest/core-client", [\
+      ["npm:2.6.1", {\
+        "packageLocation": "./.yarn/cache/@azure-rest-core-client-npm-2.6.1-16cd2342c7-ef0835651a.zip/node_modules/@azure-rest/core-client/",\
+        "packageDependencies": [\
+          ["@azure-rest/core-client", "npm:2.6.1"],\
+          ["@azure/abort-controller", "npm:2.1.2"],\
+          ["@azure/core-auth", "npm:1.10.1"],\
+          ["@azure/core-rest-pipeline", "npm:1.24.0"],\
+          ["@azure/core-tracing", "npm:1.3.1"],\
+          ["@typespec/ts-http-runtime", "npm:0.3.6"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@azure/abort-controller", [\
       ["npm:2.1.2", {\
         "packageLocation": "./.yarn/cache/@azure-abort-controller-npm-2.1.2-a36d73ebb9-484e34a812.zip/node_modules/@azure/abort-controller/",\
@@ -133,6 +148,16 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@azure/core-auth", [\
+      ["npm:1.10.1", {\
+        "packageLocation": "./.yarn/cache/@azure-core-auth-npm-1.10.1-d750410a50-230c1766d4.zip/node_modules/@azure/core-auth/",\
+        "packageDependencies": [\
+          ["@azure/abort-controller", "npm:2.1.2"],\
+          ["@azure/core-auth", "npm:1.10.1"],\
+          ["@azure/core-util", "npm:1.13.1"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["npm:1.7.2", {\
         "packageLocation": "./.yarn/cache/@azure-core-auth-npm-1.7.2-10196debae-c85325c597.zip/node_modules/@azure/core-auth/",\
         "packageDependencies": [\
@@ -166,18 +191,6 @@ const RAW_RUNTIME_STATE =
           ["@azure/core-util", "npm:1.11.0"],\
           ["@azure/logger", "npm:1.1.4"],\
           ["tslib", "npm:2.8.1"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@azure/core-http-compat", [\
-      ["npm:2.2.0", {\
-        "packageLocation": "./.yarn/cache/@azure-core-http-compat-npm-2.2.0-732687809f-d1dcc79ec8.zip/node_modules/@azure/core-http-compat/",\
-        "packageDependencies": [\
-          ["@azure/abort-controller", "npm:2.1.2"],\
-          ["@azure/core-client", "npm:1.9.3"],\
-          ["@azure/core-http-compat", "npm:2.2.0"],\
-          ["@azure/core-rest-pipeline", "npm:1.19.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -235,6 +248,20 @@ const RAW_RUNTIME_STATE =
           ["tslib", "npm:2.8.1"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:1.24.0", {\
+        "packageLocation": "./.yarn/cache/@azure-core-rest-pipeline-npm-1.24.0-325a628b8e-a272b76a1e.zip/node_modules/@azure/core-rest-pipeline/",\
+        "packageDependencies": [\
+          ["@azure/abort-controller", "npm:2.1.2"],\
+          ["@azure/core-auth", "npm:1.10.1"],\
+          ["@azure/core-rest-pipeline", "npm:1.24.0"],\
+          ["@azure/core-tracing", "npm:1.3.1"],\
+          ["@azure/core-util", "npm:1.13.1"],\
+          ["@azure/logger", "npm:1.3.0"],\
+          ["@typespec/ts-http-runtime", "npm:0.3.6"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["@azure/core-tracing", [\
@@ -242,6 +269,14 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/@azure-core-tracing-npm-1.2.0-cae64582fc-5d63ffc8f6.zip/node_modules/@azure/core-tracing/",\
         "packageDependencies": [\
           ["@azure/core-tracing", "npm:1.2.0"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:1.3.1", {\
+        "packageLocation": "./.yarn/cache/@azure-core-tracing-npm-1.3.1-eb2949b9c4-7ef179e0ce.zip/node_modules/@azure/core-tracing/",\
+        "packageDependencies": [\
+          ["@azure/core-tracing", "npm:1.3.1"],\
           ["tslib", "npm:2.8.1"]\
         ],\
         "linkType": "HARD"\
@@ -256,11 +291,21 @@ const RAW_RUNTIME_STATE =
           ["tslib", "npm:2.8.1"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:1.13.1", {\
+        "packageLocation": "./.yarn/cache/@azure-core-util-npm-1.13.1-f6d65e92ea-81ba529bed.zip/node_modules/@azure/core-util/",\
+        "packageDependencies": [\
+          ["@azure/abort-controller", "npm:2.1.2"],\
+          ["@azure/core-util", "npm:1.13.1"],\
+          ["@typespec/ts-http-runtime", "npm:0.3.6"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["@azure/identity", [\
-      ["npm:4.8.0", {\
-        "packageLocation": "./.yarn/cache/@azure-identity-npm-4.8.0-899b065dd8-55f5e8f8fb.zip/node_modules/@azure/identity/",\
+      ["npm:4.13.1", {\
+        "packageLocation": "./.yarn/cache/@azure-identity-npm-4.13.1-28285ed826-f07734f811.zip/node_modules/@azure/identity/",\
         "packageDependencies": [\
           ["@azure/abort-controller", "npm:2.1.2"],\
           ["@azure/core-auth", "npm:1.9.0"],\
@@ -268,30 +313,27 @@ const RAW_RUNTIME_STATE =
           ["@azure/core-rest-pipeline", "npm:1.19.1"],\
           ["@azure/core-tracing", "npm:1.2.0"],\
           ["@azure/core-util", "npm:1.11.0"],\
-          ["@azure/identity", "npm:4.8.0"],\
+          ["@azure/identity", "npm:4.13.1"],\
           ["@azure/logger", "npm:1.1.4"],\
-          ["@azure/msal-browser", "npm:4.10.0"],\
-          ["@azure/msal-node", "npm:3.5.0"],\
-          ["events", "npm:3.3.0"],\
-          ["jws", "npm:4.0.1"],\
+          ["@azure/msal-browser", "npm:5.13.0"],\
+          ["@azure/msal-node", "npm:5.2.4"],\
           ["open", "npm:10.1.1"],\
-          ["stoppable", "npm:1.1.0"],\
           ["tslib", "npm:2.8.1"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@azure/keyvault-common", [\
-      ["npm:2.0.0", {\
-        "packageLocation": "./.yarn/cache/@azure-keyvault-common-npm-2.0.0-63647fff87-c2124c6d57.zip/node_modules/@azure/keyvault-common/",\
+      ["npm:2.1.0", {\
+        "packageLocation": "./.yarn/cache/@azure-keyvault-common-npm-2.1.0-196291c4aa-ce231f7812.zip/node_modules/@azure/keyvault-common/",\
         "packageDependencies": [\
+          ["@azure-rest/core-client", "npm:2.6.1"],\
           ["@azure/abort-controller", "npm:2.1.2"],\
           ["@azure/core-auth", "npm:1.9.0"],\
-          ["@azure/core-client", "npm:1.9.3"],\
           ["@azure/core-rest-pipeline", "npm:1.19.1"],\
           ["@azure/core-tracing", "npm:1.2.0"],\
           ["@azure/core-util", "npm:1.11.0"],\
-          ["@azure/keyvault-common", "npm:2.0.0"],\
+          ["@azure/keyvault-common", "npm:2.1.0"],\
           ["@azure/logger", "npm:1.1.4"],\
           ["tslib", "npm:2.8.1"]\
         ],\
@@ -299,20 +341,19 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@azure/keyvault-secrets", [\
-      ["npm:4.9.0", {\
-        "packageLocation": "./.yarn/cache/@azure-keyvault-secrets-npm-4.9.0-35089061e3-d64813ecc6.zip/node_modules/@azure/keyvault-secrets/",\
+      ["npm:4.11.2", {\
+        "packageLocation": "./.yarn/cache/@azure-keyvault-secrets-npm-4.11.2-eb06abf419-e38610e85e.zip/node_modules/@azure/keyvault-secrets/",\
         "packageDependencies": [\
+          ["@azure-rest/core-client", "npm:2.6.1"],\
           ["@azure/abort-controller", "npm:2.1.2"],\
           ["@azure/core-auth", "npm:1.9.0"],\
-          ["@azure/core-client", "npm:1.9.3"],\
-          ["@azure/core-http-compat", "npm:2.2.0"],\
           ["@azure/core-lro", "npm:2.7.2"],\
           ["@azure/core-paging", "npm:1.6.2"],\
           ["@azure/core-rest-pipeline", "npm:1.19.1"],\
           ["@azure/core-tracing", "npm:1.2.0"],\
           ["@azure/core-util", "npm:1.11.0"],\
-          ["@azure/keyvault-common", "npm:2.0.0"],\
-          ["@azure/keyvault-secrets", "npm:4.9.0"],\
+          ["@azure/keyvault-common", "npm:2.1.0"],\
+          ["@azure/keyvault-secrets", "npm:4.11.2"],\
           ["@azure/logger", "npm:1.1.4"],\
           ["tslib", "npm:2.8.1"]\
         ],\
@@ -327,35 +368,43 @@ const RAW_RUNTIME_STATE =
           ["tslib", "npm:2.8.1"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:1.3.0", {\
+        "packageLocation": "./.yarn/cache/@azure-logger-npm-1.3.0-d53081e040-7df11bf3b4.zip/node_modules/@azure/logger/",\
+        "packageDependencies": [\
+          ["@azure/logger", "npm:1.3.0"],\
+          ["@typespec/ts-http-runtime", "npm:0.3.6"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["@azure/msal-browser", [\
-      ["npm:4.10.0", {\
-        "packageLocation": "./.yarn/cache/@azure-msal-browser-npm-4.10.0-ebbc8ac752-300ca79475.zip/node_modules/@azure/msal-browser/",\
+      ["npm:5.13.0", {\
+        "packageLocation": "./.yarn/cache/@azure-msal-browser-npm-5.13.0-67474fe2c9-9767acff16.zip/node_modules/@azure/msal-browser/",\
         "packageDependencies": [\
-          ["@azure/msal-browser", "npm:4.10.0"],\
-          ["@azure/msal-common", "npm:15.5.0"]\
+          ["@azure/msal-browser", "npm:5.13.0"],\
+          ["@azure/msal-common", "npm:16.8.0"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@azure/msal-common", [\
-      ["npm:15.5.0", {\
-        "packageLocation": "./.yarn/cache/@azure-msal-common-npm-15.5.0-38aac0f933-f76d4004c0.zip/node_modules/@azure/msal-common/",\
+      ["npm:16.8.0", {\
+        "packageLocation": "./.yarn/cache/@azure-msal-common-npm-16.8.0-bc78010083-9287fb0817.zip/node_modules/@azure/msal-common/",\
         "packageDependencies": [\
-          ["@azure/msal-common", "npm:15.5.0"]\
+          ["@azure/msal-common", "npm:16.8.0"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@azure/msal-node", [\
-      ["npm:3.5.0", {\
-        "packageLocation": "./.yarn/cache/@azure-msal-node-npm-3.5.0-0e3db38e24-2b373531c4.zip/node_modules/@azure/msal-node/",\
+      ["npm:5.2.4", {\
+        "packageLocation": "./.yarn/cache/@azure-msal-node-npm-5.2.4-4caa5365b5-785c072ab2.zip/node_modules/@azure/msal-node/",\
         "packageDependencies": [\
-          ["@azure/msal-common", "npm:15.5.0"],\
-          ["@azure/msal-node", "npm:3.5.0"],\
-          ["jsonwebtoken", "npm:9.0.3"],\
-          ["uuid", "npm:11.1.1"]\
+          ["@azure/msal-common", "npm:16.8.0"],\
+          ["@azure/msal-node", "npm:5.2.4"],\
+          ["jsonwebtoken", "npm:9.0.3"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2192,14 +2241,14 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@hmcts/properties-volume", [\
-      ["npm:1.2.0", {\
-        "packageLocation": "./.yarn/cache/@hmcts-properties-volume-npm-1.2.0-3245eeab8f-d808737225.zip/node_modules/@hmcts/properties-volume/",\
+      ["npm:1.4.0", {\
+        "packageLocation": "./.yarn/cache/@hmcts-properties-volume-npm-1.4.0-c2be5d086e-2d5ecf1286.zip/node_modules/@hmcts/properties-volume/",\
         "packageDependencies": [\
-          ["@azure/identity", "npm:4.8.0"],\
-          ["@azure/keyvault-secrets", "npm:4.9.0"],\
+          ["@azure/identity", "npm:4.13.1"],\
+          ["@azure/keyvault-secrets", "npm:4.11.2"],\
           ["@hmcts/nodejs-logging", "npm:4.0.4"],\
-          ["@hmcts/properties-volume", "npm:1.2.0"],\
-          ["js-yaml", "npm:4.1.1"],\
+          ["@hmcts/properties-volume", "npm:1.4.0"],\
+          ["js-yaml", "npm:4.2.0"],\
           ["lodash", "npm:4.18.1"]\
         ],\
         "linkType": "HARD"\
@@ -4334,6 +4383,18 @@ const RAW_RUNTIME_STATE =
           ["@typescript-eslint/types", "npm:5.62.0"],\
           ["@typescript-eslint/visitor-keys", "npm:5.62.0"],\
           ["eslint-visitor-keys", "npm:3.4.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@typespec/ts-http-runtime", [\
+      ["npm:0.3.6", {\
+        "packageLocation": "./.yarn/cache/@typespec-ts-http-runtime-npm-0.3.6-68595c7790-5062887e48.zip/node_modules/@typespec/ts-http-runtime/",\
+        "packageDependencies": [\
+          ["@typespec/ts-http-runtime", "npm:0.3.6"],\
+          ["http-proxy-agent", "npm:7.0.2"],\
+          ["https-proxy-agent", "npm:7.0.6"],\
+          ["tslib", "npm:2.8.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -8889,7 +8950,7 @@ const RAW_RUNTIME_STATE =
           ["@hmcts/info-provider", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:1.3.0"],\
           ["@hmcts/nodejs-healthcheck", "npm:1.8.6"],\
           ["@hmcts/nodejs-logging", "npm:4.0.4"],\
-          ["@hmcts/properties-volume", "npm:1.2.0"],\
+          ["@hmcts/properties-volume", "npm:1.4.0"],\
           ["@npmcli/fs", "npm:5.0.0"],\
           ["@playwright/test", "npm:1.58.2"],\
           ["@types/chai-as-promised", "npm:8.0.2"],\
@@ -11698,6 +11759,14 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["argparse", "npm:2.0.1"],\
           ["js-yaml", "npm:4.1.1"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:4.2.0", {\
+        "packageLocation": "./.yarn/cache/js-yaml-npm-4.2.0-0ab78512c1-51de2067a2.zip/node_modules/js-yaml/",\
+        "packageDependencies": [\
+          ["argparse", "npm:2.0.1"],\
+          ["js-yaml", "npm:4.2.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -15923,15 +15992,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/statuses-npm-2.0.2-2d84c63b8c-6927feb50c.zip/node_modules/statuses/",\
         "packageDependencies": [\
           ["statuses", "npm:2.0.2"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["stoppable", [\
-      ["npm:1.1.0", {\
-        "packageLocation": "./.yarn/cache/stoppable-npm-1.1.0-23cdcad1a6-63104fcbde.zip/node_modules/stoppable/",\
-        "packageDependencies": [\
-          ["stoppable", "npm:1.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
