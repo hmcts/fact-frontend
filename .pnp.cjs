@@ -32,7 +32,7 @@ const RAW_RUNTIME_STATE =
           ["@codeceptjs/configure", "virtual:a1a2adcb2b4eaa139fac9538672c9fb0dca441f0ef0b21a5ddb0645ba1088ea9a63884326a991b01ba380e3235a3fd0bc6d2c0138d8f54d2605b49ba9f85bc31#npm:1.0.6"],\
           ["@cucumber/cucumber", "npm:12.9.0"],\
           ["@hmcts/cookie-manager", "npm:1.1.0"],\
-          ["@hmcts/info-provider", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:1.3.0"],\
+          ["@hmcts/info-provider", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:1.4.0"],\
           ["@hmcts/nodejs-healthcheck", "npm:1.8.6"],\
           ["@hmcts/nodejs-logging", "npm:4.0.4"],\
           ["@hmcts/properties-volume", "npm:1.4.0"],\
@@ -2194,20 +2194,20 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@hmcts/info-provider", [\
-      ["npm:1.3.0", {\
-        "packageLocation": "./.yarn/cache/@hmcts-info-provider-npm-1.3.0-912f8923f0-4e143f1c0a.zip/node_modules/@hmcts/info-provider/",\
+      ["npm:1.4.0", {\
+        "packageLocation": "./.yarn/cache/@hmcts-info-provider-npm-1.4.0-3e4acc49b8-c73658a9b3.zip/node_modules/@hmcts/info-provider/",\
         "packageDependencies": [\
-          ["@hmcts/info-provider", "npm:1.3.0"]\
+          ["@hmcts/info-provider", "npm:1.4.0"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:1.3.0", {\
-        "packageLocation": "./.yarn/__virtual__/@hmcts-info-provider-virtual-a3bfdd18e8/0/cache/@hmcts-info-provider-npm-1.3.0-912f8923f0-4e143f1c0a.zip/node_modules/@hmcts/info-provider/",\
+      ["virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:1.4.0", {\
+        "packageLocation": "./.yarn/__virtual__/@hmcts-info-provider-virtual-2fc84cdf5d/0/cache/@hmcts-info-provider-npm-1.4.0-3e4acc49b8-c73658a9b3.zip/node_modules/@hmcts/info-provider/",\
         "packageDependencies": [\
-          ["@hmcts/info-provider", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:1.3.0"],\
+          ["@hmcts/info-provider", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:1.4.0"],\
           ["@types/express", "npm:5.0.6"],\
           ["express", "npm:4.22.2"],\
-          ["js-yaml", "npm:4.1.1"]\
+          ["js-yaml", "npm:4.2.0"]\
         ],\
         "packagePeers": [\
           "@types/express",\
@@ -8947,7 +8947,7 @@ const RAW_RUNTIME_STATE =
           ["@codeceptjs/configure", "virtual:a1a2adcb2b4eaa139fac9538672c9fb0dca441f0ef0b21a5ddb0645ba1088ea9a63884326a991b01ba380e3235a3fd0bc6d2c0138d8f54d2605b49ba9f85bc31#npm:1.0.6"],\
           ["@cucumber/cucumber", "npm:12.9.0"],\
           ["@hmcts/cookie-manager", "npm:1.1.0"],\
-          ["@hmcts/info-provider", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:1.3.0"],\
+          ["@hmcts/info-provider", "virtual:a19c5d45c91db68c2747317aa473fe5d57578fe6e1aacbda18f5798bcaa77b2f4e2379016587e880623e46738f4948ce214dc05fd152754f4261b7f65c23d4eb#npm:1.4.0"],\
           ["@hmcts/nodejs-healthcheck", "npm:1.8.6"],\
           ["@hmcts/nodejs-logging", "npm:4.0.4"],\
           ["@hmcts/properties-volume", "npm:1.4.0"],\
