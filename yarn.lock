@@ -3491,14 +3491,14 @@ __metadata:
   linkType: hard
 
 "allure-codeceptjs@npm:^3.9.0":
-  version: 3.10.0
-  resolution: "allure-codeceptjs@npm:3.10.0"
+  version: 3.10.2
+  resolution: "allure-codeceptjs@npm:3.10.2"
   dependencies:
-    allure-js-commons: "npm:3.10.0"
-    allure-mocha: "npm:3.10.0"
+    allure-js-commons: "npm:3.10.2"
+    allure-mocha: "npm:3.10.2"
   peerDependencies:
     codeceptjs: ">=2.3.6"
-  checksum: 10/0d30f8211335b319cf385b716054185d3d251666aac167511cd585ae77e913e941b652f4ff09de859405f44ce1dd9c27691158ebada854a1bb5fd5c5f4800bdc
+  checksum: 10/99d061d71bc9c892ca239e6e81e30ff3e4254bde02f57d90052f9412ebaac62eb2243f8158548f9aed186a894e245583e427d65be5cfcb1f3ecde06f3541e75a
   languageName: node
   linkType: hard
 
@@ -3511,17 +3511,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"allure-js-commons@npm:3.10.0":
-  version: 3.10.0
-  resolution: "allure-js-commons@npm:3.10.0"
+"allure-js-commons@npm:3.10.2":
+  version: 3.10.2
+  resolution: "allure-js-commons@npm:3.10.2"
   dependencies:
     md5: "npm:^2.3.0"
   peerDependencies:
-    allure-playwright: 3.10.0
+    allure-playwright: 3.10.2
   peerDependenciesMeta:
     allure-playwright:
       optional: true
-  checksum: 10/30ffaf5300182dd511de8a1fdb4496bbca353df7028c0216140acb1ada493e183572fb175012d762f38d0656cd0becd346e8a1ee50746f3414724c905df8d085
+  checksum: 10/afb8a946c1c9a36abf3b3493d669fa671743880ba9aa41bc8b5c152273569d3f657f88e072cd9eb2fa60b17eb6552fa794fd93ccf6bd3286855ddb25b56702d7
   languageName: node
   linkType: hard
 
@@ -3539,14 +3539,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"allure-mocha@npm:3.10.0":
-  version: 3.10.0
-  resolution: "allure-mocha@npm:3.10.0"
+"allure-mocha@npm:3.10.2":
+  version: 3.10.2
+  resolution: "allure-mocha@npm:3.10.2"
   dependencies:
-    allure-js-commons: "npm:3.10.0"
+    allure-js-commons: "npm:3.10.2"
   peerDependencies:
     mocha: ">=6.2.0"
-  checksum: 10/0ec2e718dd4df774b02dbac1be00a6998c0dbb5b8aa48b59fbc47b65139730554b5a0817df404560e94d4cb76dfc22865eb29021cc16860bf435060614bb8a88
+  checksum: 10/4072c3d67e9777330cecf0093139bef35427459c99e374441aac1b904e1d2e0f8239f876e7c0fdec53e1fa4d3d23803ce27b82413fb75477789c69f6af6e1fa7
   languageName: node
   linkType: hard
 
