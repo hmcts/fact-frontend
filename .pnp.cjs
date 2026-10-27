@@ -48,7 +48,7 @@ const RAW_RUNTIME_STATE =
           ["@types/helmet", "npm:0.0.48"],\
           ["@types/jest", "npm:29.5.14"],\
           ["@types/jest-when", "npm:3.5.5"],\
-          ["@types/lodash", "npm:4.17.24"],\
+          ["@types/lodash", "npm:4.17.27"],\
           ["@types/node", "npm:18.19.130"],\
           ["@types/nunjucks", "npm:3.2.6"],\
           ["@types/require-directory", "npm:2.1.7"],\
@@ -4056,10 +4056,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@types/lodash", [\
-      ["npm:4.17.24", {\
-        "packageLocation": "./.yarn/cache/@types-lodash-npm-4.17.24-4a04035060-0f2082565f.zip/node_modules/@types/lodash/",\
+      ["npm:4.17.27", {\
+        "packageLocation": "./.yarn/cache/@types-lodash-npm-4.17.27-d943734c3e-ae02ef8626.zip/node_modules/@types/lodash/",\
         "packageDependencies": [\
-          ["@types/lodash", "npm:4.17.24"]\
+          ["@types/lodash", "npm:4.17.27"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -8668,7 +8668,7 @@ const RAW_RUNTIME_STATE =
           ["@types/helmet", "npm:0.0.48"],\
           ["@types/jest", "npm:29.5.14"],\
           ["@types/jest-when", "npm:3.5.5"],\
-          ["@types/lodash", "npm:4.17.24"],\
+          ["@types/lodash", "npm:4.17.27"],\
           ["@types/node", "npm:18.19.130"],\
           ["@types/nunjucks", "npm:3.2.6"],\
           ["@types/require-directory", "npm:2.1.7"],\
